@@ -1,4 +1,4 @@
-/* LS CSS v0.8.0 */
+/* LS CSS v0.9.0 */
 
 @charset "utf-8";
 
@@ -76,13 +76,19 @@
 
 @font-face {
     font-family: "Pentagram";
-    src: url("/Assets/Fonts/Pentagram.ttf");
+    src: url("/Assets/Fonts/PentaGram.ttf");
     font-display: swap;
 }
 
 @font-face {
     font-family: "CPU";
     src: url("/Assets/Fonts/CPU.ttf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Headstone";
+    src: url("/Assets/Fonts/Headstone.ttf");
     font-display: swap;
 }
 
@@ -434,6 +440,7 @@ a.nav-link.bright-white:hover {
     max-width: calc(100% - 3rem);
 }
 
+
 .win {
     background: #222;
     border: 2px #AAA ridge;
@@ -621,4 +628,10 @@ h2.INV {
     font-family: Arcade;
     color: #00FF00;
     text-shadow: 3px 3px #00AA00;
+}
+
+.CH2 {
+    font-family: 'Pentagram';
+    font-size: 1.5em;
+    text-shadow: 1px 1px #666;
 }

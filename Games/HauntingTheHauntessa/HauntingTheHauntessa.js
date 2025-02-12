@@ -184,7 +184,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.0.0",
+    VERSION: "0.0.1",
     NAME: "Haunting The Hauntessa",
     YEAR: "2024, 2025",
     SG: "HTH",
@@ -1624,29 +1624,39 @@ const TITLE = {
         ENGINE.fillLayer("Lsideback", "#000");
     },
     makeGrad(CTX, x, y, w, h) {
+        // Create a linear gradient from (x, y) to (w, h)
         let grad = CTX.createLinearGradient(x, y, w, h);
-        grad.addColorStop("0", "#FF0000");
-        grad.addColorStop("0.05", "#EE0000")
-        grad.addColorStop("0.1", "#DD1111");
-        grad.addColorStop("0.15", "#d92323")
-        grad.addColorStop("0.2", "#DDD");
-        grad.addColorStop("0.3", "#AAA");
-        grad.addColorStop("0.4", "#999");
-        grad.addColorStop("0.5", "#666");
-        grad.addColorStop("0.6", "#555");
-        grad.addColorStop("0.65", "#666");
-        grad.addColorStop("0.7", "#777");
-        grad.addColorStop("0.8", "#AAA");
-        grad.addColorStop("0.85", "#d92323")
-        grad.addColorStop("0.9", "#DD1111");
-        grad.addColorStop("0.95", "#EE0000")
-        grad.addColorStop("1", "#FF0000");
+    
+        // ~20 color stops that transition from silverish -> golden -> fire orange -> blood red.
+        grad.addColorStop(0.00, "#C0C0C0"); // silver
+        grad.addColorStop(0.05, "#C4C4C4");
+        grad.addColorStop(0.10, "#C8C8C8");
+        grad.addColorStop(0.15, "#CCCCCC");
+        grad.addColorStop(0.20, "#D0D070");
+        grad.addColorStop(0.25, "#D8D888");
+        grad.addColorStop(0.30, "#E0E090");
+        grad.addColorStop(0.35, "#E8E8A0"); 
+        grad.addColorStop(0.40, "#F0E68C"); 
+        grad.addColorStop(0.45, "#FFD700");
+        grad.addColorStop(0.50, "#FFD105");
+        grad.addColorStop(0.55, "#FFA500");
+        grad.addColorStop(0.60, "#FF8C00");
+        grad.addColorStop(0.65, "#FF7F00");
+        grad.addColorStop(0.70, "#FF4500");
+        grad.addColorStop(0.75, "#FF0000");
+        grad.addColorStop(0.80, "#EE0000");
+        grad.addColorStop(0.85, "#DD0000");
+        grad.addColorStop(0.90, "#CC0000");
+        grad.addColorStop(0.95, "#BB0000");
+        grad.addColorStop(1.00, "#AA0000");
+    
         return grad;
     },
+    
     titlePlot() {
         const CTX = LAYER.title;
         const fs = 64;
-        CTX.font = fs + "px Pentagram";
+        CTX.font = fs + "px Headstone";
         CTX.textAlign = "center";
         let txt = CTX.measureText(PRG.NAME);
         let x = ENGINE.titleWIDTH / 2;
@@ -1656,7 +1666,7 @@ const TITLE = {
         let grad = this.makeGrad(CTX, gx, gy + 10, gx, gy + fs);
         CTX.fillStyle = grad;
         GAME.grad = grad;
-        CTX.shadowColor = "#cec967";
+        CTX.shadowColor = "#666666";
         CTX.shadowOffsetX = 2;
         CTX.shadowOffsetY = 2;
         CTX.shadowBlur = 3;

@@ -8,6 +8,7 @@
 LoadFonts = [
     { srcName: "PentaGram.ttf", name: "Pentagram" },
     { srcName: "CPU.ttf", name: "CPU" },
+    { srcName: "Headstone.ttf", name: "Headstone" },
 ];
 
 LoadTextures = [
@@ -97,7 +98,7 @@ LoadTextures = [
 ];
 
 LoadAudio = [
-    //{ srcName: "And The Abyss Gazed Back - LaughingSkull.mp3", name: "Title" },
+    { srcName: "LaughingSkull-Graveyard In The Moonlight.mp3", name: "Title" },
 
     //action sounds
     { srcName: "UseScroll.mp3", name: "PickBox" },
