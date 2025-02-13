@@ -94,7 +94,7 @@ LoadTextures = [
 
 
     //title
-    //{ srcName: "Title/CastleHauntTitle2_768.jpg", name: "Title" },
+    { srcName: "Title/HTH_title_768.jpg", name: "Title" },
 ];
 
 LoadAudio = [
@@ -175,7 +175,10 @@ LoadSprites = [
     { srcName: "Reserved/DeathPlace.png", name: "DeathPlace" },
 
     //intro
-
+    { srcName: "Slides/HTH_slide1.jpg", name: "HTH_slide1" },
+    { srcName: "Slides/HTH_slide2.jpg", name: "HTH_slide2" },
+    { srcName: "Slides/HTH_slide3.jpg", name: "HTH_slide3" },
+    { srcName: "Slides/HTH_slide4.jpg", name: "HTH_slide4" },
 
     // frescoes - entities
 

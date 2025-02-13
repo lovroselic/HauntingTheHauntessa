@@ -184,7 +184,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.0.1",
+    VERSION: "0.0.2",
     NAME: "Haunting The Hauntessa",
     YEAR: "2024, 2025",
     SG: "HTH",
@@ -1016,7 +1016,7 @@ const GAME = {
     },
     setTitle() {
         const text = GAME.generateTitleText();
-        const RD = new RenderData("Pentagram", 20, "#0E0", "bottomText");
+        const RD = new RenderData("Headstone", 24, "#0E0", "bottomText");
         const SQ = new RectArea(0, 0, LAYER.bottomText.canvas.width, LAYER.bottomText.canvas.height);
         GAME.movingText = new MovingText(text, 4, RD, SQ);
     },
@@ -1025,9 +1025,9 @@ const GAME = {
             }, a game by Lovro Selič, ${"\u00A9"} LaughingSkull ${PRG.YEAR
             }. 
              
-            Music: 'And The Abyss Gazed Back' written and performed by LaughingSkull, ${"\u00A9"
-            } 2011 Lovro Selič. `;
-        text += "     ENGINE, SPEECH, GRID, MAZE, Burrows-Wheeler RLE Compression, WebGL and GAME code by Lovro Selič using JavaScript and GLSL. ";
+            Music: 'Graveyard In The Moonlight' written and performed by LaughingSkull, ${"\u00A9"
+            } 2006 Lovro Selič. `;
+        text += "     ENGINE, SPEECH, GRID, MAZE, Burrows-Wheeler RLE Compression, WebGL, shaders and GAME code by Lovro Selič using JavaScript and GLSL. ";
         text += "     glMatrix library by Brandon Jones and Colin MacKenzie IV. Thanks. ";
         text = text.split("").join(String.fromCharCode(8202));
         return text;
@@ -1585,13 +1585,11 @@ const TITLE = {
         TITLE.clearAllLayers();
         TITLE.blackBackgrounds();
         TITLE.titlePlot();
-        //ENGINE.draw("background", (ENGINE.gameWIDTH - TEXTURE.Title.width) / 2, (ENGINE.gameHEIGHT - TEXTURE.Title.height) / 2, TEXTURE.Title);
+        ENGINE.draw("background", (ENGINE.gameWIDTH - TEXTURE.Title.width) / 2, (ENGINE.gameHEIGHT - TEXTURE.Title.height) / 2, TEXTURE.Title);
         $("#DOWN")[0].scrollIntoView();
         ENGINE.topCanvas = ENGINE.getCanvasName("ROOM");
         TITLE.drawButtons();
-
-        return;
-        //
+      
         GAME.setTitle();
         ENGINE.GAME.start(16);
         ENGINE.GAME.ANIMATION.next(GAME.runTitle);
@@ -1627,7 +1625,6 @@ const TITLE = {
         // Create a linear gradient from (x, y) to (w, h)
         let grad = CTX.createLinearGradient(x, y, w, h);
     
-        // ~20 color stops that transition from silverish -> golden -> fire orange -> blood red.
         grad.addColorStop(0.00, "#C0C0C0"); // silver
         grad.addColorStop(0.05, "#C4C4C4");
         grad.addColorStop(0.10, "#C8C8C8");
@@ -1649,10 +1646,9 @@ const TITLE = {
         grad.addColorStop(0.90, "#CC0000");
         grad.addColorStop(0.95, "#BB0000");
         grad.addColorStop(1.00, "#AA0000");
-    
+
         return grad;
     },
-    
     titlePlot() {
         const CTX = LAYER.title;
         const fs = 64;
@@ -2024,6 +2020,7 @@ const TITLE = {
         return text;
     },
     previously() {
+        SPEECH.use("Princess");
         if (AUDIO.Title) {
             AUDIO.Title.pause();
             AUDIO.Title.currentTime = 0;
@@ -2035,11 +2032,10 @@ const TITLE = {
         ENGINE.GAME.pauseBlock();
         TITLE.clearAllLayers();
         TITLE.blackBackgrounds();
-        const RD = new RenderData("Pentagram", 30, "#DAA520", "text", "#000", 1, 1, 1);
+        const RD = new RenderData("Headstone", 26, "#DAA520", "text", "#000", 1, 1, 1);
         const layers = { title: "title", sprite: "background" }
         GAME.previously = new SlideShow(INTRO_MOV, TITLE.startTitle, RD, layers);
         GAME.previously.next();
-        SPEECH.use("Princess");
         ENGINE.GAME.ANIMATION.next(GAME.slideRun);
     }
 };
