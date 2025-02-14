@@ -184,9 +184,9 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.0.2",
+    VERSION: "0.0.3",
     NAME: "Haunting The Hauntessa",
-    YEAR: "2024, 2025",
+    YEAR: "2025",
     SG: "HTH",
     CSS: "color: #239AFF;",
     INIT() {

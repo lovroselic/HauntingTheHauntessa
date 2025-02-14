@@ -7,6 +7,7 @@ Created on Mon Sep 20 14:51:00 2021
 """
 from os.path import join
 from glob import glob
+##import os
 
 N_files = 12
 
@@ -22,11 +23,12 @@ N_files = 12
 # Directory = 'C:/Users/lovro/OneDrive/Documents/JS/CastleHaunt2/Assets/Graphics/Textures/Wall'
 # Directory = 'C:/Users/lovro/Downloads/#textures2'
 # Directory = 'C:/Users/lovro/Downloads/Shield'
-Directory = 'C:/Users/Uporabnik/Downloads/Converted_AI_pic'
+# Directory = 'C:/Users/Uporabnik/Downloads/Converted_AI_pic'
+Directory = 'C:/Users/Uporabnik/Documents/JS/HauntingTheHauntessa/Assets/Graphics/Textures/Wall'
 # Directory = 'C:/Users/Uporabnik/Downloads/ObjDecals'
 # Directory = 'C:/Users/Uporabnik/Downloads/Lair'
-Prefix = 'Items/'
-# Prefix = 'Wall/'
+# Prefix = 'Items/'
+Prefix = 'Wall/'
 # Prefix = "Lights/"
 # Prefix = "Lairs/"
 # Prefix = "PicDecals/"
