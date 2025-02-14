@@ -23,9 +23,9 @@ for (let [index, key] of KEY_TYPES.entries()) {
     KEY_TYPE[key] = new KeyTypeDefinition(key, `${key}Key`, key, KEY_TEXTURES[index], MATERIAL[KEY_MATERIAL[index]]);
 }
 
-const SCROLL_TYPE = ["Light", "Invisibility", "DrainMana", "Cripple", "BoostWeapon", "BoostArmor", "DestroyArmor", "DestroyWeapon",
-    "Petrify", "MagicBoost", "Luck", "HalfLife", "Explode", "Radar",
-    "Death", "MagicSupremacy", "DestroyOrbs"];
+const SCROLL_TYPE = [
+    "Invisibility", "Cripple", "HalfLife", "Explode",
+];
 
 const SHRINE_TYPE = {
 };

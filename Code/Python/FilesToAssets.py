@@ -15,20 +15,22 @@ N_files = 12
 # Directory = 'C:/Users/lovro/OneDrive/Pictures/Games Screens/Done_decals'
 # Directory = 'C:/Users/lovro/OneDrive/Pictures/Games Screens/Gates'
 
-# Directory = 'C:/Users/Uporabnik/Downloads/Converted_AI_pic'
+Directory = 'C:/Users/Uporabnik/Downloads/Converted_AI_pic'
 # Directory = 'C:/Users/Uporabnik/Documents/JS/HauntingTheHauntessa/Assets/Graphics/Textures/Wall'
 # Directory = 'C:/Users/Uporabnik/Documents/JS/HauntingTheHauntessa/Assets/Graphics/Sprites/Lights'
 # Directory = 'C:/Users/Uporabnik/Documents/JS/HauntingTheHauntessa/Assets/Graphics/Sprites/ObjDecals'
-Directory = 'C:/Users/Uporabnik/Documents/JS/HauntingTheHauntessa/Assets/Graphics/Sprites/PicDecals'
+# Directory = 'C:/Users/Uporabnik/Documents/JS/HauntingTheHauntessa/Assets/Graphics/Sprites/PicDecals'
+# Directory = 'C:/Users/Uporabnik/Documents/JS/HauntingTheHauntessa/Assets/Graphics/Sprites/Scrolls'
 # Directory = 'C:/Users/Uporabnik/Downloads/ObjDecals'
 # Directory = 'C:/Users/Uporabnik/Downloads/Lair'
 
 # Prefix = ''
-# Prefix = 'Items/'
+Prefix = 'Items/'
 # Prefix = 'Wall/'
 # Prefix = "Lights/"
 # Prefix = "Lairs/"
-Prefix = "PicDecals/"
+# Prefix = "PicDecals/"
+# Prefix = "Scrolls/"
 # Prefix = "ObjDecals/"
 # Prefix = "ObjectTextures/"
 # Prefix = 'Lairs/'

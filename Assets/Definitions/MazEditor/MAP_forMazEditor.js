@@ -618,14 +618,7 @@ const LIGHT_DECALS = [
 ].sort();
 
 const TRIGGER_DECALS = ["SmoothWallButton", "RockTriggerButton", "MarbleTriggerButton", "PurpleTriggerButton"];
-const LAIR_DECALS = [];
-
-/** hardcoded maxlair! */
-const MAX_LAIR_COUNT = 82;
-for (let i = 1; i <= MAX_LAIR_COUNT; i++) {
-    LAIR_DECALS.push(`Lair${i.toString().padStart(2, "0")}`);
-}
-//console.info("LAIR_DECALS", LAIR_DECALS);
+const LAIR_DECALS = [].sort();
 
 const CONTAINER_LIST = [];
 for (const container in CONTAINER_ITEM_TYPE) {

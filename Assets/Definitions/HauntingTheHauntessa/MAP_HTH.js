@@ -16,5 +16,16 @@ const MAP_TEXT = {
 
 /** Map definitions */
 const MAP = {
-    1: {}
+    1 : {
+        name: "Demo",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        spawnDelay: -1,
+        data: '{"width":"15","height":"15","map":"BB12AA110BB42AA10BB15ABB24ABB10$"}',
+        wall: "RoughCave16",
+        floor: "Cracked05",
+        ceil: "OrnateFloor100",
+        start: '[202,1]',
+        }
 };

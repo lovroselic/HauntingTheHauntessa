@@ -20,10 +20,10 @@ const MAP = {
   Demo: {
     name: "Demo",
     data: '{"width":"8","height":"8","map":"BB4AA9BB2AA3BB2AA2BB2AA2BB2ABB4AA2BB2ABABB3AA4BABB5ABB8A$"}',
-    wall: "DarkBricks",
-    floor: "BrickTiles",
-    ceil: "IntricateCeiling4",
-    lights: '[[1,7,"WallLamp","standard"],[6,7,"WallLamp","standard"],[57,1,"WallLamp","standard"],[62,1,"WallLamp","standard"]]',
+    wall: "BigGreyBricks1",
+    floor: "BloodMarbleFloorWall_SDXL_001",
+    ceil: "IrregularTiledFloorCeil13",
+    lights: '[[1,7,"Candelabra01","standard"],[6,7,"Candelabra01","standard"],[57,1,"Candelabra01","standard"],[62,1,"Candelabra01","standard"]]',
     start: '[11,7]',
   },
 };
@@ -862,9 +862,9 @@ const GAME = {
     const floorTexture = TEXTURE[$("#floortexture")[0].value];
     const ceilTexture = TEXTURE[$("#ceiltexture")[0].value];
     const textureTexture = TEXTURE[$("#texture_decal")[0].value];
-    ENGINE.fill(LAYER.wallcanvas, wallTexture);
-    ENGINE.fill(LAYER.floorcanvas, floorTexture);
-    ENGINE.fill(LAYER.ceilcanvas, ceilTexture);
+    ENGINE.resizeAndFill(LAYER.wallcanvas, wallTexture, 320);
+    ENGINE.resizeAndFill(LAYER.floorcanvas, floorTexture, 320);
+    ENGINE.resizeAndFill(LAYER.ceilcanvas, ceilTexture, 320);
     ENGINE.resizeAndFill(LAYER.texturecanvas, textureTexture, INI.CANVAS_RESOLUTION);
     const ids = ["wall_resolution", "floor_resolution", "ceil_resolution"];
     for (const [i, pTexture] of [wallTexture, floorTexture, ceilTexture].entries()) {
@@ -1008,11 +1008,13 @@ const GAME = {
     for (const scrollType of SCROLL_TYPE) {
       $("#scroll_type").append(`<option value="${scrollType}">${scrollType}`);
     }
-    ENGINE.drawToId("scrollcanvas", 0, 0, SPRITE[`SCR_${$("#scroll_type")[0].value}`]);
     $("#scroll_type").change(function () {
-      ENGINE.drawToId("scrollcanvas", 0, 0, SPRITE[`SCR_${$("#scroll_type")[0].value}`]);[]
+      ENGINE.drawToId("scrollcanvas", 0, 0, SPRITE[`SCR_${$("#scroll_type")[0].value}`]);
     });
+    $("#scroll_type").trigger("change");
 
+    /** poptions */
+    /*
     for (const potionType of POTION_TYPES) {
       $("#potion_type").append(`<option value="${potionType}" style="background-color: ${potionType.toLowerCase()}">${potionType}</option>`);
     }
@@ -1021,7 +1023,7 @@ const GAME = {
       $("#potion_selection").css("background-color", selectedOption.toLowerCase());
     });
     $("#potion_type").trigger("change");
-
+    */
 
     for (const goldType in GOLD_ITEM_TYPE) {
       $("#gold_type").append(`<option value="${goldType}">${goldType}</option>`);
@@ -1032,6 +1034,7 @@ const GAME = {
     });
     $("#gold_type").trigger("change");
 
+    //skills
     for (const skillType in SKILL_ITEM_TYPE) {
       $("#skill_type").append(`<option value="${skillType}">${skillType}</option>`);
     }
@@ -1041,6 +1044,7 @@ const GAME = {
     });
     $("#skill_type").trigger("change");
 
+    //containers
     for (const containerType in CONTAINER_ITEM_TYPE) {
       $("#container_type").append(`<option value="${containerType}">${containerType}</option>`);
     }
@@ -1050,7 +1054,7 @@ const GAME = {
     });
     $("#container_type").trigger("change");
 
-
+    //container content
     for (const contentType of CONTAINER_CONTENT_LIST) {
       $("#content_type").append(`<option value="${contentType}">${contentType}</option>`);
     }
@@ -1060,36 +1064,43 @@ const GAME = {
     });
     $("#content_type").trigger("change");
 
-    for (const shrineType in SHRINE_TYPE) {
-      $("#shrine_type").append(`<option value="${shrineType}">${shrineType}</option>`);
+    //shrines
+    if (SHRINE_TYPE.length > 0) {
+      for (const shrineType in SHRINE_TYPE) {
+        $("#shrine_type").append(`<option value="${shrineType}">${shrineType}</option>`);
+      }
+      $("#shrine_type").change(function () {
+        const entity = $("#shrine_type")[0].value;
+        ENGINE.drawToId("shrinecanvas", 0, 0, ENGINE.conditionalResize(SPRITE[entity], INI.CANVAS_RESOLUTION));
+      });
+      $("#shrine_type").trigger("change");
     }
-    $("#shrine_type").change(function () {
-      const entity = $("#shrine_type")[0].value;
-      ENGINE.drawToId("shrinecanvas", 0, 0, ENGINE.conditionalResize(SPRITE[entity], INI.CANVAS_RESOLUTION));
-    });
-    $("#shrine_type").trigger("change");
 
-
-    for (const item_shrine_type in INTERACTION_SHRINE) {
-      $("#item_shrine_type").append(`<option value="${item_shrine_type}">${item_shrine_type}</option>`);
+    if (INTERACTION_SHRINE.length > 0) {
+      for (const item_shrine_type in INTERACTION_SHRINE) {
+        $("#item_shrine_type").append(`<option value="${item_shrine_type}">${item_shrine_type}</option>`);
+      }
+      $("#item_shrine_type").change(function () {
+        const entity = $("#item_shrine_type")[0].value;
+        ENGINE.drawToId("trainercanvas", 0, 0, ENGINE.conditionalResize(SPRITE[entity], INI.CANVAS_RESOLUTION));
+      });
+      $("#item_shrine_type").trigger("change");
     }
-    $("#item_shrine_type").change(function () {
-      const entity = $("#item_shrine_type")[0].value;
-      ENGINE.drawToId("trainercanvas", 0, 0, ENGINE.conditionalResize(SPRITE[entity], INI.CANVAS_RESOLUTION));
-    });
-    $("#item_shrine_type").trigger("change");
 
 
-    for (const oracleType in ORACLE_TYPE) {
-      $("#oracle_type").append(`<option value="${oracleType}">${oracleType}</option>`);
+    if (ORACLE_TYPE.length > 0) {
+      for (const oracleType in ORACLE_TYPE) {
+        $("#oracle_type").append(`<option value="${oracleType}">${oracleType}</option>`);
+      }
+      $("#oracle_type").change(function () {
+        const entity = $("#oracle_type")[0].value;
+        ENGINE.drawToId("oraclecanvas", 0, 0, ENGINE.conditionalResize(SPRITE[entity], INI.CANVAS_RESOLUTION));
+      });
+      $("#oracle_type").trigger("change");
     }
-    $("#oracle_type").change(function () {
-      const entity = $("#oracle_type")[0].value;
-      ENGINE.drawToId("oraclecanvas", 0, 0, ENGINE.conditionalResize(SPRITE[entity], INI.CANVAS_RESOLUTION));
-    });
-    $("#oracle_type").trigger("change");
 
 
+    //triggers
     for (const triggerDecal of TRIGGER_DECALS) {
       $("#trigger_decal").append(`<option value="${triggerDecal}">${triggerDecal}</option>`);
     }
@@ -1102,15 +1113,19 @@ const GAME = {
       $("#trigger_actions").append(`<option value="${action}">${action}</option>`);
     }
 
-    for (const entity in INTERACTION_ENTITY) {
-      $("#entity_type").append(`<option value="${entity}">${entity}</option>`);
-    }
-    $("#entity_type").change(function () {
-      const entity = $("#entity_type")[0].value;
-      ENGINE.drawToId("entitycanvas", 0, 0, ENGINE.conditionalResize(SPRITE[entity], INI.CANVAS_RESOLUTION));
-    });
-    $("#entity_type").trigger("change");
+    if (INTERACTION_ENTITY.length > 0) {
+      for (const entity in INTERACTION_ENTITY) {
+        $("#entity_type").append(`<option value="${entity}">${entity}</option>`);
+      }
+      $("#entity_type").change(function () {
+        const entity = $("#entity_type")[0].value;
+        ENGINE.drawToId("entitycanvas", 0, 0, ENGINE.conditionalResize(SPRITE[entity], INI.CANVAS_RESOLUTION));
+      });
+      $("#entity_type").trigger("change");
 
+    }
+
+    //interaction objects
     for (const obj in INTERACTION_OBJECT) {
       $("#interaction_object_type").append(`<option value="${obj}">${obj}</option>`);
     }
@@ -1120,6 +1135,7 @@ const GAME = {
     });
     $("#interaction_object_type").trigger("change");
 
+    //movables
     for (const obj in MOVABLE_INTERACTION_OBJECT) {
       $("#movable_type").append(`<option value="${obj}">${obj}</option>`);
     }
@@ -1133,6 +1149,7 @@ const GAME = {
       $("#interactor_type").append(`<option value="${obj}">${obj}</option>`);
     }
 
+    //traps
     for (const action of TRAP_ACTION_LIST) {
       $("#trap_type").append(`<option value="${action}">${action}</option>`);
     }
@@ -1144,18 +1161,23 @@ const GAME = {
     });
     $("#trap_type").trigger("change");
 
-    for (const lair of LAIR_DECALS) {
-      $("#lair_type").append(`<option value="${lair}">${lair}</option>`);
+    //lairs
+    if (LAIR_DECALS.length > 0) {
+      for (const lair of LAIR_DECALS) {
+        $("#lair_type").append(`<option value="${lair}">${lair}</option>`);
+      }
+
+      $("#lair_type").change(function () {
+        ENGINE.drawToId("laircanvas", 0, 0, ENGINE.conditionalResize(SPRITE[$("#lair_type")[0].value], INI.CANVAS_RESOLUTION));
+      });
+      $("#lair_type").trigger("change");
     }
 
-    $("#lair_type").change(function () {
-      ENGINE.drawToId("laircanvas", 0, 0, ENGINE.conditionalResize(SPRITE[$("#lair_type")[0].value], INI.CANVAS_RESOLUTION));
-    });
-    $("#lair_type").trigger("change");
+    /** */
 
-    $("#randwall").click(GAME.randomTexture.bind(null, TextureList, "#walltexture", "#wallcanvas"));
-    $("#randfloor").click(GAME.randomTexture.bind(null, TextureList, "#floortexture", "#floorcanvas"));
-    $("#randceil").click(GAME.randomTexture.bind(null, TextureList, "#ceiltexture", "#ceilcanvas"));
+    $("#randwall").click(GAME.randomTexture.bind(null, TEXTURE_LIST, "#walltexture", "wallcanvas"));
+    $("#randfloor").click(GAME.randomTexture.bind(null, TEXTURE_LIST, "#floortexture", "floorcanvas"));
+    $("#randceil").click(GAME.randomTexture.bind(null, TEXTURE_LIST, "#ceiltexture", "ceilcanvas"));
 
     $("#clear_list").click(GAME.clearMonsterList);
     $("#add_monster_list").click(GAME.addToMonsterList);
@@ -1223,7 +1245,7 @@ const GAME = {
   randomTexture(TextureList, id, canvas) {
     const texture = TextureList.chooseRandom();
     $(id).val(texture).change();
-    ENGINE.drawToId(canvas, 0, 0, SPRITE[$(id)[0].value]);
+    ENGINE.drawToId(canvas, 0, 0, ENGINE.conditionalResize(TEXTURE[$(id)[0].value], 320));
   },
   random_lair() {
     const lair = LAIR_DECALS.chooseRandom();

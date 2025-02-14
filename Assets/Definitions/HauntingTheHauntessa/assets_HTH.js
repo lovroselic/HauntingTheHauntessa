@@ -599,6 +599,8 @@ LoadTextures = [
 
     //title
     { srcName: "Title/HTH_title_768.jpg", name: "Title" },
+    //other TheInvisiblePrincess
+    { srcName: "ObjectTextures/TheInvisiblePrincess.png", name: "TheInvisiblePrincess" },
 ];
 
 LoadAudio = [
@@ -718,7 +720,20 @@ LoadSprites = [
     //shrines
 
     //scrolls
+    { srcName: "Scrolls/SCR_Cripple2.png", name: "SCR_Cripple" },
+    { srcName: "Scrolls/SCR_Explode2.png", name: "SCR_Explode" },
+    { srcName: "Scrolls/SCR_HalfLife2.png", name: "SCR_HalfLife" },
+    { srcName: "Scrolls/SCR_Invisibility2.png", name: "SCR_Invisibility" },
 
+    //gold, valuables
+    { srcName: "Items/BlueGem.png", name: "BlueGem" },
+    { srcName: "Items/Coins.png", name: "Coins" },
+    { srcName: "Items/GoldBar.png", name: "GoldBar" },
+    { srcName: "Items/GoldCube.png", name: "GoldCube" },
+    { srcName: "Items/GoldSphere.png", name: "GoldSphere" },
+    { srcName: "Items/GreenGem.png", name: "GreenGem" },
+    { srcName: "Items/RedGem.png", name: "RedGem" },
+    { srcName: "Items/SilverBar.png", name: "SilverBar" },
 
     //status
     { srcName: "Status/Invisible2.png", name: "Invisible" },
