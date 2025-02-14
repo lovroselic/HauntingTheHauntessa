@@ -17,17 +17,18 @@ N_files = 12
 
 # Directory = 'C:/Users/Uporabnik/Downloads/Converted_AI_pic'
 # Directory = 'C:/Users/Uporabnik/Documents/JS/HauntingTheHauntessa/Assets/Graphics/Textures/Wall'
-Directory = 'C:/Users/Uporabnik/Documents/JS/HauntingTheHauntessa/Assets/Graphics/Sprites/Lights'
+# Directory = 'C:/Users/Uporabnik/Documents/JS/HauntingTheHauntessa/Assets/Graphics/Sprites/Lights'
+Directory = 'C:/Users/Uporabnik/Documents/JS/HauntingTheHauntessa/Assets/Graphics/Sprites/ObjDecals'
 # Directory = 'C:/Users/Uporabnik/Downloads/ObjDecals'
 # Directory = 'C:/Users/Uporabnik/Downloads/Lair'
 
 # Prefix = ''
 # Prefix = 'Items/'
 # Prefix = 'Wall/'
-Prefix = "Lights/"
+# Prefix = "Lights/"
 # Prefix = "Lairs/"
 # Prefix = "PicDecals/"
-# Prefix = "ObjDecals/"
+Prefix = "ObjDecals/"
 # Prefix = "ObjectTextures/"
 # Prefix = 'Lairs/'
 # Prefix = ''

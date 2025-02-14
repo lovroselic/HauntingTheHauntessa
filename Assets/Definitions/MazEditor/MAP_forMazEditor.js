@@ -58,9 +58,27 @@ const DECAL_PAINTINGS = [
 /** Crests */
 
 const DECAL_CRESTS = [
+    "BearRug02", "BearRug03", "BearRug04", "BloodPuddleDecal03", "BloodPuddleDecal08", "BloodPuddleDecal10", "BookShelf02", "BookShelf03", "BookShelf04", "BookShelf05", "BookShelf06", "BookShelf07",
+    "BookShelf08", "BookShelf09", "BookShelf10", "BookShelf11", "BookShelf12", "BookShelf13", "BookShelf14", "BookShelf15", "CrawlingSkelly1", "CrawlingSkelly2", "DancingSkelies1", "DancingSkelies2",
+    "DancingSkelies3", "DemonSkull1", "DemonSkull2", "DemonSkull3", "DevilStatue01", "DevilStatue02", "DevilStatue03", "DevilStatue04", "DevilStatue05", "DevilStatue06", "DevilStatue07", "DevilStatue08",
+    "DevilStatue09", "DevilStatue10", "Drain2_96", "Drain64", "DungeonDoor_Blocked", "DungeonDoor_Blocked2", "DungeonDoor_Blocked3", "DungeonDoor_Blocked4", "FlatPond2", "FlatPond3", "FlatPond4", "FlatPond5",
+    "FlatPond6", "FlatPond7", "FloorGrille101", "FloorGrille102", "FloorGrille103", "FloorGrille104", "FloorGrille105", "FloorGrille106", "FloorGrille107", "FloorGrille108", "FloorGrille109", "FloorGrille110",
+    "FloorGrille111", "FloorGrille112", "FloorGrille113", "Fungus1", "Fungus2", "Grate1_128", "Ivy1", "Ivy11", "Ivy11a", "Ivy12", "Ivy12a", "Ivy14",
+    "Ivy15", "Ivy16", "Ivy17", "Ivy2", "Ivy3", "Ivy4", "KnightStatue", "KnightStatue101", "KnightStatue102", "KnightStatue103", "KnightStatue104", "KnightStatue105",
+    "KnightStatue106", "KnightStatue107", "KnightStatue108", "KnightStatue109", "KnightStatue110", "KnightStatue2", "LaughingSkeleton1", "LaughingSkeleton2", "LaughingSkeleton3", "LaughingSkeleton4", "LaughingSkeleton5", "LaughingSkeleton6",
+    "LeopardRug02", "LeopardRug03", "LeopardRug04", "LeopardRug05", "LeopardRug06", "Moss01", "Moss02", "Moss03", "Moss04", "Moss05", "Moss06", "Moss07",
+    "Moss08", "Moss09", "Moss10", "Moss11", "Moss12", "Moss13", "Moss14", "Moss15", "PersianRug02", "PersianRug03", "PersianRug04", "PersianRug05",
+    "PersianRug06", "PrayingSkeleton10", "PuddleDecal01", "PuddleDecal02", "PuddleDecal04", "PuddleDecal05", "PuddleDecal06", "PuddleDecal07", "PuddleDecal09", "PuddleDecal11", "PuddleDecal12", "PuddleDecal13",
+    "PuddleDecal14", "RoundGrille96", "RustyFloorGrille_01", "RustyFloorGrille_02", "RustyFloorGrille_03", "RustyFloorGrille_04", "RustyFloorGrille_05", "RustyFloorGrille_06", "RustyFloorGrille_07", "RustyFloorGrille_08", "RustyFloorGrille_09", "RustyFloorGrille_10",
+    "SatanRam1", "SatanRam10", "SatanRam2", "SatanRam3", "SatanRam4", "SatanRam5", "SatanRam6", "SatanRam7", "SatanRam8", "SatanRam9", "ShieldDecal01", "ShieldDecal02",
+    "ShieldDecal03", "ShieldDecal04", "ShieldDecal05", "ShieldDecal06", "ShieldDecal07", "ShieldDecal08", "SittingSkelly1", "SittingSkelly11", "SittingSkelly12", "SittingSkelly13", "SittingSkelly14", "SittingSkelly2",
+    "SittingSkelly21", "SittingSkelly23", "Skeleton121", "Skeleton20", "Skeleton21", "Skeleton23", "Skull11", "Skull20", "Skull21", "Skull301", "Skull302", "Skull303",
+    "Skull304", "Skull305", "Skull306", "Skull307", "Skull308", "Skull309", "Skull310", "Skull311", "Skull312", "Skull313", "Skull314", "Skull315",
+    "Skull316", "Skull317", "Skull318", "Skull319", "Skull320", "Skull321", "Skull322", "Skull401", "Skull402", "Skull403", "Skull404", "Skull405",
+    "Skull406", "Skull407", "Skull408", "TempleDecal", "TigerRug02", "TigerRug03", "TigerRug04", "WallSkelly101", "WallSkelly102", "WallSkelly103", "WallSkelly104"
 ].sort();
-const BOTTOM_CRESTS = [];
-const TOP_CRESTS = [];
+
+//lights
 const LIGHT_DECALS = [
     "Candelabra01", "Candelabra02", "Candelabra03", "Candelabra04", "Candelabra05", "Candelabra06", "Candelabra07", "Candelabra08", "Candelabra09", "Candelabra10", "Candelabra11", "Candelabra12",
     "Candelabra14", "Candelabra15", "Candelabra16", "Candelabra17", "Candelabra18", "Candle50", "Candle51", "Candle52", "Candle53", "Candle54", "Candle55", "Candle56",
