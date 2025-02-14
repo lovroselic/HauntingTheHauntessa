@@ -3,7 +3,7 @@
 Created on Mon Sep 20 14:51:00 2021
 
 @author: lovro
-@version 0.3.1
+@version 0.3.2
 """
 from os.path import join
 from glob import glob
@@ -15,21 +15,16 @@ N_files = 12
 # Directory = 'C:/Users/lovro/OneDrive/Pictures/Games Screens/Done_decals'
 # Directory = 'C:/Users/lovro/OneDrive/Pictures/Games Screens/Gates'
 
-# Prefix = ''
-
-# Directory = 'C:/Users/lovro/OneDrive/Documents/JS/CastleHaunt2/Assets/Graphics/Sprites/Items'
-# Directory = 'C:/Users/lovro/OneDrive/Documents/JS/CastleHaunt2/Assets/Graphics/Sprites/Lairs'
-# Directory = 'C:/Users/lovro/OneDrive/Documents/JS/CastleHaunt2/Assets/Graphics/RotatedSheetSequences'
-# Directory = 'C:/Users/lovro/OneDrive/Documents/JS/CastleHaunt2/Assets/Graphics/Textures/Wall'
-# Directory = 'C:/Users/lovro/Downloads/#textures2'
-# Directory = 'C:/Users/lovro/Downloads/Shield'
 # Directory = 'C:/Users/Uporabnik/Downloads/Converted_AI_pic'
-Directory = 'C:/Users/Uporabnik/Documents/JS/HauntingTheHauntessa/Assets/Graphics/Textures/Wall'
+# Directory = 'C:/Users/Uporabnik/Documents/JS/HauntingTheHauntessa/Assets/Graphics/Textures/Wall'
+Directory = 'C:/Users/Uporabnik/Documents/JS/HauntingTheHauntessa/Assets/Graphics/Sprites/Lights'
 # Directory = 'C:/Users/Uporabnik/Downloads/ObjDecals'
 # Directory = 'C:/Users/Uporabnik/Downloads/Lair'
+
+# Prefix = ''
 # Prefix = 'Items/'
-Prefix = 'Wall/'
-# Prefix = "Lights/"
+# Prefix = 'Wall/'
+Prefix = "Lights/"
 # Prefix = "Lairs/"
 # Prefix = "PicDecals/"
 # Prefix = "ObjDecals/"
