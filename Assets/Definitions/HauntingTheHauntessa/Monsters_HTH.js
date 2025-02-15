@@ -559,7 +559,7 @@ const INTERACTION_OBJECT = {
         element: "CAKE",
         scale: 1 / 2 ** 2,
         glueToFloor: true,
-        texture: "Cake_BaseColor",
+        texture: "cake_basecolor",
         material: MATERIAL.standard,
         inventorySprite: "Cake",
         text: "Cake? Very healthy."
@@ -571,7 +571,7 @@ const INTERACTION_OBJECT = {
         element: "STEAK",
         scale: 1.8 / 2 ** 3,
         glueToFloor: true,
-        texture: "Steak_Texture",
+        texture: "SteakTexture",
         material: MATERIAL.standard,
         inventorySprite: "Steak",
         text: "Steak? A yummy vegetarian meat."

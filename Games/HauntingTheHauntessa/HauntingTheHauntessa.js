@@ -20,9 +20,9 @@ retests:
 const DEBUG = {
     SETTING: true,
     AUTO_TEST: false,
-    FPS: false,
+    FPS: true,
     VERBOSE: true,
-    _2D_display: false,
+    _2D_display: true,
     INVINCIBLE: false,
     FREE_MAGIC: false,
     keys: false,
@@ -161,6 +161,7 @@ const INI = {
     INVENTORY_HARD_LIMIT: 20,
     ORB_MAX_CAPACITY: 5,
     MAX_HERO_HEALTH: 32,
+    MAX_HERO_MANA: 17,
     AVATAR_TRANSPARENCY: 10,
     BOUNCE_COUNT: 5,
     SPAWN_DELAY: 9999,
@@ -175,7 +176,11 @@ const INI = {
         RoastPig: 500,
         HealthBox: 999,
     },
+    MANA: {
+
+    },
     HEALTH_INC: 8,
+    MANA_INC: 8,
     SCROLL_RANGE: 23,
     CRIPPLE_SPEED: 0.1,
     INVISIBILITY_TIME: 60,
@@ -184,7 +189,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.1.0",
+    VERSION: "0.1.1",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -312,11 +317,6 @@ class ActionItem {
     }
     action() {
         switch (this.type) {
-            case "inventory":
-                HERO.bagStart();
-                TITLE.sidebackground_static();
-                TITLE.orbs();
-                break;
             case "health":
                 HERO.incHealth(this.spriteClass);
                 break;
@@ -473,25 +473,26 @@ const HERO = {
     construct() {
         this.player = null;
         this.height = 0.6;
-        this.hasCapacity = false;
-        this.capacity = 0;
-        this.maxCapacity = 0;
+        //this.hasCapacity = false;
+        //this.capacity = 0;
+        //this.maxCapacity = 0;
         this.inventory.clear();
         this.inventoryLimit = INI.INVENTORY_HARD_LIMIT;
         this.canComplain = true;
         this.maxHealth = INI.MAX_HERO_HEALTH;
-        this.orbs = 0;
-        this.orbsLost = 0;
+        this.maxMana = INI.MAX_HERO_MANA;
+        //this.orbs = 0;
+        //this.orbsLost = 0;
         this.magic = 5;
         this.attack = 5;
-        this.defense = 0;   //defense is 0 for all
-        this.luck = 0;      //luck is 0 for all
-        this.mana = 0;      //unused, compatibility
+        this.defense = 0;
+        this.luck = 0;
+        this.mana = 0;
         this.ressurection = false;
         this.revive();
         this.visible();
 
-        const propsToSave = ["health", "maxHealth", "attack", "magic", "orbs", "maxCapacity", "capacity", "hasCapacity"];
+        const propsToSave = ["health", "maxHealth", "attack", "magic", "defense", "mana", "maxMana"];
         this.attributesForSaveGame = [];
         for (const P of propsToSave) {
             this.attributesForSaveGame.push(`HERO.${P}`);
@@ -501,10 +502,11 @@ const HERO = {
         this.dead = false;
         this.health = this.maxHealth;
         this.canShoot = true;
-        this.orbs = this.capacity;
-        this.orbsLost = 0;
+        //this.orbs = this.capacity;
+        //this.orbsLost = 0;
+        this.mana = this.maxMana;
     },
-    bagStart() {
+    /*bagStart() {
         if (this.hasCapacity) {
             if (this.capacity >= this.maxCapacity) {
 
@@ -534,7 +536,7 @@ const HERO = {
             this.maxCapacity = INI.ORB_MAX_CAPACITY;
             this.orbs = 0;
         }
-    },
+    },*/
     speak(txt) {
         SPEECH.use("Princess");
         SPEECH.speakWithArticulation(txt);
@@ -553,14 +555,14 @@ const HERO = {
         HERO.player.matrixUpdate();
         if (HERO.orbs <= 0) return AUDIO.MagicFail.play();
 
-        HERO.orbs--;
-        TITLE.orbs();
+        //HERO.orbs--;
+        //TITLE.orbs();
         HERO.canShoot = false;
         const position = HERO.player.pos.translate(HERO.player.dir, HERO.player.r);
         const missile = new BouncingMissile(position, HERO.player.dir, COMMON_ITEM_TYPE.Orb, HERO.magic, ParticleExplosion, true, INTERACTION_OBJECT.Orb);
         MISSILE3D.add(missile);
-        this.orbsLost++;
-        this.orbsLost = Math.min(this.orbsLost, this.capacity);
+        //this.orbsLost++;
+        //this.orbsLost = Math.min(this.orbsLost, this.capacity);
         setTimeout(() => (HERO.canShoot = true), INI.HERO_SHOOT_TIMEOUT);
         return;
     },
@@ -590,7 +592,7 @@ const HERO = {
         if (this.orbs === this.capacity) return this.refusePickingOrb(missile);
         this.speak(text.chooseRandom());
         this.orbs++;
-        TITLE.orbs();
+        //TITLE.orbs();
         AUDIO.CatchFireball.play();
         if (this.orbsLost > 0) {
             this.orbsLost--;
@@ -831,7 +833,7 @@ const GAME = {
         ENGINE.GAME.pauseBlock();
         ENGINE.GAME.paused = true;
 
-        let GameRD = new RenderData("Pentagram", 60, "#f6602d", "text", "#F22", 2, 2, 2);
+        let GameRD = new RenderData("Headstone", 60, "#fF2010", "text", "#FFD700", 2, 2, 2);
         ENGINE.TEXT.setRD(GameRD);
         ENGINE.watchVisibility(ENGINE.GAME.lostFocus);
         ENGINE.GAME.setGameLoop(GAME.run);
@@ -1565,7 +1567,7 @@ const TITLE = {
         Y2: 66,
         delta2: 256 + 36,
         delta3: 120,
-        delta4: 120,
+        delta4: 100,
         DYR: 66,
         deltaItem: 48,
         keyDelta: 56,
@@ -1573,7 +1575,7 @@ const TITLE = {
         scrollInRow: 3,
         scrollDelta: 72,
         SY: 540, //540
-        OY: 440,
+        OY: 415,
         HEALTH_TEXT: 720,
         goldX: 950,
         goldY: 40,
@@ -1589,7 +1591,7 @@ const TITLE = {
         $("#DOWN")[0].scrollIntoView();
         ENGINE.topCanvas = ENGINE.getCanvasName("ROOM");
         TITLE.drawButtons();
-      
+
         GAME.setTitle();
         ENGINE.GAME.start(16);
         ENGINE.GAME.ANIMATION.next(GAME.runTitle);
@@ -1624,7 +1626,7 @@ const TITLE = {
     makeGrad(CTX, x, y, w, h) {
         // Create a linear gradient from (x, y) to (w, h)
         let grad = CTX.createLinearGradient(x, y, w, h);
-    
+
         grad.addColorStop(0.00, "#C0C0C0"); // silver
         grad.addColorStop(0.05, "#C4C4C4");
         grad.addColorStop(0.10, "#C8C8C8");
@@ -1632,8 +1634,8 @@ const TITLE = {
         grad.addColorStop(0.20, "#D0D070");
         grad.addColorStop(0.25, "#D8D888");
         grad.addColorStop(0.30, "#E0E090");
-        grad.addColorStop(0.35, "#E8E8A0"); 
-        grad.addColorStop(0.40, "#F0E68C"); 
+        grad.addColorStop(0.35, "#E8E8A0");
+        grad.addColorStop(0.40, "#F0E68C");
         grad.addColorStop(0.45, "#FFD700");
         grad.addColorStop(0.50, "#FFD105");
         grad.addColorStop(0.55, "#FFA500");
@@ -1713,7 +1715,7 @@ const TITLE = {
         TITLE.lives();
         TITLE.keys();
         TITLE.scrolls();
-        TITLE.orbs();
+        //TITLE.magic();
         TITLE.skills();
         TITLE.gold();
     },
@@ -1760,25 +1762,28 @@ const TITLE = {
         ENGINE.draw("sideback", rX, y, SPRITE.wavyR);
 
         // 
-        if (HERO.hasCapacity) {
-            ENGINE.spriteDraw("sideback", cX, y + dY, SPRITE.FireBallIcon);
-        } else ENGINE.spriteDraw("sideback", cX, y + dY, SPRITE.FireRing);
+        ENGINE.spriteDraw("sideback", cX, y + dY, SPRITE.OrnateMagicFlask);
 
         //4
         y += TITLE.stack.delta3;
         ENGINE.draw("sideback", lX, y, SPRITE.wavyL);
         ENGINE.draw("sideback", rX, y, SPRITE.wavyR);
-        ENGINE.spriteDraw("sideback", cX, y + dY, SPRITE.OrnateMagicFlask);
+        ENGINE.spriteDraw("sideback", cX, y + dY, SPRITE.FireBallIcon);
+        y += SPRITE.LineTop.height + 8;
+        ENGINE.draw("sideback", x, y, SPRITE.SkillFireball);
+        rX = (3 * cX / 2 - SPRITE.ManaSkill.width / 2) | 0;
+        ENGINE.draw("sideback", rX + 1, y - 5, SPRITE.ManaSkill);
+
+        TITLE.stack.magic = y + 112;
 
         //5
         y += TITLE.stack.delta4;
-        ENGINE.draw("sideback", x, y, SPRITE.LineTop);
 
         //
         y += SPRITE.LineTop.height + 8;
-        ENGINE.draw("sideback", x, y, SPRITE.SkillFireball);
-        rX = ENGINE.sideWIDTH - lX - SPRITE.SkillKick.width;
-        ENGINE.draw("sideback", rX, y, SPRITE.SkillKick);
+        ENGINE.draw("sideback", x, y, SPRITE.SkillKick);
+        rX = (3 * cX / 2 - SPRITE.SkillShield.width / 2) | 0;
+        ENGINE.draw("sideback", rX - 7, y, SPRITE.SkillShield);
 
         TITLE.stack.skills = y + 120;
 
@@ -1790,10 +1795,10 @@ const TITLE = {
     skills() {
         ENGINE.clearLayer("skills");
         const CTX = LAYER.skills;
-        const dx = ((ENGINE.sideWIDTH - SPRITE.LineTop.width) / 2) | 0;
         const x = (ENGINE.sideWIDTH / 4 | 0);
+        const dx = 12;
 
-        const fs = 22;
+        const fs = 20;
         CTX.font = `200 ${fs}px CPU`
         CTX.fillStyle = "#DDD";
         CTX.textAlign = "center";
@@ -1802,8 +1807,10 @@ const TITLE = {
         CTX.shadowOffsetY = 0;
         CTX.shadowBlur = 0;
 
-        CTX.fillText(`${HERO.magic.toString().padStart(2, "0")}`, x + dx, TITLE.stack.skills);
-        CTX.fillText(`${HERO.attack.toString().padStart(2, "0")}`, 3 * x - dx, TITLE.stack.skills);
+        CTX.fillText(`${HERO.magic.toString().padStart(2, "0")}`, x + dx, TITLE.stack.magic);
+        CTX.fillText(`${HERO.attack.toString().padStart(2, "0")}`, x + dx, TITLE.stack.skills);
+        CTX.fillText(`${HERO.defense.toString().padStart(2, "0")}`, 3 * x, TITLE.stack.skills);
+        CTX.fillText(`${HERO.mana} / ${HERO.maxMana}`, 3 * x, TITLE.stack.magic);
     },
     time() {
         const fs = 14;
@@ -1893,7 +1900,7 @@ const TITLE = {
         let startIndex = Math.min((TITLE.stack.scrollIndex - TITLE.stack.scrollInRow / 2) | 0, LN - TITLE.stack.scrollInRow);
         startIndex = Math.max(0, startIndex);
         let max = startIndex + Math.min(TITLE.stack.scrollInRow, LN);
-        let y = TITLE.stack.SY;
+        let y = TITLE.stack.OY;
         for (let q = startIndex; q < max; q++) {
             let scroll = INV.list[q];
             let x = scrollSpread.shift();
@@ -1921,21 +1928,14 @@ const TITLE = {
             }
         }
     },
-    orbs() {
-        if (!HERO.hasCapacity) return;
+    /*magic() {
+        //if (!HERO.hasCapacity) return;
         ENGINE.clearLayer("orbs");
-        const orbSpread = ENGINE.spreadAroundCenter(HERO.capacity, (ENGINE.sideWIDTH / 2) | 0, 48);
-        let y = TITLE.stack.OY;
-        let full = HERO.orbs;
-        let sprite;
-        for (let x of orbSpread) {
-            if (full > 0) {
-                sprite = SPRITE.FireBall32;
-                full--;
-            } else sprite = SPRITE.FireRing32;
-            ENGINE.spriteDraw("orbs", x, y, sprite);
-        }
-    },
+        //const orbSpread = ENGINE.spreadAroundCenter(HERO.capacity, (ENGINE.sideWIDTH / 2) | 0, 48);
+        let y = TITLE.stack.SY;
+        //let full = HERO.orbs;
+
+    },*/
     music() {
         AUDIO.Title.play();
     },

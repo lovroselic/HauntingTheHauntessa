@@ -1275,9 +1275,8 @@ const GAME = {
     ENGINE.drawToId("picturecanvas", 0, 0, ENGINE.conditionalResize(SPRITE[$("#picture_decal")[0].value], INI.CANVAS_RESOLUTION));
   },
   randomCrest() {
-    const CREST = [...DECAL_CRESTS, ...BOTTOM_CRESTS, ...TOP_CRESTS];
     const search_crest = $('#searchDecals').val().toLowerCase();
-    const filtered_crests = CREST.filter(crest => crest.toLowerCase().includes(search_crest));
+    const filtered_crests = DECAL_CRESTS.filter(crest => crest.toLowerCase().includes(search_crest));
     const pic = filtered_crests.chooseRandom();
     if (!pic) return;
     $("#crest_decal").val(pic).change();

@@ -768,6 +768,8 @@ LoadSprites = [
     { srcName: "UI/FireRing32.png", name: "FireRing32" },
     { srcName: "UI/SkillFireball96.png", name: "SkillFireball" },
     { srcName: "UI/SkillKick96.png", name: "SkillKick" },
+    { srcName: "UI/SkillShield100.png", name: "SkillShield" },
+    { srcName: "UI/ManaSkill100.png", name: "ManaSkill" },
     { srcName: "UI/Heart64.png", name: "Heart" },
     //{ srcName: "UI/Cake48.png", name: "Cake" },
     { srcName: "UI/Floppy64.png", name: "SavedOK" },
