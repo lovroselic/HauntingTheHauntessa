@@ -1703,6 +1703,33 @@ class FreeMap extends MasterDungeon {
         if (GA !== null) this.GA = GA;
     }
 }
+class FreeMap3D {
+    constructor(sizeX, sizeY, sizeZ, GA = null, byte = 1) {
+        this.type = "FREE-MAP-3D";
+        this.width = parseInt(sizeX, 10);
+        this.height = parseInt(sizeY, 10);
+        this.depth = parseInt(sizeZ, 10);
+        this.maxX = sizeX - 2;
+        this.maxY = sizeY - 2;
+        this.maxZ = sizeZ;
+        this.minX = 1;
+        this.minY = 1;
+        this.minZ = 0;
+
+        this.deadEnds = [];
+        this.nodeMap = null;
+        this.entrance = null;
+        this.exit = null;
+        this.startPosition = null;
+        this.rooms = [];
+        this.lockedRooms = {};
+        this.keys = {};
+        this.GA = new GridArray(sizeX, sizeY, byte, 1);
+
+        //override with imported GA
+        if (GA !== null) this.GA = GA;
+    }
+}
 const MAZE = {
     opened: false,
     openDirs: null,
@@ -1781,8 +1808,14 @@ const FREE_MAP = {
         return FREE_MAP.create(parseInt(data.width, 10), parseInt(data.height, 10), data.map, byte);
     }
 };
+const FREE_MAP3D = {
+    create(sizeX, sizeY, sizeZ, GA = null, byte = 1) {
+        return new FreeMap3D(sizeX, sizeY, sizeZ, GA, byte);
+    },
+    import() { },
+};
 const DUNGEON = {
-    VERSION: "4.02",
+    VERSION: "5.00",
     CSS: "color: #f4ee42",
     REFUSE_CONNECTION_TO_ROOM: true,
     LIMIT_ROOMS: false,

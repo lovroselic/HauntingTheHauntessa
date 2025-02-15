@@ -189,7 +189,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.1.1",
+    VERSION: "0.1.2",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -264,11 +264,10 @@ const PRG = {
 
         /** dev settings */
         if (DEBUG.VERBOSE) {
-            //WebGL.VERBOSE = true;
+            WebGL.VERBOSE = true;
             //AI.VERBOSE = true;
-            //ENGINE.verbose = true;
-            //MAP_TOOLS.INI.VERBOSE = true;
-            //SAVE_GAME.debugMode();
+            ENGINE.verbose = true;
+            MAP_TOOLS.INI.VERBOSE = true;
         }
     },
     start() {

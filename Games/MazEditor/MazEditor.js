@@ -58,7 +58,7 @@ const INI = {
   CANVAS_RESOLUTION: 256,
 };
 const PRG = {
-  VERSION: "0.15.00",
+  VERSION: "0.15.01",
   NAME: "MazEditor",
   YEAR: "2022, 2023, 2024, 2025",
   CSS: "color: #239AFF;",
@@ -89,6 +89,7 @@ const PRG = {
     $("#coord").click(GAME.render);
     $("#all_coord").click(GAME.render);
     $("#grid").click(GAME.render);
+    $("#dimensions input[name=dimensions]").click(GAME.dimensions);
 
     $("#buttons").on("click", "#new", GAME.init);
     $("#buttons").on("click", "#arena", GAME.arena);
@@ -129,17 +130,11 @@ const GAME = {
   },
   levelStart() {
     GAME.initLevel(GAME.level);
-    GAME.setFirstPerson();
+    WebGL.GAME.setFirstPerson();
     WebGL.renderScene($MAP.map);
     // render occlusion map
     $MAP.map.occlusionMap = WebGL.createOcclusionTexture($MAP.map.textureMap, $MAP.map.width, $MAP.map.height);
     //WebGL.visualizeTexture($MAP.map.occlusionMap, $MAP.map.width, $MAP.map.height, LAYER.debug);
-  },
-  setFirstPerson() {
-    WebGL.CONFIG.set("first_person", false);
-    HERO.player.clearCamera();
-    HERO.player.moveSpeed = 4.0;
-    WebGL.setCamera(HERO.player);
   },
   newDungeon(level) {
     MAP_TOOLS.unpack(level);
@@ -803,9 +798,20 @@ const GAME = {
       OK = confirm("Sure?");
     }
     if (OK) {
+      const dimension = $("#dimensions input[name=dimensions]:checked").val();
       $MAP.width = $("#horizontalGrid").val();
       $MAP.height = $("#verticalGrid").val();
-      $MAP.map = FREE_MAP.create($MAP.width, $MAP.height, null, MAP_TOOLS.INI.GA_BYTE_SIZE);
+      $MAP.depth = $("#depthGrid").val();
+      console.info("INIT", $MAP.width, $MAP.height, $MAP.depth);
+      switch (dimension) {
+        case "2D":
+          $MAP.map = FREE_MAP.create($MAP.width, $MAP.height, null, MAP_TOOLS.INI.GA_BYTE_SIZE);
+          break;
+        case "3D":
+          $MAP.map = FREE_MAP3D.create($MAP.width, $MAP.height, $MAP.depth,null, MAP_TOOLS.INI.GA_BYTE_SIZE);
+          break;
+      };
+      //$MAP.map = FREE_MAP.create($MAP.width, $MAP.height, null, MAP_TOOLS.INI.GA_BYTE_SIZE);
       $MAP.init();
       console.log("GAME.init ->map:", $MAP.map);
       GAME.render();
@@ -897,28 +903,19 @@ const GAME = {
 
     $("#gridsize").on("change", GAME.render);
 
-    /*const TextureList = [];
-    for (const prop in TEXTURE) {
-      TextureList.push(prop);
-    }
-    TextureList.sort();*/
 
+    //textures
     for (const prop of TEXTURE_LIST) {
       $("#walltexture").append(`<option value="${prop}">${prop}</option>`);
       $("#floortexture").append(`<option value="${prop}">${prop}</option>`);
       $("#ceiltexture").append(`<option value="${prop}">${prop}</option>`);
       $("#texture_decal").append(`<option value="${prop}">${prop}</option>`);
     }
+
     LAYER.wallcanvas = $("#wallcanvas")[0].getContext("2d");
     LAYER.floorcanvas = $("#floorcanvas")[0].getContext("2d");
     LAYER.ceilcanvas = $("#ceilcanvas")[0].getContext("2d");
     LAYER.texturecanvas = $("#texturecanvas")[0].getContext("2d");
-
-    /*
-    $("#floortexture").val("RockFloor");
-    $("#ceiltexture").val("Pavement");
-    $("#texture_decal").val("Forest");
-    */
 
     GAME.updateTextures();
     $("#walltexture").change(GAME.repaintTextures);
@@ -1012,18 +1009,6 @@ const GAME = {
       ENGINE.drawToId("scrollcanvas", 0, 0, SPRITE[`SCR_${$("#scroll_type")[0].value}`]);
     });
     $("#scroll_type").trigger("change");
-
-    /** poptions */
-    /*
-    for (const potionType of POTION_TYPES) {
-      $("#potion_type").append(`<option value="${potionType}" style="background-color: ${potionType.toLowerCase()}">${potionType}</option>`);
-    }
-    $("#potion_type").change(function () {
-      const selectedOption = $("#potion_type").val();
-      $("#potion_selection").css("background-color", selectedOption.toLowerCase());
-    });
-    $("#potion_type").trigger("change");
-    */
 
     for (const goldType in GOLD_ITEM_TYPE) {
       $("#gold_type").append(`<option value="${goldType}">${goldType}</option>`);
@@ -1232,6 +1217,8 @@ const GAME = {
       }
     });
 
+
+
   },
   clearMonsterList() {
     $MAP.map.monsterList = [];
@@ -1380,6 +1367,19 @@ ceil: "${$("#ceiltexture")[0].value}",\n`;
   resizeGL_window() {
     $("#WEBGL_canvas_0").css("top", `${ENGINE.gameHEIGHT + 16}px`)
   },
+  dimensions() {
+    const radio = $("#dimensions input[name=dimensions]:checked").val();
+    console.warn("dimensions", radio);
+
+    switch (radio) {
+      case "2D":
+        $("#depthGridVisibility").hide();
+        break;
+      case "3D":
+        $("#depthGridVisibility").show();
+        break;
+    }
+  }
 };
 
 $(function () {
