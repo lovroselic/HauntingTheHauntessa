@@ -2783,6 +2783,7 @@ const ENGINE = {
     },
     BLOCKGRID3D: {
         draw(maze, z, corr) {
+            //console.warn("maze", maze);
             console.time("BLOCKGRID3D");
             var CTX = ENGINE.BLOCKGRID.layer;
             ENGINE.clearLayer(ENGINE.BLOCKGRID.layerString);
@@ -2795,10 +2796,16 @@ const ENGINE = {
                     value &= 2 ** maze.GA.gridSizeBit - 1 - MAPDICT.FOG - MAPDICT.RESERVED;
                     if (maze.GA.isBlockWall(grid)) {
                         ENGINE.BLOCKGRID.wall(x, y, CTX, value);
-                    } 
-
-
-
+                    } else if (maze.GA.isMazeWall(grid)) {
+                        value &= 2 ** maze.GA.gridSizeBit - 1 - MAPDICT.WALL;
+                        if (value & MAPDICT.STAIR) value = MAPDICT.STAIR;
+                        if (value & MAPDICT.SHRINE) value = MAPDICT.SHRINE;
+                        ENGINE.BLOCKGRID.wall(x, y, CTX, value);
+                    } else {
+                        value &= 2 ** maze.GA.gridSizeBit - 1 - MAPDICT.RESERVED - MAPDICT.START_POSITION;
+                        if (value & MAPDICT.STAIR) value = MAPDICT.STAIR;
+                        ENGINE.BLOCKGRID.corr(x, y, CTX, value, corr);
+                    }
                 }
             }
 

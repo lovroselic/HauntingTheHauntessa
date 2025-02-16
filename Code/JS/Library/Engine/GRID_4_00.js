@@ -635,32 +635,6 @@ class ArrayBasedDataStructure {
 
 class GA_Dimension_Agnostic_Methods {
     constructor() { }
-}
-
-class GridArray extends ArrayBasedDataStructure {
-    constructor(sizeX, sizeY, byte = 1, fill = 0) {
-        super();
-        if (![1, 2, 4].includes(byte)) {
-            console.error("GridArray set up with wrong size. Reset to default 8 bit!");
-            byte = 1;
-        }
-        const byteToType = {
-            1: Uint8Array,
-            2: Uint16Array,
-            4: Uint32Array
-        };
-        const GM = new (byteToType[byte])(sizeX * sizeY);
-        this.width = parseInt(sizeX, 10);
-        this.height = parseInt(sizeY, 10);
-        this.maxX = this.width - 2;
-        this.maxY = this.height - 2;
-        this.minX = 1;
-        this.minY = 1;
-        this.map = GM;
-        this.nodeMap = null;
-        this.gridSizeBit = byte * 8;
-        if (fill !== 0) this.map.fill(fill);
-    }
     massSet(bin) {
         for (let i = 0; i < this.map.length; i++) {
             this.map[i] |= bin;
@@ -852,6 +826,40 @@ class GridArray extends ArrayBasedDataStructure {
     clearFog(grid) {
         this.clear(grid, MAPDICT.FOG);
     }
+    border(width = 1, set = MAPDICT.WALL) {
+        this.rect(0, 0, this.width, this.height, width, set);
+    }
+    setStackValue(stack, value) {
+        for (const grid of stack) {
+            this.setValue(grid, value);
+        }
+    }
+}
+
+class GridArray extends Classes([ArrayBasedDataStructure, GA_Dimension_Agnostic_Methods]) {
+    constructor(sizeX, sizeY, byte = 1, fill = 0) {
+        super();
+        if (![1, 2, 4].includes(byte)) {
+            console.error("GridArray set up with wrong size. Reset to default 8 bit!");
+            byte = 1;
+        }
+        const byteToType = {
+            1: Uint8Array,
+            2: Uint16Array,
+            4: Uint32Array
+        };
+        const GM = new (byteToType[byte])(sizeX * sizeY);
+        this.width = parseInt(sizeX, 10);
+        this.height = parseInt(sizeY, 10);
+        this.maxX = this.width - 2;
+        this.maxY = this.height - 2;
+        this.minX = 1;
+        this.minY = 1;
+        this.map = GM;
+        this.nodeMap = null;
+        this.gridSizeBit = byte * 8;
+        if (fill !== 0) this.map.fill(fill);
+    }
     rect(X, Y, W, H, width = 1, set = MAPDICT.WALL) {
         for (let x = X; x < X + W; x++) {
             for (let w = 0; w < width; w++) {
@@ -870,9 +878,6 @@ class GridArray extends ArrayBasedDataStructure {
             }
         }
     }
-    border(width = 1, set = MAPDICT.WALL) {
-        this.rect(0, 0, this.width, this.height, width, set);
-    }
     importGridMap(map) {
         /** map is maze or dungeon object */
         for (let y = 0; y < map.height; y++) {
@@ -885,7 +890,7 @@ class GridArray extends ArrayBasedDataStructure {
         }
     }
     importBinaryString(bin) {
-        /** array of ninary string */
+        /** array of binary string */
         console.assert(bin.length === this.height, "Binary string not matching GA height");
         console.assert(bin[0].length === this.width, "Binary string not matching GA width");
         for (let [rowIndex, rowString] of bin.entries()) {
@@ -1058,11 +1063,6 @@ class GridArray extends ArrayBasedDataStructure {
             }
         }
         return null;
-    }
-    setStackValue(stack, value) {
-        for (const grid of stack) {
-            this.setValue(grid, value);
-        }
     }
     floodFill(grid, value, condition = [0]) {
         var Q = [grid];
@@ -1324,6 +1324,7 @@ class GridArray extends ArrayBasedDataStructure {
         return pixelData;
     }
 }
+
 class NodeArray extends ArrayBasedDataStructure {
     constructor(GA, CLASS, path = [0], ignore = [], type = 'value') {
         super();
@@ -1356,6 +1357,7 @@ class NodeArray extends ArrayBasedDataStructure {
         this.map[index][property] = value;
     }
 }
+
 class IndexArray extends ArrayBasedDataStructure {
     constructor(sizeX = 1, sizeY = 1, byte = 1, banks = 1) {
         super();
@@ -1481,17 +1483,7 @@ class IndexArray extends ArrayBasedDataStructure {
  * 3D version of ArrayBasedDataStructures
  */
 class ArrayBasedDataStructure3D {
-    constructor(sizeX, sizeY, sizeZ) {
-        this.width = parseInt(sizeX, 10);
-        this.height = parseInt(sizeY, 10);
-        this.depth = parseInt(sizeZ, 10);
-        this.maxX = this.width - 2;
-        this.maxY = this.height - 2;
-        this.maxZ = this.depth - 1;
-        this.minX = 1;
-        this.minY = 1;
-        this.minZ = 0;
-    }
+    constructor() { }
     indexToGrid(index) {
         let z = Math.floor(index / (this.width * this.height));
         index = index % (this.width * this.height);
@@ -1518,9 +1510,20 @@ class ArrayBasedDataStructure3D {
     }
 }
 
-class GridArray3D extends ArrayBasedDataStructure3D {
+class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnostic_Methods]) {
     constructor(sizeX, sizeY, sizeZ, byte = 2, fill = 0) {
-        super(sizeX, sizeY, sizeZ);
+        super();
+        
+        this.width = parseInt(sizeX, 10);
+        this.height = parseInt(sizeY, 10);
+        this.depth = parseInt(sizeZ, 10);
+        this.maxX = this.width - 2;
+        this.maxY = this.height - 2;
+        this.maxZ = this.depth - 1;
+        this.minX = 1;
+        this.minY = 1;
+        this.minZ = 0;
+
         if (![1, 2, 4].includes(byte)) {
             console.error("GridArray set up with wrong size. Reset to default 16 bit!");
             byte = 2;
@@ -1535,20 +1538,6 @@ class GridArray3D extends ArrayBasedDataStructure3D {
         this.nodeMap = null;
         this.gridSizeBit = byte * 8;
         if (fill !== 0) this.map.fill(fill);
-    }
-    getValue(grid) {
-        if (this.isOutOfBounds(grid)) return false;
-        return this.map[this.gridToIndex(grid)];
-    }
-    check(grid, bin) {
-        if (this.isOutOfBounds(grid)) return false;
-        return this.map[this.gridToIndex(grid)] & bin;
-    }
-    isBlockWall(grid) {
-        return this.check(grid, MAPDICT.BLOCKWALL) === MAPDICT.BLOCKWALL;
-    }
-    notBlockWall(grid) {
-        return !this.isBlockWall(grid);
     }
 }
 

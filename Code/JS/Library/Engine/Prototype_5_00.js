@@ -169,6 +169,31 @@ changelog:
     */
     function Classes(bases) {
         class Bases {
+            constructor(...args) {
+                bases.forEach(base => {
+                    const instance = new base(...args);
+                    Object.assign(this, instance); // Copy instance properties
+                });
+            }
+        }
+
+        // Copy prototype methods from each base class
+        bases.forEach(base => {
+            Object.getOwnPropertyNames(base.prototype)
+                .filter(prop => prop !== "constructor")
+                .forEach(prop => {
+                    Object.defineProperty(Bases.prototype, prop, Object.getOwnPropertyDescriptor(base.prototype, prop));
+                });
+        });
+
+        return Bases;
+    }
+
+
+
+    /*
+    function Classes(bases) {
+        class Bases {
             constructor() {
                 bases.forEach(base => Object.assign(this, new base()));
             }
@@ -180,6 +205,7 @@ changelog:
         })
         return Bases;
     }
+        */
 
 
     /**

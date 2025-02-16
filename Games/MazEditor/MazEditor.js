@@ -789,7 +789,7 @@ const GAME = {
       case "block":
         GAME.blockGrid();
         break;
-        
+
       case "block3D":
         GAME.blockGrid3D();
         break;
@@ -813,9 +813,9 @@ const GAME = {
     }
     if (OK) {
       const dimension = $("#dimensions input[name=dimensions]:checked").val();
-      $MAP.width = $("#horizontalGrid").val();
-      $MAP.height = $("#verticalGrid").val();
-      $MAP.depth = $("#depthGrid").val();
+      $MAP.width = parseInt($("#horizontalGrid").val(), 10);
+      $MAP.height = parseInt($("#verticalGrid").val(), 10);
+      $MAP.depth = parseInt($("#depthGrid").val(), 10);
       console.info("INIT", $MAP.width, $MAP.height, $MAP.depth);
       switch (dimension) {
         case "2D":
@@ -825,7 +825,7 @@ const GAME = {
           $MAP.map = FREE_MAP3D.create($MAP.width, $MAP.height, $MAP.depth, null, MAP_TOOLS.INI.GA_BYTE_SIZE);
           break;
       };
-      //$MAP.map = FREE_MAP.create($MAP.width, $MAP.height, null, MAP_TOOLS.INI.GA_BYTE_SIZE);
+    
       $MAP.init();
       console.log("GAME.init ->map:", $MAP.map);
       GAME.render();
