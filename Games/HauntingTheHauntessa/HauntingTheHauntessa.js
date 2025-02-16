@@ -189,7 +189,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.1.2",
+    VERSION: "0.1.3",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -1927,14 +1927,6 @@ const TITLE = {
             }
         }
     },
-    /*magic() {
-        //if (!HERO.hasCapacity) return;
-        ENGINE.clearLayer("orbs");
-        //const orbSpread = ENGINE.spreadAroundCenter(HERO.capacity, (ENGINE.sideWIDTH / 2) | 0, 48);
-        let y = TITLE.stack.SY;
-        //let full = HERO.orbs;
-
-    },*/
     music() {
         AUDIO.Title.play();
     },

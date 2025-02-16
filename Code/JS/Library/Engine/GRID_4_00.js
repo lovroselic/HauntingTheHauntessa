@@ -633,6 +633,10 @@ class ArrayBasedDataStructure {
     }
 }
 
+class GA_Dimension_Agnostic_Methods {
+    constructor() { }
+}
+
 class GridArray extends ArrayBasedDataStructure {
     constructor(sizeX, sizeY, byte = 1, fill = 0) {
         super();
@@ -645,7 +649,7 @@ class GridArray extends ArrayBasedDataStructure {
             2: Uint16Array,
             4: Uint32Array
         };
-        const GM = new byteToType[byte](sizeX * sizeY);
+        const GM = new (byteToType[byte])(sizeX * sizeY);
         this.width = parseInt(sizeX, 10);
         this.height = parseInt(sizeY, 10);
         this.maxX = this.width - 2;
@@ -1473,30 +1477,79 @@ class IndexArray extends ArrayBasedDataStructure {
     }
 }
 
-class ArrayBasedDataStructure_3D {
-    constructor() { }
-    
-    /*
+/**
+ * 3D version of ArrayBasedDataStructures
+ */
+class ArrayBasedDataStructure3D {
+    constructor(sizeX, sizeY, sizeZ) {
+        this.width = parseInt(sizeX, 10);
+        this.height = parseInt(sizeY, 10);
+        this.depth = parseInt(sizeZ, 10);
+        this.maxX = this.width - 2;
+        this.maxY = this.height - 2;
+        this.maxZ = this.depth - 1;
+        this.minX = 1;
+        this.minY = 1;
+        this.minZ = 0;
+    }
     indexToGrid(index) {
-      return new Grid(index % this.width, index / this.width | 0);
-    }
-    assertBounds(grid) {
-      if (this.isOutOfBounds(grid)) throw new Error(`Grid is out of bounds: ${grid}`);
-    }
-    gridToIndex(grid) {
-      this.assertBounds(grid);
-      return grid.x + grid.y * this.width;
-    }
-    isOut(grid) {
-      return grid.x > this.maxX || grid.x < this.minX || grid.y > this.maxY || grid.y < this.minY;
+        let z = Math.floor(index / (this.width * this.height));
+        index = index % (this.width * this.height);
+        let y = Math.floor(index / this.width);
+        let x = index % this.width;
+        return new Grid3D(x, y, z);
     }
     isOutOfBounds(grid) {
-      return grid.x < 0 || grid.x >= this.width || grid.y < 0 || grid.y >= this.height;
+        return grid.x < 0 || grid.x >= this.width || grid.y < 0 || grid.y >= this.height || grid.z < 0 || grid.z >= this.depth;
     }
     outside(grid) {
-      return this.isOutOfBounds(grid);
+        return this.isOutOfBounds(grid);
     }
-      */
+    assertBounds(grid) {
+        if (this.isOutOfBounds(grid)) throw new Error(`Grid is out of bounds: ${grid}`);
+    }
+    isOut(grid) {
+        /** is out of inner bounds */
+        return grid.x > this.maxX || grid.x < this.minX || grid.y > this.maxY || grid.y < this.minY || grid.z > this.maxZ || grid.z < this.minZ;
+    }
+    gridToIndex(grid) {
+        this.assertBounds(grid);
+        return grid.x + grid.y * this.width + grid.z * this.width * this.height;
+    }
+}
+
+class GridArray3D extends ArrayBasedDataStructure3D {
+    constructor(sizeX, sizeY, sizeZ, byte = 2, fill = 0) {
+        super(sizeX, sizeY, sizeZ);
+        if (![1, 2, 4].includes(byte)) {
+            console.error("GridArray set up with wrong size. Reset to default 16 bit!");
+            byte = 2;
+        }
+        const byteToType = {
+            1: Uint8Array,
+            2: Uint16Array,
+            4: Uint32Array
+        };
+        const GridMapArray = new (byteToType[byte])(sizeX * sizeY * sizeZ);
+        this.map = GridMapArray;
+        this.nodeMap = null;
+        this.gridSizeBit = byte * 8;
+        if (fill !== 0) this.map.fill(fill);
+    }
+    getValue(grid) {
+        if (this.isOutOfBounds(grid)) return false;
+        return this.map[this.gridToIndex(grid)];
+    }
+    check(grid, bin) {
+        if (this.isOutOfBounds(grid)) return false;
+        return this.map[this.gridToIndex(grid)] & bin;
+    }
+    isBlockWall(grid) {
+        return this.check(grid, MAPDICT.BLOCKWALL) === MAPDICT.BLOCKWALL;
+    }
+    notBlockWall(grid) {
+        return !this.isBlockWall(grid);
+    }
 }
 
 //END

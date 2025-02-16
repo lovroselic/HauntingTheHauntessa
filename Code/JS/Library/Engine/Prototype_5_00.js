@@ -153,6 +153,34 @@ changelog:
         return r;
     }
 
+    /**
+     * A utility function to enable multiple inheritance in JavaScript.
+     * It takes an array of base classes and merges their properties and methods into a single class.
+     *
+     * @param {Function[]} bases - An array of constructor functions (classes) to inherit from.
+     * @returns {Function} A dynamically created class that extends all provided base classes.
+     *
+     * class Gross extends Classes([Nose,Ear]) {
+      constructor() {
+        super();
+        this.gross = true;
+      }
+    }
+    */
+    function Classes(bases) {
+        class Bases {
+            constructor() {
+                bases.forEach(base => Object.assign(this, new base()));
+            }
+        }
+        bases.forEach(base => {
+            Object.getOwnPropertyNames(base.prototype)
+                .filter(prop => prop != 'constructor')
+                .forEach(prop => Bases.prototype[prop] = base.prototype[prop])
+        })
+        return Bases;
+    }
+
 
     /**
     * Calculates the smallest power of two greater than or equal to the given value.
@@ -200,6 +228,7 @@ changelog:
     window.evalObjectString = evalObjectString;
     window.POT = POT;
     window.factorial = factorial;
+    window.Classes = Classes;
 })();
 
 /** Date prototypes */

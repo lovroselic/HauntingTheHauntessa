@@ -1700,11 +1700,12 @@ class FreeMap extends MasterDungeon {
     constructor(sizeX, sizeY, GA = null, byte = 1) {
         super(sizeX, sizeY, byte);
         this.type = "FREE-MAP";
+        this.surfaceSize = this.width * this.height;
         if (GA !== null) this.GA = GA;
     }
 }
 class FreeMap3D {
-    constructor(sizeX, sizeY, sizeZ, GA = null, byte = 1) {
+    constructor(sizeX, sizeY, sizeZ, GA = null, byte = 2) {
         this.type = "FREE-MAP-3D";
         this.width = parseInt(sizeX, 10);
         this.height = parseInt(sizeY, 10);
@@ -1715,6 +1716,7 @@ class FreeMap3D {
         this.minX = 1;
         this.minY = 1;
         this.minZ = 0;
+        this.volume = this.width * this.height * this.depth;
 
         this.deadEnds = [];
         this.nodeMap = null;
@@ -1724,7 +1726,7 @@ class FreeMap3D {
         this.rooms = [];
         this.lockedRooms = {};
         this.keys = {};
-        this.GA = new GridArray(sizeX, sizeY, byte, 1);
+        this.GA = new GridArray3D(sizeX, sizeY, sizeZ, byte, 1);
 
         //override with imported GA
         if (GA !== null) this.GA = GA;

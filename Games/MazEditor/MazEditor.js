@@ -117,6 +117,7 @@ const PRG = {
 const HERO = {};
 
 const GAME = {
+  floor: 0,
   start() {
     $MAP.properties = MAP_TOOLS.properties;
     $MAP.lists = MAP_TOOLS.lists;
@@ -741,6 +742,15 @@ const GAME = {
     ENGINE.PACGRID.configure(lw, "pacgrid", "#FFF", "#000", "#666");
     ENGINE.PACGRID.draw(pac, corr);
   },
+  blockGrid3D() {
+    let corr = $("input[name='corr']")[0].checked;
+    ENGINE.resizeBOX("ROOM");
+
+    $(ENGINE.gameWindowId).width(ENGINE.gameWIDTH + 4);
+    ENGINE.BLOCKGRID.configure("pacgrid", "#FFF", "#000");
+    ENGINE.BLOCKGRID3D.draw($MAP.map, GAME.floor, corr);
+  },
+
   blockGrid() {
     let corr = $("input[name='corr']")[0].checked;
     ENGINE.resizeBOX("ROOM");
@@ -779,6 +789,10 @@ const GAME = {
       case "block":
         GAME.blockGrid();
         break;
+        
+      case "block3D":
+        GAME.blockGrid3D();
+        break;
 
       case "texture":
         GAME.textureGrid();
@@ -808,7 +822,7 @@ const GAME = {
           $MAP.map = FREE_MAP.create($MAP.width, $MAP.height, null, MAP_TOOLS.INI.GA_BYTE_SIZE);
           break;
         case "3D":
-          $MAP.map = FREE_MAP3D.create($MAP.width, $MAP.height, $MAP.depth,null, MAP_TOOLS.INI.GA_BYTE_SIZE);
+          $MAP.map = FREE_MAP3D.create($MAP.width, $MAP.height, $MAP.depth, null, MAP_TOOLS.INI.GA_BYTE_SIZE);
           break;
       };
       //$MAP.map = FREE_MAP.create($MAP.width, $MAP.height, null, MAP_TOOLS.INI.GA_BYTE_SIZE);
@@ -903,6 +917,12 @@ const GAME = {
 
     $("#gridsize").on("change", GAME.render);
 
+    //floors
+    const nFloors = $("#depthGrid")[0].value;
+    for (let i = 0; i < nFloors; i++) {
+      $("#floors").append(`<option value="${i}">${i}</option>`);
+    }
+    //$("#floors").change(GAME.changeFloor);
 
     //textures
     for (const prop of TEXTURE_LIST) {
@@ -928,7 +948,6 @@ const GAME = {
       $("#picture_decal").append(`<option value="${pic}">${pic}</option>`);
     }
     $("#picture_decal").change(function () {
-      //ENGINE.drawToId("picturecanvas", 0, 0, SPRITE[$("#picture_decal")[0].value]);
       ENGINE.drawToId("picturecanvas", 0, 0, ENGINE.conditionalResize(SPRITE[$("#picture_decal")[0].value], INI.CANVAS_RESOLUTION));
     });
     $("#picture_decal").trigger("change");
@@ -1072,7 +1091,6 @@ const GAME = {
       $("#item_shrine_type").trigger("change");
     }
 
-
     if (ORACLE_TYPE.length > 0) {
       for (const oracleType in ORACLE_TYPE) {
         $("#oracle_type").append(`<option value="${oracleType}">${oracleType}</option>`);
@@ -1083,7 +1101,6 @@ const GAME = {
       });
       $("#oracle_type").trigger("change");
     }
-
 
     //triggers
     for (const triggerDecal of TRIGGER_DECALS) {
@@ -1217,8 +1234,10 @@ const GAME = {
       }
     });
 
-
-
+  },
+  changeFloor() {
+    GAME.floor = parseInt($("#floors")[0].value, 10);
+    console.log("GAME.changeFloor -> GAME.floor", GAME.floor);
   },
   clearMonsterList() {
     $MAP.map.monsterList = [];
@@ -1374,9 +1393,11 @@ ceil: "${$("#ceiltexture")[0].value}",\n`;
     switch (radio) {
       case "2D":
         $("#depthGridVisibility").hide();
+        $("#floors").hide();
         break;
       case "3D":
         $("#depthGridVisibility").show();
+        $("#floors").show();
         break;
     }
   }
