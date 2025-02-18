@@ -1513,6 +1513,11 @@ class ArrayBasedDataStructure3D {
         this.assertBounds(grid);
         return grid.x + grid.y * this.width + grid.z * this.width * this.height;
     }
+    indexTo2DGridSlice(index, z) {
+        let offset = this.width * this.height * z;
+        index -= offset;
+        return new Grid(index % this.width, Math.floor(index / this.width));
+    }
 }
 
 class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnostic_Methods]) {

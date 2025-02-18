@@ -764,7 +764,6 @@ const GAME = {
     console.log("GAME.blockGrid3D -> GAME.floor", GAME.floor);
     ENGINE.BLOCKGRID3D.draw($MAP.map, GAME.floor, corr);
   },
-
   blockGrid() {
     let corr = $("input[name='corr']")[0].checked;
     ENGINE.resizeBOX("ROOM");
@@ -819,7 +818,10 @@ const GAME = {
     if ($("input[name='grid']")[0].checked) GRID.grid();
     if ($("input[name='coord']")[0].checked) GRID.paintCoord("coord", $MAP.map, $("input[name='all_coord']")[0].checked);
     GAME.resizeGL_window();
-    if (INI.DRAW_OCCLUSION_MAP) GAME.drawOcclusionMap();
+    if (INI.DRAW_OCCLUSION_MAP) {
+      $MAP.map.textureMap = $MAP.map.GA.toTextureMap();
+      GAME.drawOcclusionMap();
+    }
   },
   init() {
     let OK = true;
@@ -916,6 +918,7 @@ const GAME = {
   },
   setFloorButtons() {
     //floors
+    GAME.floor = 0;
     $("#floors").html("");
     const nFloors = $("#depthGrid")[0].value;
     for (let i = 0; i < nFloors; i++) {
@@ -1414,6 +1417,8 @@ ceil: "${$("#ceiltexture")[0].value}",\n`;
     ENGINE.resizeBOX("ROOM");
     GAME.resizeGL_window();
     $(ENGINE.gameWindowId).width(ENGINE.gameWIDTH + 4);
+    GAME.setFloorButtons();
+    $MAP.map.textureMap = $MAP.map.GA.toTextureMap();
     GAME.render();
   },
   resizeGL_window() {
