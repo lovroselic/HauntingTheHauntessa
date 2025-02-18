@@ -1,6 +1,7 @@
+#version 300 es
 ///model_vShader///
 /*
-* v1.1
+* v1.2 Haunting the Hauntessa
 */
 #ifdef GL_FRAGMENT_PRECISION_HIGH
 precision highp float;
@@ -10,11 +11,11 @@ precision mediump float;
 
 const int MAX_JOINTS = 160;                             //it needs to have same number as ENGINE.INI.MAX_JOINTS!!!!
 
-attribute vec4 aVertexPosition;
-attribute vec3 aVertexNormal;
-attribute vec2 aTextureCoord;
-attribute vec4 aJoint;
-attribute vec4 aWeight;
+in vec4 aVertexPosition;
+in vec3 aVertexNormal;
+in vec2 aTextureCoord;
+in vec4 aJoint;
+in vec4 aWeight;
 
 uniform mat4 uModelViewMatrix;
 uniform mat4 uProjectionMatrix;
@@ -23,9 +24,9 @@ uniform mat4 uTranslate;
 uniform mat4 uRotateY;
 uniform mat4 u_jointMat[MAX_JOINTS];
 
-varying vec2 vTextureCoord;
-varying vec3 FragPos;
-varying vec3 v_normal;
+out vec2 vTextureCoord;
+out vec3 FragPos;
+out vec3 v_normal;
 
 void main(void) {
     mat4 skinMat = aWeight.x * u_jointMat[int(aJoint.x)] +

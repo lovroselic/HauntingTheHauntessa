@@ -12,7 +12,7 @@ TODO:
 */
 
 const IndexArrayManagers = {
-    VERSION: "3.09",
+    VERSION: "3.10",
     VERBOSE: false,
     DEAD_LAPSED_TIME: 5,
 };
@@ -982,6 +982,7 @@ class Animated_3d_entity extends IAM {
         }
     }
     manage(lapsedTime, date, flagArray) {
+        if (this.POOL.length === 0) return;
         this.reIndex();
         const map = this.map;
         const GA = this.map.GA;

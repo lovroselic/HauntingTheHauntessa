@@ -189,7 +189,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.1.6",
+    VERSION: "0.1.7",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -1047,7 +1047,7 @@ const GAME = {
         if (DEBUG._2D_display) {
             ENGINE.resizeBOX("LEVEL", MAP[level].pw, MAP[level].ph);
             ENGINE.BLOCKGRID.configure("pacgrid", "#FFF", "#000");
-            ENGINE.BLOCKGRID.draw(MAP[GAME.level].map);
+            ENGINE.BLOCKGRID3D.draw(MAP[GAME.level].map);
             GRID.grid();
             GRID.paintCoord("coord", MAP[level].map);
         }
@@ -1090,7 +1090,7 @@ const GAME = {
             MISSILE3D.draw();
             ENTITY3D.drawVector2D();
             DYNAMIC_ITEM3D.drawVector2D();
-            //WebGL.visualizeTexture(map.occlusionMap, map.width, map.height, LAYER.debug); //debug
+            //WebGL.visualizeTexture3DSlice(map.occlusionMap, map.width, map.height, map.depth, 0, LAYER.debug); //debug
         }
     },
     processInteraction(interaction) {

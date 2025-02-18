@@ -7,7 +7,7 @@
 
 /** features to parse MazEditor outputs */
 const MAP_TOOLS = {
-    VERSION: "1.01",
+    VERSION: "1.02",
     CSS: "color: #F9A",
     properties: ['start', 'decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers',
         'shrines', 'doors', 'triggers', 'entities', 'objects', 'traps', 'oracles', 'movables', 'trainers', 'interactors', 'lairs'],
@@ -19,6 +19,7 @@ const MAP_TOOLS = {
         LEGACY_WIDTH: 512,
         TEXTURE_WIDTH: 1024,
         VERBOSE: false,
+        DIM_3D: true, //if false reverts to 2D
     },
     manageMAP(level) {
         if (MAP[level].map.stopSpawning) return;
@@ -51,16 +52,23 @@ const MAP_TOOLS = {
     },
     unpack(level) {
         if (this.MAP[level].unpacked) return;                                                   // already unpacked, nothing to do
+
+        
+        const mapData = JSON.parse(this.MAP[level].data);
+        let rebuilt = false;
+
         if (this.MAP[level].adapted_data) {
-            const adapted_data = JSON.parse(this.MAP[level].data);
-            adapted_data.map = this.MAP[level].adapted_data;
-            if (MAP_TOOLS.INI.VERBOSE) console.warn("loading adapted data", adapted_data);
-            this.MAP[level].map = FREE_MAP.import(adapted_data, MAP_TOOLS.INI.GA_BYTE_SIZE);
-            this.MAP[level].map.rebuilt = true;
-        } else {
-            this.MAP[level].map = FREE_MAP.import(JSON.parse(this.MAP[level].data), MAP_TOOLS.INI.GA_BYTE_SIZE);
-            this.MAP[level].map.rebuilt = false;
+            mapData.map = this.MAP[level].adapted_data;
+            if (MAP_TOOLS.INI.VERBOSE) console.warn("loading adapted data", mapData);
+            rebuilt = true;
         }
+
+        if (this.INI.DIM_3D) {
+            this.MAP[level].map = FREE_MAP3D.import(mapData, MAP_TOOLS.INI.GA_BYTE_SIZE);
+        } else this.MAP[level].map = FREE_MAP.import(mapData, MAP_TOOLS.INI.GA_BYTE_SIZE);
+
+
+        this.MAP[level].map.rebuilt = rebuilt;
 
         const GA = this.MAP[level].map.GA;
         this.MAP[level].pw = this.MAP[level].map.width * ENGINE.INI.GRIDPIX;
@@ -116,7 +124,8 @@ const MAP_TOOLS = {
         const GA = this.MAP[level].map.GA;
         const map = this.MAP[level].map;
         map.textureMap = GA.toTextureMap();
-        map.occlusionMap = WebGL.createOcclusionTexture(map.textureMap, map.width, map.height);
+        // only 3D occlusion maps now supported, for 2D use depth = 1;
+        map.occlusionMap = WebGL.createOcclusionTexture3D(map.textureMap, map.width, map.height, map.depth);
     },
 
     /**

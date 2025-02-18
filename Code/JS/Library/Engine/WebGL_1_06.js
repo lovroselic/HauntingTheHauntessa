@@ -119,6 +119,7 @@ const WebGL = {
     interactiveDecalList: [INTERACTIVE_DECAL3D, INTERACTIVE_BUMP3D],
     dynamicDecalList: [GATE3D, ITEM3D],
     dynamicLightSources: [MISSILE3D, EXPLOSION3D],
+    enemySources: [ENTITY3D],
     models: [$3D_MODEL],
     modelTextureSet: false,
     main_program: {
@@ -325,7 +326,6 @@ const WebGL = {
     },
     createOcclusionTexture3D(pixelData, width, height, depth) {
         const gl = this.CTX;
-
         const texture = gl.createTexture();
         gl.bindTexture(gl.TEXTURE_3D, texture);
 
@@ -614,13 +614,16 @@ const WebGL = {
                 projection_matrix: gl.getUniformLocation(this[prog].program, "uProjectionMatrix"),
                 modelViewMatrix: gl.getUniformLocation(this[prog].program, "uModelViewMatrix"),
                 cameraPos: gl.getUniformLocation(this[prog].program, "uCameraPos"),
-                uLights: gl.getUniformLocation(this[prog].program, "uPointLights"),
-                uLightColors: gl.getUniformLocation(this[prog].program, "uLightColors"),
+                lights: gl.getUniformLocation(this[prog].program, "uPointLights"),
+                lightColors: gl.getUniformLocation(this[prog].program, "uLightColors"),
+                lightDirections: gl.getUniformLocation(this[prog].program, "uLightDirections"),
                 u_sampler: gl.getUniformLocation(this[prog].program, "uSampler"),
                 uMaterialAmbientColor: gl.getUniformLocation(this[prog].program, 'uMaterial.ambientColor'),
                 uMaterialDiffuseColor: gl.getUniformLocation(this[prog].program, 'uMaterial.diffuseColor'),
                 uMaterialSpecularColor: gl.getUniformLocation(this[prog].program, 'uMaterial.specularColor'),
                 uMaterialShininess: gl.getUniformLocation(this[prog].program, 'uMaterial.shininess'),
+                uOcclusionMap: gl.getUniformLocation(this[prog].program, "uOcclusionMap"),
+                uGridSize: gl.getUniformLocation(this[prog].program, "uGridSize")
             };
 
             if (this.VERBOSE) {
@@ -827,9 +830,6 @@ const WebGL = {
         };
     },
     renderScene(map) {
-        let paddedWidth = POT(map.width);
-        let paddedHeight = POT(map.height);
-
         const gl = this.CTX;
         gl.clearColor(0.0, 0.0, 0.0, 1.0);
         gl.clearDepth(1.0);
@@ -849,6 +849,7 @@ const WebGL = {
         const scaleMatrix = glMatrix.mat4.create();
         const rotateY = glMatrix.mat4.create();
 
+        /** MAIN */
         gl.useProgram(this.program.program);
 
         // Set the uniform matrices
@@ -858,7 +859,10 @@ const WebGL = {
         gl.uniformMatrix4fv(this.program.uniformLocations.uScale, false, scaleMatrix);
         gl.uniformMatrix4fv(this.program.uniformLocations.uTranslate, false, translationMatrix);
         gl.uniformMatrix4fv(this.program.uniformLocations.uRotY, false, rotateY);
+
+        gl.activeTexture(gl.TEXTURE0); // Use texture unit 0
         gl.uniform1i(this.program.uniformLocations.uSampler, 0);
+
         //default material for walls and decals
         gl.uniform3fv(this.program.uniformLocations.uMaterialAmbientColor, MATERIAL.wall.ambientColor);
         gl.uniform3fv(this.program.uniformLocations.uMaterialDiffuseColor, MATERIAL.wall.diffuseColor);
@@ -871,23 +875,43 @@ const WebGL = {
         gl.uniform3fv(this.program.uniformLocations.lightColors, lightColors);
         gl.uniform3fv(this.program.uniformLocations.lightDirections, lightDirections);
 
-        //occlusion map
+        //3D occlusion map 
         gl.activeTexture(gl.TEXTURE1); // Use texture unit 1
-        gl.bindTexture(gl.TEXTURE_2D, map.occlusionMap);
+        gl.bindTexture(gl.TEXTURE_3D, map.occlusionMap);
         gl.uniform1i(this.program.uniformLocations.uOcclusionMap, 1);
-        gl.uniform2fv(this.program.uniformLocations.uGridSize, new Float32Array([paddedWidth, paddedHeight])); //
+        gl.uniform3fv(this.program.uniformLocations.uGridSize, new Float32Array([map.width, map.height, map.depth]));
 
+
+        /** MODEL */
         //set global uniforms for model program - could be extended to loop over more programs if required
         gl.useProgram(this.model_program.program);
         gl.uniformMatrix4fv(this.model_program.uniforms.projection_matrix, false, this.projectionMatrix);
         gl.uniformMatrix4fv(this.model_program.uniforms.modelViewMatrix, false, this.viewMatrix);
         gl.uniform3fv(this.model_program.uniforms.cameraPos, this.camera.pos.array);
-        gl.uniform3fv(this.model_program.uniforms.uLights, lights);
-        gl.uniform3fv(this.model_program.uniforms.uLightColors, lightColors);
+
+        gl.uniform3fv(this.model_program.uniforms.lights, lights);
+        gl.uniform3fv(this.model_program.uniforms.lightColors, lightColors);
+        gl.uniform3fv(this.model_program.uniforms.lightDirections, lightDirections);
+
+        gl.activeTexture(gl.TEXTURE0); // Use texture unit 0
         gl.uniform1i(this.model_program.uniforms.u_sampler, 0);
 
+        //default material for walls and decals
+        gl.uniform3fv(this.model_program.uniforms.uMaterialAmbientColor, MATERIAL.wall.ambientColor);
+        gl.uniform3fv(this.model_program.uniforms.uMaterialDiffuseColor, MATERIAL.wall.diffuseColor);
+        gl.uniform3fv(this.model_program.uniforms.uMaterialSpecularColor, MATERIAL.wall.specularColor);
+        gl.uniform1f(this.model_program.uniforms.uMaterialShininess, MATERIAL.wall.shininess);
+
+        //3D occlusion map for models
+        gl.activeTexture(gl.TEXTURE1); // Use texture unit 1
+        gl.bindTexture(gl.TEXTURE_3D, map.occlusionMap);
+        gl.uniform1i(this.model_program.uniforms.uOcclusionMap, 1);
+        gl.uniform3fv(this.model_program.uniforms.uGridSize, new Float32Array([map.width, map.height, map.depth]));
+
+        /** PICK */
         //pickProgram uniforms and defaults
         gl.useProgram(this.pickProgram.program);
+        gl.activeTexture(gl.TEXTURE0);
         gl.uniformMatrix4fv(this.pickProgram.uniformLocations.projectionMatrix, false, this.projectionMatrix);
         gl.uniformMatrix4fv(this.pickProgram.uniformLocations.modelViewMatrix, false, this.viewMatrix);
         gl.uniformMatrix4fv(this.pickProgram.uniformLocations.uScale, false, scaleMatrix);
@@ -934,7 +958,7 @@ const WebGL = {
 
         // Bind occlusion map
         gl.activeTexture(gl.TEXTURE1);
-        gl.bindTexture(gl.TEXTURE_2D, map.occlusionMap);
+        gl.bindTexture(gl.TEXTURE_3D, map.occlusionMap);
 
         this.enableAttributes(gl);
 
@@ -943,6 +967,7 @@ const WebGL = {
         gl.bindFramebuffer(gl.FRAMEBUFFER, null);
 
         /**  draw per slice of the world  */
+        gl.activeTexture(gl.TEXTURE0);
 
         //wall
         gl.drawElements(gl.TRIANGLES, this.world.offset.wall_count, gl.UNSIGNED_SHORT, this.world.offset.wall_start * 2);
@@ -1804,6 +1829,9 @@ class $3D_player {
         if (WebGL.CONFIG.dual && WebGL.CONFIG.firstperson) this.setRotation();   //
     }
     bumpEnemy(nextPos) {
+        const eCount = WebGL.enemySources.reduce((acc, source) => acc + (source.POOL?.length || 0), 0);
+        if (!eCount) return;
+
         let checkGrids = this.GA.gridsAroundEntity(nextPos, Vector3.to_FP_Vector(this.dir), this.r); //grid check is 2D projection!
         let enemies = this.map.enemyIA.unrollArray(checkGrids);
         if (enemies.size > 0) {

@@ -1569,7 +1569,7 @@ const ENGINE = {
                 try {
                     const shaders = await Promise.all(arrPath.map(shader => loadShader(shader, 'Shaders')));
                     shaders.forEach((shader) => {
-                        const name = shader.split("///")[1];
+                        const name = shader.extractGroup(/\/{3}(\w+)\/{3}/);
                         SHADER[name] = shader;
                     });
                 } catch (error) {

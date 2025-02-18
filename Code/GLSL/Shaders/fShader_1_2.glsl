@@ -1,12 +1,16 @@
+#version 300 es
 ///fShader///
 /*
-* v1.1
-* last change in CastleHunt II
+* v1.2
+* last change in Haunting The Hauntessa
 */
+
 #ifdef GL_FRAGMENT_PRECISION_HIGH
 precision highp float;
+precision highp sampler3D;
 #else
 precision mediump float;
+precision mediump sampler3D;
 #endif
 
 struct Material {
@@ -24,12 +28,12 @@ uniform vec3 uLightDirections[N_LIGHTS];
 uniform sampler2D uSampler;
 uniform vec3 uCameraPos;
 uniform Material uMaterial;
-uniform sampler2D uOcclusionMap;                                // Occlusion map
-uniform vec2 uGridSize;                                         // Size of the grid in the occlusion map
+uniform sampler3D uOcclusionMap;                                // Occlusion map
+uniform vec3 uGridSize;                                         // Size of the grid in the occlusion map
 
-varying vec3 FragPos;
-varying vec3 v_normal;
-varying vec2 vTextureCoord;
+in vec3 FragPos;
+in vec3 v_normal;
+in vec2 vTextureCoord;
 
 //bloody hardcoded constants
 const vec3 innerLightColor = vec3(1.0, 1.0, 1.0);
@@ -60,13 +64,13 @@ const float DISTANCE_LIGHT = 0.475;                             // force illumin
 const float LIGHT_POS_Y = 0.55;                                 // vertical light position change - 0.5 
 const float INTO_WALL = 0.01;                                   // into wall target raycast offset: 0.01
 
+out vec4 fragColor;                                             //300 es
+
 vec3 CalcLight(vec3 lightPosition, vec3 FragPos, vec3 viewDir, vec3 normal, vec3 pointLightColor, float shininess, vec3 ambientColor, vec3 diffuseColor, vec3 specularColor, float ambientStrength, float diffuseStrength, float specularStrength, int inner, vec3 lightDirection);
 bool Raycast(vec3 rayOrigin3D, vec3 rayTarget3D, float illumination);
 vec2 worldToGridTexCoord(vec2 position2D);
-vec2 worldToNormalizedTexCoord(vec2 position2D);
+vec3 worldToNormalizedTexCoord(vec2 position2D);
 bool isOccluded(vec2 position2D);
-vec3 debugDisplay(bool occluded);
-vec3 illuminationDisplay(float illumination);
 
 void main(void) {
     vec3 ambientColor = uMaterial.ambientColor;
@@ -87,12 +91,13 @@ void main(void) {
     }
 
     vec3 light = innerLight + PL_output;
-    vec4 texelColor = texture2D(uSampler, vTextureCoord);
+    //vec4 texelColor = texture2D(uSampler, vTextureCoord);
+    vec4 texelColor = texture(uSampler, vTextureCoord);
     if (texelColor.a < IGNORE_ALPHA) {
         discard;
     }
 
-    gl_FragColor = vec4(texelColor.rgb * light, texelColor.a);
+    fragColor  = vec4(texelColor.rgb * light, texelColor.a);
 }
 
 vec3 CalcLight(vec3 lightPosition, vec3 FragPos, vec3 viewDir, vec3 normal, vec3 pointLightColor, float shininess, vec3 ambientColor, vec3 diffuseColor, vec3 specularColor, float ambientStrength, float diffuseStrength, float specularStrength, int inner, vec3 lightDirection) {
@@ -111,9 +116,6 @@ vec3 CalcLight(vec3 lightPosition, vec3 FragPos, vec3 viewDir, vec3 normal, vec3
     }
 
     bool occluded = Raycast(lightPosition, FragPos, illumination);
-
-    //return debugDisplay(occluded);                                            //debug
-    //return illuminationDisplay(illumination);                                 //debug
 
     bool isLight = false;
     if (lightDistance < DISTANCE_LIGHT) {
@@ -170,7 +172,7 @@ bool Raycast(vec3 rayOrigin3D, vec3 rayTarget3D, float illumination) {
     vec2 gridOrigin = origin;
     float illumination2 = (illumination + EPSILON) * (illumination + EPSILON);
     vec2 gridTarget = worldToGridTexCoord(target - step * INTO_WALL * illumination2);            // Adjusted target with directional offset so the target is reached when FragPOs is in the wall - iluminating wall   
-    vec2 tDelta = abs(1.0 / max(abs(deltaGrid), vec2(EPSILON)));                                         // How far to go in each direction to cross a grid line
+    vec2 tDelta = abs(1.0 / max(abs(deltaGrid), vec2(EPSILON)));                            // How far to go in each direction to cross a grid line
 
     vec2 tMax;
     tMax.x = step.x > 0.0 ? (1.0 - fract(gridOrigin.x)) * tDelta.x : fract(gridOrigin.x) * tDelta.x;
@@ -205,23 +207,12 @@ vec2 worldToGridTexCoord(vec2 position2D) {
     return vec2(floor(position2D.x), floor(position2D.y));
 }
 
-vec2 worldToNormalizedTexCoord(vec2 position2D) {
-    return vec2(position2D.x / uGridSize.x, position2D.y / uGridSize.y);
+vec3 worldToNormalizedTexCoord(vec2 position2D) {
+    return vec3(position2D.x / uGridSize.x, position2D.y / uGridSize.y, 0.0);
 }
 
 bool isOccluded(vec2 position2D) {
-    vec2 texCoord = worldToNormalizedTexCoord(position2D);
-    float occlusion = texture2D(uOcclusionMap, texCoord).r; // Sample red channel
+    vec3 texCoord = worldToNormalizedTexCoord(position2D);
+    float occlusion = texture(uOcclusionMap, texCoord).r; // Sample red channel
     return occlusion > 0.5; //  >0.5 indicates impassable
-}
-
-vec3 debugDisplay(bool occluded) {
-    if (occluded) {
-        return vec3(1.0, 0.0, 0.0);
-    } else
-        return vec3(0.0, illumination, 0.0);
-}
-
-vec3 illuminationDisplay(float illumination) {
-    return vec3(0.0, illumination, 0.0);
 }
