@@ -1814,7 +1814,11 @@ const FREE_MAP3D = {
     create(sizeX, sizeY, sizeZ, GA = null, byte = 1) {
         return new FreeMap3D(sizeX, sizeY, sizeZ, GA, byte);
     },
-    import() { },
+    import(data, byte = 2) {
+        data.map = GridArray3D.importMap(data.map);
+        data.map = GridArray3D.fromString(data.width, data.height, data.depth, data.map, byte);
+        return FREE_MAP3D.create(parseInt(data.width, 10), parseInt(data.height, 10), parseInt(data.depth, 10), data.map, byte);
+    },
 };
 const DUNGEON = {
     VERSION: "5.00",

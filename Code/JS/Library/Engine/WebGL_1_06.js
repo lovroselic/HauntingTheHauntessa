@@ -38,7 +38,7 @@
  */
 
 const WebGL = {
-    VERSION: "1.05",
+    VERSION: "1.06",
     CSS: "color: gold",
     CTX: null,
     VERBOSE: false, //default: false
@@ -323,6 +323,43 @@ const WebGL = {
 
         return texture;
     },
+    createOcclusionTexture3D(pixelData, width, height, depth) {
+        const gl = this.CTX;
+
+        const texture = gl.createTexture();
+        gl.bindTexture(gl.TEXTURE_3D, texture);
+
+        gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
+        gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+
+        gl.texImage3D(
+            gl.TEXTURE_3D,     // target
+            0,                 // mip level
+            gl.R8,             // internal format (single-channel 8-bit)
+            width,             // width
+            height,            // height
+            depth,             // depth
+            0,                 // border
+            gl.RED,            // base format
+            gl.UNSIGNED_BYTE,  // type
+            pixelData          // Uint8Array
+        );
+
+        // Set wrapping for S, T, and R directions
+        gl.texParameteri(gl.TEXTURE_3D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_3D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_3D, gl.TEXTURE_WRAP_R, gl.CLAMP_TO_EDGE);
+
+        // Set minification & magnification filters
+        gl.texParameteri(gl.TEXTURE_3D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+        gl.texParameteri(gl.TEXTURE_3D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+
+        // Unbind for cleanliness
+        gl.bindTexture(gl.TEXTURE_3D, null);
+
+        return texture;
+    },
     visualizeTexture(texture, width, height, CTX, scale = 8) {
         const gl = this.CTX;
         width = POT(width);
@@ -366,6 +403,62 @@ const WebGL = {
         // Cleanup
         gl.bindFramebuffer(gl.FRAMEBUFFER, null);
         gl.deleteFramebuffer(framebuffer);
+    },
+    visualizeTexture3DSlice(texture3D, width, height, depth, sliceIndex, CTX, scale = 8) {
+        const gl = this.CTX;
+        if (this.VERBOSE) console.warn("WebGL.visualizeTexture", width, height, depth, sliceIndex, texture3D);
+
+        CTX.canvas.width = width * scale;
+        CTX.canvas.height = height * scale;
+
+        const framebuffer = gl.createFramebuffer();
+        gl.bindFramebuffer(gl.FRAMEBUFFER, framebuffer);
+
+        gl.framebufferTextureLayer(
+            gl.FRAMEBUFFER,
+            gl.COLOR_ATTACHMENT0,
+            texture3D,
+            0,                                                  // mip level
+            sliceIndex                                          // layer (= z-slice)
+        );
+
+        // Check framebuffer completeness
+        if (gl.checkFramebufferStatus(gl.FRAMEBUFFER) !== gl.FRAMEBUFFER_COMPLETE) {
+            console.error("Framebuffer is not complete.");
+            gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+            gl.deleteFramebuffer(framebuffer);
+            return;
+        }
+
+        gl.pixelStorei(gl.PACK_ALIGNMENT, 1);
+        const pixels = new Uint8Array(width * height);
+        gl.readPixels(0, 0, width, height, gl.RED, gl.UNSIGNED_BYTE, pixels);
+        if (this.VERBOSE) WebGL.checkError("read pixels");
+
+        const imageData = CTX.createImageData(width, height);
+        for (let i = 0; i < pixels.length; i++) {
+            const value = pixels[i];
+            imageData.data[i * 4] = value;                                                              // Red channel
+            imageData.data[i * 4 + 1] = value;                                                          // Green channel (copy red for grayscale)
+            imageData.data[i * 4 + 2] = value;                                                          // Blue channel (copy red for grayscale)
+            imageData.data[i * 4 + 3] = 255;                                                            // Alpha channel
+        }
+
+        // Upscale the ImageData to the canvas
+        const offscreenCanvas = document.createElement('canvas');
+        offscreenCanvas.width = width;
+        offscreenCanvas.height = height;
+        const offscreenCtx = offscreenCanvas.getContext('2d');
+        offscreenCtx.putImageData(imageData, 0, 0);
+
+        // Draw the upscaled image to the visible canvas
+        CTX.imageSmoothingEnabled = false;                                                               // Disable smoothing for pixelated look
+        CTX.drawImage(offscreenCanvas, 0, 0, width * scale, height * scale);
+
+        // Cleanup
+        gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+        gl.deleteFramebuffer(framebuffer);
+
     },
     createTexture(T, S = null, flip = false) {
         if (T instanceof WebGLTexture) return T;

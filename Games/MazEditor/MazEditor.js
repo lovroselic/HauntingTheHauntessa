@@ -19,7 +19,7 @@ ported to gen 4 ENGINE, GRID
 const MAP = {
   Demo: {
     name: "Demo",
-    data: '{"width":"8","height":"8","map":"BB4AA9BB2AA3BB2AA2BB2AA2BB2ABB4AA2BB2ABABB3AA4BABB5ABB8A$"}',
+    data: '{"width":"8","height":"8","depth":"1","map":"BB4AA9BB2AA3BB2AA2BB2AA2BB2ABB4AA2BB2ABABB3AA4BABB5ABB8A$"}',
     wall: "BigGreyBricks1",
     floor: "BloodMarbleFloorWall_SDXL_001",
     ceil: "IrregularTiledFloorCeil13",
@@ -56,9 +56,11 @@ const INI = {
   SPACE_X: 2048,
   SPACE_Y: 2048,
   CANVAS_RESOLUTION: 256,
+  MAX_DEPTH: 13,
+  DRAW_OCCLUSION_MAP: true,
 };
 const PRG = {
-  VERSION: "0.15.01",
+  VERSION: "0.15.02",
   NAME: "MazEditor",
   YEAR: "2022, 2023, 2024, 2025",
   CSS: "color: #239AFF;",
@@ -119,6 +121,7 @@ const HERO = {};
 const GAME = {
   floor: 0,
   start() {
+    WebGL.setContext('webgl');
     $MAP.properties = MAP_TOOLS.properties;
     $MAP.lists = MAP_TOOLS.lists;
     $("#bottom")[0].scrollIntoView();
@@ -133,9 +136,11 @@ const GAME = {
     GAME.initLevel(GAME.level);
     WebGL.GAME.setFirstPerson();
     WebGL.renderScene($MAP.map);
-    // render occlusion map
-    $MAP.map.occlusionMap = WebGL.createOcclusionTexture($MAP.map.textureMap, $MAP.map.width, $MAP.map.height);
-    //WebGL.visualizeTexture($MAP.map.occlusionMap, $MAP.map.width, $MAP.map.height, LAYER.debug);
+  },
+  drawOcclusionMap() {
+    console.warn("render occlusion map");
+    $MAP.map.occlusionMap = WebGL.createOcclusionTexture3D($MAP.map.textureMap, $MAP.map.width, $MAP.map.height, $MAP.map.depth);
+    WebGL.visualizeTexture3DSlice($MAP.map.occlusionMap, $MAP.map.width, $MAP.map.height, $MAP.map.height, GAME.floor, LAYER.debug);
   },
   newDungeon(level) {
     MAP_TOOLS.unpack(level);
@@ -171,16 +176,17 @@ const GAME = {
       HERO.player = new $3D_player(start_grid, Vector3.from_2D_dir(start_dir), MAP[level].map, null);
     }
 
-    WebGL.setContext('webgl');
     WebGL.init_required_IAM($MAP.map, HERO);
     this.buildWorld(level);
     this.setWorld(level);
   },
   arena() {
-    GAME.init();
+    //GAME.init();
     let GA = $MAP.map.GA;
-    GA.massClear();
-    GA.border(parseInt($("#arenawidth").val(), 10));
+    //GA.massClear();
+    GA.sliceFill(GAME.floor * $MAP.map.width * $MAP.map.height, $MAP.map.width * $MAP.map.height, 0);
+    GA.border(parseInt($("#arenawidth").val(), 10), GAME.floor);
+    $MAP.map.textureMap = $MAP.map.GA.toTextureMap();
     GAME.render();
   },
   maze() {
@@ -198,12 +204,19 @@ const GAME = {
     ENGINE.readMouse(event);
     let x = Math.floor(ENGINE.mouseX / ENGINE.gameWIDTH * $MAP.width);
     let y = Math.floor(ENGINE.mouseY / ENGINE.gameHEIGHT * $MAP.height);
-    const grid = new Grid(x, y);
+
     const radio = $("#paint input[name=painter]:checked").val();
+    const dimension = $("#dimensions input[name=dimensions]:checked").val();
     let GA = $MAP.map.GA;
-    let dir, nameId, type, dirIndex, dirs;
+    console.log("GA", GA);
+    let dir, nameId, type, dirIndex, dirs, grid;
+    if (dimension === "2D") {
+      grid = new Grid(x, y);
+    } else grid = new Grid3D(x, y, GAME.floor);
     let currentValue = GA.getValue(grid);
     let gridIndex = GA.gridToIndex(grid);
+
+    console.warn("mouseClick", grid, "radio", radio, "currentValue", currentValue, "gridIndex", gridIndex, "dimension", dimension, "floor", GAME.floor);
 
     switch (radio) {
       case 'flip':
@@ -748,6 +761,7 @@ const GAME = {
 
     $(ENGINE.gameWindowId).width(ENGINE.gameWIDTH + 4);
     ENGINE.BLOCKGRID.configure("pacgrid", "#FFF", "#000");
+    console.log("GAME.blockGrid3D -> GAME.floor", GAME.floor);
     ENGINE.BLOCKGRID3D.draw($MAP.map, GAME.floor, corr);
   },
 
@@ -805,6 +819,7 @@ const GAME = {
     if ($("input[name='grid']")[0].checked) GRID.grid();
     if ($("input[name='coord']")[0].checked) GRID.paintCoord("coord", $MAP.map, $("input[name='all_coord']")[0].checked);
     GAME.resizeGL_window();
+    if (INI.DRAW_OCCLUSION_MAP) GAME.drawOcclusionMap();
   },
   init() {
     let OK = true;
@@ -823,9 +838,10 @@ const GAME = {
           break;
         case "3D":
           $MAP.map = FREE_MAP3D.create($MAP.width, $MAP.height, $MAP.depth, null, MAP_TOOLS.INI.GA_BYTE_SIZE);
+          GAME.setFloorButtons();
           break;
       };
-    
+
       $MAP.init();
       console.log("GAME.init ->map:", $MAP.map);
       GAME.render();
@@ -834,15 +850,14 @@ const GAME = {
   updateWH() {
     if (isNaN(parseInt($("#verticalGrid").val(), 10))) $("#verticalGrid").val(32);
     if (isNaN(parseInt($("#horizontalGrid").val(), 10))) $("#horizontalGrid").val(24);
+    if (isNaN(parseInt($("#depthGrid").val(), 10))) $("#depthGrid").val(1);
     if (isNaN(parseInt($("#gridsize").val(), 10))) $("#gridsize").val(32);
-    if ($("#verticalGrid").val() > INI.MAXINT)
-      $("#verticalGrid").val(INI.MAXINT);
-    if ($("#verticalGrid").val() < INI.MININT)
-      $("#verticalGrid").val(INI.MININT);
-    if ($("#horizontalGrid").val() > INI.MAXINT)
-      $("#horizontalGrid").val(INI.MAXINT);
-    if ($("#horizontalGrid").val() < INI.MININT)
-      $("#horizontalGrid").val(INI.MININT);
+    if ($("#verticalGrid").val() > INI.MAXINT) $("#verticalGrid").val(INI.MAXINT);
+    if ($("#verticalGrid").val() < INI.MININT) $("#verticalGrid").val(INI.MININT);
+    if ($("#horizontalGrid").val() > INI.MAXINT) $("#horizontalGrid").val(INI.MAXINT);
+    if ($("#horizontalGrid").val() < INI.MININT) $("#horizontalGrid").val(INI.MININT);
+    if ($("#depthGrid").val() < 1) $("#horizontalGrid").val(1);
+    if ($("#depthGrid").val() > INI.MAX_DEPTH) $("#horizontalGrid").val(INI.MAX_DEPTH);
     if ($("#gridsize").val() < INI.MIN_GRID) $("#gridsize").val(INI.MIN_GRID);
     if ($("#gridsize").val() > INI.MAX_GRID) $("#gridsize").val(INI.MAX_GRID);
     if ($("#gridsize").val() % 8 !== 0) {
@@ -899,6 +914,16 @@ const GAME = {
       GAME.texture();
     }
   },
+  setFloorButtons() {
+    //floors
+    $("#floors").html("");
+    const nFloors = $("#depthGrid")[0].value;
+    for (let i = 0; i < nFloors; i++) {
+      $("#floors").append(`<option value="${i}">${i}</option>`);
+    }
+    $("#floors").off("change");
+    $("#floors").change(GAME.changeFloor);
+  },
   setup() {
     console.log("GAME SETUP started");
     GAME.updateWH();
@@ -916,13 +941,6 @@ const GAME = {
     $("#buttons").append("<input type='button' id='copy' value='Copy to Clipboard'>");
 
     $("#gridsize").on("change", GAME.render);
-
-    //floors
-    const nFloors = $("#depthGrid")[0].value;
-    for (let i = 0; i < nFloors; i++) {
-      $("#floors").append(`<option value="${i}">${i}</option>`);
-    }
-    //$("#floors").change(GAME.changeFloor);
 
     //textures
     for (const prop of TEXTURE_LIST) {
@@ -1238,6 +1256,7 @@ const GAME = {
   changeFloor() {
     GAME.floor = parseInt($("#floors")[0].value, 10);
     console.log("GAME.changeFloor -> GAME.floor", GAME.floor);
+    GAME.render();
   },
   clearMonsterList() {
     $MAP.map.monsterList = [];
@@ -1297,8 +1316,15 @@ const GAME = {
     GAME.textureGrid();
   },
   export() {
+    const dimension = $("#dimensions input[name=dimensions]:checked").val();
     let rle = $MAP.map.GA.exportMap();
-    let Export = { width: $MAP.width, height: $MAP.height, map: rle };
+    console.log("Export", rle, "dimension", dimension);
+    let Export;
+    if (dimension === "2D") {
+      Export = { width: $MAP.width, height: $MAP.height, map: rle };
+    } else Export = { width: $MAP.width, height: $MAP.height, depth: $MAP.depth, map: rle };
+
+
     let RoomID = $("#roomid")[0].value;
     let RoomName = $("#roomname")[0].value;
     let MaxSpawned = $("#max_spawned")[0].value || -1;
@@ -1330,6 +1356,7 @@ ceil: "${$("#ceiltexture")[0].value}",\n`;
     $("#exp").val(roomExport);
   },
   import() {
+    const dimension = $("#dimensions input[name=dimensions]:checked").val();
     $MAP.map.textureMap = null;
     const ImportText = $("#exp").val();
     console.info("ImportText", ImportText);
@@ -1355,10 +1382,14 @@ ceil: "${$("#ceiltexture")[0].value}",\n`;
       $(`#${prop}texture`).val(ImportText.extractGroup(pattern));
     }
 
-    $MAP.map = FREE_MAP.import(Import, MAP_TOOLS.INI.GA_BYTE_SIZE);
+    console.log("Import", Import);
+    if (dimension === "2D") {
+      $MAP.map = FREE_MAP.import(Import, MAP_TOOLS.INI.GA_BYTE_SIZE);
+    } else $MAP.map = FREE_MAP3D.import(Import, MAP_TOOLS.INI.GA_BYTE_SIZE);
+
+
     $MAP.init();
     WebGL.init_required_IAM($MAP.map, HERO);
-    console.log("$MAP.map", $MAP.map);
     GAME.updateTextures();  //restarts the level
 
     for (const prop of [...$MAP.properties, ...$MAP.lists]) {
@@ -1369,18 +1400,20 @@ ceil: "${$("#ceiltexture")[0].value}",\n`;
 
     $("#monster_list").val($MAP.map.monsterList.join(","));
 
-    console.log("map", $MAP.map);
+    console.log("$MAP.map", $MAP.map);
     $MAP.width = Import.width;
     $MAP.height = Import.height;
+    $MAP.depth = Import.depth || 1;
     $("#horizontalGrid").val(Import.width);
     $("#verticalGrid").val(Import.height);
+    $("#depthGrid").val($MAP.depth);
     $("#horizontalGrid").trigger("change");
     $("#verticalGrid").trigger("change");
+    $("#depthGrid").trigger("change");
     GAME.updateWH();
     ENGINE.resizeBOX("ROOM");
     GAME.resizeGL_window();
     $(ENGINE.gameWindowId).width(ENGINE.gameWIDTH + 4);
-
     GAME.render();
   },
   resizeGL_window() {

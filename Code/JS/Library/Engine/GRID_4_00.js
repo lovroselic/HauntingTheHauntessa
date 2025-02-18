@@ -646,8 +646,11 @@ class GA_Dimension_Agnostic_Methods {
         }
     }
     massClear() {
-        for (let i = 0; i < this.map.length; i++) {
-            this.map[i] = 0;
+        this.map.fill(0);
+    }
+    sliceFill(start, len, fill) {
+        for (let i = 0; i < len; i++) {
+            this.map[start + i] = fill;
         }
     }
     linkToEntity(entities) {
@@ -826,14 +829,27 @@ class GA_Dimension_Agnostic_Methods {
     clearFog(grid) {
         this.clear(grid, MAPDICT.FOG);
     }
-    border(width = 1, set = MAPDICT.WALL) {
-        this.rect(0, 0, this.width, this.height, width, set);
-    }
+
     setStackValue(stack, value) {
         for (const grid of stack) {
             this.setValue(grid, value);
         }
     }
+    toString(clear = null) {
+        const offset = 65;
+        let str = "";
+        for (let byte of this.map) {
+            if (clear) {
+                byte &= (2 ** this.gridSizeBit - 1 - clear);
+            }
+            str += String.fromCharCode(byte + offset);
+        }
+        return str;
+    }
+    exportMap() {
+        return BWT.rle_encode(BWT.bwt(this.toString()));
+    }
+
 }
 
 class GridArray extends Classes([ArrayBasedDataStructure, GA_Dimension_Agnostic_Methods]) {
@@ -859,6 +875,9 @@ class GridArray extends Classes([ArrayBasedDataStructure, GA_Dimension_Agnostic_
         this.nodeMap = null;
         this.gridSizeBit = byte * 8;
         if (fill !== 0) this.map.fill(fill);
+    }
+    border(width = 1, set = MAPDICT.WALL) {
+        this.rect(0, 0, this.width, this.height, width, set);
     }
     rect(X, Y, W, H, width = 1, set = MAPDICT.WALL) {
         for (let x = X; x < X + W; x++) {
@@ -1283,20 +1302,6 @@ class GridArray extends Classes([ArrayBasedDataStructure, GA_Dimension_Agnostic_
         } while (!startGrid.same(lookGrid));
         return true;
     }
-    toString(clear = null) {
-        const offset = 65;
-        let str = "";
-        for (let byte of this.map) {
-            if (clear) {
-                byte &= (2 ** this.gridSizeBit - 1 - clear);
-            }
-            str += String.fromCharCode(byte + offset);
-        }
-        return str;
-    }
-    exportMap() {
-        return BWT.rle_encode(BWT.bwt(this.toString()));
-    }
     static importMap(rle) {
         return BWT.inverseBwt(BWT.rle_decode(rle));
     }
@@ -1513,7 +1518,7 @@ class ArrayBasedDataStructure3D {
 class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnostic_Methods]) {
     constructor(sizeX, sizeY, sizeZ, byte = 2, fill = 0) {
         super();
-        
+
         this.width = parseInt(sizeX, 10);
         this.height = parseInt(sizeY, 10);
         this.depth = parseInt(sizeZ, 10);
@@ -1538,6 +1543,61 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         this.nodeMap = null;
         this.gridSizeBit = byte * 8;
         if (fill !== 0) this.map.fill(fill);
+    }
+    static importMap(rle) {
+        return BWT.inverseBwt(BWT.rle_decode(rle));
+    }
+    static fromString(sizeX, sizeY, sizeZ, string, byte = 2) {
+        const offset = 65;
+        let GA = new GridArray3D(sizeX, sizeY, sizeZ, byte);
+        for (let i = 0; i < string.length; i++) {
+            GA.map[i] = string[i].charCodeAt(0) - offset;
+        }
+        return GA;
+    }
+    toTextureMap() {
+        /** 
+         * 0 - light can pass through 
+         * POT not required for WebGL2
+         **/
+
+        const W = this.width;
+        const H = this.height;
+        const D = this.depth;
+        const pixelData = new Uint8Array(W * H * D).fill(255);
+
+        for (let z = 0; z < this.depth; z++) {
+            for (let y = 0; y < this.height; y++) {
+                for (let x = 0; x < this.width; x++) {
+                    const grid = new Grid3D(x, y, z);
+                    const index = z * W * H + y * W + x;
+                    pixelData[index] = this.notWall(grid) ? 0 : 255;
+                }
+            }
+        }
+
+        return pixelData;
+    }
+    border(width = 1, floor = 0, set = MAPDICT.WALL) {
+        this.rect(0, 0, this.width, this.height, width, floor, set);
+    }
+    rect(X, Y, W, H, width = 1, floor = 0, set = MAPDICT.WALL) {
+        for (let x = X; x < X + W; x++) {
+            for (let w = 0; w < width; w++) {
+                let grid1 = new Grid3D(x, Y + w, floor);
+                let grid2 = new Grid3D(x, Y + H - 1 - w, floor);
+                this.set(grid1, set);
+                this.set(grid2, set);
+            }
+        }
+        for (let y = Y; y < Y + H; y++) {
+            for (let w = 0; w < width; w++) {
+                let grid1 = new Grid3D(X + w, y, floor);
+                let grid2 = new Grid3D(X + W - 1 - w, y, floor);
+                this.set(grid1, set);
+                this.set(grid2, set);
+            }
+        }
     }
 }
 
