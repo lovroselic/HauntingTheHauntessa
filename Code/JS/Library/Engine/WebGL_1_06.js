@@ -1334,7 +1334,7 @@ const WORLD = {
         let resolution = 2 ** (Math.ceil(Math.log2(maxDimension)));
         return Math.max(resolution, WebGL.INI.MIN_RESOLUTION);
     },
-    addPic(Y, decal, type) {
+    addPic(decal, type) {
         const expandables = ["crest", "portal", "lair", "light"];
         let resolution = WebGL.INI.DEFAULT_RESOLUTION;
         if (decal.resolution) {
@@ -1443,7 +1443,7 @@ const WORLD = {
         //translate
         for (let p = 0; p < positions.length; p += 3) {
             positions[p] += decal.grid.x;
-            positions[p + 1] += Y;
+            positions[p + 1] += decal.grid?.z || 0;
             positions[p + 2] += decal.grid.y;
         }
 
@@ -1502,35 +1502,41 @@ const WORLD = {
         this[type].textureCoordinates.push(...textureCoordinates);
         this[type].vertexNormals.push(...vertexNormals);
     },
-    build(map, Y = 0) {
+    build(map) {
         const GA = map.GA;
         console.time("WorldBuilding");
         this.init();
 
+        const maxDepth = map.GA?.depth - 1 || 0;
+        console.log("--------------------------------");
+        console.log("World.build->maxDepth", maxDepth);
+
         for (let [index, value] of GA.map.entries()) {
             let grid = GA.indexToGrid(index);
+            if (!grid.z) grid.z = 0;                                                                    //2D Grid legacy support
             let initial = value;
             value &= (2 ** GA.gridSizeBit - 1 - (MAPDICT.FOG + MAPDICT.RESERVED + MAPDICT.ROOM));
+       
             switch (value) {
                 case MAPDICT.EMPTY:
                 case MAPDICT.DOOR:
                 case MAPDICT.WALL + MAPDICT.DOOR:
-                    this.addCube(Y - 1, grid, "floor");
-                    this.addCube(Y + 1, grid, "ceil");
+                    if (grid.z === 0) this.addCube(- 1, grid, "floor");
+                    if (grid.z === maxDepth) this.addCube(grid.z + 1, grid, "ceil");
                     break;
                 case MAPDICT.WALL:
                 case MAPDICT.WALL + MAPDICT.STAIR:
                 case MAPDICT.WALL + MAPDICT.SHRINE:
-                    this.addCube(Y, grid, "wall");
-                    if (WebGL.CONFIG.holesSupported) this.addCube(Y - 1, grid, "wall");                  //support for holes //breaks CM2 if on - why?
+                    this.addCube(grid.z, grid, "wall");                                                                //plain old wall
+                    if (WebGL.CONFIG.holesSupported && grid.z === 0) this.addCube(- 1, grid, "wall");                  //support for holes so that they have 3d look if in the floor
                     break;
                 case MAPDICT.HOLE:
-                    this.addCube(Y + 1, grid, "ceil");
+                    if (grid.z === maxDepth) this.addCube(grid.z + 1, grid, "ceil");
                     break;
                 case MAPDICT.BLOCKWALL:
-                    this.addBlockWall(Y, grid, "wall");
-                    this.addCube(Y - 1, grid, "floor");
-                    this.addCube(Y + 1, grid, "ceil");
+                    this.addBlockWall(grid.z, grid, "wall");
+                    if (grid.z === 0) this.addCube(- 1, grid, "floor");
+                    if (grid.z === maxDepth) this.addCube(grid.z + 1, grid, "ceil");
                     break;
                 default:
                     console.error("world building GA value error", value, initial, "grid", grid);
@@ -1540,7 +1546,7 @@ const WORLD = {
         /** build static decals */
         for (const iam of [...WebGL.staticDecalList, ...WebGL.interactiveDecalList]) {
             for (const decal of iam.POOL) {
-                this.addPic(Y, decal, "decal");
+                this.addPic(decal, "decal");
             }
         }
 
@@ -1565,6 +1571,7 @@ const WORLD = {
         const positionOffset = this.create_offset('positions');
 
         console.timeEnd("WorldBuilding");
+        console.log("--------------------------------");
         return new World(this.positions, this.indices, this.textureCoordinates, this.vertexNormals, offset, positionOffset);
     },
     create_offset(BT) {
@@ -1649,7 +1656,7 @@ class $3D_player {
         this.actionCallback = null;
         this.initTextureMap();
     }
-    setDepth(){
+    setDepth() {
         this.depth = Math.floor(this.pos.y);
     }
     initTextureMap(normal = "normal") {
