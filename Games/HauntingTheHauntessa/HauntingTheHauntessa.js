@@ -189,7 +189,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.1.7",
+    VERSION: "0.1.8",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -899,7 +899,7 @@ const GAME = {
         GAME.drawFirstFrame(GAME.level);
         LAIR.start();
         ENGINE.GAME.resume();
-        HERO.speak("I feel something is wrong in my castle. Shall we investigate? My heels are on. Let's go.");
+        HERO.speak("I should say something new.");
     },
     setCameraView() {
         WebGL.hero.topCamera = new $3D_Camera(WebGL.hero.player, DIR_UP, 0.9, new Vector3(0, -0.5, 0), 1, 70);
@@ -1047,7 +1047,7 @@ const GAME = {
         if (DEBUG._2D_display) {
             ENGINE.resizeBOX("LEVEL", MAP[level].pw, MAP[level].ph);
             ENGINE.BLOCKGRID.configure("pacgrid", "#FFF", "#000");
-            ENGINE.BLOCKGRID3D.draw(MAP[GAME.level].map);
+            ENGINE.BLOCKGRID3D.draw(MAP[GAME.level].map, HERO.player.depth);
             GRID.grid();
             GRID.paintCoord("coord", MAP[level].map);
         }
@@ -1086,7 +1086,7 @@ const GAME = {
         }
         if (DEBUG._2D_display) {
             const map = MAP[GAME.level].map;
-            ENGINE.BLOCKGRID.draw(map);
+            ENGINE.BLOCKGRID3D.draw(map, HERO.player.depth);
             MISSILE3D.draw();
             ENTITY3D.drawVector2D();
             DYNAMIC_ITEM3D.drawVector2D();

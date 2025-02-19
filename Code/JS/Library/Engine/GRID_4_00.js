@@ -850,6 +850,44 @@ class GA_Dimension_Agnostic_Methods {
         return BWT.rle_encode(BWT.bwt(this.toString()));
     }
 
+    /**
+       * @param {FP_Grid} pos - position of entity
+       * @param {number} exlusion - binary constant array of MAP_DICT values, @default GROUND_MOVE_GRID_EXCLUSION
+       * @returns {boolean} - true if position is not in wall or other exluded type
+       */
+
+    entityNotInExcusion(pos, dir, r, depth = 0, exclusion = GROUND_MOVE_GRID_EXCLUSION, resolution = 8) {
+        let checks = this.pointsAroundEntity(pos, dir, r, resolution);
+        for (const point of checks) {
+            let notExcluded = this.positionIsNotExcluded(point, exclusion, depth);
+            if (!notExcluded) return false;
+        }
+        return true;
+    }
+    pointsAroundEntity(pos, dir, r, resolution = 4) {
+        let checks = [];
+        const increment = (2 * Math.PI) / resolution;
+        for (let theta = 0; theta < 2 * Math.PI; theta += increment) {
+            checks.push(pos.translate(dir.rotate(theta), r));
+        }
+        return checks;
+    }
+    pathClear(path) {
+        for (const grid of path) {
+            if (this.check(grid, AIR_MOVE_GRID_EXCLUSION.sum())) return false;
+        }
+        return true;
+    }
+
+    entityNotInWall(pos, dir, r, depth = 0, resolution = 8) {
+        let checks = this.pointsAroundEntity(pos, dir, r, resolution);
+        for (const point of checks) {
+            let notWall = this.positionIsNotWall(point, depth);
+            if (!notWall) return false;
+        }
+        return true;
+    }
+
 }
 
 class GridArray extends Classes([ArrayBasedDataStructure, GA_Dimension_Agnostic_Methods]) {
@@ -1237,37 +1275,8 @@ class GridArray extends Classes([ArrayBasedDataStructure, GA_Dimension_Agnostic_
         }
         return [start, lastDir];
     }
-    positionIsNotWall(pos) {
-        const grid = Grid.toClass(pos);
-        const check = this.check(grid, AIR_MOVE_GRID_EXCLUSION.sum());
-        return !check;
-    }
-    entityNotInWall(pos, dir, r, resolution = 8) {
-        let checks = this.pointsAroundEntity(pos, dir, r, resolution);
-        for (const point of checks) {
-            let notWall = this.positionIsNotWall(point);
-            if (!notWall) return false;
-        }
-        return true;
-    }
-    /**
-   * @param {FP_Grid} pos - position of entity
-   * @param {number} exlusion - binary constant array of MAP_DICT values, @default GROUND_MOVE_GRID_EXCLUSION
-   * @returns {boolean} - true if position is not in wall or other exluded type
-   */
-    positionIsNotExcluded(pos, exclusion = GROUND_MOVE_GRID_EXCLUSION) {
-        const grid = Grid.toClass(pos);
-        const check = this.check(grid, exclusion.sum());
-        return !check;
-    }
-    entityNotInExcusion(pos, dir, r, exclusion = GROUND_MOVE_GRID_EXCLUSION, resolution = 8) {
-        let checks = this.pointsAroundEntity(pos, dir, r, resolution);
-        for (const point of checks) {
-            let notExcluded = this.positionIsNotExcluded(point, exclusion);
-            if (!notExcluded) return false;
-        }
-        return true;
-    }
+
+
     entityInWallPoint(pos, dir, r, resolution = 8) {
         let checks = this.pointsAroundEntity(pos, dir, r, resolution);
         for (const point of checks) {
@@ -1276,25 +1285,32 @@ class GridArray extends Classes([ArrayBasedDataStructure, GA_Dimension_Agnostic_
         }
         return [false, null];
     }
-    pointsAroundEntity(pos, dir, r, resolution = 4) {
-        let checks = [];
-        const increment = (2 * Math.PI) / resolution;
-        for (let theta = 0; theta < 2 * Math.PI; theta += increment) {
-            checks.push(pos.translate(dir.rotate(theta), r));
-        }
-        return checks;
+
+    /**
+    * this is 2D Grid specific
+    */
+    positionIsNotWall(pos) {
+        const grid = Grid.toClass(pos);
+        const check = this.check(grid, AIR_MOVE_GRID_EXCLUSION.sum());
+        return !check;
     }
+
+    /**
+     * this is 2D Grid specific
+     */
+    positionIsNotExcluded(pos, exclusion = GROUND_MOVE_GRID_EXCLUSION) {
+        const grid = Grid.toClass(pos);
+        const check = this.check(grid, exclusion.sum());
+        return !check;
+    }
+
     gridsAroundEntity(pos, dir, r, resolution = 4) {
         let checks = this.pointsAroundEntity(pos, dir, r, resolution);
         checks = checks.filter(this.positionIsNotWall, this);
         return checks.map(Grid.toClass);
     }
-    pathClear(path) {
-        for (const grid of path) {
-            if (this.check(grid, AIR_MOVE_GRID_EXCLUSION.sum())) return false;
-        }
-        return true;
-    }
+
+
     lookForGrid(startGrid, dir, lookGrid) {
         do {
             startGrid = startGrid.add(dir);
@@ -1604,7 +1620,26 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
             }
         }
     }
+
+    /**
+      * this is 3D Grid specific
+      */
+    positionIsNotExcluded(pos, exclusion = GROUND_MOVE_GRID_EXCLUSION, depth) {
+        const grid = new Grid3D(pos.x, pos.y, depth);
+        const check = this.check(grid, exclusion.sum());
+        return !check;
+    }
+
+    /**
+    * this is 3D Grid specific
+    */
+    positionIsNotWall(pos, depth) {
+        const grid = new Grid3D(pos.x, pos.y, depth);
+        const check = this.check(grid, AIR_MOVE_GRID_EXCLUSION.sum());
+        return !check;
+    }
 }
+
 
 //END
 console.log(`%cGRID ${GRID.VERSION} loaded.`, GRID.CSS);

@@ -73,7 +73,7 @@ const WebGL = {
     CONFIG: {
         firstperson: true,
         dual: true,
-        prevent_movement_in_exlusion_grids: true,
+        prevent_movement_in_exlusion_grids: true, //true
         cameraType: "first_person",
         set(type, dual = false, prevent = true) {
             this.dual = dual;
@@ -1649,6 +1649,9 @@ class $3D_player {
         this.actionCallback = null;
         this.initTextureMap();
     }
+    setDepth(){
+        this.depth = Math.floor(this.pos.y);
+    }
     initTextureMap(normal = "normal") {
         if (!this.model) return;
         this.textureMap = {};
@@ -1799,6 +1802,7 @@ class $3D_player {
             this.actor.animate(Date.now());
         }
         this.setMode('walking');
+        this.setDepth();
     }
     resetBirth() {
         this.actor.birth = Date.now();
@@ -1861,9 +1865,9 @@ class $3D_player {
         if (this.bumpEnemy(nextPos)) return;
         let check;
         if (WebGL.CONFIG.prevent_movement_in_exlusion_grids) {
-            check = this.GA.entityNotInExcusion(nextPos, Vector3.to_FP_Vector(dir), this.r);
+            check = this.GA.entityNotInExcusion(nextPos, Vector3.to_FP_Vector(dir), this.r, this.depth);
         } else {
-            check = this.GA.entityNotInWall(nextPos, Vector3.to_FP_Vector(dir), this.r);
+            check = this.GA.entityNotInWall(nextPos, Vector3.to_FP_Vector(dir), this.r, this.depth);
         }
         if (check) {
             this.setPos(nextPos3);
