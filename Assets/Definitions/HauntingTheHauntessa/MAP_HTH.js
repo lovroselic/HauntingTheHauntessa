@@ -27,6 +27,7 @@ const MAP = {
         floor: "Grass14",
         ceil: "BloodMarbleFloorWall_SDXL_015",
         start: '[104,1]',
+        decals: '[[5,7,"FluxDommes3045","picture"]]',
         lights: '[[60,1,"Candelabra01","standard"]]',
         }
 };

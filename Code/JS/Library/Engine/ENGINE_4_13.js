@@ -2832,6 +2832,43 @@ const ENGINE = {
                     ENGINE.drawCircle(CTX, start, decalWidth * 2, color);
                 }
             }
+            if (maze.decals) {
+                for (const decal of maze.decals) {
+                    let grid = GA.indexTo2DGridSlice(decal[0], z);
+                    let dir = Vector.fromInt(decal[1]);
+                    dotOrLine(grid, dir, "#0000FF");
+                }
+            }
+
+            function displayEntity(entity, color) {
+                let grid = GA.indexToGrid(entity[0]);
+                let dir = Vector.fromInt(entity[1]);
+                dotOrLine(grid, dir, color);
+                let mid = GRID.gridToCenterPX(grid);
+                write(mid, entity[2]);
+            }
+
+            function write(point, text, color = "#000") {
+                CTX.fillStyle = color;
+                CTX.font = "10px Arial";
+                CTX.textAlign = "center";
+                CTX.textBaseLine = "middle";
+                CTX.fillText(text, point.x, point.y);
+            }
+
+            function dotOrLine(grid, dir, color) {
+                let mid = GRID.gridToCenterPX(grid);
+                let start = mid.translate(dir, W);
+                let pDirs = dir.getPerpendicularDirs();
+                let pStart = start.translate(pDirs[0], W);
+                let pEnd = start.translate(pDirs[1], W);
+                if (pDirs[0].same(NOWAY)) {
+                    ENGINE.drawCircle(CTX, pStart, decalWidth * 2, color);
+                } else {
+                    ENGINE.drawLine(CTX, pStart, pEnd, color, decalWidth);
+                }
+                return start;
+            }
         }
     },
     VECTOR2D: {
