@@ -22,11 +22,11 @@ const MAP = {
         maxSpawned: -1,
         killCountdown: -1,
         spawnDelay: -1,
-        data: '{"width":11,"height":11,"depth":1,"map":"BB8AA42BB30AA6BB9ABB16ABB8$"}',
+        data: '{"width":"11","height":"11","depth":1,"map":"BB6AA11BAA4BB2AA5BABAA19BB7ABABB24AA3BAA2BABB6ABB4ABB15$A"}',
         wall: "OrnateFloor102",
         floor: "Grass14",
         ceil: "BloodMarbleFloorWall_SDXL_015",
         start: '[104,1]',
+        lights: '[[60,1,"Candelabra01","standard"]]',
         }
-
 };

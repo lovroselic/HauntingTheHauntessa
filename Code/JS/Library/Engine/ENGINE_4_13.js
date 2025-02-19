@@ -2822,6 +2822,16 @@ const ENGINE = {
                 let mid = GRID.gridToCenterPX(grid);
                 ENGINE.drawCircle(CTX, mid, decalWidth * 2, "#000000");
             }
+            if (maze.lights) {
+                for (const light of maze.lights) {
+                    let grid = GA.indexTo2DGridSlice(light[0], z);
+                    let dir = Vector.fromInt(light[1]);
+                    let color = colorVectorToHex(LIGHT_COLORS[light[3]]);
+                    let mid = GRID.gridToCenterPX(grid);
+                    let start = mid.translate(dir, W);
+                    ENGINE.drawCircle(CTX, start, decalWidth * 2, color);
+                }
+            }
         }
     },
     VECTOR2D: {
