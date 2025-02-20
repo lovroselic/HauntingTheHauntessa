@@ -181,10 +181,8 @@ const GAME = {
     this.setWorld(level);
   },
   arena() {
-    //GAME.init();
     let GA = $MAP.map.GA;
-    //GA.massClear();
-    GA.sliceFill(GAME.floor * $MAP.map.width * $MAP.map.height, $MAP.map.width * $MAP.map.height, 0);
+    GA.sliceFill(GAME.floor * $MAP.map.width * $MAP.map.height, $MAP.map.width * $MAP.map.height, $("#arena_value")[0].value);
     GA.border(parseInt($("#arenawidth").val(), 10), GAME.floor);
     $MAP.map.textureMap = $MAP.map.GA.toTextureMap();
     GAME.render();
@@ -944,6 +942,11 @@ const GAME = {
     $("#buttons").append("<input type='button' id='copy' value='Copy to Clipboard'>");
 
     $("#gridsize").on("change", GAME.render);
+
+
+    //arena values
+    $("#arena_value").append(`<option value="${MAPDICT.EMPTY}">Space</option>`);
+    $("#arena_value").append(`<option value="${MAPDICT.HOLE}">Hole</option>`);
 
     //textures
     for (const prop of TEXTURE_LIST) {

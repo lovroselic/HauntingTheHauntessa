@@ -1516,7 +1516,7 @@ const WORLD = {
             if (!grid.z) grid.z = 0;                                                                    //2D Grid legacy support
             let initial = value;
             value &= (2 ** GA.gridSizeBit - 1 - (MAPDICT.FOG + MAPDICT.RESERVED + MAPDICT.ROOM));
-       
+            //console.info("->", index, initial, "->", value, grid);
             switch (value) {
                 case MAPDICT.EMPTY:
                 case MAPDICT.DOOR:
@@ -2089,9 +2089,12 @@ class LightDecal extends Decal {
         this.setPosition(grid, face);
     }
     setPosition(grid, face) {
+        const gridType = grid.constructor.name;
         let off = FaceToOffset(face, WebGL.INI.LIGHT_OUT);
         let pos = FP_Grid.toClass(grid).add(off);
-        this.position = new Vector3(pos.x, 1.0 - WebGL.INI.LIGHT_TOP, pos.y);
+        if (gridType === "Grid") grid.z = 0;                                            //2D Grid legacy
+        this.position = new Vector3(pos.x, grid.z + 1.0 - WebGL.INI.LIGHT_TOP, pos.y);
+        console.log("gridType in LightDecal", this.position);
     }
 }
 

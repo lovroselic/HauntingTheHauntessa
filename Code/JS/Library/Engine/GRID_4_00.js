@@ -1607,16 +1607,16 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
             for (let w = 0; w < width; w++) {
                 let grid1 = new Grid3D(x, Y + w, floor);
                 let grid2 = new Grid3D(x, Y + H - 1 - w, floor);
-                this.set(grid1, set);
-                this.set(grid2, set);
+                this.setValue(grid1, set);
+                this.setValue(grid2, set);
             }
         }
         for (let y = Y; y < Y + H; y++) {
             for (let w = 0; w < width; w++) {
                 let grid1 = new Grid3D(X + w, y, floor);
                 let grid2 = new Grid3D(X + W - 1 - w, y, floor);
-                this.set(grid1, set);
-                this.set(grid2, set);
+                this.setValue(grid1, set);
+                this.setValue(grid2, set);
             }
         }
     }

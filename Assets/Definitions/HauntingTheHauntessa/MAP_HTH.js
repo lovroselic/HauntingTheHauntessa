@@ -22,12 +22,11 @@ const MAP = {
         maxSpawned: -1,
         killCountdown: -1,
         spawnDelay: -1,
-        data: '{"width":"11","height":"11","depth":1,"map":"BB2ABB2QAA3ÁAA7BAA2BB2AA6BB3AA21BB7ABB2ABB2ABB13ABB3ABB2ABB2ABABAA2BB4ABB18$AA3"}',
-        wall: "OrnateFloor102",
-        floor: "Grass14",
-        ceil: "BloodMarbleFloorWall_SDXL_015",
-        start: '[104,1]',
-        decals: '[[5,7,"FluxDommes3045","picture"]]',
-        lights: '[[60,1,"Candelabra01","standard"]]',
+        data: '{"width":"15","height":"15","depth":3,"map":"BB2AA3BB2ABABB3AA19BAA11BB2AA7BAA3BB2ABAA8BB2AA6BAA12ÁQAA3BAA10BAA2BB10ABB2ABB21AA3BB4AA2BB11ABAA2BABB6ABB4AA2BB8ABAA3BB8ABB2ABB16$BB46ÁÁ2BB48ABB78ÁÁ3BÁÁ3BB27ÁÁ2BB5ÁÁ6BÁÁ2BB37ÁBB2ÁÁ2BB6ÁBB9AA2ÁÁ19BÁÁ30BÁÁ10BÁBÁÁ23BÁÁ10BB2ÁÁ15BÁBB4ÁÁ4BÁÁ31BB9"}',
+        wall: "FloorPebbles1",
+        floor: "BloodMarbleFloorWall_SDXL_030",
+        ceil: "SmallBlackBricks44",
+        start: '[202,1]',
+        lights: '[[112,1,"Candelabra01","standard"],[305,3,"DuaLLantern_002","standard"],[566,3,"WallLamp19","standard"]]',
         }
 };
