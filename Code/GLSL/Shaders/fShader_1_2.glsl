@@ -51,7 +51,7 @@ const float EPSILON = 0.005f;                                    // don't enter 
 const float PL_AMBIENT_OCCLUSION = 0.10f;                        // how much of ambient light gets through occlusion - 0.225
 const float PL_DIFFUSE_OCCLUSION = 0.10f;                        // how much of diffused light gets through occlusion - 0.30
 const float PL_AMBIENT_ILLUMINATION_REDUCTION = 0.02f;           // how much of ambient light gets through in reverse direction - 0.02
-const float PL_DIFUSSE_ILLUMINATION_REDUCTION = 0.05f;           // how much of ambient light gets through in reverse direction - 0.20
+const float PL_DIFUSSE_ILLUMINATION_REDUCTION = 0.05f;           // how much of ambient light gets through in reverse direction - 0.05
 const float PL_DIFUSSE_LIGHT_HALO_REDUCTION = 0.25f;             // intensity of light halo - 0.40
 const float ATTNF = 0.05f;                                        // linear arrenuation factor 0.3
 const float ATTNF2 = 0.55f;                                      // quadratic attenuation factor 0.75
@@ -62,7 +62,7 @@ const float IGNORED_ATTN_DISTANCE = 0.012f;                      // distance aft
 const float ILLUMINATION_CUTOFF = 0.11f;                         // remove flickering, light FOV - 0.11
 const float DISTANCE_LIGHT = 0.475f;                             // force illumination near the light source  - 0.475
 const float LIGHT_POS_Y_OFFSET = 0.35f;                          // vertical light position change 
-const float INTO_WALL = 0.01f;                                   // into wall target raycast offset: 0.01
+const float INTO_WALL = 0.01f;                                  // into wall target raycast offset: 0.01
 
 out vec4 fragColor;                                              //300 es
 
@@ -78,7 +78,12 @@ bool isOccluded(vec2 position2D);
 
 bool Raycast3D(vec3 rayOrigin3D, vec3 rayTarget3D, float illumination);
 bool isOccluded(vec3 position3D);
-vec3 worldToNormalizedTexCoord3D(vec3 position3D);                    
+vec3 worldToNormalizedTexCoord3D(vec3 position3D);
+
+vec3 debugDisplay(bool occluded);
+vec3 illuminationDisplay(float illumination);
+vec3 occlusionDisplay(bool occluded);
+vec3 RayDebug(vec3 rayOrigin3D, vec3 rayTarget3D, float illumination); 
 
 // ----------------------------------------------------------------------------
 
@@ -115,8 +120,8 @@ void main(void) {
 }
 
 vec3 CalcLight(vec3 lightPosition, vec3 FragPos, vec3 viewDir, vec3 normal, vec3 pointLightColor, float shininess, vec3 ambientColor, vec3 diffuseColor, vec3 specularColor, float ambientStrength, float diffuseStrength, float specularStrength, int inner, vec3 lightDirection) {
+    lightPosition.y -= LIGHT_POS_Y_OFFSET;
     float lightPosDistance = distance(lightPosition, FragPos);
-    float lightDistance = distance(vec3(lightPosition.x, lightPosition.y - LIGHT_POS_Y_OFFSET, lightPosition.z), FragPos);
     vec3 lightDir = normalize(FragPos - lightPosition);
     vec3 directionOfOrthoLight = lightDirection;                                //it normal already!
 
@@ -127,13 +132,20 @@ vec3 CalcLight(vec3 lightPosition, vec3 FragPos, vec3 viewDir, vec3 normal, vec3
     illumination = 1.0f;
     if (inner == 0 && lightDirection.x < 128.0f) {
         illumination = dot(lightDir, directionOfOrthoLight);               // considers only directional lights
+        if (illumination < 0.0f) {
+            illumination = 0.0f;
+        }
     }
 
-    //bool occluded = Raycast(lightPosition, FragPos, illumination);
     bool occluded = Raycast3D(lightPosition, FragPos, illumination);
+    //bool occluded = Raycast(lightPosition, FragPos, illumination);
+
+    //return debugDisplay(occluded);                                            //debug
+    //return illuminationDisplay(illumination);                                 //debug
+    //return occlusionDisplay(isOccluded(RayDebug(lightPosition, FragPos, illumination)));
 
     bool isLight = false;
-    if (lightDistance < DISTANCE_LIGHT) {
+    if (lightPosDistance < DISTANCE_LIGHT) {
         isLight = true;
     }
 
@@ -156,14 +168,10 @@ vec3 CalcLight(vec3 lightPosition, vec3 FragPos, vec3 viewDir, vec3 normal, vec3
     float spec = pow(max(dot(viewDir, reflectDir), 0.0f), shininess);
     vec3 specularLight = pointLightColor * spec * specularStrength * attenuation * specularColor;
 
-    //ambientLight = clamp(ambientLight, 0.0f, MAXLIGHT);
-    //diffuselight = clamp(diffuselight, 0.0f, MAXLIGHT);
-    //specularLight = clamp(specularLight, 0.0f, MAXLIGHT);
-
     if (illumination < ILLUMINATION_CUTOFF) {
         if (isLight) {
-            float invlightDistance = 1.0f / lightDistance;
-            float attenuationHalo = invlightDistance / (HATTNF + HATTNF2 * lightDistance);
+            float invlightDistance = 1.0f / lightPosDistance;
+            float attenuationHalo = invlightDistance / (HATTNF + HATTNF2 * lightPosDistance);
             diffuselight *= PL_DIFUSSE_LIGHT_HALO_REDUCTION * attenuationHalo;
         } else {
             diffuselight *= PL_DIFUSSE_ILLUMINATION_REDUCTION;
@@ -181,94 +189,99 @@ vec3 CalcLight(vec3 lightPosition, vec3 FragPos, vec3 viewDir, vec3 normal, vec3
 
 bool Raycast3D(vec3 rayOrigin3D, vec3 rayTarget3D, float illumination) {
     vec3 direction = rayTarget3D - rayOrigin3D;
-    float illumination2 = (illumination + EPSILON) * (illumination + EPSILON);
-    vec3 adjustedTarget = rayTarget3D - normalize(direction) * INTO_WALL * illumination2;
-    direction = adjustedTarget - rayOrigin3D;
-
     vec3 step = sign(direction);
-    vec3 invDirection = 1.0f / max(abs(direction), vec3(EPSILON));
+    float illumination2 = (illumination + EPSILON) * (illumination + EPSILON);
+    vec3 cellTarget = floor(rayTarget3D - step * INTO_WALL * illumination2);            //pull it from the wall boundary so they are illuminated if on border
 
-    vec3 tDelta = invDirection;
-    vec3 startCell = floor(rayOrigin3D);                                                // integer cell containing the origin
-    vec3 cellTarget = floor(adjustedTarget);                                            //integer target cell
-    vec3 cellOffset = rayOrigin3D - startCell;
+    vec3 tDelta = 1.0f / max(abs(direction), vec3(EPSILON));
+    vec3 startCell = floor(rayOrigin3D);                                                // integer cell containing the origin - assured non boundary
 
     // how far to the next boundary
     vec3 tMax = vec3(0.0f);
+
     for (int i = 0; i < 3; i++) {
-        float distToBoundary = (step[i] > 0.0f) ? (1.0f - fract(cellOffset[i])) : fract(cellOffset[i]);
-        distToBoundary = (distToBoundary == 0.0f) ? 1.0f : distToBoundary;
+        float distToBoundary = (step[i] > 0.0f) ? (1.0f - fract(rayOrigin3D[i])) : fract(rayOrigin3D[i]);
         tMax[i] = distToBoundary * tDelta[i];
     }
 
-    vec3 currentCell = startCell;
+    vec3 currentCell = rayOrigin3D;
 
     // *** Walk along the ray in 3D, up to MAX_STEPS ***
     for (int i = 0; i < MAX_STEPS; i++) {
 
-        vec3 cellCenter = currentCell + vec3(0.5f);              //checking the center
-        if (isOccluded(cellCenter)) {
+        if (isOccluded(currentCell)) {
             return true;
         }
 
-        if (currentCell == cellTarget) {
+        if ((step.x > 0.0f && currentCell.x >= cellTarget.x) || (step.x < 0.0f && currentCell.x <= cellTarget.x)) {
+            if ((step.y > 0.0f && currentCell.y >= cellTarget.y) || (step.y < 0.0f && currentCell.y <= cellTarget.y)) {
+                if ((step.z > 0.0f && currentCell.z >= cellTarget.z) || (step.z < 0.0f && currentCell.z <= cellTarget.z)) {
+                    return false; // Target reached, stop raycasting
+                }
+            }
+        }
+
+        if (floor(currentCell) == cellTarget) {
             return false;
         }
 
         // How far in t we must go to step in x vs y vs z
-        if (tMax.x < tMax.y) {
-            if (tMax.x < tMax.z) {
-                // We cross a boundary in x first
+        if (tMax.x <= tMax.z) {  // Prioritize X and Z first
+            if (tMax.x <= tMax.y) {
                 tMax.x += tDelta.x;
                 currentCell.x += step.x;
             } else {
-                // We cross in z
-                tMax.z += tDelta.z;
-                currentCell.z += step.z;
-            }
-        } else {
-            if (tMax.y < tMax.z) {
-                // We cross a boundary in y
                 tMax.y += tDelta.y;
                 currentCell.y += step.y;
-            } else {
-                // We cross in z
+            }
+        } else {
+            if (tMax.z <= tMax.y) {
                 tMax.z += tDelta.z;
                 currentCell.z += step.z;
+            } else {
+                tMax.y += tDelta.y;
+                currentCell.y += step.y;
             }
         }
+
     }
     return false;                               // No occlusion detected, target not reached
 }
 
 bool Raycast(vec3 rayOrigin3D, vec3 rayTarget3D, float illumination) {
+    //to XZ plane
     vec2 origin = rayOrigin3D.xz;
     vec2 target = rayTarget3D.xz;
-    vec2 deltaGrid = target - origin;
+
+    vec2 direction = target - origin;
     vec2 step = sign(target - origin);
-    vec2 gridOrigin = origin;
     float illumination2 = (illumination + EPSILON) * (illumination + EPSILON);
-    vec2 gridTarget = worldToGridTexCoord(target - step * INTO_WALL * illumination2);            // Adjusted target with directional offset so the target is reached when FragPOs is in the wall - iluminating wall   
-    vec2 tDelta = abs(1.0f / max(abs(deltaGrid), vec2(EPSILON)));                            // How far to go in each direction to cross a grid line
+    vec2 gridTarget = floor(target - step * INTO_WALL * illumination2);            // Adjusted target with directional offset so the target is reached when FragPOs is in the wall - iluminating wall   
+
+    vec2 tDelta = abs(1.0f / max(abs(direction), vec2(EPSILON)));                            // How far to go in each direction to cross a grid line
 
     vec2 tMax;
-    tMax.x = step.x > 0.0f ? (1.0f - fract(gridOrigin.x)) * tDelta.x : fract(gridOrigin.x) * tDelta.x;
-    tMax.y = step.y > 0.0f ? (1.0f - fract(gridOrigin.y)) * tDelta.y : fract(gridOrigin.y) * tDelta.y;
+    tMax.x = step.x > 0.0f ? (1.0f - fract(origin.x)) * tDelta.x : fract(origin.x) * tDelta.x;
+    tMax.y = step.y > 0.0f ? (1.0f - fract(origin.y)) * tDelta.y : fract(origin.y) * tDelta.y;
 
-    vec2 current = gridOrigin;
+    vec2 current = origin;
 
     for (int i = 0; i < MAX_STEPS; i++) {
+
+        //if moved after below checks, removes flickering but lits back of the grid
         if (isOccluded(current)) {
             return true;
         }
-        if (worldToGridTexCoord(current) == gridTarget) {
+
+        if (floor(current) == gridTarget) {
             return false;
         }
         if ((step.x > 0.0f && current.x >= gridTarget.x) || (step.x < 0.0f && current.x <= gridTarget.x)) {
             if ((step.y > 0.0f && current.y >= gridTarget.y) || (step.y < 0.0f && current.y <= gridTarget.y)) {
-                return false;                                                                   // Target reached
+                return false;                                                                                        // Target reached
             }
         }
+
         if (tMax.x < tMax.y) {
             tMax.x += tDelta.x;
             current.x += step.x;
@@ -298,9 +311,38 @@ bool isOccluded(vec3 position3D) {
     // Convert from world position to [0,1] texture coordinates
     vec3 texCoord = worldToNormalizedTexCoord3D(position3D);
     float occlusion = texture(uOcclusionMap, texCoord).r;
-    return (occlusion > 0.5f);
+    return (occlusion >= 0.5f);
 }
 
 vec3 worldToNormalizedTexCoord3D(vec3 position3D) {
-    return vec3(position3D.x / uGridSize.x, position3D.y / uGridSize.y, position3D.z / uGridSize.z);
+    //need to swap z and y
+    return vec3(position3D.x / uGridSize.x, position3D.z / uGridSize.y, position3D.y / uGridSize.z);
+}
+
+/*** DEBUG ***/
+vec3 debugDisplay(bool occluded) {
+    if (occluded) {
+        return vec3(1.0f, 0.0f, 0.0f);
+    } else
+        return vec3(0.0f, 1.0f, 0.0f);
+}
+
+vec3 occlusionDisplay(bool occluded) {
+    if (occluded) {
+        return vec3(0.5f, 0.0f, 0.0f);
+    } else {
+        return vec3(0.0f, 0.1f, 0.0f);
+    }
+}
+
+vec3 illuminationDisplay(float illumination) {
+    return vec3(0.0f, illumination, 0.0f);
+}
+
+vec3 RayDebug(vec3 rayOrigin3D, vec3 rayTarget3D, float illumination) {
+    vec3 direction = rayTarget3D - rayOrigin3D;
+    float illumination2 = (illumination + EPSILON) * (illumination + EPSILON);
+    vec3 adjustedTarget = rayTarget3D + normalize(direction) * INTO_WALL * illumination2;
+
+    return adjustedTarget;
 }

@@ -27,6 +27,7 @@ const MAP = {
         floor: "BloodMarbleFloorWall_SDXL_030",
         ceil: "SmallBlackBricks44",
         start: '[202,1]',
-        lights: '[[112,1,"Candelabra01","standard"],[305,3,"DuaLLantern_002","standard"],[566,3,"WallLamp19","standard"]]',
+        decals: '[[7,7,"GameDommes_039","picture"],[246,7,"GemDommes_063","picture"],[503,7,"FemDommes_5062","picture"]]',
+        lights: '[[112,1,"Candelabra01","standard"]]',
         }
 };

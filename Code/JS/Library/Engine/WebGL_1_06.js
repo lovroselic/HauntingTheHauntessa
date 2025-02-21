@@ -2094,7 +2094,7 @@ class LightDecal extends Decal {
         let pos = FP_Grid.toClass(grid).add(off);
         if (gridType === "Grid") grid.z = 0;                                            //2D Grid legacy
         this.position = new Vector3(pos.x, grid.z + 1.0 - WebGL.INI.LIGHT_TOP, pos.y);
-        console.log("gridType in LightDecal", this.position);
+        console.log("LightDecal position", this.position);
     }
 }
 
