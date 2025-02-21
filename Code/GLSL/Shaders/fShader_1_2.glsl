@@ -53,16 +53,17 @@ const float PL_DIFFUSE_OCCLUSION = 0.10f;                        // how much of 
 const float PL_AMBIENT_ILLUMINATION_REDUCTION = 0.02f;           // how much of ambient light gets through in reverse direction - 0.02
 const float PL_DIFUSSE_ILLUMINATION_REDUCTION = 0.05f;           // how much of ambient light gets through in reverse direction - 0.05
 const float PL_DIFUSSE_LIGHT_HALO_REDUCTION = 0.25f;             // intensity of light halo - 0.40
-const float ATTNF = 0.05f;                                        // linear arrenuation factor 0.3
-const float ATTNF2 = 0.55f;                                      // quadratic attenuation factor 0.75
+const float ATTNF = 0.25f;                                       // linear arrenuation factor 0.3
+const float ATTNF2 = 0.75f;                                      // quadratic attenuation factor 0.75
 const float HATTNF = 1.5f;                                       // light halo -- linear arrenuation factor - 1.5
 const float HATTNF2 = 6.0f;                                      // light halo quadratic attenuation factor - 5.0
-const float MAXLIGHT = 0.999f;                                    // max contribution to avoid overburning; - 0.999
+const float MAXLIGHT = 0.999f;                                   // max contribution to avoid overburning; - 0.999
 const float IGNORED_ATTN_DISTANCE = 0.012f;                      // distance after attenuation starts taking effect - 0.012
 const float ILLUMINATION_CUTOFF = 0.11f;                         // remove flickering, light FOV - 0.11
+const float BEHIND_LIGHT_FACTOR = 0.10f;                         //ambient illumination behind light source
 const float DISTANCE_LIGHT = 0.475f;                             // force illumination near the light source  - 0.475
 const float LIGHT_POS_Y_OFFSET = 0.35f;                          // vertical light position change 
-const float INTO_WALL = 0.01f;                                  // into wall target raycast offset: 0.01
+const float INTO_WALL = 0.01f;                                   // into wall target raycast offset: 0.01
 
 out vec4 fragColor;                                              //300 es
 
@@ -137,6 +138,14 @@ vec3 CalcLight(vec3 lightPosition, vec3 FragPos, vec3 viewDir, vec3 normal, vec3
         }
     }
 
+    vec3 ambientLight = vec3(0.0f);
+
+    /* behind the light source, we don't care about occlusion! */
+    if (dot(-lightDir, directionOfOrthoLight) > ILLUMINATION_CUTOFF) {
+        ambientLight = pointLightColor * ambientStrength * attenuation * ambientColor * BEHIND_LIGHT_FACTOR;
+        return ambientLight; // Shadow the fragment, it's behind the light
+    }
+
     bool occluded = Raycast3D(lightPosition, FragPos, illumination);
     //bool occluded = Raycast(lightPosition, FragPos, illumination);
 
@@ -150,7 +159,7 @@ vec3 CalcLight(vec3 lightPosition, vec3 FragPos, vec3 viewDir, vec3 normal, vec3
     }
 
     //ambient
-    vec3 ambientLight = vec3(0.0f);
+
     if (inner == 1) {
         ambientLight = pointLightColor * ambientStrength * ambientColor;
     } else {
@@ -168,6 +177,7 @@ vec3 CalcLight(vec3 lightPosition, vec3 FragPos, vec3 viewDir, vec3 normal, vec3
     float spec = pow(max(dot(viewDir, reflectDir), 0.0f), shininess);
     vec3 specularLight = pointLightColor * spec * specularStrength * attenuation * specularColor;
 
+//|| dot(-lightDir, directionOfOrthoLight) > BACK_ILLUMINATION_CUTOFF
     if (illumination < ILLUMINATION_CUTOFF) {
         if (isLight) {
             float invlightDistance = 1.0f / lightPosDistance;
