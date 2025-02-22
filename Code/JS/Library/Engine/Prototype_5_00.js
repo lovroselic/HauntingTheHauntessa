@@ -1065,6 +1065,20 @@ class Pointer {
     }
 }
 
+class Pointer_3DGrid {
+    constructor(grid, vector) {
+        this.grid = Grid3D.toClass(grid);
+        this.vector = Vector.toClass(vector);   //remains 2D vector
+    }
+}
+
+class Pointer_3D {
+    constructor(grid, vector) {
+        this.grid = Grid3D.toClass(grid);
+        this.vector = Vector3D.toClass(vector);   //remains 2D vector
+    }
+}
+
 /** 3D classes */
 /** Grids */
 class MasterGridClass3D {

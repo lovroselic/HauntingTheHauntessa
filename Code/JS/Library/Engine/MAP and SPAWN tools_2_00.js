@@ -7,7 +7,7 @@
 
 /** features to parse MazEditor outputs */
 const MAP_TOOLS = {
-    VERSION: "1.02",
+    VERSION: "2.00",
     CSS: "color: #F9A",
     properties: ['start', 'decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers',
         'shrines', 'doors', 'triggers', 'entities', 'objects', 'traps', 'oracles', 'movables', 'trainers', 'interactors', 'lairs'],
@@ -80,7 +80,7 @@ const MAP_TOOLS = {
         }
         const start = JSON.parse(this.MAP[level].start) || null;
         if (start) {
-            this.MAP[level].map.startPosition = new Pointer(GA.indexToGrid(start[0]), Vector.fromInt(start[1]));
+            this.MAP[level].map.startPosition = new Pointer_3DGrid(GA.indexToGrid(start[0]), Vector.fromInt(start[1]));
             this.MAP[level].map.start = start;
         }
         for (const prop of [...this.properties, ...this.lists]) {

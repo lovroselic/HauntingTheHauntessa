@@ -38,7 +38,7 @@
  */
 
 const WebGL = {
-    VERSION: "1.06",
+    VERSION: "2.00",
     CSS: "color: gold",
     CTX: null,
     VERBOSE: false, //default: false
@@ -1119,6 +1119,7 @@ const WebGL = {
                     if (!obj) return;
                     if (!obj.interactive) return;
                     if (WebGL.VERBOSE) console.info("Object clicked:", obj, "globalID", id);
+                    console.info("Object clicked:", obj, "globalID", id);
                     let PPos2d = Vector3.to_FP_Grid(hero.player.pos);
 
                     let itemGrid = obj.grid;
@@ -1131,6 +1132,8 @@ const WebGL = {
 
                     let distance = PPos2d.EuclidianDistance(itemGrid);
                     if (WebGL.VERBOSE) console.info("Object distance:", distance);
+                    console.log("HERO", hero.player.pos, "item", obj.grid);
+                    console.info("Object distance:", distance);
                     if (distance < WebGL.INI.INTERACT_DISTANCE) {
                         /** 
                          * GA
@@ -1789,7 +1792,7 @@ class $3D_player {
     setTranslation() {
         this.translation = glMatrix.mat4.create();
         const modelPosition = this.pos.clone();
-        modelPosition.set_y(this.minY);
+        modelPosition.set_y(this.minY + this.depth);////////////////////////////
         glMatrix.mat4.fromTranslation(this.translation, modelPosition.array);
     }
     setRotation() {

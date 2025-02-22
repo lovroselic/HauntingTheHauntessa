@@ -38,12 +38,12 @@ in vec2 vTextureCoord;
 //bloody hardcoded constants
 const vec3 innerLightColor = vec3(1.0f, 1.0f, 1.0f);
 const float innerAmbientStrength = 0.30f;                        //0.30
-const float innerDiffuseStrength = 20.0f;                        //15.0
-const float innerSpecularStrength = 2.5f;                        //5.0
+const float innerDiffuseStrength = 25.0f;                        //20.0
+const float innerSpecularStrength = 5.0f;                        //5.0
 
-const float PL_AmbientStrength = 9.99f;                           //5.0
-const float PL_DiffuseStrength = 50.0f;                          //10.0
-const float PL_SpecularStrength = 2.5f;                          //2.5
+const float PL_AmbientStrength = 9.99f;                           //9.99
+const float PL_DiffuseStrength = 50.0f;                          //50.0
+const float PL_SpecularStrength = 5.0f;                          //2.5
 
 const float IGNORE_ALPHA = 0.1f;
 const int MAX_STEPS = 999;                                       // Max steps for raycasting loop - 99
@@ -141,7 +141,7 @@ vec3 CalcLight(vec3 lightPosition, vec3 FragPos, vec3 viewDir, vec3 normal, vec3
     vec3 ambientLight = vec3(0.0f);
 
     /* behind the light source, we don't care about occlusion! */
-    if (dot(-lightDir, directionOfOrthoLight) > ILLUMINATION_CUTOFF) {
+    if (inner == 0 && dot(-lightDir, directionOfOrthoLight) > ILLUMINATION_CUTOFF) {
         ambientLight = pointLightColor * ambientStrength * attenuation * ambientColor * BEHIND_LIGHT_FACTOR;
         return ambientLight; // Shadow the fragment, it's behind the light
     }

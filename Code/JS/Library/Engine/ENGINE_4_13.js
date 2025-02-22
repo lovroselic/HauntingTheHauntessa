@@ -2816,7 +2816,6 @@ const ENGINE = {
             const decalWidth = 3;
             const W = (ENGINE.INI.GRIDPIX / 2) - decalWidth;
             const GA = maze.GA;
-            //start
             if (maze.start) {
                 let grid = GA.indexTo2DGridSlice(maze.start[0], z);
                 let mid = GRID.gridToCenterPX(grid);
@@ -2837,6 +2836,17 @@ const ENGINE = {
                     let grid = GA.indexTo2DGridSlice(decal[0], z);
                     let dir = Vector.fromInt(decal[1]);
                     dotOrLine(grid, dir, "#0000FF");
+                }
+            }
+            if (maze.objects && maze.movables) {
+                const concat_objects = [...maze.objects, ...maze.movables];
+                if (concat_objects) {
+                    for (const obj of concat_objects) {
+                        let grid = GA.indexTo2DGridSlice(obj[0], z);
+                        let mid = GRID.gridToCenterPX(grid);
+                        let text = `-${obj[1]}-`;
+                        write(mid, text, "#00F");
+                    }
                 }
             }
 

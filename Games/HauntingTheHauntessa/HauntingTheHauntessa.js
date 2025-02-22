@@ -189,7 +189,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.2.2",
+    VERSION: "0.3.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -902,8 +902,11 @@ const GAME = {
         HERO.speak("I should say something new.");
     },
     setCameraView() {
+        //WebGL.hero.topCamera = new $3D_Camera(WebGL.hero.player, DIR_UP, 0.9, new Vector3(0, -0.5, 0), 1, 70);
         WebGL.hero.topCamera = new $3D_Camera(WebGL.hero.player, DIR_UP, 0.9, new Vector3(0, -0.5, 0), 1, 70);
+        //WebGL.hero.overheadCamera = new $3D_Camera(WebGL.hero.player, DIR_UP, 2.5, new Vector3(0, -1, 0), 1, 80);
         WebGL.hero.overheadCamera = new $3D_Camera(WebGL.hero.player, DIR_UP, 2.5, new Vector3(0, -1, 0), 1, 80);
+        //WebGL.hero.orto_overheadCamera = new $3D_Camera(WebGL.hero.player, DIR_UP, 4, new Vector3(0, -1, 0), 0.4, 80);
         WebGL.hero.orto_overheadCamera = new $3D_Camera(WebGL.hero.player, DIR_UP, 4, new Vector3(0, -1, 0), 0.4, 80);
 
         switch (WebGL.CONFIG.cameraType) {
@@ -933,6 +936,7 @@ const GAME = {
         this.buildWorld(level);
         let start_dir, start_grid;
 
+        //this is still 2D, to be corrected
         if (GAME.fromCheckpoint) {
             start_dir = MAP[level].map[GAME.loadWayPoint].vector;
             start_grid = Grid.toClass(MAP[level].map[GAME.loadWayPoint].grid).add(start_dir);
@@ -942,7 +946,11 @@ const GAME = {
             start_grid = MAP[level].map.startPosition.grid;
         }
 
-        start_grid = Vector3.from_Grid(Grid.toCenter(start_grid), HERO.height);
+        console.warn("HERO start", start_grid, start_dir);
+
+        //start_grid = Vector3.from_Grid(Grid.toCenter(start_grid), start_grid.z + HERO.height);
+        start_grid = new Vector3(start_grid.x + 0.5, start_grid.z + HERO.height, start_grid.y + 0.5);
+        console.log("start_grid", start_grid);
         HERO.player = new $3D_player(start_grid, Vector3.from_2D_dir(start_dir), MAP[level].map, HERO_TYPE.ThePrincess);
         HERO.player.addToTextureMap("invisible", TEXTURE.TheInvisiblePrincess);
         GAME.setCameraView();
