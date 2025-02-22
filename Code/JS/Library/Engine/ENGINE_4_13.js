@@ -2849,6 +2849,21 @@ const ENGINE = {
                     }
                 }
             }
+            if (maze.gold) {
+                for (const gold of maze.gold) {
+                    let grid = GA.indexTo2DGridSlice(gold[0], z);
+                    let mid = GRID.gridToCenterPX(grid).translate(UpLeft, W / 2);
+                    CTX.fillStyle = "gold";
+                    CTX.fillRect(mid.x, mid.y, W, W / 2);
+                    mid = mid.translate(RIGHT, W / 2);
+                    write(mid, gold[1]);
+                }
+            }
+            if (maze.oracles) {
+                for (const entity of maze.oracles) {
+                    displayEntity(entity, "#666");
+                }
+            }
 
             function displayEntity(entity, color) {
                 let grid = GA.indexToGrid(entity[0]);

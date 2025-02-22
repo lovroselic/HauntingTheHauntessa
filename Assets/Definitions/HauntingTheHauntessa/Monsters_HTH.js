@@ -31,7 +31,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
-
+    DarkPriestess1: {
+        name: "DarkPriestess1",
+        sprite: "DarkPriestess1",
+        category: 'crest',
+        voice: "Female",
+        text: "This is just a tesst. Do you hear me?",
+        interactionCategory: "oracle",
+    },
 };
 
 const GOLD_ITEM_TYPE = {

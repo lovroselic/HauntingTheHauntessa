@@ -1125,15 +1125,16 @@ const WebGL = {
                     let itemGrid = obj.grid;
                     if (obj.moveState) {
                         itemGrid = obj.moveState.grid;                                                          // support for movables
-                    }
-                    else if (obj.grid.constructor.name === "Grid") {                                            // support for non FP grids, this is probably obsolete now
+                    } else if (obj.worldPosition) {
+                        itemGrid = obj.worldPosition;                                                                  // this is in openGL coordinates!
+                    } else if (obj.grid.constructor.name === "Grid") {                                            // support for non FP grids, this is probably obsolete now
                         itemGrid = Grid.toCenter(obj.grid);
                     }
 
                     //let distance = PPos2d.EuclidianDistance(itemGrid);
                     let distance = hero.player.pos.EuclidianDistance(Vector3.from_grid3D(itemGrid));
                     if (WebGL.VERBOSE) console.info("Object distance:", distance);
-                    console.info("Object distance:", distance, "WebGL.INI.INTERACT_DISTANCE", WebGL.INI.INTERACT_DISTANCE);
+                    console.info("Object distance:", distance, "WebGL.INI.INTERACT_DISTANCE", WebGL.INI.INTERACT_DISTANCE, "itemGrid", itemGrid, "HERO", HERO.player.pos.array);
                     if (distance < WebGL.INI.INTERACT_DISTANCE) {
                         /** 
                          * GA
@@ -1859,10 +1860,7 @@ class $3D_player {
     move(reverse, lapsedTime) {
         let length = (lapsedTime / 1000) * this.moveSpeed;
         let dir = this.dir;
-
-        if (reverse) {
-            dir = dir.reverse2D();
-        }
+        if (reverse) dir = dir.reverse2D();
 
         let nextPos3 = this.pos.translate(dir, length); //3D
         let nextPos = Vector3.to_FP_Grid(nextPos3);
@@ -1897,9 +1895,9 @@ class $3D_player {
         if (this.bumpEnemy(nextPos)) return;
         let check;
         if (WebGL.CONFIG.prevent_movement_in_exlusion_grids) {
-            check = this.GA.entityNotInExcusion(nextPos, Vector3.to_FP_Vector(dir), this.r);
+            check = this.GA.entityNotInExcusion(nextPos, Vector3.to_FP_Vector(dir), this.r, this.depth);
         } else {
-            check = this.GA.entityNotInWall(nextPos, Vector3.to_FP_Vector(dir), this.r);
+            check = this.GA.entityNotInWall(nextPos, Vector3.to_FP_Vector(dir), this.r, this.depth);
         }
         if (check) {
             this.setPos(nextPos3);
@@ -2070,6 +2068,7 @@ class Decal {
         this.width = this.texture.width;
         this.height = this.texture.height;
         this.active = true;
+        this.worldPosition = FP_Grid3D.to_center_block(grid);
     }
 }
 
@@ -2469,6 +2468,7 @@ class Gate extends Drawable_object {
         const mTranslationMatrix = glMatrix.mat4.create();
         glMatrix.mat4.fromTranslation(mTranslationMatrix, this.pos.array);
         this.mTranslationMatrix = mTranslationMatrix;
+        this.worldPosition = FP_Grid3D.to_center_block(grid);
     }
     lift() {
         VANISHING3D.add(new LiftingGate(this));
@@ -2774,6 +2774,8 @@ class WallFeature3D {
         this.reset();
         this.gameContext = gameContext;
         this.titleContext = titleContext;
+        this.worldPosition = FP_Grid3D.to_center_block(grid);
+
     }
     deactivate() {
         this.active = false;

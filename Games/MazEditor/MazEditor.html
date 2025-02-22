@@ -223,8 +223,14 @@
                             </legend>
                             <input type="radio" name="painter" value="flip" checked="checked"> Flip (Wall
                             &lt-&gt Space)<br />
-                            <input type="radio" name="painter" value="wall"> Wall <br />
-                            <input type="radio" name="painter" value="space"> Space <br />
+                            <input type="radio" name="painter" value="wall"> Wall 
+                            <input type="checkbox" id="ceil_support" value="ceil_support" name="ceil_support"
+                                checked="checked"> Set floor (space) above
+                            <br />
+                            <input type="radio" name="painter" value="space"> Space
+                            <input type="checkbox" id="floor_support" value="floor_support" name="floor_support"
+                                checked="checked"> Set wall bellow
+                            <br />
                             <input type="radio" name="painter" value="door"> Door <br />
                             <input type="radio" name="painter" value="trapdoor" disabled> TrapDoor (CCC
                             disabled)<br />
@@ -640,9 +646,11 @@
                                 floor: "BloodMarbleFloorWall_SDXL_030",
                                 ceil: "SmallBlackBricks44",
                                 start: '[361,5]',
-                                decals: '[[7,7,"GameDommes_039","picture"],[246,7,"GemDommes_063","picture"],[503,7,"FemDommes_5062","picture"]]',
+                                decals: '[[7,7,"GameDommes_039","picture"],[246,7,"GemDommes_063","picture"],[503,7,"FemDommes_5062","picture"],[332,4,"RustyFloorGrille_09","crest"]]',
                                 lights: '[[112,1,"Candelabra01","standard"],[305,3,"DuaLLantern_002","standard"],[566,3,"WallLamp19","standard"],[112,7,"WallLamp10","standard"]]',
+                                gold: '[[364,"GoldSphere"],[171,"GoldSphere"]]',
                                 objects: '[[155,"Apple"],[366,"Apple"],[368,"Apple"]]',
+                                oracles: '[[360,5,"DarkPriestess1"]]',
                                 }
                         </textarea>
                     </fieldset>

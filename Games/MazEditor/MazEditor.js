@@ -217,6 +217,7 @@ const GAME = {
     console.warn("mouseClick", grid, "radio", radio, "currentValue", currentValue, "gridIndex", gridIndex, "dimension", dimension, "floor", GAME.floor);
 
     switch (radio) {
+
       case 'flip':
         if (GA.isWall(grid)) {
           GA.carveDot(grid);
@@ -225,19 +226,37 @@ const GAME = {
         }
         $("#error_message").html("All is fine");
         break;
+
       case "space":
         GA.carveDot(grid);
+        if ($("input[name=floor_support]:checked").val()) {
+          if (grid.z > 0) {
+            grid.z--;
+            GA.toWall(grid);
+          }
+        }
         $("#error_message").html("All is fine");
         break;
+
       case "wall":
         GA.toWall(grid);
+        if ($("input[name=ceil_support]:checked").val()) {
+          console.log(grid, dimension);
+          if (grid.z < $MAP.map.depth - 1) {
+            grid.z++;
+            GA.carveDot(grid);
+            console.log("carving space above", grid);
+          }
+        }
         $("#error_message").html("All is fine");
         break;
+
       case "hole":
         GAME.clearGrid(gridIndex);
         GA.toHole(grid);
         $("#error_message").html("All is fine");
         break;
+
       case "door":
         if (GA.notWall(grid)) {
           GAME.clearGrid(gridIndex);
@@ -248,14 +267,17 @@ const GAME = {
           $("#error_message").html("You can't make door in the wall!");
         }
         break;
+
       case "trapdoor":
         GA.addTrapDoor(grid);
         $("#error_message").html("All is fine");
         break;
+
       case "blockwall":
         GA.toBlockWall(grid);
         $("#error_message").html("All is fine");
         break;
+
       case "gate":
         switch (currentValue) {
           case MAPDICT.WALL:
@@ -273,6 +295,7 @@ const GAME = {
         dirIndex = dirs[0].toInt();
         $MAP.map.gates.push(Array(gridIndex, dirIndex, $("#sgateID")[0].value, $("#tgateID")[0].value, $("#gatetype")[0].value));
         break;
+
       case "lair":
         switch (currentValue) {
           case MAPDICT.WALL:
@@ -292,6 +315,7 @@ const GAME = {
 
         console.warn("***** LAIR *****");
         break;
+
       case "decal":
         switch (currentValue) {
           case MAPDICT.EMPTY:
@@ -317,6 +341,7 @@ const GAME = {
         GAME.assertUniqueDecalPosition(gridIndex, dirIndex, $MAP.map.decals);
         $MAP.map.decals.push(Array(gridIndex, dirIndex, nameId, type));
         break;
+
       case "light":
         console.log("light, value", currentValue, "grid", grid);
         switch (currentValue) {
@@ -338,10 +363,12 @@ const GAME = {
         }
         $("#error_message").html("All is fine");
         break;
+
       case "cleargrid":
         GAME.clearGrid(gridIndex);
         $("#error_message").html("All is fine: grid cleared");
         break;
+
       case "start":
         switch (currentValue) {
           case MAPDICT.EMPTY:
@@ -360,6 +387,7 @@ const GAME = {
         }
         $("#error_message").html("All is fine");
         break;
+
       case "key":
         switch (currentValue) {
           case MAPDICT.EMPTY:
@@ -373,6 +401,7 @@ const GAME = {
         }
         $("#error_message").html("All is fine");
         break;
+
       case "monster":
         switch (currentValue) {
           case MAPDICT.EMPTY:
@@ -384,6 +413,7 @@ const GAME = {
             return;
         }
         break;
+
       case "scroll":
         switch (currentValue) {
           case MAPDICT.EMPTY:
@@ -396,6 +426,7 @@ const GAME = {
             return;
         }
         break;
+
       case "potion":
 
         switch (currentValue) {
@@ -409,18 +440,19 @@ const GAME = {
             return;
         }
         break;
+
       case 'gold':
         switch (currentValue) {
           case MAPDICT.EMPTY:
             let goldValue = $("#gold_type")[0].value;
             $MAP.map.gold.push(Array(gridIndex, goldValue));
-            console.log("$MAP.map.gold", $MAP.map.gold);
             break;
           default:
             $("#error_message").html(`Gold placement not supported on value: ${currentValue}`);
             return;
         }
         break;
+
       case 'skill':
         switch (currentValue) {
           case MAPDICT.EMPTY:
@@ -433,6 +465,7 @@ const GAME = {
             return;
         }
         break;
+
       case 'container':
         switch (currentValue) {
           case MAPDICT.EMPTY:
@@ -450,6 +483,7 @@ const GAME = {
             return;
         }
         break;
+
       case "shrine":
         switch (currentValue) {
           case MAPDICT.WALL:
@@ -466,6 +500,7 @@ const GAME = {
         dirIndex = dirs[0].toInt();
         $MAP.map.shrines.push(Array(gridIndex, dirIndex, $("#shrine_type")[0].value));
         break;
+
       case "item_shrine":
         switch (currentValue) {
           case MAPDICT.WALL:
@@ -482,6 +517,7 @@ const GAME = {
         dirIndex = dirs[0].toInt();
         $MAP.map.trainers.push(Array(gridIndex, dirIndex, $("#item_shrine_type")[0].value));
         break;
+
       case "oracle":
         switch (currentValue) {
           case MAPDICT.WALL:
@@ -490,7 +526,9 @@ const GAME = {
             $("#error_message").html(`Oracle placement not supported on value: ${currentValue}`);
             return;
         }
+        console.log("adding oracle on", grid);
         dirs = GA.getDirections(grid, MAPDICT.EMPTY);
+        console.log("dirs",dirs);
         if (dirs.length > 1) {
           alert(`Bad oracle position, posible exits ${dirs.length}`);
           break;
@@ -498,6 +536,7 @@ const GAME = {
         dirIndex = dirs[0].toInt();
         $MAP.map.oracles.push(Array(gridIndex, dirIndex, $("#oracle_type")[0].value));
         break;
+
       case "trigger":
 
         if (GAME.stack.previousRadio === radio) {
@@ -555,6 +594,7 @@ const GAME = {
         }
 
         break;
+
       case "entity":
         switch (currentValue) {
           case MAPDICT.WALL:
@@ -573,6 +613,7 @@ const GAME = {
         }
 
         break;
+
       case "interactor":
         switch (currentValue) {
           case MAPDICT.WALL:
@@ -591,6 +632,7 @@ const GAME = {
         }
 
         break;
+
       case "object":
         switch (currentValue) {
           case MAPDICT.EMPTY:
@@ -601,6 +643,7 @@ const GAME = {
             return;
         }
         break;
+
       case "movable":
         switch (currentValue) {
           case MAPDICT.EMPTY:
@@ -611,6 +654,7 @@ const GAME = {
             return;
         }
         break;
+
       case "trap":
 
         if (GAME.stack.previousRadio === radio) {
@@ -1093,7 +1137,7 @@ const GAME = {
     $("#content_type").trigger("change");
 
     //shrines
-    if (SHRINE_TYPE.length > 0) {
+    if (Object.keys(SHRINE_TYPE).length > 0) {
       for (const shrineType in SHRINE_TYPE) {
         $("#shrine_type").append(`<option value="${shrineType}">${shrineType}</option>`);
       }
@@ -1104,7 +1148,7 @@ const GAME = {
       $("#shrine_type").trigger("change");
     }
 
-    if (INTERACTION_SHRINE.length > 0) {
+    if (Object.keys(INTERACTION_SHRINE).length> 0) {
       for (const item_shrine_type in INTERACTION_SHRINE) {
         $("#item_shrine_type").append(`<option value="${item_shrine_type}">${item_shrine_type}</option>`);
       }
@@ -1115,7 +1159,7 @@ const GAME = {
       $("#item_shrine_type").trigger("change");
     }
 
-    if (ORACLE_TYPE.length > 0) {
+    if (Object.keys(ORACLE_TYPE).length > 0) {
       for (const oracleType in ORACLE_TYPE) {
         $("#oracle_type").append(`<option value="${oracleType}">${oracleType}</option>`);
       }
@@ -1139,7 +1183,7 @@ const GAME = {
       $("#trigger_actions").append(`<option value="${action}">${action}</option>`);
     }
 
-    if (INTERACTION_ENTITY.length > 0) {
+    if (Object.keys(INTERACTION_ENTITY).length  > 0) {
       for (const entity in INTERACTION_ENTITY) {
         $("#entity_type").append(`<option value="${entity}">${entity}</option>`);
       }

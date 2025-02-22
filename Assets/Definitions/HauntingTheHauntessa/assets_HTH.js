@@ -687,7 +687,7 @@ LoadSprites = [
     { srcName: "Slides/HTH_slide4.jpg", name: "HTH_slide4" },
 
     // frescoes - entities
-
+    { srcName: "EntityPictures/DarkPriestess1.jpg", name: "DarkPriestess1" },
 
     //action movables
 

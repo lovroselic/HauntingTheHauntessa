@@ -262,7 +262,7 @@ const SPAWN_TOOLS = {
     },
     gold(map, GA) {
         for (const G of map.gold) {
-            const grid = Grid.toCenter(GA.indexToGrid(G[0]));
+            const grid = Grid3D.toCenter2D(GA.indexToGrid(G[0]));
             ITEM3D.add(new FloorItem3D(grid, GOLD_ITEM_TYPE[G[1]]));
         }
     },
@@ -360,7 +360,6 @@ const SPAWN_TOOLS = {
         for (const O of map.objects) {
             //const grid = Grid.toCenter(GA.indexToGrid(O[0]));
             const grid = Grid3D.toCenter2D(GA.indexToGrid(O[0]));
-            console.log("O", O, grid);
             const type = INTERACTION_OBJECT[O[1]];
             ITEM3D.add(new FloorItem3D(grid, type));
         }

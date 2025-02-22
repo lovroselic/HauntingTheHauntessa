@@ -1108,7 +1108,8 @@ class Grid3D extends MasterGridClass3D {
         return new FP_Grid3D(grid.x + 0.5, grid.y + 0.5, grid.z);
     }
     add(vector, mul = 1) {
-        return new Grid3D(this.x + vector.x * mul, this.y + vector.y * mul, this.z + vector.z * mul);
+        //allows add with 2D direction
+        return new Grid3D(this.x + vector.x * mul, this.y + vector.y * mul, this.z + (vector?.z || 0) * mul);
     }
     isInAt(dirArray) {
         return dirArray.findIndex(dir => dir.x === this.x && dir.y === this.y && dir.z === this.z);
@@ -1159,6 +1160,10 @@ class FP_Grid3D extends MasterGridClass3D {
     }
     add(vector, factor = 1.0) {
         return new FP_Grid3D(this.x + vector.x * factor, this.y + vector.y * factor, this.z + vector.z * factor);
+    }
+    static to_center_block(grid3d) {
+        if (grid3d.constructor.name !== "Grid3D") throw new Error(`from_Grid3D_to_center_block_swap_ZY, wrong object type ${grid3d}`);
+        return new FP_Grid3D(grid3d.x + 0.5, grid3d.y + 0.5, grid3d.z + 0.5,);
     }
 }
 

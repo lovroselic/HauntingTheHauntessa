@@ -27,8 +27,10 @@ const MAP = {
         floor: "BloodMarbleFloorWall_SDXL_030",
         ceil: "SmallBlackBricks44",
         start: '[361,5]',
-        decals: '[[7,7,"GameDommes_039","picture"],[246,7,"GemDommes_063","picture"],[503,7,"FemDommes_5062","picture"]]',
+        decals: '[[7,7,"GameDommes_039","picture"],[246,7,"GemDommes_063","picture"],[503,7,"FemDommes_5062","picture"],[332,4,"RustyFloorGrille_09","crest"]]',
         lights: '[[112,1,"Candelabra01","standard"],[305,3,"DuaLLantern_002","standard"],[566,3,"WallLamp19","standard"],[112,7,"WallLamp10","standard"]]',
+        gold: '[[364,"GoldSphere"],[171,"GoldSphere"]]',
         objects: '[[155,"Apple"],[366,"Apple"],[368,"Apple"]]',
+        oracles: '[[360,5,"DarkPriestess1"]]',
         }
 };

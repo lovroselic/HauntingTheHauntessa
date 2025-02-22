@@ -878,7 +878,6 @@ class GA_Dimension_Agnostic_Methods {
         }
         return true;
     }
-
     entityNotInWall(pos, dir, r, depth = 0, resolution = 8) {
         let checks = this.pointsAroundEntity(pos, dir, r, resolution);
         for (const point of checks) {
@@ -887,7 +886,23 @@ class GA_Dimension_Agnostic_Methods {
         }
         return true;
     }
-
+    getDirections(grid, value, leaveOut = null) {
+        var directions = [];
+        for (let D = 0; D < ENGINE.directions.length; D++) {
+            if (leaveOut === null || !leaveOut.same(ENGINE.directions[D])) {
+                let newGrid = grid.add(ENGINE.directions[D]);
+                if (this.outside(newGrid)) {
+                    if (GRID.SETTING.ALLOW_CROSS) {
+                        newGrid = this.toOtherSide(newGrid);
+                    } else continue;
+                }
+                if (this.value(newGrid, value)) {
+                    directions.push(ENGINE.directions[D]);
+                }
+            }
+        }
+        return directions;
+    }
 }
 
 class GridArray extends Classes([ArrayBasedDataStructure, GA_Dimension_Agnostic_Methods]) {
@@ -1157,23 +1172,7 @@ class GridArray extends Classes([ArrayBasedDataStructure, GA_Dimension_Agnostic_
         }
         return false;
     }
-    getDirections(grid, value, leaveOut = null) {
-        var directions = [];
-        for (let D = 0; D < ENGINE.directions.length; D++) {
-            if (leaveOut === null || !leaveOut.same(ENGINE.directions[D])) {
-                let newGrid = grid.add(ENGINE.directions[D]);
-                if (this.outside(newGrid)) {
-                    if (GRID.SETTING.ALLOW_CROSS) {
-                        newGrid = this.toOtherSide(newGrid);
-                    } else continue;
-                }
-                if (this.value(newGrid, value)) {
-                    directions.push(ENGINE.directions[D]);
-                }
-            }
-        }
-        return directions;
-    }
+
     getDirectionsIfNot(grid, value, leaveOut = null) {
         var directions = [];
         for (let D = 0; D < ENGINE.directions.length; D++) {
