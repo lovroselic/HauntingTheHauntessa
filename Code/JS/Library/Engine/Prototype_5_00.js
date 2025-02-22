@@ -1103,6 +1103,10 @@ class Grid3D extends MasterGridClass3D {
     static toClass(grid) {
         return new Grid3D(grid.x, grid.y, grid.z);
     }
+    static toCenter2D(grid) {
+        //centering on XY plane
+        return new FP_Grid3D(grid.x + 0.5, grid.y + 0.5, grid.z);
+    }
     add(vector, mul = 1) {
         return new Grid3D(this.x + vector.x * mul, this.y + vector.y * mul, this.z + vector.z * mul);
     }

@@ -14,7 +14,7 @@
 ///////////////////////////////////////////////
 
 const LS_matrix = {
-    VERSION: "1.1",
+    VERSION: "1.2",
     CSS: "color: red",
 };
 
@@ -22,6 +22,9 @@ class Vector3 {
     constructor(x = 0, y = 0, z = 0) {
         this.array = glMatrix.vec3.fromValues(x, y, z);
         this.refresh();
+    }
+    static from_grid3D(grid) {
+        return new Vector3(grid.x, grid.z, grid.y);         //swaps y and Z
     }
     static from_array(arr) {
         return new Vector3(arr[0], arr[1], arr[2]);
@@ -40,6 +43,9 @@ class Vector3 {
     }
     static to_FP_Vector(v) {
         return new FP_Vector(v.x, v.z);
+    }
+    static to_Grid3D(v) {
+        return new Grid3D(v.x, v.z, v.y);                   //swaps y and Z
     }
     refresh() {
         this.x = this.array[0];

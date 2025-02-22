@@ -1120,20 +1120,20 @@ const WebGL = {
                     if (!obj.interactive) return;
                     if (WebGL.VERBOSE) console.info("Object clicked:", obj, "globalID", id);
                     console.info("Object clicked:", obj, "globalID", id);
-                    let PPos2d = Vector3.to_FP_Grid(hero.player.pos);
+                    //let PPos2d = Vector3.to_FP_Grid(hero.player.pos);                                           //still 2D
 
                     let itemGrid = obj.grid;
                     if (obj.moveState) {
                         itemGrid = obj.moveState.grid;                                                          // support for movables
                     }
-                    else if (obj.grid.constructor.name === "Grid") {                                            // support for non FP grids
+                    else if (obj.grid.constructor.name === "Grid") {                                            // support for non FP grids, this is probably obsolete now
                         itemGrid = Grid.toCenter(obj.grid);
                     }
 
-                    let distance = PPos2d.EuclidianDistance(itemGrid);
+                    //let distance = PPos2d.EuclidianDistance(itemGrid);
+                    let distance = hero.player.pos.EuclidianDistance(Vector3.from_grid3D(itemGrid));
                     if (WebGL.VERBOSE) console.info("Object distance:", distance);
-                    console.log("HERO", hero.player.pos, "item", obj.grid);
-                    console.info("Object distance:", distance);
+                    console.info("Object distance:", distance, "WebGL.INI.INTERACT_DISTANCE", WebGL.INI.INTERACT_DISTANCE);
                     if (distance < WebGL.INI.INTERACT_DISTANCE) {
                         /** 
                          * GA
@@ -2097,7 +2097,6 @@ class LightDecal extends Decal {
         let pos = FP_Grid.toClass(grid).add(off);
         if (gridType === "Grid") grid.z = 0;                                            //2D Grid legacy
         this.position = new Vector3(pos.x, grid.z + 1.0 - WebGL.INI.LIGHT_TOP, pos.y);
-        console.log("LightDecal position", this.position);
     }
 }
 
@@ -2551,12 +2550,15 @@ class FloorItem3D extends Drawable_object {
         this.indices = this.element.indices.length;
 
         let heightTranslate = new Float32Array([0, 0, 0]);
+
+        /** finding minY and translating it to level zero */
         if (this.glueToFloor) {
             let max = ELEMENT.getMinY(this.element);
             heightTranslate[1] -= max * this.scale[1];
             heightTranslate[1] += WebGL.INI.ITEM_UP;
         }
-        let translate = new Vector3(grid.x, 0, grid.y);
+        //let translate = new Vector3(grid.x, 0, grid.y);
+        let translate = new Vector3(grid.x, grid.z, grid.y);
         translate = translate.add(Vector3.from_array(heightTranslate));
         this.translate = translate.array;
 

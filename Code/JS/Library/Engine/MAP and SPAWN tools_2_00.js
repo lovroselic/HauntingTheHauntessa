@@ -53,7 +53,7 @@ const MAP_TOOLS = {
     unpack(level) {
         if (this.MAP[level].unpacked) return;                                                   // already unpacked, nothing to do
 
-        
+
         const mapData = JSON.parse(this.MAP[level].data);
         let rebuilt = false;
 
@@ -358,7 +358,9 @@ const SPAWN_TOOLS = {
     },
     objects(map, GA) {
         for (const O of map.objects) {
-            const grid = Grid.toCenter(GA.indexToGrid(O[0]));
+            //const grid = Grid.toCenter(GA.indexToGrid(O[0]));
+            const grid = Grid3D.toCenter2D(GA.indexToGrid(O[0]));
+            console.log("O", O, grid);
             const type = INTERACTION_OBJECT[O[1]];
             ITEM3D.add(new FloorItem3D(grid, type));
         }
