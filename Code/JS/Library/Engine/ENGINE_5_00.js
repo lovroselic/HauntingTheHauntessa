@@ -43,7 +43,7 @@ const DownRight = new Vector(1, 1);
 const DownLeft = new Vector(-1, 1);
 
 const ENGINE = {
-    VERSION: "4.13",
+    VERSION: "5.00",
     CSS: "color: #0FA",
     INI: {
         ANIMATION_INTERVAL: 16,
@@ -2371,6 +2371,358 @@ const ENGINE = {
             ENGINE.PACGRID.setShadow(shadow);
         }
     },
+    DD: {
+        /** helper for decal draw */
+        CTX: null,
+        init(CTX, GA, W) {
+            this.CTX = CTX;
+            this.GA = GA;
+            this.decalWidth = 3;
+            this.W = W;
+        },
+        dotOrLine(grid, dir, color) {
+            let mid = GRID.gridToCenterPX(grid);
+            let start = mid.translate(dir, this.W);
+            let pDirs = dir.getPerpendicularDirs();
+            let pStart = start.translate(pDirs[0], this.W);
+            let pEnd = start.translate(pDirs[1], this.W);
+            if (pDirs[0].same(NOWAY)) {
+                ENGINE.drawCircle(this.CTX, pStart, this.decalWidth * 2, color);
+            } else {
+                ENGINE.drawLine(this.CTX, pStart, pEnd, color, this.decalWidth);
+            }
+            return start;
+        },
+        write(point, text, color = "#000") {
+            this.CTX.fillStyle = color;
+            this.CTX.font = "10px Arial";
+            this.CTX.textAlign = "center";
+            this.CTX.textBaseLine = "middle";
+            this.CTX.fillText(text, point.x, point.y);
+        },
+        decalDraw(maze, z) {
+            if (maze.start) {
+                this.start(maze.start, z);
+            }
+            if (maze.lights) {
+                for (const light of maze.lights) {
+                    this.light(light, z);
+                }
+            }
+            if (maze.decals) {
+                for (const decal of maze.decals) {
+                    this.decal(decal, z);
+                }
+            }
+            if (maze.objects && maze.movables) {
+                const concat_objects = [...maze.objects, ...maze.movables];
+                if (concat_objects) {
+                    for (const obj of concat_objects) {
+                        this.object(obj, z);
+                    }
+                }
+            }
+            if (maze.gold) {
+                for (const gold of maze.gold) {
+                    this.gold(gold, z);
+                }
+            }
+            if (maze.oracles) {
+                for (const entity of maze.oracles) {
+                    this.entity(entity, z, "#666");
+                }
+            }
+            if (maze.entities) {
+                for (const entity of maze.entities) {
+                    this.entity(grid, entity, z, "#FF0000");
+                }
+            }
+            if (maze.shrines && maze.trainers && maze.interactors) {
+                const concat_shrines = [...maze.shrines, ...maze.trainers, ...maze.interactors];
+                if (concat_shrines) {
+                    for (const shrine of concat_shrines) {
+                        this.shrine(shrine, z);
+                    }
+                }
+            }
+            if (maze.gates) {
+                for (const gate of maze.gates) {
+                    this.gate(gate, z);
+                }
+            }
+            if (maze.lairs) {
+                for (const lair of maze.lairs) {
+                    this.lair(lair, z);
+                }
+            }
+            if (maze.keys && Array.isArray(maze.keys)) {
+                for (const key of maze.keys) {
+                    this.key(grid, key);
+                }
+            }
+            if (maze.monsters) {
+                for (const monster of maze.monsters) {
+                    this.monster(monster, z);
+                }
+            }
+            if (maze.scrolls) {
+                for (const scroll of maze.scrolls) {
+                    this.scroll(scroll, z);
+                }
+            }
+            if (maze.containers) {
+                for (const container of maze.containers) {
+                    this.container(container, z)
+                }
+            }
+            if (maze.skills) {
+                for (const skill of maze.skills) {
+                    this.skill(skill, z);
+                }
+            }
+            if (maze.potions) {
+                for (const potion of maze.potions) {
+                    this.potion(potion, z);
+                }
+            }
+            if (maze.triggers) {
+                for (const trigger of maze.triggers) {
+                    trigger(trigger, z);
+                }
+            }
+            if (maze.traps) {
+                for (const trigger of maze.traps) {
+                    trap(trigger, z);
+                }
+            }
+        },
+        start(start, z) {
+            let grid = this.GA.indexTo2DGridSlice(start[0], z);
+            let mid = GRID.gridToCenterPX(grid);
+            ENGINE.drawCircle(this.CTX, mid, ENGINE.DD.decalWidth * 2, "#000000");
+        },
+        light(light, z) {
+            let grid = this.GA.indexTo2DGridSlice(light[0], z);
+            let dir = Vector.fromInt(light[1]);
+            let color = colorVectorToHex(LIGHT_COLORS[light[3]]);
+            let mid = GRID.gridToCenterPX(grid);
+            let start = mid.translate(dir, this.W);
+            ENGINE.drawCircle(this.CTX, start, this.decalWidth * 2, color);
+        },
+        decal(decal, z) {
+            let grid = this.GA.indexTo2DGridSlice(decal[0], z);
+            let dir = Vector.fromInt(decal[1]);
+            this.dotOrLine(grid, dir, "#0000FF");
+        },
+        object(obj, z) {
+            let grid = this.GA.indexTo2DGridSlice(obj[0], z);
+            let mid = GRID.gridToCenterPX(grid);
+            let text = `-${obj[1]}-`;
+            this.write(mid, text, "#00F");
+        },
+        gold(gold, z) {
+            let grid = this.GA.indexTo2DGridSlice(gold[0], z);
+            let mid = GRID.gridToCenterPX(grid).translate(UpLeft, this.W / 2);
+            this.CTX.fillStyle = "gold";
+            this.CTX.fillRect(mid.x, mid.y, this.W, this.W / 2);
+            mid = mid.translate(RIGHT, this.W / 2);
+            this.write(mid, gold[1]);
+        },
+        entity(entity, z, color) {
+            let grid = this.GA.indexTo2DGridSlice(entity[0], z);
+            let dir = Vector.fromInt(entity[1]);
+            this.dotOrLine(grid, dir, color);
+            let mid = GRID.gridToCenterPX(grid);
+            this.write(mid, entity[2]);
+        },
+        shrine(shrine, z) {
+            let grid = this.GA.indexTo2DGridSlice(shrine[0], z);
+            let mid = GRID.gridToCenterPX(grid);
+            let dir = Vector.fromInt(shrine[1]);
+            let start = mid.translate(dir, this.W);
+            let color = "green";
+            ENGINE.drawCircle(this.CTX, start, this.decalWidth * 3, color);
+            start = start.translate(LEFT, W / 2);
+            let pEnd = start.translate(RIGHT, this.W)
+            ENGINE.drawLine(this.CTX, start, pEnd, color, this.decalWidth);
+            this.write(mid, shrine[2]);
+        },
+        gate(gate, z) {
+            let grid = this.GA.indexTo2DGridSlice(gate[0], z);
+            let bottomMid = GRID.gridToBottomCenterPX(grid);
+            let point = bottomMid;
+            this.CTX.strokeStyle = "#966F33";
+            this.CTX.fillStyle = "#966F33";
+            if (maze[3] === "Open") {
+                this.CTX.strokeStyle = "#000";
+                this.CTX.fillStyle = "#000";
+            }
+            this.CTX.lineWidth = 1;
+            this.CTX.beginPath();
+            this.CTX.moveTo(point.x, point.y);
+            point = point.translate(LEFT, this.W / 2);
+            this.CTX.lineTo(point.x, point.y);
+            point = point.translate(UP, this.W);
+            this.CTX.lineTo(point.x, point.y);
+            point = point.translate(RIGHT, this.W / 2);
+            this.CTX.arc(point.x, point.y, this.W / 2, Math.PI, 0);
+            point = point.translate(RIGHT, this.W / 2);
+            this.CTX.moveTo(point.x, point.y);
+            point = point.translate(DOWN, this.W);
+            this.CTX.lineTo(point.x, point.y);
+            this.CTX.lineTo(bottomMid.x, bottomMid.y);
+            this.CTX.closePath();
+            this.CTX.stroke();
+            this.CTX.fill();
+            let mid = GRID.gridToCenterPX(grid);
+            let color = "#966F33";
+            switch (gate[4]) {
+                case "Open":
+                    color = "#000";
+                    break;
+                case "Closed":
+                    color = "#966F33";
+                    break;
+                case "Gold":
+                    color = "gold";
+                    break;
+                case "Silver":
+                    color = "silver";
+                    break;
+                case "Red":
+                    color = "#F00";
+                    break;
+                case "Blue":
+                    color = "blue";
+                    break;
+                case "Green":
+                    color = "green";
+                    break;
+                case "Emerald":
+                    color = "#50C878";
+                    break;
+                case "Purple":
+                    color = "purple";
+                    break;
+                case "Pearl":
+                    color = "whitesmoke";
+                    break;
+                case "Cyan":
+                    color = "cyan";
+                    break;
+                case "Pink":
+                    color = "pink";
+                    break;
+                case "Orange":
+                    color = "orange";
+                    break;
+            }
+            ENGINE.drawCircle(this.CTX, mid, this.decalWidth * 2, color);
+            let dir = Vector.fromInt(gate[1]);
+            let start = mid.translate(dir, W);
+            ENGINE.drawCircle(this.CTX, start, this.decalWidth * 2, "#99ccff");
+
+            this.CTX.font = "8px Arial";
+            this.CTX.textAlign = "center";
+            this.CTX.textBaseLine = "middle";
+            this.CTX.fillStyle = "white"
+            this.CTX.fillText(gate[3], mid.x, mid.y);
+        },
+        lair(lair, z) {
+            let grid = this.GA.indexTo2DGridSlice(lair[0], z);
+            let start = GRID.gridToCenterPX(grid);
+            let dir = Vector.fromInt(lair[1]);
+            let end = start.translate(dir, this.W);
+            this.CTX.save();
+            this.CTX.lineCap = "butt";
+            this.CTX.lineWidth = this.W / 2;
+            this.CTX.strokeStyle = "black";
+            this.CTX.beginPath();
+            this.CTX.moveTo(start.x, start.y);
+            this.CTX.lineTo(end.x, end.y);
+            this.CTX.stroke();
+            this.CTX.restore();
+        },
+        key(key, z) {
+            let grid = this.GA.indexTo2DGridSlice(key[0], z);
+            const KEY_COLORS = ["gold", "silver", "red", "green", "blue", "#50C878", "purple", "beige", "cyan", "orange", "pink"];
+            const color = KEY_COLORS[key[1]];
+            let mid = GRID.gridToCenterPX(grid).translate(LEFT, this.W / 2);
+            ENGINE.drawCircle(this.CTX, mid, decalWidth * 2, color);
+            let pEnd = mid.translate(RIGHT, this.W);
+            ENGINE.drawLine(this.CTX, mid, pEnd, color, this.decalWidth);
+            ENGINE.drawLine(this.CTX, pEnd, pEnd.translate(UP, 5), color, this.decalWidth);
+        },
+        monster(monster, z) {
+            let grid = this.GA.indexTo2DGridSlice(monster[0], z);
+            let mid = GRID.gridToCenterPX(grid);
+            this.write(mid, monster[1]);
+        },
+        scroll(scroll, z) {
+            let grid = this.GA.indexTo2DGridSlice(scroll[0], z);
+            let mid = GRID.gridToCenterPX(grid).translate(UpLeft, this.W / 2);
+            CTX.fillStyle = "yellow";
+            CTX.fillRect(mid.x, mid.y, this.W, this.W);
+            CTX.fillStyle = "black";
+            if (SCROLL_TYPE) {
+                mid = mid.translate(RIGHT, this.W / 2);
+                this.write(mid, SCROLL_TYPE[scroll[1]]);
+            }
+        },
+        container(container, z) {
+            let grid = this.GA.indexTo2DGridSlice(container[0], z);
+            let mid = GRID.gridToCenterPX(grid);
+            let start = mid.translate(LEFT, this.W / 2);
+            this.CTX.fillStyle = "brown";
+            this.CTX.fillRect(start.x, start.y, this.W, this.W);
+            let up = mid.translate(UP, this.W / 2);
+            this.write(mid, container[2].split(".")[1]);
+            this.write(up, container[1]);
+
+            if (container.length > 3 && container[3]) {
+                let dir = Vector.fromInt(container[3]).mirror();
+                this.dotOrLine(grid, dir, "#444");
+            }
+        },
+        skill(skill, z) {
+            let grid = this.GA.indexTo2DGridSlice(skill[0], z);
+            let mid = GRID.gridToCenterPX(grid);
+            const color = "red";
+            this.write(mid, `* ${skill[1]} *`, color);
+            ENGINE.drawLine(this.CTX, mid.translate(UpLeft, this.W / 2), mid.translate(UpLeft, this.W / 2).translate(RIGHT, this.W), color, 3);
+            ENGINE.drawLine(this.CTX, mid.translate(DownLeft, this.W / 2), mid.translate(DownLeft, this.W / 2).translate(RIGHT, this.W), color, 5);
+        },
+        potion(potion, z) {
+            let grid = this.GA.indexTo2DGridSlice(potion[0], z);
+            let mid = GRID.gridToCenterPX(grid);
+            let color = POTION_TYPES[potion[1]].toLowerCase();
+            ENGINE.drawCircle(this.CTX, mid, decalWidth * 2, color);
+            ENGINE.drawLine(this.CTX, mid, mid.translate(UP, this.W / 2), color, this.decalWidth);
+        },
+        trigger(trigger, z) {
+            let grid = this.GA.indexTo2DGridSlice(trigger[0], z);
+            let dir = Vector.fromInt(trigger[1]);
+            let pStart = this.dotOrLine(grid, dir, "#00FF00");
+            let mid2 = GRID.gridToCenterPX(GA.indexTo2DGridSlice(trigger[4], z));
+            this.CTX.save();
+            this.CTX.setLineDash([2, 3]);
+            ENGINE.drawLine(this.CTX, pStart, mid2, "#666", 1);
+            this.CTX.restore();
+            ENGINE.drawCircle(this.CTX, mid2, this.decalWidth * 1.5, "#CC0000");
+        },
+        trap(trigger, z) {
+            let grid = this.GA.indexTo2DGridSlice(trigger[0], z);
+            let dir = Vector.fromInt(trigger[1]);
+            let pStart = this.dotOrLine(grid, dir, "#00FF00");
+            let mid2 = GRID.gridToCenterPX(GA.indexTo2DGridSlice(trigger[5], z));
+            this.CTX.save();
+            this.CTX.setLineDash([2, 3]);
+            ENGINE.drawLine(this.CTX, pStart, mid2, "#666", 1);
+            this.CTX.restore();
+            ENGINE.drawCircle(this.CTX, mid2, this.decalWidth * 1.5, "#EE0033");
+            this.write(mid2, trigger[4])
+        }
+    },
     BLOCKGRID: {
         draw(maze, corr) {
             let t0 = performance.now();
@@ -2409,304 +2761,8 @@ const ENGINE = {
         },
         decalDraw(maze, CTX) {
             const decalWidth = 3;
-            const W = (ENGINE.INI.GRIDPIX / 2) - decalWidth;
-            const GA = maze.GA;
-            //start
-            if (maze.start) {
-                let grid = GA.indexToGrid(maze.start[0]);
-                let mid = GRID.gridToCenterPX(grid);
-                ENGINE.drawCircle(CTX, mid, decalWidth * 2, "#000000");
-            }
-            if (maze.entities) {
-                for (const entity of maze.entities) {
-                    displayEntity(entity, "#FF0000");
-                }
-            }
-            if (maze.oracles) {
-                for (const entity of maze.oracles) {
-                    displayEntity(entity, "#666");
-                }
-            }
-            if (maze.triggers) {
-                for (const trigger of maze.triggers) {
-                    let grid = GA.indexToGrid(trigger[0]);
-                    let dir = Vector.fromInt(trigger[1]);
-                    let pStart = dotOrLine(grid, dir, "#00FF00");
-                    let mid2 = GRID.gridToCenterPX(GA.indexToGrid(trigger[4]));
-                    CTX.save();
-                    CTX.setLineDash([2, 3]);
-                    ENGINE.drawLine(CTX, pStart, mid2, "#666", 1);
-                    CTX.restore();
-                    ENGINE.drawCircle(CTX, mid2, decalWidth * 1.5, "#CC0000");
-                }
-            }
-            if (maze.traps) {
-                for (const trigger of maze.traps) {
-                    let grid = GA.indexToGrid(trigger[0]);
-                    let dir = Vector.fromInt(trigger[1]);
-                    let pStart = dotOrLine(grid, dir, "#00FF00");
-                    let mid2 = GRID.gridToCenterPX(GA.indexToGrid(trigger[5]));
-                    CTX.save();
-                    CTX.setLineDash([2, 3]);
-                    ENGINE.drawLine(CTX, pStart, mid2, "#666", 1);
-                    CTX.restore();
-                    ENGINE.drawCircle(CTX, mid2, decalWidth * 1.5, "#EE0033");
-                    write(mid2, trigger[4])
-                }
-            }
-            if (maze.decals) {
-                for (const decal of maze.decals) {
-                    let grid = GA.indexToGrid(decal[0]);
-                    let dir = Vector.fromInt(decal[1]);
-                    dotOrLine(grid, dir, "#0000FF");
-                }
-            }
-            if (maze.lights) {
-                for (const light of maze.lights) {
-                    let grid = GA.indexToGrid(light[0]);
-                    let dir = Vector.fromInt(light[1]);
-                    let color = colorVectorToHex(LIGHT_COLORS[light[3]]);
-                    let mid = GRID.gridToCenterPX(grid);
-                    let start = mid.translate(dir, W);
-                    ENGINE.drawCircle(CTX, start, decalWidth * 2, color);
-                }
-            }
-            if (maze.shrines && maze.trainers && maze.interactors) {
-                const concat_shrines = [...maze.shrines, ...maze.trainers, ...maze.interactors];
-                if (concat_shrines) {
-                    for (const shrine of concat_shrines) {
-                        let grid = GA.indexToGrid(shrine[0]);
-                        let mid = GRID.gridToCenterPX(grid);
-                        let dir = Vector.fromInt(shrine[1]);
-                        let start = mid.translate(dir, W);
-                        let color = "green";
-                        ENGINE.drawCircle(CTX, start, decalWidth * 3, color);
-                        start = start.translate(LEFT, W / 2);
-                        let pEnd = start.translate(RIGHT, W)
-                        ENGINE.drawLine(CTX, start, pEnd, color, decalWidth);
-                        write(mid, shrine[2]);
-                    }
-                }
-            }
-            if (maze.gates) {
-                for (const gate of maze.gates) {
-                    let grid = GA.indexToGrid(gate[0]);
-                    let bottomMid = GRID.gridToBottomCenterPX(grid);
-                    let point = bottomMid;
-                    CTX.strokeStyle = "#966F33";
-                    CTX.fillStyle = "#966F33";
-                    if (maze[3] === "Open") {
-                        CTX.strokeStyle = "#000";
-                        CTX.fillStyle = "#000";
-                    }
-                    CTX.lineWidth = 1;
-                    CTX.beginPath();
-                    CTX.moveTo(point.x, point.y);
-                    point = point.translate(LEFT, W / 2);
-                    CTX.lineTo(point.x, point.y);
-                    point = point.translate(UP, W);
-                    CTX.lineTo(point.x, point.y);
-                    point = point.translate(RIGHT, W / 2);
-                    CTX.arc(point.x, point.y, W / 2, Math.PI, 0);
-                    point = point.translate(RIGHT, W / 2);
-                    CTX.moveTo(point.x, point.y);
-                    point = point.translate(DOWN, W);
-                    CTX.lineTo(point.x, point.y);
-                    CTX.lineTo(bottomMid.x, bottomMid.y);
-                    CTX.closePath();
-                    CTX.stroke();
-                    CTX.fill();
-                    let mid = GRID.gridToCenterPX(grid);
-                    let color = "#966F33";
-                    switch (gate[4]) {
-                        case "Open":
-                            color = "#000";
-                            break;
-                        case "Closed":
-                            color = "#966F33";
-                            break;
-                        case "Gold":
-                            color = "gold";
-                            break;
-                        case "Silver":
-                            color = "silver";
-                            break;
-                        case "Red":
-                            color = "#F00";
-                            break;
-                        case "Blue":
-                            color = "blue";
-                            break;
-                        case "Green":
-                            color = "green";
-                            break;
-                        case "Emerald":
-                            color = "#50C878";
-                            break;
-                        case "Purple":
-                            color = "purple";
-                            break;
-                        case "Pearl":
-                            color = "whitesmoke";
-                            break;
-                        case "Cyan":
-                            color = "cyan";
-                            break;
-                        case "Pink":
-                            color = "pink";
-                            break;
-                        case "Orange":
-                            color = "orange";
-                            break;
-                    }
-                    ENGINE.drawCircle(CTX, mid, decalWidth * 2, color);
-                    let dir = Vector.fromInt(gate[1]);
-                    let start = mid.translate(dir, W);
-                    ENGINE.drawCircle(CTX, start, decalWidth * 2, "#99ccff");
-
-                    CTX.font = "8px Arial";
-                    CTX.textAlign = "center";
-                    CTX.textBaseLine = "middle";
-                    CTX.fillStyle = "white"
-                    CTX.fillText(gate[3], mid.x, mid.y);
-                }
-            }
-            if (maze.lairs) {
-                for (const lair of maze.lairs) {
-                    let grid = GA.indexToGrid(lair[0]);
-                    let start = GRID.gridToCenterPX(grid);
-                    let dir = Vector.fromInt(lair[1]);
-                    let end = start.translate(dir, W);
-                    CTX.save();
-                    CTX.lineCap = "butt";
-                    CTX.lineWidth = W / 2;
-                    CTX.strokeStyle = "black";
-                    CTX.beginPath();
-                    CTX.moveTo(start.x, start.y);
-                    CTX.lineTo(end.x, end.y);
-                    CTX.stroke();
-                    CTX.restore();
-                }
-            }
-            if (maze.keys && Array.isArray(maze.keys)) {
-                for (const key of maze.keys) {
-                    const KEY_COLORS = ["gold", "silver", "red", "green", "blue", "#50C878", "purple", "beige", "cyan", "orange", "pink"];
-                    const color = KEY_COLORS[key[1]];
-                    let grid = GA.indexToGrid(key[0]);
-                    let mid = GRID.gridToCenterPX(grid).translate(LEFT, W / 2);
-                    ENGINE.drawCircle(CTX, mid, decalWidth * 2, color);
-                    let pEnd = mid.translate(RIGHT, W);
-                    ENGINE.drawLine(CTX, mid, pEnd, color, decalWidth);
-                    ENGINE.drawLine(CTX, pEnd, pEnd.translate(UP, 5), color, decalWidth);
-                }
-            }
-            if (maze.monsters) {
-                for (const monster of maze.monsters) {
-                    let grid = GA.indexToGrid(monster[0]);
-                    let mid = GRID.gridToCenterPX(grid);
-                    write(mid, monster[1]);
-                }
-            }
-            if (maze.scrolls) {
-                for (const scroll of maze.scrolls) {
-                    let grid = GA.indexToGrid(scroll[0]);
-                    let mid = GRID.gridToCenterPX(grid).translate(UpLeft, W / 2);
-                    CTX.fillStyle = "yellow";
-                    CTX.fillRect(mid.x, mid.y, W, W);
-                    CTX.fillStyle = "black";
-                    if (SCROLL_TYPE) {
-                        mid = mid.translate(RIGHT, W / 2);
-                        write(mid, SCROLL_TYPE[scroll[1]]);
-                    }
-                }
-            }
-            if (maze.potions) {
-                for (const potion of maze.potions) {
-                    let grid = GA.indexToGrid(potion[0]);
-                    let mid = GRID.gridToCenterPX(grid);
-                    let color = POTION_TYPES[potion[1]].toLowerCase();
-                    ENGINE.drawCircle(CTX, mid, decalWidth * 2, color);
-                    ENGINE.drawLine(CTX, mid, mid.translate(UP, W / 2), color, decalWidth);
-                }
-            }
-            if (maze.gold) {
-                for (const gold of maze.gold) {
-                    let grid = GA.indexToGrid(gold[0]);
-                    let mid = GRID.gridToCenterPX(grid).translate(UpLeft, W / 2);
-                    CTX.fillStyle = "gold";
-                    CTX.fillRect(mid.x, mid.y, W, W / 2);
-                    mid = mid.translate(RIGHT, W / 2);
-                    write(mid, gold[1]);
-                }
-            }
-            if (maze.objects && maze.movables) {
-                const concat_objects = [...maze.objects, ...maze.movables];
-                if (concat_objects) {
-                    for (const obj of concat_objects) {
-                        let grid = GA.indexToGrid(obj[0]);
-                        let mid = GRID.gridToCenterPX(grid);
-                        let text = `-${obj[1]}-`;
-                        write(mid, text, "#00F");
-                    }
-                }
-            }
-            if (maze.skills) {
-                for (const skill of maze.skills) {
-                    let grid = GA.indexToGrid(skill[0]);
-                    let mid = GRID.gridToCenterPX(grid);
-                    const color = "red";
-                    write(mid, `* ${skill[1]} *`, color);
-                    ENGINE.drawLine(CTX, mid.translate(UpLeft, W / 2), mid.translate(UpLeft, W / 2).translate(RIGHT, W), color, 3);
-                    ENGINE.drawLine(CTX, mid.translate(DownLeft, W / 2), mid.translate(DownLeft, W / 2).translate(RIGHT, W), color, 5);
-                }
-            }
-            if (maze.containers) {
-                for (const container of maze.containers) {
-                    let grid = GA.indexToGrid(container[0]);
-                    let mid = GRID.gridToCenterPX(grid);
-                    let start = mid.translate(LEFT, W / 2);
-                    CTX.fillStyle = "brown";
-                    CTX.fillRect(start.x, start.y, W, W);
-                    let up = mid.translate(UP, W / 2);
-                    write(mid, container[2].split(".")[1]);
-                    write(up, container[1]);
-
-                    if (container.length > 3 && container[3]) {
-                        let dir = Vector.fromInt(container[3]).mirror();
-                        dotOrLine(grid, dir, "#444");
-                    }
-                }
-            }
-
-            function displayEntity(entity, color) {
-                let grid = GA.indexToGrid(entity[0]);
-                let dir = Vector.fromInt(entity[1]);
-                dotOrLine(grid, dir, color);
-                let mid = GRID.gridToCenterPX(grid);
-                write(mid, entity[2]);
-            }
-
-            function write(point, text, color = "#000") {
-                CTX.fillStyle = color;
-                CTX.font = "10px Arial";
-                CTX.textAlign = "center";
-                CTX.textBaseLine = "middle";
-                CTX.fillText(text, point.x, point.y);
-            }
-
-            function dotOrLine(grid, dir, color) {
-                let mid = GRID.gridToCenterPX(grid);
-                let start = mid.translate(dir, W);
-                let pDirs = dir.getPerpendicularDirs();
-                let pStart = start.translate(pDirs[0], W);
-                let pEnd = start.translate(pDirs[1], W);
-                if (pDirs[0].same(NOWAY)) {
-                    ENGINE.drawCircle(CTX, pStart, decalWidth * 2, color);
-                } else {
-                    ENGINE.drawLine(CTX, pStart, pEnd, color, decalWidth);
-                }
-                return start;
-            }
+            ENGINE.DD.init(CTX, maze.GA, (ENGINE.INI.GRIDPIX / 2) - decalWidth);
+            ENGINE.DD.decalDraw(maze, 0);
         },
         wall(x, y, CTX, value) {
             let FS;
@@ -2783,8 +2839,7 @@ const ENGINE = {
     },
     BLOCKGRID3D: {
         draw(maze, z, corr) {
-            //console.time("BLOCKGRID3D");
-            var CTX = ENGINE.BLOCKGRID.layer;
+            const CTX = ENGINE.BLOCKGRID.layer;
             ENGINE.clearLayer(ENGINE.BLOCKGRID.layerString);
             let sizeX = parseInt(maze.width, 10);
             let sizeY = parseInt(maze.height, 10);
@@ -2809,91 +2864,11 @@ const ENGINE = {
             }
 
             ENGINE.BLOCKGRID3D.decalDraw3D(maze, CTX, z);
-            //console.timeEnd("BLOCKGRID3D");
         },
         decalDraw3D(maze, CTX, z) {
-            //console.warn("maze", maze);
             const decalWidth = 3;
-            const W = (ENGINE.INI.GRIDPIX / 2) - decalWidth;
-            const GA = maze.GA;
-            if (maze.start) {
-                let grid = GA.indexTo2DGridSlice(maze.start[0], z);
-                let mid = GRID.gridToCenterPX(grid);
-                ENGINE.drawCircle(CTX, mid, decalWidth * 2, "#000000");
-            }
-            if (maze.lights) {
-                for (const light of maze.lights) {
-                    let grid = GA.indexTo2DGridSlice(light[0], z);
-                    let dir = Vector.fromInt(light[1]);
-                    let color = colorVectorToHex(LIGHT_COLORS[light[3]]);
-                    let mid = GRID.gridToCenterPX(grid);
-                    let start = mid.translate(dir, W);
-                    ENGINE.drawCircle(CTX, start, decalWidth * 2, color);
-                }
-            }
-            if (maze.decals) {
-                for (const decal of maze.decals) {
-                    let grid = GA.indexTo2DGridSlice(decal[0], z);
-                    let dir = Vector.fromInt(decal[1]);
-                    dotOrLine(grid, dir, "#0000FF");
-                }
-            }
-            if (maze.objects && maze.movables) {
-                const concat_objects = [...maze.objects, ...maze.movables];
-                if (concat_objects) {
-                    for (const obj of concat_objects) {
-                        let grid = GA.indexTo2DGridSlice(obj[0], z);
-                        let mid = GRID.gridToCenterPX(grid);
-                        let text = `-${obj[1]}-`;
-                        write(mid, text, "#00F");
-                    }
-                }
-            }
-            if (maze.gold) {
-                for (const gold of maze.gold) {
-                    let grid = GA.indexTo2DGridSlice(gold[0], z);
-                    let mid = GRID.gridToCenterPX(grid).translate(UpLeft, W / 2);
-                    CTX.fillStyle = "gold";
-                    CTX.fillRect(mid.x, mid.y, W, W / 2);
-                    mid = mid.translate(RIGHT, W / 2);
-                    write(mid, gold[1]);
-                }
-            }
-            if (maze.oracles) {
-                for (const entity of maze.oracles) {
-                    displayEntity(entity, "#666");
-                }
-            }
-
-            function displayEntity(entity, color) {
-                let grid = GA.indexToGrid(entity[0]);
-                let dir = Vector.fromInt(entity[1]);
-                dotOrLine(grid, dir, color);
-                let mid = GRID.gridToCenterPX(grid);
-                write(mid, entity[2]);
-            }
-
-            function write(point, text, color = "#000") {
-                CTX.fillStyle = color;
-                CTX.font = "10px Arial";
-                CTX.textAlign = "center";
-                CTX.textBaseLine = "middle";
-                CTX.fillText(text, point.x, point.y);
-            }
-
-            function dotOrLine(grid, dir, color) {
-                let mid = GRID.gridToCenterPX(grid);
-                let start = mid.translate(dir, W);
-                let pDirs = dir.getPerpendicularDirs();
-                let pStart = start.translate(pDirs[0], W);
-                let pEnd = start.translate(pDirs[1], W);
-                if (pDirs[0].same(NOWAY)) {
-                    ENGINE.drawCircle(CTX, pStart, decalWidth * 2, color);
-                } else {
-                    ENGINE.drawLine(CTX, pStart, pEnd, color, decalWidth);
-                }
-                return start;
-            }
+            ENGINE.DD.init(CTX, maze.GA, (ENGINE.INI.GRIDPIX / 2) - decalWidth);
+            ENGINE.DD.decalDraw(maze, z);
         }
     },
     VECTOR2D: {

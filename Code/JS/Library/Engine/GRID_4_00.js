@@ -615,6 +615,10 @@ class ArrayBasedDataStructure {
     indexToGrid(index) {
         return new Grid(index % this.width, index / this.width | 0);
     }
+    indexTo2DGridSlice(index, z) {
+        /** compatibility with 3d */
+        return this.indexToGrid(index);
+    }
     assertBounds(grid) {
         if (this.isOutOfBounds(grid)) throw new Error(`Grid is out of bounds: ${grid}`);
     }
