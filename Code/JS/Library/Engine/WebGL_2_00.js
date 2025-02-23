@@ -1858,37 +1858,22 @@ class $3D_player {
         return false;
     }
     move(reverse, lapsedTime) {
-        let length = (lapsedTime / 1000) * this.moveSpeed;
         let dir = this.dir;
         if (reverse) dir = dir.reverse2D();
+        this._applyMove_(lapsedTime, dir);
+    }
+    strafe(rotDirection, lapsedTime) {
+        let dir = Vector3.from_2D_dir(this.dir.rotate2D((rotDirection * Math.PI) / 2), this.dir.y);
+        this._applyMove_(lapsedTime, dir);
+    }
+    _applyMove_(lapsedTime, dir) {
+        let length = (lapsedTime / 1000) * this.moveSpeed;
 
         let nextPos3 = this.pos.translate(dir, length); //3D
         let nextPos = Vector3.to_FP_Grid(nextPos3);
         let bump = this.usingStaircase(nextPos);
         if (bump !== null) {
             bump.interact();
-            return;
-        }
-
-        if (this.bumpEnemy(nextPos)) return;
-        let check;
-        if (WebGL.CONFIG.prevent_movement_in_exlusion_grids) {
-            check = this.GA.entityNotInExcusion(nextPos, Vector3.to_FP_Vector(dir), this.r, this.depth);
-        } else {
-            check = this.GA.entityNotInWall(nextPos, Vector3.to_FP_Vector(dir), this.r, this.depth);
-        }
-        if (check) {
-            this.setPos(nextPos3);
-        }
-    }
-    strafe(rotDirection, lapsedTime) {
-        let length = (lapsedTime / 1000) * this.moveSpeed;
-        let dir = Vector3.from_2D_dir(this.dir.rotate2D((rotDirection * Math.PI) / 2), this.dir.y);
-        let nextPos3 = this.pos.translate(dir, length);
-        let nextPos = Vector3.to_FP_Grid(nextPos3);
-        let bump = this.usingStaircase(nextPos);
-        if (bump !== null) {
-            bump.interact(this);
             return;
         }
 
