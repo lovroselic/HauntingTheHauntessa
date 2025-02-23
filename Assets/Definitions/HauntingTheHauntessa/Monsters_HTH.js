@@ -28,6 +28,19 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    CuteDemon: {
+        name: "CuteDemon",
+        sprite: "CuteDemon",
+        which: "magic",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "SkillFireball",
+        price: 1,
+        level: 3,
+        text: "1 gold for magic upgrade. I can't afford not to buy it. My life is at stake.",
+        introduce: true,
+        voice: "Princess",
+    },
 };
 
 const ORACLE_TYPE = {
@@ -173,6 +186,28 @@ const SKILL_ITEM_TYPE = {
         texture: "Red",
         inventorySprite: "HeartSkill",
         material: MATERIAL.redShine,
+    },
+    Defense: {
+        name: "Defense",
+        category: "skill",
+        which: "defense",
+        element: "SHIELD",
+        scale: 1 / 2 ** 5,
+        glueToFloor: true,
+        texture: "ScrapedMetal",
+        inventorySprite: "SkillShield",
+        material: MATERIAL.silver,
+    },
+    Mana: {
+        name: "Mana",
+        category: "status",
+        which: "mana",
+        element: "MAGIC_FLASK",
+        scale: 1 / 2 ** 4,
+        glueToFloor: true,
+        texture: "MagicFlask",
+        inventorySprite: "ManaIncSkill",
+        material: MATERIAL.standard,
     },
 };
 
@@ -718,15 +753,27 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
-    
+    Darksy: {
+        name: "Darksy",
+        sprite: "Darksy",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Apple"],
+        gives: "GoldCoin",
+        text: {
+            intro: "This is intro.",
+            progress: null,
+            conclusion: "This is conclusion"
+        }
+    },
 };
 
 const INTERACTION_SHRINE = {
-   
+
 };
 
 const INTERACTOR = {
-   
+
 };
 
 //container content

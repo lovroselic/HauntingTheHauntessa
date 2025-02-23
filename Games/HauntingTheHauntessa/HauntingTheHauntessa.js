@@ -58,20 +58,20 @@ const DEBUG = {
         console.info("DEBUG::Loading from checkpoint, this may clash with LOAD");
 
         GAME.level = 1;
-        GAME.gold = 1;
-        GAME.lives = 3;
+        GAME.gold = 5551;
+        GAME.lives = 1;
 
-        HERO.hasCapacity = true;
-        HERO.capacity = 5;
-        HERO.maxCapacity = 5;
+        //HERO.hasCapacity = true;
+        //HERO.capacity = 5;
+        //HERO.maxCapacity = 5;
 
-        HERO.orbs = 5;
-        HERO.orbsLost = 0;
-        HERO.magic = 87;
-        HERO.attack = 82;
+        //HERO.orbs = 5;
+        //HERO.orbsLost = 0;
+        //HERO.magic = 87;
+        //HERO.attack = 82;
 
-        HERO.health = 576;
-        HERO.maxHealth = 576;
+        HERO.health = 6;
+        //HERO.maxHealth = 576;
 
         let actItems = [];
 
@@ -180,16 +180,14 @@ const INI = {
 
     },
     HEALTH_INC: 8,
-    MANA_INC: 8,
+    MANA_INC: 7,
     SCROLL_RANGE: 23,
     CRIPPLE_SPEED: 0.1,
     INVISIBILITY_TIME: 60,
-    DEFENSE_OFFSET: 10,
-    DEFENSE_FACTOR: 2,
 };
 
 const PRG = {
-    VERSION: "0.3.4",
+    VERSION: "0.3.5",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -715,7 +713,6 @@ const HERO = {
     },
     raiseStat(which, level = 1) {
         this[which] += level;
-        this.setDefense();
         TITLE.skills();
     },
     incExp() { },  //keep, TURN dependency
@@ -730,15 +727,13 @@ const HERO = {
         this.health = this.maxHealth;
         TITLE.health();
     },
-    setDefense() {
-        this.defense = Math.floor(Math.max(0, this.attack - INI.DEFENSE_OFFSET) / INI.DEFENSE_FACTOR);
-    },
     incStatus(type, level = 1) {
         let Type = type.capitalize();
         let max = `max${Type}`;
         this[max] += INI[`${type.toUpperCase()}_INC`] * level;
         this[type] = this[max];
         TITLE.health();
+        TITLE.skills();
     },
     visible() {
         HERO.invisible = false;
@@ -843,7 +838,7 @@ const GAME = {
         GAME.completed = false;
         GAME.lives = 1;
         GAME.level = 1;                 //1           
-        GAME.gold = 1;
+        GAME.gold = 1;               //1
 
         const storeList = ["DECAL3D", "LIGHTS3D", "GATE3D", "VANISHING3D", "ITEM3D", "MISSILE3D", "INTERACTIVE_DECAL3D", "INTERACTIVE_BUMP3D", "ENTITY3D", "EXPLOSION3D", "DYNAMIC_ITEM3D", "LAIR"];
         GAME.STORE = new Store(storeList);
@@ -855,7 +850,7 @@ const GAME = {
         GAME.time = new Timer("Main");
 
         /** DEBUG */
-        //DEBUG.checkPoint();
+        DEBUG.checkPoint();
         /** END DEBUG */
 
         //SAVE GAME
@@ -902,11 +897,8 @@ const GAME = {
         HERO.speak("I should say something new.");
     },
     setCameraView() {
-        //WebGL.hero.topCamera = new $3D_Camera(WebGL.hero.player, DIR_UP, 0.9, new Vector3(0, -0.5, 0), 1, 70);
         WebGL.hero.topCamera = new $3D_Camera(WebGL.hero.player, DIR_UP, 0.9, new Vector3(0, -0.5, 0), 1, 70);
-        //WebGL.hero.overheadCamera = new $3D_Camera(WebGL.hero.player, DIR_UP, 2.5, new Vector3(0, -1, 0), 1, 80);
         WebGL.hero.overheadCamera = new $3D_Camera(WebGL.hero.player, DIR_UP, 2.5, new Vector3(0, -1, 0), 1, 80);
-        //WebGL.hero.orto_overheadCamera = new $3D_Camera(WebGL.hero.player, DIR_UP, 4, new Vector3(0, -1, 0), 0.4, 80);
         WebGL.hero.orto_overheadCamera = new $3D_Camera(WebGL.hero.player, DIR_UP, 4, new Vector3(0, -1, 0), 0.4, 80);
 
         switch (WebGL.CONFIG.cameraType) {

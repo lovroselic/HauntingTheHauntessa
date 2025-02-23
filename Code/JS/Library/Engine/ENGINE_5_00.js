@@ -2434,7 +2434,7 @@ const ENGINE = {
             }
             if (maze.entities) {
                 for (const entity of maze.entities) {
-                    this.entity(grid, entity, z, "#FF0000");
+                    this.entity(entity, z, "#FF0000");
                 }
             }
             if (maze.shrines && maze.trainers && maze.interactors) {
@@ -2457,7 +2457,7 @@ const ENGINE = {
             }
             if (maze.keys && Array.isArray(maze.keys)) {
                 for (const key of maze.keys) {
-                    this.key(grid, key);
+                    this.key(key, z);
                 }
             }
             if (maze.monsters) {
@@ -2542,7 +2542,7 @@ const ENGINE = {
             let start = mid.translate(dir, this.W);
             let color = "green";
             ENGINE.drawCircle(this.CTX, start, this.decalWidth * 3, color);
-            start = start.translate(LEFT, W / 2);
+            start = start.translate(LEFT, this.W / 2);
             let pEnd = start.translate(RIGHT, this.W)
             ENGINE.drawLine(this.CTX, start, pEnd, color, this.decalWidth);
             this.write(mid, shrine[2]);
@@ -2648,7 +2648,7 @@ const ENGINE = {
             const KEY_COLORS = ["gold", "silver", "red", "green", "blue", "#50C878", "purple", "beige", "cyan", "orange", "pink"];
             const color = KEY_COLORS[key[1]];
             let mid = GRID.gridToCenterPX(grid).translate(LEFT, this.W / 2);
-            ENGINE.drawCircle(this.CTX, mid, decalWidth * 2, color);
+            ENGINE.drawCircle(this.CTX, mid, this.decalWidth * 2, color);
             let pEnd = mid.translate(RIGHT, this.W);
             ENGINE.drawLine(this.CTX, mid, pEnd, color, this.decalWidth);
             ENGINE.drawLine(this.CTX, pEnd, pEnd.translate(UP, 5), color, this.decalWidth);
@@ -2661,9 +2661,9 @@ const ENGINE = {
         scroll(scroll, z) {
             let grid = this.GA.indexTo2DGridSlice(scroll[0], z);
             let mid = GRID.gridToCenterPX(grid).translate(UpLeft, this.W / 2);
-            CTX.fillStyle = "yellow";
-            CTX.fillRect(mid.x, mid.y, this.W, this.W);
-            CTX.fillStyle = "black";
+            this.CTX.fillStyle = "yellow";
+            this.CTX.fillRect(mid.x, mid.y, this.W, this.W);
+            this.CTX.fillStyle = "black";
             if (SCROLL_TYPE) {
                 mid = mid.translate(RIGHT, this.W / 2);
                 this.write(mid, SCROLL_TYPE[scroll[1]]);

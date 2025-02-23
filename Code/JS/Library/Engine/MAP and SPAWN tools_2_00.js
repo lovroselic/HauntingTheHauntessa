@@ -235,7 +235,7 @@ const SPAWN_TOOLS = {
     },
     keys(map, GA) {
         for (const K of map.keys) {
-            const grid = Grid.toCenter(GA.indexToGrid(K[0]));
+            const grid = Grid3D.toCenter2D(GA.indexToGrid(K[0]));
             const key = KEY_TYPE[KEY_TYPES[K[1]]];
             ITEM3D.add(new FloorItem3D(grid, key));
         }
@@ -249,13 +249,13 @@ const SPAWN_TOOLS = {
     },
     scrolls(map, GA) {
         for (const S of map.scrolls) {
-            const grid = Grid.toCenter(GA.indexToGrid(S[0]));
+            const grid = Grid3D.toCenter2D(GA.indexToGrid(S[0]));
             ITEM3D.add(new FloorItem3D(grid, COMMON_ITEM_TYPE.Scroll, S[1]));
         }
     },
     potions(map, GA) {
         for (const P of map.potions) {
-            const grid = Grid.toCenter(GA.indexToGrid(P[0]));
+            const grid = Grid3D.toCenter2D(GA.indexToGrid(P[0]));
             const potion = POTION_TYPE[POTION_TYPES[P[1]]];
             ITEM3D.add(new FloorItem3D(grid, potion));
         }
@@ -268,13 +268,13 @@ const SPAWN_TOOLS = {
     },
     skills(map, GA) {
         for (const S of map.skills) {
-            const grid = Grid.toCenter(GA.indexToGrid(S[0]));
+            const grid = Grid3D.toCenter2D(GA.indexToGrid(S[0]));
             ITEM3D.add(new FloorItem3D(grid, SKILL_ITEM_TYPE[S[1]]));
         }
     },
     containers(map, GA) {
         for (const C of map.containers) {
-            const grid = Grid.toCenter(GA.indexToGrid(C[0]));
+            const grid = Grid3D.toCenter2D(GA.indexToGrid(C[0]));
             const type = CONTAINER_ITEM_TYPE[C[1]]
             let rotation = null;
             if (C.length > 3 && C[3]) {
@@ -358,7 +358,6 @@ const SPAWN_TOOLS = {
     },
     objects(map, GA) {
         for (const O of map.objects) {
-            //const grid = Grid.toCenter(GA.indexToGrid(O[0]));
             const grid = Grid3D.toCenter2D(GA.indexToGrid(O[0]));
             const type = INTERACTION_OBJECT[O[1]];
             ITEM3D.add(new FloorItem3D(grid, type));

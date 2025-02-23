@@ -549,6 +549,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/Red.jpg", name: "Red" },
     { srcName: "ObjectTextures/Red2.jpg", name: "Red2" },
     { srcName: "ObjectTextures/Sting.jpg", name: "Sting" },
+    { srcName: "ObjectTextures/MagicFlask.jpg", name: "MagicFlask" },
 
     //containers
     { srcName: "ObjectTextures/Barell2.jpg", name: "Barell2" },
@@ -663,7 +664,7 @@ LoadShaders = [
 
 LoadObjects = [
     "gem.obj", "coins.obj", "key.obj", "ball.obj", "blockwall.obj",
-    "pentagram.obj", "sting.obj", "heart.obj",
+    "pentagram.obj", "sting.obj", "heart.obj", "shield.obj","magicFlask.obj",
     "treasure_chest.obj", "wardrobe.obj", "barrel.obj", "Barell2.obj", "Barell3.obj", "crate.obj", "crateFragile.obj", "closet.obj", "bookshelf.obj",
     "pirate_chest.obj", "closet4.obj", "iron_chest.obj",
     "scroll.obj", "coin.obj",
@@ -688,6 +689,8 @@ LoadSprites = [
 
     // frescoes - entities
     { srcName: "EntityPictures/DarkPriestess1.jpg", name: "DarkPriestess1" },
+    { srcName: "EntityPictures/Darksy.jpg", name: "Darksy" },
+    { srcName: "EntityPictures/CuteDemon.jpg", name: "CuteDemon" },
 
     //action movables
 
@@ -771,10 +774,11 @@ LoadSprites = [
     { srcName: "UI/SkillShield100.png", name: "SkillShield" },
     { srcName: "UI/ManaSkill100.png", name: "ManaSkill" },
     { srcName: "UI/Heart64.png", name: "Heart" },
-    //{ srcName: "UI/Cake48.png", name: "Cake" },
     { srcName: "UI/Floppy64.png", name: "SavedOK" },
     { srcName: "UI/Beware64.png", name: "SavedFail" },
+    //skills
     { srcName: "Skills/Heart48.png", name: "HeartSkill" },
+    { srcName: "Skills/ManaSkill.png", name: "ManaIncSkill" },
 
     //lights
     { srcName: "Lights/Candelabra01.png", name: "Candelabra01" },
