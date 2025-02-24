@@ -187,7 +187,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.3.6",
+    VERSION: "0.3.7",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -931,7 +931,9 @@ const GAME = {
         //this is still 2D, to be corrected
         if (GAME.fromCheckpoint) {
             start_dir = MAP[level].map[GAME.loadWayPoint].vector;
-            start_grid = Grid.toClass(MAP[level].map[GAME.loadWayPoint].grid).add(start_dir);
+            //start_grid = Grid.toClass(MAP[level].map[GAME.loadWayPoint].grid).add(start_dir);
+            //start_grid.z = MAP[level].map[GAME.loadWayPoint].grid.z;
+            start_grid = MAP[level].map[GAME.loadWayPoint].grid.add(start_dir); //3d +2d vector -> 3D
             GAME.fromCheckpoint = false;
         } else {
             start_dir = MAP[level].map.startPosition.vector;

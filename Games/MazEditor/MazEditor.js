@@ -206,7 +206,7 @@ const GAME = {
     const radio = $("#paint input[name=painter]:checked").val();
     const dimension = $("#dimensions input[name=dimensions]:checked").val();
     let GA = $MAP.map.GA;
-    console.log("GA", GA);
+    //console.log("GA", GA);
     let dir, nameId, type, dirIndex, dirs, grid;
     if (dimension === "2D") {
       grid = new Grid(x, y);
@@ -528,13 +528,52 @@ const GAME = {
         }
         console.log("adding oracle on", grid);
         dirs = GA.getDirections(grid, MAPDICT.EMPTY);
-        console.log("dirs",dirs);
+        console.log("dirs", dirs);
         if (dirs.length > 1) {
           alert(`Bad oracle position, posible exits ${dirs.length}`);
           break;
         }
         dirIndex = dirs[0].toInt();
         $MAP.map.oracles.push(Array(gridIndex, dirIndex, $("#oracle_type")[0].value));
+        break;
+
+      case "fill":
+        if (GAME.stack.previousRadio === radio) {
+          GAME.stack.fillCount++;
+        } else GAME.stack.fillCount = 1;
+
+        if (GAME.stack.fillCount > 2) {
+          GAME.stack.fillCount = 1;
+          GAME.stack.elementBuilt = null;
+        }
+
+        const fill_value = $("#fill_value")[0].value;
+
+        console.log("FILL,", grid, fill_value, "fill->", GAME.stack.fillCount);
+
+        switch (GAME.stack.fillCount) {
+          case 1:
+            GAME.stack.startGrid = grid;
+            $("#error_message").html(`
+              <pre>Will fill from top left ${JSON.stringify(GAME.stack.startGrid, null, 2)}
+              to and including ...</pre>
+          `);
+            break;
+
+          case 2:
+            //success
+            GAME.stack.endGrid = grid;
+            $("#error_message").html(`
+              <pre>Will fill from top left ${JSON.stringify(GAME.stack.startGrid, null, 2)}
+              to and including ${JSON.stringify(GAME.stack.endGrid, null, 2)}</pre>
+          `);
+
+            const txt = GAME.fillArea(GAME.stack.startGrid, GAME.stack.endGrid, fill_value);
+            if (txt) $("#error_message").html(txt);
+
+            break;
+
+        }
         break;
 
       case "trigger":
@@ -721,8 +760,20 @@ const GAME = {
   stack: {
     previousRadio: null,
     triggerCount: 0,
+    fillCount: 0,
     trapCount: 0,
     elementBuilt: null,
+    startGrid: null,
+    endGrid: null,
+  },
+  fillArea(from, to, fillValue) {
+    const W = to.x - from.x;
+    const H = to.y - from.y;
+    if (to.z !== from.z) return "Needs to be same slice depth.";
+    if (H < 0 || W < 0) return "At least one dimension is negative!";
+    console.info("fillArea", from.x, from.y, W, H, from.z, fillValue);
+    $MAP.map.GA.fillArea(from.x, from.y, W, H, from.z, fillValue);
+    return null;
   },
   clearGrid(gridIndex) {
     $MAP.combine();
@@ -992,6 +1043,11 @@ const GAME = {
     $("#arena_value").append(`<option value="${MAPDICT.EMPTY}">Space</option>`);
     $("#arena_value").append(`<option value="${MAPDICT.HOLE}">Hole</option>`);
 
+    //fill_value
+    $("#fill_value").append(`<option value="${MAPDICT.EMPTY}">Space</option>`);
+    $("#fill_value").append(`<option value="${MAPDICT.HOLE}">Hole</option>`);
+    $("#fill_value").append(`<option value="${MAPDICT.WALL}">Wall</option>`);
+
     //textures
     for (const prop of TEXTURE_LIST) {
       $("#walltexture").append(`<option value="${prop}">${prop}</option>`);
@@ -1148,7 +1204,7 @@ const GAME = {
       $("#shrine_type").trigger("change");
     }
 
-    if (Object.keys(INTERACTION_SHRINE).length> 0) {
+    if (Object.keys(INTERACTION_SHRINE).length > 0) {
       for (const item_shrine_type in INTERACTION_SHRINE) {
         $("#item_shrine_type").append(`<option value="${item_shrine_type}">${item_shrine_type}</option>`);
       }
@@ -1183,7 +1239,7 @@ const GAME = {
       $("#trigger_actions").append(`<option value="${action}">${action}</option>`);
     }
 
-    if (Object.keys(INTERACTION_ENTITY).length  > 0) {
+    if (Object.keys(INTERACTION_ENTITY).length > 0) {
       for (const entity in INTERACTION_ENTITY) {
         $("#entity_type").append(`<option value="${entity}">${entity}</option>`);
       }

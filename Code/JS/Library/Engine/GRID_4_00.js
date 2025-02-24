@@ -1631,6 +1631,14 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
             }
         }
     }
+    fillArea(X, Y, W, H, floor, set) {
+        for (let x = X; x <= X + W; x++) {
+            for (let y = Y; y <= Y + H; y++) {
+                let grid = new Grid3D(x, y, floor);
+                this.setValue(grid, set);
+            }
+        }
+    }
 
     /**
       * this is 3D Grid specific

@@ -47,7 +47,7 @@ const MAP = {
         maxSpawned: -1,
         killCountdown: -1,
         spawnDelay: -1,
-        data: '{"width":"16","height":"16","depth":3,"map":"BB15AA27BB11ABAA102BB7AA2BAA235BAA3BB38AA13BB47AA11BB49AA7BB23ABB14ABB102ABB34$BB20A"}',
+        data: '{"width":"16","height":"16","depth":3,"map":"BB3AA3BB3ABAA22BB7AA2BAA71ÁAA2ÁÁ7AA11BB8ÁÁ12AA19BAA11BB50ABB21AA12BB26AA3BB8AA8BB41AA7BB23ABB14ABB102ABB34$BB20AÁÁ140AA8ÁÁ48AA12"}',
         wall: "MossyRocks41",
         floor: "IceFloor37",
         ceil: "IrregularTiledFloorCeil04",
