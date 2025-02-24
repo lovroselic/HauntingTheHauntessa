@@ -738,6 +738,13 @@ const INTERACTION_ITEM = {
         inventorySprite: "RedKey",
         color: "Red"
     },
+    HeartSkill: {
+        name: "HeartSkill",
+        category: "status",
+        inventorySprite: "HeartSkill",
+        which: "health",
+        level: 1,
+    },
     GoldCoin: {
         name: "GoldCoin",
         category: "interaction_item",
@@ -769,7 +776,20 @@ const INTERACTION_ENTITY = {
 };
 
 const INTERACTION_SHRINE = {
-
+    Darksy: {
+        name: "Darksy",
+        sprite: "Darksy",
+        category: 'crest',
+        voice: "Female2",
+        wants: ["Apple"],
+        gives: "HeartSkill",
+        level: 5,
+        text: {
+            intro: "I tell what i want.",
+            progress: "This is not triggered.",
+            conclusion: "Finally, a resolution."
+        }
+    },
 };
 
 const INTERACTOR = {

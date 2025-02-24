@@ -1075,7 +1075,7 @@ class Pointer_3DGrid {
 class Pointer_3D {
     constructor(grid, vector) {
         this.grid = Grid3D.toClass(grid);
-        this.vector = Vector3D.toClass(vector);   //remains 2D vector
+        this.vector = Vector3D.toClass(vector);   //3D vector
     }
 }
 
@@ -1106,6 +1106,9 @@ class Grid3D extends MasterGridClass3D {
     static toCenter2D(grid) {
         //centering on XY plane
         return new FP_Grid3D(grid.x + 0.5, grid.y + 0.5, grid.z);
+    }
+    static addDepth(grid, z) {
+        return new Grid3D(grid.x, grid.y, z);
     }
     add(vector, mul = 1) {
         //allows add with 2D direction

@@ -2553,7 +2553,7 @@ const ENGINE = {
             let point = bottomMid;
             this.CTX.strokeStyle = "#966F33";
             this.CTX.fillStyle = "#966F33";
-            if (maze[3] === "Open") {
+            if (gate[3] === "Open") {
                 this.CTX.strokeStyle = "#000";
                 this.CTX.fillStyle = "#000";
             }
@@ -2619,7 +2619,7 @@ const ENGINE = {
             }
             ENGINE.drawCircle(this.CTX, mid, this.decalWidth * 2, color);
             let dir = Vector.fromInt(gate[1]);
-            let start = mid.translate(dir, W);
+            let start = mid.translate(dir, this.W);
             ENGINE.drawCircle(this.CTX, start, this.decalWidth * 2, "#99ccff");
 
             this.CTX.font = "8px Arial";

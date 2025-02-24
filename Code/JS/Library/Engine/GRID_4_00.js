@@ -1382,32 +1382,8 @@ class NodeArray extends ArrayBasedDataStructure {
     }
 }
 
-class IndexArray extends ArrayBasedDataStructure {
-    constructor(sizeX = 1, sizeY = 1, byte = 1, banks = 1) {
-        super();
-        if (![1, 2, 4].includes(byte)) {
-            console.error("IndexArray set up with wrong size. Reset to default 8 bit!");
-            byte = 1;
-        }
-        banks = parseInt(banks, 10);
-        if (banks <= 0 || banks > byte * 4) {
-            console.error("Illegal value for banks. Set to default 4!");
-            banks = byte * 4;
-        }
-        const byteToType = {
-            1: Uint8Array,
-            2: Uint16Array,
-            4: Uint32Array
-        };
-        const GM = new byteToType[byte](sizeX * sizeY);
-        this.width = sizeX;
-        this.height = sizeY;
-        this.gridSizeBit = byte * 8;
-        this.map = GM;
-        this.banks = banks;
-        this.bankBitWidth = this.gridSizeBit / this.banks;
-        this.layerSize = 2 ** this.bankBitWidth - 1;
-    }
+class IA_Dimension_Agnostic_Methods {
+    constructor() { }
     validate(bank, indexValue) {
         if (bank >= this.banks || bank < 0) {
             throw new Error(`Illegal bank value. Expected value between 0 and ${this.banks - 1}, but got ${bank}.`);
@@ -1500,6 +1476,38 @@ class IndexArray extends ArrayBasedDataStructure {
             return true;
         }
         return false;
+    }
+    setup(byte, banks, sizeX, sizeY, sizeZ = 1) {
+        if (![1, 2, 4].includes(byte)) {
+            console.error("IndexArray set up with wrong size. Reset to default 8 bit!");
+            byte = 1;
+        }
+        banks = parseInt(banks, 10);
+        if (banks <= 0 || banks > byte * 4) {
+            console.error("Illegal value for banks. Set to default 4!");
+            banks = byte * 4;
+        }
+        const byteToType = {
+            1: Uint8Array,
+            2: Uint16Array,
+            4: Uint32Array
+        };
+        const GM = new byteToType[byte](sizeX * sizeY * sizeZ);
+
+        this.gridSizeBit = byte * 8;
+        this.map = GM;
+        this.banks = banks;
+        this.bankBitWidth = this.gridSizeBit / this.banks;
+        this.layerSize = 2 ** this.bankBitWidth - 1;
+    }
+}
+
+class IndexArray extends Classes([ArrayBasedDataStructure, IA_Dimension_Agnostic_Methods]) {
+    constructor(sizeX = 1, sizeY = 1, byte = 1, banks = 1) {
+        super();
+        this.setup(byte, banks, sizeX, sizeY, 1);
+        this.width = sizeX;
+        this.height = sizeY;
     }
 }
 
@@ -1643,6 +1651,15 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
     }
 }
 
+class IndexArray3D extends Classes([ArrayBasedDataStructure3D, IA_Dimension_Agnostic_Methods]) {
+    constructor(sizeX = 1, sizeY = 1, sizeZ = 1, byte = 1, banks = 1) {
+        super();
+        this.setup(byte, banks, sizeX, sizeY, sizeZ);
+        this.width = sizeX;
+        this.height = sizeY;
+        this.depth = sizeZ;
+    }
+}
 
 //END
 console.log(`%cGRID ${GRID.VERSION} loaded.`, GRID.CSS);

@@ -205,15 +205,17 @@ const SPAWN_TOOLS = {
     },
     externalGates(map, GA) {
         for (const G of map.gates) {
+            console.log("spawning gate", G);
             const color = G[4];
             const grid = GA.indexToGrid(G[0]);
             GA.addStair(grid);
             const dir = Vector.fromInt(G[1]);
-            const pointer = new Pointer(grid, dir);
+            const pointer = new Pointer_3DGrid(grid, dir);
             map[G[2]] = pointer;
             const face = DirectionToFace(dir);
             const picture = `DungeonDoor_${color}`;
             const destination = new Destination(G[3], G[3].split(".")[0], G[2]);
+            console.log("pointer", pointer, "Destination", destination);
             let opEn = false;
             if (["Open", "Up", "Down"].includes(color)) opEn = true;
             let locked = true;
@@ -221,7 +223,7 @@ const SPAWN_TOOLS = {
             const externalGate = new ExternalGate(grid, face, SPRITE[picture], "portal", picture, color, opEn, locked, destination, GAME.useStaircase);
             INTERACTIVE_BUMP3D.add(externalGate);
         }
-        INTERACTIVE_BUMP3D.setup();
+        INTERACTIVE_BUMP3D.setup("3D");
     },
     lairs(map, GA) {
         for (const L of map.lairs) {

@@ -57,7 +57,7 @@ const DEBUG = {
     checkPoint() {
         console.info("DEBUG::Loading from checkpoint, this may clash with LOAD");
 
-        GAME.level = 1;
+        GAME.level = 2;
         GAME.gold = 5551;
         GAME.lives = 1;
 
@@ -187,7 +187,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.3.5",
+    VERSION: "0.3.6",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -1383,7 +1383,8 @@ const GAME = {
 
         const start_dir = MAP[level].map[this.destination.waypoint].vector;
         let start_grid = Grid.toClass(MAP[level].map[this.destination.waypoint].grid).add(start_dir);
-        start_grid = Vector3.from_Grid(Grid.toCenter(start_grid), HERO.height);
+        let Z = MAP[level].map[this.destination.waypoint].grid.z;
+        start_grid = Vector3.from_Grid(Grid.toCenter(start_grid), HERO.height + Z);
         HERO.player.setPos(start_grid);
         HERO.player.setDir(Vector3.from_2D_dir(start_dir));
         GAME.setCameraView();

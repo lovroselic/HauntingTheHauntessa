@@ -1889,8 +1889,11 @@ class $3D_player {
         }
     }
     usingStaircase(nextPos, resolution = 4) {
-        let currentGrid = Grid.toClass(Vector3.to_FP_Grid(this.pos));
+        //console.info(" ------ using staircase ------", nextPos, nextPos.constructor.name);
         let dir = Vector3.to_FP_Vector(this.dir);
+        let currentGrid = Grid.toClass(Vector3.to_FP_Grid(this.pos));       //to int 2D
+        //console.log("dir", dir, "currentGrid", currentGrid);
+
         let checks = [];
         for (let theta = 0; theta < 2 * Math.PI; theta += (2 * Math.PI) / resolution) {
             checks.push(nextPos.translate(dir.rotate(theta), this.r));
@@ -1901,9 +1904,12 @@ class $3D_player {
             if (GRID.same(futureGrid, currentGrid)) {
                 continue;
             } else {
+                futureGrid = Grid3D.addDepth(futureGrid, this.depth);
+                //console.warn("futureGrid", futureGrid);
                 if (this.GA.isWall(futureGrid) && this.GA.isStair(futureGrid)) {
                     const IA = this.map.decalIA3D || this.map.interactive_bump3d;
                     const bump = IA.unroll(futureGrid)[0] - 1;
+                    console.log(".... time to unroll", IA, "bump", bump);
                     if (isNaN(bump)) return null;
                     if (BUMP3D.POOL.length > 0) return BUMP3D.POOL[bump];
                     return INTERACTIVE_BUMP3D.POOL[bump];

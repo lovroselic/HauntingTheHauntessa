@@ -12,7 +12,7 @@ TODO:
 */
 
 const IndexArrayManagers = {
-    VERSION: "3.10",
+    VERSION: "4.00",
     VERBOSE: false,
     DEAD_LAPSED_TIME: 5,
 };
@@ -67,6 +67,19 @@ class IAM {
             }
         }
     }
+    poolToIA3D(IA) {
+        for (const obj of this.POOL) {
+            if (!obj) continue;
+            // not considering pos yet :: beware !!!
+            //console.log("obj", obj);
+            let grid = obj.grid;
+            if (!IA.has(grid, obj.id)) {
+                IA.next(grid, obj.id);
+            }
+
+        }
+        //console.log("poolToIA3D", IA);
+    }
     reIndex() {
         if (!this.reIndexRequired) return;
         if (this.POOL.length === 0) return;
@@ -101,10 +114,21 @@ class IAM {
     associateHero(hero) {
         this.hero = hero;
     }
-    setup() {
+    setup(type = "2D", byte = 2, banks = 1) {
         let map = this.map;
-        map[this.IA] = new IndexArray(map.width, map.height, 2, 1);                     //1 bank, 16bit
-        this.poolToIA(map[this.IA]);
+        switch (type) {
+            case "2D":
+                map[this.IA] = new IndexArray(map.width, map.height, byte, banks);
+                this.poolToIA(map[this.IA]);
+                break;
+            case "3D":
+                console.warn("setup in progress", ...arguments);
+                map[this.IA] = new IndexArray3D(map.width, map.height, map.depth, byte, banks);
+                this.poolToIA3D(map[this.IA]);
+                break;
+            default:
+                throw new Error(`wrong type: ${type} for Index Array`);
+        }
     }
     clean() {
         for (const obj of this.POOL) {
@@ -981,13 +1005,17 @@ class Animated_3d_entity extends IAM {
             if (obj) obj.drawVector2D(this.map);
         }
     }
+    setup() {
+        map[this.IA] = new IndexArray(map.width, map.height, 4, 4);
+        this.poolToIA(map[this.IA]);
+    }
     manage(lapsedTime, date, flagArray) {
         if (this.POOL.length === 0) return;
         this.reIndex();
         const map = this.map;
         const GA = this.map.GA;
-        map[this.IA] = new IndexArray(map.width, map.height, 4, 4);
-        this.poolToIA(map[this.IA]);
+        this.setup();
+
         GRID.calcDistancesBFS_A(Vector3.toGrid(this.hero.player.pos), map);
         GRID.calcDistancesBFS_A(Vector3.toGrid(this.hero.player.pos), map, AIR_MOVE_GRID_EXCLUSION, "airNodeMap");
 
@@ -1205,7 +1233,7 @@ const ITEM3D = new Decal3D(1024);
 const EXPLOSION3D = new ParticleEmmission3D();
 const INTERACTIVE_DECAL3D = new Decal3D(1024);
 const INTERACTIVE_BUMP3D = new Decal3D(256, "interactive_bump3d");
-const BUMP3D = new Decal_IA_3D();
+const BUMP3D = new Decal_IA_3D();                                           //obsolete, waiting for deprecation; use INTERACTIVE_BUMP3D
 const ENTITY3D = new Animated_3d_entity();
 const MISSILE3D = new Missile3D("enemyIA", ENTITY3D);
 const DYNAMIC_ITEM3D = new Decal3D(256, "dynamic_item3d");
