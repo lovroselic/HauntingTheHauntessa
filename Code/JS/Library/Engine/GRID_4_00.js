@@ -165,11 +165,12 @@ const GRID = {
         return;
     },
     translatePosition3D(entity, lapsedTime) {
+        //console.warn("translatePosition3D", entity);
         const length = (lapsedTime / 1000) * entity.moveSpeed;
-        const realDir = Vector3.from_2D_dir(entity.moveState.realDir); //2D to 3D
+        const realDir = Vector3.from_3D_dir(entity.moveState.realDir); //3D to 3D , swap yz
         entity.moveState.pos = entity.moveState.pos.translate(realDir, length);
 
-        const overallDistance = Vector3.to_FP_Grid(entity.moveState.pos).EuclidianDistance(entity.moveState.startPos);
+        const overallDistance = Vector3.to_FP_Grid3D(entity.moveState.pos).EuclidianDistance(entity.moveState.startPos);
         //console.warn(`${entity.name} ${entity.id} overallDistance: ${overallDistance}`);
         if (overallDistance > 1.0) {
             entity.moveState.moving = false;
@@ -331,6 +332,49 @@ const GRID = {
             }
         }
     },
+    calcDistancesBFS_A_3D(start, dungeon, _3D = false, mode = GROUND_MOVE_GRID_EXCLUSION, nodeMap = "nodeMap") {
+
+        //console.log("----------------------------------------------");
+        //console.log("calcDistancesBFS_A_3D", ...arguments);
+        //console.time("calcDistancesBFS_A_3D");
+
+        dungeon.GA.setNodeMap(nodeMap, mode, "exclude");
+        //console.warn("dungeon.GA.nodeMap", dungeon.GA.nodeMap);
+
+        let Q = new NodeQ("distance");
+        dungeon.GA[nodeMap][start.x][start.y][start.z].distance = 0;
+        dungeon.GA[nodeMap][start.x][start.y][start.z].goto = new Vector3D(0, 0, 0);
+        Q.queueSimple(dungeon.GA[nodeMap][start.x][start.y][start.z]);
+
+        const DIR = _3D ? [...ENGINE.directions3D] : [...ENGINE.directions3D_XY_plane];
+        //console.log("DIR", DIR);
+
+        while (Q.size() > 0) {
+            let node = Q.dequeue();
+
+            for (let D = 0; D < DIR.length; D++) {
+
+                let x = (node.grid.x + DIR[D].x + dungeon.width) % dungeon.width;
+                let y = (node.grid.y + DIR[D].y + dungeon.height) % dungeon.height;
+                let z = (node.grid.z + DIR[D].z + dungeon.depth) % dungeon.depth;
+                let nextNode = dungeon.GA[nodeMap][x][y][z];
+
+                //console.log(node, "-->", nextNode);
+
+                if (nextNode) {
+                    if (nextNode.distance > node.distance + 1) {
+                        nextNode.distance = node.distance + 1;
+                        nextNode.prev = node.grid;
+                        nextNode.goto = DIR[D].mirror();
+                        Q.queueSimple(nextNode);
+                    }
+                }
+            }
+        }
+        //console.timeEnd("calcDistancesBFS_A_3D");
+        //console.log("----------------------------------------------");
+
+    },
     pathFromNodeMap(origin, nodeMap) {
         let path = [origin];
         let prev = nodeMap[origin.x][origin.y].prev;
@@ -424,6 +468,21 @@ class PathNode {
         this.prev = null;
         this.goto = null;
         this.grid = new Grid(x, y);
+        this.visited = false;
+    }
+    setPriority() {
+        this.priority = this.path + this.distance;
+    }
+}
+
+class PathNode3D {
+    constructor(x, y, z) {
+        this.distance = Infinity;
+        this.priority = Infinity;
+        this.path = Infinity;
+        this.prev = null;
+        this.goto = null;
+        this.grid = new Grid3D(x, y, z);
         this.visited = false;
     }
     setPriority() {
@@ -685,6 +744,9 @@ class GA_Dimension_Agnostic_Methods {
     }
     check(grid, bin) {
         if (this.isOutOfBounds(grid)) return false;
+        return this.map[this.gridToIndex(grid)] & bin;
+    }
+    just_check(grid, bin) {
         return this.map[this.gridToIndex(grid)] & bin;
     }
     value(grid, value) {
@@ -1176,7 +1238,6 @@ class GridArray extends Classes([ArrayBasedDataStructure, GA_Dimension_Agnostic_
         }
         return false;
     }
-
     getDirectionsIfNot(grid, value, leaveOut = null) {
         var directions = [];
         for (let D = 0; D < ENGINE.directions.length; D++) {
@@ -1278,8 +1339,6 @@ class GridArray extends Classes([ArrayBasedDataStructure, GA_Dimension_Agnostic_
         }
         return [start, lastDir];
     }
-
-
     entityInWallPoint(pos, dir, r, resolution = 8) {
         let checks = this.pointsAroundEntity(pos, dir, r, resolution);
         for (const point of checks) {
@@ -1656,6 +1715,50 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         const grid = new Grid3D(pos.x, pos.y, depth);
         const check = this.check(grid, AIR_MOVE_GRID_EXCLUSION.sum());
         return !check;
+    }
+    /*---------------------------*/
+    setNodeMap(where = "nodeMap", path = [0], type = "value", block = [], cls = PathNode3D) {
+        const pathSum = path.sum();
+
+        const map = Array.from({ length: this.width }, (_, x) =>
+            Array.from({ length: this.height }, (_, y) =>
+                Array.from({ length: this.depth }, (_, z) => {
+                    const grid = new Grid3D(x, y, z);
+
+                    const carveTypes = {
+                        value: path.includes(this.map[this.gridToIndex(grid)]),
+                        exclude: !this.check(grid, pathSum),
+                        include: this.check(grid, pathSum)
+                    };
+
+                    return carveTypes[type] ? new cls(x, y, z) : null;
+                })
+            )
+        );
+
+        for (const obj of block) {
+            map[obj.x][obj.y][obj.z] = null;
+        }
+
+        this[where] = map;
+        return map;
+    }
+
+    getDirectionsIfNot(grid, value, fly = false, leaveOut = null) {
+        const directions = [];
+        const DIR = fly > 0 ? [...ENGINE.directions3D] : [...ENGINE.directions3D_XY_plane];
+
+        for (let D = 0; D < DIR.length; D++) {
+            if (leaveOut === null || !leaveOut.same(DIR[D])) {
+                let newGrid = grid.add(DIR[D]);
+
+                if (this.isOutOfBounds(newGrid)) continue;
+                if (!this.just_check(newGrid, value)) {
+                    directions.push(DIR[D]);
+                }
+            }
+        }
+        return directions;
     }
 }
 

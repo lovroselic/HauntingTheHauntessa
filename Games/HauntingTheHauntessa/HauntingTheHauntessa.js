@@ -187,7 +187,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.3.7",
+    VERSION: "0.3.8",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -948,7 +948,7 @@ const GAME = {
         HERO.player = new $3D_player(start_grid, Vector3.from_2D_dir(start_dir), MAP[level].map, HERO_TYPE.ThePrincess);
         HERO.player.addToTextureMap("invisible", TEXTURE.TheInvisiblePrincess);
         GAME.setCameraView();
-        AI.initialize(HERO.player, "3D");
+        AI.initialize(HERO.player, "3D3");
         GAME.setWorld(level);
         ENTITY3D.resetTime();
     },

@@ -42,6 +42,15 @@ const UpLeft = new Vector(-1, -1);
 const DownRight = new Vector(1, 1);
 const DownLeft = new Vector(-1, 1);
 
+//3d vector definitions
+const UP3 = new Vector3D(0, -1, 0);
+const DOWN3 = new Vector3D(0, 1, 0);
+const LEFT3 = new Vector3D(-1, 0, 0);
+const RIGHT3 = new Vector3D(1, 0, 0);
+const NOWAY3 = new Vector3D(0, 0, 0);
+const BELOW3 = new Vector3D(0, 0, -1);
+const ABOVE3 = new Vector3D(0, 0, 1);
+
 const ENGINE = {
     VERSION: "5.00",
     CSS: "color: #0FA",
@@ -113,6 +122,9 @@ const ENGINE = {
     corners: [UpLeft, UpRight, DownLeft, DownRight],
     circle: [UP, UpRight, RIGHT, DownRight, DOWN, DownLeft, LEFT, UpLeft],
     dirCircle: [UP, RIGHT, DOWN, LEFT],
+    directions3D_XY_plane: [UP3, RIGHT3, DOWN3, LEFT3],
+    directions3D_Z: [BELOW3, ABOVE3],
+    directions3D: [UP3, RIGHT3, DOWN3, LEFT3, BELOW3, ABOVE3],
     layersToClear: new Set(),
     disableDefaultKeys() {
         /** prevent some default keys and behaviour, including tab close*/
@@ -3460,7 +3472,7 @@ class $3D_MoveState {
         this.rotation_to_north = rotation_to_north;               // rad
         this.parent = parent;
         this.update();
-        this.startPos = Vector3.to_FP_Grid(this.pos);
+        this.startPos = Vector3.to_FP_Grid3D(this.pos);
         this.endPos = this.startPos;
         this.resetView();
     }
@@ -3478,10 +3490,14 @@ class $3D_MoveState {
     }
     next(dir) {
         if (!dir) throw new Error(`Direction ${dir} not defined error. Stopping execution!`);
+        //console.log("next", dir);
         this.startPos = this.endPos;
-        this.dir = dir;                                         //2D dir
+        this.dir = dir;                                         //3D dir
         this.endPos = this.startPos.add(this.dir);
-        this.realDir = Vector3.to_FP_Grid(this.pos).direction(this.endPos);
+        //console.log("start",this.startPos, "end", this.endPos);
+        //this.realDir = Vector3.to_FP_Grid(this.pos).direction(this.endPos);
+        this.realDir = Vector3.to_FP_Grid3D(this.pos).direction(this.endPos);
+        //console.log("next this.realDir", this.realDir);
         this.moving = true;
     }
     update() {
@@ -3491,14 +3507,16 @@ class $3D_MoveState {
         this.setGrid();
     }
     setDirectionVector() {
-        this.directionVector = Vector3.from_2D_dir(this.dir);
+        //this.directionVector = Vector3.from_2D_dir(this.dir);
+        this.directionVector = Vector3.from_3D_dir(this.dir);
     }
     setRotation() {
+        //rotation on 2d plane around Y display axis
         if (this.lookAngle) {
             this.rotation_angle = this.lookAngle;
         }
         else {
-            const angle = UP.radAngleBetweenVectors(this.dir);
+            const angle = UP.radAngleBetweenVectors(Vector3D.toVector2D(this.dir));
             if (!isNaN(angle)) this.rotation_angle = angle;
         }
         this.rotate = glMatrix.mat4.create();
@@ -3513,7 +3531,7 @@ class $3D_MoveState {
         this.boundingBox = new BoundingBox(max, min);
     }
     setGrid() {
-        this.grid = Vector3.to_FP_Grid(this.pos);
+        this.grid = Vector3.to_FP_Grid3D(this.pos);
     }
 }
 class _1D_MoveState {

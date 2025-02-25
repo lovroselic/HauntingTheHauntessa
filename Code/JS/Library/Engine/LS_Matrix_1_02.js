@@ -32,6 +32,9 @@ class Vector3 {
     static from_2D_dir(dir, y = 0) {
         return new Vector3(dir.x, y, dir.y);
     }
+    static from_3D_dir(dir){
+        return new Vector3(dir.x, dir.z, dir.y);            //swaps y and Z
+    }
     static from_Grid(grid, y = 0) {
         return new Vector3(grid.x, y, grid.y);
     }
@@ -46,6 +49,9 @@ class Vector3 {
     }
     static to_Grid3D(v) {
         return new Grid3D(v.x, v.z, v.y);                   //swaps y and Z
+    }
+    static to_FP_Grid3D(v) {
+        return new FP_Grid3D(v.x, v.z, v.y);                 //swaps y and Z
     }
     refresh() {
         this.x = this.array[0];

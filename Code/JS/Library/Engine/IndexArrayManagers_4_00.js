@@ -13,7 +13,7 @@ TODO:
 
 const IndexArrayManagers = {
     VERSION: "4.00",
-    VERBOSE: false,
+    VERBOSE: true,
     DEAD_LAPSED_TIME: 5,
 };
 
@@ -981,7 +981,7 @@ class Animated_3d_entity extends IAM {
             enemy.resetTime();
         }
     }
-    poolToIA(IA) {
+    /*poolToIA(IA) {
         for (const enemy of this.POOL) {
             if (enemy === null) continue;
             //
@@ -999,6 +999,40 @@ class Animated_3d_entity extends IAM {
                 }
             }
         }
+    }*/
+    poolToIA3D(IA) {
+        for (const enemy of this.POOL) {
+            if (enemy === null) continue;
+            //
+            const BB = enemy.moveState.boundingBox;
+            //console.log("..poolToIA3D->enemy.moveState.grid", enemy.moveState.grid, enemy.moveState.grid.constructor.name);
+            //console.log("....BB", BB);
+            const grids = [];
+            const xVals = [BB.min.x, BB.max.x];
+            const yVals = [BB.min.y, BB.max.y];
+            const zVals = [BB.min.z, BB.max.z];
+
+            for (const x of xVals) {
+                for (const z of zVals) {
+                    for (const y of yVals) {
+                        grids.push(Grid3D.toClass(enemy.moveState.grid.add(new FP_Vector3D(x, z, y))));
+                    }
+                }
+            }
+
+            //console.log("grids", grids);
+
+            const uniqueGrids = Array.from(new Map(grids.map(grid => [`${grid.x},${grid.y},${grid.z}`, grid])).values());
+
+            //console.log("uniqueGrids", uniqueGrids);
+
+            //console.info("...poolToIA3D->grids", grids);
+            for (let grid of uniqueGrids) {
+                IA.next(grid, enemy.id);
+                //console.error("*******", grid, enemy.id);
+
+            }
+        }
     }
     drawVector2D() {
         for (let obj of this.POOL) {
@@ -1006,8 +1040,9 @@ class Animated_3d_entity extends IAM {
         }
     }
     setup() {
-        map[this.IA] = new IndexArray(map.width, map.height, 4, 4);
-        this.poolToIA(map[this.IA]);
+        const map = this.map;
+        map[this.IA] = new IndexArray3D(map.width, map.height, map.depth, 4, 4);    //3D
+        this.poolToIA3D(map[this.IA]);
     }
     manage(lapsedTime, date, flagArray) {
         if (this.POOL.length === 0) return;
@@ -1016,8 +1051,10 @@ class Animated_3d_entity extends IAM {
         const GA = this.map.GA;
         this.setup();
 
-        GRID.calcDistancesBFS_A(Vector3.toGrid(this.hero.player.pos), map);
-        GRID.calcDistancesBFS_A(Vector3.toGrid(this.hero.player.pos), map, AIR_MOVE_GRID_EXCLUSION, "airNodeMap");
+        GRID.calcDistancesBFS_A_3D(Vector3.to_Grid3D(this.hero.player.pos), map); //ground exlusion 3d on xy plane
+        GRID.calcDistancesBFS_A_3D(Vector3.to_Grid3D(this.hero.player.pos), map, true, AIR_MOVE_GRID_EXCLUSION, "airNodeMap"); //air exclusion fully 3d
+        //throw "stop here";
+
 
         for (const entity of this.POOL) {
             if (entity) {
@@ -1028,6 +1065,13 @@ class Animated_3d_entity extends IAM {
                 entity.setDistanceFromNodeMap(map.GA.airNodeMap, "airDistance");
                 if (entity.petrified) continue;
 
+                /*
+                console.warn("ENT->", entity.name, entity.id,
+                    "dist:", entity.distance,
+                    "entity", entity);
+                */
+
+                /*
                 //enemy/enemy collision resolution
                 const ThisGrid = Vector3.toGrid(entity.moveState.pos);
                 const EndGrid = Vector3.toGrid(entity.moveState.endPos);
@@ -1064,7 +1108,10 @@ class Animated_3d_entity extends IAM {
                     }
                     if (wait) continue;
                 }
+                */
 
+
+                /*
                 //enemy/player collision
                 const EP_hit = this.hero.player.circleCollision(entity);
                 if (!this.hero.dead) {
@@ -1078,7 +1125,9 @@ class Animated_3d_entity extends IAM {
                         continue;
                     }
                 }
+                    */
 
+                /*
                 //enemy shoot
                 if (!this.hero.dead) {
                     if (entity.canShoot) {
@@ -1087,12 +1136,14 @@ class Animated_3d_entity extends IAM {
                         if (IndexArrayManagers.VERBOSE) console.info(`${entity.name}-${entity.id} shooting`);
                     }
                 }
+                    */
 
                 //enemy translate position
                 if (entity.moveState.moving) {
                     if (this.hero.dead) {
                         lapsedTime = IndexArrayManagers.DEAD_LAPSED_TIME;
                     }
+                    //console.log("entity moving",entity. moveState);
                     GRID.translatePosition3D(entity, lapsedTime);
                     entity.update(date);
                     entity.proximityDistance = null;
@@ -1108,18 +1159,22 @@ class Animated_3d_entity extends IAM {
 
                 entity.behaviour.manage(entity, distance, passiveFlag);
                 if (!entity.hasStack()) {
+
                     let ARG = {
                         playerPosition: Vector3.toGrid(this.hero.player.pos),
                         currentPlayerDir: Vector3.to_FP_Vector(this.hero.player.dir).ortoAlign(),
                         exactPlayerPosition: this.hero.player.pos,
                     };
-                    if (this.VERBOSE) console.info(`${entity.name} ${entity.id} strategy`, entity.behaviour.strategy);
+
+                    if (IndexArrayManagers.VERBOSE) console.info(`${entity.name} ${entity.id} strategy`, entity.behaviour.strategy);
                     entity.dirStack = AI[entity.behaviour.strategy](entity, ARG);
-                    if (this.VERBOSE) console.info(`${entity.name} ${entity.id} dirStack`, entity.dirStack, "dir", entity.moveState.dir);
+                    if (IndexArrayManagers.VERBOSE) console.info(`${entity.name} ${entity.id} dirStack`, entity.dirStack, "dir", entity.moveState.dir);
                 }
                 entity.makeMove();
             }
         }
+
+        //console.warn("--POOL", ENTITY3D.POOL);
     }
     display() {
         console.log("------------------------------------------");

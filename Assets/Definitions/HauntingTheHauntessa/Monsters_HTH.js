@@ -553,7 +553,27 @@ const COMMON_ITEM_TYPE = {
 };
 
 const MONSTER_TYPE = {
-
+    Bat: {
+        name: "Bat",
+        model: "Bat",
+        scale: 1.2 / 2 ** 3,
+        rotateToNorth: Math.PI,
+        midHeight: 0.0,
+        fly: 0.5,
+        deathType: "SmokeExplosion",
+        inventory: null,
+        mana: 0,
+        health: 2,
+        attack: 1,
+        magic: 0,
+        defense: 0,
+        directMagicDamage: true,
+        attackSound: "BatAttack",
+        hurtSound: "BatAttack",
+        behaviourArguments: [Infinity, ["wanderer"], -1],
+        moveSpeed: 1.0,
+        material: MATERIAL.standard,
+    },
 };
 
 const HERO_TYPE = {

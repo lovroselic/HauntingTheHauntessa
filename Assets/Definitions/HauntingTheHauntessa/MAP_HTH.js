@@ -52,7 +52,8 @@ const MAP = {
         floor: "IceFloor37",
         ceil: "IrregularTiledFloorCeil04",
         start: '[276,7]',
-        lights: '[[487,1,"Candle71","standard"]]',
+        lights: '[[487,1,"Candle71","standard"],[520,7,"DuaLLantern_021","standard"]]',
         gates: '[[260,7,"2.1","1.1","Closed"]]',
+        monsters: '[[323,"Bat"]]',
         }
 };

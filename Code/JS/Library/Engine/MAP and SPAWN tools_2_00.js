@@ -244,9 +244,9 @@ const SPAWN_TOOLS = {
     },
     monsters(map, GA) {
         for (const M of map.monsters) {
-            const grid = Grid.toCenter(GA.indexToGrid(M[0]));
+            const grid = Grid3D.toCenter2D(GA.indexToGrid(M[0]));
             const type = MONSTER_TYPE[M[1]];
-            ENTITY3D.add(new $3D_Entity(grid, type, UP));
+            ENTITY3D.add(new $3D_Entity(grid, type, UP3));
         }
     },
     scrolls(map, GA) {

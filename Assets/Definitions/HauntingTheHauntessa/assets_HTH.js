@@ -664,7 +664,7 @@ LoadShaders = [
 
 LoadObjects = [
     "gem.obj", "coins.obj", "key.obj", "ball.obj", "blockwall.obj",
-    "pentagram.obj", "sting.obj", "heart.obj", "shield.obj","magicFlask.obj",
+    "pentagram.obj", "sting.obj", "heart.obj", "shield.obj", "magicFlask.obj",
     "treasure_chest.obj", "wardrobe.obj", "barrel.obj", "Barell2.obj", "Barell3.obj", "crate.obj", "crateFragile.obj", "closet.obj", "bookshelf.obj",
     "pirate_chest.obj", "closet4.obj", "iron_chest.obj",
     "scroll.obj", "coin.obj",
@@ -675,6 +675,7 @@ LoadObjects = [
 LoadModels = [
     'ThePrincess.gltf',
     "Chicken.gltf", "Pig.gltf",
+    "Bat.gltf",
 ];
 
 LoadSprites = [

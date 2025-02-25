@@ -880,18 +880,10 @@ class Vector extends MasterVectorClass {
         return Math.abs(this.x - vector.x) + Math.abs(this.y - vector.y);
     }
     mirror() {
-        let nx, ny;
-        if (this.x) {
-            nx = -this.x;
-        } else {
-            nx = 0;
-        }
-        if (this.y) {
-            ny = -this.y;
-        } else {
-            ny = 0;
-        }
-        return new Vector(nx, ny);
+        return new Vector(
+            this.x ? -this.x : 0,
+            this.y ? -this.y : 0
+        );
     }
     direction(vector) {
         let dx = (vector.x - this.x) / Math.abs(this.x - vector.x) || 0;
@@ -1199,6 +1191,9 @@ class Vector3D extends MasterVectorClass3D {
         this.y = parseInt(y, 10);
         this.z = parseInt(z, 10);
     }
+    static toVector2D(vector) {
+        return new Vector(vector.x, vector.y);
+    }
     static toClass(vector) {
         return new Vector3D(vector.x, vector.y, vector.z);
     }
@@ -1239,6 +1234,14 @@ class Vector3D extends MasterVectorClass3D {
         let y = Math.floor(int / Vector3D.W) - 1;
         return new Vector3D(x, y, z);
     }
+    mirror() {
+        return new Vector3D(
+            this.x ? -this.x : 0,
+            this.y ? -this.y : 0,
+            this.z ? -this.z : 0
+        );
+    }
+
 }
 
 class FP_Vector3D extends MasterVectorClass3D {

@@ -1847,7 +1847,10 @@ class $3D_player {
         const eCount = WebGL.enemySources.reduce((acc, source) => acc + (source.POOL?.length || 0), 0);
         if (!eCount) return;
 
+        console.log("bumpEnemy", nextPos);
         let checkGrids = this.GA.gridsAroundEntity(nextPos, Vector3.to_FP_Vector(this.dir), this.r); //grid check is 2D projection!
+        console.log("checkGrids", checkGrids);
+        
         let enemies = this.map.enemyIA.unrollArray(checkGrids);
         if (enemies.size > 0) {
             for (const e of enemies) {
@@ -3520,7 +3523,8 @@ class StaticParticleBomb extends ParticleEmmiter {
 /** Animated movable entitites */
 
 class $3D_Entity {
-    constructor(grid, type, dir = UP) {
+    constructor(grid, type, dir = UP3) {
+        this.fly = false;
         this.distance = null;
         this.airDistance = null;
         this.proximityDistance = null;                                      //euclidian distance when close up
@@ -3546,11 +3550,14 @@ class $3D_Entity {
         if (typeof (this.scale) === "number") this.scale = new Float32Array([this.scale, this.scale, this.scale]);
 
         if (this.fly) {
-            this.translate = Vector3.from_Grid(grid, this.fly);
+            this.translate = Vector3.from_Grid(grid, this.fly + this.grid.z);
         } else {
             const minY = this.model.meshes[0].primitives[0].positions.min[1] * this.scale[1];
-            this.translate = Vector3.from_Grid(grid, minY);
+            this.translate = Vector3.from_Grid(grid, minY + this.grid.z);
         }
+
+        //console.warn("3D_Entity->", this.name, this.id, this.grid, this.translate);
+
         this.boundingBox = new BoundingBox(this.model.meshes[0].primitives[0].positions.max, this.model.meshes[0].primitives[0].positions.min, this.scale);
         this.actor = new $3D_ACTOR(this, this.model.animations, this.model.skins[0], this.jointMatrix);
         this.moveState = new $3D_MoveState(this.translate, dir, this.rotateToNorth, this);
@@ -3601,8 +3608,9 @@ class $3D_Entity {
         this.moveState.next(this.dirStack.shift());
     }
     setDistanceFromNodeMap(nodemap, prop = "distance") {
-        let gridPosition = Vector3.toGrid(this.moveState.pos);
-        if (!nodemap[gridPosition.x][gridPosition.y]) {
+        let gridPosition = Vector3.to_Grid3D(this.moveState.pos);
+        //console.info("...setDistanceFromNodeMap", this.moveState.pos, gridPosition, "nodemap", nodemap);
+        if (!nodemap[gridPosition.x][gridPosition.y][gridPosition.z]) {
             if (this.fly) {
                 this.distance = null;
                 return;
@@ -3612,7 +3620,7 @@ class $3D_Entity {
             console.warn("details:", this);
         }
 
-        let distance = nodemap[gridPosition.x][gridPosition.y].distance;
+        let distance = nodemap[gridPosition.x][gridPosition.y][gridPosition.z].distance;
         if (distance >= 0 && distance < Infinity) {
             this[prop] = distance;
         } else this[prop] = null;
