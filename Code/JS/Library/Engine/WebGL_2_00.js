@@ -1847,14 +1847,11 @@ class $3D_player {
         const eCount = WebGL.enemySources.reduce((acc, source) => acc + (source.POOL?.length || 0), 0);
         if (!eCount) return;
 
-        console.log("bumpEnemy", nextPos);
-        let checkGrids = this.GA.gridsAroundEntity(nextPos, Vector3.to_FP_Vector(this.dir), this.r); //grid check is 2D projection!
-        console.log("checkGrids", checkGrids);
-        
+        let checkGrids = this.GA.gridsAroundEntity(nextPos, Vector3.to_FP_Vector(this.dir), this.r, this.depth); //grid check is 2D projection!
         let enemies = this.map.enemyIA.unrollArray(checkGrids);
         if (enemies.size > 0) {
             for (const e of enemies) {
-                let EP_hit = this.circleCollision(ENTITY3D.POOL[e - 1], nextPos);
+                let EP_hit = this.circleCollision(ENTITY3D.POOL[e - 1], nextPos); //despite being a 2D plane check it works because  of overlapping 3D grids!
                 if (EP_hit) return true;
             }
         }
