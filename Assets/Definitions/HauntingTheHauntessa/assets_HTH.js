@@ -583,7 +583,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/closet_BaseColor.jpg", name: "closet_BaseColor" },
 
     //common items
-    { srcName: "ObjectTextures/FireballTexture2.jpg", name: "FireballTexture2" },
+    { srcName: "ObjectTextures/FireballTexture2.jpg", name: "FireballTexture" },
     { srcName: "ObjectTextures/ScrollTexture.jpg", name: "ScrollTexture" },
 
     //health items
@@ -765,7 +765,7 @@ LoadSprites = [
     { srcName: "UI/LineTop.png", name: "LineTop" },
     { srcName: "UI/Bag2.png", name: "Bag" },
     { srcName: "UI/AvatarPrincess200w.png", name: "Avatar" },
-    { srcName: "UI/FireballIcon48.png", name: "FireBallIcon" },
+    { srcName: "UI/FireballIcon48.png", name: "FireBall" },
     { srcName: "UI/FireRing48.png", name: "FireRing" },
     { srcName: "UI/OrnateMagicFlask48.png", name: "OrnateMagicFlask" },
     { srcName: "UI/PrincessLivesIcon.png", name: "Lives" },

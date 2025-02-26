@@ -70,11 +70,22 @@ class IAM {
     poolToIA3D(IA) {
         for (const obj of this.POOL) {
             if (!obj) continue;
-            // not considering pos yet :: beware !!!
-            //console.log("obj", obj);
-            let grid = obj.grid;
+
+            let grid = null;
+
+            if (obj.moveState) {
+                grid = Vector3.to_Grid3D(obj.moveState.pos);
+                //console.warn("..obj.moveState.pos", obj.moveState.pos);
+            } else if (obj.pos) {
+                grid = Vector3.to_Grid3D(obj.pos);
+                //console.warn("..obj.pos", obj.pos);
+            } else grid = obj.grid;
+
+            //console.log("obj", obj, "grid", grid);
+
             if (!IA.has(grid, obj.id)) {
                 IA.next(grid, obj.id);
+                //console.log("grid", grid, "obj", obj.id, obj);
             }
 
         }
@@ -880,8 +891,8 @@ class Missile3D extends IAM {
     }
     manage(lapsedTime) {
         this.reIndex();
-        this.map[this.IA] = new IndexArray(this.map.width, this.map.height, 4, 4);
-        this.poolToIA(this.map[this.IA]);
+        this.map[this.IA] = new IndexArray3D(this.map.width, this.map.height, this.map.depth, 4, 4);
+        this.poolToIA3D(this.map[this.IA]);
         const GA = this.map.GA;
 
         for (let obj of this.POOL) {
@@ -890,11 +901,15 @@ class Missile3D extends IAM {
 
                 //check wall hit
                 const pos = Vector3.to_FP_Grid(obj.pos);
-                let [wallHit, point] = GA.entityInWallPoint(pos, Vector3.to_FP_Vector(obj.dir), obj.r);
+                let [wallHit, point] = GA.entityInWallPoint(pos, Vector3.to_FP_Vector(obj.dir), obj.r, obj.depth);
+                console.log("wallHit", wallHit, point);
+
                 if (wallHit) {
                     obj.hitWall(this, point, GA);
                     continue;
                 }
+
+                ////you are here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
                 //check entity collision
                 let IA = this.map[this.enemyIA];
@@ -981,32 +996,11 @@ class Animated_3d_entity extends IAM {
             enemy.resetTime();
         }
     }
-    /*poolToIA(IA) {
-        for (const enemy of this.POOL) {
-            if (enemy === null) continue;
-            //
-            const BB = enemy.moveState.boundingBox;
-            const grids = [
-                //orientation is rotated!
-                Grid.toClass(enemy.moveState.grid.add(new FP_Vector(BB.min.x, BB.min.z))), //top left
-                Grid.toClass(enemy.moveState.grid.add(new FP_Vector(BB.max.x, BB.min.z))), //top right
-                Grid.toClass(enemy.moveState.grid.add(new FP_Vector(BB.min.x, BB.max.z))), //bottom left
-                Grid.toClass(enemy.moveState.grid.add(new FP_Vector(BB.max.x, BB.max.z))), //bottom right
-            ];
-            for (let grid of grids) {
-                if (!IA.has(grid, enemy.id)) {
-                    IA.next(grid, enemy.id);
-                }
-            }
-        }
-    }*/
     poolToIA3D(IA) {
         for (const enemy of this.POOL) {
             if (enemy === null) continue;
-            //
+
             const BB = enemy.moveState.boundingBox;
-            //console.log("..poolToIA3D->enemy.moveState.grid", enemy.moveState.grid, enemy.moveState.grid.constructor.name);
-            //console.log("....BB", BB);
             const grids = [];
             const xVals = [BB.min.x, BB.max.x];
             const yVals = [BB.min.y, BB.max.y];
@@ -1020,17 +1014,10 @@ class Animated_3d_entity extends IAM {
                 }
             }
 
-            //console.log("grids", grids);
-
             const uniqueGrids = Array.from(new Map(grids.map(grid => [`${grid.x},${grid.y},${grid.z}`, grid])).values());
 
-            //console.log("uniqueGrids", uniqueGrids);
-
-            //console.info("...poolToIA3D->grids", grids);
             for (let grid of uniqueGrids) {
                 IA.next(grid, enemy.id);
-                //console.error("*******", grid, enemy.id);
-
             }
         }
     }
@@ -1074,14 +1061,14 @@ class Animated_3d_entity extends IAM {
                     if (EP_hit) {
                         if (entity.canAttack) {
                             entity.performAttack(this.hero);
-                            if (IndexArrayManagers.VERBOSE) console.info(`${entity.name}-${entity.id} attacking`);
+                            //if (IndexArrayManagers.VERBOSE) console.info(`${entity.name}-${entity.id} attacking`);
                         }
                         entity.setView(this.hero.player.pos);
                         entity.update(date);
                         continue;
                     }
                 }
-                    
+
 
                 //enemy shoot
                 //not yet refactored !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -1121,9 +1108,9 @@ class Animated_3d_entity extends IAM {
                         exactPlayerPosition: this.hero.player.pos,
                     };
 
-                    if (IndexArrayManagers.VERBOSE) console.info(`${entity.name} ${entity.id} strategy`, entity.behaviour.strategy);
+                    //if (IndexArrayManagers.VERBOSE) console.info(`${entity.name} ${entity.id} strategy`, entity.behaviour.strategy);
                     entity.dirStack = AI[entity.behaviour.strategy](entity, ARG);
-                    if (IndexArrayManagers.VERBOSE) console.info(`${entity.name} ${entity.id} dirStack`, entity.dirStack, "dir", entity.moveState.dir);
+                    //if (IndexArrayManagers.VERBOSE) console.info(`${entity.name} ${entity.id} dirStack`, entity.dirStack, "dir", entity.moveState.dir);
                 }
                 entity.makeMove();
             }
@@ -1159,7 +1146,7 @@ class Animated_3d_entity extends IAM {
                 if (EE_hit && compareEntity.proximityDistance < entity.proximityDistance) {
                     wait = true;
                     entity.update(date);
-                    if (IndexArrayManagers.VERBOSE) console.info(`${entity.name}-${entity.id} waiting to continue turn`);
+                    //if (IndexArrayManagers.VERBOSE) console.info(`${entity.name}-${entity.id} waiting to continue turn`);
                     break;
                 }
             }

@@ -2606,6 +2606,8 @@ class Missile extends Drawable_object {
         this.active = true;
         this.name = "Missile";
         this.pos = position;
+        this.setDepth();
+        this.depth
         this.dir = direction;
         this.magic = magic;
         //this.casterId = casterId;                   //legacy - obsolete, use friendly flag!
@@ -2635,10 +2637,16 @@ class Missile extends Drawable_object {
         this.mTranslationMatrix = mTranslationMatrix;
     }
     static calcMana(magic) {
-        return (magic ** 1.15) | 0;
+        return Math.floor(1.1 * (magic ** 1.1));
+    }
+    calcPower(magic) {
+        return Math.max(1, Math.round(1.25 * magic + RND(-2, 2)));
     }
     draw() {
         ENGINE.VECTOR2D.drawPerspective(this, "#F00");
+    }
+    setDepth() {
+        this.depth = Math.floor(this.pos.y);
     }
     move(lapsedTime, GA) {
         if (lapsedTime < 1) throw "debug";
@@ -2648,6 +2656,7 @@ class Missile extends Drawable_object {
             return this.move(lapsedTime / 2, GA);
         }
         this.pos = pos;
+        this.setDepth();
         this.distance = glMatrix.vec3.distance(this.IAM.hero.player.pos.array, this.pos.array);
 
         const mTranslationMatrix = glMatrix.mat4.create();
@@ -2687,19 +2696,19 @@ class BouncingMissile extends Missile {
         this.name = "BouncingMissile";
         this.bounceCount = 0;
         this.maxPower = this.power;
-        this.minPower = (this.power * 0.2) >>> 0;
+        this.minPower = Math.max(1, Math.floor(this.power * 0.2));
         this.originalScale = new Float32Array(this.scale);
         this.explosionType = explosionType;
         this.friendly = friendly;
         this.collectibleType = collectibleType;
     }
     static calcMana(magic) {
-        return (2 * (magic ** 1.25)) | 0;
+        return Math.floor(1.1 * (magic ** 1.1));
     }
     calcPower(magic) {
-        return (3 * magic) + RND(-3, 3);
+        return Math.max(1, Math.round((0.9 * magic)) + RND(-3, 3));
     }
-    rebound(innerPoint, GA, IAM) {
+    rebound(innerPoint, GA) {
         const pos2D = Vector3.to_FP_Grid(this.pos);
         const dir2D = Vector3.to_FP_Vector(this.dir);
         const reboundDir = GRID.getReboundDir(innerPoint, pos2D, dir2D, GA);
@@ -2708,8 +2717,9 @@ class BouncingMissile extends Missile {
         this.bounceCount++;
     }
     hitWall(IAM, point, GA) {
+        console.warn("hit BouncingMissile", this.power >= this.minPower, this.power, this.minPower);
         if (this.power >= this.minPower) {
-            this.rebound(point, GA, IAM);
+            this.rebound(point, GA);
             AUDIO.Buzz.volume = RAY.volume(this.distance);
             AUDIO.Buzz.play();
             this.power--;

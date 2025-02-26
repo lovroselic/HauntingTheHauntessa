@@ -25,8 +25,8 @@ const DEBUG = {
     _2D_display: true,
     INVINCIBLE: false,
     FREE_MAGIC: false,
-    keys: false,
-    killAllAllowed: false,
+    keys: true,
+    killAllAllowed: true,
     displayInv() {
         HERO.inventory.scroll.display();
         const list = [];
@@ -89,6 +89,7 @@ const DEBUG = {
         //HERO.attack = 82;
 
         HERO.health = 6;
+        HERO.mana = 11;
         //HERO.maxHealth = 576;
 
         let actItems = [];
@@ -197,7 +198,7 @@ const INI = {
         HealthBox: 999,
     },
     MANA: {
-
+        FireBall: 5,
     },
     HEALTH_INC: 8,
     MANA_INC: 7,
@@ -207,7 +208,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.3.10",
+    VERSION: "0.3.11",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -336,6 +337,9 @@ class ActionItem {
         switch (this.type) {
             case "health":
                 HERO.incHealth(this.spriteClass);
+                break;
+            case "mana":
+                HERO.incMana(this.spriteClass);
                 break;
             default:
                 console.error("ERROR ActionItem action", this);
@@ -497,19 +501,19 @@ const HERO = {
         this.inventoryLimit = INI.INVENTORY_HARD_LIMIT;
         this.canComplain = true;
         this.maxHealth = INI.MAX_HERO_HEALTH;
-        this.maxMana = INI.MAX_HERO_MANA;
-        //this.orbs = 0;
-        //this.orbsLost = 0;
+        //this.maxMana = INI.MAX_HERO_MANA;
+        this.maxMana = 123;
         this.magic = 5;
         this.attack = 5;
         this.defense = 0;
         this.luck = 0;
-        this.mana = 0;
+
         this.ressurection = false;
 
         this.reference_defense = this.defense;
         this.reference_attack = this.attack;
         this.reference_magic = this.magic;
+
         this.attackExp = 0;
         this.defenseExp = 0;
         this.magicExp = 0;
@@ -531,41 +535,8 @@ const HERO = {
         this.dead = false;
         this.health = this.maxHealth;
         this.canShoot = true;
-        //this.orbs = this.capacity;
-        //this.orbsLost = 0;
         this.mana = this.maxMana;
     },
-    /*bagStart() {
-        if (this.hasCapacity) {
-            if (this.capacity >= this.maxCapacity) {
-
-                const text = [
-                    "I can extend the bag further. It will burst.",
-                    "This bag is about to pop.",
-                    "Expanding more? It's a risky move.",
-                    "The bag can't take much more.",
-                    "I need a sturdier bag.",
-                    "Stretching it to the limit here.",
-                    "One more orb and this bag explodes.",
-                    "Bag expansion alert: critical levels.",
-                    "I'm pushing the bag to its max.",
-                    "Another extension and we're in trouble.",
-                    "The bag's screaming for mercy.",
-                    "This bag is about to give up.",
-                ];
-
-                this.speak(text.chooseRandom());
-                return;
-            }
-            this.capacity++;
-            this.capacity = Math.min(this.capacity, this.maxCapacity);
-        } else {
-            this.hasCapacity = true;
-            this.capacity = 1;
-            this.maxCapacity = INI.ORB_MAX_CAPACITY;
-            this.orbs = 0;
-        }
-    },*/
     speak(txt) {
         SPEECH.use("Princess");
         SPEECH.speakWithArticulation(txt);
@@ -581,17 +552,21 @@ const HERO = {
         if (HERO.dead) return;
         if (!HERO.canShoot) return;
 
-        HERO.player.matrixUpdate();
-        if (HERO.orbs <= 0) return AUDIO.MagicFail.play();
+        let cost = BouncingMissile.calcMana(HERO.reference_magic);
+        console.log("cost", cost, "HERO.reference_magic", HERO.reference_magic);
+        if (DEBUG.FREE_MAGIC) cost = 0;
+        if (cost > HERO.mana) return AUDIO.MagicFail.play();
 
-        //HERO.orbs--;
-        //TITLE.orbs();
+        HERO.mana -= cost;
+        TITLE.skills();
+
+        HERO.player.matrixUpdate();
+
         HERO.canShoot = false;
         const position = HERO.player.pos.translate(HERO.player.dir, HERO.player.r);
         const missile = new BouncingMissile(position, HERO.player.dir, COMMON_ITEM_TYPE.Orb, HERO.magic, ParticleExplosion, true, INTERACTION_OBJECT.Orb);
+        console.warn("hero shoots", missile);
         MISSILE3D.add(missile);
-        //this.orbsLost++;
-        //this.orbsLost = Math.min(this.orbsLost, this.capacity);
         setTimeout(() => (HERO.canShoot = true), INI.HERO_SHOOT_TIMEOUT);
         return;
     },
@@ -618,14 +593,9 @@ const HERO = {
         }
     },
     getOrb(text, missile = null) {
-        if (this.orbs === this.capacity) return this.refusePickingOrb(missile);
         this.speak(text.chooseRandom());
-        this.orbs++;
-        //TITLE.orbs();
         AUDIO.CatchFireball.play();
-        if (this.orbsLost > 0) {
-            this.orbsLost--;
-        }
+        HERO._incMana(Math.round(missile.power * 0.45));
     },
     catchOrb(missile) {
         const text = [
@@ -648,7 +618,7 @@ const HERO = {
         ];
         return this.getOrb(text, missile);
     },
-    pickOrb() {
+    /*pickOrb() {
         const text = [
             "I am getting armed to the teeth.",
             "Another orb.",
@@ -666,8 +636,9 @@ const HERO = {
         ];
         //console.debug("picking orb", dropped);
         return this.getOrb(text, null);
-    },
-    refusePickingOrb(missile) {
+    },*/
+
+    /*refusePickingOrb(missile) {
         SPEECH.silence();
         const text = [
             "You need more bags to carry more orbs, isn't this logical?",
@@ -691,14 +662,14 @@ const HERO = {
         if (missile) {
             missile.drop();
         } else this.dropOrb();
-    },
-    dropOrb() {
+    },*/
+    /*dropOrb() {
         const position = Vector3.to_FP_Grid(HERO.player.pos);
         const orb = new FloorItem3D(position, INTERACTION_OBJECT.Orb);
         orb.dropped = true;
         orb.createTexture();
         ITEM3D.add(orb);
-    },
+    },*/
     applyDamage(damage) {
         HERO.health = Math.max(HERO.health - damage, 0);
         TITLE.health();
@@ -785,6 +756,16 @@ const HERO = {
         HERO.health = Math.min(HERO.health, HERO.maxHealth);
         AUDIO.Eating.play();
         TITLE.health();
+    },
+    incMana(sprite) {
+        let incValue = INI.MANA[sprite];
+        HERO._incMana(incValue);
+        AUDIO.Swallow.play();
+    },
+    _incMana(value) {
+        HERO.mana += value;
+        HERO.mana = Math.min(HERO.mana, HERO.maxMana);
+        TITLE.skills();
     },
     restore() {
         this.health = this.maxHealth;
@@ -1833,7 +1814,7 @@ const TITLE = {
         y += TITLE.stack.delta3;
         ENGINE.draw("sideback", lX, y, SPRITE.wavyL);
         ENGINE.draw("sideback", rX, y, SPRITE.wavyR);
-        ENGINE.spriteDraw("sideback", cX, y + dY, SPRITE.FireBallIcon);
+        ENGINE.spriteDraw("sideback", cX, y + dY, SPRITE.FireBall);
         y += SPRITE.LineTop.height + 8;
         ENGINE.draw("sideback", x, y, SPRITE.SkillFireball);
         rX = (3 * cX / 2 - SPRITE.ManaSkill.width / 2) | 0;

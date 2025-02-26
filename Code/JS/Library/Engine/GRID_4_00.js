@@ -1763,6 +1763,15 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         }
         return directions;
     }
+    entityInWallPoint(pos, dir, r, depth, resolution = 8) {
+        //console.log("entityInWallPoint-->", ...arguments);
+        let checks = this.pointsAroundEntity(pos, dir, r, resolution);
+        for (const point of checks) {
+            let isWall = !this.positionIsNotWall(point, depth);
+            if (isWall) return [true, point];
+        }
+        return [false, null];
+    }
 }
 
 class IndexArray3D extends Classes([ArrayBasedDataStructure3D, IA_Dimension_Agnostic_Methods]) {

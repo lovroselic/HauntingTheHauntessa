@@ -700,6 +700,17 @@ const INTERACTION_OBJECT = {
         inventorySprite: "HealthBox",
         text: "A full box of healing. I should save it for dark times."
     },
+    Orb: {
+        name: "Orb-FireBall",
+        category: "action_item",
+        which: "mana",
+        element: "BALL",
+        scale: 1.5 / 2 ** 5,
+        glueToFloor: true,
+        texture: "FireballTexture",
+        material: MATERIAL.fire,
+        inventorySprite: "FireBall",
+    },
 };
 
 const MOVABLE_INTERACTION_OBJECT = {
