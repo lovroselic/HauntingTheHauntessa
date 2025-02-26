@@ -12,7 +12,7 @@
  */
 
 const TURN = {
-    VERSION: "1.02",
+    VERSION: "1.03",
     CSS: "color: #b785a7",
     position: "mid",
     //position: "bottom",
@@ -29,7 +29,14 @@ const TURN = {
     damage(attacker, defender) {
         if (attacker.attack === 0) return 0;
         let delta = attacker.attack - defender.defense;
-        let damage = RND(Math.min(-1, (delta / 2) | 0), Math.max(delta, 1));
+        /**
+         * Damage is calculated as a random value between:
+         * - The minimum of -1 and half of the delta (rounded down).
+         * - The maximum of the full delta or 1.
+         * 
+         * This ensures damage is at least -1 but can scale with the attack/defense difference.
+         */
+        let damage = RND(Math.min(-1, Math.floor(delta / 2)), Math.max(delta, 1));
         return damage;
     },
     display(value, color = "#0F0") {

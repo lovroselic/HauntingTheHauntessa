@@ -595,6 +595,7 @@ LoadTextures = [
 
     /** other object textures */
     { srcName: "ObjectTextures/Apple_BaseColor.jpg", name: "Apple_BaseColor" },
+    { srcName: "ObjectTextures/RedGoldBat.jpg", name: "RedGoldBat" },
 
 
 

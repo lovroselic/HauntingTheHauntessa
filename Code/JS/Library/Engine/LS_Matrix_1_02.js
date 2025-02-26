@@ -13,6 +13,10 @@
 //                                           //
 ///////////////////////////////////////////////
 
+/**
+ * https://glmatrix.net/docs/
+ */
+
 const LS_matrix = {
     VERSION: "1.2",
     CSS: "color: red",
@@ -32,7 +36,7 @@ class Vector3 {
     static from_2D_dir(dir, y = 0) {
         return new Vector3(dir.x, y, dir.y);
     }
-    static from_3D_dir(dir){
+    static from_3D_dir(dir) {
         return new Vector3(dir.x, dir.z, dir.y);            //swaps y and Z
     }
     static from_Grid(grid, y = 0) {
@@ -98,6 +102,15 @@ class Vector3 {
         let y = this.y + vector.y;
         let z = this.z + vector.z;
         return new Vector3(x, y, z);
+    }
+    sub(vector) {
+        let x = this.x - vector.x;
+        let y = this.y - vector.y;
+        let z = this.z - vector.z;
+        return new Vector3(x, y, z);
+    }
+    dot(vector) {
+        return this.x * vector.x + this.y * vector.y + this.z * vector.z;
     }
     scaleVec3(vec3) {
         let x = this.x * vec3[0];

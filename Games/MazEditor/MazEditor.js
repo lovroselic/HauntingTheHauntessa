@@ -1108,6 +1108,7 @@ const GAME = {
     GAME.printMaterialDetails();
     $("#materialtype").change(GAME.printMaterialDetails);
 
+    /** gates */
     for (const gateType of GATE_TYPES) {
       $("#gatetype").append(`<option value="${gateType}">${gateType}</option>`);
     }
@@ -1117,6 +1118,7 @@ const GAME = {
       ENGINE.drawToId("gatecanvas", 0, 0, ENGINE.resizeCanvas(SPRITE[`DungeonDoor_${$("#gatetype")[0].value}`], INI.CANVAS_RESOLUTION));
     });
 
+    /** keys */
     for (const keyType of KEY_TYPES) {
       $("#key_type").append(`<option value="${keyType}" style="background-color: ${keyType.toLowerCase()}">${keyType}</option>`);
     }
@@ -1141,7 +1143,7 @@ const GAME = {
 
     /** monster */
     for (const monsterType in MONSTER_TYPE) {
-      $("#monster_type").append(`<option value="${monsterType}">${monsterType} A: ${MONSTER_TYPE[monsterType].attack} H: ${MONSTER_TYPE[monsterType].health} M: ${MONSTER_TYPE[monsterType].magic}</option>`);
+      $("#monster_type").append(`<option value="${monsterType}">${monsterType} A: ${MONSTER_TYPE[monsterType].attack} D: ${MONSTER_TYPE[monsterType].defense} H: ${MONSTER_TYPE[monsterType].health} M: ${MONSTER_TYPE[monsterType].magic} XP: ${MONSTER_TYPE[monsterType].xp}</option>`);
     }
 
     /** scrolls */

@@ -55,6 +55,24 @@ const DEBUG = {
         HERO.player.pos = Vector3.from_Grid(Grid.toCenter(grid), 0.5);
     },
     checkPoint() {
+        // area-1 - initial training
+        /*
+        GateKeeper wants: CerificateOfAbility,CerificateOfAbility, CerificateOfAbility ..., give GoldKey
+        MissRose wants Rose, Rose, Rose, gives ???
+
+        */
+
+        /*
+        Rose, 
+        Rose, 
+        Rose,
+        CerificateOfAbility
+        CerificateOfAbility
+        CerificateOfAbility
+
+
+        */
+
         console.info("DEBUG::Loading from checkpoint, this may clash with LOAD");
 
         GAME.level = 2;
@@ -167,6 +185,8 @@ const INI = {
     SPAWN_DELAY: 9999,
     MONSTER_ATTACK_TIMEOUT: 2000,
     MONSTER_SHOOT_TIMEOUT: 9999,
+    INI_BASE_EXP_FONT: 100,
+    LEVEL_FACTOR: 1.5,
     HEALTH: {
         Cake: 40,
         Steak: 80,
@@ -187,7 +207,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.3.9",
+    VERSION: "0.3.10",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -486,6 +506,18 @@ const HERO = {
         this.luck = 0;
         this.mana = 0;
         this.ressurection = false;
+
+        this.reference_defense = this.defense;
+        this.reference_attack = this.attack;
+        this.reference_magic = this.magic;
+        this.attackExp = 0;
+        this.defenseExp = 0;
+        this.magicExp = 0;
+        this.attackExpGoal = INI.INI_BASE_EXP_FONT;
+        this.defenseExpGoal = INI.INI_BASE_EXP_FONT;
+        this.magicExpGoal = INI.INI_BASE_EXP_FONT;
+
+
         this.revive();
         this.visible();
 
@@ -686,7 +718,7 @@ const HERO = {
         AUDIO.PrincessScream.play();
         GAME.lives--;
         TITLE.lives();
-        HERO.player.pos.set_y(0.1);
+        HERO.player.pos.set_y(0.1 + HERO.player.depth);
         WebGL.GAME.setFirstPerson();
         if (GAME.lives <= 0) return HERO.finalDeath();
 
@@ -715,7 +747,38 @@ const HERO = {
         this[which] += level;
         TITLE.skills();
     },
-    incExp() { },  //keep, TURN dependency
+    incExp(value, type) {
+        console.log("incExp", type, value);
+        this[`${type}Exp`] += value;
+        if (this[`${type}Exp`] >= this[`${type}ExpGoal`]) {
+            AUDIO.LevelUp.play();
+            this[`${type}Exp`] -= this[`${type}ExpGoal`];
+            this[type]++;
+            this[`reference_${type}`]++;
+            this[`${type}ExpGoal`] = this.nextLevel(this[`${type}ExpGoal`]);
+            switch (type) {
+                case "attack":
+                case "defense":
+                    this.incStatus("health");
+                    break;
+                case "magic":
+                    this.incStatus("mana");
+                    break;
+                default:
+                    throw "exp type error";
+            }
+            TITLE.skills();
+        }
+
+        console.log("------ EXP ------");
+        for (const type of ["attack", "defense", "magic"]) {
+            console.log(type, ":", this[`${type}Exp`], " /", this[`${type}ExpGoal`]);
+        }
+        console.log("------------");
+    },
+    nextLevel(value) {
+        return Math.round(value * INI.LEVEL_FACTOR);
+    },
     incHealth(sprite) {
         let incValue = INI.HEALTH[sprite];
         HERO.health += incValue;

@@ -1725,6 +1725,7 @@ class $3D_player {
         const hit = this.hit();
         if (!hit) return;
         let damage = TURN.damage(WebGL.hero, hit);
+        console.info("************* HIT ****************", hit, damage);
         const luckAddiction = Math.min(1, (damage * 0.1) >>> 0);
         damage += WebGL.hero.luck * luckAddiction;
 
@@ -1749,8 +1750,8 @@ class $3D_player {
     hit() {
         const attackLength = 0.5;
         const refPoint = this.pos.translate(this.dir, attackLength);
-        const refGrid = Vector3.toGrid(refPoint);
-        const playerGrid = Vector3.toGrid(this.pos);
+        const refGrid = Vector3.to_Grid3D(refPoint);
+        const playerGrid = Vector3.to_Grid3D(this.pos);
         const IA = this.map.enemyIA;
         const POOL = ENTITY3D.POOL;
         const enemies = IA.unrollArray([refGrid, playerGrid]);
@@ -1773,10 +1774,8 @@ class $3D_player {
             }
         }
         if (ENGINE.verbose) console.info("selected attackedEnemy", `${attackedEnemy.name} - ${attackedEnemy.id}`);
-        let hit = ENGINE.lineIntersectsCircle(Vector3.to_FP_Grid(this.pos),
-            Vector3.to_FP_Grid(refPoint),
-            Vector3.to_FP_Grid(attackedEnemy.moveState.pos),
-            attackedEnemy.r);
+        let hit = ENGINE.lineIntersectsSphere(this.pos, refPoint, attackedEnemy.moveState.pos, attackedEnemy.r);
+
         if (hit) return attackedEnemy;
         return null;
     }
@@ -1843,7 +1842,7 @@ class $3D_player {
         this.setDir(Vector3.from_2D_dir(this.dir.rotate2D(angle), this.dir.y));
         if (WebGL.CONFIG.dual && WebGL.CONFIG.firstperson) this.setRotation();   //
     }
-    bumpEnemy(nextPos) {
+    bumpEnemy(nextPos, nextPos3) {
         const eCount = WebGL.enemySources.reduce((acc, source) => acc + (source.POOL?.length || 0), 0);
         if (!eCount) return;
 
@@ -1851,7 +1850,7 @@ class $3D_player {
         let enemies = this.map.enemyIA.unrollArray(checkGrids);
         if (enemies.size > 0) {
             for (const e of enemies) {
-                let EP_hit = this.circleCollision(ENTITY3D.POOL[e - 1], nextPos); //despite being a 2D plane check it works because  of overlapping 3D grids!
+                let EP_hit = this.circleCollision(ENTITY3D.POOL[e - 1], nextPos3); //3d check
                 if (EP_hit) return true;
             }
         }
@@ -1877,7 +1876,7 @@ class $3D_player {
             return;
         }
 
-        if (this.bumpEnemy(nextPos)) return;
+        if (this.bumpEnemy(nextPos, nextPos3)) return;
         let check;
         if (WebGL.CONFIG.prevent_movement_in_exlusion_grids) {
             check = this.GA.entityNotInExcusion(nextPos, Vector3.to_FP_Vector(dir), this.r, this.depth);
@@ -1889,10 +1888,8 @@ class $3D_player {
         }
     }
     usingStaircase(nextPos, resolution = 4) {
-        //console.info(" ------ using staircase ------", nextPos, nextPos.constructor.name);
         let dir = Vector3.to_FP_Vector(this.dir);
         let currentGrid = Grid.toClass(Vector3.to_FP_Grid(this.pos));       //to int 2D
-        //console.log("dir", dir, "currentGrid", currentGrid);
 
         let checks = [];
         for (let theta = 0; theta < 2 * Math.PI; theta += (2 * Math.PI) / resolution) {
@@ -1905,7 +1902,6 @@ class $3D_player {
                 continue;
             } else {
                 futureGrid = Grid3D.addDepth(futureGrid, this.depth);
-                //console.warn("futureGrid", futureGrid);
                 if (this.GA.isWall(futureGrid) && this.GA.isStair(futureGrid)) {
                     const IA = this.map.decalIA3D || this.map.interactive_bump3d;
                     const bump = IA.unroll(futureGrid)[0] - 1;
@@ -1918,12 +1914,13 @@ class $3D_player {
         }
         return null;
     }
-    circleCollision(entity, nextPos = null) {
+    circleCollision(entity, nextPos3 = null) {
+        //this is now 3D check
         let distance;
-        if (nextPos !== null) {
-            distance = Vector3.to_FP_Grid(entity.moveState.pos).EuclidianDistance(nextPos);
+        if (nextPos3 !== null) {
+            distance = entity.moveState.pos.EuclidianDistance(nextPos3);
         } else {
-            distance = Vector3.to_FP_Grid(entity.moveState.pos).EuclidianDistance(Vector3.to_FP_Grid(this.pos));
+            distance = entity.moveState.pos.EuclidianDistance(this.pos);
         }
         let touchDistance = entity.r + this.r;
         return distance < touchDistance;
@@ -3581,7 +3578,7 @@ class $3D_Entity {
         this.canAttack = false;
         AUDIO[this.attackSound].play();
         let damage = TURN.damage(this, victim);
-        let luckAddiction = Math.min(1, (damage * 0.1) >>> 0);
+        let luckAddiction = Math.min(1, Math.floor(damage * 0.1));
         damage -= luckAddiction * victim.luck;
         if (damage <= 0) {
             damage = "MISSED";

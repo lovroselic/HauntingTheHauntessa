@@ -1065,53 +1065,9 @@ class Animated_3d_entity extends IAM {
                 entity.setDistanceFromNodeMap(map.GA.airNodeMap, "airDistance");
                 if (entity.petrified) continue;
 
-                /*
-                console.warn("ENT->", entity.name, entity.id,
-                    "dist:", entity.distance,
-                    "entity", entity);
-                */
-
-                /*
                 //enemy/enemy collision resolution
-                const ThisGrid = Vector3.toGrid(entity.moveState.pos);
-                const EndGrid = Vector3.toGrid(entity.moveState.endPos);
-                const Indices = map[this.IA].unroll(ThisGrid);
-                if (!GRID.same(ThisGrid, EndGrid)) {
-                    let add = map[this.IA].unroll(EndGrid);
-                    Indices.splice(0, -1, ...add);
-                }
-                let setIndices = new Set(Indices);
-                setIndices.delete(entity.id);
-                const FilteredIndices = Array.from(setIndices);
-                let wait = false;
-                if (FilteredIndices.length > 0) {
-                    if (!entity.proximityDistance) {
-                        entity.proximityDistance = this.hero.player.pos.EuclidianDistance(entity.moveState.pos);
-                    }
-                    for (let e of FilteredIndices) {
-                        const compareEntity = this.POOL[e - 1];
-                        if (compareEntity.petrified) continue;
-                        if (!compareEntity.proximityDistance) {
-                            compareEntity.proximityDistance = this.hero.player.pos.EuclidianDistance(compareEntity.moveState.pos);
-                        }
-                        const EE_hit = GRID.circleCollision2D(
-                            Vector3.to_FP_Grid(entity.moveState.pos),
-                            Vector3.to_FP_Grid(compareEntity.moveState.pos),
-                            entity.r + compareEntity.r
-                        );
-                        if (EE_hit && compareEntity.proximityDistance < entity.proximityDistance) {
-                            wait = true;
-                            entity.update(date);
-                            if (IndexArrayManagers.VERBOSE) console.info(`${entity.name}-${entity.id} waiting to continue turn`);
-                            break;
-                        }
-                    }
-                    if (wait) continue;
-                }
-                */
+                if (this.enemy_enemy_collision_resolution(entity, map, date)) continue;
 
-
-                /*
                 //enemy/player collision
                 const EP_hit = this.hero.player.circleCollision(entity);
                 if (!this.hero.dead) {
@@ -1125,10 +1081,10 @@ class Animated_3d_entity extends IAM {
                         continue;
                     }
                 }
-                    */
+                    
 
-                /*
                 //enemy shoot
+                //not yet refactored !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 if (!this.hero.dead) {
                     if (entity.canShoot) {
                         entity.setView(this.hero.player.pos);
@@ -1136,7 +1092,6 @@ class Animated_3d_entity extends IAM {
                         if (IndexArrayManagers.VERBOSE) console.info(`${entity.name}-${entity.id} shooting`);
                     }
                 }
-                    */
 
                 //enemy translate position
                 if (entity.moveState.moving) {
@@ -1175,6 +1130,43 @@ class Animated_3d_entity extends IAM {
         }
 
         //console.warn("--POOL", ENTITY3D.POOL);
+    }
+    enemy_enemy_collision_resolution(entity, map, date) {
+        const ThisGrid = Vector3.to_Grid3D(entity.moveState.pos);
+        const EndGrid = Grid3D.toClass(entity.moveState.endPos);
+        const Indices = map[this.IA].unroll(ThisGrid);
+        if (!GRID.same(ThisGrid, EndGrid)) {
+            let add = map[this.IA].unroll(EndGrid);
+            Indices.splice(0, -1, ...add);
+        }
+        let setIndices = new Set(Indices);
+        setIndices.delete(entity.id);
+        const FilteredIndices = Array.from(setIndices);
+        let wait = false;
+        if (FilteredIndices.length > 0) {
+            if (!entity.proximityDistance) {
+                entity.proximityDistance = this.hero.player.pos.EuclidianDistance(entity.moveState.pos);
+            }
+            for (let e of FilteredIndices) {
+                const compareEntity = this.POOL[e - 1];
+                if (compareEntity.petrified) continue;
+                if (!compareEntity.proximityDistance) {
+                    compareEntity.proximityDistance = this.hero.player.pos.EuclidianDistance(compareEntity.moveState.pos);
+                }
+
+                const EE_hit = GRID.circleCollision3D(entity.moveState.pos, compareEntity.moveState.pos, entity.r + compareEntity.r);
+
+                if (EE_hit && compareEntity.proximityDistance < entity.proximityDistance) {
+                    wait = true;
+                    entity.update(date);
+                    if (IndexArrayManagers.VERBOSE) console.info(`${entity.name}-${entity.id} waiting to continue turn`);
+                    break;
+                }
+            }
+
+            if (wait) return true;
+        }
+        return false;
     }
     display() {
         console.log("------------------------------------------");

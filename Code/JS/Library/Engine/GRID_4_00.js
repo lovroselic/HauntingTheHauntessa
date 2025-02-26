@@ -30,6 +30,15 @@ const GRID = {
     circleCollision2D(fpgrid1, fpgrid2, touchDistance) {
         return fpgrid1.EuclidianDistance(fpgrid2) < touchDistance;
     },
+    /**
+     * @param {Vector3} pos1vec3
+     * @param {Vector3} pos2vec3
+     * @param {float} touchDistance
+     * @return {bool} 
+     */
+    circleCollision3D(pos1vec3, pos2vec3, touchDistance) {
+        return pos1vec3.EuclidianDistance(pos2vec3) < touchDistance;
+    },
     circleCollision_toPos(entity1, entity2) {
         console.log(entity1.moveState.pos, entity2.pos);
         let distance = entity1.moveState.pos.EuclidianDistance(entity2.pos);
@@ -1697,33 +1706,21 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
             }
         }
     }
-
-    //you are here
     gridsAroundEntity(pos, dir, r, depth, resolution = 4) {
-        console.log("gridsAroundEntity", ...arguments);
         let checks = this.pointsAroundEntity(pos, dir, r, resolution);
         checks = checks.filter(pos => this.positionIsNotWall(pos, depth));
         return checks.map(pos => new Grid3D(pos.x, pos.y, depth));
     }
-
-    /**
-      * this is 3D Grid specific
-      */
     positionIsNotExcluded(pos, exclusion = GROUND_MOVE_GRID_EXCLUSION, depth) {
         const grid = new Grid3D(pos.x, pos.y, depth);
         const check = this.check(grid, exclusion.sum());
         return !check;
     }
-
-    /**
-    * this is 3D Grid specific
-    */
     positionIsNotWall(pos, depth) {
         const grid = new Grid3D(pos.x, pos.y, depth);
         const check = this.check(grid, AIR_MOVE_GRID_EXCLUSION.sum());
         return !check;
     }
-    /*---------------------------*/
     setNodeMap(where = "nodeMap", path = [0], type = "value", block = [], cls = PathNode3D) {
         const pathSum = path.sum();
 
@@ -1750,7 +1747,6 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         this[where] = map;
         return map;
     }
-
     getDirectionsIfNot(grid, value, fly = false, leaveOut = null) {
         const directions = [];
         const DIR = fly > 0 ? [...ENGINE.directions3D] : [...ENGINE.directions3D_XY_plane];

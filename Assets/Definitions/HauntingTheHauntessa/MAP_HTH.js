@@ -54,6 +54,6 @@ const MAP = {
         start: '[276,7]',
         lights: '[[487,1,"Candle71","standard"],[520,7,"DuaLLantern_021","standard"]]',
         gates: '[[260,7,"2.1","1.1","Closed"]]',
-        monsters: '[[323,"Bat"]]',
+        monsters: '[[323,"Bat"],[306,"Bat"],[308,"Bat"],[338,"Bat"],[355,"RedGoldBat"],[370,"RedGoldBat"],[387,"RedGoldBat"],[310,"RedGoldBat"],[312,"RedGoldBat"]]',
         }
 };

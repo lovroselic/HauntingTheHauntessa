@@ -463,6 +463,34 @@ const ENGINE = {
         let D = P1.x * P2.y - P2.x * P1.y;
         return cR ** 2 * dr2 > D ** 2;
     },
+
+    /**
+     * Checks if a line segment (sword swing) intersects a sphere (enemy hitbox) in 3D space.
+     *
+     * @param {Vector3} lineP1 - Start point of the line segment (hero position).
+     * @param {Vector3} lineP2 - End point of the line segment (sword tip position).
+     * @param {Vector3} sphereCenter - Center of the sphere (enemy position).
+     * @param {number} sphereRadius - Radius of the sphere (enemy hitbox).
+     * @returns {boolean} True if the line segment intersects the sphere, false otherwise.
+     */
+    lineIntersectsSphere(lineP1, lineP2, sphereCenter, sphereRadius) {
+        let d = lineP2.sub(lineP1);  // Direction vector of the line
+        let f = lineP1.sub(sphereCenter); // Vector from sphere center to line start
+
+        let a = d.dot(d);  // d • d
+        let b = 2 * f.dot(d);  // 2 * (f • d)
+        let c = f.dot(f) - sphereRadius ** 2;  // (f • f) - r^2
+
+        let discriminant = b * b - 4 * a * c;
+
+        if (discriminant < 0) return false; // No intersection
+
+        let sqrtD = Math.sqrt(discriminant);
+        let t1 = (-b - sqrtD) / (2 * a);
+        let t2 = (-b + sqrtD) / (2 * a);
+
+        return (t1 >= 0 && t1 <= 1) || (t2 >= 0 && t2 <= 1); // Check if intersection is within segment
+    },
     intersectionCollision(actor1, actor2) {
         /**
          * might be already redundant, check current uses
