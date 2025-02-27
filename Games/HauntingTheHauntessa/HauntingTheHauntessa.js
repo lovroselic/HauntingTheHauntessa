@@ -88,8 +88,8 @@ const DEBUG = {
         //HERO.magic = 87;
         //HERO.attack = 82;
 
-        HERO.health = 6;
-        HERO.mana = 11;
+        //HERO.health = 6;
+        //HERO.mana = 11;
         //HERO.maxHealth = 576;
 
         let actItems = [];
@@ -208,7 +208,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.3.11",
+    VERSION: "0.3.12",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -501,8 +501,8 @@ const HERO = {
         this.inventoryLimit = INI.INVENTORY_HARD_LIMIT;
         this.canComplain = true;
         this.maxHealth = INI.MAX_HERO_HEALTH;
-        //this.maxMana = INI.MAX_HERO_MANA;
-        this.maxMana = 123;
+        this.maxMana = INI.MAX_HERO_MANA;
+        //this.maxMana = 123;
         this.magic = 5;
         this.attack = 5;
         this.defense = 0;

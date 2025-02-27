@@ -909,17 +909,17 @@ class Missile3D extends IAM {
                     continue;
                 }
 
-                ////you are here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
                 //check entity collision
                 let IA = this.map[this.enemyIA];
-                const grid = Grid.toClass(pos);
+                const grid = Vector3.to_Grid3D(obj.pos);
+                console.log("grid", grid);
                 if (!IA.empty(grid)) {
                     const possibleEnemies = IA.unroll(grid);
                     for (let P of possibleEnemies) {
                         const monster = this.entity_IAM.POOL[P - 1];
                         if (monster === null) continue;
-                        const monsterHit = GRID.circleCollision2D(monster.moveState.grid, Vector3.to_FP_Grid(obj.pos), monster.r + obj.r);
+                        const monsterHit = GRID.circleCollision3D(monster.moveState.pos, obj.pos, monster.r + obj.r);
+
                         if (monsterHit) {
                             monster.hitByMissile(obj, GA);
                             continue;
@@ -927,8 +927,11 @@ class Missile3D extends IAM {
                     }
                 }
 
+                 ////you are here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
                 //check player collision
-                const playerHit = GRID.circleCollision2D(Vector3.to_FP_Grid(this.hero.player.pos), Vector3.to_FP_Grid(obj.pos), this.hero.player.r + obj.r);
+                //const playerHit = GRID.circleCollision2D(Vector3.to_FP_Grid(this.hero.player.pos), Vector3.to_FP_Grid(obj.pos), this.hero.player.r + obj.r);
+                const playerHit = GRID.circleCollision3D(this.hero.player.pos, obj.pos, this.hero.player.r + obj.r);
                 if (playerHit) {
                     this.hero.hitByMissile(obj);
                     continue;

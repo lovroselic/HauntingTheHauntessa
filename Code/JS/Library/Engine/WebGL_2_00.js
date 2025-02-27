@@ -2607,7 +2607,6 @@ class Missile extends Drawable_object {
         this.name = "Missile";
         this.pos = position;
         this.setDepth();
-        this.depth
         this.dir = direction;
         this.magic = magic;
         //this.casterId = casterId;                   //legacy - obsolete, use friendly flag!
@@ -2740,9 +2739,10 @@ class BouncingMissile extends Missile {
     drop(GA) {
         if (!GA) GA = this.IAM.map.GA;
         const position = Vector3.to_FP_Grid(this.pos);
-        const placement_possible = GA.positionIsNotExcluded(position, ITEM_DROP_EXCLUSION);
+        const placement_possible = GA.positionIsNotExcluded(position, ITEM_DROP_EXCLUSION, this.depth);
+
         if (placement_possible) {
-            const dropped = new FloorItem3D(position, this.collectibleType);
+            const dropped = new FloorItem3D(new FP_Grid3D(this.pos.x, this.pos.z, this.depth), this.collectibleType);
             dropped.createTexture();
             dropped.dropped = true;
             ITEM3D.add(dropped);
@@ -3793,7 +3793,9 @@ class $3D_Entity {
     }
     applyDamage(damage, exp) {
         this.health -= damage;
-        if (this.health <= 0) this.die('magic', exp);
+        if (this.health <= 0) {
+            this.die('magic', exp);
+        } else this.IAM.hero.incExp(exp, 'magic');
     }
     damage(damage) {
         let exp = this.health;
