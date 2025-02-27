@@ -83,32 +83,7 @@ const MONSTER_TYPE = {
         moveSpeed: 1.3,
         material: MATERIAL.greenFluence,
     },
-    MissGalaxy: {
-        name: "MissGalaxy",
-        model: "MissGalaxy",
-        scale: 0.9 / 2 ** 2,
-        rotateToNorth: Math.PI,
-        midHeight: 0.5,
-        deathType: "BloodExplosion",
-        //
-        mana: 5,
-        health: 10,
-        attack: 8,
-        magic: 1,
-        defense: 0,
-        directMagicDamage: true,
-        //
-        caster: true,
-        shootDistance: 5,
-        stalkDistance: 7,
-        attackSound: "HumanAttack1",
-        hurtSound: "Ow",
-        behaviourArguments: [7, ["wanderer"], 5, ["shoot"]],
-        moveSpeed: 1.0,
-        material: MATERIAL.standardShine,
-        missile: BouncingMissile,
-        missileType: COMMON_ITEM_TYPE.Bounceball,
-    },
+    
     MissGalaxyGreen: {
         name: "MissGalaxyGreen",
         texture: "MissGalaxyGreen",

@@ -80,6 +80,18 @@ class Vector3 {
         this.z = z;
         this.toArray();
     }
+    add_x(x) {
+        this.x += x;
+        this.toArray();
+    }
+    add_y(y) {
+        this.y += y;
+        this.toArray();
+    }
+    add_z(z) {
+        this.z += z;
+        this.toArray();
+    }
     toPoint() {
         let grid = new FP_Grid(this.x, this.z);
         return grid.toPoint();

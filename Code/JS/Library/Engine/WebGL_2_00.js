@@ -2667,7 +2667,7 @@ class Missile extends Drawable_object {
     }
     calcDamage(magic, directMagicDamage = false) {
         if (directMagicDamage) return this.power;
-        let part1 = (magic / 2) | 0;
+        let part1 = Math.floor(magic / 2);
         let part2 = magic - part1;
         let damage = this.power - part1 - RND(0, part2);
         return damage;
@@ -3528,7 +3528,7 @@ class StaticParticleBomb extends ParticleEmmiter {
 
 class $3D_Entity {
     constructor(grid, type, dir = UP3) {
-        this.fly = false;
+        this.fly = 0.0;
         this.distance = null;
         this.airDistance = null;
         this.proximityDistance = null;                                      //euclidian distance when close up
@@ -3542,6 +3542,7 @@ class $3D_Entity {
         this.grid = grid;
         this.type = type;
         this.which = null;
+        this.directMagicDamage = false;
         for (const prop in type) {
             this[prop] = type[prop];
         }
@@ -3552,19 +3553,15 @@ class $3D_Entity {
         this.jointMatrix = Float32Array.from(this.model.skins[0].jointMatrix);  //needs own jointMatrix, 
 
         if (typeof (this.scale) === "number") this.scale = new Float32Array([this.scale, this.scale, this.scale]);
-
-        if (this.fly) {
-            this.translate = Vector3.from_Grid(grid, this.fly + this.grid.z);
-        } else {
-            const minY = this.model.meshes[0].primitives[0].positions.min[1] * this.scale[1];
-            this.translate = Vector3.from_Grid(grid, minY + this.grid.z);
-        }
+        this.minY = this.model.meshes[0].primitives[0].positions.min[1] * this.scale[1];
+        this.translate = Vector3.from_Grid(grid, this.minY + this.fly + this.grid.z);
 
         //console.warn("3D_Entity->", this.name, this.id, this.grid, this.translate);
 
         this.boundingBox = new BoundingBox(this.model.meshes[0].primitives[0].positions.max, this.model.meshes[0].primitives[0].positions.min, this.scale);
         this.actor = new $3D_ACTOR(this, this.model.animations, this.model.skins[0], this.jointMatrix);
         this.moveState = new $3D_MoveState(this.translate, dir, this.rotateToNorth, this);
+
         const dZ = (this.boundingBox.max.z - this.boundingBox.min.z) / 2;
         const dX = (this.boundingBox.max.x - this.boundingBox.min.x) / 2;
         const avgDim = (dZ + dX) / 2;
@@ -3574,7 +3571,7 @@ class $3D_Entity {
 
         this.canAttack = true;
         this.canShoot = false;
-        if (this.magic > 0) this.mana = this.mana * this.missile.calcMana(this.magic);
+        if (this.magic > 0) this.mana = (this.mana * this.missile.calcMana(this.magic)) * 1.1; //10% surplus to support random cost
         this.petrified = false;
         if (!this.static) this.behaviour = new Behaviour(...this.behaviourArguments);
         this.guardPosition = null;
@@ -3612,8 +3609,8 @@ class $3D_Entity {
         this.moveState.next(this.dirStack.shift());
     }
     setDistanceFromNodeMap(nodemap, prop = "distance") {
-        let gridPosition = Vector3.to_Grid3D(this.moveState.pos);
-        //console.info("...setDistanceFromNodeMap", this.moveState.pos, gridPosition, "nodemap", nodemap);
+        let gridPosition = Grid3D.toClass(this.moveState.grid);
+        console.info("...setDistanceFromNodeMap", this.name, this.id, this.moveState.pos, gridPosition, "this", this);
         if (!nodemap[gridPosition.x][gridPosition.y][gridPosition.z]) {
             if (this.fly) {
                 this.distance = null;
@@ -3816,9 +3813,11 @@ class $3D_Entity {
     shoot(GA) {
         const dir = Vector3.from_2D_dir(this.moveState.lookDir);
         let position = this.moveState.pos.translate(dir, this.r);
-        position.set_y(0.5);
+        position.add_y(0.5);
         const manaCost = this.missile.calcMana(this.magic);
         const missile = new this.missile(position, dir, this.missileType, this.magic);
+
+        console.log("3D_Entity->shoot position", position, "manaCost", manaCost, "missile", missile);
 
         if (GA.isWall(Grid.toClass(Vector3.to_FP_Grid(missile.pos)))) return;               //missile could be created in wall
 

@@ -49,24 +49,22 @@ const AI = {
         switch (this.setting) {
             case "2D": return Grid.toClass(enemy.moveState.pos);
             case "3D": return Vector3.toGrid(enemy.moveState.pos);
-            case "3D3": return Vector3.to_Grid3D(enemy.moveState.pos);
+            case "3D3": return Grid3D.toClass(enemy.moveState.grid);
             default: return enemy.moveState.pos;
         }
     },
     getGridValue(enemy) {
         let gridValue = GROUND_MOVE_GRID_EXCLUSION;
-        if (enemy.fly) {
+        if (enemy.fly > 0.0) {
             gridValue = AIR_MOVE_GRID_EXCLUSION;
         }
         return gridValue;
     },
     wanderer(enemy) {
-        //console.info("----------- wanderer ---------");
         let gridValue = this.getGridValue(enemy);
         gridValue = gridValue.sum();
-        //console.log("gridValue", gridValue, "this.getPosition(enemy)", this.getPosition(enemy), enemy.moveState.dir.mirror(), enemy.fly);
+        console.info("WANDERER", enemy.name, enemy.id, gridValue);
         const directions = enemy.parent.map.GA.getDirectionsIfNot(this.getPosition(enemy), gridValue, enemy.fly, enemy.moveState.dir.mirror());
-        //console.info("directions", directions);
         if (directions.length) {
             return [directions.chooseRandom()];
         } else {
@@ -79,10 +77,12 @@ const AI = {
         return [NOWAY];
     },
     hunt(enemy, exactPosition) {
+        console.warn("...hunt, exactPosition", exactPosition);
         if (exactPosition.hasOwnProperty("exactPlayerPosition")) exactPosition = exactPosition.exactPlayerPosition;
         let nodeMap = enemy.parent.map.GA.nodeMap;
         let grid = this.getPosition(enemy);
-        let goto = nodeMap[grid.x][grid.y]?.goto || NOWAY;
+        console.log(".....grid", grid);
+        let goto = nodeMap[grid.x][grid.y][grid.z]?.goto || NOWAY;
         if (this.VERBOSE) console.info(`...${enemy.name}-${enemy.id} hunting -> goto:`, goto, "strategy", enemy.behaviour.strategy);
         if (GRID.same(goto, NOWAY) && this.setting === "3D") return this.hunt_FP(enemy, exactPosition);
         return [goto];
@@ -193,9 +193,11 @@ const AI = {
         return directions;
     },
     shoot(enemy, ARG) {
+        console.info("********************** SHOOT **********************");
         if (this.VERBOSE) console.warn(`..${enemy.name}-${enemy.id} tries to shoot.`);
         if (enemy.caster) {
             if (enemy.mana >= Missile.calcMana(enemy.magic)) {
+                console.log("checking visibility");
                 const GA = enemy.parent.map.GA;
                 const IA = enemy.parent.map.enemyIA;
                 if (GRID.vision(this.getPosition(enemy), Grid.toClass(ARG.playerPosition), GA) &&

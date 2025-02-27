@@ -568,7 +568,6 @@ const MONSTER_TYPE = {
         magic: 0,
         defense: 0,
         xp: 1,
-        directMagicDamage: true,
         attackSound: "BatAttack",
         hurtSound: "BatAttack",
         behaviourArguments: [Infinity, ["wanderer"], -1],
@@ -591,13 +590,42 @@ const MONSTER_TYPE = {
         magic: 0,
         defense: 0,
         xp: 2,
-        directMagicDamage: true,
         attackSound: "BatAttack",
         hurtSound: "BatAttack",
         behaviourArguments: [Infinity, ["wanderer"], -1],
         moveSpeed: 1.0,
         material: MATERIAL.redShine,
     },
+    /////////////
+
+    MissGalaxy: {
+        name: "MissGalaxy",
+        model: "MissGalaxy",
+        scale: 0.9 / 2 ** 2,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "BloodExplosion",
+        //
+        mana: 5,
+        health: 10,
+        attack: 8,
+        magic: 5,
+        defense: 0,
+        xp: 99,
+        //
+        caster: true,
+        shootDistance: 15,
+        stalkDistance: 17,
+        attackSound: "HumanAttack1",
+        hurtSound: "Ow",
+        behaviourArguments: [17, ["wanderer"], 15, ["shoot"]],
+        moveSpeed: 1.0,
+        material: MATERIAL.standardShine,
+        missile: BouncingMissile,
+        missileType: COMMON_ITEM_TYPE.Bounceball,
+    },
+
+
 };
 
 const HERO_TYPE = {

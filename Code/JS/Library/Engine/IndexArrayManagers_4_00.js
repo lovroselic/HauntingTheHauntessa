@@ -910,24 +910,10 @@ class Missile3D extends IAM {
                 }
 
                 //check entity collision
-                let IA = this.map[this.enemyIA];
-                const grid = Vector3.to_Grid3D(obj.pos);
-                console.log("grid", grid);
-                if (!IA.empty(grid)) {
-                    const possibleEnemies = IA.unroll(grid);
-                    for (let P of possibleEnemies) {
-                        const monster = this.entity_IAM.POOL[P - 1];
-                        if (monster === null) continue;
-                        const monsterHit = GRID.circleCollision3D(monster.moveState.pos, obj.pos, monster.r + obj.r);
+                if (this.missile_entity_collision(obj, GA)) continue;
 
-                        if (monsterHit) {
-                            monster.hitByMissile(obj, GA);
-                            continue;
-                        }
-                    }
-                }
 
-                 ////you are here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                ////you are here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
                 //check player collision
                 //const playerHit = GRID.circleCollision2D(Vector3.to_FP_Grid(this.hero.player.pos), Vector3.to_FP_Grid(obj.pos), this.hero.player.r + obj.r);
@@ -938,6 +924,7 @@ class Missile3D extends IAM {
                 }
 
                 //check missile to missile collision
+                /*
                 const mIA = this.map[this.IA];
                 const possibleMissiles = mIA.unroll(grid);
                 possibleMissiles.remove(obj.id);
@@ -955,8 +942,29 @@ class Missile3D extends IAM {
                         }
                     }
                 }
+                */
             }
         }
+    }
+    missile_entity_collision(obj, GA) {
+        if (!obj.friendly) return false;
+        let IA = this.map[this.enemyIA];
+        const grid = Vector3.to_Grid3D(obj.pos);
+        console.log("missile_entity_collision->grid", grid);
+        if (!IA.empty(grid)) {
+            const possibleEnemies = IA.unroll(grid);
+            for (let P of possibleEnemies) {
+                const monster = this.entity_IAM.POOL[P - 1];
+                if (monster === null) return true;
+
+                const monsterHit = GRID.circleCollision3D(monster.moveState.pos, obj.pos, monster.r + obj.r);
+                if (monsterHit) {
+                    monster.hitByMissile(obj, GA);
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
 
@@ -1048,6 +1056,7 @@ class Animated_3d_entity extends IAM {
 
         for (const entity of this.POOL) {
             if (entity) {
+                console.log("\n........", entity.name, entity.id, "........");
                 entity.reset();
 
                 //set distance
@@ -1074,21 +1083,22 @@ class Animated_3d_entity extends IAM {
 
 
                 //enemy shoot
+                ////you are here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 //not yet refactored !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 if (!this.hero.dead) {
                     if (entity.canShoot) {
                         entity.setView(this.hero.player.pos);
                         entity.shoot(GA);
+                        console.log("entity", entity);
+                        //throw "DEBUG";
                         if (IndexArrayManagers.VERBOSE) console.info(`${entity.name}-${entity.id} shooting`);
                     }
                 }
 
                 //enemy translate position
                 if (entity.moveState.moving) {
-                    if (this.hero.dead) {
-                        lapsedTime = IndexArrayManagers.DEAD_LAPSED_TIME;
-                    }
-                    //console.log("entity moving",entity. moveState);
+                    if (this.hero.dead) lapsedTime = IndexArrayManagers.DEAD_LAPSED_TIME;
+                    console.log("entity moving", entity.moveState.pos, entity.moveState.grid);
                     GRID.translatePosition3D(entity, lapsedTime);
                     entity.update(date);
                     entity.proximityDistance = null;
@@ -1102,20 +1112,23 @@ class Animated_3d_entity extends IAM {
                     distance = entity.airDistance;
                 }
 
+                ////you are here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 entity.behaviour.manage(entity, distance, passiveFlag);
                 if (!entity.hasStack()) {
 
                     let ARG = {
-                        playerPosition: Vector3.toGrid(this.hero.player.pos),
+                        playerPosition: Vector3.to_FP_Grid3D(this.hero.player.pos),
                         currentPlayerDir: Vector3.to_FP_Vector(this.hero.player.dir).ortoAlign(),
                         exactPlayerPosition: this.hero.player.pos,
+                        exactPlayerDir: this.hero.player.dir,
                     };
 
                     //if (IndexArrayManagers.VERBOSE) console.info(`${entity.name} ${entity.id} strategy`, entity.behaviour.strategy);
                     entity.dirStack = AI[entity.behaviour.strategy](entity, ARG);
-                    //if (IndexArrayManagers.VERBOSE) console.info(`${entity.name} ${entity.id} dirStack`, entity.dirStack, "dir", entity.moveState.dir);
+                    if (IndexArrayManagers.VERBOSE) console.info(`${entity.name} ${entity.id} dirStack`, entity.dirStack, "dir", entity.moveState.dir, "strategy", entity.behaviour.strategy);
                 }
                 entity.makeMove();
+                console.log("................................................");
             }
         }
 

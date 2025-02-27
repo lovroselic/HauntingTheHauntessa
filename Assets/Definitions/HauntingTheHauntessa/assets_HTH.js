@@ -676,7 +676,7 @@ LoadObjects = [
 LoadModels = [
     'ThePrincess.gltf',
     "Chicken.gltf", "Pig.gltf",
-    "Bat.gltf",
+    "Bat.gltf", "MissGalaxy.gltf",
 ];
 
 LoadSprites = [

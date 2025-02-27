@@ -3500,7 +3500,7 @@ class $3D_MoveState {
         this.rotation_to_north = rotation_to_north;               // rad
         this.parent = parent;
         this.update();
-        this.startPos = Vector3.to_FP_Grid3D(this.pos);
+        this.startPos = Vector3.to_FP_Grid3D(this.pos);           //FPGrid3D
         this.endPos = this.startPos;
         this.resetView();
     }
@@ -3509,23 +3509,25 @@ class $3D_MoveState {
         this.lookAngle = null;
     }
     setView(lookAt) {
+        console.info("MS setView", lookAt);
         const pPos = Vector3.to_FP_Grid(lookAt);
         const ePos = Vector3.to_FP_Grid(this.pos);
         const direction = ePos.direction(pPos);
         this.lookDir = direction;
         const angle = -FP_Vector.toClass(UP).radAngleBetweenVectors(direction);
         this.lookAngle = angle;
+        console.log("..this.lookDir", this.lookDir, "this.lookAngle", this.lookAngle);
     }
     next(dir) {
         if (!dir) throw new Error(`Direction ${dir} not defined error. Stopping execution!`);
-        //console.log("next", dir);
+        console.log("next", dir);
         this.startPos = this.endPos;
         this.dir = dir;                                         //3D dir
         this.endPos = this.startPos.add(this.dir);
-        //console.log("start",this.startPos, "end", this.endPos);
-        //this.realDir = Vector3.to_FP_Grid(this.pos).direction(this.endPos);
+        console.log("start",this.startPos, "end", this.endPos);
+        this.realDir = Vector3.to_FP_Grid(this.pos).direction(this.endPos);
         this.realDir = Vector3.to_FP_Grid3D(this.pos).direction(this.endPos);
-        //console.log("next this.realDir", this.realDir);
+        console.log("next this.realDir", this.realDir);
         this.moving = true;
     }
     update() {
@@ -3560,6 +3562,8 @@ class $3D_MoveState {
     }
     setGrid() {
         this.grid = Vector3.to_FP_Grid3D(this.pos);
+        this.grid.z -= this.parent.minY;                                        //adjusted for minY because some of them are negative and can leak from grid boundaries
+        this.grid.z += Number.EPSILON;                                          //for FP accuracy
     }
 }
 class _1D_MoveState {

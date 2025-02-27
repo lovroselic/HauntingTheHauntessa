@@ -1749,7 +1749,7 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
     }
     getDirectionsIfNot(grid, value, fly = false, leaveOut = null) {
         const directions = [];
-        const DIR = fly > 0 ? [...ENGINE.directions3D] : [...ENGINE.directions3D_XY_plane];
+        const DIR = fly > 0.0 ? [...ENGINE.directions3D] : [...ENGINE.directions3D_XY_plane];
 
         for (let D = 0; D < DIR.length; D++) {
             if (leaveOut === null || !leaveOut.same(DIR[D])) {
@@ -1757,6 +1757,7 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
 
                 if (this.isOutOfBounds(newGrid)) continue;
                 if (!this.just_check(newGrid, value)) {
+                    //console.log("...grid", grid, "dir", DIR[D], "newGrid", newGrid, "stored val", this.getValue(newGrid), "!this.just_check(newGrid, value)", !this.just_check(newGrid, value), "this.just_check(newGrid, value)", this.just_check(newGrid, value));
                     directions.push(DIR[D]);
                 }
             }
