@@ -208,7 +208,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.4.0",
+    VERSION: "0.4.1",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -579,6 +579,7 @@ const HERO = {
             const damage = Math.max(missile.calcDamage(HERO.magic, true), 1) - HERO.luck;
             HERO.applyDamage(damage);
             missile.explode(MISSILE3D);
+            HERO.incExp(Math.round(damage / 4), "magic");
         }
     },
     inventory: {
@@ -618,58 +619,6 @@ const HERO = {
         ];
         return this.getOrb(text, missile);
     },
-    /*pickOrb() {
-        const text = [
-            "I am getting armed to the teeth.",
-            "Another orb.",
-            "I have a fiery weapon now. Beware of the Princess.",
-            "Orb secured. Watch out enemies!",
-            "Feeling orbtastic.",
-            "Princess powers up!",
-            "Another orb for my collection.",
-            "My orb bag is getting heavy!",
-            "More ammo for the royal arsenal.",
-            "Orbing my way to victory.",
-            "This orb will do nicely.",
-            "Locked and orbloaded.",
-            "Time to bring the heat with this orb.",
-        ];
-        //console.debug("picking orb", dropped);
-        return this.getOrb(text, null);
-    },*/
-
-    /*refusePickingOrb(missile) {
-        SPEECH.silence();
-        const text = [
-            "You need more bags to carry more orbs, isn't this logical?",
-            "Nah, I am full.",
-            "Put where?",
-            "Feeling greedy?",
-            "I am armed as much as I can be at the moment.",
-            "My bag is bursting at the seams.",
-            "No more room in the orb inn.",
-            "I've hit my orb limit.",
-            "This bag is maxed out.",
-            "No space for another orb.",
-            "My orb bag is officially full.",
-            "Can't carry any more, I'm at capacity.",
-            "Orb overload. No more can fit.",
-            "I need an upgrade for more orbs.",
-            "Full up. Can't take another one.",
-        ];
-
-        this.speak(text.chooseRandom());
-        if (missile) {
-            missile.drop();
-        } else this.dropOrb();
-    },*/
-    /*dropOrb() {
-        const position = Vector3.to_FP_Grid(HERO.player.pos);
-        const orb = new FloorItem3D(position, INTERACTION_OBJECT.Orb);
-        orb.dropped = true;
-        orb.createTexture();
-        ITEM3D.add(orb);
-    },*/
     applyDamage(damage) {
         HERO.health = Math.max(HERO.health - damage, 0);
         TITLE.health();

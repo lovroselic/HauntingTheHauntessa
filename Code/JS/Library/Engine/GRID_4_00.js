@@ -1773,6 +1773,29 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         }
         return [false, null];
     }
+
+
+    getDirectionsFromNodeMap(grid, nodeMap, fly, leaveOut = null, allowCross = false) {
+        const directions = [];
+        const DIR = fly > 0.0 ? [...ENGINE.directions3D] : [...ENGINE.directions3D_XY_plane];
+
+        for (let D = 0; D < DIR.length; D++) {
+            if (leaveOut === null || !leaveOut.same(DIR[D])) {
+                let newGrid = grid.add(DIR[D]);
+
+                if (this.outside(newGrid)) {
+                    if (allowCross) {
+                        newGrid = this.toOtherSide(newGrid);
+                    } else continue;
+                }
+
+                if (nodeMap[newGrid.x][newGrid.y][newGrid.z]) {
+                    directions.push(DIR[D]);
+                }
+            }
+        }
+        return directions;
+    }
 }
 
 class IndexArray3D extends Classes([ArrayBasedDataStructure3D, IA_Dimension_Agnostic_Methods]) {

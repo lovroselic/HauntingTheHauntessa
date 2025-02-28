@@ -738,6 +738,7 @@ const INTERACTION_OBJECT = {
         texture: "FireballTexture",
         material: MATERIAL.fire,
         inventorySprite: "FireBall",
+        text: "Spent missile. Maybe I can squeeze some magic out."
     },
 };
 

@@ -74,7 +74,7 @@ const AI = {
     immobile(enemy) {
         if (this.VERBOSE) console.warn(`${enemy.name}-${enemy.id} IMMOBILE`);
         if (AI.immobileWander) return this.wanderer(enemy);
-        return [NOWAY];
+        return [NOWAY3];
     },
     hunt(enemy, exactPosition) {
         console.warn("...hunt, exactPosition", exactPosition);
@@ -141,14 +141,15 @@ const AI = {
         return this.crossroader(enemy, ARG.playerPosition, ARG.currentPlayerDir, ARG.block, ARG.exactPlayerPosition);
     },
     runAway(enemy) {
+        console.error("running away - untested", enemy);
         let nodeMap = enemy.parent.map.GA.nodeMap;
         let grid = this.getPosition(enemy);
-        let directions = enemy.parent.map.GA.getDirectionsFromNodeMap(grid, nodeMap, nodeMap[grid.x][grid.y].goto);
-        directions.push(NOWAY);
+        let directions = enemy.parent.map.GA.getDirectionsFromNodeMap(grid, nodeMap, nodeMap[grid.x][grid.y][grid.z].goto);
+        directions.push(NOWAY3);
         let distances = [];
         for (const dir of directions) {
             let nextGrid = grid.add(dir);
-            distances.push(nodeMap[nextGrid.x][nextGrid.y].distance);
+            distances.push(nodeMap[nextGrid.x][nextGrid.y][nextGrid.z].distance);
         }
         let maxDistance = Math.max(...distances);
         return [directions[distances.indexOf(maxDistance)]];
@@ -224,10 +225,13 @@ const AI = {
         }
     },
     keepTheDistance(enemy, ARG) {
+        console.info("############# KEEPING THE DISTANCE ##############");
         const map = enemy.parent.map;
         const grid = this.getPosition(enemy);
-        const playerGrid = Grid.toClass(ARG.playerPosition);
-        const directions = map.GA.getDirectionsFromNodeMap(grid, map.GA.nodeMap);
+        const playerGrid = Grid3D.toClass(ARG.playerPosition);
+        console.log("..grid", grid, "playerGrid", playerGrid);
+        const directions = map.GA.getDirectionsFromNodeMap(grid, map.GA.nodeMap, enemy.fly);
+        console.log("directions", directions);
         let possible = [];
         let max = [];
         let curMax = 0;
