@@ -367,7 +367,7 @@ const SPAWN_TOOLS = {
     },
     movables(map, GA) {
         for (const O of map.movables) {
-            const grid = Grid.toCenter(GA.indexToGrid(O[0]));
+            const grid = Grid3D.toCenter2D(GA.indexToGrid(O[0]));
             const type = MOVABLE_INTERACTION_OBJECT[O[1]];
             DYNAMIC_ITEM3D.add(new $Movable_Interactive_entity(grid, type));
         }

@@ -585,6 +585,7 @@ LoadTextures = [
     //common items
     { srcName: "ObjectTextures/FireballTexture2.jpg", name: "FireballTexture" },
     { srcName: "ObjectTextures/ScrollTexture.jpg", name: "ScrollTexture" },
+    { srcName: "ObjectTextures/RedFireballTexture.jpg", name: "RedFireballTexture" },
 
     //health items
     { srcName: "ObjectTextures/CanTexture.jpg", name: "CanTexture" },
@@ -595,7 +596,10 @@ LoadTextures = [
 
     /** other object textures */
     { srcName: "ObjectTextures/Apple_BaseColor.jpg", name: "Apple_BaseColor" },
+
+    /** other monster textures */
     { srcName: "ObjectTextures/RedGoldBat.jpg", name: "RedGoldBat" },
+    { srcName: "ObjectTextures/MissGalaxyGreen.jpg", name: "MissGalaxyGreen" },
 
 
 

@@ -526,7 +526,21 @@ const COMMON_ITEM_TYPE = {
         moveSpeed: 8.0,
         lightColor: "#006600",
         material: MATERIAL.greenFluence,
+        explosionType: GreenMetalExplosion,
         construct: BouncingMissile,
+        collectible: false,
+    },
+    RedFireball: {
+        name: "RedFireball",
+        category: 'missile',
+        element: "BALL",
+        scale: 1.5 / 2 ** 4,
+        texture: "RedFireballTexture",
+        moveSpeed: 8.0,
+        lightColor: "#AA2200",
+        material: MATERIAL.redShine,
+        explosionType: ParticleExplosion,
+        construct: Missile,
         collectible: false,
     },
     Orb: {
@@ -538,6 +552,7 @@ const COMMON_ITEM_TYPE = {
         moveSpeed: 8.0,
         lightColor: "#FF7700",
         material: MATERIAL.fire,
+        explosionType: ParticleExplosion,
         construct: BouncingMissile,
         collectible: true,
     },
@@ -606,7 +621,7 @@ const MONSTER_TYPE = {
         midHeight: 0.5,
         deathType: "BloodExplosion",
         //
-        mana: 5,
+        mana: 1,
         health: 10,
         attack: 8,
         magic: 5,
@@ -624,7 +639,33 @@ const MONSTER_TYPE = {
         missile: BouncingMissile,
         missileType: COMMON_ITEM_TYPE.Bounceball,
     },
-
+    MissGalaxyGreen: {
+        name: "MissGalaxyGreen",
+        texture: "MissGalaxyGreen",
+        model: "MissGalaxy",
+        scale: 0.8 / 2 ** 2,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "BloodExplosion",
+       //
+       mana: 1,
+       health: 10,
+       attack: 8,
+       magic: 5,
+       defense: 0,
+       xp: 99,
+       //
+        caster: true,
+        shootDistance: 15,
+        stalkDistance: 17,
+        attackSound: "HumanAttack1",
+        hurtSound: "Ow",
+        behaviourArguments: [17, ["wanderer"], 15, ["shoot"]],
+        moveSpeed: 1.1,
+        material: MATERIAL.standardShine,
+        missile: Missile,
+        missileType: COMMON_ITEM_TYPE.RedFireball,
+    },
 
 };
 

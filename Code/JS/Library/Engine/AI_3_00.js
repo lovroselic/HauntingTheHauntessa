@@ -63,7 +63,7 @@ const AI = {
     wanderer(enemy) {
         let gridValue = this.getGridValue(enemy);
         gridValue = gridValue.sum();
-        console.info("WANDERER", enemy.name, enemy.id, gridValue);
+        //console.info("WANDERER", enemy.name, enemy.id, gridValue);
         const directions = enemy.parent.map.GA.getDirectionsIfNot(this.getPosition(enemy), gridValue, enemy.fly, enemy.moveState.dir.mirror());
         if (directions.length) {
             return [directions.chooseRandom()];
@@ -84,7 +84,7 @@ const AI = {
         console.log(".....grid", grid);
         let goto = nodeMap[grid.x][grid.y][grid.z]?.goto || NOWAY;
         if (this.VERBOSE) console.info(`...${enemy.name}-${enemy.id} hunting -> goto:`, goto, "strategy", enemy.behaviour.strategy);
-        if (GRID.same(goto, NOWAY) && this.setting === "3D") return this.hunt_FP(enemy, exactPosition);
+        if (GRID.same(goto, NOWAY) && (this.setting === "3D" || this.setting === "3D3")) return this.hunt_FP(enemy, exactPosition);
         return [goto];
     },
     hunt_FP(enemy, exactPosition) {

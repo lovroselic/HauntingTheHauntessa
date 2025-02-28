@@ -69,6 +69,7 @@ const WebGL = {
         INTERACTION_TIMEOUT: 4000,
         BLAST_RADIUS: 1.495,
         BLAST_DAMAGE: 100,
+        HERO_HEIGHT: 0.6,
     },
     CONFIG: {
         firstperson: true,
@@ -1868,7 +1869,7 @@ class $3D_player {
     _applyMove_(lapsedTime, dir) {
         let length = (lapsedTime / 1000) * this.moveSpeed;
 
-        let nextPos3 = this.pos.translate(dir, length); //3D
+        let nextPos3 = this.pos.translate(dir, length); //3D - Vector3
         let nextPos = Vector3.to_FP_Grid(nextPos3);
         let bump = this.usingStaircase(nextPos);
         if (bump !== null) {
@@ -1918,11 +1919,13 @@ class $3D_player {
         //this is now 3D check
         let distance;
         if (nextPos3 !== null) {
-            distance = entity.moveState.pos.EuclidianDistance(nextPos3);
+            distance = entity.moveState.referencePos.EuclidianDistance(nextPos3);
         } else {
-            distance = entity.moveState.pos.EuclidianDistance(this.pos);
+            distance = entity.moveState.referencePos.EuclidianDistance(this.pos);
         }
         let touchDistance = entity.r + this.r;
+        //console.error("E", entity.moveState.pos, "H", this.pos, "r", entity.r + this.r, entity.r, this.r, "distance", distance);
+        //console.error("E", entity.name, entity.id, entity.moveState.referencePos, "H", this.pos, "r", entity.r + this.r, entity.r, this.r, "distance", distance, "HIT", distance < touchDistance);
         return distance < touchDistance;
     }
     respond(lapsedTime) {
@@ -2601,7 +2604,7 @@ class FloorItem3D extends Drawable_object {
 }
 
 class Missile extends Drawable_object {
-    constructor(position, direction, type, magic, casterId = 0) {
+    constructor(position, direction, type, magic) {
         super();
         this.active = true;
         this.name = "Missile";
@@ -2609,7 +2612,6 @@ class Missile extends Drawable_object {
         this.setDepth();
         this.dir = direction;
         this.magic = magic;
-        //this.casterId = casterId;                   //legacy - obsolete, use friendly flag!
         this.distance = null;
         for (const prop in type) {
             this[prop] = type[prop];
@@ -2680,7 +2682,7 @@ class Missile extends Drawable_object {
     }
     explode(IAM) {
         IAM.remove(this.id);
-        EXPLOSION3D.add(new ParticleExplosion(this.pos));
+        EXPLOSION3D.add(new this.explosionType(this.pos));
         AUDIO.Explosion.volume = RAY.volume(this.distance);
         AUDIO.Explosion.play();
     }
@@ -2690,14 +2692,14 @@ class Missile extends Drawable_object {
 }
 
 class BouncingMissile extends Missile {
-    constructor(position, direction, type, magic, explosionType = GreenMetalExplosion, friendly = false, collectibleType = null) {
+    constructor(position, direction, type, magic, explosionType = null, friendly = false, collectibleType = null) {
         super(position, direction, type, magic);
         this.name = "BouncingMissile";
         this.bounceCount = 0;
         this.maxPower = this.power;
         this.minPower = Math.max(1, Math.floor(this.power * 0.2));
         this.originalScale = new Float32Array(this.scale);
-        this.explosionType = explosionType;
+        //this.explosionType = explosionType;
         this.friendly = friendly;
         this.collectibleType = collectibleType;
     }
@@ -2748,12 +2750,7 @@ class BouncingMissile extends Missile {
             ITEM3D.add(dropped);
         } else console.error("orb cannot be placed at", position, "orb is lost!");
     }
-    explode(IAM) {
-        IAM.remove(this.id);
-        EXPLOSION3D.add(new this.explosionType(this.pos));
-        AUDIO.Explosion.volume = RAY.volume(this.distance);
-        AUDIO.Explosion.play();
-    }
+
 }
 
 class WallFeature3D {
@@ -3528,39 +3525,40 @@ class StaticParticleBomb extends ParticleEmmiter {
 
 class $3D_Entity {
     constructor(grid, type, dir = UP3) {
-        this.fly = 0.0;
-        this.distance = null;
-        this.airDistance = null;
-        this.proximityDistance = null;                                      //euclidian distance when close up
-        this.swordTipDistance = null;                                       //attack priority resolution
-        this.dirStack = [];
-        this.final_boss = false;
-        this.boss = false;
-        this.dropped = false;                                               //spawned as a trap
-        this.texture = null;                                                //model is the texture source, until change is forced
-        this.resetTime();
-        this.grid = grid;
-        this.type = type;
-        this.which = null;
-        this.directMagicDamage = false;
-        for (const prop in type) {
-            this[prop] = type[prop];
-        }
-        if (this.texture) this.changeTexture(TEXTURE[this.texture]);        //superseed from model, if forced
+        this.fly = 0;
+        this.heigth = WebGL.INI.HERO_HEIGHT;                                        //this is essential for sphere distance calculations!
+        this.distance = null;       
+        this.airDistance = null;        
+        this.proximityDistance = null;                                              //euclidian distance when close up
+        this.swordTipDistance = null;                                               //attack priority resolution
+        this.dirStack = [];     
+        this.final_boss = false;        
+        this.boss = false;      
+        this.dropped = false;                                                       //spawned as a trap
+        this.texture = null;                                                        //model is the texture source, until change is forced
+        this.resetTime();       
+        this.grid = grid;       
+        this.type = type;       
+        this.which = null;      
+        this.directMagicDamage = false;     
+        for (const prop in type) {      
+            this[prop] = type[prop];        
+        }       
+        if (this.texture) this.changeTexture(TEXTURE[this.texture]);                //superseed from model, if forced
 
         this.fullHealth = this.health;
         this.model = $3D_MODEL[this.model];
-        this.jointMatrix = Float32Array.from(this.model.skins[0].jointMatrix);  //needs own jointMatrix, 
+        this.jointMatrix = Float32Array.from(this.model.skins[0].jointMatrix);      //needs own jointMatrix, 
 
         if (typeof (this.scale) === "number") this.scale = new Float32Array([this.scale, this.scale, this.scale]);
         this.minY = this.model.meshes[0].primitives[0].positions.min[1] * this.scale[1];
         this.translate = Vector3.from_Grid(grid, this.minY + this.fly + this.grid.z);
-
-        //console.warn("3D_Entity->", this.name, this.id, this.grid, this.translate);
-
         this.boundingBox = new BoundingBox(this.model.meshes[0].primitives[0].positions.max, this.model.meshes[0].primitives[0].positions.min, this.scale);
         this.actor = new $3D_ACTOR(this, this.model.animations, this.model.skins[0], this.jointMatrix);
+        if (this.fly > 0) this.heigth = 0;                                          //fly takes care that pos approximatelly equals body height 
         this.moveState = new $3D_MoveState(this.translate, dir, this.rotateToNorth, this);
+
+        console.warn("3D_Entity->", this.name, this.id, this.grid, this.translate, "MS", this.moveState.grid, "this.minY", this.minY);
 
         const dZ = (this.boundingBox.max.z - this.boundingBox.min.z) / 2;
         const dX = (this.boundingBox.max.x - this.boundingBox.min.x) / 2;
@@ -3610,7 +3608,8 @@ class $3D_Entity {
     }
     setDistanceFromNodeMap(nodemap, prop = "distance") {
         let gridPosition = Grid3D.toClass(this.moveState.grid);
-        console.info("...setDistanceFromNodeMap", this.name, this.id, this.moveState.pos, gridPosition, "this", this);
+        //console.info("...setDistanceFromNodeMap", this.name, this.id, this.moveState.pos, gridPosition);
+        //console.info(".......this", this);
         if (!nodemap[gridPosition.x][gridPosition.y][gridPosition.z]) {
             if (this.fly) {
                 this.distance = null;

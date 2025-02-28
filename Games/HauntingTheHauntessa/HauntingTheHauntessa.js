@@ -208,7 +208,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.4.2",
+    VERSION: "0.4.3",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -493,16 +493,13 @@ class Scroll {
 const HERO = {
     construct() {
         this.player = null;
-        this.height = 0.6;
-        //this.hasCapacity = false;
-        //this.capacity = 0;
-        //this.maxCapacity = 0;
+        this.height = WebGL.INI.HERO_HEIGHT;
         this.inventory.clear();
         this.inventoryLimit = INI.INVENTORY_HARD_LIMIT;
         this.canComplain = true;
         this.maxHealth = INI.MAX_HERO_HEALTH;
-        this.maxMana = INI.MAX_HERO_MANA;
-        //this.maxMana = 123;
+        //this.maxMana = INI.MAX_HERO_MANA;
+        this.maxMana = 123;
         this.magic = 5;
         this.attack = 5;
         this.defense = 0;
@@ -525,7 +522,11 @@ const HERO = {
         this.revive();
         this.visible();
 
-        const propsToSave = ["health", "maxHealth", "attack", "magic", "defense", "mana", "maxMana"];
+        const propsToSave = [
+            "health", "maxHealth", "attack", "magic", "defense", "mana", "maxMana",
+            "reference_defense", "reference_attack", "reference_magic",
+            "attackExp", "defenseExp", "magicExp", "attackExpGoal", "defenseExpGoal", "magicExpGoal",
+        ];
         this.attributesForSaveGame = [];
         for (const P of propsToSave) {
             this.attributesForSaveGame.push(`HERO.${P}`);
