@@ -2441,7 +2441,8 @@ class Gate extends Drawable_object {
     constructor(grid, type, GA) {
         super();
         this.grid = grid;
-        this.pos = Vector3.from_Grid(grid);
+        this.pos = Vector3.from_grid3D(grid);
+        console.log("Gate", this.pos);
         this.type = type;
         this.GA = GA;
         this.interactive = true;
@@ -2496,6 +2497,7 @@ class Gate extends Drawable_object {
 class LiftingGate {
     constructor(gate) {
         this.gate = gate;
+        this.max = this.gate.pos.y + 1.0;
     }
     manage(lapsedTime) {
         const DOOR_LIFTING_SPEED = 0.60;
@@ -2510,7 +2512,7 @@ class LiftingGate {
         this.gate.mTranslationMatrix = mTranslationMatrix;
     }
     done() {
-        return this.gate.pos.y > 1.0;
+        return this.gate.pos.y > this.max;
     }
     remove() {
         this.gate.IAM.remove(this.gate.id);
@@ -3013,17 +3015,30 @@ class Trigger extends WallFeature3D {
             sprite: sprite
         };
         super(grid, face, type);
+        this.completeAction = action;
         this.action = action.split("->")[1];
         this.targetGrid = targetGrid;
         this.GA = GA;
         this.excludeFromInventory = true;
     }
     interact() {
-        const pos = Vector3.from_Grid(Grid.toCenter(this.targetGrid));
+        const pos = Vector3.from_grid3D(FP_Grid3D.to_center_block(this.targetGrid));
         EXPLOSION3D.add(new FloorDust(pos));
         this.deactivate();
         this.storageLog();
         this.GA[this.action](this.targetGrid);
+        switch (this.completeAction) {
+            case "HOLE->toEmpty":
+                if (this.targetGrid.z > 0) {                                     //filling with wall below
+                    this.targetGrid.z--;
+                    this.GA.toWall(this.targetGrid);
+                }
+
+                break;
+            default:
+                throw `action not supported ${this.completeAction}`;
+
+        }
         return {
             category: "rebuild",
         };
@@ -3049,7 +3064,7 @@ class Trap extends WallFeature3D {
         return this[this.action](hero);
     }
     Spawn() {
-        const entity = new $3D_Entity(Grid.toCenter(this.targetGrid), this.prototype, UP);
+        const entity = new $3D_Entity(Grid3D.toCenter2D(this.targetGrid), this.prototype, UP);
         entity.dropped = true;
         ENTITY3D.add(entity);
     }
@@ -3058,7 +3073,7 @@ class Trap extends WallFeature3D {
         const target = Grid.toCenter(this.grid);
         const direction2D = position.direction(target);
         const dir = Vector3.from_2D_dir(direction2D);
-        const missile = new this.prototype.construct(Vector3.from_Grid(position, 0.5), dir, this.prototype, hero.magic);
+        const missile = new this.prototype.construct(Vector3.from_grid3D(FP_Grid3D.to_center_block(this.targetGrid)), dir, this.prototype, hero.magic);
         MISSILE3D.add(missile);
     }
 }
@@ -3527,23 +3542,23 @@ class $3D_Entity {
     constructor(grid, type, dir = UP3) {
         this.fly = 0;
         this.heigth = WebGL.INI.HERO_HEIGHT;                                        //this is essential for sphere distance calculations!
-        this.distance = null;       
-        this.airDistance = null;        
+        this.distance = null;
+        this.airDistance = null;
         this.proximityDistance = null;                                              //euclidian distance when close up
         this.swordTipDistance = null;                                               //attack priority resolution
-        this.dirStack = [];     
-        this.final_boss = false;        
-        this.boss = false;      
+        this.dirStack = [];
+        this.final_boss = false;
+        this.boss = false;
         this.dropped = false;                                                       //spawned as a trap
         this.texture = null;                                                        //model is the texture source, until change is forced
-        this.resetTime();       
-        this.grid = grid;       
-        this.type = type;       
-        this.which = null;      
-        this.directMagicDamage = false;     
-        for (const prop in type) {      
-            this[prop] = type[prop];        
-        }       
+        this.resetTime();
+        this.grid = grid;
+        this.type = type;
+        this.which = null;
+        this.directMagicDamage = false;
+        for (const prop in type) {
+            this[prop] = type[prop];
+        }
         if (this.texture) this.changeTexture(TEXTURE[this.texture]);                //superseed from model, if forced
 
         this.fullHealth = this.health;

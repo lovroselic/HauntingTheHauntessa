@@ -720,7 +720,7 @@ LoadSprites = [
     { srcName: "Doors/DungeonDoor_Purple2.png", name: "DungeonDoor_Purple" },
     { srcName: "Doors/DungeonDoor_Red2.png", name: "DungeonDoor_Red" },
     { srcName: "Doors/DungeonDoor_Silver2.png", name: "DungeonDoor_Silver" },
-    { srcName: "Doors/DungeonDoor_Up3.jpg", name: "DungeonDoor_Up" },
+    { srcName: "Doors/DungeonDoor_Up4.jpg", name: "DungeonDoor_Up" },
     { srcName: "Doors/DungeonDoor_Down3.jpg", name: "DungeonDoor_Down" },
     { srcName: "Doors/DungeonDoor_Cyan.png", name: "DungeonDoor_Cyan" },
     { srcName: "Doors/DungeonDoor_Orange.png", name: "DungeonDoor_Orange" },

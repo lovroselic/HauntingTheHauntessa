@@ -2527,12 +2527,12 @@ const ENGINE = {
             }
             if (maze.triggers) {
                 for (const trigger of maze.triggers) {
-                    trigger(trigger, z);
+                    this.trigger(trigger, z);
                 }
             }
             if (maze.traps) {
                 for (const trigger of maze.traps) {
-                    trap(trigger, z);
+                    this.trap(trigger, z);
                 }
             }
         },
@@ -2743,7 +2743,7 @@ const ENGINE = {
             let grid = this.GA.indexTo2DGridSlice(trigger[0], z);
             let dir = Vector.fromInt(trigger[1]);
             let pStart = this.dotOrLine(grid, dir, "#00FF00");
-            let mid2 = GRID.gridToCenterPX(GA.indexTo2DGridSlice(trigger[4], z));
+            let mid2 = GRID.gridToCenterPX(this.GA.indexTo2DGridSlice(trigger[4], z));
             this.CTX.save();
             this.CTX.setLineDash([2, 3]);
             ENGINE.drawLine(this.CTX, pStart, mid2, "#666", 1);
@@ -2754,7 +2754,7 @@ const ENGINE = {
             let grid = this.GA.indexTo2DGridSlice(trigger[0], z);
             let dir = Vector.fromInt(trigger[1]);
             let pStart = this.dotOrLine(grid, dir, "#00FF00");
-            let mid2 = GRID.gridToCenterPX(GA.indexTo2DGridSlice(trigger[5], z));
+            let mid2 = GRID.gridToCenterPX(this.GA.indexTo2DGridSlice(trigger[5], z));
             this.CTX.save();
             this.CTX.setLineDash([2, 3]);
             ENGINE.drawLine(this.CTX, pStart, mid2, "#666", 1);

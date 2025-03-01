@@ -647,14 +647,14 @@ const MONSTER_TYPE = {
         rotateToNorth: Math.PI,
         midHeight: 0.5,
         deathType: "BloodExplosion",
-       //
-       mana: 1,
-       health: 10,
-       attack: 8,
-       magic: 5,
-       defense: 0,
-       xp: 99,
-       //
+        //
+        mana: 1,
+        health: 10,
+        attack: 8,
+        magic: 5,
+        defense: 0,
+        xp: 99,
+        //
         caster: true,
         shootDistance: 15,
         stalkDistance: 17,
@@ -927,7 +927,7 @@ const CONTAINER_CONTENT_LIST = stringifyObjectList(CONTAINER_CONTENT_TYPES);
 const TRIGGER_ACTIONS = ["HOLE->toEmpty", "WALL->toEmpty", "EMPTY->toWall"];
 const TRAP_ACTIONS = {
     Missile: [
-        //"Fireball", 
+        "RedFireball",
         "Bounceball"
     ],
     Spawn: listObjectKeys(MONSTER_TYPE)

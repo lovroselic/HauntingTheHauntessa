@@ -904,7 +904,6 @@ class GA_Dimension_Agnostic_Methods {
     clearFog(grid) {
         this.clear(grid, MAPDICT.FOG);
     }
-
     setStackValue(stack, value) {
         for (const grid of stack) {
             this.setValue(grid, value);
