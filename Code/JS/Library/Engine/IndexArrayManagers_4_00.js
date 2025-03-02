@@ -427,8 +427,9 @@ class Spawner extends Floor_Object {
      */
     setIA() {
         let map = this.map;
-        map[this.IA] = new IndexArray(map.width, map.height, this.byte, this.banks);
-        this.reIndex();
+        //map[this.IA] = new IndexArray(map.width, map.height, this.byte, this.banks);
+        map[this.IA] = new IndexArray3D(map.width, map.height, map.depth, this.byte, this.banks);
+        this.poolToIA3D();
         this.poolToIA(map[this.IA]);
         this.size = this.POOL.length;
     }

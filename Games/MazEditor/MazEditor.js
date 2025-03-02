@@ -1437,6 +1437,7 @@ const GAME = {
     let RoomName = $("#roomname")[0].value;
     let MaxSpawned = $("#max_spawned")[0].value || -1;
     let KillCountdown = $("#kill_countdown")[0].value || -1;
+    let SpawnStop = $("#killsRequiredToStopSpawning")[0].value || -1;
     let SpawnDelay = $("#spawn_delay")[0].value || -1;
     let SG = parseInt($("#checkpoint")[0].value, 10);
 
@@ -1445,6 +1446,7 @@ name: "${RoomName}",
 sg: ${SG},
 maxSpawned: ${MaxSpawned},
 killCountdown: ${KillCountdown},
+killsRequiredToStopSpawning: ${SpawnStop},
 spawnDelay: ${SpawnDelay},
 data: '${JSON.stringify(Export)}',
 wall: "${$("#walltexture")[0].value}",
@@ -1481,6 +1483,8 @@ ceil: "${$("#ceiltexture")[0].value}",\n`;
     $("#max_spawned").val(MaxSpawned);
     const KillCountdown = ImportText.extractGroup(/killCountdown:\s(\d*)/);
     $("#kill_countdown").val(KillCountdown);
+    const SpawnStop = ImportText.extractGroup(/killsRequiredToStopSpawning:\s(\d*)/);
+    $("#killsRequiredToStopSpawning").val(SpawnStop);
     const SpawnDelay = ImportText.extractGroup(/spawnDelay:\s(\d*)/);
     $("#spawn_delay").val(SpawnDelay);
 

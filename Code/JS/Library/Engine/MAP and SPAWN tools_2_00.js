@@ -159,7 +159,7 @@ const SPAWN_TOOLS = {
     spawn(level) {
         const map = MAP_TOOLS.MAP[level].map;
         const GA = map.GA;
-        const methods = ['decals', 'lights', 'shrines', 'oracles', 'externalGates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills',
+        const methods = ['decals', 'lights', 'shrines', 'oracles', 'externalGates', 'keys', 'monsters', 'scrolls', 'gold', 'skills',
             'containers', 'doors', 'triggers', 'entities', 'trainers', 'objects', 'movables', 'traps', 'interactors', 'lairs'];
 
         methods.forEach(method => {
@@ -253,13 +253,6 @@ const SPAWN_TOOLS = {
         for (const S of map.scrolls) {
             const grid = Grid3D.toCenter2D(GA.indexToGrid(S[0]));
             ITEM3D.add(new FloorItem3D(grid, COMMON_ITEM_TYPE.Scroll, S[1]));
-        }
-    },
-    potions(map, GA) {
-        for (const P of map.potions) {
-            const grid = Grid3D.toCenter2D(GA.indexToGrid(P[0]));
-            const potion = POTION_TYPE[POTION_TYPES[P[1]]];
-            ITEM3D.add(new FloorItem3D(grid, potion));
         }
     },
     gold(map, GA) {

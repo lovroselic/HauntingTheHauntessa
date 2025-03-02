@@ -60,21 +60,40 @@ const MAP = {
         movables: '[[309,"RoastChicken"],[307,"RoastPig"]]',
     }
     ,
-    3 : {
+    3: {
         name: "Trap test",
         sg: 0,
-        maxSpawned: -1,
-        killCountdown: -1,
-        spawnDelay: -1,
-        data: '{"width":"13","height":"13","depth":3,"map":"BB3AA3BAA2BAA4BAA15BB3ÁAA2ÁAÁÁ2ABB4AA2BB2AA3EAA3BAA19BAA5BAA3BAA6BB12ABB4ABB4ABB11ABB2AA6BB13ABB8ABB3ABB25AA2BB109ABB15ÁBB25ABB14$ABB49ÁBÁBB2ÁÁ4BB36AA2ÁÁ20AA3ÁÁ14BÁBÁÁ9BB5"}',
+        maxSpawned: 1,
+        killCountdown: 3,
+        killsRequiredToStopSpawning: 33,
+        spawnDelay: 5000,
+        data: '{"width":"13","height":"13","depth":3,"map":"BB2ABABAA2BAA4BAA13ÁAA2BB3ÁAA3ÁAÁABB4AA3BB2AA2EAA2BAA19BAA6BAA3BAA6BB12ABB4ABB4ABB11ABB2ABAA4BB5ABB3ABB12ABB3ABB25AA2BB109ABB15ÁBB25ABB14$ABB49ÁBÁBB2ÁÁ4BB36AÁAÁÁ19AA3ÁÁ14BÁBÁÁ9BB5"}',
         wall: "BrownidhMossy102",
         floor: "OrnateFloor108",
         ceil: "FloorTiles_SDXL_002",
         start: '[209,5]',
         lights: '[[185,7,"Candelabra01","standard"],[315,1,"Candelabra01","standard"]]',
-        gates: '[[208,5,"3.1","2.2","Up"]]',
+        gates: '[[208,5,"3.1","2.2","Up"],[259,3,"3.2","4.1","Closed"]]',
         doors: '[204]',
         triggers: '[[284,7,"SmoothWallButton",1,309],[320,1,"SmoothWallButton",0,305]]',
         traps: '[[222,5,"SmoothWallButton",1,"MissGalaxy",215],[235,5,"SmoothWallButton",0,"Bounceball",244],[261,5,"SmoothWallButton",0,"RedFireball",270]]',
-        }
+        lairs: '[[286,5,"Lair06"]]',
+        monsterList: '["MissGalaxyGreen"]',
+    }
+    ,
+    4: {
+        name: "Advancer",
+        sg: 0,
+        maxSpawned: 1,
+        killCountdown: 3,
+        killsRequiredToStopSpawning: 33,
+        spawnDelay: 5000,
+        data: '{"width":"13","height":"13","depth":3,"map":"BB2ABABAA2BAA4BAA13ÁAA2BB3ÁAA3ÁAÁABB4AA3BB2AA2EAA2BAA19BAA6BAA3BAA6BB12ABB4ABB4ABB11ABB2ABAA4BB5ABB3ABB12ABB3ABB25AA2BB109ABB15ÁBB25ABB14$ABB49ÁBÁBB2ÁÁ4BB36AÁAÁÁ19AA3ÁÁ14BÁBÁÁ9BB5"}',
+        wall: "BrownishMossy21",
+        floor: "Relief05",
+        ceil: "SmallBlackBricks48",
+        start: '[209,5]',
+        lights: '[[185,7,"Candelabra01","standard"],[315,1,"Candelabra01","standard"]]',
+        gates: '[[208,5,"4.1","3.2","Closed"]]',
+    }
 };

@@ -75,7 +75,7 @@ const DEBUG = {
 
         console.info("DEBUG::Loading from checkpoint, this may clash with LOAD");
 
-        GAME.level = 3;
+        GAME.level = 4;
         GAME.gold = 5551;
         GAME.lives = 1;
 
@@ -208,7 +208,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.4.4",
+    VERSION: "0.4.5",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -1454,7 +1454,7 @@ const GAME = {
     },
     spawn(lair) {
         const type = MONSTER_TYPE[MAP[GAME.level].map.monsterList.chooseRandom()];
-        const grid = Grid.toCenter(lair.grid.add(lair.direction));
+        const grid = Grid3D.toCenter2D(lair.grid.add(lair.direction));
         const monster = new $3D_Entity(grid, type, lair.direction);
         monster.dropped = true;
         ENTITY3D.add(monster);
