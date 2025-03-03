@@ -81,7 +81,7 @@ const MAP = {
         monsterList: '["MissGalaxyGreen"]',
     }
     ,
-    4: {
+    4 : {
         name: "Advancer",
         sg: 0,
         maxSpawned: 1,
@@ -95,5 +95,6 @@ const MAP = {
         start: '[209,5]',
         lights: '[[185,7,"Candelabra01","standard"],[315,1,"Candelabra01","standard"]]',
         gates: '[[208,5,"4.1","3.2","Closed"]]',
-    }
+        monsters: '[[242,"Spider"],[268,"SpiderGreen"]]',
+        }
 };

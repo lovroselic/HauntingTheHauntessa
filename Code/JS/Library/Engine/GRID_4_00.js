@@ -393,6 +393,15 @@ const GRID = {
         }
         return path;
     },
+    pathFromNodeMap3D(origin, nodeMap) {
+        let path = [origin];
+        let prev = nodeMap[origin.x][origin.y][origin.z].prev;
+        while (prev) {
+            path.push(prev);
+            prev = nodeMap[prev.x][prev.y][prev.z].prev;
+        }
+        return path;
+    },
     directionsFromPath(path, cut = false) {
         let directions = [];
         let from = path.pop();
@@ -1333,15 +1342,12 @@ class GridArray extends Classes([ArrayBasedDataStructure, GA_Dimension_Agnostic_
         if (fly) {
             exlusion = AIR_MOVE_GRID_EXCLUSION.sum();
         }
-        //let directions = this.getDirectionsIfNot(start, MAPDICT.WALL, dir.mirror());
         let directions = this.getDirectionsIfNot(start, exlusion, dir.mirror());
         //console.log("....findNextCrossroad", start, dir, directions);
         let lastDir = dir;
         while (directions.length <= 1) {
             if (directions.length === 0) return [null, null]; //dead end!
             start = start.add(directions[0]);
-            lastDir = directions[0];
-            //directions = this.getDirectionsIfNot(start, MAPDICT.WALL, directions[0].mirror());
             directions = this.getDirectionsIfNot(start, exlusion, directions[0].mirror());
         }
         return [start, lastDir];
@@ -1746,6 +1752,24 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         this[where] = map;
         return map;
     }
+
+    findNextCrossroad(start, dir, fly) {
+        console.log("findNextCrossroad", "start", start, start.constructor.name, "dir", dir, dir.constructor.name);
+        let exlusion = GROUND_MOVE_GRID_EXCLUSION.sum();
+        if (fly > 0) exlusion = AIR_MOVE_GRID_EXCLUSION.sum();
+
+        let directions = this.getDirectionsIfNot(start, exlusion, fly, dir.mirror());
+        console.log("....findNextCrossroad", start, dir, directions);
+        let lastDir = dir;
+        while (directions.length <= 1) {
+            if (directions.length === 0) return [null, null]; //dead end!
+            start = start.add(directions[0]);
+            directions = this.getDirectionsIfNot(start, exlusion, fly, directions[0].mirror());
+        }
+        return [start, lastDir];
+    }
+
+
     getDirectionsIfNot(grid, value, fly = false, leaveOut = null) {
         const directions = [];
         const DIR = fly > 0.0 ? [...ENGINE.directions3D] : [...ENGINE.directions3D_XY_plane];
@@ -1794,6 +1818,59 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
             }
         }
         return directions;
+    }
+
+    findPath_AStar_fast(start, finish, path = [0], type = "value", fly = 0, block = []) {
+        /** 
+        DIR: applicable directions
+        return
+        null: no path exist
+        0: start is the same as finish
+        nodeMap: path found, extract from nodeMap
+        */
+
+        //console.info("findPath_AStar_fast", ...arguments);
+
+        if (GRID.same(start, finish)) {
+            return 0;
+        }
+
+        var Q = new NodeQ("priority");
+        let NodeMap = this.setNodeMap("AStar", path, type, block);
+
+        const DIR = fly > 0.0 ? [...ENGINE.directions3D] : [...ENGINE.directions3D_XY_plane];
+
+        NodeMap[start.x][start.y][start.z].distance = start.distance(finish);
+        NodeMap[start.x][start.y][start.z].path = 0;
+        NodeMap[start.x][start.y][start.z].setPriority();
+
+        //console.log("start node", NodeMap[start.x][start.y][start.z]);
+
+        Q.queueSimple(NodeMap[start.x][start.y][start.z]);
+        while (Q.size() > 0) {
+            let node = Q.dequeue();
+            for (let D = 0; D < DIR.length; D++) {
+                let x = (node.grid.x + DIR[D].x + this.width) % this.width;
+                let y = (node.grid.y + DIR[D].y + this.height) % this.height;
+                let z = (node.grid.z + DIR[D].z + this.depth) % this.depth;
+
+                let nextNode = NodeMap[x][y][z];
+                if (nextNode) {
+                    if (nextNode.path > node.path + 1) {
+                        nextNode.path = node.path + 1;
+                        nextNode.prev = node.grid;
+                        nextNode.distance = nextNode.grid.distance(finish);
+                        nextNode.setPriority();
+                        //console.log("next node", nextNode);
+                        Q.queueSimple(nextNode);
+                        if (nextNode.distance === 0) {
+                            return NodeMap;
+                        }
+                    }
+                }
+            }
+        }
+        return null;
     }
 }
 

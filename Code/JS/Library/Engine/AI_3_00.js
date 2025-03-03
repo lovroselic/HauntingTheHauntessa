@@ -102,10 +102,12 @@ const AI = {
         return [orto];
     },
     crossroader(enemy, playerPosition, dir, block, exactPosition) {
+        playerPosition = Grid3D.toClass(playerPosition);
         if (this.VERBOSE) console.log("------------------------------");
-        if (this.VERBOSE) console.info(`Crossroader analysis for ${enemy.name}-${enemy.id}`);
+        if (this.VERBOSE) console.info(`Crossroader analysis for ${enemy.name}-${enemy.id}, position: ${JSON.stringify(playerPosition)}`);
+
         let goal, _;
-        [goal, _] = enemy.parent.map.GA.findNextCrossroad(playerPosition, dir, enemy.fly);
+        [goal, _] = enemy.parent.map.GA.findNextCrossroad(playerPosition, dir, enemy.fly); /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         if (this.VERBOSE) console.log(`.. ${enemy.name}-${enemy.id} goal`, goal, "strategy", enemy.behaviour.strategy);
 
         if (goal === null || enemy.parent.map.GA.isOutOfBounds(goal)) {
@@ -113,7 +115,7 @@ const AI = {
         }
 
         /** what if goal takes you further away - advancer! */
-        const new_distance = enemy.parent.map.GA.nodeMap[goal.x][goal.y].distance;
+        const new_distance = enemy.parent.map.GA.nodeMap[goal.x][goal.y][goal.z].distance;
         if (this.VERBOSE) console.warn(`.. ${enemy.name}-${enemy.id} new_distance  from goal`, new_distance, "current distance", enemy.distance);
         if (enemy.distance < this.INI.CHANGE_ADVANCER_TO_HUNT_MIN_DISTANCE && new_distance > enemy.distance) {
             if (this.VERBOSE) console.warn("... overriding behavior -> hunt");
@@ -121,8 +123,9 @@ const AI = {
         }
 
         const gridValue = this.getGridValue(enemy);
-        const Astar = enemy.parent.map.GA.findPath_AStar_fast(this.getPosition(enemy), goal, gridValue, "exclude", block);
+        const Astar = enemy.parent.map.GA.findPath_AStar_fast(this.getPosition(enemy), goal, gridValue, "exclude", enemy.fly, block);
         if (this.VERBOSE) console.log(`.. ${enemy.name}-${enemy.id} Astar`, Astar);
+
         if (Astar === null) {
             return this.immobile(enemy);
         }
@@ -130,7 +133,7 @@ const AI = {
             return this.hunt(enemy, exactPosition);
         }
 
-        let path = GRID.pathFromNodeMap(goal, Astar);
+        let path = GRID.pathFromNodeMap3D(goal, Astar);
         let directions = GRID.directionsFromPath(path, 1);
         return directions;
     },
@@ -157,7 +160,7 @@ const AI = {
     goto(enemy) {
         const gridValue = this.getGridValue(enemy);
         const goal = enemy.guardPosition; // should be set in SPAWN!
-        const Astar = enemy.parent.map.GA.findPath_AStar_fast(this.getPosition(enemy), goal, gridValue, "exclude");
+        const Astar = enemy.parent.map.GA.findPath_AStar_fast(this.getPosition(enemy), goal, gridValue, "exclude", enemy.fly);
 
         if (Astar === null) {
             return this.immobile(enemy);
@@ -174,11 +177,12 @@ const AI = {
             }
         }
 
-        let path = GRID.pathFromNodeMap(goal, Astar);
+        let path = GRID.pathFromNodeMap3D(goal, Astar);
         let directions = GRID.directionsFromPath(path);
         return directions;
     },
     circler(enemy) {
+        /** not updated to 3D !!!! */
         let currentGrid = this.getPosition(enemy);
         let gridPath = [currentGrid];
         let firstDir = ENGINE.directions.chooseRandom();
@@ -252,6 +256,7 @@ const AI = {
         } else return this.immobile(enemy);
     },
     shadower(enemy, ARG) {
+        /** not updated to 3D !!!! */
         let gridValue = this.getGridValue(enemy);
         const directions = enemy.parent.map.GA.getDirectionsIfNot(this.getPosition(enemy), gridValue, enemy.moveState.dir.mirror());
         if (directions.length === 1) return [directions[0]];
@@ -282,6 +287,7 @@ const AI = {
         }
     },
     prophet(enemy, ARG) {
+        /** not updated to 3D !!!! */
         let firstCR, lastDir;
         [firstCR, lastDir] = enemy.parent.map.GA.findNextCrossroad(ARG.playerPosition, ARG.currentPlayerDir, enemy.fly);
         let directions = enemy.parent.map.GA.getDirectionsIfNot(firstCR, MAPDICT.WALL, lastDir.mirror());

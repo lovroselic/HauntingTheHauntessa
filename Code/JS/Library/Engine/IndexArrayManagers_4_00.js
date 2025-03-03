@@ -1112,6 +1112,7 @@ class Animated_3d_entity extends IAM {
                         currentPlayerDir: Vector3.to_FP_Vector(this.hero.player.dir).ortoAlign(),
                         exactPlayerPosition: this.hero.player.pos,
                         exactPlayerDir: this.hero.player.dir,
+                        block:[]
                     };
 
                     entity.dirStack = AI[entity.behaviour.strategy](entity, ARG);

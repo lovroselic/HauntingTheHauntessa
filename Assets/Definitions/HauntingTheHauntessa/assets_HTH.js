@@ -600,6 +600,7 @@ LoadTextures = [
     /** other monster textures */
     { srcName: "ObjectTextures/RedGoldBat.jpg", name: "RedGoldBat" },
     { srcName: "ObjectTextures/MissGalaxyGreen.jpg", name: "MissGalaxyGreen" },
+    { srcName: "ObjectTextures/SpiderGreen.jpg", name: "SpiderGreen" },
 
 
 
@@ -680,7 +681,7 @@ LoadObjects = [
 LoadModels = [
     'ThePrincess.gltf',
     "Chicken.gltf", "Pig.gltf",
-    "Bat.gltf", "MissGalaxy.gltf",
+    "Bat.gltf", "MissGalaxy.gltf", "Spider.gltf",
 ];
 
 LoadSprites = [
