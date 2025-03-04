@@ -601,6 +601,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/RedGoldBat.jpg", name: "RedGoldBat" },
     { srcName: "ObjectTextures/MissGalaxyGreen.jpg", name: "MissGalaxyGreen" },
     { srcName: "ObjectTextures/SpiderGreen.jpg", name: "SpiderGreen" },
+    { srcName: "ObjectTextures/SpiderRed.jpg", name: "SpiderRed" },
 
 
 

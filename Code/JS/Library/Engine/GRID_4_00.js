@@ -673,7 +673,13 @@ const MAPDICT = {
     WARP: 2 ** 5,                           //32 - STAIR alias -> route to another part of the dungeon
 
     //16 bit extension
+    WALL2: 2 ** 8,
+    WALL4: 2 ** 9,
+    WALL6: 2 ** 10,
+    WALL8: 2 ** 11,
 
+    //unused
+    UNUSED: 2 ** 12,
 
     //special
     FOG: 2 ** 15,                            //32768 - fog should remain largest
@@ -682,10 +688,12 @@ const MAPDICT = {
     START_POSITION: 2 ** 13,                 //8192
 };
 
-const GROUND_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.HOLE, MAPDICT.BLOCKWALL];
-const AIR_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.BLOCKWALL];
+const STAIRCASE_GRIDS = [MAPDICT.WALL2, MAPDICT.WALL4, MAPDICT.WALL6, MAPDICT.WALL8];
+const GROUND_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.HOLE, MAPDICT.BLOCKWALL, ...STAIRCASE_GRIDS];
+const AIR_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.BLOCKWALL, ...STAIRCASE_GRIDS];
 const EXPLOADABLES = [MAPDICT.BLOCKWALL, MAPDICT.DOOR];
-const ITEM_DROP_EXCLUSION = [MAPDICT.HOLE];
+const ITEM_DROP_EXCLUSION = [MAPDICT.HOLE, ...STAIRCASE_GRIDS];
+
 
 class ArrayBasedDataStructure {
     constructor() { }

@@ -75,7 +75,7 @@ const DEBUG = {
 
         console.info("DEBUG::Loading from checkpoint, this may clash with LOAD");
 
-        GAME.level = 4;
+        GAME.level = 5;
         GAME.gold = 5551;
         GAME.lives = 1;
 
@@ -208,7 +208,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.4.6",
+    VERSION: "0.5.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

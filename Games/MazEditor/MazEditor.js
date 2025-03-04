@@ -218,6 +218,14 @@ const GAME = {
 
     switch (radio) {
 
+      case "WALL8":
+      case "WALL6":
+      case "WALL4":
+      case "WALL2":
+        GA.setValue(grid, MAPDICT[radio]);
+        console.log("Staircase element", radio);
+        break;
+
       case 'flip':
         if (GA.isWall(grid)) {
           GA.carveDot(grid);

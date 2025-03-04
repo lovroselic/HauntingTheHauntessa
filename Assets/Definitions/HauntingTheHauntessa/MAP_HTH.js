@@ -81,7 +81,7 @@ const MAP = {
         monsterList: '["MissGalaxyGreen"]',
     }
     ,
-    4 : {
+    4: {
         name: "Advancer",
         sg: 0,
         maxSpawned: 1,
@@ -94,7 +94,23 @@ const MAP = {
         ceil: "SmallBlackBricks48",
         start: '[209,5]',
         lights: '[[185,7,"Candelabra01","standard"],[315,1,"Candelabra01","standard"]]',
-        gates: '[[208,5,"4.1","3.2","Closed"]]',
-        monsters: '[[242,"Spider"],[268,"SpiderGreen"]]',
+        gates: '[[208,5,"4.1","3.2","Closed"],[259,3,"4.2","5.1","Closed"]]',
+        monsters: '[[242,"Spider"],[268,"SpiderGreen"],[294,"SpiderRed"]]',
+    }
+    ,
+    5 : {
+        name: "StairStudy",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: -1,
+        spawnDelay: -1,
+        data: '{"width":"16","height":"16","depth":3,"map":"BB3ABAA3BB2ABAA22BB3AA2BAA9ࡁAŁɁсAA56BAÁAA2ÁAÁÁ6AA10BB7AÁÁ5AÁÁ4AA14BAA7ÁÁ3AA8BB40ABB17AA9BB10ABB6ABB3ABAA2BB4AA6BB29AA3BB23ABB14ABB102ABB34$BB20AA5BB16AA3BB18ÁÁ140AA8ÁÁ48AA4BAA4BB2ABB4"}',
+        wall: "SkullWall5",
+        floor: "BloodMarbleFloorWall_SDXL_009",
+        ceil: "RedBricks40",
+        start: '[72,7]',
+        lights: '[[487,1,"Candle71","standard"],[520,7,"DuaLLantern_021","standard"],[156,3,"Candle66","standard"]]',
+        gates: '[[384,5,"5.1","4.2","Closed"]]',
         }
 };

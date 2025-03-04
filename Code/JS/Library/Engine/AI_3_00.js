@@ -290,7 +290,7 @@ const AI = {
         /** not updated to 3D !!!! */
         let firstCR, lastDir;
         [firstCR, lastDir] = enemy.parent.map.GA.findNextCrossroad(ARG.playerPosition, ARG.currentPlayerDir, enemy.fly);
-        let directions = enemy.parent.map.GA.getDirectionsIfNot(firstCR, MAPDICT.WALL, lastDir.mirror());
+        let directions = enemy.parent.map.GA.getDirectionsIfNot(firstCR, MAPDICT.WALL, enemy.fly, lastDir.mirror());
         let crossroads = [];
         let secondCR, _;
         for (let dir of directions) {
@@ -301,7 +301,7 @@ const AI = {
         let paths = [];
         let gridValue = this.getGridValue(enemy);
         for (let cross of crossroads) {
-            const Astar = enemy.parent.map.GA.findPath_AStar_fast(this.getPosition(enemy), cross, gridValue, "exclude", ARG.block);
+            const Astar = enemy.parent.map.GA.findPath_AStar_fast(this.getPosition(enemy), cross, gridValue, "exclude", enemy.fly, ARG.block);
 
             if (Astar === null) {
                 return this.immobile(enemy);

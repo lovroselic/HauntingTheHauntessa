@@ -2828,6 +2828,12 @@ const ENGINE = {
             let py = y * ENGINE.INI.GRIDPIX;
             CTX.fillRect(px, py, ENGINE.INI.GRIDPIX, ENGINE.INI.GRIDPIX);
         },
+        staircase(x, y, CTX, value) {
+            CTX.fillStyle = `rgba(0, 0, ${208 + value * 6}, ${(value + 1) / 10})`;
+            let px = x * ENGINE.INI.GRIDPIX;
+            let py = y * ENGINE.INI.GRIDPIX;
+            CTX.fillRect(px, py, ENGINE.INI.GRIDPIX, ENGINE.INI.GRIDPIX);
+        },
         corr(x, y, CTX, value, corr) {
             let FS;
             switch (value) {
@@ -2895,6 +2901,8 @@ const ENGINE = {
                         if (value & MAPDICT.STAIR) value = MAPDICT.STAIR;
                         if (value & MAPDICT.SHRINE) value = MAPDICT.SHRINE;
                         ENGINE.BLOCKGRID.wall(x, y, CTX, value);
+                    } else if (STAIRCASE_GRIDS.includes(value)) {
+                        ENGINE.BLOCKGRID.staircase(x, y, CTX, (Math.log2(value) - 7) * 2);
                     } else {
                         value &= 2 ** maze.GA.gridSizeBit - 1 - MAPDICT.RESERVED - MAPDICT.START_POSITION;
                         if (value & MAPDICT.STAIR) value = MAPDICT.STAIR;
