@@ -1917,8 +1917,8 @@ class $3D_player {
 
             let check;
             if (WebGL.CONFIG.prevent_movement_in_exlusion_grids) {
-                //check = this.GA.entityNotInExcusion(nextPos, Dir2D, this.r, this.depth);
-                check = this.GA.forwardPositionIsEmpty(nextPos, Dir2D, this.r, this.depth);
+                //check = this.GA.forwardPositionIsEmpty(nextPos, Dir2D, this.r, this.depth);
+                check = this.GA.forwardPositionIsEmpty(nextPos, Dir2D, this.r, this.depth);                   //have to jump a bit forward
                 //console.log("..apply move check", check, "args->", nextPos, Dir2D, this.r, this.depth);
             } else {
                 check = this.GA.entityNotInWall(nextPos, Dir2D, this.r, this.depth);                                //this shouild be now obsolete
@@ -1943,9 +1943,8 @@ class $3D_player {
          * if elevation == 0.8 we might ascedn to depth++, EXIT climbing upward
          */
         if (elevation >= 0.789 && (this.depth + 1 <= this.GA.maxZ)) {
-            //let upwardCheck = this.GA.entityNotInExcusion(nextPos, Dir2D, this.r, this.depth + 1);
             let upwardCheck = this.GA.forwardPositionIsEmpty(nextPos, Dir2D, this.r, this.depth + 1);
-            //console.log("..upwardCheck", upwardCheck, "arg:", nextPos, Dir2D, this.r, this.depth + 1);
+            console.log("..upwardCheck", upwardCheck, "arg:", nextPos, Dir2D, this.r, this.depth + 1);
 
             if (upwardCheck) {
                 nextPos3 = nextPos3.translate(DOWN3, WebGL.INI.DELTA_HEIGHT_CLIMB);                                         //climb final step out of climbing zone
@@ -1962,17 +1961,17 @@ class $3D_player {
          * climbing zone
          */
         //const check = this.GA.positionIsIncluded(nextPos, Dir2D, this.r, this.depth, STAIRCASE_GRIDS)[0];
-        const check = this.GA.positionIsIncluded(nextPos, Dir2D, this.r, this.depth, STAIRCASE_GRIDS)[0];
-
+        const check = this.GA.singleForwardPositionIsIncluded(nextPos, Dir2D, this.r, this.depth, STAIRCASE_GRIDS);
+        console.warn("CHECK", check);
         if (!check) return;
-        const floorGridType = this.GA.getValue(check);
+        const floorGridType = this.GA.getValue(check[0]);
         const heightNew = WallSizeToHeight(floorGridType) / 10;
         const heightOld = this.getFloorPosition();
 
         const deltaHeight = heightNew - heightOld;
         const climb = Math.abs(deltaHeight) <= WebGL.INI.DELTA_HEIGHT_CLIMB + 0.01;                                        //adding E from FP accuracy
 
-        //console.log("....heightNew", heightNew, "heightOld", heightOld, "climb", climb);
+        console.log("....heightNew", heightNew, "heightOld", heightOld, "climb", climb);
         if (!climb) return;
         nextPos3 = nextPos3.translate(DOWN3, deltaHeight);                                     //DOWN3 is [0,1,0] - relax
         if (deltaHeight > 0.012) console.info("CLIMBING", check, "deltaHeight", deltaHeight, climb, "nextPos3", nextPos3, "depth", this.depth);

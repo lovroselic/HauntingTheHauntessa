@@ -694,7 +694,9 @@ const WallSizeToHeight = (value) => {
 
 const STAIRCASE_GRIDS = [MAPDICT.WALL2, MAPDICT.WALL4, MAPDICT.WALL6, MAPDICT.WALL8];
 const GROUND_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.HOLE, MAPDICT.BLOCKWALL, ...STAIRCASE_GRIDS];
-const AIR_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.BLOCKWALL, ...STAIRCASE_GRIDS];
+const HERO_GROUND_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.HOLE, MAPDICT.BLOCKWALL];
+//const AIR_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.BLOCKWALL, ...STAIRCASE_GRIDS];
+const AIR_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.BLOCKWALL, MAPDICT.WALL8, MAPDICT.WALL6];
 const EXPLOADABLES = [MAPDICT.BLOCKWALL, MAPDICT.DOOR];
 const ITEM_DROP_EXCLUSION = [MAPDICT.HOLE, ...STAIRCASE_GRIDS];
 
@@ -1897,33 +1899,27 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         return null;
     }
 
-    /**
-     *
-     *
-     * @param {*} pos - current position
-     * @param {FP_Vector} dir - 2D projection
-     * @param {float} r - entity radius
-     * @param {int} depth - world integer Y position
-     * @param {Array} include - what to test for
-     * @param {number} [resolution=8] how many points around radizs
-     * @memberof GridArray3D
-     * @returns {Array of Grid3D}
-     */
-    positionIsIncluded(pos, dir, r, depth, include, resolution = 8) {
+
+    singleForwardPositionIsIncluded(pos, dir, r, depth, include, resolution = 2) {
         //console.info("positionIsIncluded", pos, dir, r, depth, include, resolution);
-        let checks = this.pointsAroundEntity(pos, dir, r, resolution);
-        checks = checks.filter(pos => this.positionIsInInclusion(pos, depth, include));
-        return checks.map(pos => new Grid3D(pos.x, pos.y, depth));
+        let checks = this.forwardPointsFrontEntity(pos, dir, r, resolution);
+        checks = checks.map(pos => new Grid3D(pos.x, pos.y, depth));
+
+        let unpassable = checks.filter(grid => this.check(grid, HERO_GROUND_MOVE_GRID_EXCLUSION.sum()));
+        console.log("-------singleForwardPositionIsIncluded------ checks", checks, "unpassable", unpassable);
+        if (unpassable.length > 0) return null;
+
+        let filtered = checks.filter(grid => this.check(grid, include.sum()));
+        console.log("-------singleForwardPositionIsIncluded------ checks", checks, "filtered", filtered);
+        return filtered;
     }
     forwardPositionIsEmpty(pos, dir, r, depth, resolution = 2) {
-        //console.info("ForwardPositionIsIncluded", pos, dir, r, depth, resolution);
+        console.info("-- forwardPositionIsEmpty --");
         let checks = this.forwardPointsFrontEntity(pos, dir, r, resolution);
         checks = checks.map(pos => new Grid3D(pos.x, pos.y, depth));
         let filtered = checks.filter(grid => this.isZero(grid));
-        //console.log("___________checks", checks, "filtered", filtered);
+        console.log("*** checks", checks, "filtered", filtered);
         return checks.length === filtered.length;
-        //console.log("___________checks", checks);
-        //return checks.map(pos => new Grid3D(pos.x, pos.y, depth));
     }
 }
 
