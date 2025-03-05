@@ -1898,8 +1898,6 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         }
         return null;
     }
-
-
     singleForwardPositionIsIncluded(pos, dir, r, depth, include, resolution = 2) {
         //console.info("positionIsIncluded", pos, dir, r, depth, include, resolution);
         let checks = this.forwardPointsFrontEntity(pos, dir, r, resolution);
@@ -1913,12 +1911,18 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         console.log("-------singleForwardPositionIsIncluded------ checks", checks, "filtered", filtered);
         return filtered;
     }
-    forwardPositionIsEmpty(pos, dir, r, depth, resolution = 2) {
-        console.info("-- forwardPositionIsEmpty --");
+    singleForwardPositionIsEmpty(pos, dir, r, depth, resolution = 2) {
         let checks = this.forwardPointsFrontEntity(pos, dir, r, resolution);
         checks = checks.map(pos => new Grid3D(pos.x, pos.y, depth));
         let filtered = checks.filter(grid => this.isZero(grid));
-        console.log("*** checks", checks, "filtered", filtered);
+        console.log("-------singleForwardPositionIsEmpty------ checks", checks, "filtered", filtered);
+        return filtered;
+    }
+    forwardPositionIsEmpty(pos, dir, r, depth, resolution = 2) {
+        let checks = this.forwardPointsFrontEntity(pos, dir, r, resolution);
+        checks = checks.map(pos => new Grid3D(pos.x, pos.y, depth));
+        let filtered = checks.filter(grid => this.isZero(grid));
+        console.log("-- forwardPositionIsEmpty --", "*** checks", checks, "filtered", filtered);
         return checks.length === filtered.length;
     }
 }

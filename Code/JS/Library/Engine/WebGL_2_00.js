@@ -1917,8 +1917,7 @@ class $3D_player {
 
             let check;
             if (WebGL.CONFIG.prevent_movement_in_exlusion_grids) {
-                //check = this.GA.forwardPositionIsEmpty(nextPos, Dir2D, this.r, this.depth);
-                check = this.GA.forwardPositionIsEmpty(nextPos, Dir2D, this.r, this.depth);                   //have to jump a bit forward
+                check = this.GA.forwardPositionIsEmpty(nextPos, Dir2D, this.r, this.depth);
                 //console.log("..apply move check", check, "args->", nextPos, Dir2D, this.r, this.depth);
             } else {
                 check = this.GA.entityNotInWall(nextPos, Dir2D, this.r, this.depth);                                //this shouild be now obsolete
@@ -1943,16 +1942,31 @@ class $3D_player {
          * if elevation == 0.8 we might ascedn to depth++, EXIT climbing upward
          */
         if (elevation >= 0.789 && (this.depth + 1 <= this.GA.maxZ)) {
+            //let upwardCheck = this.GA.forwardPositionIsEmpty(nextPos, Dir2D, this.r, this.depth + 1); 
+            console.warn("before upwardCheck");
             let upwardCheck = this.GA.forwardPositionIsEmpty(nextPos, Dir2D, this.r, this.depth + 1);
-            console.log("..upwardCheck", upwardCheck, "arg:", nextPos, Dir2D, this.r, this.depth + 1);
+            let climbOutCheck = this.GA.singleForwardPositionIsEmpty(nextPos, Dir2D, this.r, this.depth + 1);
+            console.log("..upwardCheck", upwardCheck, "arg:", nextPos, Dir2D, this.r, this.depth + 1, "\n\n");
+            console.log("...climbOutCheck", climbOutCheck, "arg:", nextPos, Dir2D, this.r, this.depth + 1);
 
-            if (upwardCheck) {
-                nextPos3 = nextPos3.translate(DOWN3, WebGL.INI.DELTA_HEIGHT_CLIMB);                                         //climb final step out of climbing zone
+            /*if (upwardCheck) {
+                nextPos3 = nextPos3.translate(DOWN3, WebGL.INI.DELTA_HEIGHT_CLIMB);                                         //climb up the final step out of climbing zone
                 console.warn("ASCENT, elevation", elevation, "upwardCheck", upwardCheck, "nextPos3", nextPos3);
-                //this.setPos(nextPos3);
-                //console.error("#### ASCENT performed#####", this.pos, this.depth, this);
-                //return;
-                return this.setPos(nextPos3);
+                this.setPos(nextPos3);
+                console.error("#### ASCENT performed#####", this.pos, this.depth, this);
+                return;
+                //return this.setPos(nextPos3);
+            }*/
+
+            if (climbOutCheck.length > 0) {
+                nextPos3 = nextPos3.translate(DOWN3, WebGL.INI.DELTA_HEIGHT_CLIMB);                                         //climb up the final step out of climbing zone
+                console.warn("ASCENT, elevation", elevation, "nextPos3", nextPos3, "climbOutCheck", climbOutCheck[0]);
+
+                this.setPos(nextPos3);
+                console.error("#### ASCENT performed#####", this.pos, this.depth, this);
+                throw "DEBUG";
+                return;
+                //return this.setPos(nextPos3);
             }
         }
 
