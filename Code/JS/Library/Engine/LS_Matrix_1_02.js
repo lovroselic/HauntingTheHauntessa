@@ -28,7 +28,7 @@ class Vector3 {
         this.refresh();
     }
     static from_grid3D(grid) {
-        return new Vector3(grid.x, grid.z, grid.y);         //swaps y and Z
+        return new Vector3(grid.x, grid.z, grid.y);         //swaps y and Z, ignores FP and INT, works for both
     }
     static from_array(arr) {
         return new Vector3(arr[0], arr[1], arr[2]);

@@ -1160,6 +1160,12 @@ class FP_Grid3D extends MasterGridClass3D {
         if (grid3d.constructor.name !== "Grid3D") throw new Error(`from_Grid3D_to_center_block_swap_ZY, wrong object type ${grid3d}`);
         return new FP_Grid3D(grid3d.x + 0.5, grid3d.y + 0.5, grid3d.z + 0.5,);
     }
+    absDirection(vector) {
+        let dx = vector.x - this.x;
+        let dy = vector.y - this.y;
+        let dz = vector.z - this.z;
+        return new FP_Vector3D(dx, dy, dz);
+    }
 }
 
 
@@ -1274,6 +1280,12 @@ class FP_Vector3D extends MasterVectorClass3D {
     }
     dot(vector) {
         return this.x * vector.x + this.y * vector.y + this.z * vector.z;
+    }
+    mul(vector, epsilon = 0.0025) {
+        let x = (this.x + epsilon) * vector.x;
+        let y = (this.y + epsilon) * vector.y;
+        let z = (this.z + epsilon) * vector.z;
+        return new FP_Vector3D(x, y, z);
     }
 }
 

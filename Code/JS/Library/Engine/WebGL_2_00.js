@@ -1959,12 +1959,31 @@ class $3D_player {
             }*/
 
             if (climbOutCheck.length > 0) {
+                console.clear();
+                const climbOut = climbOutCheck[0];
+
                 nextPos3 = nextPos3.translate(DOWN3, WebGL.INI.DELTA_HEIGHT_CLIMB);                                         //climb up the final step out of climbing zone
-                console.warn("ASCENT, elevation", elevation, "nextPos3", nextPos3, "climbOutCheck", climbOutCheck[0]);
+
+                let nextGrid3D = Vector3.to_Grid3D(nextPos3);
+                console.log("nextGrid3D", nextGrid3D, "climbOut", climbOut);
+                let nextGrid3DFP = Vector3.to_FP_Grid3D(nextPos3);
+                console.log("nextGrid3DFP", nextGrid3DFP);
+                let dir3D = nextGrid3D.direction(climbOut);
+                console.log("dir3D from nextGrid3D to climbOut", dir3D);
+                let diff3D = nextGrid3DFP.absDirection(climbOut);
+                console.log("diff3D from nextGrid3DFP to climbout", diff3D);
+                let move = diff3D.mul(dir3D);
+                console.log("move", move);
+                nextGrid3DFP = nextGrid3DFP.add(move);
+                console.log("nextGrid3D after adding move", nextGrid3DFP);
+                nextPos3 = Vector3.from_grid3D(nextGrid3DFP);
+
+                console.info("########", "nextPos3", nextPos3);
+                //console.warn("ASCENT, elevation", elevation, "nextPos3", nextPos3, "climbOutCheck", climbOut, "Dir2D", Dir2D);
 
                 this.setPos(nextPos3);
-                console.error("#### ASCENT performed#####", this.pos, this.depth, this);
-                throw "DEBUG";
+                console.error("#### ASCENT performed #####, pos", this.pos, "depth", this.depth);
+                //throw "DEBUG";
                 return;
                 //return this.setPos(nextPos3);
             }

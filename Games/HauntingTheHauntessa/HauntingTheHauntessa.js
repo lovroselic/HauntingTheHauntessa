@@ -208,7 +208,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.5.3",
+    VERSION: "0.5.4",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
