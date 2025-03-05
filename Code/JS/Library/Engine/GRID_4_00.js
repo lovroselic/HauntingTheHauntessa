@@ -688,12 +688,15 @@ const MAPDICT = {
     START_POSITION: 2 ** 13,                 //8192
 };
 
+const WallSizeToHeight = (value) => {
+    return (Math.log2(value) - 7) * 2;
+};
+
 const STAIRCASE_GRIDS = [MAPDICT.WALL2, MAPDICT.WALL4, MAPDICT.WALL6, MAPDICT.WALL8];
 const GROUND_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.HOLE, MAPDICT.BLOCKWALL, ...STAIRCASE_GRIDS];
 const AIR_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.BLOCKWALL, ...STAIRCASE_GRIDS];
 const EXPLOADABLES = [MAPDICT.BLOCKWALL, MAPDICT.DOOR];
 const ITEM_DROP_EXCLUSION = [MAPDICT.HOLE, ...STAIRCASE_GRIDS];
-
 
 class ArrayBasedDataStructure {
     constructor() { }
@@ -906,6 +909,9 @@ class GA_Dimension_Agnostic_Methods {
     isEmpty(grid) {
         return this.check(grid, MAPDICT.WALL) === MAPDICT.EMPTY;
     }
+    isZero(grid) {
+        return this.getValue(grid) === 0;
+    }
     notEmpty(grid) {
         return !this.isEmpty(grid);
     }
@@ -948,6 +954,7 @@ class GA_Dimension_Agnostic_Methods {
        */
     entityNotInExcusion(pos, dir, r, depth = 0, exclusion = GROUND_MOVE_GRID_EXCLUSION, resolution = 8) {
         let checks = this.pointsAroundEntity(pos, dir, r, resolution);
+        //console.log("______________checks", checks);
         for (const point of checks) {
             let notExcluded = this.positionIsNotExcluded(point, exclusion, depth);
             if (!notExcluded) return false;
@@ -959,6 +966,16 @@ class GA_Dimension_Agnostic_Methods {
         const increment = (2 * Math.PI) / resolution;
         for (let theta = 0; theta < 2 * Math.PI; theta += increment) {
             checks.push(pos.translate(dir.rotate(theta), r));
+        }
+        return checks;
+    }
+    forwardPointsFrontEntity(pos, dir, r, resolution = 2) {
+        let checks = [pos];
+        const increment = (Math.PI / 4) / resolution;
+        for (let i = 1; i <= resolution; i++) {
+            let theta = increment * i;
+            checks.push(pos.translate(dir.rotate(theta), r));
+            checks.push(pos.translate(dir.rotate(-theta), r));
         }
         return checks;
     }
@@ -1727,12 +1744,17 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
     positionIsNotExcluded(pos, exclusion = GROUND_MOVE_GRID_EXCLUSION, depth) {
         const grid = new Grid3D(pos.x, pos.y, depth);
         const check = this.check(grid, exclusion.sum());
+        //console.warn("_________positionIsNotExcluded", pos, grid, check, "value", this.getValue(grid));
         return !check;
     }
     positionIsNotWall(pos, depth) {
         const grid = new Grid3D(pos.x, pos.y, depth);
         const check = this.check(grid, AIR_MOVE_GRID_EXCLUSION.sum());
         return !check;
+    }
+    positionIsInInclusion(pos, depth, inclusion) {
+        const grid = new Grid3D(pos.x, pos.y, depth);
+        return this.check(grid, inclusion.sum());
     }
     setNodeMap(where = "nodeMap", path = [0], type = "value", block = [], cls = PathNode3D) {
         const pathSum = path.sum();
@@ -1760,7 +1782,6 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         this[where] = map;
         return map;
     }
-
     findNextCrossroad(start, dir, fly) {
         console.log("findNextCrossroad", "start", start, start.constructor.name, "dir", dir, dir.constructor.name);
         let exlusion = GROUND_MOVE_GRID_EXCLUSION.sum();
@@ -1776,8 +1797,6 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         }
         return [start, lastDir];
     }
-
-
     getDirectionsIfNot(grid, value, fly = false, leaveOut = null) {
         const directions = [];
         const DIR = fly > 0.0 ? [...ENGINE.directions3D] : [...ENGINE.directions3D_XY_plane];
@@ -1804,8 +1823,6 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         }
         return [false, null];
     }
-
-
     getDirectionsFromNodeMap(grid, nodeMap, fly, leaveOut = null, allowCross = false) {
         const directions = [];
         const DIR = fly > 0.0 ? [...ENGINE.directions3D] : [...ENGINE.directions3D_XY_plane];
@@ -1827,7 +1844,6 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         }
         return directions;
     }
-
     findPath_AStar_fast(start, finish, path = [0], type = "value", fly = 0, block = []) {
         /** 
         DIR: applicable directions
@@ -1879,6 +1895,35 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
             }
         }
         return null;
+    }
+
+    /**
+     *
+     *
+     * @param {*} pos - current position
+     * @param {FP_Vector} dir - 2D projection
+     * @param {float} r - entity radius
+     * @param {int} depth - world integer Y position
+     * @param {Array} include - what to test for
+     * @param {number} [resolution=8] how many points around radizs
+     * @memberof GridArray3D
+     * @returns {Array of Grid3D}
+     */
+    positionIsIncluded(pos, dir, r, depth, include, resolution = 8) {
+        //console.info("positionIsIncluded", pos, dir, r, depth, include, resolution);
+        let checks = this.pointsAroundEntity(pos, dir, r, resolution);
+        checks = checks.filter(pos => this.positionIsInInclusion(pos, depth, include));
+        return checks.map(pos => new Grid3D(pos.x, pos.y, depth));
+    }
+    forwardPositionIsEmpty(pos, dir, r, depth, resolution = 2) {
+        //console.info("ForwardPositionIsIncluded", pos, dir, r, depth, resolution);
+        let checks = this.forwardPointsFrontEntity(pos, dir, r, resolution);
+        checks = checks.map(pos => new Grid3D(pos.x, pos.y, depth));
+        let filtered = checks.filter(grid => this.isZero(grid));
+        //console.log("___________checks", checks, "filtered", filtered);
+        return checks.length === filtered.length;
+        //console.log("___________checks", checks);
+        //return checks.map(pos => new Grid3D(pos.x, pos.y, depth));
     }
 }
 

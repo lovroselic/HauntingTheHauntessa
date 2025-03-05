@@ -2902,7 +2902,7 @@ const ENGINE = {
                         if (value & MAPDICT.SHRINE) value = MAPDICT.SHRINE;
                         ENGINE.BLOCKGRID.wall(x, y, CTX, value);
                     } else if (STAIRCASE_GRIDS.includes(value)) {
-                        ENGINE.BLOCKGRID.staircase(x, y, CTX, (Math.log2(value) - 7) * 2);
+                        ENGINE.BLOCKGRID.staircase(x, y, CTX, WallSizeToHeight(value));
                     } else {
                         value &= 2 ** maze.GA.gridSizeBit - 1 - MAPDICT.RESERVED - MAPDICT.START_POSITION;
                         if (value & MAPDICT.STAIR) value = MAPDICT.STAIR;

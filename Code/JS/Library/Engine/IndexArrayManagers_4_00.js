@@ -945,7 +945,8 @@ class Missile3D extends IAM {
     }
     missile_entity_collision(obj, GA) {
         if (!obj.friendly) return false;
-        let IA = this.map[this.enemyIA];
+        const IA = this.map[this.enemyIA];
+        if (!IA) return false;                                                                                              //there are no enemies
         const grid = Vector3.to_Grid3D(obj.pos);
 
         if (!IA.empty(grid)) {
@@ -1040,9 +1041,10 @@ class Animated_3d_entity extends IAM {
         this.poolToIA3D(map[this.IA]);
     }
     manage(lapsedTime, date, flagArray) {
+        const map = this.map;
+        map[this.IA] = null;
         if (this.POOL.length === 0) return;
         this.reIndex();
-        const map = this.map;
         const GA = this.map.GA;
         this.setup();
 

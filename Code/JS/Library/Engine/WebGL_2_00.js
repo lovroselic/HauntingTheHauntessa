@@ -70,6 +70,7 @@ const WebGL = {
         BLAST_RADIUS: 1.495,
         BLAST_DAMAGE: 100,
         HERO_HEIGHT: 0.6,
+        DELTA_HEIGHT_CLIMB: 0.20, //
     },
     CONFIG: {
         firstperson: true,
@@ -1518,7 +1519,7 @@ const WORLD = {
 
         for (let [index, value] of GA.map.entries()) {
             let grid = GA.indexToGrid(index);
-            if (!grid.z) grid.z = 0;                                                                    //2D Grid legacy support
+            if (!grid.z) grid.z = 0;                                                                                    //2D Grid legacy support
             let initial = value;
             value &= (2 ** GA.gridSizeBit - 1 - (MAPDICT.FOG + MAPDICT.RESERVED + MAPDICT.ROOM));
             //console.info("->", index, initial, "->", value, grid);
@@ -1658,6 +1659,7 @@ class $3D_Camera {
 
 class $3D_player {
     constructor(position, dir, map = null, type = null, size = 0.5) {
+        this.heigth = WebGL.INI.HERO_HEIGHT;
         this.camera = null;
         this.model = null;
         this.setDir(dir);
@@ -1683,8 +1685,14 @@ class $3D_player {
         this.actionCallback = null;
         this.initTextureMap();
     }
+    floorReference() {
+        return this.minY + this.heigth + this.depth;
+    }
+    getFloorPosition() {
+        return this.pos.y - this.heigth;
+    }
     setDepth() {
-        this.depth = Math.floor(this.pos.y);
+        this.depth = Math.floor(this.getFloorPosition());
     }
     initTextureMap(normal = "normal") {
         if (!this.model) return;
@@ -1815,7 +1823,7 @@ class $3D_player {
     setTranslation() {
         this.translation = glMatrix.mat4.create();
         const modelPosition = this.pos.clone();
-        modelPosition.set_y(this.minY + this.depth);////////////////////////////
+        modelPosition.set_y(this.minY + this.getFloorPosition());////////////////////////////
         glMatrix.mat4.fromTranslation(this.translation, modelPosition.array);
     }
     setRotation() {
@@ -1900,15 +1908,75 @@ class $3D_player {
         }
 
         if (this.bumpEnemy(nextPos, nextPos3)) return;
-        let check;
-        if (WebGL.CONFIG.prevent_movement_in_exlusion_grids) {
-            check = this.GA.entityNotInExcusion(nextPos, Vector3.to_FP_Vector(dir), this.r, this.depth);
-        } else {
-            check = this.GA.entityNotInWall(nextPos, Vector3.to_FP_Vector(dir), this.r, this.depth);
+
+        let Dir2D = Vector3.to_FP_Vector(dir);
+        const elevation = nextPos3.y - this.floorReference();
+        //console.error("------elevation", elevation);
+
+        if (elevation <= WebGL.INI.DELTA_HEIGHT_CLIMB + 0.01) {                                                     //if elevation is too big then climbing needs to be resolved first
+
+            let check;
+            if (WebGL.CONFIG.prevent_movement_in_exlusion_grids) {
+                //check = this.GA.entityNotInExcusion(nextPos, Dir2D, this.r, this.depth);
+                check = this.GA.forwardPositionIsEmpty(nextPos, Dir2D, this.r, this.depth);
+                //console.log("..apply move check", check, "args->", nextPos, Dir2D, this.r, this.depth);
+            } else {
+                check = this.GA.entityNotInWall(nextPos, Dir2D, this.r, this.depth);                                //this shouild be now obsolete
+            }
+            if (check) {
+                nextPos3.set_y(this.minY + this.heigth + this.depth);                                               //reset from climbing, if applicable 
+                //console.warn("_applyMove_", nextPos3);
+                return this.setPos(nextPos3);
+            }
         }
-        if (check) {
-            this.setPos(nextPos3);
+
+        return this.blockClimb(nextPos3, Dir2D, nextPos, elevation);
+    }
+    blockClimb(nextPos3, Dir2D, nextPos, elevation) {
+        /**
+         * if elevation == 0.8 we might ascedn to depth++
+         * if elevation == 0.0 we might descent to depth--
+         */
+        console.info(".blockClimb, elevation", elevation, "nextPos3", nextPos3, "nextPos", nextPos);
+
+        /**
+         * if elevation == 0.8 we might ascedn to depth++, EXIT climbing upward
+         */
+        if (elevation >= 0.789 && (this.depth + 1 <= this.GA.maxZ)) {
+            //let upwardCheck = this.GA.entityNotInExcusion(nextPos, Dir2D, this.r, this.depth + 1);
+            let upwardCheck = this.GA.forwardPositionIsEmpty(nextPos, Dir2D, this.r, this.depth + 1);
+            //console.log("..upwardCheck", upwardCheck, "arg:", nextPos, Dir2D, this.r, this.depth + 1);
+
+            if (upwardCheck) {
+                nextPos3 = nextPos3.translate(DOWN3, WebGL.INI.DELTA_HEIGHT_CLIMB);                                         //climb final step out of climbing zone
+                console.warn("ASCENT, elevation", elevation, "upwardCheck", upwardCheck, "nextPos3", nextPos3);
+                //this.setPos(nextPos3);
+                //console.error("#### ASCENT performed#####", this.pos, this.depth, this);
+                //return;
+                return this.setPos(nextPos3);
+            }
         }
+
+
+        /**
+         * climbing zone
+         */
+        //const check = this.GA.positionIsIncluded(nextPos, Dir2D, this.r, this.depth, STAIRCASE_GRIDS)[0];
+        const check = this.GA.positionIsIncluded(nextPos, Dir2D, this.r, this.depth, STAIRCASE_GRIDS)[0];
+
+        if (!check) return;
+        const floorGridType = this.GA.getValue(check);
+        const heightNew = WallSizeToHeight(floorGridType) / 10;
+        const heightOld = this.getFloorPosition();
+
+        const deltaHeight = heightNew - heightOld;
+        const climb = Math.abs(deltaHeight) <= WebGL.INI.DELTA_HEIGHT_CLIMB + 0.01;                                        //adding E from FP accuracy
+
+        //console.log("....heightNew", heightNew, "heightOld", heightOld, "climb", climb);
+        if (!climb) return;
+        nextPos3 = nextPos3.translate(DOWN3, deltaHeight);                                     //DOWN3 is [0,1,0] - relax
+        if (deltaHeight > 0.012) console.info("CLIMBING", check, "deltaHeight", deltaHeight, climb, "nextPos3", nextPos3, "depth", this.depth);
+        return this.setPos(nextPos3);
     }
     usingStaircase(nextPos, resolution = 4) {
         let dir = Vector3.to_FP_Vector(this.dir);

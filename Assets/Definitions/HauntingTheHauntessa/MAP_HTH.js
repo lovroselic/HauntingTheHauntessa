@@ -109,7 +109,7 @@ const MAP = {
         wall: "SkullWall5",
         floor: "BloodMarbleFloorWall_SDXL_009",
         ceil: "RedBricks40",
-        start: '[72,7]',
+        start: '[100,7]',
         lights: '[[487,1,"Candle71","standard"],[520,7,"DuaLLantern_021","standard"],[156,3,"Candle66","standard"]]',
         gates: '[[384,5,"5.1","4.2","Closed"]]',
         }
