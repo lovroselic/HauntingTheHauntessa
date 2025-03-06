@@ -1932,52 +1932,83 @@ class $3D_player {
         return this.blockClimb(nextPos3, Dir2D, nextPos, elevation);
     }
     blockClimb(nextPos3, Dir2D, nextPos, elevation) {
-        /**
-         * if elevation == 0.8 we might ascedn to depth++
-         * if elevation == 0.0 we might descent to depth--
-         */
-        console.info(".blockClimb, elevation", elevation, "nextPos3", nextPos3, "nextPos", nextPos);
+        //console.info(".blockClimb, elevation", elevation, "nextPos3", nextPos3, "nextPos", nextPos);
 
         /**
          * if elevation == 0.8 we might ascend to depth++, EXIT climbing upward
          */
         if (elevation >= 0.789 && (this.depth + 1 <= this.GA.maxZ)) {
-            console.warn("before upwardCheck");
+            //console.warn("before upwardCheck");
             let climbOutCheck = this.GA.singleForwardPositionIsEmpty(nextPos, Dir2D, this.r, this.depth + 1);
-            console.log("...climbOutCheck", climbOutCheck, "arg:", nextPos, Dir2D, this.r, this.depth + 1);
+            //console.log("...climbOutCheck", climbOutCheck, "arg:", nextPos, Dir2D, this.r, this.depth + 1);
 
             if (climbOutCheck.length > 0) {
-                console.clear();
+                //console.clear();
                 const climbOut = climbOutCheck[0];
 
                 nextPos3 = nextPos3.translate(DOWN3, WebGL.INI.DELTA_HEIGHT_CLIMB);                                         //climb up the final step out of climbing zone
 
                 let nextGrid3D = Vector3.to_Grid3D(nextPos3);
-                console.log("nextGrid3D", nextGrid3D, "climbOut", climbOut);
+                //console.log("nextGrid3D", nextGrid3D, "climbOut", climbOut);
                 let nextGrid3DFP = Vector3.to_FP_Grid3D(nextPos3);
-                console.log("nextGrid3DFP", nextGrid3DFP);
+                //console.log("nextGrid3DFP", nextGrid3DFP);
                 let dir3D = nextGrid3D.direction(climbOut);
-                console.log("dir3D from nextGrid3D to climbOut", dir3D, "Dir2D", Dir2D);
+                //console.log("dir3D from nextGrid3D to climbOut", dir3D, "Dir2D", Dir2D);
                 let diff3D = nextGrid3DFP.absDirection(climbOut);
-                console.log("diff3D from nextGrid3DFP to climbout", diff3D);
-                let move = diff3D.mul(dir3D).mul(dir3D).frac(); 
-                console.log("move after", move);
+                //console.log("diff3D from nextGrid3DFP to climbout", diff3D);
+                let move = diff3D.mul(dir3D).mul(dir3D).frac();
+                //console.log("move after", move);
                 nextGrid3DFP = nextGrid3DFP.add(move);
-                console.log("nextGrid3D after adding move", nextGrid3DFP);
+                //console.log("nextGrid3D after adding move", nextGrid3DFP);
                 nextPos3 = Vector3.from_grid3D(nextGrid3DFP);
-                console.info("########", "nextPos3", nextPos3);
+                //console.info("########", "nextPos3", nextPos3);
                 return this.setPos(nextPos3);
             }
+        }
+
+        /**
+        * if elevation == 0.0 we might descend to depth--, ENTER climbing downward
+        */
+        if (elevation <= 0.025 && (this.depth - 1 >= this.GA.minZ)) {
+            //console.clear();
+            //console.warn("before downwardCheck, nextPos3", nextPos3);
+            const climbDownCheck = this.GA.singleForwardPositionIsValue(nextPos, Dir2D, this.r, this.depth - 1, MAPDICT.WALL8);
+            //console.log("...climbDownCheck", climbDownCheck, "arg:", nextPos, Dir2D, this.r, this.depth - 1, MAPDICT.WALL8);
+            if (climbDownCheck.length > 0) {
+                const climbDown = climbDownCheck[0];
+                //console.clear();
+                //console.info("try to climbg down to ", climbDown);
+
+                nextPos3 = nextPos3.translate(UP3, 1.0 - WebGL.INI.DELTA_HEIGHT_CLIMB);                                         //climb down to the first step in the climbing zone
+                //console.log("nextPos3 after translation", nextPos3);
+                let nextGrid3D = Vector3.to_Grid3D(nextPos3);
+                //console.log("nextGrid3D", nextGrid3D, "climbDown", climbDown);
+                let nextGrid3DFP = Vector3.to_FP_Grid3D(nextPos3);
+                //console.log("nextGrid3DFP", nextGrid3DFP);
+                let dir3D = nextGrid3D.direction(climbDown);
+                //console.log("dir3D from nextGrid3D to climbOut", dir3D, "Dir2D", Dir2D);
+                let diff3D = nextGrid3DFP.absDirection(climbDown);
+                //console.log("diff3D from nextGrid3DFP to climbDown", diff3D);
+                let move = diff3D.mul(dir3D).mul(dir3D).frac();
+                //console.log("move after", move);
+                nextGrid3DFP = nextGrid3DFP.add(move);
+                //console.log("nextGrid3D after adding move", nextGrid3DFP);
+                nextPos3 = Vector3.from_grid3D(nextGrid3DFP);
+                nextPos3 = nextPos3.translate(DOWN3, 1.0 - 2 * WebGL.INI.DELTA_HEIGHT_CLIMB);
+                //console.info("########", "nextPos3", nextPos3);
+                return this.setPos(nextPos3);
+            }
+
+            //throw "DEBUG";
         }
 
 
         /**
          * climbing zone
          */
-        //const check = this.GA.positionIsIncluded(nextPos, Dir2D, this.r, this.depth, STAIRCASE_GRIDS)[0];
         const check = this.GA.singleForwardPositionIsIncluded(nextPos, Dir2D, this.r, this.depth, STAIRCASE_GRIDS);
-        console.warn("CHECK", check);
-        if (!check) return;
+        //console.warn("CHECK", check);
+        if (!check || check.length === 0) return;
         const floorGridType = this.GA.getValue(check[0]);
         const heightNew = WallSizeToHeight(floorGridType) / 10;
         const heightOld = this.getFloorPosition() - this.depth;                                                            //normalize height between 0.0 and 1.0
@@ -1985,10 +2016,10 @@ class $3D_player {
         const deltaHeight = heightNew - heightOld;
         const climb = Math.abs(deltaHeight) <= WebGL.INI.DELTA_HEIGHT_CLIMB + 0.01;                                        //adding small Epsilon for FP accuracy
 
-        console.log("....heightNew", heightNew, "heightOld", heightOld, "climb", climb);
+        //console.log("....heightNew", heightNew, "heightOld", heightOld, "climb", climb);
         if (!climb) return;
         nextPos3 = nextPos3.translate(DOWN3, deltaHeight);                                     //DOWN3 is [0,1,0] - relax
-        if (deltaHeight > 0.012) console.info("CLIMBING", check, "deltaHeight", deltaHeight, climb, "nextPos3", nextPos3, "depth", this.depth);
+        //if (deltaHeight > 0.012) console.info("CLIMBING", check, "deltaHeight", deltaHeight, climb, "nextPos3", nextPos3, "depth", this.depth);
         return this.setPos(nextPos3);
     }
     usingStaircase(nextPos, resolution = 4) {

@@ -914,6 +914,9 @@ class GA_Dimension_Agnostic_Methods {
     isZero(grid) {
         return this.getValue(grid) === 0;
     }
+    isValue(grid, value) {
+        return this.getValue(grid) === value;
+    }
     notEmpty(grid) {
         return !this.isEmpty(grid);
     }
@@ -956,7 +959,6 @@ class GA_Dimension_Agnostic_Methods {
        */
     entityNotInExcusion(pos, dir, r, depth = 0, exclusion = GROUND_MOVE_GRID_EXCLUSION, resolution = 8) {
         let checks = this.pointsAroundEntity(pos, dir, r, resolution);
-        //console.log("______________checks", checks);
         for (const point of checks) {
             let notExcluded = this.positionIsNotExcluded(point, exclusion, depth);
             if (!notExcluded) return false;
@@ -1746,7 +1748,6 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
     positionIsNotExcluded(pos, exclusion = GROUND_MOVE_GRID_EXCLUSION, depth) {
         const grid = new Grid3D(pos.x, pos.y, depth);
         const check = this.check(grid, exclusion.sum());
-        //console.warn("_________positionIsNotExcluded", pos, grid, check, "value", this.getValue(grid));
         return !check;
     }
     positionIsNotWall(pos, depth) {
@@ -1904,25 +1905,32 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         checks = checks.map(pos => new Grid3D(pos.x, pos.y, depth));
 
         let unpassable = checks.filter(grid => this.check(grid, HERO_GROUND_MOVE_GRID_EXCLUSION.sum()));
-        console.log("-------singleForwardPositionIsIncluded------ checks", checks, "unpassable", unpassable);
+        //console.log("-------singleForwardPositionIsIncluded------ checks", checks, "unpassable", unpassable);
         if (unpassable.length > 0) return null;
 
         let filtered = checks.filter(grid => this.check(grid, include.sum()));
-        console.log("-------singleForwardPositionIsIncluded------ checks", checks, "filtered", filtered);
+        //console.log("-------singleForwardPositionIsIncluded------ checks", checks, "filtered", filtered);
         return filtered;
     }
     singleForwardPositionIsEmpty(pos, dir, r, depth, resolution = 2) {
         let checks = this.forwardPointsFrontEntity(pos, dir, r, resolution);
         checks = checks.map(pos => new Grid3D(pos.x, pos.y, depth));
         let filtered = checks.filter(grid => this.isZero(grid));
-        console.log("-------singleForwardPositionIsEmpty------ checks", checks, "filtered", filtered);
+        //console.log("-------singleForwardPositionIsEmpty------ checks", checks, "filtered", filtered);
+        return filtered;
+    }
+    singleForwardPositionIsValue(pos, dir, r, depth, value, resolution = 2) {
+        let checks = this.forwardPointsFrontEntity(pos, dir, r, resolution);
+        checks = checks.map(pos => new Grid3D(pos.x, pos.y, depth));
+        let filtered = checks.filter(grid => this.isValue(grid, value));
+        //console.log("-------singleForwardPositionIsValue------, checks", checks, "filtered", filtered, "value", value);
         return filtered;
     }
     forwardPositionIsEmpty(pos, dir, r, depth, resolution = 2) {
         let checks = this.forwardPointsFrontEntity(pos, dir, r, resolution);
         checks = checks.map(pos => new Grid3D(pos.x, pos.y, depth));
         let filtered = checks.filter(grid => this.isZero(grid));
-        console.log("-- forwardPositionIsEmpty --", "*** checks", checks, "filtered", filtered);
+        //console.log("-- forwardPositionIsEmpty --", "*** checks", checks, "filtered", filtered);
         return checks.length === filtered.length;
     }
 }
