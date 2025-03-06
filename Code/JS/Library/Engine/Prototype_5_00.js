@@ -326,6 +326,10 @@ Math.roundFloat = function (num, decimalPlaces) {
     return Math.round(epsilonCorrectedValue) / factor;
 };
 
+Math.frac = function (num) {
+    return num - Math.trunc(num);
+}
+
 CanvasRenderingContext2D.prototype.pixelAt = function (x, y, size = 1) {
     this.fillRect(x, y, size, size);
 };
@@ -1285,6 +1289,12 @@ class FP_Vector3D extends MasterVectorClass3D {
         let x = (this.x + epsilon) * vector.x;
         let y = (this.y + epsilon) * vector.y;
         let z = (this.z + epsilon) * vector.z;
+        return new FP_Vector3D(x, y, z);
+    }
+    frac() {
+        let x = Math.frac(this.x);
+        let y = Math.frac(this.y);
+        let z = Math.frac(this.z);
         return new FP_Vector3D(x, y, z);
     }
 }

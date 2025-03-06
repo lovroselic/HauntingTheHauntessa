@@ -1939,24 +1939,12 @@ class $3D_player {
         console.info(".blockClimb, elevation", elevation, "nextPos3", nextPos3, "nextPos", nextPos);
 
         /**
-         * if elevation == 0.8 we might ascedn to depth++, EXIT climbing upward
+         * if elevation == 0.8 we might ascend to depth++, EXIT climbing upward
          */
         if (elevation >= 0.789 && (this.depth + 1 <= this.GA.maxZ)) {
-            //let upwardCheck = this.GA.forwardPositionIsEmpty(nextPos, Dir2D, this.r, this.depth + 1); 
             console.warn("before upwardCheck");
-            let upwardCheck = this.GA.forwardPositionIsEmpty(nextPos, Dir2D, this.r, this.depth + 1);
             let climbOutCheck = this.GA.singleForwardPositionIsEmpty(nextPos, Dir2D, this.r, this.depth + 1);
-            console.log("..upwardCheck", upwardCheck, "arg:", nextPos, Dir2D, this.r, this.depth + 1, "\n\n");
             console.log("...climbOutCheck", climbOutCheck, "arg:", nextPos, Dir2D, this.r, this.depth + 1);
-
-            /*if (upwardCheck) {
-                nextPos3 = nextPos3.translate(DOWN3, WebGL.INI.DELTA_HEIGHT_CLIMB);                                         //climb up the final step out of climbing zone
-                console.warn("ASCENT, elevation", elevation, "upwardCheck", upwardCheck, "nextPos3", nextPos3);
-                this.setPos(nextPos3);
-                console.error("#### ASCENT performed#####", this.pos, this.depth, this);
-                return;
-                //return this.setPos(nextPos3);
-            }*/
 
             if (climbOutCheck.length > 0) {
                 console.clear();
@@ -1969,23 +1957,16 @@ class $3D_player {
                 let nextGrid3DFP = Vector3.to_FP_Grid3D(nextPos3);
                 console.log("nextGrid3DFP", nextGrid3DFP);
                 let dir3D = nextGrid3D.direction(climbOut);
-                console.log("dir3D from nextGrid3D to climbOut", dir3D);
+                console.log("dir3D from nextGrid3D to climbOut", dir3D, "Dir2D", Dir2D);
                 let diff3D = nextGrid3DFP.absDirection(climbOut);
                 console.log("diff3D from nextGrid3DFP to climbout", diff3D);
-                let move = diff3D.mul(dir3D);
-                console.log("move", move);
+                let move = diff3D.mul(dir3D).mul(dir3D).frac(); 
+                console.log("move after", move);
                 nextGrid3DFP = nextGrid3DFP.add(move);
                 console.log("nextGrid3D after adding move", nextGrid3DFP);
                 nextPos3 = Vector3.from_grid3D(nextGrid3DFP);
-
                 console.info("########", "nextPos3", nextPos3);
-                //console.warn("ASCENT, elevation", elevation, "nextPos3", nextPos3, "climbOutCheck", climbOut, "Dir2D", Dir2D);
-
-                this.setPos(nextPos3);
-                console.error("#### ASCENT performed #####, pos", this.pos, "depth", this.depth);
-                //throw "DEBUG";
-                return;
-                //return this.setPos(nextPos3);
+                return this.setPos(nextPos3);
             }
         }
 
