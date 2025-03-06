@@ -1980,10 +1980,10 @@ class $3D_player {
         if (!check) return;
         const floorGridType = this.GA.getValue(check[0]);
         const heightNew = WallSizeToHeight(floorGridType) / 10;
-        const heightOld = this.getFloorPosition();
+        const heightOld = this.getFloorPosition() - this.depth;                                                            //normalize height between 0.0 and 1.0
 
         const deltaHeight = heightNew - heightOld;
-        const climb = Math.abs(deltaHeight) <= WebGL.INI.DELTA_HEIGHT_CLIMB + 0.01;                                        //adding E from FP accuracy
+        const climb = Math.abs(deltaHeight) <= WebGL.INI.DELTA_HEIGHT_CLIMB + 0.01;                                        //adding small Epsilon for FP accuracy
 
         console.log("....heightNew", heightNew, "heightOld", heightOld, "climb", climb);
         if (!climb) return;
