@@ -1823,7 +1823,7 @@ class $3D_player {
     setTranslation() {
         this.translation = glMatrix.mat4.create();
         const modelPosition = this.pos.clone();
-        modelPosition.set_y(this.minY + this.getFloorPosition());////////////////////////////
+        modelPosition.set_y(this.minY + this.getFloorPosition());
         glMatrix.mat4.fromTranslation(this.translation, modelPosition.array);
     }
     setRotation() {
@@ -1911,20 +1911,17 @@ class $3D_player {
 
         let Dir2D = Vector3.to_FP_Vector(dir);
         const elevation = nextPos3.y - this.floorReference();
-        //console.error("------elevation", elevation);
 
         if (elevation <= WebGL.INI.DELTA_HEIGHT_CLIMB + 0.01) {                                                     //if elevation is too big then climbing needs to be resolved first
 
             let check;
             if (WebGL.CONFIG.prevent_movement_in_exlusion_grids) {
                 check = this.GA.forwardPositionIsEmpty(nextPos, Dir2D, this.r, this.depth);
-                //console.log("..apply move check", check, "args->", nextPos, Dir2D, this.r, this.depth);
             } else {
                 check = this.GA.entityNotInWall(nextPos, Dir2D, this.r, this.depth);                                //this shouild be now obsolete
             }
             if (check) {
                 nextPos3.set_y(this.minY + this.heigth + this.depth);                                               //reset from climbing, if applicable 
-                //console.warn("_applyMove_", nextPos3);
                 return this.setPos(nextPos3);
             }
         }
@@ -1932,36 +1929,23 @@ class $3D_player {
         return this.blockClimb(nextPos3, Dir2D, nextPos, elevation);
     }
     blockClimb(nextPos3, Dir2D, nextPos, elevation) {
-        //console.info(".blockClimb, elevation", elevation, "nextPos3", nextPos3, "nextPos", nextPos);
-
         /**
          * if elevation == 0.8 we might ascend to depth++, EXIT climbing upward
          */
         if (elevation >= 0.789 && (this.depth + 1 <= this.GA.maxZ)) {
-            //console.warn("before upwardCheck");
             let climbOutCheck = this.GA.singleForwardPositionIsEmpty(nextPos, Dir2D, this.r, this.depth + 1);
-            //console.log("...climbOutCheck", climbOutCheck, "arg:", nextPos, Dir2D, this.r, this.depth + 1);
 
             if (climbOutCheck.length > 0) {
-                //console.clear();
                 const climbOut = climbOutCheck[0];
-
                 nextPos3 = nextPos3.translate(DOWN3, WebGL.INI.DELTA_HEIGHT_CLIMB);                                         //climb up the final step out of climbing zone
 
                 let nextGrid3D = Vector3.to_Grid3D(nextPos3);
-                //console.log("nextGrid3D", nextGrid3D, "climbOut", climbOut);
                 let nextGrid3DFP = Vector3.to_FP_Grid3D(nextPos3);
-                //console.log("nextGrid3DFP", nextGrid3DFP);
                 let dir3D = nextGrid3D.direction(climbOut);
-                //console.log("dir3D from nextGrid3D to climbOut", dir3D, "Dir2D", Dir2D);
                 let diff3D = nextGrid3DFP.absDirection(climbOut);
-                //console.log("diff3D from nextGrid3DFP to climbout", diff3D);
                 let move = diff3D.mul(dir3D).mul(dir3D).frac();
-                //console.log("move after", move);
                 nextGrid3DFP = nextGrid3DFP.add(move);
-                //console.log("nextGrid3D after adding move", nextGrid3DFP);
                 nextPos3 = Vector3.from_grid3D(nextGrid3DFP);
-                //console.info("########", "nextPos3", nextPos3);
                 return this.setPos(nextPos3);
             }
         }
@@ -1970,36 +1954,22 @@ class $3D_player {
         * if elevation == 0.0 we might descend to depth--, ENTER climbing downward
         */
         if (elevation <= 0.025 && (this.depth - 1 >= this.GA.minZ)) {
-            //console.clear();
-            //console.warn("before downwardCheck, nextPos3", nextPos3);
             const climbDownCheck = this.GA.singleForwardPositionIsValue(nextPos, Dir2D, this.r, this.depth - 1, MAPDICT.WALL8);
-            //console.log("...climbDownCheck", climbDownCheck, "arg:", nextPos, Dir2D, this.r, this.depth - 1, MAPDICT.WALL8);
+
             if (climbDownCheck.length > 0) {
                 const climbDown = climbDownCheck[0];
-                //console.clear();
-                //console.info("try to climbg down to ", climbDown);
-
                 nextPos3 = nextPos3.translate(UP3, 1.0 - WebGL.INI.DELTA_HEIGHT_CLIMB);                                         //climb down to the first step in the climbing zone
-                //console.log("nextPos3 after translation", nextPos3);
+
                 let nextGrid3D = Vector3.to_Grid3D(nextPos3);
-                //console.log("nextGrid3D", nextGrid3D, "climbDown", climbDown);
                 let nextGrid3DFP = Vector3.to_FP_Grid3D(nextPos3);
-                //console.log("nextGrid3DFP", nextGrid3DFP);
                 let dir3D = nextGrid3D.direction(climbDown);
-                //console.log("dir3D from nextGrid3D to climbOut", dir3D, "Dir2D", Dir2D);
                 let diff3D = nextGrid3DFP.absDirection(climbDown);
-                //console.log("diff3D from nextGrid3DFP to climbDown", diff3D);
                 let move = diff3D.mul(dir3D).mul(dir3D).frac();
-                //console.log("move after", move);
                 nextGrid3DFP = nextGrid3DFP.add(move);
-                //console.log("nextGrid3D after adding move", nextGrid3DFP);
                 nextPos3 = Vector3.from_grid3D(nextGrid3DFP);
                 nextPos3 = nextPos3.translate(DOWN3, 1.0 - 2 * WebGL.INI.DELTA_HEIGHT_CLIMB);
-                //console.info("########", "nextPos3", nextPos3);
                 return this.setPos(nextPos3);
             }
-
-            //throw "DEBUG";
         }
 
 
@@ -2007,19 +1977,15 @@ class $3D_player {
          * climbing zone
          */
         const check = this.GA.singleForwardPositionIsIncluded(nextPos, Dir2D, this.r, this.depth, STAIRCASE_GRIDS);
-        //console.warn("CHECK", check);
         if (!check || check.length === 0) return;
         const floorGridType = this.GA.getValue(check[0]);
         const heightNew = WallSizeToHeight(floorGridType) / 10;
         const heightOld = this.getFloorPosition() - this.depth;                                                            //normalize height between 0.0 and 1.0
-
         const deltaHeight = heightNew - heightOld;
         const climb = Math.abs(deltaHeight) <= WebGL.INI.DELTA_HEIGHT_CLIMB + 0.01;                                        //adding small Epsilon for FP accuracy
 
-        //console.log("....heightNew", heightNew, "heightOld", heightOld, "climb", climb);
         if (!climb) return;
-        nextPos3 = nextPos3.translate(DOWN3, deltaHeight);                                     //DOWN3 is [0,1,0] - relax
-        //if (deltaHeight > 0.012) console.info("CLIMBING", check, "deltaHeight", deltaHeight, climb, "nextPos3", nextPos3, "depth", this.depth);
+        nextPos3 = nextPos3.translate(DOWN3, deltaHeight);                                                                 //DOWN3 is [0,1,0] - relax
         return this.setPos(nextPos3);
     }
     usingStaircase(nextPos, resolution = 4) {
@@ -2789,7 +2755,7 @@ class Missile extends Drawable_object {
         if (lapsedTime < 1) throw "debug";
         let length = (lapsedTime / 1000) * this.moveSpeed;
         const pos = this.pos.translate(this.dir, length);
-        if (GA.isWall(Grid.toClass(Vector3.to_FP_Grid(pos)))) {
+        if (GA.isWall(Grid3D.toClass(Vector3.to_Grid3D(pos)))) {
             return this.move(lapsedTime / 2, GA);
         }
         this.pos = pos;
@@ -2818,6 +2784,7 @@ class Missile extends Drawable_object {
     }
     explode(IAM) {
         IAM.remove(this.id);
+        //console.warn("EXPLODE explosion at point", this.pos);
         EXPLOSION3D.add(new this.explosionType(this.pos));
         AUDIO.Explosion.volume = RAY.volume(this.distance);
         AUDIO.Explosion.play();
@@ -2848,13 +2815,15 @@ class BouncingMissile extends Missile {
     rebound(innerPoint, GA) {
         const pos2D = Vector3.to_FP_Grid(this.pos);
         const dir2D = Vector3.to_FP_Vector(this.dir);
-        const reboundDir = GRID.getReboundDir(innerPoint, pos2D, dir2D, GA);
+        const reboundDir = GRID.getReboundDir(innerPoint, pos2D, dir2D, GA, this.depth);
         const new3D_dir = Vector3.from_2D_dir(reboundDir);
+        //console.info("rebound", innerPoint, "pos2D", pos2D, "dir2D", dir2D, "reboundDir", reboundDir);
         this.dir = new3D_dir;
         this.bounceCount++;
+        //console.info("rebound complete", this.dir, this.bounceCount)
     }
     hitWall(IAM, point, GA) {
-        console.warn("hit BouncingMissile", this.power >= this.minPower, this.power, this.minPower);
+        //console.warn("hit BouncingMissile", this.power >= this.minPower, this.power, this.minPower);
         if (this.power >= this.minPower) {
             this.rebound(point, GA);
             AUDIO.Buzz.volume = RAY.volume(this.distance);
@@ -2865,14 +2834,12 @@ class BouncingMissile extends Missile {
             const mScaleMatrix = glMatrix.mat4.create();
             glMatrix.mat4.fromScaling(mScaleMatrix, this.scale);
             this.mScaleMatrix = mScaleMatrix;
-
         } else if (this.collectible) {
             this.drop(GA);
             this.explode(IAM)
         } else {
             this.explode(IAM);
         };
-
     }
     drop(GA) {
         if (!GA) GA = this.IAM.map.GA;
@@ -2884,9 +2851,9 @@ class BouncingMissile extends Missile {
             dropped.createTexture();
             dropped.dropped = true;
             ITEM3D.add(dropped);
+            //console.info("DROP missile placement, depth", this.depth, "vs pos", this.pos, this.pos.y, "dropped", dropped);
         } else console.error("orb cannot be placed at", position, "orb is lost!");
     }
-
 }
 
 class WallFeature3D {

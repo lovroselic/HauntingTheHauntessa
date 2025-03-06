@@ -924,7 +924,6 @@ class Missile3D extends IAM {
     missile_missile_collision(obj, GA) {
         const mIA = this.map[this.IA];
         const grid = Vector3.to_Grid3D(obj.pos);
-        //console.log("missile_missile_collision->grid", grid);
         const possibleMissiles = mIA.unroll(grid);
         possibleMissiles.remove(obj.id);
         if (possibleMissiles.length > 0) {

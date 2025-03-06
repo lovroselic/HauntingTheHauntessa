@@ -55,9 +55,10 @@ const DEBUG = {
         HERO.player.pos = Vector3.from_Grid(Grid.toCenter(grid), 0.5);
     },
     checkPoint() {
-        // area-1 - initial training
+        // area-1 - initial training inside the castle
         /*
-        GateKeeper wants: CerificateOfAbility,CerificateOfAbility, CerificateOfAbility ..., give GoldKey
+
+        GateKeeper wants: CerificateOfAbility,CerificateOfAbility, CerificateOfAbility ..., gives GoldKey
         MissRose wants Rose, Rose, Rose, gives ???
 
         */
@@ -208,7 +209,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.5.7",
+    VERSION: "0.6.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
