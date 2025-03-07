@@ -1740,9 +1740,6 @@ class $3D_player {
 
         const dH = this.velocity_Z * deltaTime;
         const dXY = this.jumpSpeed * deltaTime;
-
-        console.log("..", "velocity_Z", this.velocity_Z, "dH", dH, "dXY", dXY);
-        //recall, this pos is in WebGL coordinate system where Y is up,; const DOWN3 = new Vector3D(0, 1, 0);
         let nextPos3 = this.pos.translate(DOWN3, dH);        //UP
         nextPos3 = nextPos3.translate(this.dir, dXY);         //in the movement direction, this.dir is already Vector3
         console.log("...nextPos3", nextPos3, "depth", this.depth);
@@ -1750,19 +1747,26 @@ class $3D_player {
 
         if (this.descendPhase) {
             if (this.checkLanding(nextPos3)) return this.concludeJump();
-        } else if (this.ascendPhase) {
-            //check celing bump - causes falling
-            //ceiling bump is nopt possible due to jump heigh restriction
         }
 
-        //in all cases - causes falling
         //check forward wall bump
+        const forwardCheck = this.GA.forwardPositionAreIn(Vector3.to_FP_Grid(nextPos3), Vector3.to_FP_Vector(this.dir), this.r, this.depth, JUMP_MOVE);
+        if (!forwardCheck) return this.fallDown();
+
+
         //check enemy bump
 
 
         //if applicable, apply new position
         this.setPos(nextPos3);
 
+    }
+    fallDown() {
+        console.error("start falling down");
+        this.jumpSpeed = 0.0;
+        this.ascendPhase = false;
+        this.descendPhase = true;
+        this.velocity_Z = Math.min(this.velocity_Z, 0.0);
     }
     checkLanding(nextPos3) {
         const feetPos3 = nextPos3.translate(UP3, this.heigth);      //the position of soles

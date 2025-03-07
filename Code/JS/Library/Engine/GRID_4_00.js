@@ -707,10 +707,10 @@ const REVERSED_MAPDICT = reverseDictionary(MAPDICT);
 const STAIRCASE_GRIDS = [MAPDICT.WALL2, MAPDICT.WALL4, MAPDICT.WALL6, MAPDICT.WALL8];
 const GROUND_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.HOLE, MAPDICT.BLOCKWALL, ...STAIRCASE_GRIDS];
 const HERO_GROUND_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.HOLE, MAPDICT.BLOCKWALL];
-//const AIR_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.BLOCKWALL, ...STAIRCASE_GRIDS];
 const AIR_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.BLOCKWALL, MAPDICT.WALL8, MAPDICT.WALL6];
 const EXPLOADABLES = [MAPDICT.BLOCKWALL, MAPDICT.DOOR];
 const ITEM_DROP_EXCLUSION = [MAPDICT.HOLE, ...STAIRCASE_GRIDS];
+const JUMP_MOVE = [MAPDICT.EMPTY, MAPDICT.HOLE, ...STAIRCASE_GRIDS];
 
 class ArrayBasedDataStructure {
     constructor() { }
@@ -1930,9 +1930,18 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         return filtered;
     }
     forwardPositionIsEmpty(pos, dir, r, depth, resolution = 2) {
+        return this.forwardPositionIsValue(pos, dir, r, depth, 0, resolution);
+    }
+    forwardPositionIsValue(pos, dir, r, depth, value, resolution = 2) {
         let checks = this.forwardPointsFrontEntity(pos, dir, r, resolution);
         checks = checks.map(pos => new Grid3D(pos.x, pos.y, depth));
-        let filtered = checks.filter(grid => this.isZero(grid));
+        let filtered = checks.filter(grid => this.isValue(grid, value));
+        return checks.length === filtered.length;
+    }
+    forwardPositionAreIn(pos, dir, r, depth, values, resolution = 2) {
+        let checks = this.forwardPointsFrontEntity(pos, dir, r, resolution);
+        checks = checks.map(pos => new Grid3D(pos.x, pos.y, depth));
+        let filtered = checks.filter(grid => values.includes(this.getValue(grid)));
         return checks.length === filtered.length;
     }
 }
