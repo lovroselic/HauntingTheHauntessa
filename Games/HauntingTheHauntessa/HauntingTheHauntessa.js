@@ -206,11 +206,11 @@ const INI = {
     SCROLL_RANGE: 23,
     CRIPPLE_SPEED: 0.1,
     INVISIBILITY_TIME: 60,
-    JUMP_POWER: 1.2,                    // jump distance in grid units
+    JUMP_POWER: 1.5,                    // jump distance in grid units
 };
 
 const PRG = {
-    VERSION: "0.6.1",
+    VERSION: "0.6.2",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

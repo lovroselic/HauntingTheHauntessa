@@ -1719,6 +1719,10 @@ class $3D_player {
         this.jumpSpeed = jumpParams.moveSpeed;                                                      // Adjusted horizontal speed
         this.acceleration_Z = WebGL.INI.GRAVITY;
         console.log("this.velocity_Z", this.velocity_Z, "this.jumpDirection", this.dir, "this.jumpSpeed", this.jumpSpeed, "");
+        /**
+         * 0: -3.1259089681235994 
+         * 1: -5.379908968123597
+         */
     }
     updateJump(lapsedTime) {
         if (this.onGround) return;
@@ -1748,7 +1752,7 @@ class $3D_player {
             if (this.checkLanding(nextPos3)) return this.concludeJump();
         } else if (this.ascendPhase) {
             //check celing bump - causes falling
-                //ceiling bump is nopt possible due to jump heigh restriction
+            //ceiling bump is nopt possible due to jump heigh restriction
         }
 
         //in all cases - causes falling
@@ -1780,13 +1784,24 @@ class $3D_player {
             case "WALL":
                 this.resetToGround(nextPos3);
                 return true;
+            case "WALL2":
+            case "WALL4":
+            case "WALL6":
+            case "WALL8":
+                const heightOffset = parseInt(gridType[4], 10) / 10;
+                console.warn("staircase test heightOffset", heightOffset);
+                if (feetPos3.y < 0.025 + heightOffset + feetGrid3D.z) {
+                    this.resetToGround(nextPos3, heightOffset);
+                    return true;
+                }
+                return false;
             default:
                 throw new Error(`Unsupported gridType: ${gridType}`);
         }
 
     }
-    resetToGround(nextPos3) {
-        nextPos3.set_y(this.minY + this.heigth + this.depth);                           //reset to ground
+    resetToGround(nextPos3, offset = 0) {
+        nextPos3.set_y(this.minY + this.heigth + this.depth + offset);                           //reset to ground, offset required for staircase
         this.setPos(nextPos3);
     }
     floorReference() {
