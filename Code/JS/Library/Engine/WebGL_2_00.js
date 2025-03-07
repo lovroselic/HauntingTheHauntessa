@@ -1686,6 +1686,7 @@ class $3D_player {
         this.actionModes = ["attacking"];
         this.actionCallback = null;
         this.initTextureMap();
+        this.velocity_Z = 0.0;
         this.concludeJump();
     }
     concludeJump() {
@@ -1697,22 +1698,17 @@ class $3D_player {
         console.info("jump concluded, velocity", this.velocity_Z);
     }
     calculateJumpVelocity(desiredJumpDistance) {
-        // Step 1: Calculate the initial vertical velocity needed to reach maxJumpHeight
         const initialVelocity_Z = Math.sqrt(2 * Math.abs(WebGL.INI.GRAVITY) * WebGL.INI.MAX_JUMP_HEIGHT);
-
-        // Step 2: Calculate time to peak and total air time
         const timeToPeak = initialVelocity_Z / Math.abs(WebGL.INI.GRAVITY);
         const totalJumpTime = 2 * timeToPeak;
-
-        // Step 3: Adjust movement speed to ensure the desired jump distance
         const adjustedMoveSpeed = desiredJumpDistance / totalJumpTime;
-
         return { velocity_Z: initialVelocity_Z, moveSpeed: adjustedMoveSpeed };
     }
     jump(jumpPower) {
         console.info("---- starting jump ----", jumpPower);
         this.onGround = false;
         this.isJumping = true;
+        this.isFalling = false;
         this.ascendPhase = true;
         const jumpParams = this.calculateJumpVelocity(jumpPower);
         this.velocity_Z = jumpParams.velocity_Z;
@@ -1721,21 +1717,17 @@ class $3D_player {
         console.log("this.velocity_Z", this.velocity_Z, "this.jumpDirection", this.dir, "this.jumpSpeed", this.jumpSpeed, "");
         /**
          * 0: -3.1259089681235994 
-         * 1: -5.379908968123597
+         * 1: -5.4779089681235975
          */
     }
     updateJump(lapsedTime) {
         if (this.onGround) return;
-        console.log("\n.updating jump", lapsedTime);
         const deltaTime = lapsedTime / 1000;
-
-        //apply speed and gravity
         this.velocity_Z += this.acceleration_Z * deltaTime;
 
         if (this.velocity_Z < 0 && this.ascendPhase) {
             this.ascendPhase = false;
             this.descendPhase = true;
-            console.warn("DESCENT");
         }
 
         const dH = this.velocity_Z * deltaTime;
@@ -1743,7 +1735,6 @@ class $3D_player {
         let nextPos3 = this.pos.translate(DOWN3, dH);        //UP
         nextPos3 = nextPos3.translate(this.dir, dXY);         //in the movement direction, this.dir is already Vector3
         console.log("...nextPos3", nextPos3, "depth", this.depth);
-
 
         if (this.descendPhase) {
             if (this.checkLanding(nextPos3)) return this.concludeJump();
@@ -1753,16 +1744,16 @@ class $3D_player {
         const forwardCheck = this.GA.forwardPositionAreIn(Vector3.to_FP_Grid(nextPos3), Vector3.to_FP_Vector(this.dir), this.r, this.depth, JUMP_MOVE);
         if (!forwardCheck) return this.fallDown();
 
+        //check enemy bump ?? works badly
+        if (!this.isFalling) {
+            if (this.bumpEnemy(Vector3.to_FP_Grid(nextPos3), nextPos3)) return this.fallDown(); 
+        }
 
-        //check enemy bump
-
-
-        //if applicable, apply new position
         this.setPos(nextPos3);
-
     }
     fallDown() {
         console.error("start falling down");
+        this.isFalling = true;
         this.jumpSpeed = 0.0;
         this.ascendPhase = false;
         this.descendPhase = true;
@@ -1771,11 +1762,8 @@ class $3D_player {
     checkLanding(nextPos3) {
         const feetPos3 = nextPos3.translate(UP3, this.heigth);      //the position of soles
         const feetGrid3D = Vector3.to_Grid3D(feetPos3);
-
-        console.log("......checkLanding", "nextPos3", nextPos3, "feetPos3", feetPos3, "feetGrid3D", feetGrid3D, "depth", this.depth);
         const gridType = REVERSED_MAPDICT[this.GA.getValue(feetGrid3D)];
-        console.log("gridType", gridType);
-        //if (!gridType && feetGrid3D.z < 0) gridType = "WALL";
+
         switch (gridType) {
             case "HOLE":
                 return false;
@@ -1793,7 +1781,6 @@ class $3D_player {
             case "WALL6":
             case "WALL8":
                 const heightOffset = parseInt(gridType[4], 10) / 10;
-                console.warn("staircase test heightOffset", heightOffset);
                 if (feetPos3.y < 0.025 + heightOffset + feetGrid3D.z) {
                     this.resetToGround(nextPos3, heightOffset);
                     return true;
@@ -1802,7 +1789,6 @@ class $3D_player {
             default:
                 throw new Error(`Unsupported gridType: ${gridType}`);
         }
-
     }
     resetToGround(nextPos3, offset = 0) {
         nextPos3.set_y(this.minY + this.heigth + this.depth + offset);                           //reset to ground, offset required for staircase
@@ -2022,7 +2008,6 @@ class $3D_player {
     }
     _applyMove_(lapsedTime, dir) {
         let length = (lapsedTime / 1000) * this.moveSpeed;
-
         let nextPos3 = this.pos.translate(dir, length); //3D - Vector3
         let nextPos = Vector3.to_FP_Grid(nextPos3);
         let bump = this.usingStaircase(nextPos);
@@ -3823,6 +3808,7 @@ class $3D_Entity {
     }
     performAttack(victim) {
         if (!this.canAttack || this.IAM.hero.dead || this.petrified) return;
+        //if (this.IAM.hero.player.isJumping) return;
         this.canAttack = false;
         AUDIO[this.attackSound].play();
         let damage = TURN.damage(this, victim);

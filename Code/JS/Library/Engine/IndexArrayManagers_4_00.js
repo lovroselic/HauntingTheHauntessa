@@ -1047,8 +1047,9 @@ class Animated_3d_entity extends IAM {
         const GA = this.map.GA;
         this.setup();
 
-        GRID.calcDistancesBFS_A_3D(Vector3.to_Grid3D(this.hero.player.pos), map); //ground exlusion 3d on xy plane
-        GRID.calcDistancesBFS_A_3D(Vector3.to_Grid3D(this.hero.player.pos), map, true, AIR_MOVE_GRID_EXCLUSION, "airNodeMap"); //air exclusion fully 3d
+        GRID.calcDistancesBFS_A_3D(Vector3.to_Grid3D(this.hero.player.pos), map, true, AIR_MOVE_GRID_EXCLUSION); //ground exlusion 3d on xy plane
+        //GRID.calcDistancesBFS_A_3D(Vector3.to_Grid3D(this.hero.player.pos), map, true, AIR_MOVE_GRID_EXCLUSION, "airNodeMap"); //air exclusion fully 3d
+        GA["airNodeMap"] = GA["nodeMap"];
 
         for (const entity of this.POOL) {
             if (entity) {
@@ -1064,9 +1065,8 @@ class Animated_3d_entity extends IAM {
                 if (this.enemy_enemy_collision_resolution(entity, map, date)) continue;
 
                 //enemy/player collision
-                const EP_hit = this.hero.player.circleCollision(entity);
-                //if (EP_hit) console.warn("EP_hit", EP_hit, "by", entity.name, entity.id);
-                if (!this.hero.dead) {
+                if (!this.hero.dead || this.hero.player.isJumping) {
+                    const EP_hit = this.hero.player.circleCollision(entity);
                     if (EP_hit) {
                         if (entity.canAttack) {
                             entity.performAttack(this.hero);
@@ -1113,7 +1113,7 @@ class Animated_3d_entity extends IAM {
                         currentPlayerDir: Vector3.to_FP_Vector(this.hero.player.dir).ortoAlign(),
                         exactPlayerPosition: this.hero.player.pos,
                         exactPlayerDir: this.hero.player.dir,
-                        block:[]
+                        block: []
                     };
 
                     entity.dirStack = AI[entity.behaviour.strategy](entity, ARG);

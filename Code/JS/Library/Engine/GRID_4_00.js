@@ -342,13 +342,7 @@ const GRID = {
         }
     },
     calcDistancesBFS_A_3D(start, dungeon, _3D = false, mode = GROUND_MOVE_GRID_EXCLUSION, nodeMap = "nodeMap") {
-
-        //console.log("----------------------------------------------");
-        //console.log("calcDistancesBFS_A_3D", ...arguments);
-        //console.time("calcDistancesBFS_A_3D");
-
         dungeon.GA.setNodeMap(nodeMap, mode, "exclude");
-        //console.warn("dungeon.GA.nodeMap", dungeon.GA.nodeMap);
 
         let Q = new NodeQ("distance");
         dungeon.GA[nodeMap][start.x][start.y][start.z].distance = 0;
@@ -356,7 +350,6 @@ const GRID = {
         Q.queueSimple(dungeon.GA[nodeMap][start.x][start.y][start.z]);
 
         const DIR = _3D ? [...ENGINE.directions3D] : [...ENGINE.directions3D_XY_plane];
-        //console.log("DIR", DIR);
 
         while (Q.size() > 0) {
             let node = Q.dequeue();
@@ -380,9 +373,6 @@ const GRID = {
                 }
             }
         }
-        //console.timeEnd("calcDistancesBFS_A_3D");
-        //console.log("----------------------------------------------");
-
     },
     pathFromNodeMap(origin, nodeMap) {
         let path = [origin];
