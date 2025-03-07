@@ -1,0 +1,66 @@
+VARIABLES:
+    gravity = -9.8  // Gravity force applied in the Z-axis
+    isJumping = FALSE
+    isFalling = FALSE
+    ascendPhase = FALSE
+    descendPhase = FALSE
+    jumpDirection = { x: 0, y: 0 }  // Movement direction in XY plane
+    gameGrid = [...] // 3D Grid representation (1 = obstacle, 0 = free space)
+
+FUNCTION calculateJumpVelocity(desiredJumpDistance, moveSpeed, gravity):
+    jumpTime = (2 * desiredJumpDistance) / moveSpeed  // Approximate time in air
+    initialJumpVelocityZ = 0.5 * abs(gravity) * jumpTime  // Derived from kinematic equation
+    RETURN initialJumpVelocityZ
+
+FUNCTION requestJump(desiredJumpDistance):
+    IF isOnGround(HERO.position) THEN
+        jump(desiredJumpDistance)  // Normal jump
+
+FUNCTION jump(desiredJumpDistance):
+    isJumping = TRUE
+    isFalling = FALSE
+    ascendPhase = TRUE
+    descendPhase = FALSE
+    velocity.z = calculateJumpVelocity(desiredJumpDistance, moveSpeed, gravity)
+    acceleration.z = gravity
+    jumpDirection = HERO.facingDirectionXY()  // Movement in 2D plane
+
+FUNCTION updateJump(deltaTime):
+    IF isJumping THEN
+        // Apply gravity
+        velocity.z += acceleration.z * deltaTime
+        HERO.position.z += velocity.z * deltaTime
+        HERO.position.x += jumpDirection.x * moveSpeed * deltaTime
+        HERO.position.y += jumpDirection.y * moveSpeed * deltaTime
+
+        // Check for obstacles in the Z-axis (ceiling when ascending, ground when descending)
+        IF detectObstacle(HERO.position.x, HERO.position.y, HERO.position.z) THEN
+            velocity.z = 0
+            descendPhase = TRUE  // Force descent if collision happens upwards
+
+        // If descending and about to land
+        IF velocity.z < 0 THEN
+            descendPhase = TRUE
+            IF detectObstacle(HERO.position.x, HERO.position.y, HERO.position.z + velocity.z) THEN
+                isJumping = FALSE
+                isFalling = FALSE
+                velocity.z = 0
+
+        // Check for obstacles in XY plane (while airborne)
+        IF detectObstacle(HERO.position.x + jumpDirection.x, HERO.position.y + jumpDirection.y, HERO.position.z) THEN
+            jumpDirection = { x: 0, y: 0 }  // Stop forward movement, fall straight down
+
+
+FUNCTION update(deltaTime):
+    IF isOnGround(HERO.position) THEN
+        isJumping = FALSE  // Hero can jump again
+
+    updateJump(deltaTime)
+
+FUNCTION isOnGround(position):
+    RETURN detectObstacle(position.x, position.y, position.z - 1)  // Check grid below for solid ground
+
+FUNCTION detectObstacle(x, y, z):
+    IF gameGrid[x][y][z] == 1 THEN
+        RETURN TRUE  // Obstacle detected
+    RETURN FALSE  // Free space

@@ -71,6 +71,8 @@ const WebGL = {
         BLAST_DAMAGE: 100,
         HERO_HEIGHT: 0.6,
         DELTA_HEIGHT_CLIMB: 0.20, //
+        GRAVITY: -9.8,
+        MAX_JUMP_HEIGHT: 0.55,
     },
     CONFIG: {
         firstperson: true,
@@ -1684,6 +1686,108 @@ class $3D_player {
         this.actionModes = ["attacking"];
         this.actionCallback = null;
         this.initTextureMap();
+        this.concludeJump();
+    }
+    concludeJump() {
+        this.onGround = true;
+        this.isJumping = false;
+        this.isFalling = false;
+        this.ascendPhase = false;
+        this.descendPhase = false;
+        console.info("jump concluded, velocity", this.velocity_Z);
+    }
+    calculateJumpVelocity(desiredJumpDistance) {
+        // Step 1: Calculate the initial vertical velocity needed to reach maxJumpHeight
+        const initialVelocity_Z = Math.sqrt(2 * Math.abs(WebGL.INI.GRAVITY) * WebGL.INI.MAX_JUMP_HEIGHT);
+
+        // Step 2: Calculate time to peak and total air time
+        const timeToPeak = initialVelocity_Z / Math.abs(WebGL.INI.GRAVITY);
+        const totalJumpTime = 2 * timeToPeak;
+
+        // Step 3: Adjust movement speed to ensure the desired jump distance
+        const adjustedMoveSpeed = desiredJumpDistance / totalJumpTime;
+
+        return { velocity_Z: initialVelocity_Z, moveSpeed: adjustedMoveSpeed };
+    }
+    jump(jumpPower) {
+        console.info("---- starting jump ----", jumpPower);
+        this.onGround = false;
+        this.isJumping = true;
+        this.ascendPhase = true;
+        const jumpParams = this.calculateJumpVelocity(jumpPower);
+        this.velocity_Z = jumpParams.velocity_Z;
+        this.jumpSpeed = jumpParams.moveSpeed;                                                      // Adjusted horizontal speed
+        this.acceleration_Z = WebGL.INI.GRAVITY;
+        console.log("this.velocity_Z", this.velocity_Z, "this.jumpDirection", this.dir, "this.jumpSpeed", this.jumpSpeed, "");
+    }
+    updateJump(lapsedTime) {
+        if (this.onGround) return;
+        console.log("\n.updating jump", lapsedTime);
+        const deltaTime = lapsedTime / 1000;
+
+        //apply speed and gravity
+        this.velocity_Z += this.acceleration_Z * deltaTime;
+
+        if (this.velocity_Z < 0 && this.ascendPhase) {
+            this.ascendPhase = false;
+            this.descendPhase = true;
+            console.warn("DESCENT");
+        }
+
+        const dH = this.velocity_Z * deltaTime;
+        const dXY = this.jumpSpeed * deltaTime;
+
+        console.log("..", "velocity_Z", this.velocity_Z, "dH", dH, "dXY", dXY);
+        //recall, this pos is in WebGL coordinate system where Y is up,; const DOWN3 = new Vector3D(0, 1, 0);
+        let nextPos3 = this.pos.translate(DOWN3, dH);        //UP
+        nextPos3 = nextPos3.translate(this.dir, dXY);         //in the movement direction, this.dir is already Vector3
+        console.log("...nextPos3", nextPos3, "depth", this.depth);
+
+
+        if (this.descendPhase) {
+            if (this.checkLanding(nextPos3)) return this.concludeJump();
+        } else if (this.ascendPhase) {
+            //check celing bump - causes falling
+                //ceiling bump is nopt possible due to jump heigh restriction
+        }
+
+        //in all cases - causes falling
+        //check forward wall bump
+        //check enemy bump
+
+
+        //if applicable, apply new position
+        this.setPos(nextPos3);
+
+    }
+    checkLanding(nextPos3) {
+        const feetPos3 = nextPos3.translate(UP3, this.heigth);      //the position of soles
+        const feetGrid3D = Vector3.to_Grid3D(feetPos3);
+
+        console.log("......checkLanding", "nextPos3", nextPos3, "feetPos3", feetPos3, "feetGrid3D", feetGrid3D, "depth", this.depth);
+        const gridType = REVERSED_MAPDICT[this.GA.getValue(feetGrid3D)];
+        console.log("gridType", gridType);
+        //if (!gridType && feetGrid3D.z < 0) gridType = "WALL";
+        switch (gridType) {
+            case "HOLE":
+                return false;
+            case "EMPTY":
+                if (feetPos3.y < 0.025) {
+                    this.resetToGround(nextPos3);
+                    return true;
+                }
+                return false;
+            case "WALL":
+                this.resetToGround(nextPos3);
+                return true;
+            default:
+                throw new Error(`Unsupported gridType: ${gridType}`);
+        }
+
+    }
+    resetToGround(nextPos3) {
+        nextPos3.set_y(this.minY + this.heigth + this.depth);                           //reset to ground
+        this.setPos(nextPos3);
     }
     floorReference() {
         return this.minY + this.heigth + this.depth;
@@ -1833,6 +1937,7 @@ class $3D_player {
     }
     setSpeed(speed) {
         this.moveSpeed = speed;
+        this.jumpSpeed = speed;
     }
     setPos(position) {
         this.pos = position;
@@ -2030,6 +2135,7 @@ class $3D_player {
     }
     respond(lapsedTime) {
         if (this.actionModes.includes(this.mode)) return;               //action must not be interrupted
+        if (this.isJumping || this.isFalling) return;                   //powerless
 
         const map = ENGINE.GAME.keymap;
         if (map[ENGINE.KEY.map.Q]) {
@@ -2060,6 +2166,13 @@ class $3D_player {
             this.dir = Vector3.from_2D_dir(Vector3.to_FP_Vector(this.dir).ortoAlign(), this.dir.y);
             return;
         }
+    }
+    requestJump(jumpPower) {
+        if (!this.onGround) return;
+        console.info(" ******************************************");
+        console.log("requestJump accepted", "power", jumpPower);
+        console.info(" ******************************************");
+        this.jump(jumpPower);
     }
     draw(gl) {
         //console.warn("mode:", this.mode, "animation index", this.actor.animationIndex);
@@ -2784,7 +2897,6 @@ class Missile extends Drawable_object {
     }
     explode(IAM) {
         IAM.remove(this.id);
-        //console.warn("EXPLODE explosion at point", this.pos);
         EXPLOSION3D.add(new this.explosionType(this.pos));
         AUDIO.Explosion.volume = RAY.volume(this.distance);
         AUDIO.Explosion.play();
@@ -2817,13 +2929,10 @@ class BouncingMissile extends Missile {
         const dir2D = Vector3.to_FP_Vector(this.dir);
         const reboundDir = GRID.getReboundDir(innerPoint, pos2D, dir2D, GA, this.depth);
         const new3D_dir = Vector3.from_2D_dir(reboundDir);
-        //console.info("rebound", innerPoint, "pos2D", pos2D, "dir2D", dir2D, "reboundDir", reboundDir);
         this.dir = new3D_dir;
         this.bounceCount++;
-        //console.info("rebound complete", this.dir, this.bounceCount)
     }
     hitWall(IAM, point, GA) {
-        //console.warn("hit BouncingMissile", this.power >= this.minPower, this.power, this.minPower);
         if (this.power >= this.minPower) {
             this.rebound(point, GA);
             AUDIO.Buzz.volume = RAY.volume(this.distance);
@@ -2851,7 +2960,6 @@ class BouncingMissile extends Missile {
             dropped.createTexture();
             dropped.dropped = true;
             ITEM3D.add(dropped);
-            //console.info("DROP missile placement, depth", this.depth, "vs pos", this.pos, this.pos.y, "dropped", dropped);
         } else console.error("orb cannot be placed at", position, "orb is lost!");
     }
 }

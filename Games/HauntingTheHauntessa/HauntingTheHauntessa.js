@@ -206,10 +206,11 @@ const INI = {
     SCROLL_RANGE: 23,
     CRIPPLE_SPEED: 0.1,
     INVISIBILITY_TIME: 60,
+    JUMP_POWER: 1.2,                    // jump distance in grid units
 };
 
 const PRG = {
-    VERSION: "0.6.0",
+    VERSION: "0.6.1",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -518,7 +519,7 @@ const HERO = {
         this.attackExpGoal = INI.INI_BASE_EXP_FONT;
         this.defenseExpGoal = INI.INI_BASE_EXP_FONT;
         this.magicExpGoal = INI.INI_BASE_EXP_FONT;
-
+        this.jumpPower = INI.JUMP_POWER;
 
         this.revive();
         this.visible();
@@ -532,6 +533,9 @@ const HERO = {
         for (const P of propsToSave) {
             this.attributesForSaveGame.push(`HERO.${P}`);
         }
+    },
+    requestJump() {
+        this.player.requestJump(this.jumpPower);
     },
     revive() {
         this.dead = false;
@@ -1052,6 +1056,7 @@ const GAME = {
     run(lapsedTime) {
         if (ENGINE.GAME.stopAnimation) return;
         const date = Date.now();
+        HERO.player.updateJump(lapsedTime);
         HERO.player.animateAction();
         VANISHING3D.manage(lapsedTime);
         MISSILE3D.manage(lapsedTime);
@@ -1320,6 +1325,11 @@ const GAME = {
             HERO.player.attack();
             ENGINE.GAME.keymap[ENGINE.KEY.map.space] = false; //NO repeat
         }
+        if (map[ENGINE.KEY.map.shift]) {
+            HERO.requestJump();
+            ENGINE.GAME.keymap[ENGINE.KEY.map.shift] = false;
+        }
+
         return;
     },
     FPS(lapsedTime) {

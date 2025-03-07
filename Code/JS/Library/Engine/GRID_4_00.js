@@ -417,7 +417,7 @@ const GRID = {
     getReboundDir(innerPoint, outerPoint, dir, GA, depth) {
         const inner = Grid3D.addDepth(innerPoint, depth);
         const outer = Grid3D.addDepth(outerPoint, depth);
-        
+
         if (GA.isWall(outer)) {
             console.error("Missile position in wall. This should never have happened! But it is handled.", outer, GA.isWall(outer));
             console.info("innerPoint", innerPoint, "outerPoint", outerPoint);
@@ -692,6 +692,17 @@ const MAPDICT = {
 const WallSizeToHeight = (value) => {
     return (Math.log2(value) - 7) * 2;
 };
+
+const reverseDictionary = (dict) => {
+    const reversed = {};
+    for (const [key, value] of Object.entries(dict)) {
+        reversed[value] = key; // Last occurrence wins since object keys are overwritten
+    }
+    return reversed;
+}
+
+const REVERSED_MAPDICT = reverseDictionary(MAPDICT);
+//console.table(REVERSED_MAPDICT);
 
 const STAIRCASE_GRIDS = [MAPDICT.WALL2, MAPDICT.WALL4, MAPDICT.WALL6, MAPDICT.WALL8];
 const GROUND_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.HOLE, MAPDICT.BLOCKWALL, ...STAIRCASE_GRIDS];
