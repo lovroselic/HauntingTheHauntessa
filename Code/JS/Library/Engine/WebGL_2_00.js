@@ -1740,16 +1740,38 @@ class $3D_player {
             if (this.checkLanding(nextPos3)) return this.concludeJump();
         }
 
-        //check forward wall bump
-        const forwardCheck = this.GA.forwardPositionAreIn(Vector3.to_FP_Grid(nextPos3), Vector3.to_FP_Vector(this.dir), this.r, this.depth, JUMP_MOVE);
-        if (!forwardCheck) return this.fallDown();
+        //check upward wall bump
 
-        //check enemy bump ?? works badly
+
+        //check forward wall bump
         if (!this.isFalling) {
-            if (this.bumpEnemy(Vector3.to_FP_Grid(nextPos3), nextPos3)) return this.fallDown(); 
+            if (this.ascendPhase) {
+                if (this.upwardCheck(nextPos3)) return this.fallDown();
+            }
+
+            const forwardCheck = this.GA.forwardPositionAreIn(Vector3.to_FP_Grid(nextPos3), Vector3.to_FP_Vector(this.dir), this.r, this.depth, JUMP_MOVE);
+            if (!forwardCheck) return this.fallDown();
+
+            //check enemy bump 
+            if (this.bumpEnemy(Vector3.to_FP_Grid(nextPos3), nextPos3)) return this.fallDown();
         }
 
         this.setPos(nextPos3);
+    }
+    upwardCheck(nextPos3) {
+        if (nextPos3.y > this.GA.maxZ + 1 - 0.05) return true;
+        const headGrid3D = Vector3.to_Grid3D(nextPos3);
+        const gridType = REVERSED_MAPDICT[this.GA.getValue(headGrid3D)];
+        console.log("gridType", gridType, "headGrid3D", headGrid3D);
+        switch (gridType) {
+            case "WALL":
+                return true;
+            case "EMPTY":
+            case "HOLE":
+                return false;
+            default:
+                throw new Error(`Unsupported gridType for upwardCheck: ${gridType}`);
+        }
     }
     fallDown() {
         console.error("start falling down");
@@ -1763,9 +1785,17 @@ class $3D_player {
         const feetPos3 = nextPos3.translate(UP3, this.heigth);      //the position of soles
         const feetGrid3D = Vector3.to_Grid3D(feetPos3);
         const gridType = REVERSED_MAPDICT[this.GA.getValue(feetGrid3D)];
+        console.log("feetPos3", feetPos3);
 
         switch (gridType) {
             case "HOLE":
+                console.warn("HOLE", feetGrid3D);     //debug
+                if (feetPos3.y < -0.9) {
+                    console.error("DONE FALLING into HOLE");
+                    this.velocity_Z = -9999999.99;
+                    this.setPos(nextPos3);
+                    return true;
+                }
                 return false;
             case "EMPTY":
                 if (feetPos3.y < 0.025) {
@@ -1787,7 +1817,7 @@ class $3D_player {
                 }
                 return false;
             default:
-                throw new Error(`Unsupported gridType: ${gridType}`);
+                throw new Error(`Unsupported gridType fro checkLanding: ${gridType}`);
         }
     }
     resetToGround(nextPos3, offset = 0) {
