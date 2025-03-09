@@ -214,7 +214,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.6.6",
+    VERSION: "0.6.7",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -516,6 +516,12 @@ class Scroll {
                 break;
             case "BoostWeapon":
                 Scroll.boost("attack");
+                break;
+            case "BoostArmor":
+                Scroll.boost("defense");
+                break;
+            case "MagicBoost":
+                Scroll.boost("magic");
                 break;
             default:
                 console.error("ERROR scroll action", this);
