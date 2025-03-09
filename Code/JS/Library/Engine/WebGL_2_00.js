@@ -1759,10 +1759,12 @@ class $3D_player {
         this.setPos(nextPos3);
     }
     upwardCheck(nextPos3) {
-        if (nextPos3.y > this.GA.maxZ + 1 - 0.05) return true;
-        const headGrid3D = Vector3.to_Grid3D(nextPos3);
+        if (nextPos3.y > this.GA.maxZ + 1 - 0.15) return true;
+        const headPosAdjusted = nextPos3.translate(DOWN3, 0.15);
+        const headGrid3D = Vector3.to_Grid3D(headPosAdjusted);
         const gridType = REVERSED_MAPDICT[this.GA.getValue(headGrid3D)];
-        console.log("gridType", gridType, "headGrid3D", headGrid3D);
+        //console.warn("gridType", gridType, "headGrid3D", headGrid3D, "CHECK headPosAdjusted", headPosAdjusted);
+
         switch (gridType) {
             case "WALL":
                 return true;

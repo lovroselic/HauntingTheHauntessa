@@ -1117,10 +1117,9 @@ class Animated_3d_entity extends IAM {
                     };
 
                     entity.dirStack = AI[entity.behaviour.strategy](entity, ARG);
-                    if (IndexArrayManagers.VERBOSE) console.info(`${entity.name} ${entity.id} dirStack`, entity.dirStack, "dir", entity.moveState.dir, "strategy", entity.behaviour.strategy);
+                    //if (IndexArrayManagers.VERBOSE) console.info(`${entity.name} ${entity.id} dirStack`, entity.dirStack, "dir", entity.moveState.dir, "strategy", entity.behaviour.strategy);
                 }
                 entity.makeMove();
-                //console.log("................................................");
             }
         }
     }

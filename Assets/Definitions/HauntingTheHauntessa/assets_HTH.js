@@ -792,7 +792,6 @@ LoadSprites = [
     { srcName: "Lairs/Lair81.jpg", name: "Lair81" },
     { srcName: "Lairs/Lair82.jpg", name: "Lair82" },
 
-
     //doors
     { srcName: "Doors/DungeonDoor_Blue2.png", name: "DungeonDoor_Blue" },
     { srcName: "Doors/DungeonDoor_Closed2.png", name: "DungeonDoor_Closed" },
@@ -817,6 +816,12 @@ LoadSprites = [
     { srcName: "Scrolls/SCR_Explode2.png", name: "SCR_Explode" },
     { srcName: "Scrolls/SCR_HalfLife2.png", name: "SCR_HalfLife" },
     { srcName: "Scrolls/SCR_Invisibility2.png", name: "SCR_Invisibility" },
+    { srcName: "Scrolls/SCR_Luck3.png", name: "SCR_Luck" },
+    { srcName: "Scrolls/SCR_Flight.png", name: "SCR_Flight" },
+    { srcName: "Scrolls/SCR_MagicSupremacy.png", name: "SCR_MagicSupremacy" },
+    { srcName: "Scrolls/SCR_DestroyOrbs.png", name: "SCR_DestroyOrbs" },
+    { srcName: "Scrolls/SCR_Death.png", name: "SCR_Death" },
+    { srcName: "Scrolls/SCR_BoostWeapon2.png", name: "SCR_BoostWeapon" },
 
     //gold, valuables
     { srcName: "Items/BlueGem.png", name: "BlueGem" },
@@ -830,6 +835,8 @@ LoadSprites = [
 
     //status
     { srcName: "Status/Invisible2.png", name: "Invisible" },
+    { srcName: "Status/Clover2.png", name: "Clover" },
+    { srcName: "Status/Wings.png", name: "Wings" },
 
     //health items
     { srcName: "Items/BeerHealth.png", name: "BeerHealth" },

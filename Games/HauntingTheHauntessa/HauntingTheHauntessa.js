@@ -203,14 +203,18 @@ const INI = {
     },
     HEALTH_INC: 8,
     MANA_INC: 7,
-    SCROLL_RANGE: 23,
+    SCROLL_RANGE: 30,
     CRIPPLE_SPEED: 0.1,
     INVISIBILITY_TIME: 60,
-    JUMP_POWER: 1.5,                    // jump distance in grid units
+    JUMP_POWER: 1.5,                    // jump distance in grid units 1.5 default
+    MAX_JUMP_POWER: 3.5,
+    LUCKY_TIME: 59,
+    FLIGHT_TIME: 59,
+    BOOST_TIME: 59,
 };
 
 const PRG = {
-    VERSION: "0.6.5",
+    VERSION: "0.6.6",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -484,11 +488,49 @@ class Scroll {
                     TITLE.keys();
                 }
                 break;
+            case "Luck":
+                HERO.lucky();
+                const luckyTimerId = "luckyTimer";
+                if (ENGINE.TIMERS.exists(luckyTimerId)) {
+                    T = ENGINE.TIMERS.access(luckyTimerId);
+                    T.extend(INI.LUCKY_TIME);
+                } else {
+                    T = new CountDown(luckyTimerId, INI.LUCKY_TIME, HERO.cancelLuck);
+                    let status = new Status("Luck", "Clover");
+                    HERO.inventory.status.push(status);
+                    TITLE.keys();
+                }
+                break;
+            case "Flight":
+                HERO.flightOn();
+                const flightTimerId = "flightTimer";
+                if (ENGINE.TIMERS.exists(flightTimerId)) {
+                    T = ENGINE.TIMERS.access(flightTimerId);
+                    T.extend(INI.FLIGHT_TIME);
+                } else {
+                    T = new CountDown(flightTimerId, INI.FLIGHT_TIME, HERO.cancelFlight);
+                    let status = new Status("Flight", "Wings");
+                    HERO.inventory.status.push(status);
+                    TITLE.keys();
+                }
+                break;
+            case "BoostWeapon":
+                Scroll.boost("attack");
+                break;
             default:
                 console.error("ERROR scroll action", this);
                 break;
         }
         AUDIO.UseScroll.play();
+    }
+    static boost(type) {
+        let T;
+        HERO.incStat(type);
+        const TimerId = `${type}_timer`;
+        if (ENGINE.TIMERS.exists(TimerId)) {
+            T = ENGINE.TIMERS.access(TimerId);
+            T.reset();
+        } else T = new CountDown(TimerId, INI.BOOST_TIME, HERO.resetStat.bind(null, type));
     }
 }
 
@@ -505,22 +547,16 @@ const HERO = {
         this.magic = 5;
         this.attack = 5;
         this.defense = 0;
-        this.luck = 0;
-
         this.ressurection = false;
-
-        this.reference_defense = this.defense;
-        this.reference_attack = this.attack;
-        this.reference_magic = this.magic;
-
         this.attackExp = 0;
         this.defenseExp = 0;
         this.magicExp = 0;
         this.attackExpGoal = INI.INI_BASE_EXP_FONT;
         this.defenseExpGoal = INI.INI_BASE_EXP_FONT;
         this.magicExpGoal = INI.INI_BASE_EXP_FONT;
-        this.jumpPower = INI.JUMP_POWER;
 
+
+        this.reset();
         this.revive();
         this.visible();
 
@@ -533,6 +569,14 @@ const HERO = {
         for (const P of propsToSave) {
             this.attributesForSaveGame.push(`HERO.${P}`);
         }
+    },
+    reset() {
+        this.unlucky();
+        this.flightOff();
+        this.reference_defense = this.defense;
+        this.reference_attack = this.attack;
+        this.reference_magic = this.magic;
+
     },
     requestJump() {
         this.player.requestJump(this.jumpPower);
@@ -806,6 +850,37 @@ const HERO = {
             }
         }
     },
+    lucky() {
+        HERO.luck++;
+    },
+    unlucky() {
+        HERO.luck = 0;
+    },
+    cancelLuck() {
+        HERO.removeStatus("Luck");
+        HERO.unlucky();
+        TITLE.keys();
+    },
+    flightOn() {
+        this.jumpPower = INI.MAX_JUMP_POWER;
+    },
+    flightOff() {
+        this.jumpPower = INI.JUMP_POWER;
+    },
+    cancelFlight() {
+        HERO.removeStatus("Flight");
+        HERO.flightOff();
+        TITLE.keys();
+    },
+    incStat(which) {
+        let factor = RND(1, 3) / 10 + 1;
+        HERO[which] = Math.ceil(HERO[which] * factor);
+        TITLE.skills();
+    },
+    resetStat(which) {
+        HERO[which] = HERO[`reference_${which}`];
+        TITLE.skills();
+    },
 };
 
 const GAME = {
@@ -867,6 +942,7 @@ const GAME = {
         if (GAME.fromCheckpoint) {
             if (DEBUG.VERBOSE) console.log(`%c ... Loading part 1...`, GAME.CSS);
             GAME.load();
+            HERO.reset();
         }
         //end load
 
@@ -893,7 +969,7 @@ const GAME = {
         GAME.drawFirstFrame(GAME.level);
         LAIR.start();
         ENGINE.GAME.resume();
-        HERO.speak("I should say something new.");
+        HERO.speak("Haunting or hunting, Hauntessa will kneel, soon she will feel my very sharp heel.");
     },
     setCameraView() {
         WebGL.hero.topCamera = new $3D_Camera(WebGL.hero.player, DIR_UP, 0.9, new Vector3(0, -0.5, 0), 1, 70);
@@ -1807,16 +1883,20 @@ const TITLE = {
 
         const fs = 20;
         CTX.font = `200 ${fs}px CPU`
-        CTX.fillStyle = "#DDD";
+        //CTX.fillStyle = "#DDD";
         CTX.textAlign = "center";
         CTX.shadowColor = "#666";
         CTX.shadowOffsetX = 0;
         CTX.shadowOffsetY = 0;
         CTX.shadowBlur = 0;
 
+        HERO.magic > HERO.reference_magic ? CTX.fillStyle = "#0E0" : CTX.fillStyle = "#DDD";
         CTX.fillText(`${HERO.magic.toString().padStart(2, "0")}`, x + dx, TITLE.stack.magic);
+        HERO.attack > HERO.reference_attack ? CTX.fillStyle = "#0E0" : CTX.fillStyle = "#DDD";
         CTX.fillText(`${HERO.attack.toString().padStart(2, "0")}`, x + dx, TITLE.stack.skills);
+        HERO.defense > HERO.reference_defense ? CTX.fillStyle = "#0E0" : CTX.fillStyle = "#DDD";
         CTX.fillText(`${HERO.defense.toString().padStart(2, "0")}`, 3 * x, TITLE.stack.skills);
+        CTX.fillStyle = "#DDD";
         CTX.fillText(`${HERO.mana} / ${HERO.maxMana}`, 3 * x, TITLE.stack.magic);
     },
     time() {

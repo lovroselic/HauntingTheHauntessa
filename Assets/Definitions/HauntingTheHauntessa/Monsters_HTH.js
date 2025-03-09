@@ -24,7 +24,8 @@ for (let [index, key] of KEY_TYPES.entries()) {
 }
 
 const SCROLL_TYPE = [
-    "Invisibility", "Cripple", "HalfLife", "Explode",
+    "Invisibility", "Cripple", "HalfLife", "Explode", "Luck", "Flight", "BoostWeapon",
+
 ];
 
 const SHRINE_TYPE = {
