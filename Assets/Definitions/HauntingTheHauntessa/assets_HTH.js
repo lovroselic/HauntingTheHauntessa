@@ -823,7 +823,8 @@ LoadSprites = [
     { srcName: "Scrolls/SCR_Death.png", name: "SCR_Death" },
     { srcName: "Scrolls/SCR_BoostWeapon2.png", name: "SCR_BoostWeapon" },
     { srcName: "Scrolls/SCR_BoostArmor2.png", name: "SCR_BoostArmor" },
-    { srcName: "Scrolls/SCR_MagicBoost.png", name: "SCR_MagicBoost" },
+    { srcName: "Scrolls/SCR_MagicBoost2.png", name: "SCR_MagicBoost" },
+    { srcName: "Scrolls/SCR_DestroyWeapon2.png", name: "SCR_DestroyWeapon" },
 
     //gold, valuables
     { srcName: "Items/BlueGem.png", name: "BlueGem" },
