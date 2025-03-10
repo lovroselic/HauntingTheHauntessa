@@ -214,7 +214,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.6.8",
+    VERSION: "0.6.9",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -469,6 +469,18 @@ class Scroll {
                 ];
                 HERO.speak(drainTexts.chooseRandom());
                 break;
+            case "DrainMana":
+                for (let enemy of ENTITY3D.POOL) {
+                    if (enemy === null) continue;
+                    if (enemy.final_boss) continue;
+                    if (enemy.distance === null) continue;
+                    if (enemy.distance <= INI.SCROLL_RANGE) {
+                        enemy.drainMana();
+                    }
+                }
+                HERO.mana = 0;
+                TITLE.skills();
+                break;
             case "DestroyOrbs":
                 for (let missile of MISSILE3D.POOL) {
                     if (!missile.friendly) missile.explode(MISSILE3D);
@@ -530,6 +542,16 @@ class Scroll {
                     if (enemy.distance <= INI.SCROLL_RANGE) {
                         const factor = RND(25, 50) / 100;
                         enemy.attack -= Math.ceil(enemy.attack * factor);
+                    }
+                }
+                break;
+            case "DestroyArmor":
+                for (let enemy of ENTITY3D.POOL) {
+                    if (enemy === null) continue;
+                    if (enemy.distance === null) continue;
+                    if (enemy.distance <= INI.SCROLL_RANGE) {
+                        let factor = RND(25, 50) / 100;
+                        enemy.defense -= Math.ceil(enemy.defense * factor);
                     }
                 }
                 break;

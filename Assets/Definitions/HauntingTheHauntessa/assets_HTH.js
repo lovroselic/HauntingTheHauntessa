@@ -646,6 +646,7 @@ LoadAudio = [
     { srcName: "CatchFireball.mp3", name: "CatchFireball" },
     { srcName: "PrincessScream.mp3", name: "PrincessScream" },
     { srcName: "Eating.mp3", name: "Eating" },
+    { srcName: "Land.mp3", name: "Land" },
 
     //monstersounds
     { srcName: "MonsterDeath.mp3", name: "MonsterDeath" },
@@ -825,6 +826,8 @@ LoadSprites = [
     { srcName: "Scrolls/SCR_BoostArmor2.png", name: "SCR_BoostArmor" },
     { srcName: "Scrolls/SCR_MagicBoost2.png", name: "SCR_MagicBoost" },
     { srcName: "Scrolls/SCR_DestroyWeapon2.png", name: "SCR_DestroyWeapon" },
+    { srcName: "Scrolls/SCR_DestroyArmor2.png", name: "SCR_DestroyArmor" },
+    { srcName: "Scrolls/SCR_DrainMana2.png", name: "SCR_DrainMana" },
 
     //gold, valuables
     { srcName: "Items/BlueGem.png", name: "BlueGem" },

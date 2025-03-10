@@ -25,7 +25,7 @@ for (let [index, key] of KEY_TYPES.entries()) {
 
 const SCROLL_TYPE = [
     "Invisibility", "Cripple", "HalfLife", "Explode", "Luck", "Flight", "BoostWeapon", "BoostArmor", "MagicBoost",
-    "DestroyWeapon",
+    "DestroyWeapon","DestroyArmor","DrainMana",
 
 ];
 
@@ -722,7 +722,7 @@ const MONSTER_TYPE = {
         health: 10,
         attack: 8,
         magic: 5,
-        defense: 0,
+        defense: 3,
         xp: 99,
         //
         caster: true,

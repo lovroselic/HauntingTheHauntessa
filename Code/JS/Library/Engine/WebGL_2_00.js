@@ -1660,7 +1660,7 @@ class $3D_Camera {
 }
 
 class $3D_player {
-    constructor(position, dir, map = null, type = null, size = 0.5) {
+    constructor(position, dir, map = null, type = null, size = 0.5, parent = HERO) {
         this.heigth = WebGL.INI.HERO_HEIGHT;
         this.camera = null;
         this.model = null;
@@ -1671,6 +1671,7 @@ class $3D_player {
         this.setFov();
         this.rotationResolution = 64;
         this.setSpeed(4.0);
+        this.parent = parent;
         this.type = type;
         if (this.type) {
             for (const prop in type) {
@@ -1695,7 +1696,16 @@ class $3D_player {
         this.isFalling = false;
         this.ascendPhase = false;
         this.descendPhase = false;
-        console.info("jump concluded, velocity", this.velocity_Z);
+        //console.info("jump concluded, velocity", this.velocity_Z);
+        const damage = this.fallingDamage();
+        console.log("calculate damage", damage);
+        if (damage > 0) {
+            this.parent.applyDamage(damage);
+            AUDIO.Land.play();
+            const landExplosionPosition = this.pos.translate(UP3, this.heigth - 0.1);
+            //console.log("current pos, ", this.pos, "land exp pos", landExplosionPosition, "");
+            EXPLOSION3D.add(new LandExplosion(landExplosionPosition)); //GreenMetalExplosion, //LandExplosion
+        }
     }
     calculateJumpVelocity(desiredJumpDistance) {
         const initialVelocity_Z = Math.sqrt(2 * Math.abs(WebGL.INI.GRAVITY) * WebGL.INI.MAX_JUMP_HEIGHT);
@@ -1705,7 +1715,7 @@ class $3D_player {
         return { velocity_Z: initialVelocity_Z, moveSpeed: adjustedMoveSpeed };
     }
     jump(jumpPower) {
-        console.info("---- starting jump ----", jumpPower);
+        //console.info("---- starting jump ----", jumpPower);
         this.onGround = false;
         this.isJumping = true;
         this.isFalling = false;
@@ -1714,11 +1724,11 @@ class $3D_player {
         this.velocity_Z = jumpParams.velocity_Z;
         this.jumpSpeed = jumpParams.moveSpeed;                                                      // Adjusted horizontal speed
         this.acceleration_Z = WebGL.INI.GRAVITY;
-        console.log("this.velocity_Z", this.velocity_Z, "this.jumpDirection", this.dir, "this.jumpSpeed", this.jumpSpeed, "");
-        /**
-         * 0: -3.1259089681235994 
-         * 1: -5.4779089681235975
-         */
+        //console.log("this.velocity_Z", this.velocity_Z, "this.jumpDirection", this.dir, "this.jumpSpeed", this.jumpSpeed, "");
+    }
+    fallingDamage() {
+        let velocity = Math.max(0, Math.abs(this.velocity_Z) - 5.0);
+        return Math.round(velocity ** 2 * 7.5);
     }
     updateJump(lapsedTime) {
         if (this.onGround) return;
@@ -1734,16 +1744,12 @@ class $3D_player {
         const dXY = this.jumpSpeed * deltaTime;
         let nextPos3 = this.pos.translate(DOWN3, dH);        //UP
         nextPos3 = nextPos3.translate(this.dir, dXY);         //in the movement direction, this.dir is already Vector3
-        console.log("...nextPos3", nextPos3, "depth", this.depth);
+        //console.log("...nextPos3", nextPos3, "depth", this.depth);
 
         if (this.descendPhase) {
             if (this.checkLanding(nextPos3)) return this.concludeJump();
         }
 
-        //check upward wall bump
-
-
-        //check forward wall bump
         if (!this.isFalling) {
             if (this.ascendPhase) {
                 if (this.upwardCheck(nextPos3)) return this.fallDown();
@@ -1752,7 +1758,6 @@ class $3D_player {
             const forwardCheck = this.GA.forwardPositionAreIn(Vector3.to_FP_Grid(nextPos3), Vector3.to_FP_Vector(this.dir), this.r, this.depth, JUMP_MOVE);
             if (!forwardCheck) return this.fallDown();
 
-            //check enemy bump 
             if (this.bumpEnemy(Vector3.to_FP_Grid(nextPos3), nextPos3)) return this.fallDown();
         }
 
@@ -1763,7 +1768,6 @@ class $3D_player {
         const headPosAdjusted = nextPos3.translate(DOWN3, 0.15);
         const headGrid3D = Vector3.to_Grid3D(headPosAdjusted);
         const gridType = REVERSED_MAPDICT[this.GA.getValue(headGrid3D)];
-        //console.warn("gridType", gridType, "headGrid3D", headGrid3D, "CHECK headPosAdjusted", headPosAdjusted);
 
         switch (gridType) {
             case "WALL":
@@ -1776,7 +1780,6 @@ class $3D_player {
         }
     }
     fallDown() {
-        console.error("start falling down");
         this.isFalling = true;
         this.jumpSpeed = 0.0;
         this.ascendPhase = false;
@@ -1784,16 +1787,14 @@ class $3D_player {
         this.velocity_Z = Math.min(this.velocity_Z, 0.0);
     }
     checkLanding(nextPos3) {
-        const feetPos3 = nextPos3.translate(UP3, this.heigth);      //the position of soles
+        const feetPos3 = nextPos3.translate(UP3, this.heigth);                                      //the position of soles
         const feetGrid3D = Vector3.to_Grid3D(feetPos3);
         const gridType = REVERSED_MAPDICT[this.GA.getValue(feetGrid3D)];
-        console.log("feetPos3", feetPos3);
 
         switch (gridType) {
             case "HOLE":
-                console.warn("HOLE", feetGrid3D);     //debug
                 if (feetPos3.y < -0.9) {
-                    console.error("DONE FALLING into HOLE");
+                    //console.error("DONE FALLING into HOLE");
                     this.velocity_Z = -9999999.99;
                     this.setPos(nextPos3);
                     return true;
@@ -2205,9 +2206,6 @@ class $3D_player {
     }
     requestJump(jumpPower) {
         if (!this.onGround) return;
-        console.info(" ******************************************");
-        console.log("requestJump accepted", "power", jumpPower);
-        console.info(" ******************************************");
         this.jump(jumpPower);
     }
     draw(gl) {
@@ -3665,6 +3663,20 @@ class SmokeExplosion extends ParticleEmmiter {
     }
 }
 
+class LandExplosion extends ParticleEmmiter {
+    constructor(position, duration = WebGL.INI.EXPLOSION_DURATION_MS, texture = TEXTURE.ScrapedMetal, number = WebGL.INI.EXPLOSION_N_PARTICLES) {
+        super(position, texture);
+        this.number = number;
+        this.duration = duration;
+        this.build(number);
+        this.lightColor = colorStringToVector("#AAAAAA");
+        this.scale = 0.05;
+        this.gravity = new Float32Array([0, 0.0025, 0]);
+        this.velocity = 0.025;
+        this.rounded = 1;
+    }
+}
+
 class SpawnCloud extends ParticleEmmiter {
     constructor(position, duration = 1.5 * WebGL.INI.EXPLOSION_DURATION_MS, texture = TEXTURE.ScrapedMetal, number = 1.5 * WebGL.INI.EXPLOSION_N_PARTICLES) {
         super(position, texture);
@@ -3840,7 +3852,6 @@ class $3D_Entity {
     }
     performAttack(victim) {
         if (!this.canAttack || this.IAM.hero.dead || this.petrified) return;
-        //if (this.IAM.hero.player.isJumping) return;
         this.canAttack = false;
         AUDIO[this.attackSound].play();
         let damage = TURN.damage(this, victim);
