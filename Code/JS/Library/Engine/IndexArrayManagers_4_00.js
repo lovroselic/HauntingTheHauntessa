@@ -901,7 +901,10 @@ class Missile3D extends IAM {
                 obj.move(lapsedTime, GA);
 
                 const pos = Vector3.to_FP_Grid(obj.pos);                                                                    //check wall hit
-                let [wallHit, point] = GA.entityInWallPoint(pos, Vector3.to_FP_Vector(obj.dir), obj.r, obj.depth);
+                //point is returned in different formats!! Vector3 or FP_Grid respectively
+                let [wallHit, point] = obj.bounce3D ? GA.sphereInWallPoint(obj.pos, obj.dir, obj.r) : GA.entityInWallPoint(pos, Vector3.to_FP_Vector(obj.dir), obj.r, obj.depth);
+                //let [wallHit, point] = GA.spherePointInWall(obj.pos, obj.dir, obj.r);
+                if (obj.pos.y < 0 || obj.pos.y > this.map.maxZ) obj.explode(this);                                         //3D ball in ceiling or floor                                    
                 //console.log("wallHit", wallHit, point);
 
                 if (wallHit) {
@@ -924,6 +927,7 @@ class Missile3D extends IAM {
     missile_missile_collision(obj, GA) {
         const mIA = this.map[this.IA];
         const grid = Vector3.to_Grid3D(obj.pos);
+        //console.warn("obj.pos", obj.pos);
         const possibleMissiles = mIA.unroll(grid);
         possibleMissiles.remove(obj.id);
         if (possibleMissiles.length > 0) {

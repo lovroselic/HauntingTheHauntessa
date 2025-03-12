@@ -84,11 +84,12 @@ const AI = {
         console.log(".....grid", grid);
         let goto = nodeMap[grid.x][grid.y][grid.z]?.goto || NOWAY;
         if (this.VERBOSE) console.info(`...${enemy.name}-${enemy.id} hunting -> goto:`, goto, "strategy", enemy.behaviour.strategy);
-        if (GRID.same(goto, NOWAY) && (this.setting === "3D" || this.setting === "3D3")) return this.hunt_FP(enemy, exactPosition);
+        if (GRID.same3D(goto, NOWAY3) && (this.setting === "3D" || this.setting === "3D3")) return this.hunt_FP(enemy, exactPosition);
         return [goto];
     },
+    /** this is not refactored - still 2D */
     hunt_FP(enemy, exactPosition) {
-        if (this.VERBOSE) console.log("..hunt_FP: exactPosition", exactPosition, "distance:", enemy.distance);
+        if (this.VERBOSE) console.error("..hunt_FP: exactPosition", exactPosition, "distance:", enemy.distance);
         if (!enemy.distance) {
             if (this.VERBOSE) console.warn("..terminating hunt - null distance");
             return this.immobile(enemy);
@@ -229,13 +230,13 @@ const AI = {
         }
     },
     keepTheDistance(enemy, ARG) {
-        console.info("############# KEEPING THE DISTANCE ##############");
+        //console.info("############# KEEPING THE DISTANCE ##############");
         const map = enemy.parent.map;
         const grid = this.getPosition(enemy);
         const playerGrid = Grid3D.toClass(ARG.playerPosition);
-        console.log("..grid", grid, "playerGrid", playerGrid);
+        //console.log("..grid", grid, "playerGrid", playerGrid);
         const directions = map.GA.getDirectionsFromNodeMap(grid, map.GA.nodeMap, enemy.fly);
-        console.log("directions", directions);
+        //console.log("directions", directions);
         let possible = [];
         let max = [];
         let curMax = 0;

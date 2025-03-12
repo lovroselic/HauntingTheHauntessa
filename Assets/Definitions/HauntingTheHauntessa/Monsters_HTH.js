@@ -25,7 +25,7 @@ for (let [index, key] of KEY_TYPES.entries()) {
 
 const SCROLL_TYPE = [
     "Invisibility", "Cripple", "HalfLife", "Explode", "Luck", "Flight", "BoostWeapon", "BoostArmor", "MagicBoost",
-    "DestroyWeapon","DestroyArmor","DrainMana",
+    "DestroyWeapon", "DestroyArmor", "DrainMana",
 
 ];
 
@@ -519,6 +519,20 @@ const DOOR_TYPE = {
 };
 
 const COMMON_ITEM_TYPE = {
+    BlueBounceball: {
+        name: "BlueBounceball",
+        category: 'missile',
+        element: "BALL",
+        scale: 1.5 / 2 ** 4,
+        texture: "BluBallTexture",
+        moveSpeed: 8.0,
+        bounce3D: true,
+        lightColor: "#1155AA",
+        material: MATERIAL.blueFluence,
+        explosionType: BlueExplosion,
+        construct: Blue3D_Bouncer,
+        collectible: false,
+    },
     Bounceball: {
         name: "Bounceball",
         category: 'missile',
@@ -718,7 +732,7 @@ const MONSTER_TYPE = {
         midHeight: 0.5,
         deathType: "BloodExplosion",
         //
-        mana: 1,
+        mana: 3,
         health: 10,
         attack: 8,
         magic: 5,
@@ -735,6 +749,35 @@ const MONSTER_TYPE = {
         material: MATERIAL.standardShine,
         missile: Missile,
         missileType: COMMON_ITEM_TYPE.RedFireball,
+    },
+
+    Dragon: {
+        name: "Dragon",
+        model: "Dragon",
+        scale: 1.9 / 2 ** 4,
+        rotateToNorth: Math.PI,
+        midHeight: 0.25,
+        fly: 0.25,
+        deathType: "BloodExplosion",
+        //
+        mana: 33,
+        health: 10,
+        attack: 20,
+        magic: 10,
+        defense: 5,
+        xp: 99,
+        //
+        caster: true,
+        directMagicDamage: true,
+        attackSound: "MonsterAttack1",
+        hurtSound: "MonsterHurt",
+        behaviourArguments: [20, ["wanderer"], 15, ["shoot"]],
+        moveSpeed: 1.0,
+        shootDistance: 15,
+        stalkDistance: 8,
+        material: MATERIAL.gold,
+        missile: Blue3D_Bouncer,
+        missileType: COMMON_ITEM_TYPE.BlueBounceball,
     },
 
 };

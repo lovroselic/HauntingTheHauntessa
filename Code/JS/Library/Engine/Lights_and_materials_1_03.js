@@ -20,6 +20,7 @@ const LIGHT_COLORS = {
     veryDarkYellow: new Float32Array([0.50, 0.50, 0.0]),
     white: new Float32Array([1.0, 1.0, 1.0]),
     blue: new Float32Array([0.0, 0.0, 1.0]),
+    lightBlue: new Float32Array([0.0, 0.0, 0.5]),
     fullRed: new Float32Array([1.0, 0.0, 0.0]),
     gold: new Float32Array([0.831372, 0.686274, 0.21568627]),
     silver: new Float32Array([0.752941176, 0.752941176, 0.752941176]),
@@ -43,7 +44,7 @@ const LIGHT_COLORS = {
 /** Materials */
 
 const MATERIAL = {
-    VERSION: "1.02",
+    VERSION: "1.03",
     wall: new Material(LIGHT_COLORS.gray, LIGHT_COLORS.lightgray, LIGHT_COLORS.darkgray, 0.8),
     marble: new Material(LIGHT_COLORS.gray, LIGHT_COLORS.lightgray, LIGHT_COLORS.darkgray, 0.85),
     standard: new Material(LIGHT_COLORS.standard, LIGHT_COLORS.standard, LIGHT_COLORS.standard, 0.125),
@@ -56,6 +57,7 @@ const MATERIAL = {
     fire: new Material(LIGHT_COLORS.fire, LIGHT_COLORS.fire, LIGHT_COLORS.fire, 0.5),
     greenShine: new Material(LIGHT_COLORS.green, LIGHT_COLORS.green, LIGHT_COLORS.green, 0.90),
     greenFluence: new Material(LIGHT_COLORS.green, LIGHT_COLORS.lightGreen, LIGHT_COLORS.green, 0.05),
+    blueFluence: new Material(LIGHT_COLORS.lightBlue, LIGHT_COLORS.lightBlue, LIGHT_COLORS.lightBlue, 0.05),
     redFluence: new Material(LIGHT_COLORS.fullRed, LIGHT_COLORS.lightRed, LIGHT_COLORS.fullRed, 0.05),
     emeraldShine: new Material(LIGHT_COLORS.emerald, LIGHT_COLORS.emerald, LIGHT_COLORS.emerald, 0.5),
     whiteShine: new Material(LIGHT_COLORS.white, LIGHT_COLORS.white, LIGHT_COLORS.white, 0.99),

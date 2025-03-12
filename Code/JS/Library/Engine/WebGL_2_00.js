@@ -2862,6 +2862,7 @@ class Missile extends Drawable_object {
         this.dir = direction;
         this.magic = magic;
         this.distance = null;
+        this.bounce3D = false;
         for (const prop in type) {
             this[prop] = type[prop];
         }
@@ -2899,10 +2900,19 @@ class Missile extends Drawable_object {
         this.depth = Math.floor(this.pos.y);
     }
     move(lapsedTime, GA) {
-        if (lapsedTime < 1) throw "debug";
         let length = (lapsedTime / 1000) * this.moveSpeed;
         const pos = this.pos.translate(this.dir, length);
+
+        if (lapsedTime < 0.01) {
+            console.error(this.id, "movement in WALL not resolved, missile move from", this.pos, "to", pos, "lapsedTime", lapsedTime);
+            this.explode(this.IAM);
+            //throw "debug";
+        }
+
+        if (this.pos.y < 0 || this.pos.y > this.IAM.map.maxZ) return this.explode(this.IAM);                                // movement out of bounds
+
         if (GA.isWall(Grid3D.toClass(Vector3.to_Grid3D(pos)))) {
+            //const grid = Grid3D.toClass(Vector3.to_Grid3D(pos));
             return this.move(lapsedTime / 2, GA);
         }
         this.pos = pos;
@@ -2948,7 +2958,6 @@ class BouncingMissile extends Missile {
         this.maxPower = this.power;
         this.minPower = Math.max(1, Math.floor(this.power * 0.2));
         this.originalScale = new Float32Array(this.scale);
-        //this.explosionType = explosionType;
         this.friendly = friendly;
         this.collectibleType = collectibleType;
     }
@@ -2995,6 +3004,22 @@ class BouncingMissile extends Missile {
             dropped.dropped = true;
             ITEM3D.add(dropped);
         } else console.error("orb cannot be placed at", position, "orb is lost!");
+    }
+}
+
+class Blue3D_Bouncer extends BouncingMissile {
+    constructor(position, direction, type, magic, explosionType = null, friendly = false, collectibleType = null) {
+        super(position, direction, type, magic);
+        this.name = "Blue3D_Bouncer";
+    }
+    rebound(inner, GA) {
+        console.error("rebound Blue3D_Bouncer on ", inner);
+        console.warn("this.pos", this.pos, "this.dir", this.dir);
+        let faceNormal = Vector3.getFaceNormal(this.pos.sub(inner));
+        let reflectedDir = this.dir.reflect(faceNormal);
+        this.dir = reflectedDir;
+        console.log("reflectedDir", reflectedDir);
+        this.bounceCount++;
     }
 }
 
@@ -3621,6 +3646,20 @@ class GreenMetalExplosion extends ParticleEmmiter {
     }
 }
 
+class BlueExplosion extends ParticleEmmiter {
+    constructor(position, duration = WebGL.INI.POISON_DURATION_MS, texture = TEXTURE.BluBallTexture, number = WebGL.INI.EXPLOSION_N_PARTICLES) {
+        super(position, texture);
+        this.number = number;
+        this.duration = duration;
+        this.build(number);
+        this.lightColor = LIGHT_COLORS.lightBlue;
+        this.scale = 0.2;
+        this.gravity = new Float32Array([0, 0.005, -0.005]);
+        this.velocity = 0.01;
+        this.rounded = 1;
+    }
+}
+
 class BloodExplosion extends ParticleEmmiter {
     constructor(position, duration = WebGL.INI.BLOOD_DURATION_MS, texture = TEXTURE.RedLiquid, number = WebGL.INI.EXPLOSION_N_PARTICLES) {
         super(position, texture);
@@ -3882,6 +3921,7 @@ class $3D_Entity {
         let gridPosition = Grid3D.toClass(this.moveState.grid);
         //console.info("...setDistanceFromNodeMap", this.name, this.id, this.moveState.pos, gridPosition);
         //console.info(".......this", this);
+        //console.info(".......nodemap", nodemap);
         if (!nodemap[gridPosition.x][gridPosition.y][gridPosition.z]) {
             if (this.fly) {
                 this.distance = null;
@@ -4082,7 +4122,8 @@ class $3D_Entity {
         this.mana = 0;
     }
     shoot(GA) {
-        const dir = Vector3.from_2D_dir(this.moveState.lookDir);
+        const dir = this.missileType.bounce3D ? this.moveState.real_3D_direction_to_player : Vector3.from_2D_dir(this.moveState.lookDir);
+        console.warn("shoot dir", dir, "this.moveState.real_3D_direction_to_player", this.moveState.real_3D_direction_to_player, "Vector3.from_2D_dir(this.moveState.lookDir)", Vector3.from_2D_dir(this.moveState.lookDir));
         let position = this.moveState.pos.translate(dir, this.r);
         position.add_y(0.5);
         const manaCost = this.missile.calcMana(this.magic);
@@ -4090,7 +4131,8 @@ class $3D_Entity {
 
         console.log("3D_Entity->shoot position", position, "manaCost", manaCost, "missile", missile);
 
-        if (GA.isWall(Grid.toClass(Vector3.to_FP_Grid(missile.pos)))) return;               //missile could be created in wall
+        //if (GA.isWall(Grid.toClass(Vector3.to_FP_Grid(missile.pos)))) return;               //missile could be created in wall
+        if (GA.isWall(Vector3.to_Grid3D(missile.pos))) return;                                //missile could be created in wall
 
         this.canShoot = false;
         this.caster = false;
@@ -4104,23 +4146,6 @@ class $3D_Entity {
     }
     setGuardPosition(grid) {
         this.guardPosition = grid;
-    }
-    petrify() {
-        if (this.fly) {
-            const minY = this.model.meshes[0].primitives[0].positions.min[1] * this.scale[1];
-            this.moveState.pos.set_y(minY);
-            this.fly = 0;
-        }
-        this.moveSpeed = 0;
-        this.canAttack = false;
-        this.magic = 0;
-        this.petrified = true;
-        this.defense = 0;
-        this.health = 1;
-        this.inventory = null;
-        this.xp = 1;
-        this.changeTexture(TEXTURE.Marble);
-        this.material = MATERIAL.marble;
     }
     changeTexture(texture) {
         const gl = WebGL.CTX;

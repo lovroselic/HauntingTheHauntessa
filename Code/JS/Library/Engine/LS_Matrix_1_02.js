@@ -121,6 +121,14 @@ class Vector3 {
         let z = this.z - vector.z;
         return new Vector3(x, y, z);
     }
+    direction(vector) {
+        let x = vector.x - this.x;
+        let y = vector.y - this.y;
+        let z = vector.z - this.z;
+        let out = glMatrix.vec3.create();
+        glMatrix.vec3.normalize(out, [x, y, z]);
+        return Vector3.from_array(out);
+    }
     dot(vector) {
         return this.x * vector.x + this.y * vector.y + this.z * vector.z;
     }
@@ -132,6 +140,28 @@ class Vector3 {
     }
     EuclidianDistance(Vector3) {
         return glMatrix.vec3.distance(this.array, Vector3.array);
+    }
+    normalize(vector3) {
+        let out = glMatrix.vec3.create();
+        glMatrix.vec3.normalize(out, vector3);
+        return Vector3.from_array(out);
+    }
+    static getFaceNormal(vector3) {
+        const arr = vector3.array.map(v => Math.abs(v));
+        const maxIndex = arr.indexOf(Math.max(...arr));
+        const normal = [0, 0, 0];
+        normal[maxIndex] = Math.sign(vector3.array[maxIndex]);
+        return Vector3.from_array(normal);
+    }
+
+    reflect(surfaceNormal) {
+        //reflectedVector=incomingVector−2⋅(incomingVector⋅surfaceNormal)⋅surfaceNormal
+        let reflectedVector = glMatrix.vec3.create();
+        let p2 = glMatrix.vec3.create();
+        glMatrix.vec3.scale(p2, surfaceNormal.array, -2 * glMatrix.vec3.dot(this.array, surfaceNormal.array));
+        //console.log("p2", p2, "surfaceNormal.array", surfaceNormal.array, "F", -2 * glMatrix.vec3.dot(this.array, surfaceNormal.array));
+        glMatrix.vec3.add(reflectedVector, this.array, p2);
+        return Vector3.from_array(reflectedVector); 
     }
 }
 

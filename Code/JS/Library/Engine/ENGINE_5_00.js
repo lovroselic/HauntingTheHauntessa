@@ -3525,7 +3525,10 @@ class $3D_MoveState {
         this.lookDir = direction;
         const angle = -FP_Vector.toClass(UP).radAngleBetweenVectors(direction);
         this.lookAngle = angle;
-        //console.log("..this.lookDir", this.lookDir, "this.lookAngle", this.lookAngle);
+        //console.log("this.pos.", this.pos.constructor.name, "lookAt", lookAt.constructor.name);
+        //this.real_3D_direction_to_player = this.pos.direction(lookAt.translate(DOWN3, 0.5));
+        this.real_3D_direction_to_player = this.pos.translate(DOWN3, 0.5).direction(lookAt);
+        //console.log("..this.lookDir", this.lookDir, "this.lookAngle", this.lookAngle, "this.real_3D_direction_to_player", this.real_3D_direction_to_player);
     }
     next(dir) {
         if (!dir) throw new Error(`Direction ${dir} not defined error. Stopping execution!`);
@@ -3546,7 +3549,6 @@ class $3D_MoveState {
         this.setGrid();
     }
     setDirectionVector() {
-        //this.directionVector = Vector3.from_2D_dir(this.dir);
         this.directionVector = Vector3.from_3D_dir(this.dir);
     }
     setRotation() {

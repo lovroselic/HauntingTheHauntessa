@@ -164,6 +164,9 @@ const GRID = {
     same(grid1, grid2) {
         return (grid1 && grid2 && grid1.x === grid2.x && grid1.y === grid2.y);
     },
+    same3D(grid1, grid2) {
+        return (grid1 && grid2 && grid1.x === grid2.x && grid1.y === grid2.y && grid1.z === grid2.z);
+    },
     isGridIn(grid, gridArray) {
         return gridArray.findIndex(g => g.x === grid.x && g.y === grid.y);
     },
@@ -712,7 +715,7 @@ class ArrayBasedDataStructure {
         return this.indexToGrid(index);
     }
     assertBounds(grid) {
-        if (this.isOutOfBounds(grid)) throw new Error(`Grid is out of bounds: ${grid}`);
+        if (this.isOutOfBounds(grid)) throw new Error(`Grid is out of bounds: ${JSON.stringify(grid)}`);
     }
     gridToIndex(grid) {
         this.assertBounds(grid);
@@ -1391,13 +1394,11 @@ class GridArray extends Classes([ArrayBasedDataStructure, GA_Dimension_Agnostic_
         }
         return [false, null];
     }
-
     gridsAroundEntity(pos, dir, r, resolution = 4) {
         let checks = this.pointsAroundEntity(pos, dir, r, resolution);
         checks = checks.filter(this.positionIsNotWall, this);
         return checks.map(Grid.toClass);
     }
-
 
     /**
     * this is 2D Grid specific
@@ -1633,7 +1634,7 @@ class ArrayBasedDataStructure3D {
         return this.isOutOfBounds(grid);
     }
     assertBounds(grid) {
-        if (this.isOutOfBounds(grid)) throw new Error(`Grid is out of bounds: ${grid}`);
+        if (this.isOutOfBounds(grid)) throw new Error(`Grid is out of bounds: ${JSON.stringify(grid)}`);
     }
     isOut(grid) {
         /** is out of inner bounds */
@@ -1826,6 +1827,76 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
             let isWall = !this.positionIsNotWall(point, depth);
             if (isWall) return [true, point];
         }
+        return [false, null];
+    }
+    spherePointsAroundCenter(pos, dir, r) {
+        //console.info("spherePointsAroundCenter", pos, dir, r);
+        pos = pos.array;
+        dir = dir.array;
+        const points = [];
+
+        // First point directly ahead
+        const forwardPoint = glMatrix.vec3.create();
+        glMatrix.vec3.scaleAndAdd(forwardPoint, pos, dir, r);
+        //console.log("forwardPoint", forwardPoint);
+        points.push(forwardPoint);
+
+        // Find orthogonal vectors to create a hemisphere around the direction vector
+        let up = [0, 1, 0];
+        let orthogonalVec1 = glMatrix.vec3.create();
+        glMatrix.vec3.cross(orthogonalVec1, dir, up);
+
+        // Handle the case when direction is parallel to 'up' vector
+        if (glMatrix.vec3.length(orthogonalVec1) < 0.001) {
+            up = [1, 0, 0];
+            glMatrix.vec3.cross(orthogonalVec1, dir, up);
+        }
+
+        glMatrix.vec3.normalize(orthogonalVec1, orthogonalVec1);
+
+        // Second orthogonal vector
+        const orthogonalVec2 = glMatrix.vec3.create();
+        glMatrix.vec3.cross(orthogonalVec2, dir, orthogonalVec1);
+        glMatrix.vec3.normalize(orthogonalVec2, orthogonalVec2);
+
+
+        const angles = [Math.PI / 2, Math.PI / 4];                                                  // Choose angles defining hemisphere coverage 
+
+        // Generate hemisphere points
+        for (let angle of angles) {
+            const cosAngle = Math.cos(angle);
+            const sinAngle = Math.sin(angle);
+
+            // Points around the circle at each angle
+            for (let rad of [0, Math.PI / 2, Math.PI, (3 * Math.PI) / 2]) {
+
+                const sideVec = glMatrix.vec3.create();                                             // Rotate around 'dir' vector
+                glMatrix.vec3.scale(sideVec, orthogonalVec1, Math.cos(rad));                        // sideVec = orthogonalVec1 * cos(t) + orthogonalVec2 * sin(t)
+                glMatrix.vec3.scaleAndAdd(sideVec, sideVec, orthogonalVec2, Math.sin(rad));
+
+                const hemispherePoint = glMatrix.vec3.create();                                     // hemispherePoint = pos + dir * radius * cos(angle) + sideVec * radius * sin(angle)
+                const forwardComponent = glMatrix.vec3.create();
+                glMatrix.vec3.scale(forwardComponent, dir, r * cosAngle);
+                glMatrix.vec3.scale(sideVec, sideVec, r * sinAngle);
+                glMatrix.vec3.add(hemispherePoint, pos, forwardComponent);
+                glMatrix.vec3.add(hemispherePoint, hemispherePoint, sideVec);
+                points.push(hemispherePoint);
+            }
+        }
+
+        return points;
+    }
+    sphereInWallPoint(pos, dir, r) {
+        //console.warn("sphereInWallPoint", pos, dir, r);
+        let checks = this.spherePointsAroundCenter(pos, dir, r);
+        //console.log("checks", checks);
+        for (const point of checks) {
+            const grid3d = new Grid3D(point[0], point[2], point[1]);
+            const check = this.check(grid3d, AIR_MOVE_GRID_EXCLUSION.sum());            //if >0  thenm hit, if false the in was OOB
+            //console.log("..point", point, grid3d, check, this.getValue(grid3d), REVERSED_MAPDICT[this.getValue(grid3d)]);
+            if (check === false || check > 0) return [true, Vector3.from_array(point)];
+        }
+        //throw "DEBUG";
         return [false, null];
     }
     getDirectionsFromNodeMap(grid, nodeMap, fly, leaveOut = null, allowCross = false) {

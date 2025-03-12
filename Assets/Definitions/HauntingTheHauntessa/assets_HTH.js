@@ -586,6 +586,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/FireballTexture2.jpg", name: "FireballTexture" },
     { srcName: "ObjectTextures/ScrollTexture.jpg", name: "ScrollTexture" },
     { srcName: "ObjectTextures/RedFireballTexture.jpg", name: "RedFireballTexture" },
+    { srcName: "ObjectTextures/BluBallTexture.jpg", name: "BluBallTexture" },
 
     //health items
     { srcName: "ObjectTextures/CanTexture.jpg", name: "CanTexture" },
@@ -683,7 +684,7 @@ LoadObjects = [
 LoadModels = [
     'ThePrincess.gltf',
     "Chicken.gltf", "Pig.gltf",
-    "Bat.gltf", "MissGalaxy.gltf", "Spider.gltf",
+    "Bat.gltf", "MissGalaxy.gltf", "Spider.gltf", "Dragon.gltf"
 ];
 
 LoadSprites = [
