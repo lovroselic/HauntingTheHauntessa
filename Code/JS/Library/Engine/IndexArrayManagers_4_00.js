@@ -1056,7 +1056,7 @@ class Animated_3d_entity extends IAM {
         //console.log("heroRefGrid", heroRefGrid, "this.hero.player.pos", this.hero.player.pos.translate(UP3, this.hero.player.heigth));
 
         //GRID.calcDistancesBFS_A_3D(Vector3.to_Grid3D(this.hero.player.pos), map, false, GROUND_MOVE_GRID_EXCLUSION); //ground exlusion 3d on xy plane, this needs to be separate because of hunting on exact position!
-        GRID.calcDistancesBFS_A_3D(heroRefGrid, map, false, HERO_GROUND_MOVE_GRID_EXCLUSION); //ground exlusion 3d on xy plane, this needs to be separate because of hunting on exact position!
+        GRID.calcDistancesBFS_A_3D(heroRefGrid, map, false, GROUND_MOVE_GRID_EXCLUSION); //ground exlusion 3d on xy plane, this needs to be separate because of hunting on exact position!
         GRID.calcDistancesBFS_A_3D(heroRefGrid, map, true, AIR_MOVE_GRID_EXCLUSION, "airNodeMap"); //air exclusion fully 3d
         //console.log('GA["airNodeMap"]', GA["airNodeMap"]);
         //GA["airNodeMap"] = GA["nodeMap"];

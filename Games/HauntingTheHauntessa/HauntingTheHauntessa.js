@@ -214,7 +214,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.7.3",
+    VERSION: "0.7.4",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -726,7 +726,12 @@ const HERO = {
         AUDIO.PrincessScream.play();
         GAME.lives--;
         TITLE.lives();
-        HERO.player.pos.set_y(0.1 + HERO.player.depth);
+
+        const heroRefGrid = Vector3.to_Grid3D(HERO.player.pos.translate(UP3, HERO.player.heigth));
+        const gridValue = REVERSED_MAPDICT[HERO.player.map.GA.getValue(heroRefGrid)];
+        const heightOffset = parseInt(gridValue[4], 10) / 10;
+
+        HERO.player.pos.set_y(0.1 + HERO.player.depth + heightOffset);
         WebGL.GAME.setFirstPerson();
         if (GAME.lives <= 0) return HERO.finalDeath();
 

@@ -2561,6 +2561,18 @@ class Drawable_object {
         translate = translate.add(Vector3.from_array(heightTranslate));
         this.translate = translate.array;
     }
+    set_TRS_matrices() {
+        if (this.rotation === null) this.rotation = Math.radians(RND(0, 359));;
+        let identity = glMatrix.mat4.create();
+        glMatrix.mat4.rotate(identity, identity, this.rotation, [0, 1, 0]);
+        this.mRotationMatrix = identity;
+        const mScaleMatrix = glMatrix.mat4.create();
+        glMatrix.mat4.fromScaling(mScaleMatrix, this.scale);
+        this.mScaleMatrix = mScaleMatrix;
+        const mTranslationMatrix = glMatrix.mat4.create();
+        glMatrix.mat4.fromTranslation(mTranslationMatrix, this.translate);
+        this.mTranslationMatrix = mTranslationMatrix;
+    }
 }
 
 class $POV extends Drawable_object {
@@ -2801,6 +2813,7 @@ class FloorItem3D extends Drawable_object {
         this.interactive = true;
         this.active = true;
         this.dropped = false;
+        this.rotation = rotation;
 
         for (const prop in type) {
             this[prop] = type[prop];
@@ -2808,36 +2821,11 @@ class FloorItem3D extends Drawable_object {
 
         this.setElementAndIndices();
         this.setInitialTranslationMatrix();
-
-        /*
-        let heightTranslate = new Float32Array([0, 0, 0]);
-
-       
-        if (this.glueToFloor) {
-            let max = ELEMENT.getMinY(this.element);
-            heightTranslate[1] -= max * this.scale[1];
-            heightTranslate[1] += WebGL.INI.ITEM_UP;
-        }
-
-        let translate = new Vector3(this.grid.x, this.grid.z, this.grid.y);
-        translate = translate.add(Vector3.from_array(heightTranslate));
-        this.translate = translate.array;
-        */
+        this.set_TRS_matrices();
 
         if (this.category === "gold") {
             this.value = RND(this.minVal, this.maxVal);
         }
-
-        if (rotation === null) rotation = Math.radians(RND(0, 359));;
-        let identity = glMatrix.mat4.create();
-        glMatrix.mat4.rotate(identity, identity, rotation, [0, 1, 0]);
-        this.mRotationMatrix = identity;
-        const mScaleMatrix = glMatrix.mat4.create();
-        glMatrix.mat4.fromScaling(mScaleMatrix, this.scale);
-        this.mScaleMatrix = mScaleMatrix;
-        const mTranslationMatrix = glMatrix.mat4.create();
-        glMatrix.mat4.fromTranslation(mTranslationMatrix, this.translate);
-        this.mTranslationMatrix = mTranslationMatrix;
     }
     setValue(value) {
         this.value = value;
@@ -3019,12 +3007,9 @@ class BouncingMissile extends Missile {
         console.info("dropping missile", this);
         if (!GA) GA = this.IAM.map.GA;
 
-        //const placementPosition = GA.findSolidFloor(this.pos);
         const placementPosition = GA.findSolidFloor(this.pos);
-        //console.log("placementPosition before ", placementPosition);
+        if (!placementPosition) return;                                                 //console.error("orb cannot be placed at", placementPosition, "orb is lost!");
         placementPosition.adjuctCirclePos(this.r)
-        //console.log("placementPosition after", placementPosition, "this.r", this.r);
-        if (!placementPosition) console.error("orb cannot be placed at", placementPosition, "orb is lost!");
 
         const dropped = new FloorItem3D(placementPosition, this.collectibleType);
         dropped.createTexture();
