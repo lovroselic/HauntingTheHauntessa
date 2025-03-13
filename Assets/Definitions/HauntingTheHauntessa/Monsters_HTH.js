@@ -555,7 +555,7 @@ const COMMON_ITEM_TYPE = {
         texture: "RedFireballTexture",
         moveSpeed: 8.0,
         bounce3D: false,
-        lightColor: "#AA2200",
+        lightColor: "#CC0000",
         material: MATERIAL.redShine,
         explosionType: ParticleExplosion,
         construct: Missile,

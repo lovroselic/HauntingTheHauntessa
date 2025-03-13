@@ -214,7 +214,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.7.5",
+    VERSION: "0.8.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -641,7 +641,7 @@ const HERO = {
         if (!HERO.canShoot) return;
 
         let cost = BouncingMissile.calcMana(HERO.reference_magic);
-        console.log("cost", cost, "HERO.reference_magic", HERO.reference_magic);
+        //console.log("cost", cost, "HERO.reference_magic", HERO.reference_magic);
         if (DEBUG.FREE_MAGIC) cost = 0;
         if (cost > HERO.mana) return AUDIO.MagicFail.play();
 
@@ -653,7 +653,7 @@ const HERO = {
         HERO.canShoot = false;
         const position = HERO.player.pos.translate(HERO.player.dir, HERO.player.r);
         const missile = new BouncingMissile(position, HERO.player.dir, COMMON_ITEM_TYPE.Orb, HERO.magic, ParticleExplosion, true, INTERACTION_OBJECT.Orb);
-        console.warn("hero shoots", missile);
+        //console.warn("hero shoots", missile);
         MISSILE3D.add(missile);
         setTimeout(() => (HERO.canShoot = true), INI.HERO_SHOOT_TIMEOUT);
         return;

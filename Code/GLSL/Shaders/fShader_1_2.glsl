@@ -80,6 +80,7 @@ bool isOccluded(vec2 position2D);
 bool Raycast3D(vec3 rayOrigin3D, vec3 rayTarget3D, float illumination);
 bool isOccluded(vec3 position3D);
 vec3 worldToNormalizedTexCoord3D(vec3 position3D);
+bool isOmniDirectional(vec3 dir);
 
 vec3 debugDisplay(bool occluded);
 vec3 illuminationDisplay(float illumination);
@@ -131,17 +132,14 @@ vec3 CalcLight(vec3 lightPosition, vec3 FragPos, vec3 viewDir, vec3 normal, vec3
 
     //is fragment illuminated by ligh source? omni dir is (128,128,128) so if x < 128.0 it is not omni dir, but directional!
     illumination = 1.0f;
-    if (inner == 0 && lightDirection.x < 128.0f) {
-        illumination = dot(lightDir, directionOfOrthoLight);               // considers only directional lights
-        if (illumination < 0.0f) {
-            illumination = 0.0f;
-        }
+    if (inner == 0 && !isOmniDirectional(lightDirection)) {
+        illumination = max(dot(lightDir, normalize(lightDirection)), 0.0f);
     }
 
     vec3 ambientLight = vec3(0.0f);
 
-    /* behind the light source, we don't care about occlusion! */
-    if (inner == 0 && dot(-lightDir, directionOfOrthoLight) > ILLUMINATION_CUTOFF) {
+    /* behind the light source, we don't care about occlusion! and we exlude 0-dir fireballs */
+    if (inner == 0 && !isOmniDirectional(lightDirection) && dot(-lightDir, directionOfOrthoLight) > ILLUMINATION_CUTOFF) {
         ambientLight = pointLightColor * ambientStrength * attenuation * ambientColor * BEHIND_LIGHT_FACTOR;
         return ambientLight; // Shadow the fragment, it's behind the light
     }
@@ -327,6 +325,10 @@ bool isOccluded(vec3 position3D) {
 vec3 worldToNormalizedTexCoord3D(vec3 position3D) {
     //need to swap z and y
     return vec3(position3D.x / uGridSize.x, position3D.z / uGridSize.y, position3D.y / uGridSize.z);
+}
+
+bool isOmniDirectional(vec3 dir) {
+    return length(dir) < 0.01f; // very small threshold
 }
 
 /*** DEBUG ***/

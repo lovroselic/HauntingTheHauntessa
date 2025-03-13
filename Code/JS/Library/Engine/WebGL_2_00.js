@@ -806,7 +806,7 @@ const WebGL = {
 
                 dynLights.push(...light.pos.array);
                 dynLightColors.push(...light.lightColor);
-                dynLightDirs.push(255, 255, 255); // No specific direction
+                dynLightDirs.push(0, 0, 0); // No specific direction
 
                 dynCount++;
                 if (dynCount > this.INI.DYNAMIC_LIGHTS_RESERVATION) {
@@ -2909,10 +2909,8 @@ class AirItem3D extends Drawable_object {
         this.pos = this.pos.translate(UP3, dH);
         if (this.pos.y < this.landingposition.z) return this.land();                   //WARNING - comparing swapped coordinates
         this.pos_to_translation();
-        //console.log(this.id, "move", lapsedTime, "this.speed", this.speed, "dH", dH, "this.pos", this.pos.y, "this.landingposition.z", this.landingposition.z);
     }
     land() {
-        //console.warn("landing", "landing");
         this.IAM.remove(this.id);
         const dropped = new FloorItem3D(this.landingposition, this.type);
         dropped.createTexture();
@@ -3058,20 +3056,9 @@ class BouncingMissile extends Missile {
         if (!placementPosition) return;                                                 //console.error("orb cannot be placed at", placementPosition, "orb is lost!");
         placementPosition.adjuctCirclePos(this.r)
 
-        // debug dev
-        /*
-        const dropped2 = new FloorItem3D(placementPosition, this.collectibleType);
-        dropped2.createTexture();
-        dropped2.dropped = true;
-        ITEM3D.add(dropped2);
-        */
-        //
-
         const dropped = new AirItem3D(Vector3.to_FP_Grid3D(this.pos), this.collectibleType, placementPosition);
         dropped.createTexture();
-        console.log("dropped", dropped);
         ITEM_DROPPER3D.add(dropped);
-
     }
 }
 
@@ -3081,12 +3068,9 @@ class Blue3D_Bouncer extends BouncingMissile {
         this.name = "Blue3D_Bouncer";
     }
     rebound(inner, GA) {
-        //console.error("rebound Blue3D_Bouncer on ", inner);
-        //console.warn("this.pos", this.pos, "this.dir", this.dir);
         let faceNormal = Vector3.getFaceNormal(this.pos.sub(inner));
         let reflectedDir = this.dir.reflect(faceNormal);
         this.dir = reflectedDir;
-        //console.log("reflectedDir", reflectedDir);
         this.bounceCount++;
     }
 }
@@ -3936,8 +3920,6 @@ class $3D_Entity {
         this.actor = new $3D_ACTOR(this, this.model.animations, this.model.skins[0], this.jointMatrix);
         if (this.fly > 0) this.heigth = 0;                                          //fly takes care that pos approximatelly equals body height 
         this.moveState = new $3D_MoveState(this.translate, dir, this.rotateToNorth, this);
-
-        console.warn("3D_Entity->", this.name, this.id, this.grid, this.translate, "MS", this.moveState.grid, "this.minY", this.minY);
 
         const dZ = (this.boundingBox.max.z - this.boundingBox.min.z) / 2;
         const dX = (this.boundingBox.max.x - this.boundingBox.min.x) / 2;
