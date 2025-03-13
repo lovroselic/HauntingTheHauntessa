@@ -2538,6 +2538,29 @@ class Drawable_object {
     createTexture() {
         this.texture = WebGL.createTexture(this.texture);
     }
+    setElementAndIndices() {
+        this.element = ELEMENT[this.element];
+        this.initBuffers();
+        this.texture = TEXTURE[this.texture];
+        if (typeof (this.scale) === "number") {
+            this.scale = new Float32Array([this.scale, this.scale, this.scale]);
+        }
+        this.indices = this.element.indices.length;
+    }
+    setInitialTranslationMatrix() {
+        let heightTranslate = new Float32Array([0, 0, 0]);
+
+        /** finding minY and translating it to level zero */
+        if (this.glueToFloor) {
+            let max = ELEMENT.getMinY(this.element);
+            heightTranslate[1] -= max * this.scale[1];
+            heightTranslate[1] += WebGL.INI.ITEM_UP;
+        }
+
+        let translate = new Vector3(this.grid.x, this.grid.z, this.grid.y);
+        translate = translate.add(Vector3.from_array(heightTranslate));
+        this.translate = translate.array;
+    }
 }
 
 class $POV extends Drawable_object {
@@ -2778,30 +2801,28 @@ class FloorItem3D extends Drawable_object {
         this.interactive = true;
         this.active = true;
         this.dropped = false;
+
         for (const prop in type) {
             this[prop] = type[prop];
         }
 
-        this.element = ELEMENT[this.element];
-        this.initBuffers();
-        this.texture = TEXTURE[this.texture];
-        if (typeof (this.scale) === "number") {
-            this.scale = new Float32Array([this.scale, this.scale, this.scale]);
-        }
-        this.indices = this.element.indices.length;
+        this.setElementAndIndices();
+        this.setInitialTranslationMatrix();
 
+        /*
         let heightTranslate = new Float32Array([0, 0, 0]);
 
-        /** finding minY and translating it to level zero */
+       
         if (this.glueToFloor) {
             let max = ELEMENT.getMinY(this.element);
             heightTranslate[1] -= max * this.scale[1];
             heightTranslate[1] += WebGL.INI.ITEM_UP;
         }
 
-        let translate = new Vector3(grid.x, grid.z, grid.y);
+        let translate = new Vector3(this.grid.x, this.grid.z, this.grid.y);
         translate = translate.add(Vector3.from_array(heightTranslate));
         this.translate = translate.array;
+        */
 
         if (this.category === "gold") {
             this.value = RND(this.minVal, this.maxVal);

@@ -345,11 +345,21 @@ const GRID = {
         }
     },
     calcDistancesBFS_A_3D(start, dungeon, _3D = false, mode = GROUND_MOVE_GRID_EXCLUSION, nodeMap = "nodeMap") {
+        //console.info("-- calcDistancesBFS_A_3D --", ...arguments);
         dungeon.GA.setNodeMap(nodeMap, mode, "exclude");
+        //console.info("calcDistancesBFS_A_3D", mode, REVERSED_MAPDICT[dungeon.GA.getValue(start)]);
+
+        if (!dungeon.GA[nodeMap][start.x][start.y][start.z]) {
+            //console.error(".....START POSITION in exlcusion zone !!!!!!!!!!!!!", mode, REVERSED_MAPDICT[dungeon.GA.getValue(start)]);
+            dungeon.GA[nodeMap][start.x][start.y][start.z] = new PathNode3D(start.x, start.y, start.z);
+            //return;
+        }
 
         let Q = new NodeQ("distance");
         dungeon.GA[nodeMap][start.x][start.y][start.z].distance = 0;
         dungeon.GA[nodeMap][start.x][start.y][start.z].goto = new Vector3D(0, 0, 0);
+
+        //console.log("START", dungeon.GA[nodeMap][start.x][start.y][start.z]);
         Q.queueSimple(dungeon.GA[nodeMap][start.x][start.y][start.z]);
 
         const DIR = _3D ? [...ENGINE.directions3D] : [...ENGINE.directions3D_XY_plane];
@@ -363,8 +373,6 @@ const GRID = {
                 let y = (node.grid.y + DIR[D].y + dungeon.height) % dungeon.height;
                 let z = (node.grid.z + DIR[D].z + dungeon.depth) % dungeon.depth;
                 let nextNode = dungeon.GA[nodeMap][x][y][z];
-
-                //console.log(node, "-->", nextNode);
 
                 if (nextNode) {
                     if (nextNode.distance > node.distance + 1) {
@@ -700,11 +708,12 @@ const REVERSED_MAPDICT = reverseDictionary(MAPDICT);
 const STAIRCASE_GRIDS = [MAPDICT.WALL2, MAPDICT.WALL4, MAPDICT.WALL6, MAPDICT.WALL8];
 const GROUND_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.HOLE, MAPDICT.BLOCKWALL, ...STAIRCASE_GRIDS];
 const HERO_GROUND_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.HOLE, MAPDICT.BLOCKWALL];
-const AIR_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.BLOCKWALL, MAPDICT.WALL8, MAPDICT.WALL6];
+const NO_FLY = [MAPDICT.WALL8, MAPDICT.WALL6];
+const AIR_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.BLOCKWALL, ...NO_FLY];
 const EXPLOADABLES = [MAPDICT.BLOCKWALL, MAPDICT.DOOR];
-//const ITEM_DROP_EXCLUSION = [MAPDICT.HOLE, ...STAIRCASE_GRIDS];
 const ITEM_DROP_EXCLUSION = [MAPDICT.WALL, MAPDICT.BLOCKWALL];
 const JUMP_MOVE = [MAPDICT.EMPTY, MAPDICT.HOLE, ...STAIRCASE_GRIDS];
+const PATH_GRIDS = [MAPDICT.EMPTY, ...STAIRCASE_GRIDS];
 
 class ArrayBasedDataStructure {
     constructor() { }
@@ -1765,7 +1774,6 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
     }
     setNodeMap(where = "nodeMap", path = [0], type = "value", block = [], cls = PathNode3D) {
         const pathSum = path.sum();
-
         const map = Array.from({ length: this.width }, (_, x) =>
             Array.from({ length: this.height }, (_, y) =>
                 Array.from({ length: this.depth }, (_, z) => {
@@ -1814,7 +1822,7 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
 
                 if (this.isOutOfBounds(newGrid)) continue;
                 if (!this.just_check(newGrid, value)) {
-                    //console.log("...grid", grid, "dir", DIR[D], "newGrid", newGrid, "stored val", this.getValue(newGrid), "!this.just_check(newGrid, value)", !this.just_check(newGrid, value), "this.just_check(newGrid, value)", this.just_check(newGrid, value));
+
                     directions.push(DIR[D]);
                 }
             }
@@ -1822,7 +1830,6 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         return directions;
     }
     entityInWallPoint(pos, dir, r, depth, resolution = 8) {
-        //console.log("entityInWallPoint-->", ...arguments);
         let checks = this.pointsAroundEntity(pos, dir, r, resolution);
         for (const point of checks) {
             let isWall = !this.positionIsNotWall(point, depth);
@@ -1888,16 +1895,13 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         return points;
     }
     sphereInWallPoint(pos, dir, r) {
-        //console.warn("sphereInWallPoint", pos, dir, r);
         let checks = this.spherePointsAroundCenter(pos, dir, r);
-        //console.log("checks", checks);
         for (const point of checks) {
             const grid3d = new Grid3D(point[0], point[2], point[1]);
             const check = this.check(grid3d, AIR_MOVE_GRID_EXCLUSION.sum());            //if >0  thenm hit, if false the in was OOB
-            //console.log("..point", point, grid3d, check, this.getValue(grid3d), REVERSED_MAPDICT[this.getValue(grid3d)]);
             if (check === false || check > 0) return [true, Vector3.from_array(point)];
         }
-        //throw "DEBUG";
+
         return [false, null];
     }
     getDirectionsFromNodeMap(grid, nodeMap, fly, leaveOut = null, allowCross = false) {
@@ -2014,7 +2018,7 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         console.log("current grid", grid, "gridBelow", gridBelow, "posGrid", posGrid);
 
         //dig
-        while (!this.check(gridBelow, ITEM_DROP_EXCLUSION.sum()) && gridBelow.z > 0) {
+        while (!this.check(gridBelow, ITEM_DROP_EXCLUSION.sum()) && gridBelow.z >= 0) {
             grid = gridBelow;
             gridBelow = grid.add(BELOW3);
             console.warn("goin down to ", gridBelow);

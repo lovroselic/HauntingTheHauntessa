@@ -906,7 +906,7 @@ class Missile3D extends IAM {
 
                 const pos = Vector3.to_FP_Grid(obj.pos);                                                                    //check wall hit
                 //point is returned in different formats!! Vector3 or FP_Grid respectively
-                let [wallHit, point] = obj.bounce3D ? GA.sphereInWallPoint(obj.pos, obj.dir, obj.r) : GA.entityInWallPoint(pos, Vector3.to_FP_Vector(obj.dir), obj.r, obj.depth);                                 
+                let [wallHit, point] = obj.bounce3D ? GA.sphereInWallPoint(obj.pos, obj.dir, obj.r) : GA.entityInWallPoint(pos, Vector3.to_FP_Vector(obj.dir), obj.r, obj.depth);
                 //console.log(obj.id, "wallHit", wallHit, point);
 
                 if (wallHit) {
@@ -1052,10 +1052,14 @@ class Animated_3d_entity extends IAM {
         this.reIndex();
         const GA = this.map.GA;
         this.setup();
+        const heroRefGrid = Vector3.to_Grid3D(this.hero.player.pos.translate(UP3, this.hero.player.heigth));
+        //console.log("heroRefGrid", heroRefGrid, "this.hero.player.pos", this.hero.player.pos.translate(UP3, this.hero.player.heigth));
 
-        GRID.calcDistancesBFS_A_3D(Vector3.to_Grid3D(this.hero.player.pos), map, true, AIR_MOVE_GRID_EXCLUSION); //ground exlusion 3d on xy plane
-        //GRID.calcDistancesBFS_A_3D(Vector3.to_Grid3D(this.hero.player.pos), map, true, AIR_MOVE_GRID_EXCLUSION, "airNodeMap"); //air exclusion fully 3d
-        GA["airNodeMap"] = GA["nodeMap"];
+        //GRID.calcDistancesBFS_A_3D(Vector3.to_Grid3D(this.hero.player.pos), map, false, GROUND_MOVE_GRID_EXCLUSION); //ground exlusion 3d on xy plane, this needs to be separate because of hunting on exact position!
+        GRID.calcDistancesBFS_A_3D(heroRefGrid, map, false, HERO_GROUND_MOVE_GRID_EXCLUSION); //ground exlusion 3d on xy plane, this needs to be separate because of hunting on exact position!
+        GRID.calcDistancesBFS_A_3D(heroRefGrid, map, true, AIR_MOVE_GRID_EXCLUSION, "airNodeMap"); //air exclusion fully 3d
+        //console.log('GA["airNodeMap"]', GA["airNodeMap"]);
+        //GA["airNodeMap"] = GA["nodeMap"];
 
         for (const entity of this.POOL) {
             if (entity) {

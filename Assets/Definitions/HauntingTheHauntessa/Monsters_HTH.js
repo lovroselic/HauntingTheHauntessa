@@ -709,7 +709,7 @@ const MONSTER_TYPE = {
         deathType: "BloodExplosion",
         inventory: null,
         //
-        mana: 1,
+        mana: 13,
         health: 10,
         attack: 8,
         magic: 5,
@@ -737,7 +737,7 @@ const MONSTER_TYPE = {
         deathType: "BloodExplosion",
         inventory: null,
         //
-        mana: 3,
+        mana: 33,
         health: 10,
         attack: 8,
         magic: 5,
@@ -765,7 +765,7 @@ const MONSTER_TYPE = {
         fly: 0.25,
         deathType: "BloodExplosion",
         //
-        mana: 5,
+        mana: 55,
         health: 10,
         attack: 20,
         magic: 10,
