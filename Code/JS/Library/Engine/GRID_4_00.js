@@ -702,7 +702,8 @@ const GROUND_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.HOLE, MAPDICT.BLOCKWAL
 const HERO_GROUND_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.HOLE, MAPDICT.BLOCKWALL];
 const AIR_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.BLOCKWALL, MAPDICT.WALL8, MAPDICT.WALL6];
 const EXPLOADABLES = [MAPDICT.BLOCKWALL, MAPDICT.DOOR];
-const ITEM_DROP_EXCLUSION = [MAPDICT.HOLE, ...STAIRCASE_GRIDS];
+//const ITEM_DROP_EXCLUSION = [MAPDICT.HOLE, ...STAIRCASE_GRIDS];
+const ITEM_DROP_EXCLUSION = [MAPDICT.WALL, MAPDICT.BLOCKWALL];
 const JUMP_MOVE = [MAPDICT.EMPTY, MAPDICT.HOLE, ...STAIRCASE_GRIDS];
 
 class ArrayBasedDataStructure {
@@ -2004,6 +2005,40 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         checks = checks.map(pos => new Grid3D(pos.x, pos.y, depth));
         let filtered = checks.filter(grid => values.includes(this.getValue(grid)));
         return checks.length === filtered.length;
+    }
+    findSolidFloor(pos) {
+        console.log("---findSolidFloor---", pos);
+        let posGrid = Vector3.to_FP_Grid3D(pos);
+        let grid = Vector3.to_Grid3D(pos);
+        let gridBelow = grid.add(BELOW3);
+        console.log("current grid", grid, "gridBelow", gridBelow, "posGrid", posGrid);
+
+        //dig
+        while (!this.check(gridBelow, ITEM_DROP_EXCLUSION.sum()) && gridBelow.z > 0) {
+            grid = gridBelow;
+            gridBelow = grid.add(BELOW3);
+            console.warn("goin down to ", gridBelow);
+        }
+
+        const gridValue = REVERSED_MAPDICT[this.getValue(grid)];
+        console.log("found bottom", grid, "with value", gridValue);
+
+        switch (gridValue) {
+            case "EMPTY":
+                posGrid.z = grid.z;
+                return posGrid;
+            case "WALL2":
+            case "WALL4":
+            case "WALL6":
+            case "WALL8":
+                const heightOffset = parseInt(gridValue[4], 10) / 10;
+                console.log("heightOffset", heightOffset);
+                posGrid.z = grid.z + heightOffset;
+                return posGrid;
+            case "HOLE": return null;
+            default:
+                throw new Error(`grid type not supported ${gridValue}`);
+        }
     }
 }
 

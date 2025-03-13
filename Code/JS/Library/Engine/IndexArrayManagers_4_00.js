@@ -899,13 +899,15 @@ class Missile3D extends IAM {
         for (let obj of this.POOL) {
             if (obj) {
                 obj.move(lapsedTime, GA);
+                if (obj.pos.y < 0 || obj.pos.y > this.map.maxZ) {
+                    obj.explode(this);
+                    continue;
+                }
 
                 const pos = Vector3.to_FP_Grid(obj.pos);                                                                    //check wall hit
                 //point is returned in different formats!! Vector3 or FP_Grid respectively
-                let [wallHit, point] = obj.bounce3D ? GA.sphereInWallPoint(obj.pos, obj.dir, obj.r) : GA.entityInWallPoint(pos, Vector3.to_FP_Vector(obj.dir), obj.r, obj.depth);
-                //let [wallHit, point] = GA.spherePointInWall(obj.pos, obj.dir, obj.r);
-                if (obj.pos.y < 0 || obj.pos.y > this.map.maxZ) obj.explode(this);                                         //3D ball in ceiling or floor                                    
-                //console.log("wallHit", wallHit, point);
+                let [wallHit, point] = obj.bounce3D ? GA.sphereInWallPoint(obj.pos, obj.dir, obj.r) : GA.entityInWallPoint(pos, Vector3.to_FP_Vector(obj.dir), obj.r, obj.depth);                                 
+                //console.log(obj.id, "wallHit", wallHit, point);
 
                 if (wallHit) {
                     obj.hitWall(this, point, GA);
@@ -1198,6 +1200,23 @@ class Lair3D extends Spawner {
 
 }
 
+class ItemDropper3D extends IAM {
+    constructor() {
+        super();
+        this.IA = null;
+        this.POOL = [];
+        this.reIndexRequired = true;
+    }
+    manage(lapsedTime) {
+        this.reIndex();
+        for (const item of this.POOL) {
+            if (item) {
+
+            }
+        }
+    }
+}
+
 /** GLOBAL ID */
 
 const GLOBAL_ID_MANAGER = {
@@ -1279,5 +1298,6 @@ const ENTITY3D = new Animated_3d_entity();
 const MISSILE3D = new Missile3D("enemyIA", ENTITY3D);
 const DYNAMIC_ITEM3D = new Decal3D(256, "dynamic_item3d");
 const LAIR = new Lair3D();
+const ITEM_DROPPER3D = new ItemDropper3D();
 /** *********************************************** */
 console.log(`%cIndexArrayManagers (IAM) ${IndexArrayManagers.VERSION} ready.`, "color: #7FFFD4");

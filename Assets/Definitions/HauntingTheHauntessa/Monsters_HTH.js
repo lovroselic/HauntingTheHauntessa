@@ -527,7 +527,7 @@ const COMMON_ITEM_TYPE = {
         texture: "BluBallTexture",
         moveSpeed: 8.0,
         bounce3D: true,
-        lightColor: "#1155AA",
+        lightColor: "#5e9ae6", //#1155AA
         material: MATERIAL.blueFluence,
         explosionType: BlueExplosion,
         construct: Blue3D_Bouncer,
@@ -540,6 +540,7 @@ const COMMON_ITEM_TYPE = {
         scale: 1.5 / 2 ** 4,
         texture: "GreenMetal",
         moveSpeed: 8.0,
+        bounce3D: false,
         lightColor: "#006600",
         material: MATERIAL.greenFluence,
         explosionType: GreenMetalExplosion,
@@ -553,6 +554,7 @@ const COMMON_ITEM_TYPE = {
         scale: 1.5 / 2 ** 4,
         texture: "RedFireballTexture",
         moveSpeed: 8.0,
+        bounce3D: false,
         lightColor: "#AA2200",
         material: MATERIAL.redShine,
         explosionType: ParticleExplosion,
@@ -566,6 +568,7 @@ const COMMON_ITEM_TYPE = {
         scale: 1.9 / 2 ** 5,
         texture: "FireballTexture",
         moveSpeed: 8.0,
+        bounce3D: false,
         lightColor: "#FF7700",
         material: MATERIAL.fire,
         explosionType: ParticleExplosion,
@@ -704,6 +707,7 @@ const MONSTER_TYPE = {
         rotateToNorth: Math.PI,
         midHeight: 0.5,
         deathType: "BloodExplosion",
+        inventory: null,
         //
         mana: 1,
         health: 10,
@@ -731,6 +735,7 @@ const MONSTER_TYPE = {
         rotateToNorth: Math.PI,
         midHeight: 0.5,
         deathType: "BloodExplosion",
+        inventory: null,
         //
         mana: 3,
         health: 10,
@@ -760,7 +765,7 @@ const MONSTER_TYPE = {
         fly: 0.25,
         deathType: "BloodExplosion",
         //
-        mana: 33,
+        mana: 5,
         health: 10,
         attack: 20,
         magic: 10,

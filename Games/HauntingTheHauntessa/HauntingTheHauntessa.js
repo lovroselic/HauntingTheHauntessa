@@ -214,7 +214,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.7.0",
+    VERSION: "0.7.1",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -1177,6 +1177,7 @@ const GAME = {
         EXPLOSION3D.manage(date);
         ENTITY3D.manage(lapsedTime, date, [HERO.invisible, HERO.dead]);
         DYNAMIC_ITEM3D.manage(lapsedTime, date);
+        ITEM_DROPPER3D.manage(lapsedTime);
         GAME.respond(lapsedTime);
         ENGINE.TIMERS.update();
 

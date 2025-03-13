@@ -113,7 +113,7 @@ const MAP = {
         decals: '[[282,7,"FemDommes_6238","picture"],[490,1,"FemDommes_10150","picture"],[170,3,"FemDommes_6145","picture"]]',
         lights: '[[487,1,"Candle71","standard"],[520,7,"DuaLLantern_021","standard"],[156,3,"Candle66","standard"]]',
         gates: '[[384,5,"5.1","4.2","Closed"]]',
-        monsters: '[[536,"Dragon"]]',
+        monsters: '[[182,"Bat"],[183,"Bat"],[184,"Bat"],[185,"Bat"],[186,"Bat"],[187,"Bat"],[296,"MissGalaxyGreen"],[300,"MissGalaxyGreen"],[536,"Dragon"]]',
         scrolls: '[[473,4],[475,5],[459,6],[456,7],[471,8],[461,9],[445,10],[458,11]]',
         }
 };

@@ -15,7 +15,7 @@ from pandas import ExcelWriter
 from collections import defaultdict
 
 
-_file = "C:/Users/lovro/OneDrive/Documents/JS/CurseOfTheCastleCreep/Assets/Definitions/CCC/Monsters_CCC.js"
+_file = "C:/Users/Uporabnik/Documents/JS/HauntingTheHauntessa/Assets/Definitions/HauntingTheHauntessa/Monsters_HTH.js"
 with open(_file) as fh:
     data = fh.read()
 
@@ -49,12 +49,14 @@ MON['defense'] = pd.to_numeric(MON['defense'])
 MON['magic'] = pd.to_numeric(MON['magic'])
 MON['health'] = pd.to_numeric(MON['health'])
 MON['xp'] = pd.to_numeric(MON['xp'])
+MON['mana'] = pd.to_numeric(MON['mana'])
 
-MON['ADN'] = MON['attack'] + MON['defense'] + MON['magic']
-MON['F'] = MON['xp'] / MON['ADN']
-MON['Xf'] = MON['xp'] / (MON['ADN'] + MON['health'])
-MON['hAND'] = MON['health'] / MON['ADN']
-MON.sort_values(["attack", "defense", "magic", "health", "xp", "name"], inplace=True, ascending=False)
+MON['ADM'] = MON['attack'] + MON['defense'] + MON['magic']
+MON['F'] = MON['xp'] / MON['ADM']
+MON['Xf'] = MON['xp'] / (MON['ADM'] + MON['health'])
+MON['hADM'] = MON['health'] / MON['ADM']
+MON['MagicMight'] = MON['magic'] * MON['mana']
+MON.sort_values(["attack", "defense", "magic", "health", "xp", "mana", "name"], inplace=True, ascending=False)
 
 # =============================================================================
 # # To excel

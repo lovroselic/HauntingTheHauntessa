@@ -295,6 +295,7 @@ const WebGL = {
         INTERFACE3D.init(map);
         EXPLOSION3D.init(map, hero);
         LAIR.init(map, hero);
+        ITEM_DROPPER3D.init(map);
         this.hero = hero;
     },
     setCamera(camera) {
@@ -2797,7 +2798,7 @@ class FloorItem3D extends Drawable_object {
             heightTranslate[1] -= max * this.scale[1];
             heightTranslate[1] += WebGL.INI.ITEM_UP;
         }
-        //let translate = new Vector3(grid.x, 0, grid.y);
+
         let translate = new Vector3(grid.x, grid.z, grid.y);
         translate = translate.add(Vector3.from_array(heightTranslate));
         this.translate = translate.array;
@@ -2905,7 +2906,7 @@ class Missile extends Drawable_object {
 
         if (lapsedTime < 0.01) {
             console.error(this.id, "movement in WALL not resolved, missile move from", this.pos, "to", pos, "lapsedTime", lapsedTime);
-            this.explode(this.IAM);
+            return this.explode(this.IAM);
             //throw "debug";
         }
 
@@ -2976,7 +2977,7 @@ class BouncingMissile extends Missile {
         this.bounceCount++;
     }
     hitWall(IAM, point, GA) {
-        if (this.power >= this.minPower) {
+        if (this.power > this.minPower) {
             this.rebound(point, GA);
             AUDIO.Buzz.volume = RAY.volume(this.distance);
             AUDIO.Buzz.play();
@@ -2994,16 +2995,17 @@ class BouncingMissile extends Missile {
         };
     }
     drop(GA) {
+        console.info("dropping missile", this);
         if (!GA) GA = this.IAM.map.GA;
-        const position = Vector3.to_FP_Grid(this.pos);
-        const placement_possible = GA.positionIsNotExcluded(position, ITEM_DROP_EXCLUSION, this.depth);
 
-        if (placement_possible) {
-            const dropped = new FloorItem3D(new FP_Grid3D(this.pos.x, this.pos.z, this.depth), this.collectibleType);
-            dropped.createTexture();
-            dropped.dropped = true;
-            ITEM3D.add(dropped);
-        } else console.error("orb cannot be placed at", position, "orb is lost!");
+        const placementPosition = GA.findSolidFloor(this.pos);
+        console.log("placementPosition", placementPosition);
+        if (!placementPosition) console.error("orb cannot be placed at", placementPosition, "orb is lost!");
+
+        const dropped = new FloorItem3D(placementPosition, this.collectibleType);
+        dropped.createTexture();
+        dropped.dropped = true;
+        ITEM3D.add(dropped);
     }
 }
 
