@@ -2011,21 +2011,21 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         return checks.length === filtered.length;
     }
     findSolidFloor(pos) {
-        console.log("---findSolidFloor---", pos);
+        //console.log("---findSolidFloor---", pos);
         let posGrid = Vector3.to_FP_Grid3D(pos);
         let grid = Vector3.to_Grid3D(pos);
         let gridBelow = grid.add(BELOW3);
-        console.log("current grid", grid, "gridBelow", gridBelow, "posGrid", posGrid);
+        //console.log("current grid", grid, "gridBelow", gridBelow, "posGrid", posGrid);
 
         //dig
         while (!this.check(gridBelow, ITEM_DROP_EXCLUSION.sum()) && gridBelow.z >= 0) {
             grid = gridBelow;
             gridBelow = grid.add(BELOW3);
-            console.warn("goin down to ", gridBelow);
+            //console.warn("goin down to ", gridBelow);
         }
 
         const gridValue = REVERSED_MAPDICT[this.getValue(grid)];
-        console.log("found bottom", grid, "with value", gridValue);
+        //console.log("found bottom", grid, "with value", gridValue);
 
         switch (gridValue) {
             case "EMPTY":
@@ -2036,7 +2036,7 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
             case "WALL6":
             case "WALL8":
                 const heightOffset = parseInt(gridValue[4], 10) / 10;
-                console.log("heightOffset", heightOffset);
+                //console.log("heightOffset", heightOffset);
                 posGrid.z = grid.z + heightOffset;
                 break;
             case "HOLE": return null;

@@ -1215,7 +1215,7 @@ class ItemDropper3D extends IAM {
         this.reIndex();
         for (const item of this.POOL) {
             if (item) {
-
+                item.move(lapsedTime);
             }
         }
     }

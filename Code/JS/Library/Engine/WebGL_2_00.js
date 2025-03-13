@@ -121,7 +121,7 @@ const WebGL = {
     playerList: [],
     staticDecalList: [DECAL3D, LIGHTS3D, BUMP3D, LAIR],
     interactiveDecalList: [INTERACTIVE_DECAL3D, INTERACTIVE_BUMP3D],
-    dynamicDecalList: [GATE3D, ITEM3D],
+    dynamicDecalList: [GATE3D, ITEM3D, ITEM_DROPPER3D],
     dynamicLightSources: [MISSILE3D, EXPLOSION3D],
     enemySources: [ENTITY3D],
     models: [$3D_MODEL],
@@ -1020,7 +1020,7 @@ const WebGL = {
             }
         }
 
-        /**  draw per object */
+        /**  draw per object class */
 
         //doors
         for (const door of GATE3D.POOL) {
@@ -1035,6 +1035,13 @@ const WebGL = {
             if (item.active) {
                 item.drawObject(gl);
                 item.drawInteraction(gl, this.frameBuffer);
+            }
+        }
+
+        //droppings
+        for (const item of ITEM_DROPPER3D.POOL) {
+            if (item?.active) {
+                item.drawObject(gl);
             }
         }
 
@@ -1062,12 +1069,14 @@ const WebGL = {
                 entity.drawSkin(gl);
             }
         }
+
         //movables
         for (const entity of DYNAMIC_ITEM3D.POOL) {
             if (entity) {
                 entity.drawSkin(gl);
             }
         }
+
         //movable interaction - switching to picking program and to frame buffer!
         for (const entity of DYNAMIC_ITEM3D.POOL) {
             if (entity) {
@@ -2573,6 +2582,11 @@ class Drawable_object {
         glMatrix.mat4.fromTranslation(mTranslationMatrix, this.translate);
         this.mTranslationMatrix = mTranslationMatrix;
     }
+    pos_to_translation() {
+        const mTranslationMatrix = glMatrix.mat4.create();
+        glMatrix.mat4.fromTranslation(mTranslationMatrix, this.pos.array);
+        this.mTranslationMatrix = mTranslationMatrix;
+    }
 }
 
 class $POV extends Drawable_object {
@@ -2862,6 +2876,51 @@ class FloorItem3D extends Drawable_object {
     }
 }
 
+class AirItem3D extends Drawable_object {
+    constructor(grid, type, landingposition) {
+        super();
+        this.grid = grid;
+        this.type = type;
+        this.landingposition = landingposition;
+        this.interactive = false;
+        this.active = true;
+        this.dropped = true;
+        this.rotation = null;
+        this.speed = 0;
+
+        for (const prop in type) {
+            this[prop] = type[prop];
+        }
+        this.glueToFloor = false;
+
+        this.setElementAndIndices();
+        this.setInitialTranslationMatrix();
+        this.set_TRS_matrices();
+
+        this.pos = Vector3.from_grid3D(this.grid);
+    }
+    setTexture() {
+        this.texture = WebGL.createTexture(this.texture);
+    }
+    move(lapsedTime) {
+        const deltaTime = lapsedTime / 1000;
+        this.speed -= WebGL.INI.GRAVITY * deltaTime;
+        const dH = this.speed * deltaTime;
+        this.pos = this.pos.translate(UP3, dH);
+        if (this.pos.y < this.landingposition.z) return this.land();                   //WARNING - comparing swapped coordinates
+        this.pos_to_translation();
+        //console.log(this.id, "move", lapsedTime, "this.speed", this.speed, "dH", dH, "this.pos", this.pos.y, "this.landingposition.z", this.landingposition.z);
+    }
+    land() {
+        //console.warn("landing", "landing");
+        this.IAM.remove(this.id);
+        const dropped = new FloorItem3D(this.landingposition, this.type);
+        dropped.createTexture();
+        dropped.dropped = true;
+        ITEM3D.add(dropped);
+    }
+}
+
 class Missile extends Drawable_object {
     constructor(position, direction, type, magic) {
         super();
@@ -2879,6 +2938,7 @@ class Missile extends Drawable_object {
         this.texture = WebGL.createTexture(TEXTURE[this.texture]);
         this.element = ELEMENT[this.element];
         this.initBuffers();
+
         this.lightColor = colorStringToVector(this.lightColor);
 
         if (typeof (this.scale) === "number") {
@@ -2893,9 +2953,7 @@ class Missile extends Drawable_object {
         glMatrix.mat4.fromScaling(mScaleMatrix, this.scale);
         this.mScaleMatrix = mScaleMatrix;
         this.mRotationMatrix = glMatrix.mat4.create();
-        const mTranslationMatrix = glMatrix.mat4.create();
-        glMatrix.mat4.fromTranslation(mTranslationMatrix, this.pos.array);
-        this.mTranslationMatrix = mTranslationMatrix;
+        this.pos_to_translation();
     }
     static calcMana(magic) {
         return Math.floor(1.1 * (magic ** 1.1));
@@ -2913,25 +2971,14 @@ class Missile extends Drawable_object {
         let length = (lapsedTime / 1000) * this.moveSpeed;
         const pos = this.pos.translate(this.dir, length);
 
-        if (lapsedTime < 0.01) {
-            console.error(this.id, "movement in WALL not resolved, missile move from", this.pos, "to", pos, "lapsedTime", lapsedTime);
-            return this.explode(this.IAM);
-            //throw "debug";
-        }
-
+        if (lapsedTime < 0.01) return this.explode(this.IAM);
         if (this.pos.y < 0 || this.pos.y > this.IAM.map.maxZ) return this.explode(this.IAM);                                // movement out of bounds
+        if (GA.isWall(Grid3D.toClass(Vector3.to_Grid3D(pos)))) return this.move(lapsedTime / 2, GA);
 
-        if (GA.isWall(Grid3D.toClass(Vector3.to_Grid3D(pos)))) {
-            //const grid = Grid3D.toClass(Vector3.to_Grid3D(pos));
-            return this.move(lapsedTime / 2, GA);
-        }
         this.pos = pos;
         this.setDepth();
         this.distance = glMatrix.vec3.distance(this.IAM.hero.player.pos.array, this.pos.array);
-
-        const mTranslationMatrix = glMatrix.mat4.create();
-        glMatrix.mat4.fromTranslation(mTranslationMatrix, this.pos.array);
-        this.mTranslationMatrix = mTranslationMatrix;
+        this.pos_to_translation();
     }
     calcPower(magic) {
         return Math.max(1, 2 * magic + RND(-2, 2));
@@ -3011,10 +3058,20 @@ class BouncingMissile extends Missile {
         if (!placementPosition) return;                                                 //console.error("orb cannot be placed at", placementPosition, "orb is lost!");
         placementPosition.adjuctCirclePos(this.r)
 
-        const dropped = new FloorItem3D(placementPosition, this.collectibleType);
+        // debug dev
+        /*
+        const dropped2 = new FloorItem3D(placementPosition, this.collectibleType);
+        dropped2.createTexture();
+        dropped2.dropped = true;
+        ITEM3D.add(dropped2);
+        */
+        //
+
+        const dropped = new AirItem3D(Vector3.to_FP_Grid3D(this.pos), this.collectibleType, placementPosition);
         dropped.createTexture();
-        dropped.dropped = true;
-        ITEM3D.add(dropped);
+        console.log("dropped", dropped);
+        ITEM_DROPPER3D.add(dropped);
+
     }
 }
 
@@ -3024,12 +3081,12 @@ class Blue3D_Bouncer extends BouncingMissile {
         this.name = "Blue3D_Bouncer";
     }
     rebound(inner, GA) {
-        console.error("rebound Blue3D_Bouncer on ", inner);
-        console.warn("this.pos", this.pos, "this.dir", this.dir);
+        //console.error("rebound Blue3D_Bouncer on ", inner);
+        //console.warn("this.pos", this.pos, "this.dir", this.dir);
         let faceNormal = Vector3.getFaceNormal(this.pos.sub(inner));
         let reflectedDir = this.dir.reflect(faceNormal);
         this.dir = reflectedDir;
-        console.log("reflectedDir", reflectedDir);
+        //console.log("reflectedDir", reflectedDir);
         this.bounceCount++;
     }
 }

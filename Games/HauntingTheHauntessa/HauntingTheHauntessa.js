@@ -23,8 +23,8 @@ const DEBUG = {
     FPS: true,
     VERBOSE: true,
     _2D_display: true,
-    INVINCIBLE: false,
-    FREE_MAGIC: false,
+    INVINCIBLE: true,
+    FREE_MAGIC: true,
     keys: true,
     killAllAllowed: true,
     displayInv() {
@@ -214,7 +214,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.7.4",
+    VERSION: "0.7.5",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
