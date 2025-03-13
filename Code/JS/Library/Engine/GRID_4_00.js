@@ -2026,7 +2026,7 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         switch (gridValue) {
             case "EMPTY":
                 posGrid.z = grid.z;
-                return posGrid;
+                break;
             case "WALL2":
             case "WALL4":
             case "WALL6":
@@ -2034,11 +2034,13 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
                 const heightOffset = parseInt(gridValue[4], 10) / 10;
                 console.log("heightOffset", heightOffset);
                 posGrid.z = grid.z + heightOffset;
-                return posGrid;
+                break;
             case "HOLE": return null;
             default:
                 throw new Error(`grid type not supported ${gridValue}`);
+
         }
+        return posGrid;
     }
 }
 

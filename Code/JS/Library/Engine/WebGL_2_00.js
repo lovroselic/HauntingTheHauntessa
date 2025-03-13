@@ -2998,8 +2998,11 @@ class BouncingMissile extends Missile {
         console.info("dropping missile", this);
         if (!GA) GA = this.IAM.map.GA;
 
+        //const placementPosition = GA.findSolidFloor(this.pos);
         const placementPosition = GA.findSolidFloor(this.pos);
-        console.log("placementPosition", placementPosition);
+        //console.log("placementPosition before ", placementPosition);
+        placementPosition.adjuctCirclePos(this.r)
+        //console.log("placementPosition after", placementPosition, "this.r", this.r);
         if (!placementPosition) console.error("orb cannot be placed at", placementPosition, "orb is lost!");
 
         const dropped = new FloorItem3D(placementPosition, this.collectibleType);

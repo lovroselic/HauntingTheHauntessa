@@ -1170,6 +1170,23 @@ class FP_Grid3D extends MasterGridClass3D {
         let dz = vector.z - this.z;
         return new FP_Vector3D(dx, dy, dz);
     }
+    adjuctCirclePos(r) {
+        const xmr = this.x - r;
+        const xpr = this.x + r;
+        if (Math.floor(this.x) > Math.floor(xmr)) {
+            this.x += Math.ceil(xmr) - xmr;
+        } else if (this.x < Math.floor(xpr)) {
+            this.x -= xpr - Math.floor(xpr);
+        }
+
+        const ymr = this.y - r;
+        const ypr = this.y + r;
+        if (Math.floor(this.y) > Math.floor(ymr)) {
+            this.y += Math.ceil(ymr) - ymr;
+        } else if (this.y < Math.floor(ypr)) {
+            this.y -= ypr - Math.floor(ypr);
+        }
+    }
 }
 
 
