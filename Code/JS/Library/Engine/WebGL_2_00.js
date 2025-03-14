@@ -1956,6 +1956,7 @@ class $3D_player {
         }
 
         const attackedPoint = attackedEnemy.moveState.pos.translate(DOWN3, attackedEnemy.midHeight);
+        //console.info("this.pos, refPoint, attackedPoint, attackedEnemy.r", this.pos, refPoint, attackedPoint, attackedEnemy.r);
         let hit = ENGINE.lineIntersectsSphere(this.pos, refPoint, attackedPoint, attackedEnemy.r);
         if (ENGINE.verbose) console.info("selected attackedEnemy", `${attackedEnemy.name} - ${attackedEnemy.id}: hit ${hit}`);
 
@@ -3920,7 +3921,7 @@ class $3D_Entity {
         this.translate = Vector3.from_Grid(grid, this.minY + this.fly + this.grid.z);
         this.boundingBox = new BoundingBox(this.model.meshes[0].primitives[0].positions.max, this.model.meshes[0].primitives[0].positions.min, this.scale);
         this.actor = new $3D_ACTOR(this, this.model.animations, this.model.skins[0], this.jointMatrix);
-        if (this.fly > 0) this.heigth = 0;                                          //fly takes care that pos approximatelly equals body height 
+        if (this.fly > 0) this.heigth = this.midHeight;                                          //fly takes care that pos approximatelly equals body height 
         this.moveState = new $3D_MoveState(this.translate, dir, this.rotateToNorth, this);
 
         const dZ = (this.boundingBox.max.z - this.boundingBox.min.z) / 2;
@@ -3971,17 +3972,20 @@ class $3D_Entity {
     }
     setDistanceFromNodeMap(nodemap, prop = "distance") {
         let gridPosition = Grid3D.toClass(this.moveState.grid);
-        console.info("...setDistanceFromNodeMap", this.name, this.id, this.moveState.pos, gridPosition);
-        console.info(".......this", this);
-        console.info(".......nodemap", nodemap);
+
         if (!nodemap[gridPosition.x][gridPosition.y][gridPosition.z]) {
             if (this.fly) {
                 this.distance = null;
                 return;
             }
             //debug
+            console.info("...setDistanceFromNodeMap", this.name, this.id, this.moveState.pos, gridPosition);
+            console.info(".......this", this);
+            console.info(".......nodemap", nodemap);
             console.error(this.name, this.id, "has issue with gridPosition", gridPosition);
             console.warn("details:", this);
+            console.info("MS", this.moveState);
+            console.info("HERO pos", HERO.player.pos);
         }
 
         let distance = nodemap[gridPosition.x][gridPosition.y][gridPosition.z].distance;

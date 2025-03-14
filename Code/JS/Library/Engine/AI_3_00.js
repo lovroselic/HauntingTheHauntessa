@@ -63,7 +63,6 @@ const AI = {
     wanderer(enemy) {
         let gridValue = this.getGridValue(enemy);
         gridValue = gridValue.sum();
-        if (this.VERBOSE) console.info("WANDERER", enemy.name, enemy.id, gridValue);
         const directions = enemy.parent.map.GA.getDirectionsIfNot(this.getPosition(enemy), gridValue, enemy.fly, enemy.moveState.dir.mirror());
         if (directions.length) {
             return [directions.chooseRandom()];
@@ -83,22 +82,25 @@ const AI = {
         let grid = this.getPosition(enemy);
         if (this.VERBOSE) console.log(".....grid", grid);
         let goto = nodeMap[grid.x][grid.y][grid.z]?.goto || NOWAY3;
-        if (this.VERBOSE) console.info(`...${enemy.name}-${enemy.id} hunting -> goto:`, goto, "strategy", enemy.behaviour.strategy);
+        if (this.VERBOSE) console.info(`...${enemy.name}-${enemy.id} hunting -> goto:`, goto, "strategy", enemy.behaviour.strategy, "node", JSON.stringify(nodeMap[grid.x][grid.y][grid.z]));
         if (GRID.same3D(goto, NOWAY3) && (this.setting === "3D" || this.setting === "3D3")) return this.hunt_FP(enemy, exactPosition);
         return [goto];
     },
 
     hunt_FP(enemy, exactPosition) {
-        if (this.VERBOSE) console.error("..hunt_FP: exactPosition", exactPosition, "distance:", enemy.distance);
+        if (this.VERBOSE) console.error("\n", enemy.name, enemy.id, "..hunt_FP: exactPosition", exactPosition, "distance:", enemy.distance);
         if (!enemy.distance) {
             if (this.VERBOSE) console.warn("..terminating hunt - null distance");
             return this.immobile(enemy);
         }
-        /** this is not refactored - still 2D - refactored some, but not teste!!  */
+
+        if (Math.abs(exactPosition.y - enemy.moveState.pos.y) > 0.01) return this.immobile(enemy);
+
+        /** this is still 2D plane , only works if they are on the same plane */
         const pPos = Vector3.to_FP_Grid(exactPosition);
         const ePos = Vector3.to_FP_Grid(enemy.moveState.pos);
         const direction = ePos.direction(pPos);
-        if (this.VERBOSE) console.log("pPos", pPos, "ePos", ePos, "direction", direction);
+        if (this.VERBOSE) console.log("pPos", pPos, "ePos", ePos, "direction", direction, "enemy.distance", enemy.distance);
         let orto = direction.ortoAlign();
         orto = orto.toVector3D(); // adding z=0 for 3D compatibility, but this still only works on the plane!!!
         if (this.VERBOSE) console.info(`${enemy.name}-${enemy.id} FP hunt`, orto, "strategy", enemy.behaviour.strategy);
@@ -110,15 +112,18 @@ const AI = {
         if (this.VERBOSE) console.info(`Crossroader analysis for ${enemy.name}-${enemy.id}, position: ${JSON.stringify(playerPosition)}`);
 
         let goal, _;
-        [goal, _] = enemy.parent.map.GA.findNextCrossroad(playerPosition, dir, enemy.fly); /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        [goal, _] = enemy.parent.map.GA.findNextCrossroad(playerPosition, dir, enemy.fly);
         if (this.VERBOSE) console.log(`.. ${enemy.name}-${enemy.id} goal`, goal, "strategy", enemy.behaviour.strategy);
 
         if (goal === null || enemy.parent.map.GA.isOutOfBounds(goal)) {
             return this.hunt(enemy, exactPosition);
         }
 
+        const goalNode = enemy.parent.map.GA.nodeMap[goal.x][goal.y][goal.z];
+        if (!goalNode) return this.hunt(enemy, exactPosition);
+
         /** what if goal takes you further away - advancer! */
-        const new_distance = enemy.parent.map.GA.nodeMap[goal.x][goal.y][goal.z].distance;
+        const new_distance = goalNode.distance;
         if (this.VERBOSE) console.warn(`.. ${enemy.name}-${enemy.id} new_distance  from goal`, new_distance, "current distance", enemy.distance);
         if (enemy.distance < this.INI.CHANGE_ADVANCER_TO_HUNT_MIN_DISTANCE && new_distance > enemy.distance) {
             if (this.VERBOSE) console.warn("... overriding behavior -> hunt");
@@ -129,12 +134,8 @@ const AI = {
         const Astar = enemy.parent.map.GA.findPath_AStar_fast(this.getPosition(enemy), goal, gridValue, "exclude", enemy.fly, block);
         if (this.VERBOSE) console.log(`.. ${enemy.name}-${enemy.id} Astar`, Astar);
 
-        if (Astar === null) {
-            return this.immobile(enemy);
-        }
-        if (Astar === 0) {
-            return this.hunt(enemy, exactPosition);
-        }
+        if (Astar === null) return this.immobile(enemy);
+        if (Astar === 0) return this.hunt(enemy, exactPosition);
 
         let path = GRID.pathFromNodeMap3D(goal, Astar);
         let directions = GRID.directionsFromPath(path, 1);

@@ -3577,7 +3577,7 @@ class $3D_MoveState {
     setGrid() {
         this.grid = Vector3.to_FP_Grid3D(this.pos);
         this.grid.z -= this.parent.minY;                                        //adjusted for minY because some of them are negative and can leak from grid boundaries
-        this.grid.z += this.parent.heigth + $3D_MoveState.E;                    //for FP accuracy and adjustment to body height so that reference coordinates are comparable to HERO
+        this.grid.z += this.parent.heigth + $3D_MoveState.E;                    //for FP accuracy and adjustment to body height so that reference coordinates are comparable to HERO, or adds midHeight to flying monsters
         this.referencePos = Vector3.from_grid3D(this.grid);                     //to display coordinates; which are used for fast collision detection between HERO and Enemies
     }
 }

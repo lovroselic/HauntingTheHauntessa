@@ -361,22 +361,21 @@ const GRID = {
         }
     },
     calcDistancesBFS_A_3D(start, dungeon, _3D = false, mode = GROUND_MOVE_GRID_EXCLUSION, nodeMap = "nodeMap") {
-        //console.info("-- calcDistancesBFS_A_3D --", ...arguments);
         dungeon.GA.setNodeMap(nodeMap, mode, "exclude");
-        //console.info("calcDistancesBFS_A_3D", mode, REVERSED_MAPDICT[dungeon.GA.getValue(start)]);
 
-        if (!dungeon.GA[nodeMap][start.x][start.y][start.z]) {
-            //console.error(".....START POSITION in exlcusion zone !!!!!!!!!!!!!", mode, REVERSED_MAPDICT[dungeon.GA.getValue(start)]);
-            dungeon.GA[nodeMap][start.x][start.y][start.z] = new PathNode3D(start.x, start.y, start.z);
-            //return;
+        let startNode = dungeon.GA[nodeMap][start.x][start.y][start.z];
+        let exclusionNode = false;
+
+        if (!startNode) {
+            //console.error(".....START POSITION in exlcusion zone !!!!!!!!!!!!!", mode, REVERSED_MAPDICT[dungeon.GA.getValue(start)], "start.x, start.y, start.z", start.x, start.y, start.z);
+            startNode = new PathNode3D(start.x, start.y, start.z, true);
+            exclusionNode = true;
         }
 
         let Q = new NodeQ("distance");
-        dungeon.GA[nodeMap][start.x][start.y][start.z].distance = 0;
-        dungeon.GA[nodeMap][start.x][start.y][start.z].goto = new Vector3D(0, 0, 0);
-
-        //console.log("START", dungeon.GA[nodeMap][start.x][start.y][start.z]);
-        Q.queueSimple(dungeon.GA[nodeMap][start.x][start.y][start.z]);
+        startNode.distance = 0;
+        startNode.goto = NOWAY3;
+        Q.queueSimple(startNode);
 
         const DIR = _3D ? [...ENGINE.directions3D] : [...ENGINE.directions3D_XY_plane];
 
@@ -394,12 +393,15 @@ const GRID = {
                     if (nextNode.distance > node.distance + 1) {
                         nextNode.distance = node.distance + 1;
                         nextNode.prev = node.grid;
-                        nextNode.goto = DIR[D].mirror();
+                        node.exclusion ? nextNode.goto = NOWAY3 : nextNode.goto = DIR[D].mirror(); //this prevens moving in exlusion zone using goto, but still provides  distance;
+
                         Q.queueSimple(nextNode);
                     }
                 }
             }
         }
+
+        if (exclusionNode) startNode = null;
     },
     pathFromNodeMap(origin, nodeMap) {
         let path = [origin];
@@ -512,7 +514,7 @@ class PathNode {
 }
 
 class PathNode3D {
-    constructor(x, y, z) {
+    constructor(x, y, z, exclusion = false) {
         this.distance = Infinity;
         this.priority = Infinity;
         this.path = Infinity;
@@ -520,6 +522,7 @@ class PathNode3D {
         this.goto = null;
         this.grid = new Grid3D(x, y, z);
         this.visited = false;
+        this.exclusion = exclusion;
     }
     setPriority() {
         this.priority = this.path + this.distance;
@@ -1814,12 +1817,10 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         return map;
     }
     findNextCrossroad(start, dir, fly) {
-        //console.log("findNextCrossroad", "start", start, start.constructor.name, "dir", dir, dir.constructor.name);
         let exlusion = GROUND_MOVE_GRID_EXCLUSION.sum();
         if (fly > 0) exlusion = AIR_MOVE_GRID_EXCLUSION.sum();
 
         let directions = this.getDirectionsIfNot(start, exlusion, fly, dir.mirror());
-        //console.log("....findNextCrossroad", start, dir, directions);
         let lastDir = dir;
         while (directions.length <= 1) {
             if (directions.length === 0) return [null, null]; //dead end!

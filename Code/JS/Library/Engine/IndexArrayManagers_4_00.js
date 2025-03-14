@@ -13,7 +13,7 @@ TODO:
 
 const IndexArrayManagers = {
     VERSION: "4.00",
-    VERBOSE: false,
+    VERBOSE: true,
     DEAD_LAPSED_TIME: 5,
 };
 

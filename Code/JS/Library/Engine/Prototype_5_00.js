@@ -776,6 +776,9 @@ class MasterVectorClass {
     sub(vector, factor = 1.0) {
         return this.add(vector, -factor);
     }
+    toVector3D(z = 0) {
+        return new Vector3D(this.x, this.y, z);
+    }
 }
 
 class FP_Vector extends MasterVectorClass {
@@ -846,9 +849,6 @@ class Vector extends MasterVectorClass {
     }
     static toClass(vector) {
         return new Vector(vector.x, vector.y);
-    }
-    static toVector3D(vector, z = 0) {
-        return new Vector3D(vector.x, vector.y, z);
     }
     clone() {
         return new Vector(this.x, this.y);
