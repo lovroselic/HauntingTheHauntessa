@@ -1725,16 +1725,14 @@ class $3D_player {
         return { velocity_Z: initialVelocity_Z, moveSpeed: adjustedMoveSpeed };
     }
     jump(jumpPower) {
-        //console.info("---- starting jump ----", jumpPower);
         this.onGround = false;
         this.isJumping = true;
         this.isFalling = false;
         this.ascendPhase = true;
         const jumpParams = this.calculateJumpVelocity(jumpPower);
         this.velocity_Z = jumpParams.velocity_Z;
-        this.jumpSpeed = jumpParams.moveSpeed;                                                      // Adjusted horizontal speed
+        this.jumpSpeed = jumpParams.moveSpeed;                                                              // Adjusted horizontal speed
         this.acceleration_Z = WebGL.INI.GRAVITY;
-        //console.log("this.velocity_Z", this.velocity_Z, "this.jumpDirection", this.dir, "this.jumpSpeed", this.jumpSpeed, "");
     }
     fallingDamage() {
         let velocity = Math.max(0, Math.abs(this.velocity_Z) - 5.0);
@@ -1909,7 +1907,7 @@ class $3D_player {
         if (!hit) return;
         let damage = TURN.damage(WebGL.hero, hit);
         console.info("************* HIT ****************", hit, damage);
-        const luckAddiction = Math.min(1, (damage * 0.1) >>> 0);
+        const luckAddiction = Math.min(1, Math.floor(damage * 0.1));
         damage += WebGL.hero.luck * luckAddiction;
 
         if (damage <= 0) {
@@ -1956,8 +1954,10 @@ class $3D_player {
                 }
             }
         }
-        if (ENGINE.verbose) console.info("selected attackedEnemy", `${attackedEnemy.name} - ${attackedEnemy.id}`);
-        let hit = ENGINE.lineIntersectsSphere(this.pos, refPoint, attackedEnemy.moveState.pos, attackedEnemy.r);
+
+        const attackedPoint = attackedEnemy.moveState.pos.translate(DOWN3, attackedEnemy.midHeight);
+        let hit = ENGINE.lineIntersectsSphere(this.pos, refPoint, attackedPoint, attackedEnemy.r);
+        if (ENGINE.verbose) console.info("selected attackedEnemy", `${attackedEnemy.name} - ${attackedEnemy.id}: hit ${hit}`);
 
         if (hit) return attackedEnemy;
         return null;
@@ -2920,7 +2920,7 @@ class AirItem3D extends Drawable_object {
 }
 
 class Missile extends Drawable_object {
-    constructor(position, direction, type, magic) {
+    constructor(position, direction, type, magic, explosionType = null, friendly = false) {
         super();
         this.active = true;
         this.name = "Missile";
@@ -2930,6 +2930,8 @@ class Missile extends Drawable_object {
         this.magic = magic;
         this.distance = null;
         this.bounce3D = false;
+        this.friendly = friendly;
+        this.explosionType = explosionType;
         for (const prop in type) {
             this[prop] = type[prop];
         }
@@ -3969,9 +3971,9 @@ class $3D_Entity {
     }
     setDistanceFromNodeMap(nodemap, prop = "distance") {
         let gridPosition = Grid3D.toClass(this.moveState.grid);
-        //console.info("...setDistanceFromNodeMap", this.name, this.id, this.moveState.pos, gridPosition);
-        //console.info(".......this", this);
-        //console.info(".......nodemap", nodemap);
+        console.info("...setDistanceFromNodeMap", this.name, this.id, this.moveState.pos, gridPosition);
+        console.info(".......this", this);
+        console.info(".......nodemap", nodemap);
         if (!nodemap[gridPosition.x][gridPosition.y][gridPosition.z]) {
             if (this.fly) {
                 this.distance = null;
@@ -4173,15 +4175,11 @@ class $3D_Entity {
     }
     shoot(GA) {
         const dir = this.missileType.bounce3D ? this.moveState.real_3D_direction_to_player : Vector3.from_2D_dir(this.moveState.lookDir);
-        console.warn("shoot dir", dir, "this.moveState.real_3D_direction_to_player", this.moveState.real_3D_direction_to_player, "Vector3.from_2D_dir(this.moveState.lookDir)", Vector3.from_2D_dir(this.moveState.lookDir));
         let position = this.moveState.pos.translate(dir, this.r);
         position.add_y(0.5);
         const manaCost = this.missile.calcMana(this.magic);
         const missile = new this.missile(position, dir, this.missileType, this.magic);
 
-        console.log("3D_Entity->shoot position", position, "manaCost", manaCost, "missile", missile);
-
-        //if (GA.isWall(Grid.toClass(Vector3.to_FP_Grid(missile.pos)))) return;               //missile could be created in wall
         if (GA.isWall(Vector3.to_Grid3D(missile.pos))) return;                                //missile could be created in wall
 
         this.canShoot = false;

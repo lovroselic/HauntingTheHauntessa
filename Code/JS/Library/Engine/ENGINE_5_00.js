@@ -2987,6 +2987,9 @@ const ENGINE = {
                 const endPoint = point.translate(dir, len);
                 CTX.lineTo(endPoint.x, endPoint.y);
                 CTX.stroke();
+
+                CTX.fillStyle = "blue";
+                CTX.fillText(monster.id, point.x, point.y)
             }
 
         },

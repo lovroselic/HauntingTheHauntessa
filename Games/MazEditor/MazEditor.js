@@ -60,7 +60,7 @@ const INI = {
   DRAW_OCCLUSION_MAP: true,
 };
 const PRG = {
-  VERSION: "0.15.02",
+  VERSION: "0.15.03",
   NAME: "MazEditor",
   YEAR: "2022, 2023, 2024, 2025",
   CSS: "color: #239AFF;",
@@ -895,6 +895,7 @@ const GAME = {
   },
   render() {
     const radio = $("#selector input[name=renderer]:checked").val();
+    const dimension = $("#dimensions input[name=dimensions]:checked").val();
     switch (radio) {
       case "line":
         GAME.pacGrid();
@@ -917,7 +918,12 @@ const GAME = {
         break;
     }
     if ($("input[name='grid']")[0].checked) GRID.grid();
-    if ($("input[name='coord']")[0].checked) GRID.paintCoord("coord", $MAP.map, $("input[name='all_coord']")[0].checked);
+    if ($("input[name='coord']")[0].checked) {
+      if (dimension === "2D") {
+        GRID.paintCoord("coord", $MAP.map, $("input[name='all_coord']")[0].checked);
+
+      } else GRID.paintCoord3D("coord", $MAP.map, GAME.floor, $("input[name='all_coord']")[0].checked);
+    }
     GAME.resizeGL_window();
     if (INI.DRAW_OCCLUSION_MAP) {
       $MAP.map.textureMap = $MAP.map.GA.toTextureMap();

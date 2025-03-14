@@ -847,6 +847,9 @@ class Vector extends MasterVectorClass {
     static toClass(vector) {
         return new Vector(vector.x, vector.y);
     }
+    static toVector3D(vector, z = 0) {
+        return new Vector3D(vector.x, vector.y, z);
+    }
     clone() {
         return new Vector(this.x, this.y);
     }

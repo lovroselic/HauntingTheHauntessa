@@ -13,7 +13,7 @@ TODO:
 
 const IndexArrayManagers = {
     VERSION: "4.00",
-    VERBOSE: true,
+    VERBOSE: false,
     DEAD_LAPSED_TIME: 5,
 };
 
@@ -1053,17 +1053,13 @@ class Animated_3d_entity extends IAM {
         const GA = this.map.GA;
         this.setup();
         const heroRefGrid = Vector3.to_Grid3D(this.hero.player.pos.translate(UP3, this.hero.player.heigth));
-        //console.log("heroRefGrid", heroRefGrid, "this.hero.player.pos", this.hero.player.pos.translate(UP3, this.hero.player.heigth));
 
         //GRID.calcDistancesBFS_A_3D(Vector3.to_Grid3D(this.hero.player.pos), map, false, GROUND_MOVE_GRID_EXCLUSION); //ground exlusion 3d on xy plane, this needs to be separate because of hunting on exact position!
         GRID.calcDistancesBFS_A_3D(heroRefGrid, map, false, GROUND_MOVE_GRID_EXCLUSION); //ground exlusion 3d on xy plane, this needs to be separate because of hunting on exact position!
         GRID.calcDistancesBFS_A_3D(heroRefGrid, map, true, AIR_MOVE_GRID_EXCLUSION, "airNodeMap"); //air exclusion fully 3d
-        //console.log('GA["airNodeMap"]', GA["airNodeMap"]);
-        //GA["airNodeMap"] = GA["nodeMap"];
 
         for (const entity of this.POOL) {
             if (entity) {
-                //console.log("\n........", entity.name, entity.id, "........");
                 entity.reset();
 
                 //set distance
@@ -1101,7 +1097,6 @@ class Animated_3d_entity extends IAM {
                 //enemy translate position
                 if (entity.moveState.moving) {
                     if (this.hero.dead) lapsedTime = IndexArrayManagers.DEAD_LAPSED_TIME;
-                    //console.log("entity moving", entity.moveState.pos, entity.moveState.grid);
                     GRID.translatePosition3D(entity, lapsedTime);
                     entity.update(date);
                     entity.proximityDistance = null;
@@ -1127,7 +1122,7 @@ class Animated_3d_entity extends IAM {
                     };
 
                     entity.dirStack = AI[entity.behaviour.strategy](entity, ARG);
-                    //if (IndexArrayManagers.VERBOSE) console.info(`${entity.name} ${entity.id} dirStack`, entity.dirStack, "dir", entity.moveState.dir, "strategy", entity.behaviour.strategy);
+                    if (IndexArrayManagers.VERBOSE) console.info(`${entity.name} ${entity.id} dirStack`, entity.dirStack, "dir", entity.moveState.dir, "strategy", entity.behaviour.strategy);
                 }
                 entity.makeMove();
             }

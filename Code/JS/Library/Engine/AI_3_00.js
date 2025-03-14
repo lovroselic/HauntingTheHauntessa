@@ -63,7 +63,7 @@ const AI = {
     wanderer(enemy) {
         let gridValue = this.getGridValue(enemy);
         gridValue = gridValue.sum();
-        //console.info("WANDERER", enemy.name, enemy.id, gridValue);
+        if (this.VERBOSE) console.info("WANDERER", enemy.name, enemy.id, gridValue);
         const directions = enemy.parent.map.GA.getDirectionsIfNot(this.getPosition(enemy), gridValue, enemy.fly, enemy.moveState.dir.mirror());
         if (directions.length) {
             return [directions.chooseRandom()];
@@ -77,28 +77,30 @@ const AI = {
         return [NOWAY3];
     },
     hunt(enemy, exactPosition) {
-        console.warn("...hunt, exactPosition", exactPosition);
+        if (this.VERBOSE) console.warn("...hunt", enemy.name, enemy.id, "exactPosition", exactPosition);
         if (exactPosition.hasOwnProperty("exactPlayerPosition")) exactPosition = exactPosition.exactPlayerPosition;
         let nodeMap = enemy.parent.map.GA.nodeMap;
         let grid = this.getPosition(enemy);
-        console.log(".....grid", grid);
-        let goto = nodeMap[grid.x][grid.y][grid.z]?.goto || NOWAY;
+        if (this.VERBOSE) console.log(".....grid", grid);
+        let goto = nodeMap[grid.x][grid.y][grid.z]?.goto || NOWAY3;
         if (this.VERBOSE) console.info(`...${enemy.name}-${enemy.id} hunting -> goto:`, goto, "strategy", enemy.behaviour.strategy);
         if (GRID.same3D(goto, NOWAY3) && (this.setting === "3D" || this.setting === "3D3")) return this.hunt_FP(enemy, exactPosition);
         return [goto];
     },
-    /** this is not refactored - still 2D */
+
     hunt_FP(enemy, exactPosition) {
         if (this.VERBOSE) console.error("..hunt_FP: exactPosition", exactPosition, "distance:", enemy.distance);
         if (!enemy.distance) {
             if (this.VERBOSE) console.warn("..terminating hunt - null distance");
             return this.immobile(enemy);
         }
+        /** this is not refactored - still 2D - refactored some, but not teste!!  */
         const pPos = Vector3.to_FP_Grid(exactPosition);
         const ePos = Vector3.to_FP_Grid(enemy.moveState.pos);
         const direction = ePos.direction(pPos);
         if (this.VERBOSE) console.log("pPos", pPos, "ePos", ePos, "direction", direction);
-        const orto = direction.ortoAlign();
+        let orto = direction.ortoAlign();
+        orto = orto.toVector3D(); // adding z=0 for 3D compatibility, but this still only works on the plane!!!
         if (this.VERBOSE) console.info(`${enemy.name}-${enemy.id} FP hunt`, orto, "strategy", enemy.behaviour.strategy);
         return [orto];
     },
@@ -199,11 +201,11 @@ const AI = {
         return directions;
     },
     shoot(enemy, ARG) {
-        console.info("********************** SHOOT **********************");
+        //console.info("********************** SHOOT **********************");
         if (this.VERBOSE) console.warn(`..${enemy.name}-${enemy.id} tries to shoot.`);
         if (enemy.caster) {
             if (enemy.mana >= Missile.calcMana(enemy.magic)) {
-                console.log("checking visibility");
+                //console.log("checking visibility");
                 const GA = enemy.parent.map.GA;
                 const IA = enemy.parent.map.enemyIA;
                 if (GRID.vision(this.getPosition(enemy), Grid.toClass(ARG.playerPosition), GA) &&

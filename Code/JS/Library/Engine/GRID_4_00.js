@@ -142,6 +142,22 @@ const GRID = {
             }
         }
     },
+    paintCoord3D(layer, dungeon, floor = 0, all = false) {
+        ENGINE.clearLayer(layer);
+        for (let x = 0; x < dungeon.width; x++) {
+            for (let y = 0; y < dungeon.height; y++) {
+                let grid = new Grid3D(x, y, floor);
+                if (all || !dungeon.GA.check(grid, MAPDICT.WALL)) {
+                    let point = GRID.gridToCoord(grid);
+                    let text = `${x},${y}`;
+                    GRID.paintText(point, text, layer, "#BBB");
+                    let index = x + dungeon.width * y + floor * (x + dungeon.width * y);
+                    point = point.add(DOWN, 12);
+                    GRID.paintText(point, index, layer, "#BBB");
+                }
+            }
+        }
+    },
     paintText(point, text, layer, color = "#FFF") {
         const CTX = LAYER[layer];
         CTX.font = "10px Consolas";
@@ -1798,12 +1814,12 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         return map;
     }
     findNextCrossroad(start, dir, fly) {
-        console.log("findNextCrossroad", "start", start, start.constructor.name, "dir", dir, dir.constructor.name);
+        //console.log("findNextCrossroad", "start", start, start.constructor.name, "dir", dir, dir.constructor.name);
         let exlusion = GROUND_MOVE_GRID_EXCLUSION.sum();
         if (fly > 0) exlusion = AIR_MOVE_GRID_EXCLUSION.sum();
 
         let directions = this.getDirectionsIfNot(start, exlusion, fly, dir.mirror());
-        console.log("....findNextCrossroad", start, dir, directions);
+        //console.log("....findNextCrossroad", start, dir, directions);
         let lastDir = dir;
         while (directions.length <= 1) {
             if (directions.length === 0) return [null, null]; //dead end!

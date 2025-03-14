@@ -80,14 +80,8 @@ const DEBUG = {
         GAME.gold = 5551;
         GAME.lives = 1;
 
-        //HERO.hasCapacity = true;
-        //HERO.capacity = 5;
-        //HERO.maxCapacity = 5;
-
-        //HERO.orbs = 5;
-        //HERO.orbsLost = 0;
         //HERO.magic = 87;
-        //HERO.attack = 82;
+        //HERO.attack = 11;
 
         //HERO.health = 6;
         //HERO.mana = 11;
@@ -214,7 +208,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.8.0",
+    VERSION: "0.8.1",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -292,7 +286,7 @@ const PRG = {
             //WebGL.VERBOSE = true;
             AI.VERBOSE = true;
             ENGINE.verbose = true;
-            MAP_TOOLS.INI.VERBOSE = true;
+            //MAP_TOOLS.INI.VERBOSE = true;
         }
     },
     start() {
@@ -659,7 +653,7 @@ const HERO = {
         return;
     },
     hitByMissile(missile) {
-        if (DEBUG.VERBOSE) console.log("HERO hit by missile", missile, "friendly", missile.friendly);
+        if (DEBUG.VERBOSE) console.warn("HERO hit by missile", missile, "friendly", missile.friendly);
         if (missile.friendly) {
             this.catchOrb(missile);
             missile.remove(MISSILE3D);
@@ -668,6 +662,7 @@ const HERO = {
             HERO.applyDamage(damage);
             missile.explode(MISSILE3D);
             HERO.incExp(Math.round(damage / 4), "magic");
+            if (HERO.player.isJumping) HERO.player.fallDown();
         }
     },
     inventory: {
@@ -1169,7 +1164,7 @@ const GAME = {
             ENGINE.BLOCKGRID.configure("pacgrid", "#FFF", "#000");
             ENGINE.BLOCKGRID3D.draw(MAP[GAME.level].map, HERO.player.depth);
             GRID.grid();
-            GRID.paintCoord("coord", MAP[level].map);
+            GRID.paintCoord3D("coord", MAP[level].map, HERO.player.depth);
         }
     },
     run(lapsedTime) {
@@ -1213,6 +1208,7 @@ const GAME = {
             ENTITY3D.drawVector2D();
             DYNAMIC_ITEM3D.drawVector2D();
             //WebGL.visualizeTexture3DSlice(map.occlusionMap, map.width, map.height, map.depth, 0, LAYER.debug); //debug
+            GRID.paintCoord3D("coord", MAP[GAME.level].map, HERO.player.depth);
         }
     },
     processInteraction(interaction) {
@@ -1531,7 +1527,7 @@ const GAME = {
             ENGINE.BLOCKGRID.configure("pacgrid", "#FFF", "#000");
             ENGINE.BLOCKGRID.draw(MAP[GAME.level].map);
             GRID.grid();
-            GRID.paintCoord("coord", MAP[level].map);
+            GRID.paintCoord3D("coord", MAP[level].map, HERO.player.depth);
         }
     },
     saveRestriction() {
