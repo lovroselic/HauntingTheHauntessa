@@ -179,8 +179,8 @@ const INI = {
     AVATAR_TRANSPARENCY: 10,
     BOUNCE_COUNT: 5,
     SPAWN_DELAY: 9999,
-    MONSTER_ATTACK_TIMEOUT: 2000,
-    MONSTER_SHOOT_TIMEOUT: 9999,
+    MONSTER_ATTACK_TIMEOUT: 3000,
+    MONSTER_SHOOT_TIMEOUT: 14999,
     INI_BASE_EXP_FONT: 100,
     LEVEL_FACTOR: 1.5,
     HEALTH: {
@@ -208,7 +208,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.8.3",
+    VERSION: "0.9.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

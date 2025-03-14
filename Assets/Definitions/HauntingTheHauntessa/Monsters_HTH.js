@@ -766,10 +766,10 @@ const MONSTER_TYPE = {
         deathType: "BloodExplosion",
         //
         inventory: GOLD_ITEM_TYPE.GoldBar,
-        gold: 111,
+   
         //
         mana: 1,
-        health: 10,
+        health: 1,
         attack: 20,
         magic: 20,
         defense: 5,

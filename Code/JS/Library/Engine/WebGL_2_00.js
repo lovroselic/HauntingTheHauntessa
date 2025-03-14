@@ -2588,6 +2588,9 @@ class Drawable_object {
         glMatrix.mat4.fromTranslation(mTranslationMatrix, this.pos.array);
         this.mTranslationMatrix = mTranslationMatrix;
     }
+    setValue(value) {
+        this.value = value;
+    }
 }
 
 class $POV extends Drawable_object {
@@ -2841,9 +2844,6 @@ class FloorItem3D extends Drawable_object {
         if (this.category === "gold") {
             this.value = RND(this.minVal, this.maxVal);
         }
-    }
-    setValue(value) {
-        this.value = value;
     }
     setTexture() {
         this.texture = WebGL.createTexture(this.texture);
@@ -3838,6 +3838,7 @@ class BigFireExplosion extends ParticleEmmiter {
         this.rounded = 1;
     }
 }
+
 class StaticParticleBomb extends ParticleEmmiter {
     constructor(position, duration = WebGL.INI.BOMB_DURATION_MS, texture = TEXTURE.Explosion2, number = UNIFORM.INI.MAX_N_PARTICLES) {
         super(position, texture);
@@ -4147,14 +4148,15 @@ class $3D_Entity {
     }
     dropInventory() {
         if (!this.inventory) return;
-        const grid = this.moveState.grid;
         const GA = this.IAM.map.GA;
-        if (GA.isHole(Grid.toClass(grid))) return;
-        const item = new FloorItem3D(grid, this.inventory);
-        if (item.category === 'gold') item.setValue(this.gold);
-        item.setTexture();
-        item.dropped = true;
-        ITEM3D.add(item);
+
+        const placementPosition = GA.findSolidFloor(this.moveState.pos);
+        if (!placementPosition) return;
+        placementPosition.adjuctCirclePos(this.r)
+
+        const dropped = new AirItem3D(Vector3.to_FP_Grid3D(this.moveState.pos), this.inventory, placementPosition);
+        dropped.createTexture();
+        ITEM_DROPPER3D.add(dropped);
     }
     die(expType, exp = 0) {
         this.storageLog();

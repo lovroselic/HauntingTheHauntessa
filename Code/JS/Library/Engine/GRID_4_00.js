@@ -2052,7 +2052,6 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
             case "WALL6":
             case "WALL8":
                 const heightOffset = parseInt(gridValue[4], 10) / 10;
-                //console.log("heightOffset", heightOffset);
                 posGrid.z = grid.z + heightOffset;
                 break;
             case "HOLE": return null;
