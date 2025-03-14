@@ -857,6 +857,14 @@ LoadSprites = [
     // items
     { srcName: "Items/Apple.png", name: "Apple" },
     { srcName: "Items/GoldCoin.png", name: "GoldCoin" },
+    { srcName: "Items/BrownLatexBootyShorts.png", name: "BrownLatexBootyShorts" },
+    { srcName: "Items/BlueLatexTop.png", name: "BlueLatexTop" },
+    { srcName: "Items/BrownLeatherBoots.png", name: "BrownLeatherBoots" },
+    { srcName: "Items/PinkDuster.png", name: "PinkDuster" },
+    { srcName: "Items/Rose.png", name: "Rose" },
+    { srcName: "Items/BlackLatexGloves.png", name: "BlackLatexGloves" },
+    { srcName: "Items/Crown.png", name: "Crown" },
+    { srcName: "Items/GoldenScepter.png", name: "GoldenScepter" },
 
 
     //UI, skills

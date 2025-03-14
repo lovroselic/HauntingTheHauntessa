@@ -59,7 +59,10 @@ const DEBUG = {
         /*
 
         GateKeeper wants: CerificateOfAbility,CerificateOfAbility, CerificateOfAbility ..., gives GoldKey
-        MissRose wants Rose, Rose, Rose, gives ???
+        MissRose wants Rose, Rose, Rose, gives .................................
+        FashionGuard wants "BrownLeatherBoots","BlueLatexTop", BrownLatexBootyShorts" gives CertificateOfAbility
+        Maid wants "PinkDuster", "BlackLatexGloves" gives .........................................
+        QueenMother want's crown and sceptre safe  gives Cerificate Of Ability
 
         */
 
@@ -67,10 +70,15 @@ const DEBUG = {
         Rose, 
         Rose, 
         Rose,
-        CerificateOfAbility
-        CerificateOfAbility
-        CerificateOfAbility
-
+        CertificateOfAbility
+        CertificateOfAbility
+        CertificateOfAbility
+        "BrownLeatherBoots"
+        "BlueLatexTop"
+        "BrownLatexBootyShorts"
+        "PinkDuster"
+        "BlackLatexGloves"
+        "Crown"
 
         */
 
@@ -208,7 +216,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.9.0",
+    VERSION: "0.9.1",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

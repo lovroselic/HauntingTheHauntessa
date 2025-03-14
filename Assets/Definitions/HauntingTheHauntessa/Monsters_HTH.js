@@ -766,7 +766,7 @@ const MONSTER_TYPE = {
         deathType: "BloodExplosion",
         //
         inventory: GOLD_ITEM_TYPE.GoldBar,
-   
+
         //
         mana: 1,
         health: 1,
@@ -1002,6 +1002,54 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "Apple",
         text: "Oh, it's an apple.",
+    },
+    BrownLatexBootyShorts: {
+        name: "BrownLatexBootyShorts",
+        category: "interaction_item",
+        inventorySprite: "BrownLatexBootyShorts",
+        text: "My tight shorts.",
+    },
+    BlueLatexTop: {
+        name: "BlueLatexTop",
+        category: "interaction_item",
+        inventorySprite: "BlueLatexTop",
+        text: "I look faboluos in this. As always.",
+    },
+    BrownLeatherBoots: {
+        name: "BrownLeatherBoots",
+        category: "interaction_item",
+        inventorySprite: "BrownLeatherBoots",
+        text: "My boots. Sharp heels.",
+    },
+    PinkDuster: {
+        name: "PinkDuster",
+        category: "interaction_item",
+        inventorySprite: "PinkDuster",
+        text: "A duster. For cleaning dust. That is not my job.",
+    },
+    Rose: {
+        name: "Rose",
+        category: "interaction_item",
+        inventorySprite: "Rose",
+        text: "Beautiful red rose.",
+    },
+    BlackLatexGloves: {
+        name: "BlackLatexGloves",
+        category: "interaction_item",
+        inventorySprite: "BlackLatexGloves",
+        text: "Sexy gloves.",
+    },
+    Crown: {
+        name: "Crown",
+        category: "interaction_item",
+        inventorySprite: "Crown",
+        text: "This is my drown. My! Crown!",
+    },
+    GoldenScepter: {
+        name: "GoldenScepter",
+        category: "interaction_item",
+        inventorySprite: "GoldenScepter",
+        text: "Ny specter. A symbol of my power. Or is that the heels?",
     },
 };
 
