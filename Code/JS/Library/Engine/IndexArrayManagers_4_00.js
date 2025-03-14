@@ -13,7 +13,7 @@ TODO:
 
 const IndexArrayManagers = {
     VERSION: "4.00",
-    VERBOSE: true,
+    VERBOSE: false,
     DEAD_LAPSED_TIME: 5,
 };
 
@@ -899,14 +899,9 @@ class Missile3D extends IAM {
         for (let obj of this.POOL) {
             if (obj) {
                 obj.move(lapsedTime, GA);
-                if (obj.pos.y < 0 || obj.pos.y > this.map.maxZ) {
-                    obj.explode(this);
-                    continue;
-                }
 
                 const pos = Vector3.to_FP_Grid(obj.pos);                                                                    //check wall hit
-                //point is returned in different formats!! Vector3 or FP_Grid respectively
-                let [wallHit, point] = obj.bounce3D ? GA.sphereInWallPoint(obj.pos, obj.dir, obj.r) : GA.entityInWallPoint(pos, Vector3.to_FP_Vector(obj.dir), obj.r, obj.depth);
+                let [wallHit, point] = obj.bounce3D ? GA.sphereInWallPoint(obj.pos, obj.dir, obj.r) : GA.entityInWallPoint(pos, Vector3.to_FP_Vector(obj.dir), obj.r, obj.depth);    //point is returned in different formats!! Vector3 or FP_Grid respectively
                 //console.log(obj.id, "wallHit", wallHit, point);
 
                 if (wallHit) {
@@ -956,11 +951,13 @@ class Missile3D extends IAM {
 
         if (!IA.empty(grid)) {
             const possibleEnemies = IA.unroll(grid);
+            //console.warn("possibleEnemies", possibleEnemies, "grid", grid);
             for (let P of possibleEnemies) {
                 const monster = this.entity_IAM.POOL[P - 1];
                 if (monster === null) return true;
-
                 const monsterHit = GRID.circleCollision3D(monster.moveState.referencePos, obj.pos, monster.r + obj.r);
+                //console.error("missile_entity_collision", monster.name, monster.id, "y", monster.moveState.referencePos.y, "obj", obj.pos.y, "monster.h", monster.heigth, "monster.fly", monster.fly, "monster.midHeight", monster.midHeight, "monster.r", monster.r);
+                //console.error("....missile_entity_collision", monster.moveState.referencePos, "obj", obj.pos);
                 if (monsterHit) {
                     monster.hitByMissile(obj, GA);
                     return true;

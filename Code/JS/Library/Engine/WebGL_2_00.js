@@ -2971,10 +2971,22 @@ class Missile extends Drawable_object {
     move(lapsedTime, GA) {
         let length = (lapsedTime / 1000) * this.moveSpeed;
         const pos = this.pos.translate(this.dir, length);
+        //console.log("....move", "pos", pos, "dir", this.dir);
+
+        const F = this.r / 4;                                       // pre bounce offset
 
         if (lapsedTime < 0.01) return this.explode(this.IAM);
-        if (this.pos.y < 0 || this.pos.y > this.IAM.map.maxZ) return this.explode(this.IAM);                                // movement out of bounds
         if (GA.isWall(Grid3D.toClass(Vector3.to_Grid3D(pos)))) return this.move(lapsedTime / 2, GA);
+
+        if (pos.y < F && this.dir.y < 0) {
+            //console.warn("FLOOR bounce ", pos, "F", F, "this.pos", this.pos, "this.dir", this.dir);
+            this.hitWall(this.IAM, pos, GA, DIR_UP);
+            return this.move(lapsedTime, GA);
+        } else if (pos.y > this.IAM.map.maxZ - F && this.dir.y > 0) {
+            //console.warn("CEIL bounce ?", pos, "F", F, "this.pos", this.pos, "this.dir", this.dir);
+            this.hitWall(this.IAM, pos, GA, DIR_DOWN);
+            return this.move(lapsedTime, GA);
+        }
 
         this.pos = pos;
         this.setDepth();
@@ -3033,9 +3045,9 @@ class BouncingMissile extends Missile {
         this.dir = new3D_dir;
         this.bounceCount++;
     }
-    hitWall(IAM, point, GA) {
+    hitWall(IAM, point, GA, normal) {
         if (this.power > this.minPower) {
-            this.rebound(point, GA);
+            this.rebound(point, GA, normal);
             AUDIO.Buzz.volume = RAY.volume(this.distance);
             AUDIO.Buzz.play();
             this.power--;
@@ -3052,7 +3064,6 @@ class BouncingMissile extends Missile {
         };
     }
     drop(GA) {
-        console.info("dropping missile", this);
         if (!GA) GA = this.IAM.map.GA;
 
         const placementPosition = GA.findSolidFloor(this.pos);
@@ -3070,11 +3081,12 @@ class Blue3D_Bouncer extends BouncingMissile {
         super(position, direction, type, magic);
         this.name = "Blue3D_Bouncer";
     }
-    rebound(inner, GA) {
-        let faceNormal = Vector3.getFaceNormal(this.pos.sub(inner));
+    rebound(inner, GA, normal = null) {
+        let faceNormal = normal || Vector3.getFaceNormal(this.pos.sub(inner));
         let reflectedDir = this.dir.reflect(faceNormal);
         this.dir = reflectedDir;
         this.bounceCount++;
+        //console.log("blue bounce", "faceNormal", faceNormal, "this.pos.sub(inner)", this.pos.sub(inner), "reflectedDir", reflectedDir,);
     }
 }
 
@@ -3978,14 +3990,16 @@ class $3D_Entity {
                 this.distance = null;
                 return;
             }
-            //debug
-            console.info("...setDistanceFromNodeMap", this.name, this.id, this.moveState.pos, gridPosition);
-            console.info(".......this", this);
-            console.info(".......nodemap", nodemap);
-            console.error(this.name, this.id, "has issue with gridPosition", gridPosition);
-            console.warn("details:", this);
-            console.info("MS", this.moveState);
-            console.info("HERO pos", HERO.player.pos);
+            /** this is major fuckup */
+            if (ENGINE.verbose) {
+                console.info("...setDistanceFromNodeMap", this.name, this.id, this.moveState.pos, gridPosition);
+                console.info(".......this", this);
+                console.info(".......nodemap", nodemap);
+                console.error(this.name, this.id, "has issue with gridPosition", gridPosition);
+                console.warn("details:", this);
+                console.info("MS", this.moveState);
+                console.info("HERO pos", HERO.player.pos);
+            }
         }
 
         let distance = nodemap[gridPosition.x][gridPosition.y][gridPosition.z].distance;

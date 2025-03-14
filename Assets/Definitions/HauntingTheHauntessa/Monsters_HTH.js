@@ -635,7 +635,7 @@ const MONSTER_TYPE = {
     Spider: {
         name: "Spider",
         model: "Spider",
-        scale: 1.5 / 2 ** 6,
+        scale: 1.45 / 2 ** 6,
         rotateToNorth: Math.PI,
         midHeight: 0.4,
         deathType: "BloodExplosion",
@@ -658,7 +658,7 @@ const MONSTER_TYPE = {
         name: "SpiderGreen",
         texture: "SpiderGreen",
         model: "Spider",
-        scale: 1.55 / 2 ** 6,
+        scale: 1.4 / 2 ** 6,
         rotateToNorth: Math.PI,
         midHeight: 0.4,
         deathType: "BloodExplosion",
@@ -681,7 +681,7 @@ const MONSTER_TYPE = {
         name: "SpiderRed",
         texture: "SpiderRed",
         model: "Spider",
-        scale: 1.6 / 2 ** 6,
+        scale: 1.35 / 2 ** 6,
         rotateToNorth: Math.PI,
         midHeight: 0.4,
         deathType: "BloodExplosion",
@@ -696,7 +696,7 @@ const MONSTER_TYPE = {
         attackSound: "MonsterAttack1",
         hurtSound: "MonsterHurt",
         behaviourArguments: [15, ["wanderer"], 11, ["advancer"]],
-        moveSpeed: 1.1,
+        moveSpeed: 1.15,
         material: MATERIAL.standard,
     },
 
@@ -765,10 +765,13 @@ const MONSTER_TYPE = {
         fly: 0.25,
         deathType: "BloodExplosion",
         //
+        inventory: GOLD_ITEM_TYPE.GoldBar,
+        gold: 111,
+        //
         mana: 1,
         health: 10,
         attack: 20,
-        magic: 10,
+        magic: 20,
         defense: 5,
         xp: 99,
         //

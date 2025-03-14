@@ -98,23 +98,40 @@ const MAP = {
         monsters: '[[242,"Spider"],[268,"SpiderGreen"],[294,"SpiderRed"]]',
     }
     ,
-    5 : {
+    5: {
         name: "StairStudy",
         sg: 0,
         maxSpawned: -1,
         killCountdown: -1,
         killsRequiredToStopSpawning: -1,
         spawnDelay: -1,
-        data: '{"width":"16","height":"16","depth":3,"map":"BB3ABAA3BABAA17ŁAA9ɁAA7ŁAA14ŁAA6ÁBAA2ÁAA2BB4ɁAA2ÁAA2ÁAÁÁ6AA7BB7ABB3AA5ÁÁ6AÁÁ4AA11BAA6BABÁÁ3AA2ÁÁ3AÁAA3ÁÁ3AA5BB9AA3BB6ࡁBB5ࡁсBB7AA3BB11ABB15AA9BB5ABB6ABB6AA3BB4AA6BB20AA3BB25ABB68ABB17$ABB93AA4BB16AA3BB27ABB2сAÁÁ3AÁAA2ÁAÁÁ16AA3ÁÁ20AÁÁ4AÁÁ31AÁÁ21AÁÁ14AA2ÁÁ15AA3ÁÁ40BÁÁ4BB2ÁAA9ɁBABAсBAࡁBB3"}',
+        data: '{"width":"16","height":"16","depth":3,"map":"BB3ABAA3BB2AA18ŁAA9ɁAA7ŁAA14ŁAA7ÁBAÁAA2BB4ɁAA2ÁAA2ÁAÁÁ6AA7BB7ABB3AA5ÁÁ6AÁÁ4AA12BAA3BAA2BABÁÁ3AA2ÁÁ3AÁAA3ÁÁ3AA5BB9AA3BB6ࡁBB5ࡁсBB7ABAA2BB11ABB16AA9BB5ABB6ABB7AA3BB4AA6BB21ABB2AA3BB25ABB52ABB25$ABB93AA4BB16AA3BB27ABB2сAÁÁ3AÁAA2ÁAÁÁ16AA3ÁÁ20AÁÁ4AÁÁ31AÁÁ21AÁÁ14AA2ÁÁ15AA3ÁÁ40BÁÁ4BB2ÁAA9ɁBABAсBAࡁBB3"}',
         wall: "DarkMossy22",
         floor: "BloodMarbleFloorWall_SDXL_009",
         ceil: "RedBricks40",
         start: '[385,5]',
         decals: '[[282,7,"FemDommes_6238","picture"],[490,1,"FemDommes_10150","picture"],[170,3,"FemDommes_6145","picture"]]',
         lights: '[[487,1,"Candle71","standard"],[520,7,"DuaLLantern_021","standard"],[156,3,"Candle66","standard"]]',
-        gates: '[[384,5,"5.1","4.2","Closed"]]',
+        gates: '[[384,5,"5.1","4.2","Closed"],[501,1,"5.2","6.1","Closed"]]',
         monsters: '[[182,"Bat"],[183,"Bat"],[185,"Bat"],[186,"Bat"],[187,"Bat"],[296,"MissGalaxyGreen"],[300,"MissGalaxyGreen"],[536,"Dragon"],[306,"MissGalaxy"],[318,"MissGalaxy"],[477,"SpiderRed"],[419,"Spider"],[468,"SpiderGreen"],[323,"Dragon"],[451,"Dragon"]]',
         scrolls: '[[473,4],[475,5],[459,6],[456,7],[471,8],[461,9],[445,10],[458,11]]',
         objects: '[[101,"Apple"],[153,"Apple"],[74,"Apple"],[743,"Apple"]]',
-        }
+    }
+    ,
+    6: {
+        name: "Droppings",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"16","height":"16","depth":4,"map":"BB15AA27BB3AA118BAA69ÁAÁÁ8AA2BAA2BB40AA13BB32ABABB2AA9BB12ABB24ABB11$BABB57ÁÁ2BB50ABB88ÁÁ8BB21ÁÁ11BB64ÁÁ270AA9BÁBB8ÁÁ23BB12"}',
+        wall: "Wood6",
+        floor: "MossyFloor212",
+        ceil: "SmallBlackBricks44",
+        start: '[792,7]',
+        lights: '[[248,1,"DuaLLantern_024","standard"],[241,1,"DuaLLantern_024","standard"],[254,1,"DuaLLantern_024","standard"]]',
+        gates: '[[776,7,"6.1","5.2","Open"]]',
+        monsters: '[[1000,"Dragon"],[979,"Dragon"],[988,"Dragon"]]',
+    }
 };

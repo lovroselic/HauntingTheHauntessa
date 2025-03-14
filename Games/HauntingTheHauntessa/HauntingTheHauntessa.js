@@ -76,7 +76,7 @@ const DEBUG = {
 
         console.info("DEBUG::Loading from checkpoint, this may clash with LOAD");
 
-        GAME.level = 5;
+        GAME.level = 6;
         GAME.gold = 5551;
         GAME.lives = 1;
 
@@ -208,7 +208,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.8.2",
+    VERSION: "0.8.3",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -284,7 +284,7 @@ const PRG = {
         /** dev settings */
         if (DEBUG.VERBOSE) {
             //WebGL.VERBOSE = true;
-            AI.VERBOSE = true;
+            //AI.VERBOSE = true;
             ENGINE.verbose = true;
             //MAP_TOOLS.INI.VERBOSE = true;
         }

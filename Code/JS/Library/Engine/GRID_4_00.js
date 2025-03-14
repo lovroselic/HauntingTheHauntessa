@@ -367,7 +367,6 @@ const GRID = {
         let exclusionNode = false;
 
         if (!startNode) {
-            //console.error(".....START POSITION in exlcusion zone !!!!!!!!!!!!!", mode, REVERSED_MAPDICT[dungeon.GA.getValue(start)], "start.x, start.y, start.z", start.x, start.y, start.z);
             startNode = new PathNode3D(start.x, start.y, start.z, true);
             exclusionNode = true;
         }
