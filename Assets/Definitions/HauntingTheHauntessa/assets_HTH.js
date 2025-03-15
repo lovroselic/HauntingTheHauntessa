@@ -697,6 +697,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/MissGalaxyGreen.jpg", name: "MissGalaxyGreen" },
     { srcName: "ObjectTextures/SpiderGreen.jpg", name: "SpiderGreen" },
     { srcName: "ObjectTextures/SpiderRed.jpg", name: "SpiderRed" },
+    { srcName: "ObjectTextures/GreenBat.jpg", name: "GreenBat" },
 
 
 
@@ -772,7 +773,7 @@ LoadObjects = [
     "pirate_chest.obj", "closet4.obj", "iron_chest.obj",
     "scroll.obj", "coin.obj",
     "cake.obj", "steak.obj", "can.obj", "wine.obj",
-    "apple.obj",
+    "apple.obj", "crown.obj",
 ];
 
 LoadModels = [
@@ -792,9 +793,11 @@ LoadSprites = [
     { srcName: "Slides/HTH_slide4.jpg", name: "HTH_slide4" },
 
     // frescoes - entities
-    { srcName: "EntityPictures/DarkPriestess1.jpg", name: "DarkPriestess1" },
+
     { srcName: "EntityPictures/Darksy.jpg", name: "Darksy" },
     { srcName: "EntityPictures/CuteDemon.jpg", name: "CuteDemon" },
+
+    { srcName: "EntityPictures/PrincessBed2.jpg", name: "PrincessBed" },
 
     //action movables
 
@@ -959,6 +962,7 @@ LoadSprites = [
     { srcName: "Items/BlackLatexGloves.png", name: "BlackLatexGloves" },
     { srcName: "Items/Crown.png", name: "Crown" },
     { srcName: "Items/GoldenScepter.png", name: "GoldenScepter" },
+    { srcName: "Items/GreenBat.png", name: "GreenBat" },
 
 
     //UI, skills

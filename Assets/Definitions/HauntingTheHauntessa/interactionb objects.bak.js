@@ -413,15 +413,5 @@ const INTERACTION_OBJECT = {
         inventorySprite: "Candle",
         text: "Simple wax candle. I can light it. Or not."
     },
-    Crown: {
-        name: "Crown",
-        category: "interaction_item",
-        element: "CROWN",
-        scale: 1.7 / 2 ** 2,
-        glueToFloor: true,
-        texture: "Gold",
-        material: MATERIAL.gold,
-        inventorySprite: "Crown",
-        text: "This is my crown, fuckers. Now to claim the throne."
-    },
+   
 };

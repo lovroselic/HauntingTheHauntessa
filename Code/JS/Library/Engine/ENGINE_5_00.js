@@ -3521,17 +3521,13 @@ class $3D_MoveState {
         this.lookAngle = null;
     }
     setView(lookAt) {
-        //console.info("MS setView", lookAt);
         const pPos = Vector3.to_FP_Grid(lookAt);
         const ePos = Vector3.to_FP_Grid(this.pos);
         const direction = ePos.direction(pPos);
         this.lookDir = direction;
         const angle = -FP_Vector.toClass(UP).radAngleBetweenVectors(direction);
         this.lookAngle = angle;
-        //console.log("this.pos.", this.pos.constructor.name, "lookAt", lookAt.constructor.name);
-        //this.real_3D_direction_to_player = this.pos.direction(lookAt.translate(DOWN3, 0.5));
         this.real_3D_direction_to_player = this.pos.translate(DOWN3, 0.5).direction(lookAt);
-        //console.log("..this.lookDir", this.lookDir, "this.lookAngle", this.lookAngle, "this.real_3D_direction_to_player", this.real_3D_direction_to_player);
     }
     next(dir) {
         if (!dir) throw new Error(`Direction ${dir} not defined error. Stopping execution!`);
@@ -3539,10 +3535,7 @@ class $3D_MoveState {
         this.startPos = this.endPos;
         this.dir = dir;                                         //3D dir
         this.endPos = this.startPos.add(this.dir);
-        //console.log("start", this.startPos, "end", this.endPos);
-        this.realDir = Vector3.to_FP_Grid(this.pos).direction(this.endPos);
         this.realDir = Vector3.to_FP_Grid3D(this.pos).direction(this.endPos);
-        //console.log("next this.realDir", this.realDir);
         this.moving = true;
     }
     update() {

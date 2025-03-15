@@ -24,7 +24,7 @@ const DEBUG = {
     VERBOSE: true,
     _2D_display: true,
     INVINCIBLE: true,
-    FREE_MAGIC: true,
+    FREE_MAGIC: false,
     keys: true,
     killAllAllowed: true,
     displayInv() {
@@ -77,15 +77,18 @@ const DEBUG = {
         "BlueLatexTop"
         "BrownLatexBootyShorts"
         "PinkDuster"
-        "BlackLatexGloves"
-        "Crown"
+            DONE "BlackLatexGloves" 1 wardrobe
+            DONE "Crown" 1 - floor;
+
+        Missing keys:
+            
 
         */
 
         console.info("DEBUG::Loading from checkpoint, this may clash with LOAD");
 
-        GAME.level = 6;
-        GAME.gold = 5551;
+        GAME.level = 1;
+        GAME.gold = 13;
         GAME.lives = 1;
 
         //HERO.magic = 87;
@@ -202,6 +205,7 @@ const INI = {
     },
     MANA: {
         FireBall: 5,
+        GreenBat: 10,
     },
     HEALTH_INC: 8,
     MANA_INC: 7,
@@ -216,7 +220,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.9.2",
+    VERSION: "0.10.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -582,8 +586,7 @@ const HERO = {
         this.inventoryLimit = INI.INVENTORY_HARD_LIMIT;
         this.canComplain = true;
         this.maxHealth = INI.MAX_HERO_HEALTH;
-        //this.maxMana = INI.MAX_HERO_MANA;
-        this.maxMana = 123;
+        this.maxMana = INI.MAX_HERO_MANA;
         this.magic = 5;
         this.attack = 5;
         this.defense = 0;
@@ -958,7 +961,7 @@ const GAME = {
         GAME.completed = false;
         GAME.lives = 1;
         GAME.level = 1;                 //1           
-        GAME.gold = 1;               //1
+        GAME.gold = 13;               //13
 
         const storeList = ["DECAL3D", "LIGHTS3D", "GATE3D", "VANISHING3D", "ITEM3D", "MISSILE3D", "INTERACTIVE_DECAL3D", "INTERACTIVE_BUMP3D", "ENTITY3D", "EXPLOSION3D", "DYNAMIC_ITEM3D", "LAIR"];
         GAME.STORE = new Store(storeList);

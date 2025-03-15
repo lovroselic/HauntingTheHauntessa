@@ -4232,8 +4232,8 @@ class $3D_Entity {
 }
 
 class $Movable_Interactive_entity extends $3D_Entity {
-    constructor(grid, type, dir = UP) {
-        super(grid, type, dir = UP);
+    constructor(grid, type, dir = UP3) {
+        super(grid, type, dir = UP3);
         this.excludeFromInventory = false;
         this.interactive = true;
     }

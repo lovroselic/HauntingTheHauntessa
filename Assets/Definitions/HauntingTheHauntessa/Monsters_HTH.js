@@ -46,12 +46,20 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
-    DarkPriestess1: {
-        name: "DarkPriestess1",
-        sprite: "DarkPriestess1",
+    Darksy: {
+        name: "Darksy",
+        sprite: "Darksy",
         category: 'crest',
         voice: "Female",
-        text: "This is just a tesst. Do you hear me?",
+        text: "You can't expect to just run out towards adventure. You need to get ready first.",
+        interactionCategory: "oracle",
+    },
+    PrincessBed: {
+        name: "PrincessBed",
+        sprite: "PrincessBed",
+        category: 'crest',
+        voice: "Princess",
+        text: "This is my bed, yes. But I don't have time to sleep. Adventure awaits.",
         interactionCategory: "oracle",
     },
 };
@@ -806,6 +814,17 @@ const HERO_TYPE = {
  */
 
 const INTERACTION_OBJECT = {
+    Crown: {
+        name: "Crown",
+        category: "interaction_item",
+        element: "CROWN",
+        scale: 1.7 / 2 ** 2,
+        glueToFloor: true,
+        texture: "Gold",
+        material: MATERIAL.gold,
+        inventorySprite: "Crown",
+        text: "This is my crown. I should not take it with me on adventure. Best someone keeps it safe for me."
+    },
     Apple: {
         name: "Apple",
         category: "interaction_item",
@@ -932,6 +951,23 @@ const MOVABLE_INTERACTION_OBJECT = {
         behaviourArguments: [Infinity, ["wanderer"], -1],
         inventorySprite: "RoastPig",
         text: "Here piggy piggy piggy.",
+    },
+    GreenBat: {
+        /** mana */
+        name: "GreenBat",
+        category: "action_item",
+        which: "mana",
+        model: "Bat",
+        scale: 1.15 / 2 ** 4,
+        rotateToNorth: Math.PI,
+        fly: 0.5,
+        midHeight: 0.0,
+        moveSpeed: 1.25,
+        texture: "GreenBat",
+        material: MATERIAL.greenShine,
+        behaviourArguments: [Infinity, ["wanderer"], -1],
+        inventorySprite: "GreenBat",
+        text: "Reeks with magic. Let's nibble.",
     },
 };
 

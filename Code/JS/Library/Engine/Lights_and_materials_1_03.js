@@ -8,7 +8,12 @@
 /** Lights */
 const LIGHT_COLORS = {
     standard: new Float32Array([0.90, 0.90, 0.81]),
+    standard2: new Float32Array([0.88, 0.86, 0.78]),
     standardDimmed: new Float32Array([0.8, 0.8, 0.7]),
+    standardSoft: new Float32Array([0.80, 0.78, 0.70]),       // Slightly softer, subtle warm tint
+    standardMuted: new Float32Array([0.72, 0.70, 0.63]),      // More muted and calm
+    standardDim: new Float32Array([0.64, 0.62, 0.56]),        // Dimmer, gentle ambiance
+    standardFaint: new Float32Array([0.56, 0.54, 0.49]),       // Very faint, subtle background tone
     standardRedish: new Float32Array([0.95, 0.88, 0.80]),
     dim: new Float32Array([0.45, 0.45, 0.40]),
     dimRed: new Float32Array([0.50, 0.225, 0.035]),
@@ -34,11 +39,18 @@ const LIGHT_COLORS = {
     candle: new Float32Array([1.0, 0.823529, 0.1098]),
     dimCandle: new Float32Array([0.8, 0.7, 0.10]),
     weakCandle: new Float32Array([0.5, 0.41, 0.05]),
+    softCandle: new Float32Array([0.85, 0.75, 0.25]),     // Gentle candle glow, soft yellow
+    warmCandle: new Float32Array([0.70, 0.60, 0.15]),     // Warmer, slightly dimmer candlelight
+    faintCandle: new Float32Array([0.55, 0.48, 0.10]),     // Very subdued, faint candle effect
     harshSun: new Float32Array([1.0, 1.0, 1.0]),
     normalSun: new Float32Array([0.9, 0.85, 0.8]),
     cyan: new Float32Array([0.0, 1.0, 1.0]),
     orange: new Float32Array([1.0, 0.65, 0.0]),
-    pink: new Float32Array([1.0, 0.0, 0.5])
+    pink: new Float32Array([1.0, 0.0, 0.5]),
+
+    orangeDimmed: new Float32Array([0.8, 0.52, 0.0]),        // Slightly softer and warmer
+    softOrange: new Float32Array([0.7, 0.45, 0.05]),         // Even more gentle, muted orange
+    mutedOrange: new Float32Array([0.6, 0.4, 0.1])           // Most subdued, earthy orange
 };
 
 /** Materials */

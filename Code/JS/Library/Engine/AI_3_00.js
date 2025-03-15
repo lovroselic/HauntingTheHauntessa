@@ -64,6 +64,7 @@ const AI = {
         let gridValue = this.getGridValue(enemy);
         gridValue = gridValue.sum();
         const directions = enemy.parent.map.GA.getDirectionsIfNot(this.getPosition(enemy), gridValue, enemy.fly, enemy.moveState.dir.mirror());
+        if (AI.VERBOSE) console.info(enemy.name, enemy.id, "WANDERER", enemy.moveState.pos, "gridValue", gridValue, "dirs", directions, "this.getPosition(enemy)", this.getPosition(enemy));
         if (directions.length) {
             return [directions.chooseRandom()];
         } else {
