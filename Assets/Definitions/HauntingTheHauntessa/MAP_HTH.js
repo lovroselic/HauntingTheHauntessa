@@ -134,4 +134,18 @@ const MAP = {
         gates: '[[776,7,"6.1","5.2","Open"]]',
         monsters: '[[1000,"Dragon"],[979,"Dragon"],[988,"Dragon"]]',
     }
+    ,
+    7: {
+        name: "Maze",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":16,"height":16,"depth":1,"map":"BB46ABB209$"}',
+        wall: "3d wall",
+        floor: "3d wall",
+        ceil: "3d wall",
+        start: '[232,1]',
+    }
 };

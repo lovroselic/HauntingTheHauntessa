@@ -188,14 +188,21 @@ const GAME = {
     GAME.render();
   },
   maze() {
+    const dimension = $("#dimensions input[name=dimensions]:checked").val();
     const GA = $MAP.map.GA;
     const maze = $MAP.map;
     if (!maze.start[0]) return;
     console.log(maze.start[0]);
     const start = GA.indexToGrid(maze.start[0]);
 
-    console.warn("creating maze", start);
-    maze.carveMaze(start);
+    console.warn("creating maze", start, "maze", maze);
+    if (dimension === "2D") {
+      maze.carveMaze(start);
+    } else {
+      //do something about it!
+      //convert 3d GA plane to 2d GA, create maze, carve, convert GA to 3D GA slice
+    }
+
     GAME.render();
   },
   mouseClick(event) {

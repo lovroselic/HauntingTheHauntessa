@@ -47,7 +47,15 @@ const TEXTURE_LIST = [
     "SmallBlackBricks45", "SmallBlackBricks46", "SmallBlackBricks47", "SmallBlackBricks48", "SmallRocks", "SpiderWall13", "SpiderWeb10", "SpiderWeb12", "SpiderWeb15", "SpiderWeb22", "SpiderWeb31", "SpiderWeb334",
     "SpiderWeb6", "StoneWall40", "StoneWall41", "StrangeGoldy1", "StrangeWall3", "VaultedCeiling1", "Water11", "Water12", "Water30", "Water31", "Water32", "WebbedFloor1",
     "WebbedFloor2", "WebbedFloor4", "WebbedFloor5", "WebbedFloor9", "WetBlackWall35", "WetBlackWall36", "WhiteWall24", "WhiteWall25", "WhiteWall26", "WhiteWall28", "Wood1", "Wood10",
-    "Wood11", "Wood12", "Wood13", "Wood21", "Wood3", "Wood4", "Wood5", "Wood6", "Wood7", "Wood8", "Wood9", "marbleFloor106"
+    "Wood11", "Wood12", "Wood13", "Wood21", "Wood3", "Wood4", "Wood5", "Wood6", "Wood7", "Wood8", "Wood9", "marbleFloor106",
+    "BrownishTiles101", "DarkBricks1202", "DarkFloorSDXL336", "DarkFloorSDXL337", "DarkFloorSDXL338", "DarkFloorSDXL339", "DarkWallSDXL300", "DarkWallSDXL301", "DarkWallSDXL302", "DarkWallSDXL303", "DarkWallSDXL304", "DarkWallSDXL305",
+    "DarkWallSDXL306", "DarkWallSDXL307", "DarkWallSDXL308", "DarkWallSDXL309", "DarkWallSDXL310", "DarkWallSDXL311", "DarkWallSDXL312", "DarkWallSDXL313", "DarkWallSDXL314", "DarkWallSDXL315", "DarkWallSDXL316", "DarkWallSDXL317",
+    "DarkWallSDXL318", "DarkWallSDXL319", "DarkWallSDXL320", "DarkWallSDXL321", "DarkWallSDXL322", "DarkWallSDXL323", "DarkWallSDXL324", "DarkWallSDXL325", "DarkWallSDXL326", "DarkWallSDXL327", "DarkWallSDXL328", "DarkWallSDXL329",
+    "DarkWallSDXL330", "DarkWallSDXL331", "DarkWallSDXL332", "DarkWallSDXL333", "DarkWallSDXL334", "DarkWallSDXL335", "ExteriorCastleWall1", "GoldBlackSDXL340", "GoldBlackSDXL341", "GoldBlackSDXL342", "GoldBlackSDXL343", "GoldBlackSDXL344",
+    "GoldBlackSDXL345", "GoldBlackSDXL346", "GoldBlackSDXL347", "GoldBlackSDXL348", "GoldBlackSDXL349", "GoldBrownTiles100", "GoldRedTiles100", "GreyBrickWall101", "GreyBrownTiles100", "GreyBrownTiles101", "GreyBrownTiles102", "GreyBrownTiles103",
+    "GreyBrownTiles107", "IvyBricks101", "IvyBricks102", "LightWallSDXL300", "LightWallSDXL301", "LightWallSDXL302", "LightWallSDXL303", "LightWallSDXL304", "LightWallSDXL305", "LightWallSDXL306", "LightWallSDXL307", "LightWallSDXL308",
+    "LightWallSDXL309", "LightWallSDXL310", "LightWallSDXL311", "LightWallSDXL312", "LightWallSDXL313", "LightWallSDXL314", "LightWallSDXL315", "LightWallSDXL316", "MArbleWall101", "MarbleFloor1001", "MarbleFloor1002", "MarbleFloor1003",
+    "MarbleFloor1004", "MarbleFloor1005", "MarbleTiles1001", "MossyPattern1", "MossyPattern2", "MossyTiles101", "RoughCeiling1", "ShinyCeiling", "ShinyGreyBricks100"
 ].sort();
 
 /** Decals */
