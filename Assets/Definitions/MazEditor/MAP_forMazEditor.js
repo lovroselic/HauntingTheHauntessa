@@ -578,7 +578,28 @@ const DECAL_PAINTINGS = [
     "WinterGames10", "WinterGames11", "WinterGames79", "Witcher100", "Witcher101", "Witcher102", "Witcher103", "Witcher110", "Witcher111", "Witcher112", "Witcher113", "Witcher130",
     "Witcher47", "WizardOfWor500", "WizardOfWor89", "Wolf10", "Wolfenstein31", "Wolfenstein50", "Wolfenstein70", "Yennefer", "Yennefer21", "Yeppelin70", "ZX Spectrum", "ZX81-89",
     "Zak50", "Zak51", "ZakMcKraken89", "Zaxxon3", "Zaxxon70", "Zaxxon89", "Zeppelin4", "Zeppelin50", "Zeppelin88", "Zeppelin89", "ZimSalaBim2", "ZimSalaBim200",
-    "ZimSalaBim201"
+    "ZimSalaBim201",
+    "FemDommes_12000", "FemDommes_12001", "FemDommes_12002", "FemDommes_12003", "FemDommes_12004", "FemDommes_12005", "FemDommes_12006", "FemDommes_12007", "FemDommes_12008", "FemDommes_12009", "FemDommes_12010", "FemDommes_12011",
+    "FemDommes_12012", "FemDommes_12013", "FemDommes_12014", "FemDommes_12015", "FemDommes_12016", "FemDommes_12017", "FemDommes_12018", "FemDommes_12019", "FemDommes_12020", "FemDommes_12021", "FemDommes_12022", "FemDommes_12023",
+    "FemDommes_12024", "FemDommes_12025", "FemDommes_12026", "FemDommes_12027", "FemDommes_12028", "FemDommes_12029", "FemDommes_12030", "FemDommes_12031", "FemDommes_12032", "FemDommes_12033", "FemDommes_12034", "FemDommes_12035",
+    "FemDommes_12036", "FemDommes_12037", "FemDommes_12038", "FemDommes_12039", "FemDommes_12040", "FemDommes_12041", "FemDommes_12042", "FemDommes_12043", "FemDommes_12044", "FemDommes_12045", "FemDommes_12046", "FemDommes_12047",
+    "FemDommes_12048", "FemDommes_12049", "FemDommes_12050", "FemDommes_12051", "FemDommes_12052", "FemDommes_12053", "FemDommes_12054", "FemDommes_12055", "FemDommes_12056", "FemDommes_12057", "FemDommes_12058", "FemDommes_12059",
+    "FemDommes_12060", "FemDommes_12061", "FemDommes_12062", "FemDommes_12063", "FemDommes_12064", "FemDommes_12065", "FemDommes_12066", "FemDommes_12067", "FemDommes_12068", "FemDommes_12069", "FemDommes_12070", "FemDommes_12071",
+    "FemDommes_12072", "FemDommes_12073", "FemDommes_12074", "FemDommes_12075", "FemDommes_12076", "FemDommes_12077", "FemDommes_12078", "FemDommes_12079", "FemDommes_12080", "FemDommes_12081", "FemDommes_12082", "FemDommes_12083",
+    "FemDommes_12084", "FemDommes_12085", "FemDommes_12086", "FemDommes_12087", "FemDommes_12088", "FemDommes_12089", "FemDommes_12090", "FemDommes_12091", "FemDommes_12092", "FemDommes_12093", "FemDommes_12094", "FemDommes_12095",
+    "FemDommes_12096", "FemDommes_12097", "FemDommes_12098", "FemDommes_12099", "FemDommes_12100", "FemDommes_12101", "FemDommes_12102", "FemDommes_12103", "FemDommes_12104", "FemDommes_12105", "FemDommes_12106", "FemDommes_12107",
+    "FemDommes_12108", "FemDommes_12109", "FemDommes_12110", "FemDommes_12111", "FemDommes_12112", "FemDommes_12113", "FemDommes_12114", "FemDommes_12115", "FemDommes_12116", "FemDommes_12117", "FemDommes_12118", "FemDommes_12119",
+    "FemDommes_12120", "FemDommes_12121", "FemDommes_12122", "FemDommes_12123", "FemDommes_12124", "FemDommes_12125", "FemDommes_12126", "FemDommes_12127", "FemDommes_12128", "FemDommes_12129", "FemDommes_12130", "FemDommes_12131",
+    "FemDommes_12132", "FemDommes_12133", "FemDommes_12134", "FemDommes_12135", "FemDommes_12136", "FemDommes_12137", "FemDommes_12138", "FemDommes_12139", "FemDommes_12140", "FemDommes_12141", "FemDommes_12142", "FemDommes_12143",
+    "FemDommes_12144", "FemDommes_12145", "FemDommes_12146", "FemDommes_12147", "FemDommes_12148", "FemDommes_12149", "FemDommes_12150", "FemDommes_12151", "FemDommes_12152", "FemDommes_12153", "FemDommes_12154", "FemDommes_12155",
+    "FemDommes_12156", "FemDommes_12157", "FemDommes_12158", "FemDommes_12159", "FemDommes_12160", "FemDommes_12161", "FemDommes_12162", "FemDommes_12163", "FemDommes_12164", "FemDommes_12165", "FemDommes_12166", "FemDommes_12167",
+    "FemDommes_12168", "FemDommes_12169", "FemDommes_12170", "FemDommes_12171", "FemDommes_12172", "FemDommes_12173", "FemDommes_12174", "FemDommes_12175", "FemDommes_12176", "FemDommes_12177", "FemDommes_12178", "FemDommes_12179",
+    "FemDommes_12180", "FemDommes_12181", "FemDommes_12182", "FemDommes_12183", "FemDommes_12184", "FemDommes_12185", "FemDommes_12186", "FemDommes_12187", "FemDommes_12188", "FemDommes_12189", "FemDommes_12190", "FemDommes_12191",
+    "FemDommes_12192", "FemDommes_12193", "FemDommes_12194", "FemDommes_12195", "FemDommes_12196", "FemDommes_12197", "FemDommes_12198", "FemDommes_12199", "FemDommes_12200", "FemDommes_12201", "FemDommes_12202", "FemDommes_12203",
+    "FemDommes_12204", "FemDommes_12205", "FemDommes_12206", "FemDommes_12207", "FemDommes_12208", "FemDommes_12209", "FemDommes_12210", "FemDommes_12211", "FemDommes_12212", "FemDommes_12213", "FemDommes_12214", "FemDommes_12215",
+    "FemDommes_12216", "FemDommes_12217", "FemDommes_12218", "FemDommes_12219", "FemDommes_12220", "FemDommes_12221", "FemDommes_12222", "FemDommes_12223", "FemDommes_12224", "FemDommes_12225", "FemDommes_12226", "FemDommes_12227",
+    "FemDommes_12228", "FemDommes_12229", "FemDommes_12230", "FemDommes_12231", "FemDommes_12232", "FemDommes_12233", "FemDommes_12234", "FemDommes_12235", "FemDommes_12236", "FemDommes_12237", "FemDommes_12238", "FemDommes_12239",
+    "FemDommes_12240", "FemDommes_12241", "FemDommes_12242", "FemDommes_12243", "FemDommes_12244", "FemDommes_12245", "FemDommes_12246", "FemDommes_12247", "FemDommes_12248", "FemDommes_12249", "FemDommes_12250", "FemDommes_12251"
 ].sort();
 
 /** Crests */
@@ -622,7 +643,9 @@ const LIGHT_DECALS = [
     "Lights110", "Lights111", "Lights112", "Lights113", "Lights114", "Lights115", "Moon50", "Moon51", "Moon52", "Moon54", "Moon55", "Moon56",
     "Moon58", "Moon59", "Moon60", "Moon62", "Moon63", "SkullLantern50", "SkullLantern51", "SkullLantern52", "SkullLantern53", "SkullLantern54", "SkullLantern55", "SkullLantern56",
     "SkullLantern57", "SkullLantern58", "Sun1", "Sun2", "WallLamp10", "WallLamp11", "WallLamp12", "WallLamp13", "WallLamp14", "WallLamp15", "WallLamp16", "WallLamp17",
-    "WallLamp18", "WallLamp19", "WallLamp20", "WallLamp31", "WallLamp32", "WallLamp33", "WallLamp34", "WallLamp35", "WallLamp9"
+    "WallLamp18", "WallLamp19", "WallLamp20", "WallLamp31", "WallLamp32", "WallLamp33", "WallLamp34", "WallLamp35", "WallLamp9",
+    "CandleL1", "CandleR1", "FireplaceFLuxU411", "FireplaceFLuxU412", "FireplaceFLuxU413", "FireplaceFLuxU414", "FireplaceFLuxU415", "FireplaceFLuxU416", "FireplaceFLuxU417", "FireplaceFLuxU418", "FireplaceFLuxU419", "FireplaceFLuxU420",
+    "Lantern301", "Lantern302", "Lantern304", "SingleLantern1", "Torch11", "lantern201", "lantern303"
 ].sort();
 
 const TRIGGER_DECALS = ["SmoothWallButton", "RockTriggerButton", "MarbleTriggerButton", "PurpleTriggerButton"];

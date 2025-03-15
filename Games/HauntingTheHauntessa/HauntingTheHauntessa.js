@@ -220,7 +220,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.10.0",
+    VERSION: "0.10.1",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -763,6 +763,7 @@ const HERO = {
         ENGINE.GAME.ANIMATION.next(GAME.gameOverRun);
     },
     raiseStat(which, level = 1) {
+        this[`reference_${which}`] += level;
         this[which] += level;
         TITLE.skills();
     },
