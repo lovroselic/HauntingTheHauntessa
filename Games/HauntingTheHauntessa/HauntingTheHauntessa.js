@@ -60,19 +60,17 @@ const DEBUG = {
 
         GateKeeper wants: CerificateOfAbility,CerificateOfAbility, CerificateOfAbility ..., gives GoldKey
         MissRose wants Rose, Rose, Rose, gives .................................
-        FashionGuard wants "BrownLeatherBoots","BlueLatexTop", BrownLatexBootyShorts" gives CertificateOfAbility
+        FashionGuard wants "BrownLeatherBoots","BlueLatexTop", BrownLatexBootyShorts" gives CertificateOfAbility  === "Document"
         Maid wants "PinkDuster", "BlackLatexGloves" gives .........................................
-        QueenMother want's crown and sceptre safe  gives Cerificate Of Ability
+            DONE QueenMother want's crown and sceptre safe  gives Cerificate Of Ability === "Document"
 
-        */
-
-        /*
+  
         Rose, 
         Rose, 
         Rose,
-        CertificateOfAbility
-        CertificateOfAbility
-        CertificateOfAbility
+        "Document"
+        "Document"
+            DONE "Document" -> QueenMother (2)
         "BrownLeatherBoots"
         "BlueLatexTop"
         "BrownLatexBootyShorts"
@@ -87,7 +85,7 @@ const DEBUG = {
 
         console.info("DEBUG::Loading from checkpoint, this may clash with LOAD");
 
-        GAME.level = 1;
+        GAME.level = 2;
         GAME.gold = 13;
         GAME.lives = 1;
 
@@ -117,14 +115,18 @@ const DEBUG = {
         TITLE.stack.scrollIndex = Math.max(TITLE.stack.scrollIndex, 0);
         TITLE.scrolls();
 
-        let invItems = [];
+        let invItems = [
+
+            //debug
+            "Crown", "GoldenScepter"
+        ];
 
         for (let itm of invItems) {
             const item = new NamedInventoryItem(itm, itm);
             HERO.inventory.item.push(item);
         }
 
-        let keys = [];
+        let keys = ["Pink"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -232,7 +234,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.10.2",
+    VERSION: "0.10.3",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -307,7 +309,7 @@ const PRG = {
 
         /** dev settings */
         if (DEBUG.VERBOSE) {
-            //WebGL.VERBOSE = true;
+            WebGL.VERBOSE = true;
             //AI.VERBOSE = true;
             ENGINE.verbose = true;
             //MAP_TOOLS.INI.VERBOSE = true;

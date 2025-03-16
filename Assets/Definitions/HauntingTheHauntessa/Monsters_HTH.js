@@ -45,6 +45,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    PrincessThrone: {
+        name: "PrincessThrone",
+        sprite: "PrincessThrone",
+        category: 'crest',
+        voice: "Princess",
+        text: "This is my throne, yes. But I don't have time to sit. My ass yearns for adventure.",
+        interactionCategory: "oracle",
+    },
     Darksy: {
         name: "Darksy",
         sprite: "Darksy",
@@ -1084,24 +1092,32 @@ const INTERACTION_ITEM = {
         name: "GoldenScepter",
         category: "interaction_item",
         inventorySprite: "GoldenScepter",
-        text: "Ny specter. A symbol of my power. Or is that the heels?",
+        text: "My specter. A symbol of my power. Or is that the heels?",
+    },
+    Document: {
+        name: "Document",
+        category: "interaction_item",
+        inventorySprite: "Document",
+        text: "This proves I am able.",
     },
 };
 
 const INTERACTION_ENTITY = {
-    Darksy: {
-        name: "Darksy",
-        sprite: "Darksy",
+    QueenMother: {
+        name: "QueenMother",
+        sprite: "QueenMother",
         category: 'crest',
-        voice: "Female",
-        wants: ["Apple"],
-        gives: "GoldCoin",
+        voice: "StrangeFemale",
+        wants: ["Crown", "GoldenScepter"],
+        gives: "Document",
         text: {
-            intro: "This is intro.",
-            progress: null,
-            conclusion: "This is conclusion"
+            intro: "Oh dear daughter, adventure's sweet, but royal gear you must retreat! Your crown and scepter I'll safely guard, adventure waits beyond the yard.",
+            progress: "Well begun, my little dove, yet one more treasure's still above!",
+            conclusion: "Perfectly done, adventure calls! This royal note unlocks the walls."
         }
-    },
+    }
+    ,
+
 };
 
 const INTERACTION_SHRINE = {

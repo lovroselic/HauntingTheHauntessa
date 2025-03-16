@@ -796,8 +796,9 @@ LoadSprites = [
 
     { srcName: "EntityPictures/Darksy.jpg", name: "Darksy" },
     { srcName: "EntityPictures/CuteDemon.jpg", name: "CuteDemon" },
-
     { srcName: "EntityPictures/PrincessBed2.jpg", name: "PrincessBed" },
+    { srcName: "EntityPictures/PrincessThrone.jpg", name: "PrincessThrone" },
+    { srcName: "EntityPictures/QueenMother2.jpg", name: "QueenMother" },
 
     //action movables
 
@@ -965,7 +966,7 @@ LoadSprites = [
     { srcName: "Items/Crown.png", name: "Crown" },
     { srcName: "Items/GoldenScepter.png", name: "GoldenScepter" },
     { srcName: "Items/GreenBat.png", name: "GreenBat" },
-
+    { srcName: "Items/Document.png", name: "Document" },
 
     //UI, skills
     { srcName: "UI/CompassRose.png", name: "CompassRose" },

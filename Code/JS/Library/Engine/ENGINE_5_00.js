@@ -2765,7 +2765,6 @@ const ENGINE = {
     },
     BLOCKGRID: {
         draw(maze, corr) {
-            let t0 = performance.now();
             var CTX = ENGINE.BLOCKGRID.layer;
             ENGINE.clearLayer(ENGINE.BLOCKGRID.layerString);
             let sizeX = parseInt(maze.width, 10);
@@ -2804,7 +2803,7 @@ const ENGINE = {
             ENGINE.DD.init(CTX, maze.GA, (ENGINE.INI.GRIDPIX / 2) - decalWidth);
             ENGINE.DD.decalDraw(maze, 0);
         },
-        wall(x, y, CTX, value) {
+        wall(x, y, CTX, value, off = 0) {
             let FS;
             switch (value) {
                 case MAPDICT.BLOCKWALL:
@@ -2824,17 +2823,17 @@ const ENGINE = {
                     break;
             }
             CTX.fillStyle = FS;
-            let px = x * ENGINE.INI.GRIDPIX;
-            let py = y * ENGINE.INI.GRIDPIX;
-            CTX.fillRect(px, py, ENGINE.INI.GRIDPIX, ENGINE.INI.GRIDPIX);
+            let px = x * ENGINE.INI.GRIDPIX + off;
+            let py = y * ENGINE.INI.GRIDPIX + off;
+            CTX.fillRect(px, py, ENGINE.INI.GRIDPIX - off * 2, ENGINE.INI.GRIDPIX - off * 2);
         },
-        staircase(x, y, CTX, value) {
+        staircase(x, y, CTX, value, off = 0) {
             CTX.fillStyle = `rgba(0, 0, ${208 + value * 6}, ${(value + 1) / 10})`;
-            let px = x * ENGINE.INI.GRIDPIX;
-            let py = y * ENGINE.INI.GRIDPIX;
-            CTX.fillRect(px, py, ENGINE.INI.GRIDPIX, ENGINE.INI.GRIDPIX);
+            let px = x * ENGINE.INI.GRIDPIX + off;
+            let py = y * ENGINE.INI.GRIDPIX + off;
+            CTX.fillRect(px, py, ENGINE.INI.GRIDPIX - off * 2, ENGINE.INI.GRIDPIX - off * 2);
         },
-        corr(x, y, CTX, value, corr) {
+        corr(x, y, CTX, value, corr, off = 0) {
             let FS;
             switch (value) {
                 case MAPDICT.HOLE:
@@ -2854,9 +2853,10 @@ const ENGINE = {
                     break;
             }
             CTX.fillStyle = FS;
-            let px = x * ENGINE.INI.GRIDPIX;
-            let py = y * ENGINE.INI.GRIDPIX;
-            CTX.fillRect(px, py, ENGINE.INI.GRIDPIX, ENGINE.INI.GRIDPIX);
+            let px = x * ENGINE.INI.GRIDPIX + off;
+            let py = y * ENGINE.INI.GRIDPIX + off;
+            CTX.fillRect(px, py, ENGINE.INI.GRIDPIX - off * 2, ENGINE.INI.GRIDPIX - off * 2);
+
             if (corr) {
                 CTX.setLineDash([1, 1]);
                 CTX.strokeStyle = "#000";
@@ -2865,9 +2865,15 @@ const ENGINE = {
         },
         layer: null,
         layerString: null,
+        hintLayer: null,
+        hintLayerString: null,
         setLayer(layer) {
             ENGINE.BLOCKGRID.layerString = layer;
             ENGINE.BLOCKGRID.layer = LAYER[layer];
+        },
+        setHintLayer(hintLayer) {
+            ENGINE.BLOCKGRID.hintLayerString = hintLayer;
+            ENGINE.BLOCKGRID.hintLayer = LAYER[hintLayer];
         },
         color: null,
         setColor(color) {
@@ -2877,13 +2883,40 @@ const ENGINE = {
         setBackground(back) {
             ENGINE.BLOCKGRID.background = back;
         },
-        configure(layer, background, color) {
+        configure(layer, background, color, hintLayer = null) {
             ENGINE.BLOCKGRID.setLayer(layer);
             ENGINE.BLOCKGRID.setColor(color);
             ENGINE.BLOCKGRID.setBackground(background);
+            if (hintLayer) ENGINE.BLOCKGRID.setHintLayer(hintLayer);
         }
     },
     BLOCKGRID3D: {
+        drawHint(maze, z, corr = false) {
+            const offset = 20;
+            const CTX = ENGINE.BLOCKGRID.hintLayer;
+            ENGINE.clearLayer(ENGINE.BLOCKGRID.hintLayerString);
+
+            let sizeX = parseInt(maze.width, 10);
+            let sizeY = parseInt(maze.height, 10);
+
+            for (let x = 0; x < sizeX; x++) {
+                for (let y = 0; y < sizeY; y++) {
+                    let grid = new Grid3D(x, y, z);
+                    let value = maze.GA.getValue(grid);
+                    value &= 2 ** maze.GA.gridSizeBit - 1 - MAPDICT.FOG - MAPDICT.RESERVED;
+
+                    if (maze.GA.isBlockWall(grid) || maze.GA.isMazeWall(grid)) {
+                        ENGINE.BLOCKGRID.wall(x, y, CTX, MAPDICT.WALL, offset);
+                    } else if (STAIRCASE_GRIDS.includes(value)) {
+                        ENGINE.BLOCKGRID.staircase(x, y, CTX, WallSizeToHeight(value), offset);
+                    } else {
+                        value &= 2 ** maze.GA.gridSizeBit - 1 - MAPDICT.RESERVED - MAPDICT.START_POSITION;
+                        ENGINE.BLOCKGRID.corr(x, y, CTX, value, corr, offset);
+                    }
+
+                }
+            }
+        },
         draw(maze, z, corr) {
             const CTX = ENGINE.BLOCKGRID.layer;
             ENGINE.clearLayer(ENGINE.BLOCKGRID.layerString);

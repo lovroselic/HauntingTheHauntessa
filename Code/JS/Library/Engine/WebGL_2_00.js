@@ -268,6 +268,13 @@ const WebGL = {
         if (this.VERBOSE) {
             console.log(`%cWorld:`, this.CSS, this.world);
             console.log(`%cWebGL:`, this.CSS, this);
+
+            console.log({
+                maxVertexAttribs: gl.getParameter(gl.MAX_VERTEX_ATTRIBS),
+                maxVertexUniformVectors: gl.getParameter(gl.MAX_VERTEX_UNIFORM_VECTORS),
+                maxElementVertices: gl.getParameter(gl.MAX_ELEMENTS_VERTICES),
+                maxElementIndices: gl.getParameter(gl.MAX_ELEMENTS_INDICES),
+            });
         }
     },
     initAllBuffers(gl, world) {
@@ -844,6 +851,7 @@ const WebGL = {
         gl.enable(gl.DEPTH_TEST);
         gl.depthFunc(gl.LEQUAL);
         gl.enable(gl.CULL_FACE);
+        gl.cullFace(gl.BACK);//??????????????????
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
         //scene
@@ -1130,14 +1138,13 @@ const WebGL = {
                     const data = new Uint8Array(4);
                     gl.readPixels(pixelX, pixelY, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, data);
                     const id = data[0] + (data[1] << 8) + (data[2] << 16) + (data[3] << 24);
-                    //console.warn("id", id); //debug
+
                     if (id <= 0) return;
                     const obj = GLOBAL_ID_MANAGER.getObject(id);
                     if (!obj) return;
                     if (!obj.interactive) return;
                     if (WebGL.VERBOSE) console.info("Object clicked:", obj, "globalID", id);
-                    console.info("Object clicked:", obj, "globalID", id);
-                    //let PPos2d = Vector3.to_FP_Grid(hero.player.pos);                                           //still 2D
+                    //console.info("Object clicked:", obj, "globalID", id);
 
                     let itemGrid = obj.grid;
                     if (obj.moveState) {
@@ -1148,10 +1155,9 @@ const WebGL = {
                         itemGrid = Grid.toCenter(obj.grid);
                     }
 
-                    //let distance = PPos2d.EuclidianDistance(itemGrid);
                     let distance = hero.player.pos.EuclidianDistance(Vector3.from_grid3D(itemGrid));
                     if (WebGL.VERBOSE) console.info("Object distance:", distance);
-                    console.info("Object distance:", distance, "WebGL.INI.INTERACT_DISTANCE", WebGL.INI.INTERACT_DISTANCE, "itemGrid", itemGrid, "HERO", HERO.player.pos.array);
+                    //console.info("Object distance:", distance, "WebGL.INI.INTERACT_DISTANCE", WebGL.INI.INTERACT_DISTANCE, "itemGrid", itemGrid, "HERO", HERO.player.pos.array);
                     if (distance < WebGL.INI.INTERACT_DISTANCE) {
                         /** 
                          * GA
@@ -1938,6 +1944,8 @@ class $3D_player {
         const refGrid = Vector3.to_Grid3D(refPoint);
         const playerGrid = Vector3.to_Grid3D(this.pos);
         const IA = this.map.enemyIA;
+        if (!IA) return this.miss();
+                                                                //there is no enemies
         const POOL = ENTITY3D.POOL;
         const enemies = IA.unrollArray([refGrid, playerGrid]);
 

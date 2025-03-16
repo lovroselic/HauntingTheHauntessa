@@ -16,6 +16,7 @@ ported to gen 4 ENGINE, GRID
 
  */
 ////////////////////////////////////////////////////
+
 const MAP = {
   Demo: {
     name: "Demo",
@@ -48,6 +49,7 @@ const $MAP = {
     }
   }
 };
+
 const INI = {
   MAXINT: 96,
   MININT: 5,
@@ -59,8 +61,9 @@ const INI = {
   MAX_DEPTH: 13,
   DRAW_OCCLUSION_MAP: true,
 };
+
 const PRG = {
-  VERSION: "0.15.03",
+  VERSION: "0.15.04",
   NAME: "MazEditor",
   YEAR: "2022, 2023, 2024, 2025",
   CSS: "color: #239AFF;",
@@ -92,6 +95,10 @@ const PRG = {
     $("#all_coord").click(GAME.render);
     $("#grid").click(GAME.render);
     $("#dimensions input[name=dimensions]").click(GAME.dimensions);
+
+    $("#hint_down").click(GAME.hintDown);
+    $("#hint_up").click(GAME.hintUp);
+    $("#clearHint").click(GAME.clearHints);
 
     $("#buttons").on("click", "#new", GAME.init);
     $("#buttons").on("click", "#arena", GAME.arena);
@@ -771,6 +778,7 @@ const GAME = {
 
     GAME.stack.previousRadio = radio;
     GAME.render();
+    GAME.hintDown();
   },
   stack: {
     previousRadio: null,
@@ -868,7 +876,7 @@ const GAME = {
     ENGINE.resizeBOX("ROOM");
 
     $(ENGINE.gameWindowId).width(ENGINE.gameWIDTH + 4);
-    ENGINE.BLOCKGRID.configure("pacgrid", "#FFF", "#000");
+    ENGINE.BLOCKGRID.configure("pacgrid", "#FFF", "#000", "hint");
     console.log("GAME.blockGrid3D -> GAME.floor", GAME.floor);
     ENGINE.BLOCKGRID3D.draw($MAP.map, GAME.floor, corr);
   },
@@ -1046,7 +1054,7 @@ const GAME = {
     GAME.updateWH();
 
     $(ENGINE.gameWindowId).width(ENGINE.gameWIDTH + 4);
-    ENGINE.addBOX("ROOM", ENGINE.gameWIDTH, ENGINE.gameHEIGHT, ["pacgrid", "wall", "grid", "coord", "click"], null);
+    ENGINE.addBOX("ROOM", ENGINE.gameWIDTH, ENGINE.gameHEIGHT, ["pacgrid", "wall", "grid", "hint", "coord", "click"], null);
     ENGINE.addBOX("WEBGL", 800, 600, ["3d_webgl"], null);
     ENGINE.addBOX("DEBUG", 320, 200, ["debug"], null);
 
@@ -1568,6 +1576,20 @@ ceil: "${$("#ceiltexture")[0].value}",\n`;
         $("#floors").show();
         break;
     }
+  },
+  hint(floor) {
+    ENGINE.BLOCKGRID3D.drawHint($MAP.map, floor);
+  },
+  hintDown() {
+    if (GAME.floor === 0) return;
+    return GAME.hint(GAME.floor - 1);
+  },
+  hintUp() {
+    if (GAME.floor === $MAP.depth - 1) return;
+    return GAME.hint(GAME.floor + 1);
+  },
+  clearHints() {
+    ENGINE.clearLayer("hint");
   }
 };
 
