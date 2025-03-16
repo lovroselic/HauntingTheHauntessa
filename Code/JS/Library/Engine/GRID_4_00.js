@@ -21,6 +21,8 @@ const GRID = {
     SETTING: {
         ALLOW_CROSS: false,
         EPSILON: 0.05,
+        FORWARD_CIRCLE_RESOLUTION: 2,
+        FORWARD_CIRCLE_CHECK_ANGLE: Math.PI / 4,
     },
     circleCollision(entity1, entity2) {
         let distance = entity1.moveState.pos.EuclidianDistance(entity2.moveState.pos);
@@ -1006,9 +1008,9 @@ class GA_Dimension_Agnostic_Methods {
         }
         return checks;
     }
-    forwardPointsFrontEntity(pos, dir, r, resolution = 2) {
+    forwardPointsFrontEntity(pos, dir, r, resolution = GRID.SETTING.FORWARD_CIRCLE_RESOLUTION) {
         let checks = [pos];
-        const increment = (Math.PI / 4) / resolution;
+        const increment = (GRID.SETTING.FORWARD_CIRCLE_CHECK_ANGLE) / resolution;
         for (let i = 1; i <= resolution; i++) {
             let theta = increment * i;
             checks.push(pos.translate(dir.rotate(theta), r));
@@ -1854,45 +1856,36 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         return [false, null];
     }
     spherePointsAroundCenter(pos, dir, r) {
-        //console.info("spherePointsAroundCenter", pos, dir, r);
         pos = pos.array;
         dir = dir.array;
         const points = [];
 
-        // First point directly ahead
         const forwardPoint = glMatrix.vec3.create();
-        glMatrix.vec3.scaleAndAdd(forwardPoint, pos, dir, r);
-        //console.log("forwardPoint", forwardPoint);
+        glMatrix.vec3.scaleAndAdd(forwardPoint, pos, dir, r);                                       // First point directly ahead
         points.push(forwardPoint);
 
-        // Find orthogonal vectors to create a hemisphere around the direction vector
-        let up = [0, 1, 0];
+        let up = [0, 1, 0];                                                                         // Find orthogonal vectors to create a hemisphere around the direction vector
         let orthogonalVec1 = glMatrix.vec3.create();
         glMatrix.vec3.cross(orthogonalVec1, dir, up);
 
-        // Handle the case when direction is parallel to 'up' vector
         if (glMatrix.vec3.length(orthogonalVec1) < 0.001) {
-            up = [1, 0, 0];
+            up = [1, 0, 0];                                                                         // Handle the case when direction is (almost) parallel to 'up' vector
             glMatrix.vec3.cross(orthogonalVec1, dir, up);
         }
 
         glMatrix.vec3.normalize(orthogonalVec1, orthogonalVec1);
 
-        // Second orthogonal vector
-        const orthogonalVec2 = glMatrix.vec3.create();
+        const orthogonalVec2 = glMatrix.vec3.create();                                              // Second orthogonal vector
         glMatrix.vec3.cross(orthogonalVec2, dir, orthogonalVec1);
         glMatrix.vec3.normalize(orthogonalVec2, orthogonalVec2);
 
-
         const angles = [Math.PI / 2, Math.PI / 4];                                                  // Choose angles defining hemisphere coverage 
 
-        // Generate hemisphere points
-        for (let angle of angles) {
+        for (let angle of angles) {                                                                 // Generate hemisphere points
             const cosAngle = Math.cos(angle);
             const sinAngle = Math.sin(angle);
 
-            // Points around the circle at each angle
-            for (let rad of [0, Math.PI / 2, Math.PI, (3 * Math.PI) / 2]) {
+            for (let rad of [0, Math.PI / 2, Math.PI, (3 * Math.PI) / 2]) {                         // Points around the circle at each angle
 
                 const sideVec = glMatrix.vec3.create();                                             // Rotate around 'dir' vector
                 glMatrix.vec3.scale(sideVec, orthogonalVec1, Math.cos(rad));                        // sideVec = orthogonalVec1 * cos(t) + orthogonalVec2 * sin(t)
@@ -1914,7 +1907,7 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         let checks = this.spherePointsAroundCenter(pos, dir, r);
         for (const point of checks) {
             const grid3d = new Grid3D(point[0], point[2], point[1]);
-            const check = this.check(grid3d, AIR_MOVE_GRID_EXCLUSION.sum());            //if >0  thenm hit, if false the in was OOB
+            const check = this.check(grid3d, AIR_MOVE_GRID_EXCLUSION.sum());                          //if >0  then hit, if false the in was OOB
             if (check === false || check > 0) return [true, Vector3.from_array(point)];
         }
 
@@ -1950,8 +1943,6 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         nodeMap: path found, extract from nodeMap
         */
 
-        //console.info("findPath_AStar_fast", ...arguments);
-
         if (GRID.same(start, finish)) {
             return 0;
         }
@@ -1964,8 +1955,6 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         NodeMap[start.x][start.y][start.z].distance = start.distance(finish);
         NodeMap[start.x][start.y][start.z].path = 0;
         NodeMap[start.x][start.y][start.z].setPriority();
-
-        //console.log("start node", NodeMap[start.x][start.y][start.z]);
 
         Q.queueSimple(NodeMap[start.x][start.y][start.z]);
         while (Q.size() > 0) {
@@ -1993,7 +1982,7 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         }
         return null;
     }
-    singleForwardPositionIsIncluded(pos, dir, r, depth, include, resolution = 2) {
+    singleForwardPositionIsIncluded(pos, dir, r, depth, include, resolution = GRID.SETTING.FORWARD_CIRCLE_RESOLUTION) {
         let checks = this.forwardPointsFrontEntity(pos, dir, r, resolution);
         checks = checks.map(pos => new Grid3D(pos.x, pos.y, depth));
         let unpassable = checks.filter(grid => this.check(grid, HERO_GROUND_MOVE_GRID_EXCLUSION.sum()));
@@ -2002,46 +1991,41 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         let filtered = checks.filter(grid => this.check(grid, include.sum()));
         return filtered;
     }
-    singleForwardPositionIsEmpty(pos, dir, r, depth, resolution = 2) {
+    singleForwardPositionIsEmpty(pos, dir, r, depth, resolution = GRID.SETTING.FORWARD_CIRCLE_RESOLUTION) {
         return this.singleForwardPositionIsValue(pos, dir, r, depth, 0, resolution);
     }
-    singleForwardPositionIsValue(pos, dir, r, depth, value, resolution = 2) {
+    singleForwardPositionIsValue(pos, dir, r, depth, value, resolution = GRID.SETTING.FORWARD_CIRCLE_RESOLUTION) {
         let checks = this.forwardPointsFrontEntity(pos, dir, r, resolution);
         checks = checks.map(pos => new Grid3D(pos.x, pos.y, depth));
         let filtered = checks.filter(grid => this.isValue(grid, value));
         return filtered;
     }
-    forwardPositionIsEmpty(pos, dir, r, depth, resolution = 2) {
+    forwardPositionIsEmpty(pos, dir, r, depth, resolution = GRID.SETTING.FORWARD_CIRCLE_RESOLUTION) {
         return this.forwardPositionIsValue(pos, dir, r, depth, 0, resolution);
     }
-    forwardPositionIsValue(pos, dir, r, depth, value, resolution = 2) {
+    forwardPositionIsValue(pos, dir, r, depth, value, resolution = GRID.SETTING.FORWARD_CIRCLE_RESOLUTION) {
         let checks = this.forwardPointsFrontEntity(pos, dir, r, resolution);
         checks = checks.map(pos => new Grid3D(pos.x, pos.y, depth));
         let filtered = checks.filter(grid => this.isValue(grid, value));
         return checks.length === filtered.length;
     }
-    forwardPositionAreIn(pos, dir, r, depth, values, resolution = 2) {
+    forwardPositionAreIn(pos, dir, r, depth, values, resolution = GRID.SETTING.FORWARD_CIRCLE_RESOLUTION) {
         let checks = this.forwardPointsFrontEntity(pos, dir, r, resolution);
         checks = checks.map(pos => new Grid3D(pos.x, pos.y, depth));
         let filtered = checks.filter(grid => values.includes(this.getValue(grid)));
         return checks.length === filtered.length;
     }
     findSolidFloor(pos) {
-        //console.log("---findSolidFloor---", pos);
         let posGrid = Vector3.to_FP_Grid3D(pos);
         let grid = Vector3.to_Grid3D(pos);
         let gridBelow = grid.add(BELOW3);
-        //console.log("current grid", grid, "gridBelow", gridBelow, "posGrid", posGrid);
 
-        //dig
         while (!this.check(gridBelow, ITEM_DROP_EXCLUSION.sum()) && gridBelow.z >= 0) {
             grid = gridBelow;
             gridBelow = grid.add(BELOW3);
-            //console.warn("goin down to ", gridBelow);
         }
 
         const gridValue = REVERSED_MAPDICT[this.getValue(grid)];
-        //console.log("found bottom", grid, "with value", gridValue);
 
         switch (gridValue) {
             case "EMPTY":

@@ -926,6 +926,7 @@ LoadSprites = [
     { srcName: "Scrolls/SCR_DestroyWeapon2.png", name: "SCR_DestroyWeapon" },
     { srcName: "Scrolls/SCR_DestroyArmor2.png", name: "SCR_DestroyArmor" },
     { srcName: "Scrolls/SCR_DrainMana2.png", name: "SCR_DrainMana" },
+    { srcName: "Scrolls/SCR_FeatherFall.png", name: "SCR_FeatherFall" },
 
     //gold, valuables
     { srcName: "Items/BlueGem.png", name: "BlueGem" },
@@ -941,6 +942,7 @@ LoadSprites = [
     { srcName: "Status/Invisible2.png", name: "Invisible" },
     { srcName: "Status/Clover2.png", name: "Clover" },
     { srcName: "Status/Wings.png", name: "Wings" },
+    { srcName: "Status/FeatherFall.png", name: "FeatherFall" },
 
     //health items
     { srcName: "Items/BeerHealth.png", name: "BeerHealth" },

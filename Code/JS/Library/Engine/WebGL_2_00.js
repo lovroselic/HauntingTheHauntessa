@@ -73,6 +73,9 @@ const WebGL = {
         DELTA_HEIGHT_CLIMB: 0.20, //
         GRAVITY: -9.8,
         MAX_JUMP_HEIGHT: 0.55,
+        DEFAULT_FALL_CUTOFF: 5.0,
+        FEATHER_FALL_CUTOFF: 7.5,
+        FALL_DAMAGE_MULTIPLIER: 7.5,
     },
     CONFIG: {
         firstperson: true,
@@ -1708,13 +1711,12 @@ class $3D_player {
         this.descendPhase = false;
         //console.info("jump concluded, velocity", this.velocity_Z);
         const damage = this.fallingDamage();
-        console.log("calculate damage", damage);
+        //console.log("calculate damage", damage, "from this.velocity_Z", this.velocity_Z);
         if (damage > 0) {
             this.parent.applyDamage(damage);
             AUDIO.Land.play();
             const landExplosionPosition = this.pos.translate(UP3, this.heigth - 0.1);
-            //console.log("current pos, ", this.pos, "land exp pos", landExplosionPosition, "");
-            EXPLOSION3D.add(new LandExplosion(landExplosionPosition)); //GreenMetalExplosion, //LandExplosion
+            EXPLOSION3D.add(new LandExplosion(landExplosionPosition));
         }
     }
     calculateJumpVelocity(desiredJumpDistance) {
@@ -1735,8 +1737,10 @@ class $3D_player {
         this.acceleration_Z = WebGL.INI.GRAVITY;
     }
     fallingDamage() {
-        let velocity = Math.max(0, Math.abs(this.velocity_Z) - 5.0);
-        return Math.round(velocity ** 2 * 7.5);
+        let cutOff = WebGL.INI.DEFAULT_FALL_CUTOFF;
+        if (this.parent.featherFall) cutOff = WebGL.INI.FEATHER_FALL_CUTOFF;
+        let velocity = Math.max(0, Math.abs(this.velocity_Z) - cutOff);     //default
+        return Math.round(velocity * velocity * WebGL.INI.FALL_DAMAGE_MULTIPLIER);
     }
     updateJump(lapsedTime) {
         if (this.onGround) return;
@@ -1750,9 +1754,8 @@ class $3D_player {
 
         const dH = this.velocity_Z * deltaTime;
         const dXY = this.jumpSpeed * deltaTime;
-        let nextPos3 = this.pos.translate(DOWN3, dH);        //UP
-        nextPos3 = nextPos3.translate(this.dir, dXY);         //in the movement direction, this.dir is already Vector3
-        //console.log("...nextPos3", nextPos3, "depth", this.depth);
+        let nextPos3 = this.pos.translate(DOWN3, dH);                       //it is UP in GL coords
+        nextPos3 = nextPos3.translate(this.dir, dXY);                       //in the movement direction, this.dir is already Vector3
 
         if (this.descendPhase) {
             if (this.checkLanding(nextPos3)) return this.concludeJump();
@@ -1793,6 +1796,7 @@ class $3D_player {
         this.ascendPhase = false;
         this.descendPhase = true;
         this.velocity_Z = Math.min(this.velocity_Z, 0.0);
+        this.setPos(this.pos.adjuctCirclePos(this.r));                      //push hero to inside of the grid to avoid landing mid grid!
     }
     checkLanding(nextPos3) {
         const feetPos3 = nextPos3.translate(UP3, this.heigth);                                      //the position of soles
@@ -1988,8 +1992,8 @@ class $3D_player {
         this.moveSpeed = speed;
         this.jumpSpeed = speed;
     }
-    setPos(position) {
-        this.pos = position;
+    setPos(position = null) {
+        if (position) this.pos = position;
         this.setSwordTip();
         if (this.camera) this.camera.update();
         if (this.camera || (this.model && WebGL.CONFIG.dual)) {

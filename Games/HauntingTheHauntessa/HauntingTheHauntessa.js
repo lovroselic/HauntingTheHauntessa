@@ -105,7 +105,9 @@ const DEBUG = {
             HERO.inventory.scroll.add(item);
         }
 
-        let scrollTypes = [];
+        let scrollTypes = [
+            "FeatherFall", "Luck"
+        ];
 
         for (let scrType of scrollTypes) {
             let scroll = new Scroll(scrType);
@@ -130,12 +132,14 @@ const DEBUG = {
         TITLE.keys();
     },
     killStatus() {
+        console.log("-------------------------------------------");
         console.warn("level:", GAME.level, "totalKills", MAP[GAME.level].map.totalKills, "killsRequiredToStopSpawning", MAP[GAME.level].map.killsRequiredToStopSpawning, "stopped", MAP[GAME.level].map.stopSpawning, "delay", MAP[GAME.level].map.spawnDelay,
             "killCount", MAP[GAME.level].map.killCount, "killCountdown", MAP[GAME.level].map.killCountdown, "maxSpawned", MAP[GAME.level].map.maxSpawned, "lairs:", LAIR.POOL.length
         );
         console.info(MAP[GAME.level].monsterList);
     },
     displayCompleteness() {
+        console.log("-------------------------------------------");
         console.log("HERO position", Vector3.toGrid(HERO.player.pos));
         const remains = ITEM3D.POOL.filter(el => el.active);
         if (remains.length > 0) {
@@ -165,6 +169,13 @@ const DEBUG = {
         for (const gate of INTERACTIVE_BUMP3D.POOL) {
             console.log(gate.name, gate.grid, gate.destination.level, gate.color);
         }
+
+        console.info("**** HERO experience ****");
+        console.log("------ EXP ------");
+        for (const type of ["attack", "defense", "magic"]) {
+            console.log(type, ":", HERO[`${type}Exp`], " /", HERO[`${type}ExpGoal`]);
+        }
+        console.log("------------");
     },
     automaticTests() {
         console.time("automaticTests");
@@ -216,11 +227,12 @@ const INI = {
     MAX_JUMP_POWER: 3.5,
     LUCKY_TIME: 59,
     FLIGHT_TIME: 59,
+    FEATHER_TIME: 59,
     BOOST_TIME: 59,
 };
 
 const PRG = {
-    VERSION: "0.10.1",
+    VERSION: "0.10.2",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -324,18 +336,21 @@ class Key {
         this.spriteClass = spriteClass;
     }
 }
+
 class NamedInventoryItem {
     constructor(name, spriteClass) {
         this.name = name;
         this.spriteClass = spriteClass;
     }
 }
+
 class Status {
     constructor(type, spriteClass) {
         this.type = type;
         this.spriteClass = spriteClass;
     }
 }
+
 class ActionItem {
     constructor(type, spriteClass) {
         this.type = type;
@@ -532,6 +547,19 @@ class Scroll {
                     TITLE.keys();
                 }
                 break;
+            case "FeatherFall":
+                HERO.featherFallOn();
+                const featherTimerId = "featherTimer";
+                if (ENGINE.TIMERS.exists(featherTimerId)) {
+                    T = ENGINE.TIMERS.access(featherTimerId);
+                    T.extend(INI.FEATHER_TIME);
+                } else {
+                    T = new CountDown(featherTimerId, INI.FEATHER_TIME, HERO.cancelFeatherFall);
+                    let status = new Status("FeatherFall", "FeatherFall");
+                    HERO.inventory.status.push(status);
+                    TITLE.keys();
+                }
+                break;
             case "BoostWeapon":
                 Scroll.boost("attack");
                 break;
@@ -616,10 +644,11 @@ const HERO = {
     reset() {
         this.unlucky();
         this.flightOff();
+        this.featherFallOff();
+
         this.reference_defense = this.defense;
         this.reference_attack = this.attack;
         this.reference_magic = this.magic;
-
     },
     requestJump() {
         this.player.requestJump(this.jumpPower);
@@ -922,6 +951,17 @@ const HERO = {
         HERO.flightOff();
         TITLE.keys();
     },
+    featherFallOn() {
+        this.featherFall = true;
+    },
+    featherFallOff() {
+        this.featherFall = false;
+    },
+    cancelFeatherFall() {
+        HERO.removeStatus("FeatherFall");
+        HERO.featherFallOff();
+        TITLE.keys();
+    },
     incStat(which) {
         let factor = RND(1, 3) / 10 + 1;
         HERO[which] = Math.ceil(HERO[which] * factor);
@@ -1065,11 +1105,7 @@ const GAME = {
             start_grid = MAP[level].map.startPosition.grid;
         }
 
-        console.warn("HERO start", start_grid, start_dir);
-
-        //start_grid = Vector3.from_Grid(Grid.toCenter(start_grid), start_grid.z + HERO.height);
         start_grid = new Vector3(start_grid.x + 0.5, start_grid.z + HERO.height, start_grid.y + 0.5);
-        console.log("start_grid", start_grid);
         HERO.player = new $3D_player(start_grid, Vector3.from_2D_dir(start_dir), MAP[level].map, HERO_TYPE.ThePrincess);
         HERO.player.addToTextureMap("invisible", TEXTURE.TheInvisiblePrincess);
         GAME.setCameraView();

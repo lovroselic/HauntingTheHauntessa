@@ -146,6 +146,14 @@ class Vector3 {
         glMatrix.vec3.normalize(out, vector3);
         return Vector3.from_array(out);
     }
+
+    /**
+     *
+     * @static
+     * @param {*} vector3
+     * @return {Vector3}  face normal based on dominant dimension, this is not OK in ALL scenarios!
+     * @memberof Vector3
+     */
     static getFaceNormal(vector3) {
         const arr = vector3.array.map(v => Math.abs(v));
         const maxIndex = arr.indexOf(Math.max(...arr));
@@ -154,14 +162,32 @@ class Vector3 {
         return Vector3.from_array(normal);
     }
 
+    /**
+     * reflectedVector = incomingVector−2 * (incomingVector * surfaceNormal) * surfaceNormal
+     *
+     * @param {*} surfaceNormal
+     * @return {Vector3}  reflected  vector
+     * @memberof Vector3
+     */
     reflect(surfaceNormal) {
-        //reflectedVector=incomingVector−2⋅(incomingVector⋅surfaceNormal)⋅surfaceNormal
         let reflectedVector = glMatrix.vec3.create();
         let p2 = glMatrix.vec3.create();
         glMatrix.vec3.scale(p2, surfaceNormal.array, -2 * glMatrix.vec3.dot(this.array, surfaceNormal.array));
-        //console.log("p2", p2, "surfaceNormal.array", surfaceNormal.array, "F", -2 * glMatrix.vec3.dot(this.array, surfaceNormal.array));
         glMatrix.vec3.add(reflectedVector, this.array, p2);
-        return Vector3.from_array(reflectedVector); 
+        return Vector3.from_array(reflectedVector);
+    }
+
+    /**
+     *
+     * adjusts circle projection inside grid, by calling FP_Grid3D method adjuctCirclePos(r)
+     * @param {*} r - entity radius
+     * @return {Vector3} 
+     * @memberof Vector3
+     */
+    adjuctCirclePos(r) {
+        let FP_grid = Vector3.to_FP_Grid3D(this);
+        FP_grid.adjuctCirclePos(r);
+        return Vector3.from_grid3D(FP_grid);
     }
 }
 

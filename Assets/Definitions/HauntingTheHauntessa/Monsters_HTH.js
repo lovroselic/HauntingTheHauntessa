@@ -11,7 +11,7 @@
  */
 
 "use strict";
-console.log("%cMonsters for CastleHaunt2 loaded.", "color: #888");
+console.log("%cMonsters for HTH loaded.", "color: #888");
 
 const GATE_TYPES = ["Open", "Closed", "Gold", "Silver", "Red", "Green", "Blue", "Up", "Down", "Emerald", "Purple", "Pearl", "Cyan", "Orange", "Pink"];
 const KEY_TYPES = ["Gold", "Silver", "Red", "Green", "Blue", "Emerald", "Purple", "Pearl", "Cyan", "Orange", "Pink"];
@@ -25,8 +25,7 @@ for (let [index, key] of KEY_TYPES.entries()) {
 
 const SCROLL_TYPE = [
     "Invisibility", "Cripple", "HalfLife", "Explode", "Luck", "Flight", "BoostWeapon", "BoostArmor", "MagicBoost",
-    "DestroyWeapon", "DestroyArmor", "DrainMana",
-
+    "DestroyWeapon", "DestroyArmor", "DrainMana", "FeatherFall",
 ];
 
 const SHRINE_TYPE = {
