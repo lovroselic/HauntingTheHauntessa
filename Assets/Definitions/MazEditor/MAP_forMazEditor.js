@@ -656,7 +656,8 @@ const LAIR_DECALS = [
     "Lair37", "Lair38", "Lair39", "Lair40", "Lair41", "Lair42", "Lair43", "Lair44", "Lair45", "Lair46", "Lair47", "Lair48",
     "Lair49", "Lair50", "Lair51", "Lair52", "Lair53", "Lair54", "Lair55", "Lair56", "Lair57", "Lair58", "Lair59", "Lair60",
     "Lair61", "Lair62", "Lair63", "Lair64", "Lair65", "Lair66", "Lair67", "Lair68", "Lair69", "Lair70", "Lair71", "Lair72",
-    "Lair73", "Lair74", "Lair75", "Lair76", "Lair77", "Lair78", "Lair79", "Lair80", "Lair81", "Lair82"
+    "Lair73", "Lair74", "Lair75", "Lair76", "Lair77", "Lair78", "Lair79", "Lair80", "Lair81", "Lair82",
+    "Lair451", "Lair452", "Lair453", "Lair454", "Lair455", "Lair456", "Lair457", "Lair458"
 ].sort();
 
 const CONTAINER_LIST = [];

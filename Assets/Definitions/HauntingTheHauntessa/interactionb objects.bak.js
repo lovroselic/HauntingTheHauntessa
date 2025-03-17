@@ -145,17 +145,7 @@ const INTERACTION_OBJECT = {
         inventorySprite: "GreenGem",
         text: "Nice? Shiny? I'll keep that."
     },
-    Sword: {
-        name: "Sword",
-        category: "interaction_item",
-        element: "STING",
-        scale: 1 / 2 ** 1,
-        glueToFloor: true,
-        texture: "Sting",
-        material: MATERIAL.silver,
-        inventorySprite: "Sword",
-        text: "I'll put that sword in the bag."
-    },
+    
     CrystallBall: {
         name: "CrystallBall",
         category: "interaction_item",

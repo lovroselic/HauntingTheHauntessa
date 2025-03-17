@@ -676,6 +676,37 @@ LoadTextures = [
     { srcName: "ObjectTextures/WoodenCrateTexture61.jpg", name: "WoodenCrateTexture61" },
     { srcName: "ObjectTextures/closet_BaseColor.jpg", name: "closet_BaseColor" },
 
+    { srcName: "ObjectTextures/MetalCrateTexture421.jpg", name: "MetalCrateTexture421" },
+    { srcName: "ObjectTextures/MetalCrateTexture422.jpg", name: "MetalCrateTexture422" },
+    { srcName: "ObjectTextures/MetalCrateTexture423.jpg", name: "MetalCrateTexture423" },
+    { srcName: "ObjectTextures/MetalCrateTexture424.jpg", name: "MetalCrateTexture424" },
+    { srcName: "ObjectTextures/MetalCrateTexture425.jpg", name: "MetalCrateTexture425" },
+    { srcName: "ObjectTextures/WoodenCrateTexture426.jpg", name: "WoodenCrateTexture426" },
+    { srcName: "ObjectTextures/WoodenCrateTexture427.jpg", name: "WoodenCrateTexture427" },
+    { srcName: "ObjectTextures/WoodenCrateTexture428.jpg", name: "WoodenCrateTexture428" },
+    { srcName: "ObjectTextures/WoodenCrateTexture429.jpg", name: "WoodenCrateTexture429" },
+    { srcName: "ObjectTextures/WoodenCrateTexture430.jpg", name: "WoodenCrateTexture430" },
+    { srcName: "ObjectTextures/WoodenCrateTexture431.jpg", name: "WoodenCrateTexture431" },
+    { srcName: "ObjectTextures/WoodenCrateTexture432.jpg", name: "WoodenCrateTexture432" },
+    { srcName: "ObjectTextures/WoodenCrateTexture433.jpg", name: "WoodenCrateTexture433" },
+    { srcName: "ObjectTextures/WoodenCrateTexture434.jpg", name: "WoodenCrateTexture434" },
+    { srcName: "ObjectTextures/WoodenCrateTexture435.jpg", name: "WoodenCrateTexture435" },
+    { srcName: "ObjectTextures/WoodenCrateTexture436.jpg", name: "WoodenCrateTexture436" },
+    { srcName: "ObjectTextures/WoodenCrateTexture437.jpg", name: "WoodenCrateTexture437" },
+    { srcName: "ObjectTextures/WoodenCrateTexture438.jpg", name: "WoodenCrateTexture438" },
+    { srcName: "ObjectTextures/WoodenCrateTexture439.jpg", name: "WoodenCrateTexture439" },
+    { srcName: "ObjectTextures/WoodenCrateTexture440.jpg", name: "WoodenCrateTexture440" },
+    { srcName: "ObjectTextures/WoodenCrateTexture441.jpg", name: "WoodenCrateTexture441" },
+    { srcName: "ObjectTextures/WoodenCrateTexture442.jpg", name: "WoodenCrateTexture442" },
+    { srcName: "ObjectTextures/WoodenCrateTexture443.jpg", name: "WoodenCrateTexture443" },
+    { srcName: "ObjectTextures/WoodenCrateTexture444.jpg", name: "WoodenCrateTexture444" },
+    { srcName: "ObjectTextures/WoodenCrateTexture445.jpg", name: "WoodenCrateTexture445" },
+    { srcName: "ObjectTextures/WoodenCrateTexture446.jpg", name: "WoodenCrateTexture446" },
+    { srcName: "ObjectTextures/WoodenCrateTexture447.jpg", name: "WoodenCrateTexture447" },
+    { srcName: "ObjectTextures/WoodenCrateTexture448.jpg", name: "WoodenCrateTexture448" },
+    { srcName: "ObjectTextures/WoodenCrateTexture449.jpg", name: "WoodenCrateTexture449" },
+    { srcName: "ObjectTextures/WoodenCrateTexture450.jpg", name: "WoodenCrateTexture450" },
+
     //common items
     { srcName: "ObjectTextures/FireballTexture2.jpg", name: "FireballTexture" },
     { srcName: "ObjectTextures/ScrollTexture.jpg", name: "ScrollTexture" },
@@ -799,6 +830,8 @@ LoadSprites = [
     { srcName: "EntityPictures/PrincessBed2.jpg", name: "PrincessBed" },
     { srcName: "EntityPictures/PrincessThrone.jpg", name: "PrincessThrone" },
     { srcName: "EntityPictures/QueenMother2.jpg", name: "QueenMother" },
+    { srcName: "EntityPictures/FashionGuard.jpg", name: "FashionGuard" },
+    { srcName: "EntityPictures/CuteTank.jpg", name: "CuteTank" },
 
     //action movables
 
@@ -892,6 +925,15 @@ LoadSprites = [
     { srcName: "Lairs/Lair81.jpg", name: "Lair81" },
     { srcName: "Lairs/Lair82.jpg", name: "Lair82" },
 
+    { srcName: "Lairs/Lair451.jpg", name: "Lair451" },
+    { srcName: "Lairs/Lair452.jpg", name: "Lair452" },
+    { srcName: "Lairs/Lair453.jpg", name: "Lair453" },
+    { srcName: "Lairs/Lair454.jpg", name: "Lair454" },
+    { srcName: "Lairs/Lair455.jpg", name: "Lair455" },
+    { srcName: "Lairs/Lair456.jpg", name: "Lair456" },
+    { srcName: "Lairs/Lair457.jpg", name: "Lair457" },
+    { srcName: "Lairs/Lair458.jpg", name: "Lair458" },
+
     //doors
     { srcName: "Doors/DungeonDoor_Blue2.png", name: "DungeonDoor_Blue" },
     { srcName: "Doors/DungeonDoor_Closed2.png", name: "DungeonDoor_Closed" },
@@ -967,6 +1009,9 @@ LoadSprites = [
     { srcName: "Items/GoldenScepter.png", name: "GoldenScepter" },
     { srcName: "Items/GreenBat.png", name: "GreenBat" },
     { srcName: "Items/Document.png", name: "Document" },
+    { srcName: "Items/Sword.png", name: "Sword" },
+    { srcName: "Items/BattleAxe.png", name: "BattleAxe" },
+    { srcName: "Items/Mace.png", name: "Mace" },
 
     //UI, skills
     { srcName: "UI/CompassRose.png", name: "CompassRose" },

@@ -63,13 +63,14 @@ const DEBUG = {
         FashionGuard wants "BrownLeatherBoots","BlueLatexTop", BrownLatexBootyShorts" gives CertificateOfAbility  === "Document"
         Maid wants "PinkDuster", "BlackLatexGloves" gives .........................................
             DONE QueenMother want's crown and sceptre safe  gives Cerificate Of Ability === "Document"
+        CuteTank wants "Sword", "BattleAxe", "Mace" gives Cerificate Of Ability === "Document"
 
   
         Rose, 
         Rose, 
         Rose,
-        "Document"
-        "Document"
+        "Document" -> CuteTank (2)
+            DONE "Document" -> FashionGuard (2)
             DONE "Document" -> QueenMother (2)
         "BrownLeatherBoots"
         "BlueLatexTop"
@@ -77,6 +78,12 @@ const DEBUG = {
         "PinkDuster"
             DONE "BlackLatexGloves" 1 wardrobe
             DONE "Crown" 1 - floor;
+
+        "Sword", 
+        "BattleAxe", 
+        "Mace"
+
+
 
         Missing keys:
             
@@ -118,7 +125,8 @@ const DEBUG = {
         let invItems = [
 
             //debug
-            "Crown", "GoldenScepter"
+            "Sword", "BattleAxe", "Mace"
+            //"Crown", "GoldenScepter"
         ];
 
         for (let itm of invItems) {
@@ -234,7 +242,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.10.3",
+    VERSION: "0.10.4",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

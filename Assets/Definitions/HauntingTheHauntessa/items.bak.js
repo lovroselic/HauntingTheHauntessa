@@ -214,11 +214,7 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "Shield",
     },
-    Sword: {
-        name: "Sword",
-        category: "interaction_item",
-        inventorySprite: "Sword",
-    },
+    
     Helmet: {
         name: "Helmet",
         category: "interaction_item",
@@ -723,18 +719,7 @@ const INTERACTION_ITEM = {
         inventorySprite: "Spear",
         text: "Pointy spear. Let's poke someone."
     },
-    BattleAxe: {
-        name: "BattleAxe",
-        category: "interaction_item",
-        inventorySprite: "BattleAxe",
-        text: "Oooh. Head chopping utility."
-    },
-    Mace: {
-        name: "Mace",
-        category: "interaction_item",
-        inventorySprite: "Mace",
-        text: "For bashing heads."
-    },
+    
     Shuriken: {
         name: "Shuriken",
         category: "interaction_item",

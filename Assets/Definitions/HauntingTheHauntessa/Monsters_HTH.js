@@ -518,7 +518,228 @@ const CONTAINER_ITEM_TYPE = {
         texture: "WoodenCrateTexture61",
         material: MATERIAL.standardShine,
         rotateToNorth: 0
+    },
+    MetalCrate421: {
+        name: "MetalCrate421",
+        category: "chest",
+        element: "FRAGILE_CRATE",
+        scale: 1.34 / (2 ** 4),
+        glueToFloor: true,
+        texture: "MetalCrateTexture421",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    MetalCrate422: {
+        name: "MetalCrate422",
+        category: "chest",
+        element: "FRAGILE_CRATE",
+        scale: 1.42 / (2 ** 4),
+        glueToFloor: true,
+        texture: "MetalCrateTexture422",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    MetalCrate423: {
+        name: "MetalCrate423",
+        category: "chest",
+        element: "FRAGILE_CRATE",
+        scale: 1.47 / (2 ** 4),
+        glueToFloor: true,
+        texture: "MetalCrateTexture423",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    MetalCrate424: {
+        name: "MetalCrate424",
+        category: "chest",
+        element: "FRAGILE_CRATE",
+        scale: 1.39 / (2 ** 4),
+        glueToFloor: true,
+        texture: "MetalCrateTexture424",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    MetalCrate425: {
+        name: "MetalCrate425",
+        category: "chest",
+        element: "FRAGILE_CRATE",
+        scale: 1.03 / (2 ** 4),
+        glueToFloor: true,
+        texture: "MetalCrateTexture425",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    WoodenCrate426: {
+        name: "WoodenCrate426",
+        category: "chest",
+        element: "FRAGILE_CRATE",
+        scale: 1.12 / (2 ** 4),
+        glueToFloor: true,
+        texture: "WoodenCrateTexture426",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    WoodenCrate427: {
+        name: "WoodenCrate427",
+        category: "chest",
+        element: "FRAGILE_CRATE",
+        scale: 1.28 / (2 ** 4),
+        glueToFloor: true,
+        texture: "WoodenCrateTexture427",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    WoodenCrate428: {
+        name: "WoodenCrate428",
+        category: "chest",
+        element: "FRAGILE_CRATE",
+        scale: 1.16 / (2 ** 4),
+        glueToFloor: true,
+        texture: "WoodenCrateTexture428",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    WoodenCrate429: {
+        name: "WoodenCrate429",
+        category: "chest",
+        element: "FRAGILE_CRATE",
+        scale: 1.3 / (2 ** 4),
+        glueToFloor: true,
+        texture: "WoodenCrateTexture429",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    WoodenCrate430: {
+        name: "WoodenCrate430",
+        category: "chest",
+        element: "FRAGILE_CRATE",
+        scale: 1.04 / (2 ** 4),
+        glueToFloor: true,
+        texture: "WoodenCrateTexture430",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    WoodenCrate431: {
+        name: "WoodenCrate431",
+        category: "chest",
+        element: "FRAGILE_CRATE",
+        scale: 1.2 / (2 ** 4),
+        glueToFloor: true,
+        texture: "WoodenCrateTexture431",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    WoodenCrate432: {
+        name: "WoodenCrate432",
+        category: "chest",
+        element: "FRAGILE_CRATE",
+        scale: 1.29 / (2 ** 4),
+        glueToFloor: true,
+        texture: "WoodenCrateTexture432",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    WoodenCrate433: {
+        name: "WoodenCrate433",
+        category: "chest",
+        element: "FRAGILE_CRATE",
+        scale: 1.14 / (2 ** 4),
+        glueToFloor: true,
+        texture: "WoodenCrateTexture433",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    WoodenCrate434: {
+        name: "WoodenCrate434",
+        category: "chest",
+        element: "FRAGILE_CRATE",
+        scale: 1.23 / (2 ** 4),
+        glueToFloor: true,
+        texture: "WoodenCrateTexture434",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    WoodenCrate435: {
+        name: "WoodenCrate435",
+        category: "chest",
+        element: "FRAGILE_CRATE",
+        scale: 1.0 / (2 ** 4),
+        glueToFloor: true,
+        texture: "WoodenCrateTexture435",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    WoodenCrate436: {
+        name: "WoodenCrate436",
+        category: "chest",
+        element: "FRAGILE_CRATE",
+        scale: 1.12 / (2 ** 4),
+        glueToFloor: true,
+        texture: "WoodenCrateTexture436",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    WoodenCrate437: {
+        name: "WoodenCrate437",
+        category: "chest",
+        element: "FRAGILE_CRATE",
+        scale: 1.33 / (2 ** 4),
+        glueToFloor: true,
+        texture: "WoodenCrateTexture437",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    WoodenCrate438: {
+        name: "WoodenCrate438",
+        category: "chest",
+        element: "FRAGILE_CRATE",
+        scale: 1.15 / (2 ** 4),
+        glueToFloor: true,
+        texture: "WoodenCrateTexture438",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    WoodenCrate439: {
+        name: "WoodenCrate439",
+        category: "chest",
+        element: "FRAGILE_CRATE",
+        scale: 1.13 / (2 ** 4),
+        glueToFloor: true,
+        texture: "WoodenCrateTexture439",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    WoodenCrate440: {
+        name: "WoodenCrate440",
+        category: "chest",
+        element: "FRAGILE_CRATE",
+        scale: 1.04 / (2 ** 4),
+        glueToFloor: true,
+        texture: "WoodenCrateTexture440",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    WoodenCrate441: {
+        name: "WoodenCrate441",
+        category: "chest",
+        element: "FRAGILE_CRATE",
+        scale: 1.07 / (2 ** 4),
+        glueToFloor: true,
+        texture: "WoodenCrateTexture441",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    WoodenCrate442: {
+        name: "WoodenCrate442",
+        category: "chest",
+        element: "FRAGILE_CRATE",
+        scale: 1.48 / (2 ** 4),
+        glueToFloor: true,
+        texture: "WoodenCrateTexture442",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
     }
+    
 
 };
 
@@ -928,6 +1149,17 @@ const INTERACTION_OBJECT = {
         inventorySprite: "FireBall",
         text: "Spent missile. Maybe I can squeeze some magic out."
     },
+    Sword: {
+        name: "Sword",
+        category: "interaction_item",
+        element: "STING",
+        scale: 1 / 2 ** 1,
+        glueToFloor: true,
+        texture: "Sting",
+        material: MATERIAL.silver,
+        inventorySprite: "Sword",
+        text: "I'll put that sword in the bag."
+    },
 };
 
 const MOVABLE_INTERACTION_OBJECT = {
@@ -1100,9 +1332,53 @@ const INTERACTION_ITEM = {
         inventorySprite: "Document",
         text: "This proves I am able.",
     },
+    Sword: {
+        name: "Sword",
+        category: "interaction_item",
+        inventorySprite: "Sword",
+        text: "Very good balance. But I prefer my heels."
+    },
+    BattleAxe: {
+        name: "BattleAxe",
+        category: "interaction_item",
+        inventorySprite: "BattleAxe",
+        text: "Oooh. Head chopping utility."
+    },
+    Mace: {
+        name: "Mace",
+        category: "interaction_item",
+        inventorySprite: "Mace",
+        text: "For bashing heads."
+    },
 };
 
 const INTERACTION_ENTITY = {
+    CuteTank: {
+        name: "CuteTank",
+        sprite: "CuteTank",
+        category: 'crest',
+        voice: "Female2",
+        wants: ["Sword", "BattleAxe", "Mace"],
+        gives: "Document",
+        text: {
+            intro: "Greetings Princess, brave and true, show your skill, what weapons do! Steel in hand and courage high, prove your worth, let blades fly!",
+            progress: "Impressive swing, but hold your stance. Another weapon, another chance!",
+            conclusion: "Your strength is proven, bold and steady, for your adventure you are ready."
+        }
+    },
+    FashionGuard: {
+        name: "FashionGuard",
+        sprite: "FashionGuard",
+        category: 'crest',
+        voice: "Female",
+        wants: ["BrownLatexBootyShorts", "BlueLatexTop", "BrownLeatherBoots"],
+        gives: "Document",
+        text: {
+            intro: "Hold it there. You can't go adventuring dressed like that. Bring me a proper adventuring outfit, then we'll talk.",
+            progress: "Better, better, almost there. You're still missing something to wear!",
+            conclusion: "Now that's what I'm talking about. Cute yet fierce. Here's your certificate of adventure readiness."
+        }
+    },
     QueenMother: {
         name: "QueenMother",
         sprite: "QueenMother",
