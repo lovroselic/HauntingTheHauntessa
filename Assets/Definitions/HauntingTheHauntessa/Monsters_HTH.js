@@ -45,6 +45,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    StandingFashionGuard: {
+        name: "StandingFashionGuard",
+        sprite: "StandingFashionGuard",
+        category: 'crest',
+        voice: "FemaleLow2",
+        text: "Without certificates of readiness proving you're properly clad, a responsible ruler, and proficient in weapons, you're going nowhere.",
+        interactionCategory: "oracle",
+    },
     PrincessThrone: {
         name: "PrincessThrone",
         sprite: "PrincessThrone",
@@ -258,6 +266,286 @@ const CONTAINER_ITEM_TYPE = {
         texture: "Barrel",
         material: MATERIAL.standardShine,
         rotateToNorth: 0,
+    },
+    Barrel_459: {
+        name: "Barrel_459",
+        category: "chest",
+        element: "BARREL",
+        scale: 1.04 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_459",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_460: {
+        name: "Barrel_460",
+        category: "chest",
+        element: "BARREL",
+        scale: 1.01 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_460",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_461: {
+        name: "Barrel_461",
+        category: "chest",
+        element: "BARREL",
+        scale: 0.89 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_461",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_462: {
+        name: "Barrel_462",
+        category: "chest",
+        element: "BARREL",
+        scale: 1.15 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_462",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_463: {
+        name: "Barrel_463",
+        category: "chest",
+        element: "BARREL",
+        scale: 1.0 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_463",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_464: {
+        name: "Barrel_464",
+        category: "chest",
+        element: "BARREL",
+        scale: 1.08 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_464",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_465: {
+        name: "Barrel_465",
+        category: "chest",
+        element: "BARREL",
+        scale: 1.03 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_465",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_466: {
+        name: "Barrel_466",
+        category: "chest",
+        element: "BARREL",
+        scale: 1.02 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_466",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_467: {
+        name: "Barrel_467",
+        category: "chest",
+        element: "BARREL",
+        scale: 1.04 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_467",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_468: {
+        name: "Barrel_468",
+        category: "chest",
+        element: "BARREL",
+        scale: 1.18 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_468",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_469: {
+        name: "Barrel_469",
+        category: "chest",
+        element: "BARREL",
+        scale: 1.06 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_469",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_470: {
+        name: "Barrel_470",
+        category: "chest",
+        element: "BARREL",
+        scale: 1.17 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_470",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_471: {
+        name: "Barrel_471",
+        category: "chest",
+        element: "BARREL",
+        scale: 1.05 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_471",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_472: {
+        name: "Barrel_472",
+        category: "chest",
+        element: "BARREL",
+        scale: 1.07 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_472",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_473: {
+        name: "Barrel_473",
+        category: "chest",
+        element: "BARREL",
+        scale: 0.8 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_473",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_474: {
+        name: "Barrel_474",
+        category: "chest",
+        element: "BARREL",
+        scale: 1.0 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_474",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_475: {
+        name: "Barrel_475",
+        category: "chest",
+        element: "BARREL",
+        scale: 0.95 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_475",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_476: {
+        name: "Barrel_476",
+        category: "chest",
+        element: "BARREL",
+        scale: 0.89 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_476",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_477: {
+        name: "Barrel_477",
+        category: "chest",
+        element: "BARREL",
+        scale: 1.15 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_477",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_478: {
+        name: "Barrel_478",
+        category: "chest",
+        element: "BARREL",
+        scale: 1.03 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_478",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_479: {
+        name: "Barrel_479",
+        category: "chest",
+        element: "BARREL",
+        scale: 0.89 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_479",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_480: {
+        name: "Barrel_480",
+        category: "chest",
+        element: "BARREL",
+        scale: 1.0 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_480",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_481: {
+        name: "Barrel_481",
+        category: "chest",
+        element: "BARREL",
+        scale: 1.16 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_481",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_482: {
+        name: "Barrel_482",
+        category: "chest",
+        element: "BARREL",
+        scale: 0.86 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_482",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_483: {
+        name: "Barrel_483",
+        category: "chest",
+        element: "BARREL",
+        scale: 1.06 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_483",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_484: {
+        name: "Barrel_484",
+        category: "chest",
+        element: "BARREL",
+        scale: 1.09 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_484",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_485: {
+        name: "Barrel_485",
+        category: "chest",
+        element: "BARREL",
+        scale: 0.86 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_485",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
+    },
+    Barrel_486: {
+        name: "Barrel_486",
+        category: "chest",
+        element: "BARREL",
+        scale: 0.8 / (2 ** 1),
+        glueToFloor: true,
+        texture: "BarrelTexture_486",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0
     },
     Barrel2: {
         name: "Barrel2",
@@ -739,7 +1027,7 @@ const CONTAINER_ITEM_TYPE = {
         material: MATERIAL.standardShine,
         rotateToNorth: 0
     }
-    
+
 
 };
 
@@ -1353,6 +1641,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    GateKeeper: {
+        name: "GateKeeper",
+        sprite: "GateKeeper",
+        category: 'crest',
+        voice: "Female2",
+        wants: ["Document", "Document", "Document"],
+        gives: "GoldKey",
+        text: {
+            intro: "Princess brave, your path awaits, but first your papers seal your fate. Three proofs I'll see, three tests to pass, without them here you'll never pass!",
+            progress: "One step closer, that's the way. Yet you need more proof today!",
+            conclusion: "You've passed each test, proven true. Take this key, adventure awaits you!"
+        }
+    },
     CuteTank: {
         name: "CuteTank",
         sprite: "CuteTank",
@@ -1391,9 +1692,7 @@ const INTERACTION_ENTITY = {
             progress: "Well begun, my little dove, yet one more treasure's still above!",
             conclusion: "Perfectly done, adventure calls! This royal note unlocks the walls."
         }
-    }
-    ,
-
+    },
 };
 
 const INTERACTION_SHRINE = {

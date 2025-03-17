@@ -306,7 +306,6 @@ const SPAWN_TOOLS = {
     doors(map, GA) {
         for (const door of map.doors) {
             const grid = GA.indexToGrid(door);
-            console.warn("door", door, grid);
             GA.closeDoor(grid);
             GATE3D.add(new Gate(grid, DOOR_TYPE.Common, GA));
         }

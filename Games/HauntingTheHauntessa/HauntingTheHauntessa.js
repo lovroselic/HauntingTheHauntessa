@@ -58,18 +58,18 @@ const DEBUG = {
         // area-1 - initial training inside the castle
         /*
 
-        GateKeeper wants: CerificateOfAbility,CerificateOfAbility, CerificateOfAbility ..., gives GoldKey
+            DONE GateKeeper wants: CerificateOfAbility,CerificateOfAbility, CerificateOfAbility ..., gives GoldKey
         MissRose wants Rose, Rose, Rose, gives .................................
-        FashionGuard wants "BrownLeatherBoots","BlueLatexTop", BrownLatexBootyShorts" gives CertificateOfAbility  === "Document"
+            DONE FashionGuard wants "BrownLeatherBoots","BlueLatexTop", BrownLatexBootyShorts" gives CertificateOfAbility  === "Document"
         Maid wants "PinkDuster", "BlackLatexGloves" gives .........................................
             DONE QueenMother want's crown and sceptre safe  gives Cerificate Of Ability === "Document"
-        CuteTank wants "Sword", "BattleAxe", "Mace" gives Cerificate Of Ability === "Document"
+            DONE CuteTank wants "Sword", "BattleAxe", "Mace" gives Cerificate Of Ability === "Document"
 
   
         Rose, 
         Rose, 
         Rose,
-        "Document" -> CuteTank (2)
+            DONE "Document" -> CuteTank (2)
             DONE "Document" -> FashionGuard (2)
             DONE "Document" -> QueenMother (2)
         "BrownLeatherBoots"
@@ -78,7 +78,7 @@ const DEBUG = {
         "PinkDuster"
             DONE "BlackLatexGloves" 1 wardrobe
             DONE "Crown" 1 - floor;
-
+        "GoldenScepter"
         "Sword", 
         "BattleAxe", 
         "Mace"
@@ -92,7 +92,7 @@ const DEBUG = {
 
         console.info("DEBUG::Loading from checkpoint, this may clash with LOAD");
 
-        GAME.level = 2;
+        GAME.level = 3; //3
         GAME.gold = 13;
         GAME.lives = 1;
 
@@ -125,7 +125,8 @@ const DEBUG = {
         let invItems = [
 
             //debug
-            "Sword", "BattleAxe", "Mace"
+            //"Document", "Document", "Document",
+            //"Sword", "BattleAxe", "Mace"
             //"Crown", "GoldenScepter"
         ];
 
@@ -242,7 +243,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.10.4",
+    VERSION: "0.10.5",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -1117,6 +1118,7 @@ const GAME = {
 
         start_grid = new Vector3(start_grid.x + 0.5, start_grid.z + HERO.height, start_grid.y + 0.5);
         HERO.player = new $3D_player(start_grid, Vector3.from_2D_dir(start_dir), MAP[level].map, HERO_TYPE.ThePrincess);
+        //console.warn("HPY", HERO.player.pos, "start_grid", start_grid);
         HERO.player.addToTextureMap("invisible", TEXTURE.TheInvisiblePrincess);
         GAME.setCameraView();
         AI.initialize(HERO.player, "3D3");
@@ -1560,7 +1562,7 @@ const GAME = {
         GAME.forceOpenDoor(destination.waypoint);
         HERO.player.setMap(MAP[level].map);
 
-        INTERACTIVE_BUMP3D.setup();
+        INTERACTIVE_BUMP3D.setup("3D");
 
         const start_dir = MAP[level].map[this.destination.waypoint].vector;
         let start_grid = Grid.toClass(MAP[level].map[this.destination.waypoint].grid).add(start_dir);

@@ -70,26 +70,18 @@ class IAM {
     poolToIA3D(IA) {
         for (const obj of this.POOL) {
             if (!obj) continue;
-
             let grid = null;
 
             if (obj.moveState) {
                 grid = Vector3.to_Grid3D(obj.moveState.pos);
-                //console.warn("..obj.moveState.pos", obj.moveState.pos);
             } else if (obj.pos) {
                 grid = Vector3.to_Grid3D(obj.pos);
-                //console.warn("..obj.pos", obj.pos);
             } else grid = obj.grid;
-
-            //console.log("obj", obj, "grid", grid);
 
             if (!IA.has(grid, obj.id)) {
                 IA.next(grid, obj.id);
-                //console.log("grid", grid, "obj", obj.id, obj);
             }
-
         }
-        //console.log("poolToIA3D", IA);
     }
     reIndex() {
         if (!this.reIndexRequired) return;
@@ -1050,8 +1042,6 @@ class Animated_3d_entity extends IAM {
         const GA = this.map.GA;
         this.setup();
         const heroRefGrid = Vector3.to_Grid3D(this.hero.player.pos.translate(UP3, this.hero.player.heigth));
-
-        //GRID.calcDistancesBFS_A_3D(Vector3.to_Grid3D(this.hero.player.pos), map, false, GROUND_MOVE_GRID_EXCLUSION); //ground exlusion 3d on xy plane, this needs to be separate because of hunting on exact position!
         GRID.calcDistancesBFS_A_3D(heroRefGrid, map, false, GROUND_MOVE_GRID_EXCLUSION); //ground exlusion 3d on xy plane, this needs to be separate because of hunting on exact position!
         GRID.calcDistancesBFS_A_3D(heroRefGrid, map, true, AIR_MOVE_GRID_EXCLUSION, "airNodeMap"); //air exclusion fully 3d
 
@@ -1080,7 +1070,6 @@ class Animated_3d_entity extends IAM {
                         continue;
                     }
                 }
-
 
                 //enemy shoot
                 if (!this.hero.dead) {
@@ -1289,7 +1278,7 @@ const ITEM3D = new Decal3D(1024);
 const EXPLOSION3D = new ParticleEmmission3D();
 const INTERACTIVE_DECAL3D = new Decal3D(1024);
 const INTERACTIVE_BUMP3D = new Decal3D(256, "interactive_bump3d");
-const BUMP3D = new Decal_IA_3D();                                           //obsolete, waiting for deprecation; use INTERACTIVE_BUMP3D
+//const BUMP3D = new Decal_IA_3D();                                           //obsolete, waiting for deprecation; use INTERACTIVE_BUMP3D
 const ENTITY3D = new Animated_3d_entity();
 const MISSILE3D = new Missile3D("enemyIA", ENTITY3D);
 const DYNAMIC_ITEM3D = new Decal3D(256, "dynamic_item3d");

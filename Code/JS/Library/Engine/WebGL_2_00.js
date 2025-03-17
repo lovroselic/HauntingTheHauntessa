@@ -122,7 +122,7 @@ const WebGL = {
     depthBuffer: null,
     frameBuffer: null,
     playerList: [],
-    staticDecalList: [DECAL3D, LIGHTS3D, BUMP3D, LAIR],
+    staticDecalList: [DECAL3D, LIGHTS3D, LAIR],
     interactiveDecalList: [INTERACTIVE_DECAL3D, INTERACTIVE_BUMP3D],
     dynamicDecalList: [GATE3D, ITEM3D, ITEM_DROPPER3D],
     dynamicLightSources: [MISSILE3D, EXPLOSION3D],
@@ -300,7 +300,7 @@ const WebGL = {
         MISSILE3D.init(map, hero);
         INTERACTIVE_DECAL3D.init(map);
         INTERACTIVE_BUMP3D.init(map);
-        BUMP3D.init(map);
+        //BUMP3D.init(map);
         ENTITY3D.init(map, hero);
         INTERFACE3D.init(map);
         EXPLOSION3D.init(map, hero);
@@ -851,7 +851,7 @@ const WebGL = {
         gl.enable(gl.DEPTH_TEST);
         gl.depthFunc(gl.LEQUAL);
         gl.enable(gl.CULL_FACE);
-        gl.cullFace(gl.BACK);//??????????????????
+        gl.cullFace(gl.BACK);
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
         //scene
@@ -1715,9 +1715,7 @@ class $3D_player {
         this.isFalling = false;
         this.ascendPhase = false;
         this.descendPhase = false;
-        //console.info("jump concluded, velocity", this.velocity_Z);
         const damage = this.fallingDamage();
-        //console.log("calculate damage", damage, "from this.velocity_Z", this.velocity_Z);
         if (damage > 0) {
             this.parent.applyDamage(damage);
             AUDIO.Land.play();
@@ -1849,7 +1847,7 @@ class $3D_player {
         return this.minY + this.heigth + this.depth;
     }
     getFloorPosition() {
-        return this.pos.y - this.heigth;
+        return this.pos.y + 0.009999 - this.heigth;                        //0.009999 for FP accuracy is a bitch
     }
     setDepth() {
         this.depth = Math.floor(this.getFloorPosition());
@@ -1945,7 +1943,7 @@ class $3D_player {
         const playerGrid = Vector3.to_Grid3D(this.pos);
         const IA = this.map.enemyIA;
         if (!IA) return this.miss();
-                                                                //there is no enemies
+        //there is no enemies
         const POOL = ENTITY3D.POOL;
         const enemies = IA.unrollArray([refGrid, playerGrid]);
 
@@ -2153,31 +2151,23 @@ class $3D_player {
         nextPos3 = nextPos3.translate(DOWN3, deltaHeight);                                                                 //DOWN3 is [0,1,0] - relax
         return this.setPos(nextPos3);
     }
-    usingStaircase(nextPos, resolution = 4) {
+    usingStaircase(nextPos) {
         let dir = Vector3.to_FP_Vector(this.dir);
         let currentGrid = Grid.toClass(Vector3.to_FP_Grid(this.pos));       //to int 2D
-
-        let checks = [];
-        for (let theta = 0; theta < 2 * Math.PI; theta += (2 * Math.PI) / resolution) {
-            checks.push(nextPos.translate(dir.rotate(theta), this.r));
-        }
+        let checks = this.GA.pointsAroundEntity(nextPos, dir, this.r);
 
         for (const point of checks) {
             let futureGrid = Grid.toClass(point);
-            if (GRID.same(futureGrid, currentGrid)) {
-                continue;
-            } else {
-                futureGrid = Grid3D.addDepth(futureGrid, this.depth);
-                if (this.GA.isWall(futureGrid) && this.GA.isStair(futureGrid)) {
-                    const IA = this.map.decalIA3D || this.map.interactive_bump3d;
-                    const bump = IA.unroll(futureGrid)[0] - 1;
-                    console.log(".... time to unroll", IA, "bump", bump);
-                    if (isNaN(bump)) return null;
-                    if (BUMP3D.POOL.length > 0) return BUMP3D.POOL[bump];
-                    return INTERACTIVE_BUMP3D.POOL[bump];
-                }
+            if (GRID.same(futureGrid, currentGrid)) continue;
+            futureGrid = Grid3D.addDepth(futureGrid, this.depth);
+            if (this.GA.isWall(futureGrid) && this.GA.isStair(futureGrid)) {
+                const IA = this.map.interactive_bump3d;
+                const bump = IA.unroll(futureGrid)[0] - 1;
+                if (isNaN(bump)) return null;
+                return INTERACTIVE_BUMP3D.POOL[bump];
             }
         }
+
         return null;
     }
     circleCollision(entity, nextPos3 = null) {
@@ -2371,6 +2361,7 @@ class Portal extends Decal {
         this.excludeFromInventory = true;
     }
     interact() {
+        console.warn("this.destination", this.destination);
         this.call(this.destination);
     }
 }
@@ -2755,7 +2746,6 @@ class Gate extends Drawable_object {
         super();
         this.grid = grid;
         this.pos = Vector3.from_grid3D(grid);
-        console.log("Gate", this.pos);
         this.type = type;
         this.GA = GA;
         this.interactive = true;
@@ -4317,6 +4307,7 @@ class $Primitive {
         this.weights = weights;
     }
 }
+
 class $BufferData {
     constructor(data, count, type, target, min, max) {
         this.data = data;
@@ -4365,6 +4356,7 @@ class $Joint {
         this.global_TRS = glMatrix.mat4.create();
     }
 }
+
 class $Animation {
     constructor(name, nodes) {
         this.name = name;

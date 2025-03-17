@@ -33,8 +33,8 @@ Directory = 'C:/Users/Uporabnik/Downloads/Converted_AI_pic'
 # Prefix = "PicDecals/"
 # Prefix = "Scrolls/"
 # Prefix = "ObjDecals/"
-# Prefix = "ObjectTextures/"
-Prefix = 'Lairs/'
+Prefix = "ObjectTextures/"
+# Prefix = 'Lairs/'
 # Prefix = ''
 
 files = []
