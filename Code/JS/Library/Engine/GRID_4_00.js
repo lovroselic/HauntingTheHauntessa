@@ -885,7 +885,7 @@ class GA_Dimension_Agnostic_Methods {
     }
     openDoor(grid) {
         if (this.isDoor(grid)) {
-            this.clear(grid, MAPDICT.WALL);
+            this.clear(grid, MAPDICT.WALL + MAPDICT.DOOR + MAPDICT.RESERVED);
         }
     }
     isDoorClosed(grid) { }

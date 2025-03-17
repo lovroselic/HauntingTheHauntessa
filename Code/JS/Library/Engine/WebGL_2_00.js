@@ -1786,6 +1786,10 @@ class $3D_player {
 
         switch (gridType) {
             case "WALL":
+            case "WALL2":
+            case "WALL4":
+            case "WALL6":
+            case "WALL8":
                 return true;
             case "EMPTY":
             case "HOLE":
@@ -2076,7 +2080,6 @@ class $3D_player {
         const elevation = nextPos3.y - this.floorReference();
 
         if (elevation <= WebGL.INI.DELTA_HEIGHT_CLIMB + 0.01) {                                                     //if elevation is too big then climbing needs to be resolved first
-
             let check;
             if (WebGL.CONFIG.prevent_movement_in_exlusion_grids) {
                 check = this.GA.forwardPositionIsEmpty(nextPos, Dir2D, this.r, this.depth);

@@ -1521,6 +1521,16 @@ LoadSprites = [
     { srcName: "ObjDecals/WallSkelly103.png", name: "WallSkelly103" },
     { srcName: "ObjDecals/WallSkelly104.png", name: "WallSkelly104" },
 
+    { srcName: "ObjDecals/KnightStatue_496.png", name: "KnightStatue_496" },
+    { srcName: "ObjDecals/KnightStatue_497.png", name: "KnightStatue_497" },
+    { srcName: "ObjDecals/KnightStatue_498.png", name: "KnightStatue_498" },
+    { srcName: "ObjDecals/KnightStatue_499.png", name: "KnightStatue_499" },
+    { srcName: "ObjDecals/KnightStatue_500.png", name: "KnightStatue_500" },
+    { srcName: "ObjDecals/KnightStatue_501.png", name: "KnightStatue_501" },
+    { srcName: "ObjDecals/KnightStatue_502.png", name: "KnightStatue_502" },
+    { srcName: "ObjDecals/KnightStatue_503.png", name: "KnightStatue_503" },
+    { srcName: "ObjDecals/KnightStatue_504.png", name: "KnightStatue_504" },
+
     //decal-pics - all
     { srcName: "PicDecals/1942_200.png", name: "1942_200" },
     { srcName: "PicDecals/1942_201.png", name: "1942_201" },

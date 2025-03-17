@@ -92,7 +92,7 @@ const DEBUG = {
 
         console.info("DEBUG::Loading from checkpoint, this may clash with LOAD");
 
-        GAME.level = 3; //3
+        GAME.level = 2; //3
         GAME.gold = 13;
         GAME.lives = 1;
 
@@ -135,7 +135,7 @@ const DEBUG = {
             HERO.inventory.item.push(item);
         }
 
-        let keys = ["Pink"];
+        let keys = [];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -243,7 +243,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.10.5",
+    VERSION: "0.10.6",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
