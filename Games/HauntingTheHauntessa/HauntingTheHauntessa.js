@@ -24,7 +24,7 @@ const DEBUG = {
     VERBOSE: true,
     _2D_display: true,
     INVINCIBLE: true,
-    FREE_MAGIC: false,
+    FREE_MAGIC: true,
     keys: true,
     killAllAllowed: true,
     displayInv() {
@@ -59,9 +59,9 @@ const DEBUG = {
         /*
 
             DONE GateKeeper wants: CerificateOfAbility,CerificateOfAbility, CerificateOfAbility ..., gives GoldKey
-        MissRose wants Rose, Rose, Rose, gives .................................
+        MissRose wants Rose, Rose, Rose, gives Wine??
             DONE FashionGuard wants "BrownLeatherBoots","BlueLatexTop", BrownLatexBootyShorts" gives CertificateOfAbility  === "Document"
-        Maid wants "PinkDuster", "BlackLatexGloves" gives .........................................
+            DONE Maid wants "PinkDuster", "BlackLatexGloves" gives "BrownLatexBootyShorts"
             DONE QueenMother want's crown and sceptre safe  gives Cerificate Of Ability === "Document"
             DONE CuteTank wants "Sword", "BattleAxe", "Mace" gives Cerificate Of Ability === "Document"
 
@@ -72,12 +72,12 @@ const DEBUG = {
             DONE "Document" -> CuteTank (2)
             DONE "Document" -> FashionGuard (2)
             DONE "Document" -> QueenMother (2)
-        "BrownLeatherBoots"
+            DONE "BrownLeatherBoots" (5) floor
         "BlueLatexTop"
-        "BrownLatexBootyShorts"
+            DONE "BrownLatexBootyShorts" - Maid(5)
         "PinkDuster"
-            DONE "BlackLatexGloves" 1 wardrobe
-            DONE "Crown" 1 - floor;
+            DONE "BlackLatexGloves" (1) wardrobe
+            DONE "Crown" (1) - floor;
         "GoldenScepter"
         "Sword", 
         "BattleAxe", 
@@ -90,9 +90,9 @@ const DEBUG = {
 
         */
 
-        console.info("DEBUG::Loading from checkpoint, this may clash with LOAD");
+        console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 2; //3
+        GAME.level = 5; //3
         GAME.gold = 13;
         GAME.lives = 1;
 
@@ -125,6 +125,7 @@ const DEBUG = {
         let invItems = [
 
             //debug
+            //"BlackLatexGloves", "PinkDuster",
             //"Document", "Document", "Document",
             //"Sword", "BattleAxe", "Mace"
             //"Crown", "GoldenScepter"
@@ -243,7 +244,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.10.6",
+    VERSION: "0.10.7",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -1645,7 +1646,7 @@ const GAME = {
         const monster = new $3D_Entity(grid, type, lair.direction);
         monster.dropped = true;
         ENTITY3D.add(monster);
-        EXPLOSION3D.add(new SpawnCloud(Vector3.from_Grid(grid, 0.5)));
+        EXPLOSION3D.add(new SpawnCloud(monster.moveState.referencePos));
     },
     lifeLostRun(lapsedTime) {
         if (ENGINE.GAME.stopAnimation) return;

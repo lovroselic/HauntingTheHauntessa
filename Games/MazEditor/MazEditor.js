@@ -220,7 +220,6 @@ const GAME = {
     const radio = $("#paint input[name=painter]:checked").val();
     const dimension = $("#dimensions input[name=dimensions]:checked").val();
     let GA = $MAP.map.GA;
-    //console.log("GA", GA);
     let dir, nameId, type, dirIndex, dirs, grid;
     if (dimension === "2D") {
       grid = new Grid(x, y);
@@ -778,7 +777,7 @@ const GAME = {
 
     GAME.stack.previousRadio = radio;
     GAME.render();
-    GAME.hintDown();
+    if ($("input[name='keepHints']")[0].checked) GAME.hintDown();
   },
   stack: {
     previousRadio: null,

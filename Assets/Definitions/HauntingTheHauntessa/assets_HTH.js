@@ -756,6 +756,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/SpiderGreen.jpg", name: "SpiderGreen" },
     { srcName: "ObjectTextures/SpiderRed.jpg", name: "SpiderRed" },
     { srcName: "ObjectTextures/GreenBat.jpg", name: "GreenBat" },
+    { srcName: "ObjectTextures/DarkRedBat.jpg", name: "DarkRedBat" },
 
 
 
@@ -861,6 +862,8 @@ LoadSprites = [
     { srcName: "EntityPictures/CuteTank.jpg", name: "CuteTank" },
     { srcName: "EntityPictures/GateKeeper.jpg", name: "GateKeeper" },
     { srcName: "EntityPictures/StandingfashionGuard.jpg", name: "StandingFashionGuard" },
+    { srcName: "EntityPictures/TheMaid.jpg", name: "TheMaid" },
+    { srcName: "EntityPictures/Jumpy.jpg", name: "Jumpy" },
 
     //action movables
 
@@ -953,7 +956,6 @@ LoadSprites = [
     { srcName: "Lairs/Lair80.jpg", name: "Lair80" },
     { srcName: "Lairs/Lair81.jpg", name: "Lair81" },
     { srcName: "Lairs/Lair82.jpg", name: "Lair82" },
-
     { srcName: "Lairs/Lair451.jpg", name: "Lair451" },
     { srcName: "Lairs/Lair452.jpg", name: "Lair452" },
     { srcName: "Lairs/Lair453.jpg", name: "Lair453" },
@@ -1269,7 +1271,6 @@ LoadSprites = [
     { srcName: "Lights/WallLamp34.png", name: "WallLamp34" },
     { srcName: "Lights/WallLamp35.png", name: "WallLamp35" },
     { srcName: "Lights/WallLamp9.png", name: "WallLamp9" },
-
     { srcName: "Lights/CandleL1.png", name: "CandleL1" },
     { srcName: "Lights/CandleR1.png", name: "CandleR1" },
     { srcName: "Lights/FireplaceFLuxU411.jpg", name: "FireplaceFLuxU411" },
@@ -1520,7 +1521,6 @@ LoadSprites = [
     { srcName: "ObjDecals/WallSkelly102.png", name: "WallSkelly102" },
     { srcName: "ObjDecals/WallSkelly103.png", name: "WallSkelly103" },
     { srcName: "ObjDecals/WallSkelly104.png", name: "WallSkelly104" },
-
     { srcName: "ObjDecals/KnightStatue_496.png", name: "KnightStatue_496" },
     { srcName: "ObjDecals/KnightStatue_497.png", name: "KnightStatue_497" },
     { srcName: "ObjDecals/KnightStatue_498.png", name: "KnightStatue_498" },
@@ -1530,6 +1530,18 @@ LoadSprites = [
     { srcName: "ObjDecals/KnightStatue_502.png", name: "KnightStatue_502" },
     { srcName: "ObjDecals/KnightStatue_503.png", name: "KnightStatue_503" },
     { srcName: "ObjDecals/KnightStatue_504.png", name: "KnightStatue_504" },
+    { srcName: "ObjDecals/ShieldDecal_505.png", name: "ShieldDecal_505" },
+    { srcName: "ObjDecals/ShieldDecal_506.png", name: "ShieldDecal_506" },
+    { srcName: "ObjDecals/ShieldDecal_507.png", name: "ShieldDecal_507" },
+    { srcName: "ObjDecals/ShieldDecal_508.png", name: "ShieldDecal_508" },
+    { srcName: "ObjDecals/ShieldDecal_509.png", name: "ShieldDecal_509" },
+    { srcName: "ObjDecals/ShieldDecal_510.png", name: "ShieldDecal_510" },
+    { srcName: "ObjDecals/ShieldDecal_511.png", name: "ShieldDecal_511" },
+    { srcName: "ObjDecals/ShieldDecal_512.png", name: "ShieldDecal_512" },
+    { srcName: "ObjDecals/ShieldDecal_513.png", name: "ShieldDecal_513" },
+    { srcName: "ObjDecals/ShieldDecal_514.png", name: "ShieldDecal_514" },
+    { srcName: "ObjDecals/ShieldDecal_515.png", name: "ShieldDecal_515" },
+    { srcName: "ObjDecals/ShieldDecal_516.png", name: "ShieldDecal_516" },
 
     //decal-pics - all
     { srcName: "PicDecals/1942_200.png", name: "1942_200" },

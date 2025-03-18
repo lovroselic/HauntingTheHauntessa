@@ -3951,7 +3951,7 @@ class $3D_Entity {
 
         this.canAttack = true;
         this.canShoot = false;
-        if (this.magic > 0) this.mana = (this.mana * this.missile.calcMana(this.magic)) * 1.1; //10% surplus to support random cost
+        if (this.magic > 0 && this.mana > 0) this.mana = (this.mana * this.missile.calcMana(this.magic)) * 1.1; //10% surplus to support random cost
         this.petrified = false;
         if (!this.static) this.behaviour = new Behaviour(...this.behaviourArguments);
         this.guardPosition = null;

@@ -32,8 +32,8 @@ Directory = 'C:/Users/Uporabnik/Downloads/Converted_AI_pic'
 # Prefix = "Lairs/"
 # Prefix = "PicDecals/"
 # Prefix = "Scrolls/"
-# Prefix = "ObjDecals/"
-Prefix = "ObjectTextures/"
+Prefix = "ObjDecals/"
+# Prefix = "ObjectTextures/"
 # Prefix = 'Lairs/'
 # Prefix = ''
 

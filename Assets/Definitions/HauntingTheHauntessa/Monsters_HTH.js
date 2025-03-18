@@ -45,6 +45,22 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    Jumpy: {
+        name: "Jumpy",
+        sprite: "Jumpy",
+        category: 'crest',
+        voice: "FemaleLow2",
+        text: "You can't fall off the ledge, buy you can jump from the ledge. Not that that's healthy.",
+        interactionCategory: "oracle",
+    },
+    CuteDemon: {
+        name: "CuteDemon",
+        sprite: "CuteDemon",
+        category: 'crest',
+        voice: "FemaleLow",
+        text: "Did you notice? Hauntessa opened her spawn lair portals in our castle. We are not safe. Help us, Princess",
+        interactionCategory: "oracle",
+    },
     StandingFashionGuard: {
         name: "StandingFashionGuard",
         sprite: "StandingFashionGuard",
@@ -1152,10 +1168,30 @@ const MONSTER_TYPE = {
         hurtSound: "BatAttack",
         behaviourArguments: [Infinity, ["wanderer"], -1],
         moveSpeed: 1.0,
-        material: MATERIAL.redShine,
+        material: MATERIAL.standard,
     },
-    /////////////
-
+    DarkRedBat: {
+        name: "DarkRedBat",
+        texture: "DarkRedBat",
+        model: "Bat",
+        scale: 1.3 / 2 ** 3,
+        rotateToNorth: Math.PI,
+        midHeight: 0.0,
+        fly: 0.5,
+        deathType: "SmokeExplosion",
+        inventory: null,
+        mana: 0,
+        health: 5,
+        attack: 3,
+        magic: 0,
+        defense: 0,
+        xp: 3,
+        attackSound: "BatAttack",
+        hurtSound: "BatAttack",
+        behaviourArguments: [Infinity, ["wanderer"], -1],
+        moveSpeed: 1.05,
+        material: MATERIAL.standard,
+    },
     Spider: {
         name: "Spider",
         model: "Spider",
@@ -1165,11 +1201,11 @@ const MONSTER_TYPE = {
         deathType: "BloodExplosion",
         inventory: null,
         mana: 0,
-        health: 5,
+        health: 6,
         attack: 4,
         magic: 0,
         defense: 0,
-        xp: 1,
+        xp: 4,
         directMagicDamage: true,
         attackSound: "MonsterAttack1",
         hurtSound: "MonsterHurt",
@@ -1177,7 +1213,6 @@ const MONSTER_TYPE = {
         moveSpeed: 1.0,
         material: MATERIAL.standard,
     },
-
     SpiderGreen: {
         name: "SpiderGreen",
         texture: "SpiderGreen",
@@ -1188,11 +1223,11 @@ const MONSTER_TYPE = {
         deathType: "BloodExplosion",
         inventory: null,
         mana: 0,
-        health: 5,
-        attack: 12,
-        magic: 0,
-        defense: 0,
-        xp: 1,
+        health: 8,
+        attack: 6,
+        magic: 1,
+        defense: 1,
+        xp: 5,
         directMagicDamage: true,
         attackSound: "MonsterAttack1",
         hurtSound: "MonsterHurt",
@@ -1200,7 +1235,6 @@ const MONSTER_TYPE = {
         moveSpeed: 1.1,
         material: MATERIAL.standard,
     },
-
     SpiderRed: {
         name: "SpiderRed",
         texture: "SpiderRed",
@@ -1211,11 +1245,11 @@ const MONSTER_TYPE = {
         deathType: "BloodExplosion",
         inventory: null,
         mana: 0,
-        health: 5,
-        attack: 12,
-        magic: 0,
-        defense: 0,
-        xp: 1,
+        health: 10,
+        attack: 8,
+        magic: 2,
+        defense: 2,
+        xp: 10,
         directMagicDamage: true,
         attackSound: "MonsterAttack1",
         hurtSound: "MonsterHurt",
@@ -1223,7 +1257,7 @@ const MONSTER_TYPE = {
         moveSpeed: 1.15,
         material: MATERIAL.standard,
     },
-
+    /////////////
     MissGalaxy: {
         name: "MissGalaxy",
         model: "MissGalaxy",
@@ -1235,7 +1269,7 @@ const MONSTER_TYPE = {
         //
         mana: 31,
         health: 10,
-        attack: 8,
+        attack: 98,
         magic: 5,
         defense: 0,
         xp: 99,
@@ -1262,7 +1296,7 @@ const MONSTER_TYPE = {
         inventory: null,
         //
         mana: 31,
-        health: 10,
+        health: 910,
         attack: 8,
         magic: 5,
         defense: 3,
@@ -1294,7 +1328,7 @@ const MONSTER_TYPE = {
         //
         mana: 1,
         health: 1,
-        attack: 20,
+        attack: 920,
         magic: 20,
         defense: 5,
         xp: 99,
@@ -1576,7 +1610,7 @@ const INTERACTION_ITEM = {
         name: "BlueLatexTop",
         category: "interaction_item",
         inventorySprite: "BlueLatexTop",
-        text: "I look faboluos in this. As always.",
+        text: "I look fabolous in this. As always.",
     },
     BrownLeatherBoots: {
         name: "BrownLeatherBoots",
@@ -1641,6 +1675,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    TheMaid: {
+        name: "TheMaid",
+        sprite: "TheMaid",
+        category: 'crest',
+        voice: "FemaleLow2",
+        wants: ["BlackLatexGloves", "PinkDuster"],
+        gives: "BrownLatexBootyShorts",
+        text: {
+            intro: "Oh dear me, my gear's astray. Find my gloves and duster today! Do help me tidy up this mess, I'll help you find your shorts, no less!",
+            progress: "One item's found, that's quite the start, find the rest to ease my heart!",
+            conclusion: "At last, all clean, oh what delight! Here are your shorts, they're yours by right!"
+        }
+    },
     GateKeeper: {
         name: "GateKeeper",
         sprite: "GateKeeper",

@@ -623,7 +623,8 @@ const DECAL_CRESTS = [
     "Skull304", "Skull305", "Skull306", "Skull307", "Skull308", "Skull309", "Skull310", "Skull311", "Skull312", "Skull313", "Skull314", "Skull315",
     "Skull316", "Skull317", "Skull318", "Skull319", "Skull320", "Skull321", "Skull322", "Skull401", "Skull402", "Skull403", "Skull404", "Skull405",
     "Skull406", "Skull407", "Skull408", "TempleDecal", "TigerRug02", "TigerRug03", "TigerRug04", "WallSkelly101", "WallSkelly102", "WallSkelly103", "WallSkelly104",
-    "KnightStatue_496", "KnightStatue_497", "KnightStatue_498", "KnightStatue_499", "KnightStatue_500", "KnightStatue_501", "KnightStatue_502", "KnightStatue_503", "KnightStatue_504"
+    "KnightStatue_496", "KnightStatue_497", "KnightStatue_498", "KnightStatue_499", "KnightStatue_500", "KnightStatue_501", "KnightStatue_502", "KnightStatue_503", "KnightStatue_504",
+    "ShieldDecal_505", "ShieldDecal_506", "ShieldDecal_507", "ShieldDecal_508", "ShieldDecal_509", "ShieldDecal_510", "ShieldDecal_511", "ShieldDecal_512", "ShieldDecal_513", "ShieldDecal_514", "ShieldDecal_515", "ShieldDecal_516"
 ].sort();
 
 //lights
