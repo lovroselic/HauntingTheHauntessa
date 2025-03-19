@@ -128,7 +128,7 @@ const DEBUG = {
         let invItems = [
 
             //debug
-            "DumbBell", "DumbBell"
+            //"DumbBell", "DumbBell"
             //"BlackLatexGloves", "PinkDuster",
             //"Document", "Document", "Document",
             //"Sword", "BattleAxe", "Mace"
@@ -248,7 +248,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.10.9",
+    VERSION: "0.11.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

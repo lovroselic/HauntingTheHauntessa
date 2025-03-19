@@ -2045,6 +2045,13 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         }
         return posGrid;
     }
+    blockVisible(grid) {
+        // A block is visible if at least one neighbor is NOT out of bounds or a wall.
+        return ENGINE.directions3D.some(dir => {
+            const checkGrid = grid.add(dir);
+            return !(this.isOutOfBounds(checkGrid) || this.isWall(checkGrid));
+        });
+    }
 }
 
 class IndexArray3D extends Classes([ArrayBasedDataStructure3D, IA_Dimension_Agnostic_Methods]) {

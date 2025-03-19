@@ -1547,14 +1547,14 @@ const WORLD = {
             switch (value) {
                 case MAPDICT.EMPTY:
                 case MAPDICT.DOOR:
-                case MAPDICT.WALL + MAPDICT.DOOR:
+                case MAPDICT.WALL + MAPDICT.DOOR:                                                                       //adding grids for floor and ceiling
                     if (grid.z === 0) this.addCube(- 1, grid, "floor");
                     if (grid.z === maxDepth) this.addCube(grid.z + 1, grid, "ceil");
                     break;
                 case MAPDICT.WALL:
                 case MAPDICT.WALL + MAPDICT.STAIR:
                 case MAPDICT.WALL + MAPDICT.SHRINE:
-                    this.addCube(grid.z, grid, "wall");                                                                //plain old wall
+                    if (GA.blockVisible(grid))this.addCube(grid.z, grid, "wall");                                                                //plain old wall
                     if (WebGL.CONFIG.holesSupported && grid.z === 0) this.addCube(- 1, grid, "wall");                  //support for holes so that they have 3d look if in the floor
                     break;
                 case MAPDICT.HOLE:
