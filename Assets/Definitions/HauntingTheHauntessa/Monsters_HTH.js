@@ -29,18 +29,18 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
-    CuteDemon: {
-        name: "CuteDemon",
-        sprite: "CuteDemon",
-        which: "magic",
+    RedRaincoat: {
+        name: "RedRaincoat",
+        sprite: "RedRaincoat",
+        which: "defense",
         category: 'crest',
         interactionCategory: 'shrine',
-        inventorySprite: "SkillFireball",
-        price: 1,
-        level: 3,
-        text: "1 gold for magic upgrade. I can't afford not to buy it. My life is at stake.",
+        inventorySprite: "SkillShield",
+        price: 999,
+        level: 1,
+        text: "I am proficient in defending from the rain. Can you see? Add your prayer and 999 gold and you'll be too.",
         introduce: true,
-        voice: "Princess",
+        voice: "Female",
     },
 };
 
@@ -50,7 +50,7 @@ const ORACLE_TYPE = {
         sprite: "Jumpy",
         category: 'crest',
         voice: "FemaleLow2",
-        text: "You can't fall off the ledge, buy you can jump from the ledge. Not that that's healthy.",
+        text: "You can't fall off the ledge, but you can jump from it. Not that that's healthy.",
         interactionCategory: "oracle",
     },
     CuteDemon: {

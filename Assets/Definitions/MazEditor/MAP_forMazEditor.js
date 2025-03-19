@@ -55,7 +55,8 @@ const TEXTURE_LIST = [
     "GoldBlackSDXL345", "GoldBlackSDXL346", "GoldBlackSDXL347", "GoldBlackSDXL348", "GoldBlackSDXL349", "GoldBrownTiles100", "GoldRedTiles100", "GreyBrickWall101", "GreyBrownTiles100", "GreyBrownTiles101", "GreyBrownTiles102", "GreyBrownTiles103",
     "GreyBrownTiles107", "IvyBricks101", "IvyBricks102", "LightWallSDXL300", "LightWallSDXL301", "LightWallSDXL302", "LightWallSDXL303", "LightWallSDXL304", "LightWallSDXL305", "LightWallSDXL306", "LightWallSDXL307", "LightWallSDXL308",
     "LightWallSDXL309", "LightWallSDXL310", "LightWallSDXL311", "LightWallSDXL312", "LightWallSDXL313", "LightWallSDXL314", "LightWallSDXL315", "LightWallSDXL316", "MArbleWall101", "MarbleFloor1001", "MarbleFloor1002", "MarbleFloor1003",
-    "MarbleFloor1004", "MarbleFloor1005", "MarbleTiles1001", "MossyPattern1", "MossyPattern2", "MossyTiles101", "RoughCeiling1", "ShinyCeiling", "ShinyGreyBricks100"
+    "MarbleFloor1004", "MarbleFloor1005", "MarbleTiles1001", "MossyPattern1", "MossyPattern2", "MossyTiles101", "RoughCeiling1", "ShinyCeiling", "ShinyGreyBricks100",
+    "IvyWall_517", "IvyWall_518", "IvyWall_519", "IvyWall_520", "IvyWall_521", "IvyWall_522", "IvyWall_523", "IvyWall_524", "IvyWall_525"
 ].sort();
 
 /** Decals */
@@ -624,7 +625,8 @@ const DECAL_CRESTS = [
     "Skull316", "Skull317", "Skull318", "Skull319", "Skull320", "Skull321", "Skull322", "Skull401", "Skull402", "Skull403", "Skull404", "Skull405",
     "Skull406", "Skull407", "Skull408", "TempleDecal", "TigerRug02", "TigerRug03", "TigerRug04", "WallSkelly101", "WallSkelly102", "WallSkelly103", "WallSkelly104",
     "KnightStatue_496", "KnightStatue_497", "KnightStatue_498", "KnightStatue_499", "KnightStatue_500", "KnightStatue_501", "KnightStatue_502", "KnightStatue_503", "KnightStatue_504",
-    "ShieldDecal_505", "ShieldDecal_506", "ShieldDecal_507", "ShieldDecal_508", "ShieldDecal_509", "ShieldDecal_510", "ShieldDecal_511", "ShieldDecal_512", "ShieldDecal_513", "ShieldDecal_514", "ShieldDecal_515", "ShieldDecal_516"
+    "ShieldDecal_505", "ShieldDecal_506", "ShieldDecal_507", "ShieldDecal_508", "ShieldDecal_509", "ShieldDecal_510", "ShieldDecal_511", "ShieldDecal_512", "ShieldDecal_513", "ShieldDecal_514", "ShieldDecal_515", "ShieldDecal_516",
+    "Ivy300", "Ivy301", "Ivy302", "Ivy303", "Ivy304", "Ivy305", "Ivy307", "Ivy308", "Ivy309", "Ivy360"
 ].sort();
 
 //lights

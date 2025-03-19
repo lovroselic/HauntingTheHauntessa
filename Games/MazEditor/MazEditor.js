@@ -1379,6 +1379,7 @@ const GAME = {
       switch (event.key) {
         case 'F8':
           GAME.randomPic();
+          GAME.randomCrest();
           break;
         case 'F7':
           GAME.random_lair();

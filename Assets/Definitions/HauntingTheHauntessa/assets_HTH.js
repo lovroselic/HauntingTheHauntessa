@@ -612,6 +612,16 @@ LoadTextures = [
     { srcName: "Wall/ShinyCeiling.jpg", name: "ShinyCeiling" },
     { srcName: "Wall/ShinyGreyBricks100.jpg", name: "ShinyGreyBricks100" },
 
+    { srcName: "Wall/IvyWall_517.jpg", name: "IvyWall_517" },
+    { srcName: "Wall/IvyWall_518.jpg", name: "IvyWall_518" },
+    { srcName: "Wall/IvyWall_519.jpg", name: "IvyWall_519" },
+    { srcName: "Wall/IvyWall_520.jpg", name: "IvyWall_520" },
+    { srcName: "Wall/IvyWall_521.jpg", name: "IvyWall_521" },
+    { srcName: "Wall/IvyWall_522.jpg", name: "IvyWall_522" },
+    { srcName: "Wall/IvyWall_523.jpg", name: "IvyWall_523" },
+    { srcName: "Wall/IvyWall_524.jpg", name: "IvyWall_524" },
+    { srcName: "Wall/IvyWall_525.jpg", name: "IvyWall_525" },
+
     /** decals that are textures */
 
     //decal-gates
@@ -864,6 +874,7 @@ LoadSprites = [
     { srcName: "EntityPictures/StandingfashionGuard.jpg", name: "StandingFashionGuard" },
     { srcName: "EntityPictures/TheMaid.jpg", name: "TheMaid" },
     { srcName: "EntityPictures/Jumpy.jpg", name: "Jumpy" },
+    { srcName: "EntityPictures/RedRaincoat.jpg", name: "RedRaincoat" },
 
     //action movables
 
@@ -1384,6 +1395,16 @@ LoadSprites = [
     { srcName: "ObjDecals/Ivy2.png", name: "Ivy2" },
     { srcName: "ObjDecals/Ivy3.png", name: "Ivy3" },
     { srcName: "ObjDecals/Ivy4.png", name: "Ivy4" },
+    { srcName: "ObjDecals/Ivy300.png", name: "Ivy300" },
+    { srcName: "ObjDecals/Ivy301.png", name: "Ivy301" },
+    { srcName: "ObjDecals/Ivy302.png", name: "Ivy302" },
+    { srcName: "ObjDecals/Ivy303.png", name: "Ivy303" },
+    { srcName: "ObjDecals/Ivy304.png", name: "Ivy304" },
+    { srcName: "ObjDecals/Ivy305.png", name: "Ivy305" },
+    { srcName: "ObjDecals/Ivy307.png", name: "Ivy307" },
+    { srcName: "ObjDecals/Ivy308.png", name: "Ivy308" },
+    { srcName: "ObjDecals/Ivy309.png", name: "Ivy309" },
+    { srcName: "ObjDecals/Ivy360.png", name: "Ivy360" },
     { srcName: "ObjDecals/KnightStatue.png", name: "KnightStatue" },
     { srcName: "ObjDecals/KnightStatue101.png", name: "KnightStatue101" },
     { srcName: "ObjDecals/KnightStatue102.png", name: "KnightStatue102" },

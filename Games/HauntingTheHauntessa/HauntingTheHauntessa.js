@@ -84,6 +84,7 @@ const DEBUG = {
         "Mace"
 
 
+        Shrines:
 
         Missing keys:
             
@@ -92,8 +93,8 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 5; //3
-        GAME.gold = 13;
+        GAME.level = 6; //3
+        GAME.gold = 9999;
         GAME.lives = 1;
 
         //HERO.magic = 87;
@@ -244,7 +245,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.10.7",
+    VERSION: "0.10.8",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

@@ -55,10 +55,10 @@ const MAP = {
         wall: "GreyBrownTiles101",
         floor: "BloodMarbleFloorWall_SDXL_030",
         ceil: "DarkMarble50",
-        start: '[396,7]',
+        start: '[529,5]',
         decals: '[[519,7,"KnightStatue106","crest"],[521,7,"KnightStatue110","crest"],[523,7,"KnightStatue105","crest"],[525,7,"KnightStatue107","crest"],[881,7,"ShieldDecal02","crest"],[885,7,"ShieldDecal03","crest"],[538,4,"PersianRug06","crest"],[557,4,"PersianRug06","crest"],[539,4,"PersianRug06","crest"],[558,4,"PersianRug06","crest"],[540,4,"PersianRug06","crest"],[559,4,"PersianRug06","crest"],[541,4,"PersianRug06","crest"],[560,4,"PersianRug06","crest"],[542,4,"PersianRug06","crest"],[561,4,"PersianRug06","crest"],[543,4,"PersianRug06","crest"],[562,4,"PersianRug06","crest"],[544,4,"PersianRug06","crest"],[563,4,"PersianRug06","crest"],[520,4,"PersianRug06","crest"],[524,4,"PersianRug06","crest"]]',
         lights: '[[458,1,"Candelabra01","standardSoft"],[472,1,"Candelabra02","standardSoft"],[370,7,"Candelabra03","standardSoft"],[672,1,"Lamp42","standard"],[676,1,"Lamp42","standard"],[459,7,"FireplaceFLuxU417","fireplace"],[471,7,"FireplaceFLuxU420","fireplaceDim"]]',
-        gates: '[[363,7,"2.1","1.1","Closed"],[351,1,"2.2","3.1","Closed"],[1073,1,"2.3","3.3","Closed"],[1795,1,"2.4","3.4","Closed"],[377,7,"2.5","5.1","Closed"]]',
+        gates: '[[363,7,"2.1","1.1","Closed"],[351,1,"2.2","3.1","Closed"],[1073,1,"2.3","3.3","Closed"],[1795,1,"2.4","3.4","Closed"],[377,7,"2.5","5.1","Closed"],[531,3,"2.6","6.1","Closed"]]',
         doors: '[427]',
         entities: '[[505,7,"QueenMother"],[589,5,"FashionGuard"],[607,3,"CuteTank"]]',
         oracles: '[[501,7,"PrincessThrone"]]',
@@ -88,7 +88,7 @@ const MAP = {
     ,
     4: {}
     ,
-    5 : {
+    5: {
         name: "Storage",
         sg: 0,
         maxSpawned: 8,
@@ -108,5 +108,23 @@ const MAP = {
         oracles: '[[299,3,"Jumpy"]]',
         lairs: '[[585,5,"Lair28"],[525,5,"Lair66"],[453,7,"Lair12"],[456,7,"Lair14"]]',
         monsterList: '["Bat","RedGoldBat","DarkRedBat"]',
+    }
+    ,
+    6 : {
+        name: "The Temple",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"17","height":"17","depth":5,"map":"BB5AA20ࡁŁɁсBB4AA36BAA5BAA8ÁAÁÁ2AA8BB3AA6ÁÁ2AA5ÁÁ4AA9BB6AA17BB3AA2BAA17BB10ABB39ABB6AA3BB4AA2BB5ABABB5AA4BB13AA2BB10ABB6ABɁсࡁBŁBB191$BB35ÁBB4AÁBB36ÁBB100ABB195ÁÁ6BB13ÁBB6ÁÁ7BB2AA4BB23ÁBB14ÁÁ9BB129ÁBÁÁ2BÁBB29ÁÁ97BÁÁ18BÁÁ5BÁÁ21BÁÁ10ABÁÁ33BB2ÁÁ40BÁÁ2BB5ÁÁ42AA8BÁBB7ÁÁ19BB11ABABABA"}',
+        wall: "BlackWall41",
+        floor: "DarkWallSDXL314",
+        ceil: "RoughCave08",
+        start: '[426,5]',
+        decals: '[[699,5,"Ivy12a","crest"],[665,5,"Ivy17","crest"],[750,5,"Ivy4","crest"],[801,5,"Ivy16","crest"],[660,3,"Ivy16","crest"],[694,3,"Ivy1","crest"],[762,3,"Ivy12","crest"],[796,3,"Ivy16","crest"],[619,7,"Ivy17","crest"],[621,7,"Ivy1","crest"],[624,7,"Ivy2","crest"],[616,7,"Ivy4","crest"],[829,1,"Ivy4","crest"],[827,1,"Ivy12","crest"],[825,1,"Ivy11","crest"],[822,1,"Ivy12a","crest"],[820,1,"Ivy1","crest"],[926,7,"Ivy303","crest"],[924,7,"Ivy12a","crest"],[922,7,"Ivy17","crest"],[929,7,"Ivy15","crest"],[1093,1,"Ivy16","crest"],[1096,1,"Ivy300","crest"],[1100,1,"Ivy1","crest"],[955,5,"Ivy305","crest"],[1057,5,"Ivy305","crest"],[1023,5,"Ivy14","crest"],[982,3,"Ivy16","crest"],[999,3,"Ivy14","crest"],[1050,3,"Ivy14","crest"],[1229,7,"IvyWall_517","texture"],[1230,7,"IvyWall_517","texture"],[1231,7,"IvyWall_517","texture"],[1232,7,"IvyWall_517","texture"],[1233,7,"IvyWall_517","texture"],[1234,7,"IvyWall_517","texture"],[1235,7,"IvyWall_517","texture"],[1365,1,"IvyWall_518","texture"],[1366,1,"IvyWall_518","texture"],[1367,1,"IvyWall_518","texture"],[1368,1,"IvyWall_518","texture"],[1369,1,"IvyWall_518","texture"],[1370,1,"IvyWall_518","texture"],[1371,1,"IvyWall_518","texture"],[1245,5,"IvyWall_519","texture"],[1262,5,"IvyWall_519","texture"],[1279,5,"IvyWall_519","texture"],[1296,5,"IvyWall_519","texture"],[1313,5,"IvyWall_519","texture"],[1330,5,"IvyWall_519","texture"],[1347,5,"IvyWall_519","texture"],[1253,3,"IvyWall_521","texture"],[1270,3,"IvyWall_521","texture"],[1287,3,"IvyWall_521","texture"],[1304,3,"IvyWall_521","texture"],[1321,3,"IvyWall_521","texture"],[1338,3,"IvyWall_521","texture"],[1355,3,"IvyWall_521","texture"]]',
+        lights: '[[1011,7,"DuaLLantern_007","standardMuted"],[1011,5,"FluxLight115","standardMuted"],[1011,1,"DuaLLantern_030","standardMuted"],[1011,3,"Lantern301","standardMuted"],[443,5,"CandleL1","warmCandle"],[409,5,"CandleR1","warmCandle"]]',
+        gates: '[[425,5,"6.1","2.6","Closed"]]',
+        shrines: '[[441,3,"RedRaincoat"]]',
         }
 };
