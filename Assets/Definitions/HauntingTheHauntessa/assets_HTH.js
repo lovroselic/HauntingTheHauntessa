@@ -875,6 +875,8 @@ LoadSprites = [
     { srcName: "EntityPictures/TheMaid.jpg", name: "TheMaid" },
     { srcName: "EntityPictures/Jumpy.jpg", name: "Jumpy" },
     { srcName: "EntityPictures/RedRaincoat.jpg", name: "RedRaincoat" },
+    { srcName: "EntityPictures/Muscula.jpg", name: "Muscula" },
+    { srcName: "EntityPictures/OilyBarba.jpg", name: "OilyBarba" },
 
     //action movables
 
@@ -1054,6 +1056,7 @@ LoadSprites = [
     { srcName: "Items/Sword.png", name: "Sword" },
     { srcName: "Items/BattleAxe.png", name: "BattleAxe" },
     { srcName: "Items/Mace.png", name: "Mace" },
+    { srcName: "Items/DumbBell.png", name: "DumbBell" },
 
     //UI, skills
     { srcName: "UI/CompassRose.png", name: "CompassRose" },

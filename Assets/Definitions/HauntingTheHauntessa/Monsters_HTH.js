@@ -29,6 +29,19 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    OilyBarba: {
+        name: "OilyBarba",
+        sprite: "OilyBarba",
+        which: "attack",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "SkillKick",
+        price: 999,
+        level: 1,
+        text: "I am proficient in drawing blood with a simple hug. Send me your prayer and 999 gold and you'll be too.",
+        introduce: true,
+        voice: "Female2",
+    },
     RedRaincoat: {
         name: "RedRaincoat",
         sprite: "RedRaincoat",
@@ -1533,6 +1546,44 @@ const MOVABLE_INTERACTION_OBJECT = {
 };
 
 const INTERACTION_ITEM = {
+    //skillitems
+    Attack: {
+        name: "Attack",
+        category: "skill",
+        inventorySprite: "SkillKick",
+        which: "attack",
+        level: 1,
+    },
+    Defense: {
+        name: "Defense",
+        category: "skill",
+        inventorySprite: "SkillShield",
+        which: "defense",
+        level: 1,
+    },
+    Magic: {
+        name: "Magic",
+        category: "skill",
+        inventorySprite: "SkillFireball",
+        which: "magic",
+        level: 1,
+    },
+    HeartSkill: {
+        name: "HeartSkill",
+        category: "status",
+        inventorySprite: "HeartSkill",
+        which: "health",
+        level: 1,
+    },
+    ManaSkill: {
+        name: "ManaSkill",
+        category: "status",
+        inventorySprite: "ManaSkill",
+        which: "mana",
+        level: 1,
+    },
+
+    //keys
     GoldKey: {
         name: "GoldKey",
         category: "key",
@@ -1594,6 +1645,8 @@ const INTERACTION_ITEM = {
         inventorySprite: "GoldCoin",
         text: "Face on the coin looks like my mother."
     },
+
+    //items
     Apple: {
         name: "Apple",
         category: "interaction_item",
@@ -1672,6 +1725,12 @@ const INTERACTION_ITEM = {
         inventorySprite: "Mace",
         text: "For bashing heads."
     },
+    DumbBell: {
+        name: "DumbBell",
+        category: "interaction_item",
+        inventorySprite: "DumbBell",
+        text: "Heavy. I am building muscles as we speak."
+    },
 };
 
 const INTERACTION_ENTITY = {
@@ -1743,20 +1802,21 @@ const INTERACTION_ENTITY = {
 };
 
 const INTERACTION_SHRINE = {
-    Darksy: {
-        name: "Darksy",
-        sprite: "Darksy",
+    Muscula: {
+        name: "Muscula",
+        sprite: "Muscula",
         category: 'crest',
-        voice: "Female2",
-        wants: ["Apple"],
-        gives: "HeartSkill",
-        level: 5,
+        voice: "FemaleLow",
+        wants: ["DumbBell", "DumbBell"],
+        gives: "Attack",
+        level: 1,
         text: {
-            intro: "I tell what i want.",
-            progress: "This is not triggered.",
-            conclusion: "Finally, a resolution."
+            intro: "Princess, dare you train with me? Prove your strength, bring dumbbells, let's see!",
+            progress: "Good start, Princess, muscles in sight! But one more dumbbell sets you right.",
+            conclusion: "Impressive strength, Princess, fierce and bright! Now go and conquer every fight!"
         }
-    },
+    }
+    
 };
 
 const INTERACTOR = {

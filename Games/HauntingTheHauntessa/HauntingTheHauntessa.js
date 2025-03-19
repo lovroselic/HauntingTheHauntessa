@@ -82,6 +82,8 @@ const DEBUG = {
         "Sword", 
         "BattleAxe", 
         "Mace"
+        "DumbBell"
+        "DumbBell"
 
 
         Shrines:
@@ -93,7 +95,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 6; //3
+        GAME.level = 7; //3
         GAME.gold = 9999;
         GAME.lives = 1;
 
@@ -126,6 +128,7 @@ const DEBUG = {
         let invItems = [
 
             //debug
+            "DumbBell", "DumbBell"
             //"BlackLatexGloves", "PinkDuster",
             //"Document", "Document", "Document",
             //"Sword", "BattleAxe", "Mace"
@@ -245,7 +248,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.10.8",
+    VERSION: "0.10.9",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

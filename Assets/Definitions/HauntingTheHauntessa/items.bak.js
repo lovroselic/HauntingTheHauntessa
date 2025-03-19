@@ -380,27 +380,7 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "RedGem",
     },
-    Attack: {
-        name: "Attack",
-        category: "skill",
-        inventorySprite: "SkillKick",
-        which: "attack",
-        level: 1,
-    },
-    Magic: {
-        name: "Magic",
-        category: "skill",
-        inventorySprite: "SkillFireball",
-        which: "magic",
-        level: 1,
-    },
-    HeartSkill: {
-        name: "HeartSkill",
-        category: "status",
-        inventorySprite: "HeartSkill",
-        which: "health",
-        level: 1,
-    },
+    
     Skull: {
         name: "Skull",
         category: "interaction_item",
@@ -539,12 +519,7 @@ const INTERACTION_ITEM = {
         inventorySprite: "Wine",
         text: "Red wine. Fancy a sip?"
     },
-    DumbBell: {
-        name: "DumbBell",
-        category: "interaction_item",
-        inventorySprite: "DumbBell",
-        text: "Heavy. I am building muscles as we speak."
-    },
+   
     GlassOfBeer: {
         name: "GlassOfBeer",
         category: "interaction_item",

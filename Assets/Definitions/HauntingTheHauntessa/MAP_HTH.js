@@ -12,7 +12,13 @@ console.log("%cMAP for HTH loaded.", "color: #888");
 const MAP_TEXT = {
     1: "This is my bedroom, but I don't have time to rest.",
     2: "My throne room. Here I listen to the petitions of my subjects. This time they want me to get rid of Hauntessa Spookish.",
-    3: "Beyound this hall, there is and outside world. Am I ready yet?"
+    3: "Beyound this hall, there is and outside world. Am I ready yet?",
+    4: "",
+    5: "",
+    6: "The only god this shrines channel is gold. I hope you have a lot of it.",
+    7: "",
+    8: "",
+    9: "",
 
 };
 
@@ -55,10 +61,10 @@ const MAP = {
         wall: "GreyBrownTiles101",
         floor: "BloodMarbleFloorWall_SDXL_030",
         ceil: "DarkMarble50",
-        start: '[529,5]',
+        start: '[516,3]',
         decals: '[[519,7,"KnightStatue106","crest"],[521,7,"KnightStatue110","crest"],[523,7,"KnightStatue105","crest"],[525,7,"KnightStatue107","crest"],[881,7,"ShieldDecal02","crest"],[885,7,"ShieldDecal03","crest"],[538,4,"PersianRug06","crest"],[557,4,"PersianRug06","crest"],[539,4,"PersianRug06","crest"],[558,4,"PersianRug06","crest"],[540,4,"PersianRug06","crest"],[559,4,"PersianRug06","crest"],[541,4,"PersianRug06","crest"],[560,4,"PersianRug06","crest"],[542,4,"PersianRug06","crest"],[561,4,"PersianRug06","crest"],[543,4,"PersianRug06","crest"],[562,4,"PersianRug06","crest"],[544,4,"PersianRug06","crest"],[563,4,"PersianRug06","crest"],[520,4,"PersianRug06","crest"],[524,4,"PersianRug06","crest"]]',
         lights: '[[458,1,"Candelabra01","standardSoft"],[472,1,"Candelabra02","standardSoft"],[370,7,"Candelabra03","standardSoft"],[672,1,"Lamp42","standard"],[676,1,"Lamp42","standard"],[459,7,"FireplaceFLuxU417","fireplace"],[471,7,"FireplaceFLuxU420","fireplaceDim"]]',
-        gates: '[[363,7,"2.1","1.1","Closed"],[351,1,"2.2","3.1","Closed"],[1073,1,"2.3","3.3","Closed"],[1795,1,"2.4","3.4","Closed"],[377,7,"2.5","5.1","Closed"],[531,3,"2.6","6.1","Closed"]]',
+        gates: '[[363,7,"2.1","1.1","Closed"],[351,1,"2.2","3.1","Closed"],[1073,1,"2.3","3.3","Closed"],[1795,1,"2.4","3.4","Closed"],[377,7,"2.5","5.1","Closed"],[531,3,"2.6","6.1","Closed"],[513,5,"2.7","7.1","Closed"],[665,5,"2.8","8.1","Closed"],[683,3,"2.9","9.1","Closed"]]',
         doors: '[427]',
         entities: '[[505,7,"QueenMother"],[589,5,"FashionGuard"],[607,3,"CuteTank"]]',
         oracles: '[[501,7,"PrincessThrone"]]',
@@ -110,7 +116,7 @@ const MAP = {
         monsterList: '["Bat","RedGoldBat","DarkRedBat"]',
     }
     ,
-    6 : {
+    6: {
         name: "The Temple",
         sg: 0,
         maxSpawned: -1,
@@ -125,6 +131,30 @@ const MAP = {
         decals: '[[699,5,"Ivy12a","crest"],[665,5,"Ivy17","crest"],[750,5,"Ivy4","crest"],[801,5,"Ivy16","crest"],[660,3,"Ivy16","crest"],[694,3,"Ivy1","crest"],[762,3,"Ivy12","crest"],[796,3,"Ivy16","crest"],[619,7,"Ivy17","crest"],[621,7,"Ivy1","crest"],[624,7,"Ivy2","crest"],[616,7,"Ivy4","crest"],[829,1,"Ivy4","crest"],[827,1,"Ivy12","crest"],[825,1,"Ivy11","crest"],[822,1,"Ivy12a","crest"],[820,1,"Ivy1","crest"],[926,7,"Ivy303","crest"],[924,7,"Ivy12a","crest"],[922,7,"Ivy17","crest"],[929,7,"Ivy15","crest"],[1093,1,"Ivy16","crest"],[1096,1,"Ivy300","crest"],[1100,1,"Ivy1","crest"],[955,5,"Ivy305","crest"],[1057,5,"Ivy305","crest"],[1023,5,"Ivy14","crest"],[982,3,"Ivy16","crest"],[999,3,"Ivy14","crest"],[1050,3,"Ivy14","crest"],[1229,7,"IvyWall_517","texture"],[1230,7,"IvyWall_517","texture"],[1231,7,"IvyWall_517","texture"],[1232,7,"IvyWall_517","texture"],[1233,7,"IvyWall_517","texture"],[1234,7,"IvyWall_517","texture"],[1235,7,"IvyWall_517","texture"],[1365,1,"IvyWall_518","texture"],[1366,1,"IvyWall_518","texture"],[1367,1,"IvyWall_518","texture"],[1368,1,"IvyWall_518","texture"],[1369,1,"IvyWall_518","texture"],[1370,1,"IvyWall_518","texture"],[1371,1,"IvyWall_518","texture"],[1245,5,"IvyWall_519","texture"],[1262,5,"IvyWall_519","texture"],[1279,5,"IvyWall_519","texture"],[1296,5,"IvyWall_519","texture"],[1313,5,"IvyWall_519","texture"],[1330,5,"IvyWall_519","texture"],[1347,5,"IvyWall_519","texture"],[1253,3,"IvyWall_521","texture"],[1270,3,"IvyWall_521","texture"],[1287,3,"IvyWall_521","texture"],[1304,3,"IvyWall_521","texture"],[1321,3,"IvyWall_521","texture"],[1338,3,"IvyWall_521","texture"],[1355,3,"IvyWall_521","texture"]]',
         lights: '[[1011,7,"DuaLLantern_007","standardMuted"],[1011,5,"FluxLight115","standardMuted"],[1011,1,"DuaLLantern_030","standardMuted"],[1011,3,"Lantern301","standardMuted"],[443,5,"CandleL1","warmCandle"],[409,5,"CandleR1","warmCandle"]]',
         gates: '[[425,5,"6.1","2.6","Closed"]]',
-        shrines: '[[441,3,"RedRaincoat"]]',
-        }
+        shrines: '[[441,3,"RedRaincoat"],[294,7,"OilyBarba"]]',
+    }
+    ,
+    7: {
+        name: "Royal Fitness",
+        sg: 0,
+        maxSpawned: 5,
+        killCountdown: 5,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: 6000,
+        data: '{"width":"15","height":"15","depth":4,"map":"BB5ABAA3BAA18BB2AA8BABB5AA25BAA4ÁAA3BAA33BB3ABAÁÁ3BB11ABABB16ABB14AA2BB4AA4BB3ABB4ABABABB7AA2BB14AA2BB16ÁBB106ABB52ABB104$BB19ࡁࡁ2BB210ABB7ÁBB2ÁÁ7BB3ABB51ÁÁ40BB3AÁÁ7AÁÁ24BÁÁ7BB7AA2ŁŁ2ɁɁ2сс2"}',
+        wall: "BigStoneWall2",
+        floor: "MarbleWall1",
+        ceil: "GreyBrickWall101",
+        start: '[568,3]',
+        decals: '[[331,5,"Skull302","crest"],[557,5,"Skull407","crest"]]',
+        lights: '[[502,7,"Candle72","softCandle"],[622,1,"Candle69","softCandle"],[792,3,"SkullLantern57","standardMuted"],[572,7,"DuaLLantern_007","standardUltraFaint"],[542,1,"FluxLight111c","standardUltraFaint"],[488,5,"DuaLLantern_030","standardUltraFaint"],[638,5,"DuaLLantern_023","standardUltraFaint"]]',
+        gates: '[[569,3,"7.1","2.7","Closed"],[105,5,"7.2","10.1","Down"]]',
+        trainers: '[[452,7,"Muscula"]]',
+        lairs: '[[697,7,"Lair48"],[877,1,"Lair40"]]',
+        monsterList: '["Bat","RedGoldBat","DarkRedBat"]',
+    }
+    ,
+    8: {}
+    ,
+    9: {}
 };
