@@ -387,12 +387,7 @@ const INTERACTION_ITEM = {
         inventorySprite: "Skull",
         text: "Creeepy?"
     },
-    Dagger: {
-        name: "Dagger",
-        category: "interaction_item",
-        inventorySprite: "Dagger",
-        text: "Sharp?"
-    },
+
     Binoculars: {
         name: "Binoculars",
         category: "interaction_item",
@@ -513,12 +508,7 @@ const INTERACTION_ITEM = {
         inventorySprite: "EmptyBottle",
         text: "Empty bottle? I should put something in."
     },
-    Wine: {
-        name: "Wine",
-        category: "interaction_item",
-        inventorySprite: "Wine",
-        text: "Red wine. Fancy a sip?"
-    },
+   
    
     GlassOfBeer: {
         name: "GlassOfBeer",

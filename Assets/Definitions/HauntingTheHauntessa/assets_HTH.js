@@ -743,6 +743,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/BarrelTexture_484.jpg", name: "BarrelTexture_484" },
     { srcName: "ObjectTextures/BarrelTexture_485.jpg", name: "BarrelTexture_485" },
     { srcName: "ObjectTextures/BarrelTexture_486.jpg", name: "BarrelTexture_486" },
+    { srcName: "ObjectTextures/Chest10.jpg", name: "Chest10" },
 
     //common items
     { srcName: "ObjectTextures/FireballTexture2.jpg", name: "FireballTexture" },
@@ -759,6 +760,7 @@ LoadTextures = [
 
     /** other object textures */
     { srcName: "ObjectTextures/Apple_BaseColor.jpg", name: "Apple_BaseColor" },
+    { srcName: "ObjectTextures/Dagger_Base_Color.jpg", name: "Dagger_Base_Color" },
 
     /** other monster textures */
     { srcName: "ObjectTextures/RedGoldBat.jpg", name: "RedGoldBat" },
@@ -767,8 +769,6 @@ LoadTextures = [
     { srcName: "ObjectTextures/SpiderRed.jpg", name: "SpiderRed" },
     { srcName: "ObjectTextures/GreenBat.jpg", name: "GreenBat" },
     { srcName: "ObjectTextures/DarkRedBat.jpg", name: "DarkRedBat" },
-
-
 
     //title
     { srcName: "Title/HTH_title_768.jpg", name: "Title" },
@@ -839,10 +839,10 @@ LoadObjects = [
     "gem.obj", "coins.obj", "key.obj", "ball.obj", "blockwall.obj",
     "pentagram.obj", "sting.obj", "heart.obj", "shield.obj", "magicFlask.obj",
     "treasure_chest.obj", "wardrobe.obj", "barrel.obj", "Barell2.obj", "Barell3.obj", "crate.obj", "crateFragile.obj", "closet.obj", "bookshelf.obj",
-    "pirate_chest.obj", "closet4.obj", "iron_chest.obj",
+    "pirate_chest.obj", "closet4.obj", "iron_chest.obj", "Chest10.obj",
     "scroll.obj", "coin.obj",
     "cake.obj", "steak.obj", "can.obj", "wine.obj",
-    "apple.obj", "crown.obj",
+    "apple.obj", "crown.obj", "dagger.obj",
 ];
 
 LoadModels = [
@@ -877,6 +877,7 @@ LoadSprites = [
     { srcName: "EntityPictures/RedRaincoat.jpg", name: "RedRaincoat" },
     { srcName: "EntityPictures/Muscula.jpg", name: "Muscula" },
     { srcName: "EntityPictures/OilyBarba.jpg", name: "OilyBarba" },
+    { srcName: "EntityPictures/ManaCook1.jpg", name: "ManaCook1" },
 
     //action movables
 
@@ -1057,6 +1058,10 @@ LoadSprites = [
     { srcName: "Items/BattleAxe.png", name: "BattleAxe" },
     { srcName: "Items/Mace.png", name: "Mace" },
     { srcName: "Items/DumbBell.png", name: "DumbBell" },
+    { srcName: "Items/GlassOfWine.png", name: "GlassOfWine" },
+    { srcName: "Items/Wine.png", name: "Wine" },
+    { srcName: "Items/Dagger2.png", name: "Dagger" },
+    { srcName: "Items/LeatherBoot7.png", name: "BlackLeatherBoot" },
 
     //UI, skills
     { srcName: "UI/CompassRose.png", name: "CompassRose" },

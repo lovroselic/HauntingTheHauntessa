@@ -18,15 +18,20 @@ ported to gen 4 ENGINE, GRID
 ////////////////////////////////////////////////////
 
 const MAP = {
-  Demo: {
+  Demo : {
     name: "Demo",
-    data: '{"width":"8","height":"8","depth":"1","map":"BB4AA9BB2AA3BB2AA2BB2AA2BB2ABB4AA2BB2ABABB3AA4BABB5ABB8A$"}',
-    wall: "BigGreyBricks1",
-    floor: "BloodMarbleFloorWall_SDXL_001",
-    ceil: "IrregularTiledFloorCeil13",
-    lights: '[[1,7,"Candelabra01","standard"],[6,7,"Candelabra01","standard"],[57,1,"Candelabra01","standard"],[62,1,"Candelabra01","standard"]]',
-    start: '[11,7]',
-  },
+    sg: 0,
+    maxSpawned: -1,
+    killCountdown: -1,
+    killsRequiredToStopSpawning: 99,
+    spawnDelay: -1,
+    data: '{"width":7,"height":7,"depth":1,"map":"BB3AA4BB2AA2BAA6BB6ABB3ABABB3ABB6ABB5$BA"}',
+    wall: "RockWall_SDXL_003",
+    floor: "Wood1",
+    ceil: "DetailedFloor1",
+    start: '[17,1]',
+    lights: '[[45,1,"Candelabra01","standard"]]',
+    }
 };
 
 const $MAP = {
@@ -115,6 +120,10 @@ const PRG = {
     $("#iam_version").html(IndexArrayManagers.VERSION);
 
     $(".section").show();
+
+    MAP_TOOLS.INI.FOG = false;
+    WebGL.PRUNE = false;
+    //WebGL.VERBOSE = true;
   },
   start() {
     console.log(PRG.NAME + " started.");

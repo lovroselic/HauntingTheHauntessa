@@ -57,17 +57,7 @@ const INTERACTION_OBJECT = {
         inventorySprite: "BeerHealth",
         text: "Beer always helps me."
     },
-    Dagger: {
-        name: "Dagger",
-        category: "interaction_item",
-        element: "DAGGER",
-        scale: 1.25 / 2 ** 5,
-        glueToFloor: true,
-        texture: "Dagger_Base_Color",
-        material: MATERIAL.silver,
-        inventorySprite: "Dagger",
-        text: "It looks very sharp."
-    },
+    
     Apple: {
         name: "Apple",
         category: "interaction_item",

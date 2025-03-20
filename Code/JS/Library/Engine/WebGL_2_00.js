@@ -227,7 +227,7 @@ const WebGL = {
 
             if (!isFragmentUniform && !isVertexUniform) {
                 console.warn(`NOT FOUND Uniform Name: ${name}, Type: ${type}, Size: ${size}, Vectors: ${vectorCount}, Keyword: ${keyWord}.  Exists in Vertex Shader: ${isVertexUniform}, Fragment Shader: ${isFragmentUniform}`);
-            } else console.log(`Uniform Name: ${name}, Type: ${type}, Size: ${size}, Vectors: ${vectorCount}`);
+            } else console.log(`Uniform Name: ${name}, Type: ${GL_CONSTANT[type] || type}, Size: ${size}, Vectors: ${vectorCount}`);
         }
 
         console.log(`Vertex Shader Uniform Vectors Used: ${vertexUniformVectors}, available: ${maxVertexUniformVectors - vertexUniformVectors}`);
@@ -1492,11 +1492,13 @@ const WORLD = {
         if (!WebGL.PRUNE) return this.addElement(ELEMENT.CUBE, Y, grid, type);                                          //draws complete cube
 
         const GA = WORLD.GA;
+        const rememberZ = grid.z;                                                                                       //this is pointer, don't screw it!
         grid.z = Y;                                                                                                     //face pruning
         for (let [index, dir] of ENGINE.directions3D.entries()) {
             const checkGrid = grid.add(dir);
             if (!(GA.isOutOfBounds(checkGrid) || GA.isWall(checkGrid))) this.addElement(ELEMENT[this.cubeFaces[index]], Y, grid, type);
         }
+        grid.z = rememberZ;                                                                                             //revert to initil z value
     },
     addBlockWall(Y, grid, type) {
         return this.addElement(ELEMENT.BLOCKWALL, Y, grid, type);
@@ -1556,7 +1558,7 @@ const WORLD = {
             if (!grid.z) grid.z = 0;                                                                                    //2D Grid legacy support
             let initial = value;
             value &= (2 ** GA.gridSizeBit - 1 - (MAPDICT.FOG + MAPDICT.RESERVED + MAPDICT.ROOM));
-            //console.info("->", index, initial, "->", value, grid);
+            //console.info("->", index, "initial", initial, "->", value, grid);
             switch (value) {
                 case MAPDICT.EMPTY:
                 case MAPDICT.DOOR:
@@ -1567,8 +1569,8 @@ const WORLD = {
                 case MAPDICT.WALL:
                 case MAPDICT.WALL + MAPDICT.STAIR:
                 case MAPDICT.WALL + MAPDICT.SHRINE:
-                    if (WebGL.PRUNE && GA.blockVisible(grid)) this.addCube(grid.z, grid, "wall");                       //plain old wall - show only visible block
-                    if (WebGL.CONFIG.holesSupported && grid.z === 0) this.addCube(- 1, grid, "wall");                  //support for holes so that they have 3d look if in the floor
+                    if (WebGL.PRUNE || GA.blockVisible(grid)) this.addCube(grid.z, grid, "wall");                       //plain old wall - show only visible block
+                    if (WebGL.CONFIG.holesSupported && grid.z === 0) this.addCube(- 1, grid, "wall");                   //support for holes so that they have 3d look if in the floor
                     break;
                 case MAPDICT.HOLE:
                     if (grid.z === maxDepth) this.addCube(grid.z + 1, grid, "ceil");
@@ -5314,7 +5316,8 @@ const GL_CONSTANT = {
     37441: 'UNPACK_PREMULTIPLY_ALPHA_WEBGL',
     37442: 'CONTEXT_LOST_WEBGL',
     37443: 'UNPACK_COLORSPACE_CONVERSION_WEBGL',
-    37444: 'BROWSER_DEFAULT_WEBGL'
+    37444: 'BROWSER_DEFAULT_WEBGL',
+    35679: 'GL_SAMPLER_3D',
 };
 
 //END

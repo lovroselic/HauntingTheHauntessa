@@ -29,6 +29,19 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    ManaCook1: {
+        name: "ManaCook1",
+        sprite: "ManaCook1",
+        which: "mana",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "ManaSkill",
+        price: 999,
+        level: 1,
+        text: "My mana boosting potions are beyond any compare. Pray and pay, 999 gold.",
+        introduce: true,
+        voice: "Female",
+    },
     OilyBarba: {
         name: "OilyBarba",
         sprite: "OilyBarba",
@@ -663,7 +676,7 @@ const CONTAINER_ITEM_TYPE = {
         scale: 1.2 / 2 ** 2,
         glueToFloor: true,
         texture: "IronChest_base",
-        material: MATERIAL.silver,
+        material: MATERIAL.standard,
         rotateToNorth: Math.PI,
     },
     MetalCrate50: {
@@ -1055,8 +1068,17 @@ const CONTAINER_ITEM_TYPE = {
         texture: "WoodenCrateTexture442",
         material: MATERIAL.standardShine,
         rotateToNorth: 0
-    }
-
+    },
+    Chest10: {
+        name: "Chest10",
+        category: "chest",
+        element: "CHEST10",
+        scale: 1.0 / 2 ** 2,
+        glueToFloor: true,
+        texture: "Chest10",
+        material: MATERIAL.standard,
+        rotateToNorth: Math.PI,
+    },
 
 };
 
@@ -1495,6 +1517,17 @@ const INTERACTION_OBJECT = {
         inventorySprite: "Sword",
         text: "I'll put that sword in the bag."
     },
+    Dagger: {
+        name: "Dagger",
+        category: "interaction_item",
+        element: "DAGGER",
+        scale: 1.25 / 2 ** 5,
+        glueToFloor: true,
+        texture: "Dagger_Base_Color",
+        material: MATERIAL.silver,
+        inventorySprite: "Dagger",
+        text: "It looks very sharp."
+    },
 };
 
 const MOVABLE_INTERACTION_OBJECT = {
@@ -1731,6 +1764,30 @@ const INTERACTION_ITEM = {
         inventorySprite: "DumbBell",
         text: "Heavy. I am building muscles as we speak."
     },
+    GlassOfWine: {
+        name: "GlassOfWine",
+        category: "interaction_item",
+        inventorySprite: "GlassOfWine",
+        text: "Great vintage. But I must not indulge."
+    },
+    Wine: {
+        name: "Wine",
+        category: "interaction_item",
+        inventorySprite: "Wine",
+        text: "Red wine. Fancy a sip?"
+    },
+    Dagger: {
+        name: "Dagger",
+        category: "interaction_item",
+        inventorySprite: "Dagger",
+        text: "Sharp?"
+    },
+    BlackLeatherBoot: {
+        name: "BlackLeatherBoot",
+        category: "interaction_item",
+        inventorySprite: "BlackLeatherBoot",
+        text: "Sexy boot, missing a pair. But last year's fashion."
+    },
 };
 
 const INTERACTION_ENTITY = {
@@ -1816,7 +1873,7 @@ const INTERACTION_SHRINE = {
             conclusion: "Impressive strength, Princess, fierce and bright! Now go and conquer every fight!"
         }
     }
-    
+
 };
 
 const INTERACTOR = {

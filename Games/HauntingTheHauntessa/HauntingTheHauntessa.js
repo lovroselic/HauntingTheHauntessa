@@ -59,16 +59,24 @@ const DEBUG = {
         /*
 
             DONE GateKeeper wants: CerificateOfAbility,CerificateOfAbility, CerificateOfAbility ..., gives GoldKey
-        MissRose wants Rose, Rose, Rose, gives Wine??
+        MissRose wants Rose, Rose, Rose, gives GlassOfWine
             DONE FashionGuard wants "BrownLeatherBoots","BlueLatexTop", BrownLatexBootyShorts" gives CertificateOfAbility  === "Document"
             DONE Maid wants "PinkDuster", "BlackLatexGloves" gives "BrownLatexBootyShorts"
             DONE QueenMother want's crown and sceptre safe  gives Cerificate Of Ability === "Document"
             DONE CuteTank wants "Sword", "BattleAxe", "Mace" gives Cerificate Of Ability === "Document"
+        Drinker Wants GlassOfWine and Wine gives .......
+
+        Axxa wants ................. and gives BattleAxe
+        NeenJay wants Dagger, Dagger, Dagger and gives Mace
+
+        Cousin wants "BlackLeatherBoot", "BlackLeatherBoot" gives  "BlueLatexTop"
 
   
         Rose, 
         Rose, 
         Rose,
+        GlassOfWine,
+        Wine
             DONE "Document" -> CuteTank (2)
             DONE "Document" -> FashionGuard (2)
             DONE "Document" -> QueenMother (2)
@@ -84,6 +92,12 @@ const DEBUG = {
         "Mace"
         "DumbBell"
         "DumbBell"
+        Dagger, 
+        Dagger, 
+        Dagger,
+        "BlackLeatherBoot"
+        "BlackLeatherBoot"
+
 
 
         Shrines:
@@ -95,7 +109,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 6; //3
+        GAME.level = 8; //3
         GAME.gold = 9999;
         GAME.lives = 1;
 
@@ -140,7 +154,7 @@ const DEBUG = {
             HERO.inventory.item.push(item);
         }
 
-        let keys = ["Silver"];
+        let keys = [];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -248,7 +262,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.11.2",
+    VERSION: "0.11.3",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -328,6 +342,7 @@ const PRG = {
             ENGINE.verbose = true;
             //MAP_TOOLS.INI.VERBOSE = true;
         }
+        //WebGL.PRUNE = false;
     },
     start() {
         console.log("%c**************************************************************************************************************************************", PRG.CSS);
@@ -641,7 +656,6 @@ const HERO = {
         this.attackExpGoal = INI.INI_BASE_EXP_FONT;
         this.defenseExpGoal = INI.INI_BASE_EXP_FONT;
         this.magicExpGoal = INI.INI_BASE_EXP_FONT;
-
 
         this.reset();
         this.revive();
@@ -1359,7 +1373,7 @@ const GAME = {
                 AUDIO.Scroll.play();
                 break;
             case 'shrine':
-                if (interaction.which === 'health') {
+                if (interaction.which === 'health' || interaction.which === 'mana') {
                     interaction.category = 'status';
                     return GAME.processInteraction(interaction);
                 }
