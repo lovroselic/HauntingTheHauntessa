@@ -41,7 +41,8 @@ const WebGL = {
     VERSION: "2.00",
     CSS: "color: gold",
     CTX: null,
-    VERBOSE: false, //default: false
+    VERBOSE: false,             //default: false
+    PRUNE: true,                //if true, only visible blocks and faces are considered - looks bad in 3td person, but the amount of vertices are significantlly reduced
     INI: {
         PIC_WIDTH: 0.5,
         PIC_HEIGHT: 0.7,
@@ -850,8 +851,10 @@ const WebGL = {
         gl.clearDepth(1.0);
         gl.enable(gl.DEPTH_TEST);
         gl.depthFunc(gl.LEQUAL);
-        gl.enable(gl.CULL_FACE);
-        gl.cullFace(gl.BACK);
+        if (!WebGL.PRUNE) {
+            gl.enable(gl.CULL_FACE);
+            gl.cullFace(gl.BACK);
+        }
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
         //scene
@@ -1290,8 +1293,10 @@ const RAY = {
 };
 
 const WORLD = {
+    GA: null,                                                                                                           //reference
     bufferTypes: ["positions", 'indices', "textureCoordinates", "vertexNormals"],
     objectTypes: ["wall", "floor", "ceil", "decal"],
+    cubeFaces: ["BACK_FACE", "RIGHT_FACE", "FRONT_FACE", "LEFT_FACE", "BOTTOM_FACE", "TOP_FACE"],                       //corresponds to directions3D: [UP3, RIGHT3, DOWN3, LEFT3, BELOW3, ABOVE3],
     init() {
         for (let BT of this.bufferTypes) {
             this[BT] = [];
@@ -1484,7 +1489,14 @@ const WORLD = {
 
     },
     addCube(Y, grid, type) {
-        return this.addElement(ELEMENT.CUBE, Y, grid, type);
+        if (!WebGL.PRUNE) return this.addElement(ELEMENT.CUBE, Y, grid, type);                                          //draws complete cube
+
+        const GA = WORLD.GA;
+        grid.z = Y;                                                                                                     //face pruning
+        for (let [index, dir] of ENGINE.directions3D.entries()) {
+            const checkGrid = grid.add(dir);
+            if (!(GA.isOutOfBounds(checkGrid) || GA.isWall(checkGrid))) this.addElement(ELEMENT[this.cubeFaces[index]], Y, grid, type);
+        }
     },
     addBlockWall(Y, grid, type) {
         return this.addElement(ELEMENT.BLOCKWALL, Y, grid, type);
@@ -1531,6 +1543,7 @@ const WORLD = {
     },
     build(map) {
         const GA = map.GA;
+        WORLD.GA = GA;
         console.time("WorldBuilding");
         this.init();
 
@@ -1554,7 +1567,7 @@ const WORLD = {
                 case MAPDICT.WALL:
                 case MAPDICT.WALL + MAPDICT.STAIR:
                 case MAPDICT.WALL + MAPDICT.SHRINE:
-                    if (GA.blockVisible(grid)) this.addCube(grid.z, grid, "wall");                                     //plain old wall - show only visible block
+                    if (WebGL.PRUNE && GA.blockVisible(grid)) this.addCube(grid.z, grid, "wall");                       //plain old wall - show only visible block
                     if (WebGL.CONFIG.holesSupported && grid.z === 0) this.addCube(- 1, grid, "wall");                  //support for holes so that they have 3d look if in the floor
                     break;
                 case MAPDICT.HOLE:
