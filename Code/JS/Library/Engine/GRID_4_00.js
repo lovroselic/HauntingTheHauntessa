@@ -1096,6 +1096,9 @@ class GridArray extends Classes([ArrayBasedDataStructure, GA_Dimension_Agnostic_
             }
         }
     }
+    importMap(map) {
+        this.map = map;
+    }
     importGridMap(map) {
         /** map is maze or dungeon object */
         for (let y = 0; y < map.height; y++) {

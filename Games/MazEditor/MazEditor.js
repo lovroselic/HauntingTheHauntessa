@@ -199,15 +199,21 @@ const GAME = {
     const GA = $MAP.map.GA;
     const maze = $MAP.map;
     if (!maze.start[0]) return;
-    console.log(maze.start[0]);
-    const start = GA.indexToGrid(maze.start[0]);
+    let startGrid = GA.indexToGrid(maze.start[0]);
 
-    console.warn("creating maze", start, "maze", maze);
+    console.warn("creating maze", startGrid, "maze", maze);
     if (dimension === "2D") {
       maze.carveMaze(start);
     } else {
-      //do something about it!
-      //convert 3d GA plane to 2d GA, create maze, carve, convert GA to 3D GA slice
+      startGrid = Grid3D.toGrid(startGrid);
+      const XY_plane_length = maze.width * maze.height;
+      const start = XY_plane_length * GAME.floor;
+      const end = start + XY_plane_length;
+      const plane_GA_map = maze.GA.map.slice(start, end);
+      const tempMaze = FREE_MAP.create(maze.width, maze.height);
+      tempMaze.GA.importMap(plane_GA_map);
+      tempMaze.carveMaze(startGrid);
+      maze.GA.map.set(tempMaze.GA.map, start);
     }
 
     GAME.render();

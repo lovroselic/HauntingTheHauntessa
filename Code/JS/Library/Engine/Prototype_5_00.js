@@ -1099,6 +1099,9 @@ class Grid3D extends MasterGridClass3D {
         this.y = parseInt(y, 10);
         this.z = parseInt(z, 10);
     }
+    static toGrid(grid) {
+        return new Grid(grid.x, grid.y);
+    }
     static toClass(grid) {
         return new Grid3D(grid.x, grid.y, grid.z);
     }

@@ -1554,7 +1554,7 @@ const WORLD = {
                 case MAPDICT.WALL:
                 case MAPDICT.WALL + MAPDICT.STAIR:
                 case MAPDICT.WALL + MAPDICT.SHRINE:
-                    if (GA.blockVisible(grid))this.addCube(grid.z, grid, "wall");                                                                //plain old wall
+                    if (GA.blockVisible(grid)) this.addCube(grid.z, grid, "wall");                                     //plain old wall - show only visible block
                     if (WebGL.CONFIG.holesSupported && grid.z === 0) this.addCube(- 1, grid, "wall");                  //support for holes so that they have 3d look if in the floor
                     break;
                 case MAPDICT.HOLE:
@@ -3367,13 +3367,17 @@ class Trigger extends WallFeature3D {
         this.deactivate();
         this.storageLog();
         this.GA[this.action](this.targetGrid);
+
         switch (this.completeAction) {
             case "HOLE->toEmpty":
+            case "WALL->toEmpty":
                 if (this.targetGrid.z > 0) {                                     //filling with wall below
                     this.targetGrid.z--;
                     this.GA.toWall(this.targetGrid);
                 }
 
+                break;
+            case "EMPTY->toWall":
                 break;
             default:
                 throw `action not supported ${this.completeAction}`;

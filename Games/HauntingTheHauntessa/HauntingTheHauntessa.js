@@ -78,7 +78,7 @@ const DEBUG = {
         "PinkDuster"
             DONE "BlackLatexGloves" (1) wardrobe
             DONE "Crown" (1) - floor;
-        "GoldenScepter"
+            DONE "GoldenScepter" (11) -cont floor
         "Sword", 
         "BattleAxe", 
         "Mace"
@@ -95,7 +95,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 7; //3
+        GAME.level = 11; //3
         GAME.gold = 9999;
         GAME.lives = 1;
 
@@ -140,7 +140,7 @@ const DEBUG = {
             HERO.inventory.item.push(item);
         }
 
-        let keys = [];
+        let keys = ["Silver"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -248,7 +248,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.11.0",
+    VERSION: "0.11.1",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

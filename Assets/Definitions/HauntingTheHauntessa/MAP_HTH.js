@@ -154,7 +154,45 @@ const MAP = {
         monsterList: '["Bat","RedGoldBat","DarkRedBat"]',
     }
     ,
-    8: {}
+    8: {
+
+    }
     ,
     9: {}
+    ,
+    10: {
+        name: "Deadly Maze",
+        sg: 0,
+        maxSpawned: 5,
+        killCountdown: 5,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: 6000,
+        data: '{"width":"25","height":"25","depth":1,"map":"BB3AA2BAA2BAA2BB2AA6BB4ABB3EBB4ABAA11BABABB2AA3BAA3BB2ABB3AA5BB7AA3BB2AA2BAA2BB2AA7BAA3BABB2AA4BAA2BB2AA4BAA12BAA3BAA4BAA7BABAA3BABB2AA2BB5AA2BABB4ABABB2AA2BABB2ABAA2BABAA2BABB3ABABB2ABB2ABAA3BB11ABB3ABABB4AA3BB4AA2BAA3BAA3BB2ABB7ABB3ABAA3BB4ABB4AA3BABAA2BB3AA2BB2ABAA10BABB4AA4BABAA2BABABB2AA2BB2ABB2AA5BABB2AA3BB2ABAA5BB3AA5BB2AA2BAA3BB2ABB2AA2BABABB2AA2BB4ABB3ABABB4ABAA5BABB2AA3BB5ABAA2BB3AA2BB3ABAA2BB2ABAA2BAA2BB4ABB3ABAA2BB4AA2BB2ABB4ABB2ABB2ABB9ABB3ABB2AA2BABABB3AA2BAA2BABB5AA4BB2ABABB3ABB3AA2BB2AA2BB3ABABB5AA2BABABB2AA3BB2ABB3ABABABB10ABB6ABB24ABB14A$A"}',
+        wall: "DarkMossy23",
+        floor: "BloodMarbleFloorWall_SDXL_010",
+        ceil: "Relief04",
+        start: '[196,1]',
+        lights: '[[21,7,"Candle54","standardFaint"],[37,5,"DuaLLantern_010","standardFaint"],[29,5,"Lights111","standardFaint"],[136,3,"Lights111","standardFaint"],[290,3,"Lamp41","standardFaint"],[114,7,"FluxLight109","standardFaint"],[242,7,"DuaLLantern_016","standardFaint"],[311,7,"FluxLight116","standardFaint"],[231,7,"DuaLLantern_005","standardFaint"],[400,5,"SkullLantern52","standardFaint"],[128,7,"FluxLight120","standardFaint"],[3,7,"Candle65","standardFaint"],[478,7,"Lights113","standardFaint"],[485,3,"WallLamp16","standardFaint"],[565,3,"Lamp48","standardFaint"],[444,7,"WallLamp18","standardFaint"],[623,1,"WallLamp34","standardFaint"],[269,7,"FluxLight106","standardFaint"],[120,7,"Lights107","standardFaint"]]',
+        gates: '[[74,3,"10.1","7.2","Up"],[149,3,"10.2","11.1","Silver"]]',
+        keys: '[[51,1]]',
+        doors: '[68]',
+        triggers: '[[199,3,"SmoothWallButton",1,121]]',
+    }
+    ,
+    11 : {
+        name: "The Vault",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"21","height":"21","depth":4,"map":"BB6ABABB2AA48ÁÁ4AA47ÁÁ3AÁAA7BB8AA4ÁAA46ÁÁ4AA38BAA60ÁBB37AA2BB17ABAA3BB6ABB111ABB2AA7ࡁBB57$BB21ÁÁ2BB22AÁBB228AA4BB5ࡁBB34ÁÁ14BB25ÁBAA2BB2ABB2ÁAA4BB15ÁÁ13ABÁÁ3ABB148ÁÁ245BB4ÁÁ5BB5ÁÁ155BB4ÁÁ36BÁÁ140BÁÁ2BB14ÁÁ38BB20AA2ŁŁ2ɁɁ2сс2"}',
+        wall: "MossyPattern1",
+        floor: "PrnateFloor107",
+        ceil: "GoldBlackSDXL340",
+        start: '[211,5]',
+        lights: '[[1030,5,"FluxLight113","standard2"],[1156,5,"FluxLight102","standard2"],[1380,7,"Lamp42","standard2"],[1716,1,"Lamp41","standard2"],[357,5,"FireplaceFLuxU413","fireplace"],[63,5,"FireplaceFLuxU411","fireplace"],[1111,3,"SkullLantern51","standardUltraFaint"]]',
+        gates: '[[210,5,"11.1","10.2","Closed"]]',
+        containers: '[[1108,"TreasureChest","INTERACTION_ITEM.GoldenScepter",3]]',
+        }
 };
