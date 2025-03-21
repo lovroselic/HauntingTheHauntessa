@@ -59,35 +59,32 @@ const DEBUG = {
         /*
 
             DONE GateKeeper wants: CerificateOfAbility,CerificateOfAbility, CerificateOfAbility ..., gives GoldKey
-        MissRose wants Rose, Rose, Rose, gives GlassOfWine
+            DONE MissRose wants Rose, Rose, Rose, gives GlassOfWine
             DONE FashionGuard wants "BrownLeatherBoots","BlueLatexTop", BrownLatexBootyShorts" gives CertificateOfAbility  === "Document"
             DONE Maid wants "PinkDuster", "BlackLatexGloves" gives "BrownLatexBootyShorts"
             DONE QueenMother want's crown and sceptre safe  gives Cerificate Of Ability === "Document"
             DONE CuteTank wants "Sword", "BattleAxe", "Mace" gives Cerificate Of Ability === "Document"
-        Drinker Wants GlassOfWine and Wine gives .......
-
+            DONE Drinker Wants GlassOfWine and Wine gives "BlackLeatherBoot"
         Axxa wants ................. and gives BattleAxe
         NeenJay wants Dagger, Dagger, Dagger and gives Mace
+            DONE Cousin wants "BlackLeatherBoot", "BlackLeatherBoot" gives  "BlueLatexTop"
 
-        Cousin wants "BlackLeatherBoot", "BlackLeatherBoot" gives  "BlueLatexTop"
-
-  
         Rose, 
         Rose, 
         Rose,
-        GlassOfWine,
+            DONE GlassOfWine,--> Rose (8)
         Wine
             DONE "Document" -> CuteTank (2)
             DONE "Document" -> FashionGuard (2)
             DONE "Document" -> QueenMother (2)
             DONE "BrownLeatherBoots" (5) floor
-        "BlueLatexTop"
+            "BlueLatexTop" -> Cousin (8)
             DONE "BrownLatexBootyShorts" - Maid(5)
         "PinkDuster"
             DONE "BlackLatexGloves" (1) wardrobe
             DONE "Crown" (1) - floor;
             DONE "GoldenScepter" (11) -cont floor
-        "Sword", 
+            DONE "Sword", floor (8) 
         "BattleAxe", 
         "Mace"
         "DumbBell"
@@ -96,11 +93,17 @@ const DEBUG = {
         Dagger, 
         Dagger,
         "BlackLeatherBoot"
-        "BlackLeatherBoot"
+            DONE "BlackLeatherBoot" Drinker (8)
 
 
 
         Shrines:
+            - redCoat defense
+            - oilybarba attack
+            - manacook1 mana
+
+        Trainers
+            - muscula: attack-2
 
         Missing keys:
             
@@ -109,7 +112,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 8; //3
+        GAME.level = 2; //3
         GAME.gold = 9999;
         GAME.lives = 1;
 
@@ -142,6 +145,9 @@ const DEBUG = {
         let invItems = [
 
             //debug
+            //"BlackLeatherBoot", "BlackLeatherBoot"
+            //"Rose", "Rose", "Rose"
+            //"Wine", "GlassOfWine"
             //"DumbBell", "DumbBell"
             //"BlackLatexGloves", "PinkDuster",
             //"Document", "Document", "Document",
@@ -262,7 +268,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.11.3",
+    VERSION: "0.11.4",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

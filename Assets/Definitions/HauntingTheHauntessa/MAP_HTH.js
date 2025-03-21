@@ -50,7 +50,7 @@ const MAP = {
         movables: '[[287,"GreenBat"],[297,"GreenBat"],[384,"GreenBat"],[172,"GreenBat"]]',
     }
     ,
-    2: {
+    2 : {
         name: "The Throne Room",
         sg: 0,
         maxSpawned: -1,
@@ -61,14 +61,14 @@ const MAP = {
         wall: "GreyBrownTiles101",
         floor: "BloodMarbleFloorWall_SDXL_030",
         ceil: "DarkMarble50",
-        start: '[667,3]',
+        start: '[681,5]',
         decals: '[[519,7,"KnightStatue106","crest"],[521,7,"KnightStatue110","crest"],[523,7,"KnightStatue105","crest"],[525,7,"KnightStatue107","crest"],[881,7,"ShieldDecal02","crest"],[885,7,"ShieldDecal03","crest"],[538,4,"PersianRug06","crest"],[557,4,"PersianRug06","crest"],[539,4,"PersianRug06","crest"],[558,4,"PersianRug06","crest"],[540,4,"PersianRug06","crest"],[559,4,"PersianRug06","crest"],[541,4,"PersianRug06","crest"],[560,4,"PersianRug06","crest"],[542,4,"PersianRug06","crest"],[561,4,"PersianRug06","crest"],[543,4,"PersianRug06","crest"],[562,4,"PersianRug06","crest"],[544,4,"PersianRug06","crest"],[563,4,"PersianRug06","crest"],[520,4,"PersianRug06","crest"],[524,4,"PersianRug06","crest"]]',
         lights: '[[458,1,"Candelabra01","standardSoft"],[472,1,"Candelabra02","standardSoft"],[370,7,"Candelabra03","standardSoft"],[672,1,"Lamp42","standard"],[676,1,"Lamp42","standard"],[459,7,"FireplaceFLuxU417","fireplace"],[471,7,"FireplaceFLuxU420","fireplaceDim"]]',
         gates: '[[363,7,"2.1","1.1","Closed"],[351,1,"2.2","3.1","Closed"],[1073,1,"2.3","3.3","Closed"],[1795,1,"2.4","3.4","Closed"],[377,7,"2.5","5.1","Closed"],[531,3,"2.6","6.1","Closed"],[513,5,"2.7","7.1","Closed"],[665,5,"2.8","8.1","Closed"],[683,3,"2.9","9.1","Closed"]]',
         doors: '[427]',
         entities: '[[505,7,"QueenMother"],[589,5,"FashionGuard"],[607,3,"CuteTank"]]',
         oracles: '[[501,7,"PrincessThrone"]]',
-    }
+        }
     ,
     3: {
         name: "Castle Entrance Hall",
@@ -155,20 +155,25 @@ const MAP = {
         monsterList: '["Bat","RedGoldBat","DarkRedBat"]',
     }
     ,
-    8 : {
+    8: {
         name: "Budoir",
         sg: 0,
         maxSpawned: -1,
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"19","height":"19","depth":4,"map":"BB14AA25BAA29BAA75BAA78BB16ABB30ABB3AA12BB5ABB68$BB1082A"}',
+        data: '{"width":"19","height":"19","depth":4,"map":"BB2AA2BB6AA8ŁAA12BAA2BAA10BAA2BAA4ࡁAA31BAA2BAA11BB2ABAA8BB2AA11BB2AA7BAA3BB2AA3ÁÁ5AA23BAA38BAA5BB3AA19BAA7BABB2AA16BAÁAA6ÁÁ10AA6BB3ABB5AA5ŁBB5AA2BB16AA2BABB9ABAA3BB21ABB12ABB6ABB12ABABB5ABB2ABAA2BB4AA3BB15AA2BAA2BB3ABB2AA2BABB2AA10BB5AA2BB7ABB7ABB23ABABB14ABB24$BB32ÁBB79ÁABB30ABB123ÁÁ10BB2ÁÁ5BB27AÁÁ14BB98ÁÁ141AA5ÁÁ2AA4ÁÁ4AÁÁ3BB4ÁÁ4BB6ÁÁ134AÁÁ92AA5ÁÁ2BB5ÁÁ14BÁÁ15BB15AɁсAࡁɁсB"}',
         wall: "BrownishMossyBricks101",
         floor: "Wood10",
         ceil: "Wood12",
-        start: '[55,3]',
+        start: '[1016,1]',
+        lights: '[[171,5,"Fireplace203","fireplace"],[28,7,"Lantern301","standardDimmed"],[332,1,"SkullLantern58","standardDimmed"],[188,3,"SingleLantern1","standardDimmed"],[1415,1,"FluxLight112","standard2"],[1051,1,"DuaLLantern_010","standard2"],[1057,1,"Candelabra09","standard2"],[1104,7,"DuaLLantern_016","standard2"],[1118,7,"lantern303","standard2"]]',
         gates: '[[56,3,"8.1","2.8","Closed"]]',
-        }
+        scrolls: '[[1014,5],[862,12]]',
+        entities: '[[95,5,"Drinker"],[246,3,"MissRose"],[132,3,"Cousin"]]',
+        objects: '[[902,"Sword"]]',
+        oracles: '[[1073,1,"Vagyma"]]',
+    }
     ,
     9: {}
     ,

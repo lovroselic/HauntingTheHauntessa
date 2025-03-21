@@ -71,6 +71,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    Vagyma: {
+        name: "Vagyma",
+        sprite: "Vagyma",
+        category: 'crest',
+        voice: "Female",
+        text: "What? Are you afraid to jump?.",
+        interactionCategory: "oracle",
+    },
     Jumpy: {
         name: "Jumpy",
         sprite: "Jumpy",
@@ -1791,6 +1799,46 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    Cousin: {
+        name: "MissCousinRose",
+        sprite: "Cousin",
+        category: 'crest',
+        voice: "Princess",
+        wants: ["BlackLeatherBoot", "BlackLeatherBoot"],
+        gives: "BlueLatexTop",
+        text: {
+            intro: "My cute, mute young cousin. She is stealling my famous outfit again. Maybe I can bribe her with some fashionable boots.",
+            progress: "We are going in the right direction, but she has two legs, don't you see?",
+            conclusion: "My famous blue latex top is finally with me. I am almost ready to go out on the adventure."
+        }
+    },
+    MissRose: {
+        name: "MissRose",
+        sprite: "MissRose",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Rose", "Rose", "Rose"],
+        gives: "GlassOfWine",
+        text: {
+            intro: "Slow down, dear, and join me here. Roses bloom, let's share some cheer!",
+            progress: "A lovely start, but roses few. Bring some more, and I'll toast with you!",
+            conclusion: "Ah, fragrant roses, joy divine! Sit with me, let's share some wine."
+        }
+    },
+    Drinker: {
+        name: "Drinker",
+        sprite: "Drinker",
+        category: 'crest',
+        voice: "FemaleLow",
+        wants: ["Wine", "GlassOfWine"],
+        gives: "BlackLeatherBoot",
+        text: {
+            intro: "My glass runs dry, my spirits low! Bring me drinks, and off you'll go!",
+            progress: "That's quite nice, but still too few. Another drink will get me through!",
+            conclusion: "Oh, delightful, you've saved the day! Take this boot, the other's gone astray."
+        }
+    },
+
     TheMaid: {
         name: "TheMaid",
         sprite: "TheMaid",
@@ -1866,7 +1914,7 @@ const INTERACTION_SHRINE = {
         voice: "FemaleLow",
         wants: ["DumbBell", "DumbBell"],
         gives: "Attack",
-        level: 1,
+        level: 2,
         text: {
             intro: "Princess, dare you train with me? Prove your strength, bring dumbbells, let's see!",
             progress: "Good start, Princess, muscles in sight! But one more dumbbell sets you right.",
