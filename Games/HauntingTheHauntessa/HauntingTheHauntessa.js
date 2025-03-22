@@ -65,7 +65,7 @@ const DEBUG = {
             DONE QueenMother want's crown and sceptre safe  gives Cerificate Of Ability === "Document"
             DONE CuteTank wants "Sword", "BattleAxe", "Mace" gives Cerificate Of Ability === "Document"
             DONE Drinker Wants GlassOfWine and Wine gives "BlackLeatherBoot"
-        Axxa wants ................. and gives BattleAxe
+            DONE Axxa wants "GlassOfBeer", "GlassOfBeer", "GlassOfBeer" and gives BattleAxe
         NeenJay wants Dagger, Dagger, Dagger and gives Mace
             DONE Cousin wants "BlackLeatherBoot", "BlackLeatherBoot" gives  "BlueLatexTop"
             DONE DumbBelle wants DumbBelle wants "Beer", "Beer" gives DumbBell
@@ -86,7 +86,7 @@ const DEBUG = {
             DONE "Crown" (1) - floor;
             DONE "GoldenScepter" (11) -cont floor
             DONE "Sword", floor (8) 
-        "BattleAxe", 
+            DONE "BattleAxe", --> Axxa(13)
         "Mace"
             DONE "DumbBell" --> DumbBelle (13)
         "DumbBell"
@@ -95,8 +95,14 @@ const DEBUG = {
         Dagger,
         "Beer", 
         "Beer"
+        "GlassOfBeer", 
+        "GlassOfBeer", 
+        "GlassOfBeer"
         "BlackLeatherBoot"
             DONE "BlackLeatherBoot" Drinker (8)
+
+
+        Maybe: skulls, candle, spiderbabies,
 
 
 
@@ -149,7 +155,8 @@ const DEBUG = {
         let invItems = [
 
             //debug
-            "Beer", "Beer"
+            "GlassOfBeer", "GlassOfBeer", "GlassOfBeer"
+            //"Beer", "Beer"
             //"BlackLeatherBoot", "BlackLeatherBoot"
             //"Rose", "Rose", "Rose"
             //"Wine", "GlassOfWine"
@@ -273,7 +280,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.11.5",
+    VERSION: "0.11.6",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
