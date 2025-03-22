@@ -68,6 +68,7 @@ const DEBUG = {
         Axxa wants ................. and gives BattleAxe
         NeenJay wants Dagger, Dagger, Dagger and gives Mace
             DONE Cousin wants "BlackLeatherBoot", "BlackLeatherBoot" gives  "BlueLatexTop"
+            DONE DumbBelle wants DumbBelle wants "Beer", "Beer" gives DumbBell
 
         Rose, 
         Rose, 
@@ -87,11 +88,13 @@ const DEBUG = {
             DONE "Sword", floor (8) 
         "BattleAxe", 
         "Mace"
-        "DumbBell"
+            DONE "DumbBell" --> DumbBelle (13)
         "DumbBell"
         Dagger, 
         Dagger, 
         Dagger,
+        "Beer", 
+        "Beer"
         "BlackLeatherBoot"
             DONE "BlackLeatherBoot" Drinker (8)
 
@@ -106,13 +109,14 @@ const DEBUG = {
             - muscula: attack-2
 
         Missing keys:
-            
+            - Red
+
 
         */
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 2; //3
+        GAME.level = 13; //3
         GAME.gold = 9999;
         GAME.lives = 1;
 
@@ -145,6 +149,7 @@ const DEBUG = {
         let invItems = [
 
             //debug
+            "Beer", "Beer"
             //"BlackLeatherBoot", "BlackLeatherBoot"
             //"Rose", "Rose", "Rose"
             //"Wine", "GlassOfWine"
@@ -160,7 +165,7 @@ const DEBUG = {
             HERO.inventory.item.push(item);
         }
 
-        let keys = [];
+        let keys = ["Red"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -268,7 +273,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.11.4",
+    VERSION: "0.11.5",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

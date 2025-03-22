@@ -238,12 +238,7 @@ const INTERACTION_ITEM = {
         inventorySprite: "Diamond",
         text: "Diamond? My best friend."
     },
-    Beer: {
-        name: "Beer",
-        category: "interaction_item",
-        inventorySprite: "Beer",
-        text: "A cold one."
-    },
+    
     Shawl: {
         name: "Shawl",
         category: "interaction_item",
@@ -510,12 +505,7 @@ const INTERACTION_ITEM = {
     },
    
    
-    GlassOfBeer: {
-        name: "GlassOfBeer",
-        category: "interaction_item",
-        inventorySprite: "GlassOfBeer",
-        text: "Cheers mates. To victory!"
-    },
+    
     Pizza: {
         name: "Pizza",
         category: "interaction_item",

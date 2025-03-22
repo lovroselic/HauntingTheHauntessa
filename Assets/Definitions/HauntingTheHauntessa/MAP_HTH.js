@@ -50,7 +50,7 @@ const MAP = {
         movables: '[[287,"GreenBat"],[297,"GreenBat"],[384,"GreenBat"],[172,"GreenBat"]]',
     }
     ,
-    2 : {
+    2: {
         name: "The Throne Room",
         sg: 0,
         maxSpawned: -1,
@@ -68,7 +68,7 @@ const MAP = {
         doors: '[427]',
         entities: '[[505,7,"QueenMother"],[589,5,"FashionGuard"],[607,3,"CuteTank"]]',
         oracles: '[[501,7,"PrincessThrone"]]',
-        }
+    }
     ,
     3: {
         name: "Castle Entrance Hall",
@@ -81,10 +81,10 @@ const MAP = {
         wall: "GoldBlackSDXL349",
         floor: "BloodMarbleFloorWall_SDXL_001",
         ceil: "DarkFloorSDXL337",
-        start: '[22,7]',
+        start: '[116,5]',
         decals: '[[21,7,"KnightStatue_504","crest"],[23,7,"KnightStatue_497","crest"],[262,7,"ShieldDecal_505","crest"],[427,1,"ShieldDecal_515","crest"],[621,1,"ShieldDecal_514","crest"],[623,1,"ShieldDecal_510","crest"],[547,7,"ShieldDecal_513","crest"],[395,1,"ShieldDecal02","crest"],[399,1,"ShieldDecal_513","crest"]]',
         lights: '[[260,7,"DuaLLantern_021","standard2"],[264,7,"DuaLLantern_021","standard2"],[1102,1,"SkullLantern58","softCandle"],[321,7,"WallLamp31","warmCandle"],[323,7,"WallLamp31","warmCandle"],[137,7,"Candle50","darkgray"],[147,7,"WallLamp19","darkgray"]]',
-        gates: '[[7,7,"3.1","2.2","Closed"],[217,1,"3.2","4.1","Gold"],[457,7,"3.3","2.3","Closed"],[907,7,"3.4","2.4","Closed"]]',
+        gates: '[[7,7,"3.1","2.2","Closed"],[217,1,"3.2","4.1","Gold"],[457,7,"3.3","2.3","Closed"],[907,7,"3.4","2.4","Closed"],[119,3,"3.5","13.1","Closed"]]',
         monsters: '[[847,"DarkRedBat"]]',
         entities: '[[222,1,"GateKeeper"]]',
         oracles: '[[212,1,"StandingFashionGuard"],[1,7,"CuteDemon"]]',
@@ -175,7 +175,20 @@ const MAP = {
         oracles: '[[1073,1,"Vagyma"]]',
     }
     ,
-    9: {}
+    9: {
+        name: "Short Corridor",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"11","height":"5","depth":1,"map":"BB2ABABAA18BB9ABABB18A$"}',
+        wall: "IvyWall_524",
+        floor: "DarkWallSDXL323",
+        ceil: "IvyWall_518",
+        start: '[23,5]',
+        gates: '[[22,5,"9.1","2.9","Closed"],[32,3,"9.2","12.1","Red"]]',
+    }
     ,
     10: {
         name: "Deadly Maze",
@@ -211,5 +224,24 @@ const MAP = {
         lights: '[[1030,5,"FluxLight113","standard2"],[1156,5,"FluxLight102","standard2"],[1380,7,"Lamp42","standard2"],[1716,1,"Lamp41","standard2"],[357,5,"FireplaceFLuxU413","fireplace"],[63,5,"FireplaceFLuxU411","fireplace"],[1111,3,"SkullLantern51","standardUltraFaint"]]',
         gates: '[[210,5,"11.1","10.2","Closed"]]',
         containers: '[[1108,"TreasureChest","INTERACTION_ITEM.GoldenScepter",3]]',
+    }
+    ,
+    12: {}
+    ,
+    13: {
+        name: "Armory",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"17","height":"17","depth":6,"map":"BB5ABB2ABAÁAA5ÁAA9BB6AA6BAA3BB2AA13BAA18BAA34ÁAA9ÁAA3BAA6BAA4BAA4ÁABAA2ŁAA3BB2AA3BAA15ÁÁ2AA9ÁAÁAÁABÁAA4BB3AA5BAA32BB3AÁAA2BAA5BAA13ÁAA3BB2AA2BAA12BB2AA6ÁAA16BAA11BAÁAA7ÁAA13BAA8BB6ABB7AA13BB12ABAA11BAA8BB3AA2BAA2BAA3BB2AA9ÁAA6ÁAA4BB10AA6BB5ABB6AA5BB5AA2BB2ABB12AA2BB4ABAA9BB12ABB9ABABB14AA6BAA4BB2ࡁBB2AA2BB7ABAA3BB5ABAA2ÁAA3BB2AÁBB2ABB5ABB29AA2ÁÁ2ABAA2BB2ABB14ABB2ABB4ABB3ABB31ABB9ABB9ABB27ŁAA2BB6$BB131ÁBB19ÁBB22ÁABB9ABB67ÁBB7ABB120ÁBB76ŁсɁсBB31ÁBB15ABB2AÁBB3ÁBÁBB25ÁBB3ÁÁ7BB4ÁBB2ÁBB2ÁBB27ࡁBB26ɁBB17ÁBB36AA4BB11ࡁBB59ÁBB4ÁÁ3BÁBB24AA3ÁÁ4BAA3BAÁÁ2AA5ÁÁ2BB3ÁÁ2BB2ÁÁ10BB2ÁÁ3BÁÁ6BÁÁ14BABÁÁ25BÁÁ11BÁÁ2BAA5ÁBB2ÁÁ7BB2ÁÁ24BB8ɁBB2ABB2сŁBB2ࡁɁсBB3"}',
+        wall: "FloorPebbles1",
+        floor: "Boulders1",
+        ceil: "WebbedFloor2",
+        start: '[715,5]',
+        lights: '[[729,3,"Candelabra04","standardDimmed"],[41,5,"FluxLight127","standardMuted"],[320,7,"Lights105","standardMuted"],[765,5,"Fireplace07","fireNew"],[722,1,"FluxLight114","standardSoft"],[858,1,"Lights111","fireSoft"],[669,1,"FluxLight102","standardUltraFaint"]]',
+        gates: '[[714,5,"13.1","3.5","Closed"]]',
+        entities: '[[584,7,"DumbBelle"]]',
     }
 };

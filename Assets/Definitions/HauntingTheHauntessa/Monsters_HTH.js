@@ -1796,11 +1796,49 @@ const INTERACTION_ITEM = {
         inventorySprite: "BlackLeatherBoot",
         text: "Sexy boot, missing a pair. But last year's fashion."
     },
+    GlassOfBeer: {
+        name: "GlassOfBeer",
+        category: "interaction_item",
+        inventorySprite: "GlassOfBeer",
+        text: "Cheers mates. To victory!"
+    },
+    Beer: {
+        name: "Beer",
+        category: "interaction_item",
+        inventorySprite: "Beer",
+        text: "A cold one."
+    },
 };
 
 const INTERACTION_ENTITY = {
+    Axxa: {
+        name: "Axxa",
+        sprite: "Axxa",
+        category: 'crest',
+        voice: "Female2",
+        wants: ["GlassOfBeer", "GlassOfBeer", "GlassOfBeer"],
+        gives: "BattleAxe",
+        text: {
+            intro: "The battle fierce, my throat's on fire! Three beers will quench my fierce desire!",
+            progress: "Not enough! I still thirst for more. Fetch another, maybe four!",
+            conclusion: "At last relieved, refreshed and free! Take my axe, you've earned this fee."
+        }
+    },
+    DumbBelle: {
+        name: "DumbBelle",
+        sprite: "DumbBelle",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Beer", "Beer"],
+        gives: "DumbBell",
+        text: {
+            intro: "Training hard and feeling dry! Two cold beers would ease my sigh.",
+            progress: "One beer down, I'm still quite parched. Bring another, quickly march!",
+            conclusion: "Refreshing sips, oh, that's swell! Now, here's your prize, a fine dumbbell."
+        }
+    },
     Cousin: {
-        name: "MissCousinRose",
+        name: "Cousin",
         sprite: "Cousin",
         category: 'crest',
         voice: "Princess",
