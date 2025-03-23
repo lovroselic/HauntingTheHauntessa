@@ -62,12 +62,7 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "BlueRose",
     },
-    Mushroom: {
-        name: "Mushroom",
-        category: "interaction_item",
-        inventorySprite: "Mushroom",
-        text: "Poisonous. Don't eat."
-    },
+
     Floppy: {
         name: "Floppy",
         category: "interaction_item",

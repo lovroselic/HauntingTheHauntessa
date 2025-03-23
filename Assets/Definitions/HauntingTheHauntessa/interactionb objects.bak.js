@@ -257,17 +257,7 @@ const INTERACTION_OBJECT = {
         inventorySprite: "Scroll",
         text: "It's empty? I should write a poem."
     },
-    Mushroom: {
-        name: "Mushroom",
-        category: "interaction_item",
-        element: "MUSHROOM",
-        scale: 1.4 / 2 ** 7,
-        glueToFloor: true,
-        texture: "MushroomTexture",
-        inventorySprite: "Mushroom",
-        material: MATERIAL.standard,
-        text: "Poisonous. Don't eat."
-    },
+
     Poison: {
         name: "Poison",
         category: "interaction_item",

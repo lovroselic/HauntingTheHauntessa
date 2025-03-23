@@ -637,7 +637,13 @@ const DECAL_PAINTINGS = [
     "RetroGames_2132", "RetroGames_2133", "RetroGames_2134", "RetroGames_2135", "RetroGames_2136", "RetroGames_2137", "RetroGames_2138", "RetroGames_2139", "RetroGames_2140", "RetroGames_2141", "RetroGames_2142", "RetroGames_2143",
     "RetroGames_2144", "RetroGames_2145", "RetroGames_2146", "RetroGames_2147", "RetroGames_2148", "RetroGames_2149", "RetroGames_2150", "RetroGames_2151", "RetroGames_2152", "RetroGames_2153", "RetroGames_2154", "RetroGames_2155",
     "RetroGames_2156", "RetroGames_2157", "RetroGames_2158", "RetroGames_2159", "RetroGames_2160", "RetroGames_2161", "RetroGames_2162", "RetroGames_2163", "RetroGames_2164", "RetroGames_2165", "RetroGames_2166", "RetroGames_2167",
-    "RetroGames_2168", "RetroGames_2169", "RetroGames_2170", "RetroGames_2171", "RetroGames_2172"
+    "RetroGames_2168", "RetroGames_2169", "RetroGames_2170", "RetroGames_2171", "RetroGames_2172",
+    "RetroGames_2300", "RetroGames_2301", "RetroGames_2302", "RetroGames_2303", "RetroGames_2304", "RetroGames_2305", "RetroGames_2306", "RetroGames_2307", "RetroGames_2308", "RetroGames_2309", "RetroGames_2310", "RetroGames_2311",
+    "RetroGames_2312", "RetroGames_2313", "RetroGames_2314", "RetroGames_2315", "RetroGames_2316", "RetroGames_2317", "RetroGames_2318", "RetroGames_2319", "RetroGames_2320", "RetroGames_2321", "RetroGames_2322", "RetroGames_2323",
+    "RetroGames_2324", "RetroGames_2325", "RetroGames_2326", "RetroGames_2327", "RetroGames_2328", "RetroGames_2329", "RetroGames_2330", "RetroGames_2331", "RetroGames_2332", "RetroGames_2333", "RetroGames_2334", "RetroGames_2335",
+    "RetroGames_2336", "RetroGames_2337", "RetroGames_2338", "RetroGames_2339", "RetroGames_2340", "RetroGames_2341", "RetroGames_2342", "RetroGames_2343", "RetroGames_2344", "RetroGames_2345", "RetroGames_2346", "RetroGames_2347",
+    "RetroGames_2348", "RetroGames_2349", "RetroGames_2350", "RetroGames_2351", "RetroGames_2352", "RetroGames_2353", "RetroGames_2354", "RetroGames_2355", "RetroGames_2356", "RetroGames_2357", "RetroGames_2358", "RetroGames_2359",
+    "RetroGames_2360", "RetroGames_2361", "RetroGames_2362", "RetroGames_2363", "RetroGames_2364", "RetroGames_2365", "RetroGames_2366", "RetroGames_2367", "RetroGames_2368", "RetroGames_2369"
 ].sort();
 
 /** Crests */

@@ -1489,15 +1489,17 @@ const WORLD = {
         this[type].vertexNormals.push(...vertexNormals);
 
     },
-    addCube(Y, grid, type) {
+    addCube(Y, grid, type, scale = null) {
         if (!WebGL.PRUNE) return this.addElement(ELEMENT.CUBE, Y, grid, type);                                          //draws complete cube
 
         const GA = WORLD.GA;
+        //if (GA.isDoor(grid)) return this.addElement(ELEMENT.CUBE, Y, grid, type);
         const rememberZ = grid.z;                                                                                       //this is pointer, don't screw it!
         grid.z = Y;                                                                                                     //face pruning
         for (let [index, dir] of ENGINE.directions3D.entries()) {
             const checkGrid = grid.add(dir);
-            if (!(GA.isOutOfBounds(checkGrid) || GA.isWall(checkGrid))) this.addElement(ELEMENT[this.cubeFaces[index]], Y, grid, WORLD.faceTypes[index]);
+            if (GA.isDoor(checkGrid)) this.addElement(ELEMENT[this.cubeFaces[index]], Y, grid, WORLD.faceTypes[index], scale);
+            else if (!(GA.isOutOfBounds(checkGrid) || GA.isWall(checkGrid))) this.addElement(ELEMENT[this.cubeFaces[index]], Y, grid, WORLD.faceTypes[index], scale);
         }
         grid.z = rememberZ;                                                                                             //revert to initil z value
     },

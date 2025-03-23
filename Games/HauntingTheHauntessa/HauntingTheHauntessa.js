@@ -103,6 +103,9 @@ const DEBUG = {
         "Shuriken"
         "BlackLeatherBoot"
             DONE "BlackLeatherBoot" Drinker (8)
+        "Mushroom", 
+        "Mushroom", 
+        "Mushroom"
 
 
         Maybe: skulls, candle, spiderbabies,
@@ -117,6 +120,7 @@ const DEBUG = {
         Trainers
             - muscula: defense-2
             - MeanJah: attack-2
+            - ManACook Trainer : mana-2
 
         CoinTrainers
             -
@@ -129,7 +133,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 7; //3
+        GAME.level = 6; //3
         GAME.gold = 9999;
         GAME.lives = 1;
 
@@ -162,14 +166,15 @@ const DEBUG = {
         let invItems = [
 
             //debug
-            "Shuriken", "Shuriken", "Shuriken",
+            "Mushroom", "Mushroom", "Mushroom"
+            //"Shuriken", "Shuriken", "Shuriken",
             //"Dagger", "Dagger", "Dagger"
             //"GlassOfBeer", "GlassOfBeer", "GlassOfBeer"
             //"Beer", "Beer"
             //"BlackLeatherBoot", "BlackLeatherBoot"
             //"Rose", "Rose", "Rose"
             //"Wine", "GlassOfWine"
-            "DumbBell", "DumbBell",
+            //"DumbBell", "DumbBell",
             //"BlackLatexGloves", "PinkDuster",
             //"Document", "Document", "Document",
             //"Sword", "BattleAxe", "Mace"
@@ -289,7 +294,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.11.7",
+    VERSION: "0.11.8",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

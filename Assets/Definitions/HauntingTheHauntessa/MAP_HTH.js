@@ -23,6 +23,7 @@ const MAP_TEXT = {
     11: "",
     12: "",
     13: "Armory. I might find some weapons here.",
+    14: "Smells like sulphur. Are they following royal safety regulations?"
 
 };
 
@@ -88,7 +89,7 @@ const MAP = {
         start: '[116,5]',
         decals: '[[21,7,"KnightStatue_504","crest"],[23,7,"KnightStatue_497","crest"],[262,7,"ShieldDecal_505","crest"],[427,1,"ShieldDecal_515","crest"],[621,1,"ShieldDecal_514","crest"],[623,1,"ShieldDecal_510","crest"],[547,7,"ShieldDecal_513","crest"],[395,1,"ShieldDecal02","crest"],[399,1,"ShieldDecal_513","crest"]]',
         lights: '[[260,7,"DuaLLantern_021","standard2"],[264,7,"DuaLLantern_021","standard2"],[1102,1,"SkullLantern58","softCandle"],[321,7,"WallLamp31","warmCandle"],[323,7,"WallLamp31","warmCandle"],[137,7,"Candle50","darkgray"],[147,7,"WallLamp19","darkgray"]]',
-        gates: '[[7,7,"3.1","2.2","Closed"],[217,1,"3.2","4.1","Gold"],[457,7,"3.3","2.3","Closed"],[907,7,"3.4","2.4","Closed"],[119,3,"3.5","13.1","Closed"]]',
+        gates: '[[7,7,"3.1","2.2","Closed"],[217,1,"3.2","4.1","Gold"],[457,7,"3.3","2.3","Closed"],[907,7,"3.4","2.4","Closed"],[119,3,"3.5","13.1","Closed"],[105,5,"3.6","14.1","Closed"]]',
         monsters: '[[847,"DarkRedBat"]]',
         entities: '[[222,1,"GateKeeper"]]',
         oracles: '[[212,1,"StandingFashionGuard"],[1,7,"CuteDemon"]]',
@@ -120,7 +121,7 @@ const MAP = {
         monsterList: '["Bat","RedGoldBat","DarkRedBat"]',
     }
     ,
-    6: {
+    6 : {
         name: "The Temple",
         sg: 0,
         maxSpawned: -1,
@@ -132,14 +133,14 @@ const MAP = {
         floor: "DarkWallSDXL314",
         ceil: "RoughCave08",
         start: '[426,5]',
-        decals: '[[699,5,"Ivy12a","crest"],[665,5,"Ivy17","crest"],[750,5,"Ivy4","crest"],[801,5,"Ivy16","crest"],[660,3,"Ivy16","crest"],[694,3,"Ivy1","crest"],[762,3,"Ivy12","crest"],[796,3,"Ivy16","crest"],[619,7,"Ivy17","crest"],[621,7,"Ivy1","crest"],[624,7,"Ivy2","crest"],[616,7,"Ivy4","crest"],[829,1,"Ivy4","crest"],[827,1,"Ivy12","crest"],[825,1,"Ivy11","crest"],[822,1,"Ivy12a","crest"],[820,1,"Ivy1","crest"],[926,7,"Ivy303","crest"],[924,7,"Ivy12a","crest"],[922,7,"Ivy17","crest"],[929,7,"Ivy15","crest"],[1093,1,"Ivy16","crest"],[1096,1,"Ivy300","crest"],[1100,1,"Ivy1","crest"],[955,5,"Ivy305","crest"],[1057,5,"Ivy305","crest"],[1023,5,"Ivy14","crest"],[982,3,"Ivy16","crest"],[999,3,"Ivy14","crest"],[1050,3,"Ivy14","crest"],[1229,7,"IvyWall_517","texture"],[1230,7,"IvyWall_517","texture"],[1231,7,"IvyWall_517","texture"],[1232,7,"IvyWall_517","texture"],[1233,7,"IvyWall_517","texture"],[1234,7,"IvyWall_517","texture"],[1235,7,"IvyWall_517","texture"],[1365,1,"IvyWall_518","texture"],[1366,1,"IvyWall_518","texture"],[1367,1,"IvyWall_518","texture"],[1368,1,"IvyWall_518","texture"],[1369,1,"IvyWall_518","texture"],[1370,1,"IvyWall_518","texture"],[1371,1,"IvyWall_518","texture"],[1245,5,"IvyWall_519","texture"],[1262,5,"IvyWall_519","texture"],[1279,5,"IvyWall_519","texture"],[1296,5,"IvyWall_519","texture"],[1313,5,"IvyWall_519","texture"],[1330,5,"IvyWall_519","texture"],[1347,5,"IvyWall_519","texture"],[1253,3,"IvyWall_521","texture"],[1270,3,"IvyWall_521","texture"],[1287,3,"IvyWall_521","texture"],[1304,3,"IvyWall_521","texture"],[1321,3,"IvyWall_521","texture"],[1338,3,"IvyWall_521","texture"],[1355,3,"IvyWall_521","texture"]]',
-        lights: '[[1011,7,"DuaLLantern_007","standardMuted"],[1011,5,"FluxLight115","standardMuted"],[1011,1,"DuaLLantern_030","standardMuted"],[1011,3,"Lantern301","standardMuted"],[443,5,"CandleL1","warmCandle"],[409,5,"CandleR1","warmCandle"]]',
+        decals: '[[699,5,"Ivy12a","crest"],[665,5,"Ivy17","crest"],[750,5,"Ivy4","crest"],[801,5,"Ivy16","crest"],[660,3,"Ivy16","crest"],[694,3,"Ivy1","crest"],[762,3,"Ivy12","crest"],[796,3,"Ivy16","crest"],[619,7,"Ivy17","crest"],[621,7,"Ivy1","crest"],[624,7,"Ivy2","crest"],[616,7,"Ivy4","crest"],[829,1,"Ivy4","crest"],[827,1,"Ivy12","crest"],[825,1,"Ivy11","crest"],[822,1,"Ivy12a","crest"],[820,1,"Ivy1","crest"],[926,7,"Ivy303","crest"],[924,7,"Ivy12a","crest"],[922,7,"Ivy17","crest"],[929,7,"Ivy15","crest"],[1093,1,"Ivy16","crest"],[1096,1,"Ivy300","crest"],[1100,1,"Ivy1","crest"],[955,5,"Ivy305","crest"],[1057,5,"Ivy305","crest"],[1023,5,"Ivy14","crest"],[982,3,"Ivy16","crest"],[999,3,"Ivy14","crest"],[1050,3,"Ivy14","crest"],[1229,7,"IvyWall_517","texture"],[1230,7,"IvyWall_517","texture"],[1231,7,"IvyWall_517","texture"],[1232,7,"IvyWall_517","texture"],[1233,7,"IvyWall_517","texture"],[1234,7,"IvyWall_517","texture"],[1235,7,"IvyWall_517","texture"],[1365,1,"IvyWall_518","texture"],[1366,1,"IvyWall_518","texture"],[1367,1,"IvyWall_518","texture"],[1368,1,"IvyWall_518","texture"],[1369,1,"IvyWall_518","texture"],[1370,1,"IvyWall_518","texture"],[1371,1,"IvyWall_518","texture"],[1245,5,"IvyWall_519","texture"],[1262,5,"IvyWall_519","texture"],[1279,5,"IvyWall_519","texture"],[1296,5,"IvyWall_519","texture"],[1313,5,"IvyWall_519","texture"],[1330,5,"IvyWall_519","texture"],[1347,5,"IvyWall_519","texture"],[1253,3,"IvyWall_521","texture"],[1270,3,"IvyWall_521","texture"],[1287,3,"IvyWall_521","texture"],[1304,3,"IvyWall_521","texture"],[1321,3,"IvyWall_521","texture"],[1338,3,"IvyWall_521","texture"],[1355,3,"IvyWall_521","texture"],[375,5,"RetroGames_2057","picture"],[477,5,"RetroGames_2016","picture"]]',
+        lights: '[[1011,7,"DuaLLantern_007","standardMuted"],[1011,5,"FluxLight115","standardMuted"],[1011,1,"DuaLLantern_030","standardMuted"],[1011,3,"Lantern301","standardMuted"],[443,5,"CandleL1","warmCandle"],[409,5,"CandleR1","warmCandle"],[357,5,"Fireplace01","fireplaceDim"]]',
         gates: '[[425,5,"6.1","2.6","Closed"]]',
         containers: '[[143,"Chest10","GOLD_ITEM_TYPE.GoldBar",3]]',
         shrines: '[[441,3,"RedRaincoat"],[294,7,"OilyBarba"],[566,1,"ManaCook1"]]',
-    }
+        }
     ,
-    7 : {
+    7: {
         name: "Royal Fitness",
         sg: 0,
         maxSpawned: 5,
@@ -157,7 +158,7 @@ const MAP = {
         trainers: '[[452,7,"Muscula"],[644,3,"MeanJah"]]',
         lairs: '[[697,7,"Lair48"],[877,1,"Lair40"]]',
         monsterList: '["Bat","RedGoldBat","DarkRedBat"]',
-        }
+    }
     ,
     8: {
         name: "Budoir",
@@ -232,7 +233,7 @@ const MAP = {
     ,
     12: {}
     ,
-    13 : {
+    13: {
         name: "Armory",
         sg: 0,
         maxSpawned: -1,
@@ -247,5 +248,23 @@ const MAP = {
         lights: '[[729,3,"Candelabra04","standardDimmed"],[41,5,"FluxLight127","standardMuted"],[320,7,"Lights105","standardMuted"],[765,5,"Fireplace07","fireNew"],[722,1,"FluxLight114","standardSoft"],[858,1,"Lights111","fireSoft"],[669,1,"FluxLight102","standardUltraFaint"],[179,7,"FluxLight123","standardFaint"],[40,7,"SkullLantern51","standardFaint"],[1260,7,"Lamp51","softCandle"],[1300,1,"DuaLLantern_018","standard2"],[1260,1,"Lamp40","standardUltraFaint"]]',
         gates: '[[714,5,"13.1","3.5","Closed"]]',
         entities: '[[584,7,"DumbBelle"],[280,1,"Axxa"],[1158,7,"NeenJay"]]',
+    }
+    ,
+    14 : {
+        name: "Alchemy Lab",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"17","height":"17","depth":4,"map":"BB2ABABB2AA15ÁABAA18BB2AA5EABB3AA12BAA4BAA6BAEAA17BB2AA6BB2AA2BB2ABŁɁAсABAA5BABB8ÁBB4ABB8ABB10ÁABAÁBB12ABABB2ABB4AÁABB6ABB11AA2BB8ABB9ABB22ÁBB11EABB8AA2BB41$BB6ÁࡁBB155ࡁBB48ABB267ÁBB3ABÁÁ3BB12ABB28ÁBB3ÁBB58ÁÁ8BB3ABB6ÁÁ2BB12ABABB23ABB21AA2BÁÁ2BÁÁ3BÁÁ38BB8ÁÁ25BÁÁ8BB4ÁÁ56BB8AA3ŁAɁсB"}',
+        wall: "SpiderWeb22",
+        floor: "Cracked01",
+        ceil: "RoughCave17",
+        start: '[331,3]',
+        lights: '[[324,5,"DuaLLantern_024","standardFaint"],[314,7,"Lights115","standardSoft"],[671,7,"FluxLight113","standard2"],[853,1,"SkullLantern52","standardDim"],[863,1,"SkullLantern55","standardDim"],[1130,1,"Lamp40","softOrange"],[361,7,"FireplaceFLuxU420","fireplace"],[369,7,"Fireplace210","fireplace"]]',
+        gates: '[[339,3,"14.1","3.6","Closed"]]',
+        doors: '[365,839,843]',
+        trainers: '[[751,7,"ManaCookTrainer"]]',
         }
 };

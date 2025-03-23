@@ -1536,6 +1536,17 @@ const INTERACTION_OBJECT = {
         inventorySprite: "Dagger",
         text: "It looks very sharp."
     },
+    Mushroom: {
+        name: "Mushroom",
+        category: "interaction_item",
+        element: "MUSHROOM",
+        scale: 1.4 / 2 ** 7,
+        glueToFloor: true,
+        texture: "MushroomTexture",
+        inventorySprite: "Mushroom",
+        material: MATERIAL.standard,
+        text: "Poisonous. Don't eat."
+    },
 };
 
 const MOVABLE_INTERACTION_OBJECT = {
@@ -1814,6 +1825,12 @@ const INTERACTION_ITEM = {
         inventorySprite: "Shuriken",
         text: "A deadly throwing star."
     },
+    Mushroom: {
+        name: "Mushroom",
+        category: "interaction_item",
+        inventorySprite: "Mushroom",
+        text: "Poisonous. Don't eat."
+    },
 };
 
 const INTERACTION_ENTITY = {
@@ -1964,6 +1981,20 @@ const INTERACTION_ENTITY = {
 };
 
 const INTERACTION_SHRINE = {
+    ManaCookTrainer: {
+        name: "ManaCookTrainer",
+        sprite: "ManaCookTrainer",
+        category: 'crest',
+        voice: "Female2",
+        wants: ["Mushroom", "Mushroom", "Mushroom"],
+        gives: "ManaSkill",
+        level: 2,
+        text: {
+            intro: "Magic mushrooms, dark and bright. Poisonous fungi, my delight!",
+            progress: "These mushrooms thrill, but still too few. Fetch some more, their magic true!",
+            conclusion: "Poison gathered, potent brew! More mana now, bestowed to you."
+        }
+    },
     MeanJah: {
         name: "MeanJah",
         sprite: "MeanJah",
