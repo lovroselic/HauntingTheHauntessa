@@ -1808,9 +1808,28 @@ const INTERACTION_ITEM = {
         inventorySprite: "Beer",
         text: "A cold one."
     },
+    Shuriken: {
+        name: "Shuriken",
+        category: "interaction_item",
+        inventorySprite: "Shuriken",
+        text: "A deadly throwing star."
+    },
 };
 
 const INTERACTION_ENTITY = {
+    NeenJay: {
+        name: "NeenJay",
+        sprite: "NeenJay",
+        category: 'crest',
+        voice: "FemaleLow",
+        wants: ["Dagger", "Dagger", "Dagger"],
+        gives: "Mace",
+        text: {
+            intro: "Silent blades, sleek and bright. Daggers three complete my night!",
+            progress: "One dagger sharp, but not enough. More blades needed, swift and tough!",
+            conclusion: "Daggers received, my stealth secure. Take this mace, fierce strikes assured!",
+        }
+    },
     Axxa: {
         name: "Axxa",
         sprite: "Axxa",
@@ -1945,13 +1964,28 @@ const INTERACTION_ENTITY = {
 };
 
 const INTERACTION_SHRINE = {
+    MeanJah: {
+        name: "MeanJah",
+        sprite: "MeanJah",
+        category: 'crest',
+        voice: "FemaleLow2",
+        wants: ["Shuriken", "Shuriken", "Shuriken"],
+        gives: "Attack",
+        level: 2,
+        text: {
+            intro: "Deadly stars, sharp and true. Three shurikens, that's your cue!",
+            progress: "Good throw, Princess, still need more! Fetch more stars, your aim will soar!",
+            conclusion: "Stars complete, your strikes precise! Now learn to attack swift and nice."
+        }
+    },
+
     Muscula: {
         name: "Muscula",
         sprite: "Muscula",
         category: 'crest',
         voice: "FemaleLow",
         wants: ["DumbBell", "DumbBell"],
-        gives: "Attack",
+        gives: "Defense",
         level: 2,
         text: {
             intro: "Princess, dare you train with me? Prove your strength, bring dumbbells, let's see!",

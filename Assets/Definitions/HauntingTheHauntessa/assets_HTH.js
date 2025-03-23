@@ -884,6 +884,8 @@ LoadSprites = [
     { srcName: "EntityPictures/Vagyma.jpg", name: "Vagyma" },
     { srcName: "EntityPictures/DumbBelle.jpg", name: "DumbBelle" },
     { srcName: "EntityPictures/Axxa.jpg", name: "Axxa" },
+    { srcName: "EntityPictures/NeenJay1.jpg", name: "NeenJay" },
+    { srcName: "EntityPictures/NeenJay2.jpg", name: "MeanJah" },
 
     //action movables
 
@@ -1070,6 +1072,7 @@ LoadSprites = [
     { srcName: "Items/LeatherBoot7.png", name: "BlackLeatherBoot" },
     { srcName: "Items/Beer.png", name: "Beer" },
     { srcName: "Items/GlassOfBeer.png", name: "GlassOfBeer" },
+    { srcName: "Items/Shuriken.png", name: "Shuriken" },
 
     //UI, skills
     { srcName: "UI/CompassRose.png", name: "CompassRose" },

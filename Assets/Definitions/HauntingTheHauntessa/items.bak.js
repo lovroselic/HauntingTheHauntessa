@@ -675,12 +675,7 @@ const INTERACTION_ITEM = {
         text: "Pointy spear. Let's poke someone."
     },
     
-    Shuriken: {
-        name: "Shuriken",
-        category: "interaction_item",
-        inventorySprite: "Shuriken",
-        text: "A deadly throwing star."
-    },
+   
     YoniBook: {
         name: "YoniBook",
         category: "interaction_item",

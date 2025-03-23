@@ -59,9 +59,9 @@ const float HATTNF = 1.5f;                                       // light halo -
 const float HATTNF2 = 6.0f;                                      // light halo quadratic attenuation factor - 5.0
 const float MAXLIGHT = 0.999f;                                   // max contribution to avoid overburning; - 0.999
 const float IGNORED_ATTN_DISTANCE = 0.012f;                      // distance after attenuation starts taking effect - 0.012
-const float ILLUMINATION_CUTOFF = 0.11f;                         // remove flickering, light FOV - 0.11
-const float BEHIND_LIGHT_FACTOR = 0.10f;                         //ambient illumination behind light source
-const float DISTANCE_LIGHT = 0.475f;                             // force illumination near the light source  - 0.475
+const float ILLUMINATION_CUTOFF = 0.10f;                         // remove flickering, light FOV - 0.10
+const float BEHIND_LIGHT_FACTOR = 0.02f;                         // ambient illumination behind light source - 0.02f
+const float DISTANCE_LIGHT = 0.25f;                             // force illumination near the light source  - 0.475
 const float LIGHT_POS_Y_OFFSET = 0.35f;                          // vertical light position change 
 const float INTO_WALL = 0.01f;                                   // into wall target raycast offset: 0.01
 

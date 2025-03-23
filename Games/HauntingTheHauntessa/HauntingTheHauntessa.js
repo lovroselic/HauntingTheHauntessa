@@ -66,7 +66,7 @@ const DEBUG = {
             DONE CuteTank wants "Sword", "BattleAxe", "Mace" gives Cerificate Of Ability === "Document"
             DONE Drinker Wants GlassOfWine and Wine gives "BlackLeatherBoot"
             DONE Axxa wants "GlassOfBeer", "GlassOfBeer", "GlassOfBeer" and gives BattleAxe
-        NeenJay wants Dagger, Dagger, Dagger and gives Mace
+            DONE NeenJay wants Dagger, Dagger, Dagger and gives Mace
             DONE Cousin wants "BlackLeatherBoot", "BlackLeatherBoot" gives  "BlueLatexTop"
             DONE DumbBelle wants DumbBelle wants "Beer", "Beer" gives DumbBell
 
@@ -87,7 +87,7 @@ const DEBUG = {
             DONE "GoldenScepter" (11) -cont floor
             DONE "Sword", floor (8) 
             DONE "BattleAxe", --> Axxa(13)
-        "Mace"
+            DONE "Mace" ---> NeenJay (13)
             DONE "DumbBell" --> DumbBelle (13)
         "DumbBell"
         Dagger, 
@@ -98,6 +98,9 @@ const DEBUG = {
         "GlassOfBeer", 
         "GlassOfBeer", 
         "GlassOfBeer"
+        "Shuriken", 
+        "Shuriken", 
+        "Shuriken"
         "BlackLeatherBoot"
             DONE "BlackLeatherBoot" Drinker (8)
 
@@ -112,7 +115,11 @@ const DEBUG = {
             - manacook1 mana
 
         Trainers
-            - muscula: attack-2
+            - muscula: defense-2
+            - MeanJah: attack-2
+
+        CoinTrainers
+            -
 
         Missing keys:
             - Red
@@ -122,7 +129,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 13; //3
+        GAME.level = 7; //3
         GAME.gold = 9999;
         GAME.lives = 1;
 
@@ -155,12 +162,14 @@ const DEBUG = {
         let invItems = [
 
             //debug
-            "GlassOfBeer", "GlassOfBeer", "GlassOfBeer"
+            "Shuriken", "Shuriken", "Shuriken",
+            //"Dagger", "Dagger", "Dagger"
+            //"GlassOfBeer", "GlassOfBeer", "GlassOfBeer"
             //"Beer", "Beer"
             //"BlackLeatherBoot", "BlackLeatherBoot"
             //"Rose", "Rose", "Rose"
             //"Wine", "GlassOfWine"
-            //"DumbBell", "DumbBell"
+            "DumbBell", "DumbBell",
             //"BlackLatexGloves", "PinkDuster",
             //"Document", "Document", "Document",
             //"Sword", "BattleAxe", "Mace"
@@ -280,7 +289,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.11.6",
+    VERSION: "0.11.7",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

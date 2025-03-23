@@ -1297,6 +1297,7 @@ const WORLD = {
     bufferTypes: ["positions", 'indices', "textureCoordinates", "vertexNormals"],
     objectTypes: ["wall", "floor", "ceil", "decal"],
     cubeFaces: ["BACK_FACE", "RIGHT_FACE", "FRONT_FACE", "LEFT_FACE", "BOTTOM_FACE", "TOP_FACE"],                       //corresponds to directions3D: [UP3, RIGHT3, DOWN3, LEFT3, BELOW3, ABOVE3],
+    faceTypes: ["wall", "wall", "wall", "wall", "ceil", "floor"],
     init() {
         for (let BT of this.bufferTypes) {
             this[BT] = [];
@@ -1496,7 +1497,7 @@ const WORLD = {
         grid.z = Y;                                                                                                     //face pruning
         for (let [index, dir] of ENGINE.directions3D.entries()) {
             const checkGrid = grid.add(dir);
-            if (!(GA.isOutOfBounds(checkGrid) || GA.isWall(checkGrid))) this.addElement(ELEMENT[this.cubeFaces[index]], Y, grid, type);
+            if (!(GA.isOutOfBounds(checkGrid) || GA.isWall(checkGrid))) this.addElement(ELEMENT[this.cubeFaces[index]], Y, grid, WORLD.faceTypes[index]);
         }
         grid.z = rememberZ;                                                                                             //revert to initil z value
     },

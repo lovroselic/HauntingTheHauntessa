@@ -16,9 +16,13 @@ const MAP_TEXT = {
     4: "",
     5: "",
     6: "The only god this shrines channel is gold. I hope you have a lot of it.",
-    7: "",
+    7: "It's been 666 days since I trained last. I deserve a doughnut.",
     8: "",
     9: "",
+    10: "",
+    11: "",
+    12: "",
+    13: "Armory. I might find some weapons here.",
 
 };
 
@@ -135,7 +139,7 @@ const MAP = {
         shrines: '[[441,3,"RedRaincoat"],[294,7,"OilyBarba"],[566,1,"ManaCook1"]]',
     }
     ,
-    7: {
+    7 : {
         name: "Royal Fitness",
         sg: 0,
         maxSpawned: 5,
@@ -150,10 +154,10 @@ const MAP = {
         decals: '[[331,5,"Skull302","crest"],[557,5,"Skull407","crest"]]',
         lights: '[[502,7,"Candle72","softCandle"],[622,1,"Candle69","softCandle"],[792,3,"SkullLantern57","standardMuted"],[572,7,"DuaLLantern_007","standardUltraFaint"],[542,1,"FluxLight111c","standardUltraFaint"],[488,5,"DuaLLantern_030","standardUltraFaint"],[638,5,"DuaLLantern_023","standardUltraFaint"]]',
         gates: '[[569,3,"7.1","2.7","Closed"],[105,5,"7.2","10.1","Down"]]',
-        trainers: '[[452,7,"Muscula"]]',
+        trainers: '[[452,7,"Muscula"],[644,3,"MeanJah"]]',
         lairs: '[[697,7,"Lair48"],[877,1,"Lair40"]]',
         monsterList: '["Bat","RedGoldBat","DarkRedBat"]',
-    }
+        }
     ,
     8: {
         name: "Budoir",
@@ -235,13 +239,13 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"17","height":"17","depth":6,"map":"BB4AA3BAA2BÁAA2ÁAA7BB6AA6BABB3AA13BAA17BAA33ÁAA6ÁABAA2BAA9BAA3BAA3ÁABAŁAA3BAA3BAA10BAA6ÁÁ2AA6BAÁAÁAÁABÁAA5BB3AA5BAA3ÁAA29BB3AA2ÁAA2BAA5BAA18BB2ABABABAA10BB2AA6ÁAA21BAA8BAÁAA9ÁAA12BAA8BB6ABB7AA15BABB3ABB9AA2BABAA7BAA7BAA2BB3AA2BAA3BABABB2AA8ÁAA7ÁAA4BB8AA6BB7ABB7AA5BB5AA2BB2ABABB12AA2BB3ABB3AA9BB15ABB8AA2BABB3AA2BB2ABB8AA6BAA4BB2AࡁBB2ABB2ABB8AA3BB4ABABAÁAA2BB3AÁBB2ABB7ABB32AA2ÁÁ2ABAA3BB2ABAA2BABB19ABB2ABB34ABB10ABB12ABB23ABB6ŁAA2BB5$BB82ÁBB52ÁBB22ÁABB6ABB54ÁBB7ABB120ÁBB76ŁсɁсBB31ÁBB15ABB2AÁBB3ÁBÁBB25ÁBB3ÁÁ7BB4ÁBB2ÁBB2ÁBB27ࡁBB26ɁBB17ÁBB36AA4BB11ࡁBB59ÁBB4ÁÁ3BÁBB24AA3ÁÁ4BAA3BAÁÁ2AA5ÁÁ2BB3ÁÁ2BB2ÁÁ10BB2ÁÁ3BÁÁ6BÁÁ14BABÁÁ25BÁÁ11BÁÁ2BAA5ÁBB2ÁÁ7BB2ÁÁ24BB8ɁBB2ABB2сŁBB2ࡁɁсBB3"}',
+        data: '{"width":"17","height":"17","depth":6,"map":"BB5AA6BÁAA2ÁAA7BB6AA6BABB3AA13BAA17BAA31ÁAA8ÁABAA2BAA10BAA2BAA3ÁABAŁAA3BAA3BAA11BAA4ÁÁ2AA7BAÁAÁAÁABÁAA5BB3AA5BAA4ÁAA28BB2AA2ÁAA2BAA5BAA18BB2ABABABAA10BB2AA4BAÁAA22BAA6BAA2ÁAA9ÁAA12BAA8BB6ABB7AA16BABB3ABB9AA2BABAA5BAA8BAA2BB3AA2BAA3BABABB2AA8ÁAA7ÁAA4BB8AA6BB7ABB7AA5BB4AA2BB2ABABB13AA2BB3ABB3AA9BB15ABABB6AA2BABB3AA2BABB9AA6BAA4BB2AࡁBB2ABB2ABB8AA2BB4ABABAÁABB3AÁBB3ABB7ABB16ABB16AA2ÁÁ2ABAA3BB2ABAA2BABB19ABB2ABB34ABB10ABB12ABB23ABB6ŁAA2BB5$BB82ÁBB52ÁBB22ÁABB6ABB54ÁBB7ABB120ÁBB76ŁсɁсBB31ÁBB15ABB2AÁBB3ÁBÁBB25ÁBB3ÁÁ7BB4ÁBB2ÁBB2ÁBB27ࡁBB26ɁBB17ÁBB36AA4BB11ࡁBB59ÁBB4ÁÁ3BÁBB24AA3ÁÁ4BAA3BAÁÁ2AA5ÁÁ2BB3ÁÁ2BB2ÁÁ10BB2ÁÁ3BÁÁ6BÁÁ14BABÁÁ25BÁÁ11BÁÁ2BAA5ÁBB2ÁÁ7BB2ÁÁ24BB8ɁBB2ABB2сŁBB2ࡁɁсBB3"}',
         wall: "FloorPebbles1",
-        floor: "Boulders1",
+        floor: "BloodMarbleFloorWall_SDXL_018",
         ceil: "WebbedFloor2",
         start: '[1294,1]',
-        lights: '[[729,3,"Candelabra04","standardDimmed"],[41,5,"FluxLight127","standardMuted"],[320,7,"Lights105","standardMuted"],[765,5,"Fireplace07","fireNew"],[722,1,"FluxLight114","standardSoft"],[858,1,"Lights111","fireSoft"],[669,1,"FluxLight102","standardUltraFaint"],[179,7,"FluxLight123","standardFaint"],[40,7,"SkullLantern51","standardFaint"]]',
+        lights: '[[729,3,"Candelabra04","standardDimmed"],[41,5,"FluxLight127","standardMuted"],[320,7,"Lights105","standardMuted"],[765,5,"Fireplace07","fireNew"],[722,1,"FluxLight114","standardSoft"],[858,1,"Lights111","fireSoft"],[669,1,"FluxLight102","standardUltraFaint"],[179,7,"FluxLight123","standardFaint"],[40,7,"SkullLantern51","standardFaint"],[1260,7,"Lamp51","softCandle"],[1300,1,"DuaLLantern_018","standard2"],[1260,1,"Lamp40","standardUltraFaint"]]',
         gates: '[[714,5,"13.1","3.5","Closed"]]',
-        entities: '[[584,7,"DumbBelle"],[280,1,"Axxa"]]',
+        entities: '[[584,7,"DumbBelle"],[280,1,"Axxa"],[1158,7,"NeenJay"]]',
         }
 };
