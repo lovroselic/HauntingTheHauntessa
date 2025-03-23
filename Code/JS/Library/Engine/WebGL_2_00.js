@@ -1493,7 +1493,6 @@ const WORLD = {
         if (!WebGL.PRUNE) return this.addElement(ELEMENT.CUBE, Y, grid, type);                                          //draws complete cube
 
         const GA = WORLD.GA;
-        //if (GA.isDoor(grid)) return this.addElement(ELEMENT.CUBE, Y, grid, type);
         const rememberZ = grid.z;                                                                                       //this is pointer, don't screw it!
         grid.z = Y;                                                                                                     //face pruning
         for (let [index, dir] of ENGINE.directions3D.entries()) {

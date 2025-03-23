@@ -878,7 +878,7 @@ LoadSprites = [
     { srcName: "EntityPictures/RedRaincoat.jpg", name: "RedRaincoat" },
     { srcName: "EntityPictures/Muscula.jpg", name: "Muscula" },
     { srcName: "EntityPictures/OilyBarba.jpg", name: "OilyBarba" },
-    { srcName: "EntityPictures/ManaCook1.jpg", name: "ManaCook1" },
+    { srcName: "EntityPictures/ManaCook1.jpg", name: "ManaCook" },
     { srcName: "EntityPictures/Drinker.jpg", name: "Drinker" },
     { srcName: "EntityPictures/MissRose.jpg", name: "MissRose" },
     { srcName: "EntityPictures/Cousin1.jpg", name: "Cousin" },
@@ -888,6 +888,7 @@ LoadSprites = [
     { srcName: "EntityPictures/NeenJay1.jpg", name: "NeenJay" },
     { srcName: "EntityPictures/NeenJay2.jpg", name: "MeanJah" },
     { srcName: "EntityPictures/ManaCookTrainer.jpg", name: "ManaCookTrainer" },
+    { srcName: "EntityPictures/BulletTina.jpg", name: "BulletTina" },
 
     //action movables
 

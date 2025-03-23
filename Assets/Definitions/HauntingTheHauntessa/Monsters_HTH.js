@@ -29,9 +29,22 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
-    ManaCook1: {
-        name: "ManaCook1",
-        sprite: "ManaCook1",
+    BulletTina: {
+        name: "BulletTina",
+        sprite: "BulletTina",
+        which: "magic",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "SkillFireball",
+        price: 999,
+        level: 1,
+        text: "Casting fireballs is similar to shooting. Pray for aim, and pay, 999 gold.",
+        introduce: true,
+        voice: "FemaleLow",
+    },
+    ManaCook: {
+        name: "ManaCook",
+        sprite: "ManaCook",
         which: "mana",
         category: 'crest',
         interactionCategory: 'shrine',
