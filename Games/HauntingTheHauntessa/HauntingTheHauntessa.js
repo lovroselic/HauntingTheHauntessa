@@ -69,6 +69,7 @@ const DEBUG = {
             DONE NeenJay wants Dagger, Dagger, Dagger and gives Mace
             DONE Cousin wants "BlackLeatherBoot", "BlackLeatherBoot" gives  "BlueLatexTop"
             DONE DumbBelle wants DumbBelle wants "Beer", "Beer" gives DumbBell
+            DONE SpyedHer wants: "BabyGreenSpider","BabyGreenSpider","BabyGreenSpider","BabyGreenSpider","BabyGreenSpider" gives Dagger
 
         Rose, 
         Rose, 
@@ -90,7 +91,7 @@ const DEBUG = {
             DONE "Mace" ---> NeenJay (13)
             DONE "DumbBell" --> DumbBelle (13)
         "DumbBell"
-        Dagger, 
+            DONE Dagger,  --> SpyedHer (15)
         Dagger, 
         Dagger,
         "Beer", 
@@ -116,11 +117,14 @@ const DEBUG = {
             - redCoat defense
             - oilybarba attack
             - manacook1 mana
+            - BulletTina magic
+            -HeartAttack health
 
         Trainers
             - muscula: defense-2
             - MeanJah: attack-2
             - ManACook Trainer : mana-2
+            - DragonMother
 
         CoinTrainers
             -
@@ -133,7 +137,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 6; //3
+        GAME.level = 15; //3
         GAME.gold = 9999;
         GAME.lives = 1;
 
@@ -166,7 +170,8 @@ const DEBUG = {
         let invItems = [
 
             //debug
-            "Mushroom", "Mushroom", "Mushroom"
+            "BabyGreenSpider","BabyGreenSpider","BabyGreenSpider","BabyGreenSpider","BabyGreenSpider",
+            //"Mushroom", "Mushroom", "Mushroom"
             //"Shuriken", "Shuriken", "Shuriken",
             //"Dagger", "Dagger", "Dagger"
             //"GlassOfBeer", "GlassOfBeer", "GlassOfBeer"
@@ -294,7 +299,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.11.9",
+    VERSION: "0.11.10",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

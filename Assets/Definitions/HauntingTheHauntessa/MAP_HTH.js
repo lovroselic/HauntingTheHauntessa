@@ -121,7 +121,7 @@ const MAP = {
         monsterList: '["Bat","RedGoldBat","DarkRedBat"]',
     }
     ,
-    6 : {
+    6: {
         name: "The Temple",
         sg: 0,
         maxSpawned: 6,
@@ -137,10 +137,10 @@ const MAP = {
         lights: '[[1011,7,"DuaLLantern_007","standardMuted"],[1011,5,"FluxLight115","standardMuted"],[1011,1,"DuaLLantern_030","standardMuted"],[1011,3,"Lantern301","standardMuted"],[443,5,"CandleL1","warmCandle"],[409,5,"CandleR1","warmCandle"],[357,5,"Fireplace01","fireplaceDim"]]',
         gates: '[[425,5,"6.1","2.6","Closed"]]',
         containers: '[[143,"Chest10","GOLD_ITEM_TYPE.GoldBar",3]]',
-        shrines: '[[441,3,"RedRaincoat"],[294,7,"OilyBarba"],[566,1,"ManaCook"],[373,3,"BulletTina"]]',
+        shrines: '[[441,3,"RedRaincoat"],[294,7,"OilyBarba"],[566,1,"ManaCook"],[373,3,"BulletTina"],[509,3,"HeartAttack"]]',
         lairs: '[[1003,5,"Lair66"],[1019,3,"Lair52"]]',
         monsterList: '["Bat","RedGoldBat","RedGoldBat","DarkRedBat"]',
-        }
+    }
     ,
     7: {
         name: "Royal Fitness",
@@ -265,8 +265,27 @@ const MAP = {
         ceil: "RoughCave17",
         start: '[331,3]',
         lights: '[[324,5,"DuaLLantern_024","standardFaint"],[314,7,"Lights115","standardSoft"],[671,7,"FluxLight113","standard2"],[853,1,"SkullLantern52","standardDim"],[863,1,"SkullLantern55","standardDim"],[1130,1,"Lamp40","softOrange"],[361,7,"FireplaceFLuxU420","fireplace"],[369,7,"Fireplace210","fireplace"]]',
-        gates: '[[339,3,"14.1","3.6","Closed"]]',
+        gates: '[[339,3,"14.1","3.6","Closed"],[34,5,"14.2","15.1","Closed"]]',
         doors: '[365,839,843]',
         trainers: '[[751,7,"ManaCookTrainer"]]',
     }
+    ,
+    15 : {
+        name: "Spidery Maze",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"23","height":"23","depth":3,"map":"BB3AA7BABB3AA2BAA3BAA3BB3AA8BAA2BABAA3BB5AA2BB7AÁŁAA2BB2ABAA5BAA2BAA4BB2AA9BB2AA10BB3ABABABB2AA2BB2AA2BB2ABAA2BAA3BABB2ABABAA12BABB4AA2BAA2BB2ABAA6BAA12BAA7BB2AA5BAEAA3BAA11BAA15BAA3BAA3BABAA5BABAA4BB2AA2BB2ABB2ABAA2BAA4BB2ABAA2BB6AA3BB3ABB11AA3BABB2ABB2ABB2ABB4AA2BB5ABB2ABAA2BB2AA3BAA3BB2ABB3ABB3ABB9AA3BABB4AA2BB22AA4BABB5ABAA5BAA4BB4AA4BABAA3BAA2BABAA5BB3ABB5ABAA2BABABB3AA2BAA2BB2AA5BAA2BABAA4BB3ABB4AA2BABAA2BB2ABB4AA2BABABAA2BB5ABB3AA2BB2ABB2ABB4AA2BABABAA4BABAA2BŁBсABB2ɁBABAࡁBABB3ABAA2BAA2BABB5ABB2AA2BB3AA2BB5AA3BAA2BB2AA3BB3AA2BAA5BAA2BABAA4BAA3BB8ABABB11AA2BABABB3ABB3ABB3ABABB9AA2BABB2AA3BB3ABB5ABABB3ABB5EBB8ABB2AA2BABABABABB3ABB4ABAA3BB7ABB2EAA2BB15ABB9ABB2AA2BB7ABB26AA2BB3ABB3ABABB15AEBB6AA3BB3AA2BB6ABB17ABB14ABB3ÁBB55ABࡁBB9ABB9ABABB19ABB7ABB10AA3BABB9ABB11ABB7ABB7ABABB12ABB2$BB81ABB237ÁÁ4ABB28AA2BB42ABB6ABB16ABB17EBB17AA4BABB4ÁÁ2BB4ÁÁ4BAɁBABсŁBࡁɁBсB"}',
+        wall: "SpiderWeb12",
+        floor: "RedMArbleFloor2",
+        ceil: "SpiderWeb334",
+        start: '[1383,5]',
+        lights: '[[548,7,"Candle54","standardDimmed"],[666,3,"FireplaceFLuxU411","fireplace"],[347,7,"FluxLight113","standardSoft"],[1380,5,"Candle54","standardDimmed"]]',
+        gates: '[[597,3,"15.1","14.2","Closed"]]',
+        doors: '[348,420,1312,1315,1450]',
+        entities: '[[509,1,"SpyedHer"]]',
+        movables: '[[302,"BabyGreenSpider"],[48,"BabyGreenSpider"],[205,"BabyGreenSpider"],[245,"BabyGreenSpider"],[403,"BabyGreenSpider"],[1223,"BabyDragon"],[1548,"BabyDragon"],[1417,"BabyDragon"],[1470,"BabyDragon"],[1256,"BabyDragon"]]',
+        }
 };

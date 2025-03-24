@@ -29,6 +29,19 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    HeartAttack: {
+        name: "HeartAttack",
+        sprite: "HeartAttack",
+        which: "health",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "HeartSkill",
+        price: 999,
+        level: 1,
+        text: "My looks make hearts beat faster. Pray and pay, 999 gold.",
+        introduce: true,
+        voice: "FemaleLow2",
+    },
     BulletTina: {
         name: "BulletTina",
         sprite: "BulletTina",
@@ -1608,6 +1621,32 @@ const MOVABLE_INTERACTION_OBJECT = {
         inventorySprite: "GreenBat",
         text: "Reeks with magic. Let's nibble.",
     },
+    BabyGreenSpider: {
+        name: "BabyGreenSpider",
+        category: "interaction_item",
+        model: "Spider",
+        scale: 1 / 2 ** 8,
+        rotateToNorth: Math.PI,
+        texture: "SpiderGreen",
+        moveSpeed: 1.5,
+        material: MATERIAL.standard,
+        behaviourArguments: [Infinity, ["wanderer"], -1],
+        inventorySprite: "BabyGreenSpider",
+        text: "Eight hairy legs? Creepy spider."
+    },
+    BabyDragon: {
+        name: "BabyDragon",
+        category: "interaction_item",
+        model: "Dragon",
+        scale: 1 / 2 ** 5,
+        fly: 0.5,
+        rotateToNorth: Math.PI,
+        moveSpeed: 1.75,
+        material: MATERIAL.standard,
+        behaviourArguments: [Infinity, ["wanderer"], -1],
+        inventorySprite: "BabyDragon",
+        text: "Come to mamma."
+    },
 };
 
 const INTERACTION_ITEM = {
@@ -1847,6 +1886,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    SpyedHer: {
+        name: "SpyedHer",
+        sprite: "SpyedHer",
+        category: 'crest',
+        voice: "FemaleLow2",
+        wants: ["BabyGreenSpider", "BabyGreenSpider", "BabyGreenSpider", "BabyGreenSpider", "BabyGreenSpider"],
+        gives: "Dagger",
+        text: {
+            intro: "My spiderlings lost, oh what a plight! Find them quick, they're out of sight within this maze, my poor heart aches, return them now, for all our sakes!",
+            progress: "You've found some babies, but don't rest. Find the others, that's your test!",
+            conclusion: "My babies safe, I'm filled with glee! A dagger found, it's yours from me!"
+        }
+    },
     NeenJay: {
         name: "NeenJay",
         sprite: "NeenJay",

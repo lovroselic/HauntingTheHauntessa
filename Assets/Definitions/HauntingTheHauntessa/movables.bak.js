@@ -124,30 +124,6 @@ const MOVABLE_INTERACTION_OBJECT = {
         inventorySprite: "Spider",
         text: "Eight hairy legs? Creepy spider."
     },
-    BabyGreenSpider: {
-        name: "BabyGreenSpider",
-        category: "interaction_item",
-        model: "Spider",
-        scale: 1 / 2 ** 8,
-        rotateToNorth: Math.PI,
-        texture: "SpiderGreen",
-        moveSpeed: 1.5,
-        material: MATERIAL.standard,
-        behaviourArguments: [Infinity, ["wanderer"], -1],
-        inventorySprite: "BabyGreenSpider",
-        text: "Eight hairy legs? Creepy spider."
-    },
-    BabyDragon: {
-        name: "BabyDragon",
-        category: "interaction_item",
-        model: "Dragon",
-        scale: 1 / 2 ** 5,
-        fly: 0.5,
-        rotateToNorth: Math.PI,
-        moveSpeed: 1.75,
-        material: MATERIAL.standard,
-        behaviourArguments: [Infinity, ["wanderer"], -1],
-        inventorySprite: "BabyDragon",
-        text: "Come to mamma."
-    },
+    
+    
 };
