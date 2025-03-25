@@ -1497,8 +1497,9 @@ const WORLD = {
         grid.z = Y;                                                                                                     //face pruning
         for (let [index, dir] of ENGINE.directions3D.entries()) {
             const checkGrid = grid.add(dir);
-            if (GA.isDoor(checkGrid)) this.addElement(ELEMENT[this.cubeFaces[index]], Y, grid, WORLD.faceTypes[index], scale);
-            else if (!(GA.isOutOfBounds(checkGrid) || GA.isWall(checkGrid))) this.addElement(ELEMENT[this.cubeFaces[index]], Y, grid, WORLD.faceTypes[index], scale);
+            if (GA.isDoor(checkGrid)) this.addElement(ELEMENT[this.cubeFaces[index]], Y, grid, WORLD.faceTypes[index], scale);                                                  //doors
+            else if (Y == -1 && dir.z === 0) this.addElement(ELEMENT[this.cubeFaces[index]], Y, grid, WORLD.faceTypes[index], scale);                                           //visible sub floor supports
+            else if (!(GA.isOutOfBounds(checkGrid) || GA.isWall(checkGrid))) this.addElement(ELEMENT[this.cubeFaces[index]], Y, grid, WORLD.faceTypes[index], scale);           //visible quads
         }
         grid.z = rememberZ;                                                                                             //revert to initil z value
     },
@@ -1829,9 +1830,10 @@ class $3D_player {
         const gridType = REVERSED_MAPDICT[this.GA.getValue(feetGrid3D)];
 
         switch (gridType) {
+            case undefined:
             case "HOLE":
                 if (feetPos3.y < -0.9) {
-                    //console.error("DONE FALLING into HOLE");
+                    console.error("DONE FALLING into HOLE", "feetPos3.y", feetPos3.y, "this.velocity_Z", this.velocity_Z);
                     this.velocity_Z = -9999999.99;
                     this.setPos(nextPos3);
                     return true;
@@ -1857,6 +1859,7 @@ class $3D_player {
                 }
                 return false;
             default:
+                console.warn("feetPos3.y", feetPos3.y, "this.velocity_Z", this.velocity_Z, "feetGrid3D", feetGrid3D);
                 throw new Error(`Unsupported gridType fro checkLanding: ${gridType}`);
         }
     }

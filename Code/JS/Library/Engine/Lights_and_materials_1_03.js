@@ -16,7 +16,11 @@ const LIGHT_COLORS = {
     standardFaint: new Float32Array([0.56, 0.54, 0.49]),        // Very faint, subtle background tone
     standardVeryFaint: new Float32Array([0.48, 0.46, 0.42]),    // softer, calmer, gently dimmed
     standardUltraFaint: new Float32Array([0.40, 0.38, 0.35]),   // extremely subdued, subtle background
-    standardRedish: new Float32Array([0.95, 0.88, 0.80]),   
+    standardRedish: new Float32Array([0.95, 0.88, 0.80]),
+    standardYellow: new Float32Array([0.88, 0.83, 0.65]),       // Slightly yellow-tinted, bright and warm
+    standardYellowDim: new Float32Array([0.78, 0.72, 0.55]),    // Moderately dimmed yellowish tint
+    standardYellowSoft: new Float32Array([0.68, 0.62, 0.47]),   // Gentle soft yellow glow
+    standardYellowFaint: new Float32Array([0.58, 0.53, 0.40]),  // Subtle, faint yellowish ambiance
     dim: new Float32Array([0.45, 0.45, 0.40]),
     dimRed: new Float32Array([0.50, 0.225, 0.035]),
     fire: new Float32Array([0.94, 0.50, 0.07]),

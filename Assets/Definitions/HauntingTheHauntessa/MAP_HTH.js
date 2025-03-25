@@ -23,7 +23,9 @@ const MAP_TEXT = {
     11: "",
     12: "",
     13: "Armory. I might find some weapons here.",
-    14: "Smells like sulphur. Are they following royal safety regulations?"
+    14: "Smells like sulphur. Are they following royal safety regulations?",
+    15: "",
+    16: "Dead are resting here. Or are they really resting?"
 
 };
 
@@ -66,10 +68,10 @@ const MAP = {
         wall: "GreyBrownTiles101",
         floor: "BloodMarbleFloorWall_SDXL_030",
         ceil: "DarkMarble50",
-        start: '[681,5]',
+        start: '[1656,3]',
         decals: '[[519,7,"KnightStatue106","crest"],[521,7,"KnightStatue110","crest"],[523,7,"KnightStatue105","crest"],[525,7,"KnightStatue107","crest"],[881,7,"ShieldDecal02","crest"],[885,7,"ShieldDecal03","crest"],[538,4,"PersianRug06","crest"],[557,4,"PersianRug06","crest"],[539,4,"PersianRug06","crest"],[558,4,"PersianRug06","crest"],[540,4,"PersianRug06","crest"],[559,4,"PersianRug06","crest"],[541,4,"PersianRug06","crest"],[560,4,"PersianRug06","crest"],[542,4,"PersianRug06","crest"],[561,4,"PersianRug06","crest"],[543,4,"PersianRug06","crest"],[562,4,"PersianRug06","crest"],[544,4,"PersianRug06","crest"],[563,4,"PersianRug06","crest"],[520,4,"PersianRug06","crest"],[524,4,"PersianRug06","crest"]]',
         lights: '[[458,1,"Candelabra01","standardSoft"],[472,1,"Candelabra02","standardSoft"],[370,7,"Candelabra03","standardSoft"],[672,1,"Lamp42","standard"],[676,1,"Lamp42","standard"],[459,7,"FireplaceFLuxU417","fireplace"],[471,7,"FireplaceFLuxU420","fireplaceDim"]]',
-        gates: '[[363,7,"2.1","1.1","Closed"],[351,1,"2.2","3.1","Closed"],[1073,1,"2.3","3.3","Closed"],[1795,1,"2.4","3.4","Closed"],[377,7,"2.5","5.1","Closed"],[531,3,"2.6","6.1","Closed"],[513,5,"2.7","7.1","Closed"],[665,5,"2.8","8.1","Closed"],[683,3,"2.9","9.1","Closed"]]',
+        gates: '[[363,7,"2.1","1.1","Closed"],[351,1,"2.2","3.1","Closed"],[1073,1,"2.3","3.3","Closed"],[1795,1,"2.4","3.4","Closed"],[377,7,"2.5","5.1","Closed"],[531,3,"2.6","6.1","Closed"],[513,5,"2.7","7.1","Closed"],[665,5,"2.8","8.1","Closed"],[683,3,"2.9","9.1","Closed"],[1653,5,"2.10","17.1","Closed"]]',
         doors: '[427]',
         entities: '[[505,7,"QueenMother"],[589,5,"FashionGuard"],[607,3,"CuteTank"]]',
         oracles: '[[501,7,"PrincessThrone"]]',
@@ -233,7 +235,22 @@ const MAP = {
         containers: '[[1108,"TreasureChest","INTERACTION_ITEM.GoldenScepter",3]]',
     }
     ,
-    12: {}
+    12: {
+        name: "Treasury",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"17","height":"17","depth":2,"map":"BB4AA4BB2AA3BABAA50BB6AA14BAA3BB4AA2BAA7BB2AA4BABAA2BAA3BABB2ABABAA4BB4AA5BB2AA9BB2AA11BB10AA2BB2ABB4AA3BB3ABB2ABAA4BB15ABB7ABABB5ABB3ABB3AA2BB3AA9BAA3BAA4BB2ABB26$BB18ÁABB46ÁÁ2BB6ÁBB4ÁÁ3BÁÁ3BB4ÁÁ2BB3ÁBÁÁ2BB3ÁBÁBB2ÁBB29ÁÁ2BÁÁ2BB2ÁBB6ÁÁ4BÁÁ3BB8ÁÁ22BÁÁ7BÁÁ3BÁÁ2BÁBÁBB2ÁBB5ÁÁ10BB2ÁBÁÁ2BÁBÁBÁÁ4BÁÁ6BB7ÁÁ28BÁBÁBB2"}',
+        wall: "GoldBlackSDXL345",
+        floor: "GoldBlackSDXL349",
+        ceil: "StrangeGoldy1",
+        start: '[137,5]',
+        decals: '[[431,3,"Skull319","crest"],[436,5,"SittingSkelly2","crest"]]',
+        lights: '[[427,5,"SkullLantern53","standardYellowDim"],[439,3,"SkullLantern58","standardYellowDim"],[399,1,"SingleLantern1","standardVeryFaint"],[468,7,"FluxLight119","standardVeryFaint"]]',
+        gates: '[[136,5,"12.1","9.2","Closed"]]',
+    }
     ,
     13: {
         name: "Armory",
@@ -292,5 +309,40 @@ const MAP = {
         trainers: '[[1387,3,"DragonMotha"]]',
     }
     ,
-    16:{}
+    16: {
+        name: "The Crypt",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"19","height":"19","depth":3,"map":"BB2AA2BB3AA3BABAA36BB2AA5BAA10BAA14BABAA5BB2AA10BAA4ŁAA3BAA8BABAA6BABAA3BB2AA6ÁBABAÁÁ3ŁŁ2AA2BB9AA3BAA2BB10ABB14AA2BB4ABB4AA2BB8ÁBAA2BB5ABABAA2BB3ÁÁ2BB2ABB17ABB21ABB15ABB71ÁBB21ABB9Á$BB26ÁBB19ABB3ÁBB16ÁBB14ÁÁ3BB2ABB3ÁÁ4BAA4BB2ÁÁ10BB2ÁÁ4BB65ÁBÁÁ3BB5ÁÁ6BB25ÁÁ91BÁÁ5BÁBÁÁ11BB2ÁÁ12BB4ÁÁ61AÁÁ37ABÁÁ5BÁÁ5BÁÁ15BB4ÁÁ74AÁÁ72BB4AÁÁ4BÁÁ2BAÁÁ10BB16ɁɁ3сс3ࡁࡁ3BB3"}',
+        wall: "DarkWallSDXL311",
+        floor: "RedMArbleFLoor10",
+        ceil: "MossyWall112",
+        start: '[275,7]',
+        lights: '[[760,5,"DuaLLantern_020","standardYellow"],[35,7,"FluxLight111c","standardYellowDim"],[598,3,"Candle64","standard2"],[237,5,"lantern201","standardYellow"],[564,5,"FluxLight118","standardMuted"],[640,5,"Lights107","standardMuted"],[695,1,"WallLamp18","standardFaint"]]',
+        gates: '[[725,7,"16.1","13.2","Up"]]',
+        scrolls: '[[742,5],[92,12]]',
+        entities: '[[351,1,"EmoTina"]]',
+        objects: '[[324,"Skull"]]',
+        oracles: '[[372,7,"WindowSitter"]]',
+        trainers: '[[589,5,"CemetaryPet"]]',
+    }
+    ,
+    17 : {
+        name: "Vertigo",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"17","height":"17","depth":7,"map":"BÁBÁBAA2BB2AA8ÁABÁÁ11AÁAA2ÁBB13ÁBB3ÁBB2ÁÁ2BB62ÁBB12ÁÁ6BB95$BB168ÁÁ5BB28ÁÁ3AÁBB3ÁÁ2ABB3ÁÁ68BÁÁ4BB4ABB7ABB178ÁÁ2BB2ÁÁ5BB2ÁÁ4BB6ÁBB5ÁBB77ÁÁ6AÁÁ8BÁÁ23AÁÁ5BÁABÁÁ66BÁÁ6BÁAÁÁ5AA2ÁÁ2AÁÁ5AÁÁ7BÁÁ2BÁÁ78BÁBÁÁ2BÁÁ3AA3ÁÁ3ABB2ÁÁ14BÁÁ72BB2ÁÁ3BB3ÁÁ2AÁÁ88BÁÁ184BÁÁ87BÁÁ91BÁÁ25AÁÁ5BÁÁ54BB2AÁÁ3BÁAÁÁ3BB2ÁÁ81ABÁÁ145BB77"}',
+        wall: "RoughCave11",
+        floor: "IrregularTiledFloorCeil02",
+        ceil: "DarkWallSDXL313",
+        start: '[1686,3]',
+        lights: '[[1458,7,"Lamp48","standardRedish"],[1720,1,"SkullLantern54","standardYellow"],[1614,3,"Fireplace201","fireplace"],[1564,5,"Fireplace101","fireplace"]]',
+        gates: '[[1495,3,"17.1","2.10","Closed"]]',
+        }
 };

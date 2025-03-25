@@ -671,90 +671,11 @@ const INTERACTION_ITEM = {
     },
     
    
-    YoniBook: {
-        name: "YoniBook",
-        category: "interaction_item",
-        inventorySprite: "YoniBook",
-        text: "It seems like an interesting book, full of ancient knowledge."
-    },
-    TaoBook: {
-        name: "TaoBook",
-        category: "interaction_item",
-        inventorySprite: "TaoBook",
-        text: "It seems like an interesting book, full of ancient knowledge."
-    },
-    YinYangBook: {
-        name: "YinYangBook",
-        category: "interaction_item",
-        inventorySprite: "YinYangBook",
-        text: "It seems like an interesting book, full of ancient knowledge."
-    },
-    PentagramBook: {
-        name: "PentagramBook",
-        category: "interaction_item",
-        inventorySprite: "PentagramBook",
-        text: "It seems like an interesting book, full of ancient knowledge."
-    },
-    HexagramBook: {
-        name: "HexagramBook",
-        category: "interaction_item",
-        inventorySprite: "HexagramBook",
-        text: "It seems like an interesting book, full of ancient knowledge."
-    },
-    TripleMoonBook: {
-        name: "TripleMoonBook",
-        category: "interaction_item",
-        inventorySprite: "TripleMoonBook",
-        text: "It seems like an interesting book, full of ancient knowledge."
-    },
-    TriquetraBook: {
-        name: "TriquetraBook",
-        category: "interaction_item",
-        inventorySprite: "TriquetraBook",
-        text: "It seems like an interesting book, full of ancient knowledge."
-    },
-    VenusBook: {
-        name: "VenusBook",
-        category: "interaction_item",
-        inventorySprite: "VenusBook",
-        text: "It seems like an interesting book, full of ancient knowledge."
-    },
-    AnkhBook: {
-        name: "AnkhBook",
-        category: "interaction_item",
-        inventorySprite: "AnkhBook",
-        text: "It seems like an interesting book, full of ancient knowledge."
-    },
-    FireballBook: {
-        name: "FireballBook",
-        category: "interaction_item",
-        inventorySprite: "FireballBook",
-        text: "It seems like an interesting book, full of ancient knowledge."
-    },
-    OwlBook: {
-        name: "OwlBook",
-        category: "interaction_item",
-        inventorySprite: "OwlBook",
-        text: "It seems like an interesting book, full of ancient knowledge."
-    },
-    PrincessBook: {
-        name: "PrincessBook",
-        category: "interaction_item",
-        inventorySprite: "PrincessBook",
-        text: "Amazing story about my adventures. Everybody should read this."
-    },
-    TreeOfLifeBook: {
-        name: "TreeOfLifeBook",
-        category: "interaction_item",
-        inventorySprite: "TreeOfLifeBook",
-        text: "It seems like an interesting book, full of ancient knowledge."
-    },
-    RavenBook: {
-        name: "RavenBook",
-        category: "interaction_item",
-        inventorySprite: "RavenBook",
-        text: "It seems like an interesting book, full of ancient knowledge."
-    },
+   
+
+
+
+
     Kiss: {
         name: "Kiss",
         category: "interaction_item",

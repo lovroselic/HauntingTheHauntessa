@@ -70,11 +70,12 @@ const DEBUG = {
             DONE Cousin wants "BlackLeatherBoot", "BlackLeatherBoot" gives  "BlueLatexTop"
             DONE DumbBelle wants DumbBelle wants "Beer", "Beer" gives DumbBell
             DONE SpyedHer wants: "BabyGreenSpider","BabyGreenSpider","BabyGreenSpider","BabyGreenSpider","BabyGreenSpider" gives Dagger
+        EmoTine wants "TaoBook", "YinYangBook", "TreeOfLifeBook" give s Rose
 
-        Rose, 
+        Rose, -> EmoTina (16)
         Rose, 
         Rose,
-            DONE GlassOfWine,--> Rose (8)
+            DONE GlassOfWine,--> MissRose (8)
         Wine
             DONE "Document" -> CuteTank (2)
             DONE "Document" -> FashionGuard (2)
@@ -107,9 +108,17 @@ const DEBUG = {
         "Mushroom", 
         "Mushroom", 
         "Mushroom"
+            DONE "Skull", --> (16)
+        "Skull", 
+        "Skull", 
+        "Skull", 
+        "Skull"
+        "TaoBook", 
+        "YinYangBook", 
+        "TreeOfLifeBook"
 
 
-        Maybe: skulls, candle, spiderbabies,
+        Maybe: , candle, ,
 
 
 
@@ -118,26 +127,30 @@ const DEBUG = {
             - oilybarba attack
             - manacook1 mana
             - BulletTina magic
-            -HeartAttack health
+            - HeartAttack health
 
         Trainers
             - muscula: defense-2
             - MeanJah: attack-2
             - ManACook Trainer : mana-2
             - DragonMother: magic-2
+            - CemetaryPet: health - 2
 
         CoinTrainers
             -
 
         ?Missing keys:
-            - Red (15)
+            DONE Red (15)
+
+        Missing scrolls:
+            - flight
 
 
         */
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 13; //3
+        GAME.level = 17; //3
         GAME.gold = 9999;
         GAME.lives = 1;
 
@@ -156,7 +169,7 @@ const DEBUG = {
         }
 
         let scrollTypes = [
-            "FeatherFall", "Luck"
+            "FeatherFall", "Luck", "Flight",
         ];
 
         for (let scrType of scrollTypes) {
@@ -170,7 +183,9 @@ const DEBUG = {
         let invItems = [
 
             //debug
-            "BabyDragon", "BabyDragon", "BabyDragon", "BabyDragon", "BabyDragon",
+            //"TaoBook", "YinYangBook", "TreeOfLifeBook",
+            //"Skull", "Skull", "Skull", "Skull", "Skull",
+            //"BabyDragon", "BabyDragon", "BabyDragon", "BabyDragon", "BabyDragon",
             //"BabyGreenSpider","BabyGreenSpider","BabyGreenSpider","BabyGreenSpider","BabyGreenSpider",
             //"Mushroom", "Mushroom", "Mushroom"
             //"Shuriken", "Shuriken", "Shuriken",
@@ -300,7 +315,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.11.11",
+    VERSION: "0.11.12",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

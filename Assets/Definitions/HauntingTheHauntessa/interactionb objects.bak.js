@@ -158,17 +158,7 @@ const INTERACTION_OBJECT = {
         material: MATERIAL.silver,
         text: "I'll put that shield in the bag."
     },
-    Skull: {
-        name: "Skull",
-        category: "interaction_item",
-        element: "SKULL",
-        scale: 1 / 2 ** 1,
-        glueToFloor: true,
-        texture: "Skull_texture",
-        inventorySprite: "Skull",
-        material: MATERIAL.standard,
-        text: "Creeepy?"
-    },
+
     GoldSphere: {
         name: "GoldSphere",
         category: "interaction_item",

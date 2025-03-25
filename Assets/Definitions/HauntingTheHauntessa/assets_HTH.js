@@ -762,6 +762,7 @@ LoadTextures = [
     /** other object textures */
     { srcName: "ObjectTextures/Apple_BaseColor.jpg", name: "Apple_BaseColor" },
     { srcName: "ObjectTextures/Dagger_Base_Color.jpg", name: "Dagger_Base_Color" },
+    { srcName: "ObjectTextures/Skull_texture.jpg", name: "Skull_texture" },
 
     /** other monster textures */
     { srcName: "ObjectTextures/RedGoldBat.jpg", name: "RedGoldBat" },
@@ -843,7 +844,7 @@ LoadObjects = [
     "pirate_chest.obj", "closet4.obj", "iron_chest.obj", "Chest10.obj",
     "scroll.obj", "coin.obj",
     "cake.obj", "steak.obj", "can.obj", "wine.obj",
-    "apple.obj", "crown.obj", "dagger.obj", "mushroom.obj",
+    "apple.obj", "crown.obj", "dagger.obj", "mushroom.obj", "skull.obj",
 ];
 
 LoadModels = [
@@ -892,6 +893,9 @@ LoadSprites = [
     { srcName: "EntityPictures/HeartAttack.jpg", name: "HeartAttack" },
     { srcName: "EntityPictures/SpyedHer1.jpg", name: "SpyedHer" },
     { srcName: "EntityPictures/DragonMotha.jpg", name: "DragonMotha" },
+    { srcName: "EntityPictures/CemetaryPet.jpg", name: "CemetaryPet" },
+    { srcName: "EntityPictures/WindowSitter.jpg", name: "WindowSitter" },
+    { srcName: "EntityPictures/EmoTina.jpg", name: "EmoTina" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
@@ -1082,6 +1086,24 @@ LoadSprites = [
     { srcName: "Items/GlassOfBeer.png", name: "GlassOfBeer" },
     { srcName: "Items/Shuriken.png", name: "Shuriken" },
     { srcName: "Items/Mushroom.png", name: "Mushroom" },
+    { srcName: "Items/Skull2.png", name: "Skull" },
+
+
+    //books
+    { srcName: "Items/YoniBook.png", name: "YoniBook" },
+    { srcName: "Items/TaoBook.png", name: "TaoBook" },
+    { srcName: "Items/YinYangBook.png", name: "YinYangBook" },
+    { srcName: "Items/PentagramBook.png", name: "PentagramBook" },
+    { srcName: "Items/HexagramBook.png", name: "HexagramBook" },
+    { srcName: "Items/TripleMoonBook.png", name: "TripleMoonBook" },
+    { srcName: "Items/TriquetraBook.png", name: "TriquetraBook" },
+    { srcName: "Items/VenusBook.png", name: "VenusBook" },
+    { srcName: "Items/AnkhBook.png", name: "AnkhBook" },
+    { srcName: "Items/FireballBook.png", name: "FireballBook" },
+    { srcName: "Items/OwlBook.png", name: "OwlBook" },
+    { srcName: "Items/PrincessBook.png", name: "PrincessBook" },
+    { srcName: "Items/RavenBook.png", name: "RavenBook" },
+    { srcName: "Items/TreeOfLifeBook.png", name: "TreeOfLifeBook" },
 
     //UI, skills
     { srcName: "UI/CompassRose.png", name: "CompassRose" },
