@@ -1640,6 +1640,7 @@ const MOVABLE_INTERACTION_OBJECT = {
         model: "Dragon",
         scale: 1 / 2 ** 5,
         fly: 0.5,
+        midHeight: 0.0,
         rotateToNorth: Math.PI,
         moveSpeed: 1.75,
         material: MATERIAL.standard,
@@ -2046,6 +2047,20 @@ const INTERACTION_ENTITY = {
 };
 
 const INTERACTION_SHRINE = {
+    DragonMotha: {
+        name: "DragonMotha",
+        sprite: "DragonMotha",
+        category: 'crest',
+        voice: "Female",
+        wants: ["BabyDragon", "BabyDragon", "BabyDragon", "BabyDragon", "BabyDragon"],
+        gives: "Magic",
+        level: 2,
+        text: {
+            intro: "My dragonlings scattered, what a maze! Find them fast, they're lost for days!",
+            progress: "You're doing well, but more to find. Keep searching, dragons left behind!",
+            conclusion: "All dragons safe, my joy immense! Dragon magic, your recompense!"
+        }
+    },
     ManaCookTrainer: {
         name: "ManaCookTrainer",
         sprite: "ManaCookTrainer",

@@ -124,20 +124,20 @@ const DEBUG = {
             - muscula: defense-2
             - MeanJah: attack-2
             - ManACook Trainer : mana-2
-            - DragonMother
+            - DragonMother: magic-2
 
         CoinTrainers
             -
 
-        Missing keys:
-            - Red
+        ?Missing keys:
+            - Red (15)
 
 
         */
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 15; //3
+        GAME.level = 13; //3
         GAME.gold = 9999;
         GAME.lives = 1;
 
@@ -170,7 +170,8 @@ const DEBUG = {
         let invItems = [
 
             //debug
-            "BabyGreenSpider","BabyGreenSpider","BabyGreenSpider","BabyGreenSpider","BabyGreenSpider",
+            "BabyDragon", "BabyDragon", "BabyDragon", "BabyDragon", "BabyDragon",
+            //"BabyGreenSpider","BabyGreenSpider","BabyGreenSpider","BabyGreenSpider","BabyGreenSpider",
             //"Mushroom", "Mushroom", "Mushroom"
             //"Shuriken", "Shuriken", "Shuriken",
             //"Dagger", "Dagger", "Dagger"
@@ -299,7 +300,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.11.10",
+    VERSION: "0.11.11",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
