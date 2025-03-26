@@ -1949,6 +1949,30 @@ const INTERACTION_ITEM = {
         inventorySprite: "Mushroom",
         text: "Poisonous. Don't eat."
     },
+    ArcadeToken: {
+        name: "ArcadeToken",
+        category: "interaction_item",
+        inventorySprite: "ArcadeToken",
+        text: "Token for arcade cabinet. Let's play some Pac Man."
+    },
+    GoldOre: {
+        name: "GoldOre",
+        category: "interaction_item",
+        inventorySprite: "GoldOre",
+        text: "I should smelt this gold ore into a bar."
+    },
+    BlackLatexpanties: {
+        name: "BlackLatexpanties",
+        category: "interaction_item",
+        inventorySprite: "BlackLatexpanties",
+        text: "Wow, that's hot."
+    },
+    BlackLatexBra: {
+        name: "BlackLatexBra",
+        category: "interaction_item",
+        inventorySprite: "BlackLatexBra",
+        text: "Smouldering hot. Maybe he'll let me wear it in the next game."
+    },
 
     //books
     YoniBook: {
@@ -2065,9 +2089,36 @@ const INTERACTION_ITEM = {
         text: "Iron? I can make something from it."
     },
 
+
 };
 
 const INTERACTION_ENTITY = {
+    BarGuest: {
+        name: "BarGuest",
+        sprite: "BarGuest",
+        category: 'crest',
+        voice: "Female2",
+        wants: ["BlackLatexpanties", "BlackLatexBra"],
+        gives: "Wine",
+        text: {
+            intro: "I've got a date that's hot tonight, fetch lingerie that's sleek and tight!",
+            progress: "That's one piece, sizzling and sweet. Find the rest, my look's incomplete!",
+            conclusion: "Perfect lingerie, style divine! Now take this bottle, share my wine!"
+        }
+    },
+    Arcadia: {
+        name: "Arcadia",
+        sprite: "Arcadia",
+        category: 'crest',
+        voice: "Female",
+        wants: ["ArcadeToken", "ArcadeToken", "ArcadeToken"],
+        gives: "TreeOfLifeBook",
+        text: {
+            intro: "I'm close to beating GalactiX's high score! Fetch me tokens, just a few more!",
+            progress: "That's great, honey, but not quite there. Find more tokens if you care!",
+            conclusion: "High score conquered, glory mine! Here's a book that's wise and fine."
+        }
+    },
     Treasuress: {
         name: "Treasuress",
         sprite: "Treasuress",

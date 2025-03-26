@@ -457,12 +457,7 @@ const INTERACTION_ITEM = {
         inventorySprite: "HayBale",
         text: "Hey, it's a hay."
     },
-    GoldOre: {
-        name: "GoldOre",
-        category: "interaction_item",
-        inventorySprite: "GoldOre",
-        text: "I should smelt this gold ore into a bar."
-    },
+   
     Moon: {
         name: "Moon",
         category: "interaction_item",

@@ -72,13 +72,16 @@ const DEBUG = {
             DONE SpyedHer wants: "BabyGreenSpider","BabyGreenSpider","BabyGreenSpider","BabyGreenSpider","BabyGreenSpider" gives Dagger
             DONE EmoTine wants "TaoBook", "YinYangBook", "TreeOfLifeBook" give s Rose
             DONE Treasuress wants "GoldBar", "GoldBar", "GoldBar" gives "BlackLeatherBoot"
+            DONE Arcadia wants "ArcadeToken", "ArcadeToken", "ArcadeToken" gives "TreeOfLifeBook"
+        GoldSmelteress wants 3x gold ore give GoldBar
+            DONE BarGuest wants "BlackLatexpanties", "BlacLatexBra" gives Wine
 
 
             DONE Rose, -> EmoTina (16)
         Rose, **quest
         Rose, **quest
             DONE GlassOfWine,--> MissRose (8)
-        Wine **quest
+            DONE Wine **quest BarGuest(21)
             DONE "Document" -> CuteTank (2)
             DONE "Document" -> FashionGuard (2)
             DONE "Document" -> QueenMother (2)
@@ -117,10 +120,16 @@ const DEBUG = {
         "Skull"
         "TaoBook",  **quest
         "YinYangBook",  **quest
-        "TreeOfLifeBook" **quest
-        "GoldBar",  **quest
+            DONE "TreeOfLifeBook" **quest --> Arcadia(##)
+        "GoldBar",  **quest --> GoldSmelteress (20)
         "GoldBar",  **quest
         "GoldBar" **quest
+        "BlackLatexpanties",  **quest
+        "BlacLatexBra" **quest
+        "ArcadeToken",  **quest
+        "ArcadeToken",  **quest
+        "ArcadeToken" **quest
+            DONE "GoldOre","GoldOre","GoldOre" --> (20)
 
 
         Maybe: , candle, ,
@@ -146,6 +155,7 @@ const DEBUG = {
 
         ?Missing keys:
             DONE Red (15)
+            DONE Blue (18)
 
         Missing scrolls:
             - flight
@@ -155,7 +165,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 17; //3
+        GAME.level = 21; //3
         GAME.gold = 9999;
         GAME.lives = 1;
 
@@ -188,7 +198,10 @@ const DEBUG = {
         let invItems = [
 
             //debug
-            "GoldBar", "GoldBar", "GoldBar",
+            "BlackLatexpanties", "BlackLatexBra",
+            "GoldOre","GoldOre","GoldOre"
+            //"ArcadeToken", "ArcadeToken", "ArcadeToken",
+            //"GoldBar", "GoldBar", "GoldBar",
             //"TaoBook", "YinYangBook", "TreeOfLifeBook",
             //"Skull", "Skull", "Skull", "Skull", "Skull",
             //"BabyDragon", "BabyDragon", "BabyDragon", "BabyDragon", "BabyDragon",
@@ -321,7 +334,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.11.13",
+    VERSION: "0.11.14",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

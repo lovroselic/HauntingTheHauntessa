@@ -622,6 +622,16 @@ LoadTextures = [
     { srcName: "Wall/IvyWall_524.jpg", name: "IvyWall_524" },
     { srcName: "Wall/IvyWall_525.jpg", name: "IvyWall_525" },
 
+    { srcName: "Wall/BalconyTexture_773.jpg", name: "BalconyTexture_773" },
+    { srcName: "Wall/BalconyTexture_774.jpg", name: "BalconyTexture_774" },
+    { srcName: "Wall/BalconyTexture_775.jpg", name: "BalconyTexture_775" },
+    { srcName: "Wall/BalconyTexture_776.jpg", name: "BalconyTexture_776" },
+    { srcName: "Wall/BalconyTexture_777.jpg", name: "BalconyTexture_777" },
+    { srcName: "Wall/BalconyTexture_778.jpg", name: "BalconyTexture_778" },
+    { srcName: "Wall/BalconyTexture_779.jpg", name: "BalconyTexture_779" },
+    { srcName: "Wall/BalconyTexture_780.jpg", name: "BalconyTexture_780" },
+    { srcName: "Wall/BalconyTexture_781.jpg", name: "BalconyTexture_781" },
+
     /** decals that are textures */
 
     //decal-gates
@@ -897,6 +907,8 @@ LoadSprites = [
     { srcName: "EntityPictures/WindowSitter.jpg", name: "WindowSitter" },
     { srcName: "EntityPictures/EmoTina.jpg", name: "EmoTina" },
     { srcName: "EntityPictures/Treasuress.jpg", name: "Treasuress" },
+    { srcName: "EntityPictures/Arcadia.jpg", name: "Arcadia" },
+    { srcName: "EntityPictures/BarGuest.jpg", name: "BarGuest" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
@@ -1093,7 +1105,10 @@ LoadSprites = [
     { srcName: "Items/Shuriken.png", name: "Shuriken" },
     { srcName: "Items/Mushroom.png", name: "Mushroom" },
     { srcName: "Items/Skull2.png", name: "Skull" },
-
+    { srcName: "Items/ArcadeToken.png", name: "ArcadeToken" },
+    { srcName: "Items/GoldOre.png", name: "GoldOre" },
+    { srcName: "Items/BlackLatexpanties.png", name: "BlackLatexpanties" },
+    { srcName: "Items/BlackLatexBra.png", name: "BlackLatexBra" },
 
     //books
     { srcName: "Items/YoniBook.png", name: "YoniBook" },
