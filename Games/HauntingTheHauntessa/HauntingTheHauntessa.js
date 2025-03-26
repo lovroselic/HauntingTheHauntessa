@@ -70,20 +70,22 @@ const DEBUG = {
             DONE Cousin wants "BlackLeatherBoot", "BlackLeatherBoot" gives  "BlueLatexTop"
             DONE DumbBelle wants DumbBelle wants "Beer", "Beer" gives DumbBell
             DONE SpyedHer wants: "BabyGreenSpider","BabyGreenSpider","BabyGreenSpider","BabyGreenSpider","BabyGreenSpider" gives Dagger
-        EmoTine wants "TaoBook", "YinYangBook", "TreeOfLifeBook" give s Rose
+            DONE EmoTine wants "TaoBook", "YinYangBook", "TreeOfLifeBook" give s Rose
+            DONE Treasuress wants "GoldBar", "GoldBar", "GoldBar" gives "BlackLeatherBoot"
 
-        Rose, -> EmoTina (16)
-        Rose, 
-        Rose,
+
+            DONE Rose, -> EmoTina (16)
+        Rose, **quest
+        Rose, **quest
             DONE GlassOfWine,--> MissRose (8)
-        Wine
+        Wine **quest
             DONE "Document" -> CuteTank (2)
             DONE "Document" -> FashionGuard (2)
             DONE "Document" -> QueenMother (2)
             DONE "BrownLeatherBoots" (5) floor
-            "BlueLatexTop" -> Cousin (8)
+            DONE "BlueLatexTop" -> Cousin (8)
             DONE "BrownLatexBootyShorts" - Maid(5)
-        "PinkDuster"
+        "PinkDuster" **quest
             DONE "BlackLatexGloves" (1) wardrobe
             DONE "Crown" (1) - floor;
             DONE "GoldenScepter" (11) -cont floor
@@ -93,17 +95,17 @@ const DEBUG = {
             DONE "DumbBell" --> DumbBelle (13)
         "DumbBell"
             DONE Dagger,  --> SpyedHer (15)
-        Dagger, 
-        Dagger,
+        Dagger, **quest
+        Dagger, **quest
         "Beer", 
         "Beer"
-        "GlassOfBeer", 
-        "GlassOfBeer", 
-        "GlassOfBeer"
+        "GlassOfBeer", **quest
+        "GlassOfBeer", **quest
+        "GlassOfBeer" **quest
         "Shuriken", 
         "Shuriken", 
         "Shuriken"
-        "BlackLeatherBoot"
+            DONE "BlackLeatherBoot" --> Tresuress (12)
             DONE "BlackLeatherBoot" Drinker (8)
         "Mushroom", 
         "Mushroom", 
@@ -113,9 +115,12 @@ const DEBUG = {
         "Skull", 
         "Skull", 
         "Skull"
-        "TaoBook", 
-        "YinYangBook", 
-        "TreeOfLifeBook"
+        "TaoBook",  **quest
+        "YinYangBook",  **quest
+        "TreeOfLifeBook" **quest
+        "GoldBar",  **quest
+        "GoldBar",  **quest
+        "GoldBar" **quest
 
 
         Maybe: , candle, ,
@@ -183,6 +188,7 @@ const DEBUG = {
         let invItems = [
 
             //debug
+            "GoldBar", "GoldBar", "GoldBar",
             //"TaoBook", "YinYangBook", "TreeOfLifeBook",
             //"Skull", "Skull", "Skull", "Skull", "Skull",
             //"BabyDragon", "BabyDragon", "BabyDragon", "BabyDragon", "BabyDragon",
@@ -315,7 +321,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.11.12",
+    VERSION: "0.11.13",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

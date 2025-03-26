@@ -896,6 +896,7 @@ LoadSprites = [
     { srcName: "EntityPictures/CemetaryPet.jpg", name: "CemetaryPet" },
     { srcName: "EntityPictures/WindowSitter.jpg", name: "WindowSitter" },
     { srcName: "EntityPictures/EmoTina.jpg", name: "EmoTina" },
+    { srcName: "EntityPictures/Treasuress.jpg", name: "Treasuress" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
@@ -1045,6 +1046,11 @@ LoadSprites = [
     { srcName: "Items/GreenGem.png", name: "GreenGem" },
     { srcName: "Items/RedGem.png", name: "RedGem" },
     { srcName: "Items/SilverBar.png", name: "SilverBar" },
+
+    //other metals
+    { srcName: "Items/IronBar.png", name: "IronBar" },
+    { srcName: "Items/UraniumBar.png", name: "UraniumBar" },
+    { srcName: "Items/GoldSteel.png", name: "GoldSteel" },
 
     //status
     { srcName: "Status/Invisible2.png", name: "Invisible" },

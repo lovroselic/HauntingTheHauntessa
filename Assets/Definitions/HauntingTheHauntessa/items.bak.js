@@ -187,11 +187,7 @@ const INTERACTION_ITEM = {
         inventorySprite: "Candle",
         text: "Common baby light my fire."
     },
-    GoldBar: {
-        name: "GoldBar",
-        category: "interaction_item",
-        inventorySprite: "GoldBar",
-    },
+    
     LP: {
         name: "LP",
         category: "interaction_item",
@@ -215,12 +211,7 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "Helmet",
     },
-    IronBar: {
-        name: "IronBar",
-        category: "interaction_item",
-        inventorySprite: "IronBar",
-        text: "Iron? I can make something from it."
-    },
+  
     Emerald: {
         name: "Emerald",
         category: "interaction_item",
@@ -326,27 +317,13 @@ const INTERACTION_ITEM = {
         inventorySprite: "Towel",
         text: "A towel. Pity I am not wet."
     },
-    SilverBar: {
-        name: "SilverBar",
-        category: "interaction_item",
-        inventorySprite: "SilverBar",
-        text: "Silver. Malleable."
-    },
-    UraniumBar: {
-        name: "UraniumBar",
-        category: "interaction_item",
-        inventorySprite: "UraniumBar",
-    },
+    
     PurpleTear: {
         name: "PurpleTear",
         category: "interaction_item",
         inventorySprite: "PurpleTear",
     },
-    GoldSteel: {
-        name: "GoldSteel",
-        category: "interaction_item",
-        inventorySprite: "GoldSteel",
-    },
+   
     Shell: {
         name: "Shell",
         category: "interaction_item",

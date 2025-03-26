@@ -1592,6 +1592,52 @@ const INTERACTION_OBJECT = {
         material: MATERIAL.standard,
         text: "Creeepy?"
     },
+
+    //metals
+    GoldSphere: {
+        name: "GoldSphere",
+        category: "interaction_item",
+        element: "BALL",
+        scale: 1.1 / 2 ** 5,
+        glueToFloor: true,
+        texture: "Gold",
+        inventorySprite: "GoldSphere",
+        material: MATERIAL.gold,
+        text: "This one goes in the bag. Who knows ..."
+    },
+    GoldBar: {
+        name: "GoldBar",
+        category: "interaction_item",
+        element: "BAR",
+        scale: 1 / 2 ** 4,
+        glueToFloor: true,
+        texture: "Gold",
+        inventorySprite: "GoldBar",
+        material: MATERIAL.gold,
+        text: "I should store some gold in the bag. Who knows ..."
+    },
+    SilverBar: {
+        name: "SilverBar",
+        category: "interaction_item",
+        element: "BAR",
+        scale: 1 / 2 ** 4,
+        glueToFloor: true,
+        texture: "Silver",
+        inventorySprite: "SilverBar",
+        material: MATERIAL.silver,
+        text: "Silver. Malleable."
+    },
+    IronBar: {
+        name: "IronBar",
+        category: "interaction_item",
+        element: "BAR",
+        scale: 1 / 2 ** 4,
+        glueToFloor: true,
+        texture: "IronTexture",
+        inventorySprite: "IronBar",
+        material: MATERIAL.standard,
+        text: "Iron? I can make something from it."
+    },
 };
 
 const MOVABLE_INTERACTION_OBJECT = {
@@ -1989,9 +2035,52 @@ const INTERACTION_ITEM = {
         inventorySprite: "RavenBook",
         text: "It seems like an interesting book, full of ancient knowledge."
     },
+
+    //metals
+    GoldBar: {
+        name: "GoldBar",
+        category: "interaction_item",
+        inventorySprite: "GoldBar",
+    },
+    GoldSteel: {
+        name: "GoldSteel",
+        category: "interaction_item",
+        inventorySprite: "GoldSteel",
+    },
+    SilverBar: {
+        name: "SilverBar",
+        category: "interaction_item",
+        inventorySprite: "SilverBar",
+        text: "Silver. Malleable."
+    },
+    UraniumBar: {
+        name: "UraniumBar",
+        category: "interaction_item",
+        inventorySprite: "UraniumBar",
+    },
+    IronBar: {
+        name: "IronBar",
+        category: "interaction_item",
+        inventorySprite: "IronBar",
+        text: "Iron? I can make something from it."
+    },
+
 };
 
 const INTERACTION_ENTITY = {
+    Treasuress: {
+        name: "Treasuress",
+        sprite: "Treasuress",
+        category: 'crest',
+        voice: "FemaleLow2",
+        wants: ["GoldBar", "GoldBar", "GoldBar"],
+        gives: "BlackLeatherBoot",
+        text: {
+            intro: "Gold bars missing, treasures lost! Find them now at any cost!",
+            progress: "Some gold returned, yet not all found. Keep searching, look around!",
+            conclusion: "Gold restored, my joy acute! Here's your long lost leather boot."
+        }
+    },
     EmoTina: {
         name: "EmoTina",
         sprite: "EmoTina",

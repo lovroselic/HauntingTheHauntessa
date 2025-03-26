@@ -159,50 +159,7 @@ const INTERACTION_OBJECT = {
         text: "I'll put that shield in the bag."
     },
 
-    GoldSphere: {
-        name: "GoldSphere",
-        category: "interaction_item",
-        element: "BALL",
-        scale: 1.1 / 2 ** 5,
-        glueToFloor: true,
-        texture: "Gold",
-        inventorySprite: "GoldSphere",
-        material: MATERIAL.gold,
-        text: "This one goes in the bag. Who knows ..."
-    },
-    GoldBar: {
-        name: "GoldBar",
-        category: "interaction_item",
-        element: "BAR",
-        scale: 1 / 2 ** 4,
-        glueToFloor: true,
-        texture: "Gold",
-        inventorySprite: "GoldBar",
-        material: MATERIAL.gold,
-        text: "I should store some gold in the bag. Who knows ..."
-    },
-    SilverBar: {
-        name: "SilverBar",
-        category: "interaction_item",
-        element: "BAR",
-        scale: 1 / 2 ** 4,
-        glueToFloor: true,
-        texture: "Silver",
-        inventorySprite: "SilverBar",
-        material: MATERIAL.silver,
-        text: "Silver. Malleable."
-    },
-    IronBar: {
-        name: "IronBar",
-        category: "interaction_item",
-        element: "BAR",
-        scale: 1 / 2 ** 4,
-        glueToFloor: true,
-        texture: "IronTexture",
-        inventorySprite: "IronBar",
-        material: MATERIAL.standard,
-        text: "Iron? I can make something from it."
-    },
+    
     IceCube: {
         name: "IceCube",
         category: "interaction_item",
