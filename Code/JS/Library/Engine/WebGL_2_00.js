@@ -1492,13 +1492,19 @@ const WORLD = {
     addCube(Y, grid, type, scale = null) {
         if (!WebGL.PRUNE) return this.addElement(ELEMENT.CUBE, Y, grid, type);                                          //draws complete cube
 
+        const initialGrid = Grid3D.toClass(grid);                                                                        //cloned, for solving floor supports
         const GA = WORLD.GA;
         const rememberZ = grid.z;                                                                                       //this is pointer, don't screw it!
         grid.z = Y;                                                                                                     //face pruning
+
         for (let [index, dir] of ENGINE.directions3D.entries()) {
             const checkGrid = grid.add(dir);
+            const above = initialGrid.add(dir);
+            /*if (GRID.same3D(new Grid3D(16, 3, 0), initialGrid)) {
+                console.warn("---DEBUG, initialGrid", initialGrid, "checkGrid", checkGrid, "above", above, "dir", dir, "Y", Y, "hole above",  GA.isHole(above));
+            }*/
             if (GA.isDoor(checkGrid)) this.addElement(ELEMENT[this.cubeFaces[index]], Y, grid, WORLD.faceTypes[index], scale);                                                  //doors
-            else if (Y == -1 && dir.z === 0) this.addElement(ELEMENT[this.cubeFaces[index]], Y, grid, WORLD.faceTypes[index], scale);                                           //visible sub floor supports
+            else if (Y == -1 && dir.z === 0 && GA.isHole(above)) this.addElement(ELEMENT[this.cubeFaces[index]], Y, grid, WORLD.faceTypes[index], scale);                 //visible sub floor supports
             else if (!(GA.isOutOfBounds(checkGrid) || GA.isWall(checkGrid))) this.addElement(ELEMENT[this.cubeFaces[index]], Y, grid, WORLD.faceTypes[index], scale);           //visible quads
         }
         grid.z = rememberZ;                                                                                             //revert to initil z value

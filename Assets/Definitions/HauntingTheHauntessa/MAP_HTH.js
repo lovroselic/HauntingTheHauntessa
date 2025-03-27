@@ -31,6 +31,7 @@ const MAP_TEXT = {
     19: "",
     20: "",
     21: "",
+    22: "",
 
 };
 
@@ -104,7 +105,19 @@ const MAP = {
         monsterList: '["Bat","RedGoldBat","DarkRedBat"]',
     }
     ,
-    4: {}
+    4: {
+        name: "Castle Yard placeholder",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":11,"height":11,"depth":1,"map":"BB112ABB8$"}',
+        wall: "3d wall",
+        floor: "3d wall",
+        ceil: "3d wall",
+        gates: '[[65,3,"4.1","3.2","Closed"]]',
+    }
     ,
     5: {
         name: "Storage",
@@ -326,7 +339,7 @@ const MAP = {
         wall: "DarkWallSDXL311",
         floor: "RedMArbleFLoor10",
         ceil: "MossyWall112",
-        start: '[275,7]',
+        start: '[144,1]',
         lights: '[[760,5,"DuaLLantern_020","standardYellow"],[35,7,"FluxLight111c","standardYellowDim"],[598,3,"Candle64","standard2"],[237,5,"lantern201","standardYellow"],[564,5,"FluxLight118","standardMuted"],[640,5,"Lights107","standardMuted"],[695,1,"WallLamp18","standardFaint"]]',
         gates: '[[725,7,"16.1","13.2","Up"]]',
         scrolls: '[[742,5],[92,12]]',
@@ -410,9 +423,10 @@ const MAP = {
         gates: '[[57,5,"20.1","12.2","Up"]]',
         containers: '[[25,"MetalCrate50","INTERACTION_ITEM.GoldOre",5],[340,"WoodenCrate432","INTERACTION_ITEM.GoldOre",3],[325,"WoodenCrate59","INTERACTION_ITEM.GoldOre",3]]',
         triggers: '[[153,7,"SmoothWallButton",1,174]]',
+        entities: '[[3,7,"GoldMelta"]]',
     }
     ,
-    21 : {
+    21: {
         name: "Castle Bar",
         sg: 0,
         maxSpawned: -1,
@@ -425,7 +439,23 @@ const MAP = {
         ceil: "Relief20",
         start: '[343,5]',
         lights: '[[292,7,"Fireplace202","fireplace"],[302,7,"Fireplace210","fireplace"],[564,1,"Fireplace211","fireplace"],[574,1,"Fireplace06","fireplace"],[144,5,"DuaLLantern_015","standardMuted"],[144,3,"lantern201","standardMuted"],[714,5,"FluxLight129","standardSoft"]]',
-        gates: '[[136,5,"21.1","2.11","Closed"]]',
+        gates: '[[136,5,"21.1","2.11","Closed"],[730,3,"21.2","22.1","Up"]]',
         entities: '[[297,7,"BarGuest"]]',
+    }
+    ,
+    22 : {
+        name: "East Balcony",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":15,"height":15,"depth":2,"map":"BB7ABB5AA110BB25ABB11AA4BAA5BB55$BB224A"}',
+        wall: "3d wall",
+        floor: "3d wall",
+        ceil: "3d wall",
+        start: '[106,5]',
+        gates: '[[105,5,"22.1","21.2","Down"]]',
         }
+
 };

@@ -73,7 +73,7 @@ const DEBUG = {
             DONE EmoTine wants "TaoBook", "YinYangBook", "TreeOfLifeBook" give s Rose
             DONE Treasuress wants "GoldBar", "GoldBar", "GoldBar" gives "BlackLeatherBoot"
             DONE Arcadia wants "ArcadeToken", "ArcadeToken", "ArcadeToken" gives "TreeOfLifeBook"
-        GoldSmelteress wants 3x gold ore give GoldBar
+            DONE GoldMelta wants 3x gold ore give GoldBar
             DONE BarGuest wants "BlackLatexpanties", "BlacLatexBra" gives Wine
 
 
@@ -121,7 +121,7 @@ const DEBUG = {
         "TaoBook",  **quest
         "YinYangBook",  **quest
             DONE "TreeOfLifeBook" **quest --> Arcadia(##)
-        "GoldBar",  **quest --> GoldSmelteress (20)
+            DONE "GoldBar",  **quest --> GoldMelta (20)
         "GoldBar",  **quest
         "GoldBar" **quest
         "BlackLatexpanties",  **quest
@@ -165,7 +165,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 21; //3
+        GAME.level = 22; //
         GAME.gold = 9999;
         GAME.lives = 1;
 
@@ -198,8 +198,8 @@ const DEBUG = {
         let invItems = [
 
             //debug
-            "BlackLatexpanties", "BlackLatexBra",
-            "GoldOre","GoldOre","GoldOre"
+            //"BlackLatexpanties", "BlackLatexBra",
+            //"GoldOre","GoldOre","GoldOre"
             //"ArcadeToken", "ArcadeToken", "ArcadeToken",
             //"GoldBar", "GoldBar", "GoldBar",
             //"TaoBook", "YinYangBook", "TreeOfLifeBook",
@@ -334,7 +334,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.11.14",
+    VERSION: "0.11.15",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

@@ -2093,6 +2093,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    GoldMelta: {
+        name: "GoldMelta",
+        sprite: "GoldMelta",
+        category: 'crest',
+        voice: "FemaleLow",
+        wants: ["GoldOre", "GoldOre", "GoldOre"],
+        gives: "GoldBar",
+        text: {
+            intro: "Hot as fire, gold I mold! Bring me ore, the purest gold!",
+            progress: "That's good ore, but I need more. Keep on digging, gold's in store!",
+            conclusion: "Ore complete, melted fine! Take this gold bar, gleaming shine!"
+        }
+    },
     BarGuest: {
         name: "BarGuest",
         sprite: "BarGuest",

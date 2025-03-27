@@ -3,7 +3,7 @@
 Created on Thu Oct  5 07:59:53 2023
 
 @author: lovro
-v 0.2.3
+v 0.2.4
 
 https://networkx.org/documentation/stable/reference/introduction.html
 """
@@ -44,16 +44,23 @@ def getColor(col):
         return "#800080"
     if col == "Pearl":
         return "#FFAAAA"
+    if col == "Pink":
+        return "#FFC0CB"
+    if col == "Cyan":
+        return "#00FFFF"
+    if col == "Orange":
+        return "##FFA500"
+    
     return col
 
 
 def edgeColor(D, node, incoming):
-    # print("....edge color, ", D[node], node, incoming)
+    #print("\n\n....edge color, ", D[node], node, incoming)
     default = "#000000"
     i = D[node]["outcoming"].index(incoming)
-    # print(",,,,,i",i, len(D[node]["out_color"]))
+    #print(",,,,,i",i, len(D[node]["out_color"]))
     color1 = D[node]["out_color"][i]
-    # print(",,,,,color1", color1, len(D[node]["in_color"]))
+    #print(",,,,,color1", color1, len(D[node]["in_color"]))
     color2 = D[node]["in_color"][i]
     return color1 or color2 or default
 
