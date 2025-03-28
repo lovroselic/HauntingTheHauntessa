@@ -31,7 +31,7 @@ const MAP_TEXT = {
     19: "",
     20: "",
     21: "",
-    22: "",
+    22: "What a view. But Hauntessa's castle is in other direction.",
 
 };
 
@@ -63,25 +63,25 @@ const MAP = {
         movables: '[[287,"GreenBat"],[297,"GreenBat"],[384,"GreenBat"],[172,"GreenBat"]]',
     }
     ,
-    2: {
+    2 : {
         name: "The Throne Room",
         sg: 0,
         maxSpawned: -1,
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"19","height":"19","depth":5,"map":"BB3AA4BAA5BABAA10BÁAA7BAA6BAA18BABAA9BAA2BB2ABB2AA3BAA6BAÁAA5BAA2ÁAÁBAA11BB3AA2BB2AA4BÁAÁBAA6ÁAÁAA2ÁBAA2сABAA2BŁABB3AA3BB2ÁBB2AA4BAA3ÁAA13BAA3ÁAÁAA5BŁAŁAA3ŁAA2BB2AA2ɁAA8BB3ABB3ÁABB2ABB2AA2BB2AA3BAA7BABAA7BABB3ABB2AÁAA3ÁÁ2AA2BAA6BAA7BABÁAA4ÁAÁAÁBAA2ÁÁ3AA2ÁÁ2AA8BB3AA6BB11ABB2ABB7ABABÁBB9AA2ÁࡁBB8AA2BB2AA2BB4ABB4ABB14ABB7ABB5ABB21ABB14AA2BB6AEABABB2AA3BABB2AA3BABB6AA2BB2AA2BABB2ABB7ABB5AA2BB4ABB3AA2BB5AA2BB3AA3BB2ABB3AA2BABB2ABB11ABB13ABB21ABB6ABB10ÁBB3ABAA2BB5ABB12ÁBB7ABB18ABB12ABB85ABB36ÁBB146$ABB26ABB169ÁBB42ࡁBB9ÁBB5ÁÁ3BÁÁ2BB14ÁBB7ÁÁ5BB2ABB2ÁBB2ÁBB5ÁÁ2BB7ÁBÁBB18ÁÁ2BB8ÁÁ2BB19ࡁBB28ABB61ÁÁ2BB8AA2ÁÁ5BB17ABB2ÁÁ8AÁÁ8BAÁÁ12BÁÁ11BÁÁ3ABABÁÁ2BB2ÁÁ8AÁÁ7AÁÁ3AÁAÁÁ8BÁÁ6BÁÁ8BB2ÁÁ18AÁÁ27BÁÁ2AÁAÁÁ7AA2BB2AA2сAÁBB5ÁÁ8BB5ÁÁ39AÁÁ35AA3ÁÁ2AÁÁ26AA2ÁÁ3BB7ÁÁ7AA3BB3ÁÁ3AɁŁɁŁŁ3AA4ɁсɁŁŁ2сÁࡁсAɁࡁBсBࡁB"}',
+        data: '{"width":"19","height":"19","depth":5,"map":"BB2AA2BAA3BABAA8BÁAA6BAA5BAA2ÁAA6BAA9BAA2BAA9BAA3BB2ABB2AA3BAA6BAA2ÁAA5BAA2ÁAÁBAA12BB3AA2BB2AA4BÁAÁBAA6ÁAÁAA2ÁBAA2сABAA2BAŁABB3AA3BB2ÁBB2AA4BAA3ÁAA13BAA3ÁAÁAA5BŁAŁAA3ŁAA2BB2AA3ɁAA8BB3ABB3ÁABB2ABB2AA2BB2AA3BAA7BABAA7BABB3ABB2AÁAA3ÁÁ2AA2BAA6BAA7BABÁAA5ÁAÁAÁBAA2ÁÁ3AA2ÁÁ2AA8BB3AA6BB11ABB2ABB7ABABÁBB9AA2ÁࡁBB8AA2BB2AA2BB4ABB4ABB13ABB8ABB5ABB21ABB13AA2BB7AEABABB2AA3BABB2AA3BABB6AA2BB2AA2BABB2ABB11ABAA2BB4ABB3AA2BB5AA2BB3AA3BB2ABB3AA2BABB2ABB11ABB13ABB21ABB6ABB10ÁBB3ABAA2BB5ABB12ÁBB7ABB18ABB12ABB85ABB36ÁBB146$ABB26ABB169ÁBB42ࡁBB9ÁBB5ÁÁ3BÁÁ2BB14ÁBB7ÁÁ5BB2ABB2ÁBB2ÁBB5ÁÁ2BB7ÁBÁBB18ÁÁ2BB8ÁÁ2BB19ࡁBB28ABB61ÁÁ2BB8AA2ÁÁ5BB17ABB2AÁÁ8AÁÁ8BAÁÁ12BÁÁ11BÁÁ3ABABÁÁ2BB2ÁÁ8AÁÁ7AÁÁ3AÁAÁÁ8BÁÁ6BÁÁ8BB2ÁÁ18AÁÁ27BÁÁ2AÁAÁÁ7AA2BB2AA2сAÁBB5ÁÁ8BB5ÁÁ39AÁÁ35AA3ÁÁ2AÁÁ26AA2ÁÁ3BB7ÁÁ7AA3BB3ÁÁ3AɁŁɁŁŁ3AA4ɁсɁŁŁ2сÁࡁсAɁࡁBсBࡁB"}',
         wall: "GreyBrownTiles101",
         floor: "BloodMarbleFloorWall_SDXL_030",
         ceil: "DarkMarble50",
-        start: '[1667,5]',
+        start: '[1510,1]',
         decals: '[[519,7,"KnightStatue106","crest"],[521,7,"KnightStatue110","crest"],[523,7,"KnightStatue105","crest"],[525,7,"KnightStatue107","crest"],[881,7,"ShieldDecal02","crest"],[885,7,"ShieldDecal03","crest"],[538,4,"PersianRug06","crest"],[557,4,"PersianRug06","crest"],[539,4,"PersianRug06","crest"],[558,4,"PersianRug06","crest"],[540,4,"PersianRug06","crest"],[559,4,"PersianRug06","crest"],[541,4,"PersianRug06","crest"],[560,4,"PersianRug06","crest"],[542,4,"PersianRug06","crest"],[561,4,"PersianRug06","crest"],[543,4,"PersianRug06","crest"],[562,4,"PersianRug06","crest"],[544,4,"PersianRug06","crest"],[563,4,"PersianRug06","crest"],[520,4,"PersianRug06","crest"],[524,4,"PersianRug06","crest"]]',
-        lights: '[[458,1,"Candelabra01","standardSoft"],[472,1,"Candelabra02","standardSoft"],[370,7,"Candelabra03","standardSoft"],[672,1,"Lamp42","standard"],[676,1,"Lamp42","standard"],[459,7,"FireplaceFLuxU417","fireplace"],[471,7,"FireplaceFLuxU420","fireplaceDim"]]',
+        lights: '[[458,1,"Candelabra01","standardSoft"],[472,1,"Candelabra02","standardSoft"],[370,7,"Candelabra03","standardSoft"],[672,1,"Lamp42","standard"],[676,1,"Lamp42","standard"],[459,7,"FireplaceFLuxU417","fireplace"],[471,7,"FireplaceFLuxU420","fireplaceDim"],[1301,1,"FluxLight126","standardYellowFaint"]]',
         gates: '[[363,7,"2.1","1.1","Closed"],[351,1,"2.2","3.1","Closed"],[1073,1,"2.3","3.3","Closed"],[1795,1,"2.4","3.4","Closed"],[377,7,"2.5","5.1","Closed"],[531,3,"2.6","6.1","Closed"],[513,5,"2.7","7.1","Closed"],[665,5,"2.8","8.1","Closed"],[683,3,"2.9","9.1","Closed"],[1653,5,"2.10","17.1","Closed"],[1671,3,"2.11","21.1","Closed"]]',
         doors: '[427]',
         entities: '[[505,7,"QueenMother"],[589,5,"FashionGuard"],[607,3,"CuteTank"]]',
         oracles: '[[501,7,"PrincessThrone"]]',
-    }
+        }
     ,
     3: {
         name: "Castle Entrance Hall",
@@ -450,11 +450,13 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":15,"height":15,"depth":2,"map":"BB7ABB5AA110BB25ABB11AA4BAA5BB55$BB224A"}',
-        wall: "3d wall",
-        floor: "3d wall",
-        ceil: "3d wall",
+        data: '{"width":"15","height":"15","depth":2,"map":"BB6AA20ÁÁ2AA5BÁAA2BAA4BAA2BB3AA14BAA16BABAA2BAA28BAA7BB8ÁBB6AÁBB29ÁBB4AA4BB50ABB5ABB2AA4ࡁBB65ÁB$BB12AA3BÁÁ4ABABAA3BB27ÁÁ44BB6ÁÁ30BB5AŁɁс"}',
+        wall: "DarkMossy232",
+        floor: "FloorTiles_SDXL_004",
+        ceil: "GlossyBrownBrickedWall71",
         start: '[106,5]',
+        decals: '[[233,7,"BalconyTexture_774","texture"],[234,7,"BalconyTexture_774","texture"],[235,7,"BalconyTexture_774","texture"],[236,7,"BalconyTexture_774","texture"],[284,3,"BalconyTexture_779","texture"],[299,3,"BalconyTexture_779","texture"],[314,3,"BalconyTexture_779","texture"],[329,3,"BalconyTexture_779","texture"]]',
+        lights: '[[217,1,"FireplaceFLuxU415","fireplace"],[331,5,"FluxLight127","standardSoft"],[310,1,"Lights113","standardUltraFaint"],[310,5,"DuaLLantern_005","standardUltraFaint"]]',
         gates: '[[105,5,"22.1","21.2","Down"]]',
         }
 
