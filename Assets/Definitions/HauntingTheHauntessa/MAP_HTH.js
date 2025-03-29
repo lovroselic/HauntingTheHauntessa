@@ -80,7 +80,7 @@ const MAP = {
         start: '[1510,1]',
         decals: '[[519,7,"KnightStatue106","crest"],[521,7,"KnightStatue110","crest"],[523,7,"KnightStatue105","crest"],[525,7,"KnightStatue107","crest"],[881,7,"ShieldDecal02","crest"],[885,7,"ShieldDecal03","crest"],[538,4,"PersianRug06","crest"],[557,4,"PersianRug06","crest"],[539,4,"PersianRug06","crest"],[558,4,"PersianRug06","crest"],[540,4,"PersianRug06","crest"],[559,4,"PersianRug06","crest"],[541,4,"PersianRug06","crest"],[560,4,"PersianRug06","crest"],[542,4,"PersianRug06","crest"],[561,4,"PersianRug06","crest"],[543,4,"PersianRug06","crest"],[562,4,"PersianRug06","crest"],[544,4,"PersianRug06","crest"],[563,4,"PersianRug06","crest"],[520,4,"PersianRug06","crest"],[524,4,"PersianRug06","crest"]]',
         lights: '[[458,1,"Candelabra01","standardSoft"],[472,1,"Candelabra02","standardSoft"],[370,7,"Candelabra03","standardSoft"],[672,1,"Lamp42","standard"],[676,1,"Lamp42","standard"],[459,7,"FireplaceFLuxU417","fireplace"],[471,7,"FireplaceFLuxU420","fireplaceDim"],[1301,1,"FluxLight126","standardYellowFaint"]]',
-        gates: '[[363,7,"2.1","1.1","Closed"],[351,1,"2.2","3.1","Closed"],[1073,1,"2.3","3.3","Closed"],[1795,1,"2.4","3.4","Closed"],[377,7,"2.5","5.1","Closed"],[531,3,"2.6","6.1","Closed"],[513,5,"2.7","7.1","Closed"],[665,5,"2.8","8.1","Closed"],[683,3,"2.9","9.1","Closed"],[1653,5,"2.10","17.1","Closed"],[1671,3,"2.11","21.1","Closed"],[1520,5,"2.12","23.1","Closed"],[1453,7,"2.13","24.1","Emerald"]]',
+        gates: '[[363,7,"2.1","1.1","Closed"],[351,1,"2.2","3.1","Closed"],[1073,1,"2.3","3.3","Closed"],[1795,1,"2.4","3.4","Closed"],[377,7,"2.5","5.1","Closed"],[531,3,"2.6","6.1","Closed"],[513,5,"2.7","7.1","Closed"],[665,5,"2.8","8.1","Closed"],[683,3,"2.9","9.1","Closed"],[1653,5,"2.10","17.1","Closed"],[1671,3,"2.11","21.1","Closed"],[1520,5,"2.12","23.1","Closed"],[1453,7,"2.13","24.1","Emerald"],[1538,3,"2.14","26.1","Closed"]]',
         doors: '[427]',
         entities: '[[505,7,"QueenMother"],[589,5,"FashionGuard"],[607,3,"CuteTank"]]',
         oracles: '[[501,7,"PrincessThrone"]]',
@@ -463,7 +463,7 @@ const MAP = {
         gates: '[[105,5,"22.1","21.2","Down"]]',
     }
     ,
-    23 : {
+    23: {
         name: "Trans Community",
         sg: 0,
         maxSpawned: -1,
@@ -479,7 +479,7 @@ const MAP = {
         gates: '[[230,3,"23.1","2.12","Closed"]]',
         entities: '[[651,5,"TransBossa"],[201,1,"BlackTransa"],[243,7,"TransWhite"],[80,7,"TransRed"],[374,1,"YellowTransa"],[222,3,"TransGrey"]]',
         oracles: '[[1315,1,"MC_Transa"],[224,5,"ClearTransa"],[894,7,"BlackTransaOracle"]]',
-        }
+    }
     ,
     24: {
         name: "Train Without Pain",
@@ -515,4 +515,20 @@ const MAP = {
         lights: '[[238,7,"DuaLLantern_007","standardYellow"],[242,7,"Lamp45","standardYellow"],[383,1,"Candelabra01","standard2"]]',
         gates: '[[162,1,"25.1","24.2","Down"]]',
     }
+    ,
+    26 : {
+        name: "Guest Quarters",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"21","height":"21","depth":5,"map":"BB15AA126BࡁBAA13BAA2BAA14BAA63ÁAA21BAA19BAA2BAA3BB22ÁBB17ŁBB19ABB7AA16BB44ÁBB15ÁBB47$BB110AÁࡁÁBB394ABB809ࡁBÁBB6ÁŁBÁÁ7BB2ɁсBB2ÁBB13ABB253ÁÁ2BB15ÁBB3ÁBÁÁ8ŁÁÁ4AÁAÁÁ12BB5ÁÁ10ŁÁÁ9BB12ÁÁ7BÁÁ2AÁɁBÁсABÁࡁɁɁ2сÁсB"}',
+        wall: "RockWall_SDXL_001",
+        floor: "DarkFloorSDXL338",
+        ceil: "MossyRocks42",
+        start: '[1502,5]',
+        lights: '[[220,3,"FluxLight113","standard2"]]',
+        gates: '[[210,5,"26.1","2.14","Closed"]]',
+        }
 };
