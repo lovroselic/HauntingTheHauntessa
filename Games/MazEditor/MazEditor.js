@@ -18,7 +18,7 @@ ported to gen 4 ENGINE, GRID
 ////////////////////////////////////////////////////
 
 const MAP = {
-  Demo : {
+  Demo: {
     name: "Demo",
     sg: 0,
     maxSpawned: -1,
@@ -31,7 +31,7 @@ const MAP = {
     ceil: "DetailedFloor1",
     start: '[17,1]',
     lights: '[[45,1,"Candelabra01","standard"]]',
-    }
+  }
 };
 
 const $MAP = {
@@ -68,7 +68,7 @@ const INI = {
 };
 
 const PRG = {
-  VERSION: "0.15.04",
+  VERSION: "0.16.00",
   NAME: "MazEditor",
   YEAR: "2022, 2023, 2024, 2025",
   CSS: "color: #239AFF;",
@@ -590,19 +590,19 @@ const GAME = {
         switch (GAME.stack.fillCount) {
           case 1:
             GAME.stack.startGrid = grid;
-            $("#error_message").html(`
+            /*$("#error_message").html(`
               <pre>Will fill from top left ${JSON.stringify(GAME.stack.startGrid, null, 2)}
               to and including ...</pre>
-          `);
+          `);*/
             break;
 
           case 2:
             //success
             GAME.stack.endGrid = grid;
-            $("#error_message").html(`
+            /*$("#error_message").html(`
               <pre>Will fill from top left ${JSON.stringify(GAME.stack.startGrid, null, 2)}
               to and including ${JSON.stringify(GAME.stack.endGrid, null, 2)}</pre>
-          `);
+          `);*/
 
             const txt = GAME.fillArea(GAME.stack.startGrid, GAME.stack.endGrid, fill_value);
             if (txt) $("#error_message").html(txt);

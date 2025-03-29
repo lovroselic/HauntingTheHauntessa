@@ -1034,6 +1034,8 @@ const ENGINE = {
             E: 69,
             W: 87,
             S: 83,
+            P: 80,
+            L: 76,
             LT: 60,
             LTC: 226,
             1: 49,
@@ -1097,14 +1099,16 @@ const ENGINE = {
             87: false,    //w
             83: false,    //s
             60: false,    //lt
-            226: false,    //lt-chrome
-            49: false,     //1
-            50: false,      //2
-            51: false,     //3
+            226: false,   //lt-chrome
+            49: false,    //1
+            50: false,    //2
+            51: false,    //3
             52: false,    //4
             53: false,    //5
             54: false,    //6
-            55: false,  //7
+            55: false,    //7
+            76: false,    //L
+            80: false,    //P
         },
         clearAllKeys() {
             for (var key in ENGINE.GAME.keymap) {

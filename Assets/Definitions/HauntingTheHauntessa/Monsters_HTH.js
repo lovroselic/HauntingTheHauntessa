@@ -97,6 +97,30 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    BlackTransaOracle: {
+        name: "BlackTransaOracle",
+        sprite: "BlackTransaOracle",
+        category: 'crest',
+        voice: "Female2",
+        text: "True, our trans quest is not mandatory. Think about that when you will be lying in the pool of your own blood somewhere.",
+        interactionCategory: "oracle",
+    },
+    ClearTransa: {
+        name: "ClearTransa",
+        sprite: "ClearTransa",
+        category: 'crest',
+        voice: "FemaleLow2",
+        text: "Welcome to out inclusive trans community. We are all trans here. Lovers of trans parent outfits. Hahahaha.",
+        interactionCategory: "oracle",
+    },
+    MC_Transa: {
+        name: "MC_Transa",
+        sprite: "MC_Transa",
+        category: 'crest',
+        voice: "FemaleLow",
+        text: "Any color you like. We accept all. As long as it is shiny.",
+        interactionCategory: "oracle",
+    },
     WindowSitter: {
         name: "WindowSitter",
         sprite: "WindowSitter",
@@ -1973,6 +1997,61 @@ const INTERACTION_ITEM = {
         inventorySprite: "BlackLatexBra",
         text: "Smouldering hot. Maybe he'll let me wear it in the next game."
     },
+    YellowLatexPanties: {
+        name: "YellowLatexPanties",
+        category: "interaction_item",
+        inventorySprite: "YellowLatexPanties",
+        text: "Wow, that's hot."
+    },
+    WhiteLatexPanties: {
+        name: "WhiteLatexPanties",
+        category: "interaction_item",
+        inventorySprite: "WhiteLatexPanties",
+        text: "Wow, that's hot."
+    },
+    GreyLatexPanties: {
+        name: "GreyLatexPanties",
+        category: "interaction_item",
+        inventorySprite: "GreyLatexPanties",
+        text: "Wow, that's hot."
+    },
+    TransRedLatexPanties: {
+        name: "TransRedLatexPanties",
+        category: "interaction_item",
+        inventorySprite: "TransRedLatexPanties",
+        text: "Wow, that's hot."
+    },
+    TransBlackLatexPanties: {
+        name: "TransBlackLatexPanties",
+        category: "interaction_item",
+        inventorySprite: "TransBlackLatexPanties",
+        text: "Wow, that's hot."
+    },
+    YellowCertificate: {
+        name: "YellowCertificate",
+        category: "interaction_item",
+        inventorySprite: "YellowCertificate",
+    },
+    GreyCertificate: {
+        name: "GreyCertificate",
+        category: "interaction_item",
+        inventorySprite: "GreyCertificate",
+    },
+    BlackCertificate: {
+        name: "BlackCertificate",
+        category: "interaction_item",
+        inventorySprite: "BlackCertificate",
+    },
+    WhiteCertificate: {
+        name: "WhiteCertificate",
+        category: "interaction_item",
+        inventorySprite: "WhiteCertificate",
+    },
+    RedCertificate: {
+        name: "RedCertificate",
+        category: "interaction_item",
+        inventorySprite: "RedCertificate",
+    },
 
     //books
     YoniBook: {
@@ -2093,6 +2172,32 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    BlackTransa: {
+        name: "BlackTransa",
+        sprite: "BlackTransa",
+        category: 'crest',
+        voice: "FemaleLow2",
+        wants: ["TransBlackLatexPanties"],
+        gives: "BlackCertificate",
+        text: {
+            intro: "My transparent panties, lost and black! Find them quickly, bring them back!",
+            progress: null,
+            conclusion: "You've saved my style, you've served me right! Here's a certificate for your delight."
+        }
+    },
+    TransBossa: {
+        name: "TransBossa",
+        sprite: "TransBossa",
+        category: 'crest',
+        voice: "FemaleLow2",
+        wants: ["RedCertificate", "WhiteCertificate", "BlackCertificate", "WhiteCertificate", "YellowCertificate"],
+        gives: "EmeraldKey",
+        text: {
+            intro: "Trans parent sisters need your aid, show your certificates, debts repaid!",
+            progress: "Certificates seen, but more I ask. Complete the set, fulfill your task!",
+            conclusion: "All certified, transparent cheer! Take this key, your path is clear, like my outfit."
+        }
+    },
     GoldMelta: {
         name: "GoldMelta",
         sprite: "GoldMelta",

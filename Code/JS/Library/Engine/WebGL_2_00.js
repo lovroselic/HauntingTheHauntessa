@@ -77,6 +77,8 @@ const WebGL = {
         DEFAULT_FALL_CUTOFF: 5.0,
         FEATHER_FALL_CUTOFF: 7.5,
         FALL_DAMAGE_MULTIPLIER: 7.5,
+        LOOK_AROUND_QUANT: 0.025,
+        MAX_LOOK_AROUND_Y: 0.20,
     },
     CONFIG: {
         firstperson: true,
@@ -1697,8 +1699,11 @@ class $3D_Camera {
     }
     update() {
         this.pos = this.reference.pos.translate(this.translation_direction, this.translation_offset);
-        this.dir = this.reference.dir.add(this.direction_offset);
+        this.updateDir();
         this.pos = this.pos.translate(this.reference.dir.reverse2D(), this.back_offset);
+    }
+    updateDir() {
+        this.dir = this.reference.dir.add(this.direction_offset);
     }
 }
 
@@ -1732,6 +1737,7 @@ class $3D_player {
         this.initTextureMap();
         this.velocity_Z = 0.0;
         this.concludeJump();
+        this.lookingAround = false;
     }
     concludeJump() {
         this.onGround = true;
@@ -2245,10 +2251,37 @@ class $3D_player {
             this.dir = Vector3.from_2D_dir(Vector3.to_FP_Vector(this.dir).ortoAlign(), this.dir.y);
             return;
         }
+        if (map[ENGINE.KEY.map.P]) {
+            return this.lookAbout(UP);
+        }
+        if (map[ENGINE.KEY.map.L]) {
+            return this.lookAbout(DOWN);
+        }
     }
     requestJump(jumpPower) {
         if (!this.onGround) return;
         this.jump(jumpPower);
+    }
+    lookAbout(dir) {
+        if (!WebGL.CONFIG.firstperson) return;                                      //only first person makes sense, the rest will not be supported
+
+        let lookDirection = new Vector3(0, dir.y * WebGL.INI.LOOK_AROUND_QUANT, 0);
+        this.camera.direction_offset = this.camera.direction_offset.add(lookDirection);
+        if (Math.sign(dir.y) * (this.camera.direction_offset.y) > WebGL.INI.MAX_LOOK_AROUND_Y) this.camera.direction_offset.set_y(Math.sign(dir.y) * WebGL.INI.MAX_LOOK_AROUND_Y);
+        this.camera.updateDir();
+        WebGL.setCamera(this.camera);
+        this.lookingAround = true;
+    }
+    resetCamera() {
+        if (Math.abs(this.camera.direction_offset.y) - 0.0005 < WebGL.INI.LOOK_AROUND_QUANT) {
+            this.camera.direction_offset.set_y(0.0);
+        } else {
+            const sign = -Math.sign(this.camera.direction_offset.y);
+            let revertDirection = new Vector3(0, sign * WebGL.INI.LOOK_AROUND_QUANT, 0);
+            this.camera.direction_offset = this.camera.direction_offset.add(revertDirection);
+        }
+        this.camera.updateDir();
+        WebGL.setCamera(this.camera);
     }
     draw(gl) {
         //console.warn("mode:", this.mode, "animation index", this.actor.animationIndex);

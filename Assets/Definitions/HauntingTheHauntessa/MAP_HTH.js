@@ -12,7 +12,7 @@ console.log("%cMAP for HTH loaded.", "color: #888");
 const MAP_TEXT = {
     1: "This is my bedroom, but I don't have time to rest.",
     2: "My throne room. Here I listen to the petitions of my subjects. This time they want me to get rid of Hauntessa Spookish.",
-    3: "Beyound this hall, there is and outside world. Am I ready yet?",
+    3: "Beyound this hall, there is and outside world. Am I ready yet? Will I ever be?",
     4: "",
     5: "",
     6: "The only god this shrines channel is gold. I hope you have a lot of it.",
@@ -32,6 +32,9 @@ const MAP_TEXT = {
     20: "",
     21: "",
     22: "What a view. But Hauntessa's castle is in other direction.",
+    23: "",
+    24: "",
+    25: ""
 
 };
 
@@ -63,7 +66,7 @@ const MAP = {
         movables: '[[287,"GreenBat"],[297,"GreenBat"],[384,"GreenBat"],[172,"GreenBat"]]',
     }
     ,
-    2 : {
+    2: {
         name: "The Throne Room",
         sg: 0,
         maxSpawned: -1,
@@ -77,11 +80,11 @@ const MAP = {
         start: '[1510,1]',
         decals: '[[519,7,"KnightStatue106","crest"],[521,7,"KnightStatue110","crest"],[523,7,"KnightStatue105","crest"],[525,7,"KnightStatue107","crest"],[881,7,"ShieldDecal02","crest"],[885,7,"ShieldDecal03","crest"],[538,4,"PersianRug06","crest"],[557,4,"PersianRug06","crest"],[539,4,"PersianRug06","crest"],[558,4,"PersianRug06","crest"],[540,4,"PersianRug06","crest"],[559,4,"PersianRug06","crest"],[541,4,"PersianRug06","crest"],[560,4,"PersianRug06","crest"],[542,4,"PersianRug06","crest"],[561,4,"PersianRug06","crest"],[543,4,"PersianRug06","crest"],[562,4,"PersianRug06","crest"],[544,4,"PersianRug06","crest"],[563,4,"PersianRug06","crest"],[520,4,"PersianRug06","crest"],[524,4,"PersianRug06","crest"]]',
         lights: '[[458,1,"Candelabra01","standardSoft"],[472,1,"Candelabra02","standardSoft"],[370,7,"Candelabra03","standardSoft"],[672,1,"Lamp42","standard"],[676,1,"Lamp42","standard"],[459,7,"FireplaceFLuxU417","fireplace"],[471,7,"FireplaceFLuxU420","fireplaceDim"],[1301,1,"FluxLight126","standardYellowFaint"]]',
-        gates: '[[363,7,"2.1","1.1","Closed"],[351,1,"2.2","3.1","Closed"],[1073,1,"2.3","3.3","Closed"],[1795,1,"2.4","3.4","Closed"],[377,7,"2.5","5.1","Closed"],[531,3,"2.6","6.1","Closed"],[513,5,"2.7","7.1","Closed"],[665,5,"2.8","8.1","Closed"],[683,3,"2.9","9.1","Closed"],[1653,5,"2.10","17.1","Closed"],[1671,3,"2.11","21.1","Closed"]]',
+        gates: '[[363,7,"2.1","1.1","Closed"],[351,1,"2.2","3.1","Closed"],[1073,1,"2.3","3.3","Closed"],[1795,1,"2.4","3.4","Closed"],[377,7,"2.5","5.1","Closed"],[531,3,"2.6","6.1","Closed"],[513,5,"2.7","7.1","Closed"],[665,5,"2.8","8.1","Closed"],[683,3,"2.9","9.1","Closed"],[1653,5,"2.10","17.1","Closed"],[1671,3,"2.11","21.1","Closed"],[1520,5,"2.12","23.1","Closed"],[1453,7,"2.13","24.1","Emerald"]]',
         doors: '[427]',
         entities: '[[505,7,"QueenMother"],[589,5,"FashionGuard"],[607,3,"CuteTank"]]',
         oracles: '[[501,7,"PrincessThrone"]]',
-        }
+    }
     ,
     3: {
         name: "Castle Entrance Hall",
@@ -443,7 +446,7 @@ const MAP = {
         entities: '[[297,7,"BarGuest"]]',
     }
     ,
-    22 : {
+    22: {
         name: "East Balcony",
         sg: 0,
         maxSpawned: -1,
@@ -458,6 +461,58 @@ const MAP = {
         decals: '[[233,7,"BalconyTexture_774","texture"],[234,7,"BalconyTexture_774","texture"],[235,7,"BalconyTexture_774","texture"],[236,7,"BalconyTexture_774","texture"],[284,3,"BalconyTexture_779","texture"],[299,3,"BalconyTexture_779","texture"],[314,3,"BalconyTexture_779","texture"],[329,3,"BalconyTexture_779","texture"]]',
         lights: '[[217,1,"FireplaceFLuxU415","fireplace"],[331,5,"FluxLight127","standardSoft"],[310,1,"Lights113","standardUltraFaint"],[310,5,"DuaLLantern_005","standardUltraFaint"]]',
         gates: '[[105,5,"22.1","21.2","Down"]]',
-        }
-
+    }
+    ,
+    23: {
+        name: "Trans Community",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"21","height":"21","depth":4,"map":"BB2ÁÁ2BAA2BÁBAÁAA12BB4AA76ÁÁ4AA4BAA4BB2AA4BB4AA4BB6ɁAA23ÁAA2ÁBAA6BB2AA6BAA2BB3AA2BAA21ÁAA5BŁŁ2AA22BAA11BB2AA2BABB2ABB2ABABB2AA6BB2AA6BABB3ŁBB2AA3ŁAA16BAA7BB9AA2BB21AA2BB16ÁBB26ABB2ABB6AA2BB17ABB10ÁBABB8ABB11ABB7ÁÁ4BÁÁ3BB8ABB2ABB3ABABB5ABB13ABB2ABB17ABB2ABB9ABB15AA2BB21ABAA3BAA2BB10ABB16ABB9ABAA2BB37ABB2ABB10AA2BB86$BB32ÁBB57ࡁABB47ABB144ࡁBB3ABB34ABB3ÁBABB11AÁÁ6BB2ÁÁ12BB32AA2ÁABB5ÁÁ8ABB15ÁÁ2BB3ÁBB129ÁÁ52BB2ÁÁ50BB2ÁÁ8BB2ÁBB2ÁÁ2BÁÁ2AA2ÁAA2ÁÁ17AA4ÁÁ2AÁÁ11BÁÁ14AÁAA3ÁÁ2ABÁÁ12AÁÁ66BB4ÁÁ2BÁÁ19BB3ÁÁ54AA2ÁÁ16BÁÁ12BÁÁ16BB12ÁÁ4BB4ɁɁ2сBB2ࡁBB2сс2B"}',
+        wall: "GlossyBrownBrickedWall58",
+        floor: "MarbleFloor101",
+        ceil: "3d wall",
+        start: '[306,1]',
+        lights: '[[1105,5,"Candelabra08","standardDimmed"],[661,3,"Lamp41","standardYellowSoft"],[1535,5,"Candle52","standardYellow"],[1545,1,"Lights111","standardMuted"],[1545,7,"FluxLight117","standardMuted"]]',
+        gates: '[[230,3,"23.1","2.12","Closed"]]',
+        entities: '[[651,5,"TransBossa"],[201,1,"BlackTransa"]]',
+        oracles: '[[1315,1,"MC_Transa"],[224,5,"ClearTransa"],[894,7,"BlackTransaOracle"]]',
+    }
+    ,
+    24: {
+        name: "Train Without Pain",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"21","height":"21","depth":4,"map":"BB2AA2BABAA17BAA2BABAA2BABB2AA7BAA4BAA4BAA2BB2ABB2AA4BB2AA3EBB2AA7BAA4BABAA10BAA3EE2AA10BB3ABB4AA9BAA2EBB2EBAA3BB4AA2BB3ABABAA4BAA2BB4AA3BB2AA2BAA17BAA3BAA3ŁABAA8BAA4BAA20BAA2BABAA6BB2AA2BB2AA2BB2AA2BAA3BABAA4BABB2ABB15ABAA2BAA2BB2AA4BB3ABAA2BABB5ABABABABB2ABB3ABB2ABABABABB2AA6BB2AÁBB2AA2BAA6BABB2ABB3ABABB5ABB5AA3BABB3AA3BABAA2BABB5ABAA2BB3AA2BAA5BAA5BAA6BB14ABB2ABABB2AA2EBB2ABB13ABB15ABB4ABB4AA2BB7ABB4ABB3ABABB3AA4BB2ABABB4ABB5AA2BABB10AA2BB4ŁBB6ABB3ABB2AA2BAA2BABABB2AA2BB2ABB3ABAA3BB5AA5BB2ABB10ABB3ABB4ABB2ABB5AA2BB3ABEBABB2ABB9ABABB5AA3BABB3AA2BB10ABB7ABB7ABABB6ABÁÁ2ABB2ABB2AA2BABB4ABB8ABB2ABB6ABB29$BB45ABB82ÁࡁBB313ÁBB43ÁBB60ÁBB26ÁBÁBB3ÁBB19ɁсBB29ÁBÁÁ2BB4ÁÁ5BB55AA2BB35ABB16ÁBB3ABB9ÁÁ5BB41ABÁÁ2ABB21ࡁBB36AA5BB2ÁÁ5BÁÁ3BÁÁ17BB2ÁÁ19BB2ÁBB13ÁBB5ÁÁ4BAɁɁ2BAŁсBŁࡁࡁ2ɁBсс2BB2"}',
+        wall: "RedishRocks11",
+        floor: "MossyPattern2",
+        ceil: "RockWall_SDXL_009",
+        start: '[962,1]',
+        lights: '[[94,7,"Lamp43","standard2"],[1291,1,"Fireplace211","fireplace"]]',
+        gates: '[[430,1,"24.1","2.13","Open"],[899,7,"24.2","25.1","Up"]]',
+        doors: '[1170,1086,1076,1160,1186,929,1004]',
+        triggers: '[[301,7,"SmoothWallButton",1,365],[307,7,"SmoothWallButton",1,369]]',
+    }
+    ,
+    25: {
+        name: "North Balcony",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"13","height":"13","depth":3,"map":"BB6AA30BAA4ÁAA2ÁBB5AA7BB2AA3ŁAA27BB2AA5BB10AA2BB6AA4BAA3BB19ABB15ࡁBB14ABB65ÁBB27ABB47ÁBB49$ABB27ABB7ÁAÁÁ4BÁÁ2BB8ÁÁ22AA2ÁÁ6BB3ÁÁ42BB6ɁAсŁࡁɁсB"}',
+        wall: "RockWall_SDXL_010",
+        floor: "BloodMarbleFloorWall_SDXL_008",
+        ceil: "DarkBricks102",
+        start: '[149,1]',
+        decals: '[[173,7,"BalconyTexture_781","texture"],[174,7,"BalconyTexture_781","texture"],[175,7,"BalconyTexture_781","texture"],[176,7,"BalconyTexture_781","texture"],[177,7,"BalconyTexture_781","texture"]]',
+        lights: '[[238,7,"DuaLLantern_007","standardYellow"],[242,7,"Lamp45","standardYellow"],[383,1,"Candelabra01","standard2"]]',
+        gates: '[[162,1,"25.1","24.2","Down"]]',
+    }
 };

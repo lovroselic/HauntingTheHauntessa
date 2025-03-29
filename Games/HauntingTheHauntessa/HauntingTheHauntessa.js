@@ -75,7 +75,8 @@ const DEBUG = {
             DONE Arcadia wants "ArcadeToken", "ArcadeToken", "ArcadeToken" gives "TreeOfLifeBook"
             DONE GoldMelta wants 3x gold ore give GoldBar
             DONE BarGuest wants "BlackLatexpanties", "BlacLatexBra" gives Wine
-
+            DONE "TransBossa" wants "RedCertificate", "WhiteCertificate", "BlackCertificate", "WhiteCertificate", "RedCertificate" give Emerald Key
+            DONE "BlackTransa" wants "TransBlackLatexPanties" gives "BlackCertificate"
 
             DONE Rose, -> EmoTina (16)
         Rose, **quest
@@ -130,6 +131,21 @@ const DEBUG = {
         "ArcadeToken",  **quest
         "ArcadeToken" **quest
             DONE "GoldOre","GoldOre","GoldOre" --> (20)
+        "RedCertificate", 
+        "WhiteCertificate",
+            DONE "BlackCertificate",  "BlackTransa"--> (23)
+        "WhiteCertificate", "
+        YellowCertificate"
+        "YellowLatexPanties",
+        "WhiteLatexPanties",
+        "GreyLatexPanties",
+        "TransRedLatexPanties",
+        "TransBlackLatexPanties" 
+        "GoldCoin"
+        "GoldCoin"
+        "GoldCoin"
+        "GoldCoin"
+        "GoldCoin"
 
 
         Maybe: , candle, ,
@@ -156,6 +172,7 @@ const DEBUG = {
         ?Missing keys:
             DONE Red (15)
             DONE Blue (18)
+            DONE Emerald TransBossa(23)
 
         Missing scrolls:
             - flight
@@ -165,7 +182,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 2; //
+        GAME.level = 23; //
         GAME.gold = 9999;
         GAME.lives = 1;
 
@@ -198,6 +215,8 @@ const DEBUG = {
         let invItems = [
 
             //debug
+            //"RedCertificate", "WhiteCertificate", "BlackCertificate", "WhiteCertificate", "YellowCertificate",
+            "YellowLatexPanties","WhiteLatexPanties","GreyLatexPanties","TransRedLatexPanties",
             //"BlackLatexpanties", "BlackLatexBra",
             //"GoldOre","GoldOre","GoldOre"
             //"ArcadeToken", "ArcadeToken", "ArcadeToken",
@@ -226,7 +245,7 @@ const DEBUG = {
             HERO.inventory.item.push(item);
         }
 
-        let keys = ["Red"];
+        let keys = ["Emerald"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -334,7 +353,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.11.16",
+    VERSION: "0.12.00",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -767,10 +786,14 @@ const HERO = {
         TURN.subtitle(txt);
     },
     concludeAction() {
-        // actions are concluded in the animation
         if (!this.player.actionModes.includes(this.player.mode)) {
             this.player.setMode("idle");
         }
+        if (!this.player.lookingAround && Math.abs(this.player.camera.direction_offset.y) > 0) {
+            this.player.resetCamera();
+        }
+
+        this.player.lookingAround = false;
     },
     shoot() {
         if (HERO.dead) return;
@@ -1164,12 +1187,15 @@ const GAME = {
         HERO.speak("Haunting or hunting, Hauntessa will kneel, soon she will feel my very sharp heel.");
     },
     setCameraView() {
+        WebGL.hero.firstPersonCamera = new $3D_Camera(WebGL.hero.player, DIR_NOWAY, 0.0, new Vector3(0, 0, 0), 0);
         WebGL.hero.topCamera = new $3D_Camera(WebGL.hero.player, DIR_UP, 0.9, new Vector3(0, -0.5, 0), 1, 70);
         WebGL.hero.overheadCamera = new $3D_Camera(WebGL.hero.player, DIR_UP, 2.5, new Vector3(0, -1, 0), 1, 80);
         WebGL.hero.orto_overheadCamera = new $3D_Camera(WebGL.hero.player, DIR_UP, 4, new Vector3(0, -1, 0), 0.4, 80);
 
         switch (WebGL.CONFIG.cameraType) {
             case "first_person":
+                WebGL.hero.player.associateExternalCamera(WebGL.hero.firstPersonCamera);
+                WebGL.setCamera(WebGL.hero.firstPersonCamera);
                 break;
             case "third_person":
                 WebGL.hero.player.associateExternalCamera(WebGL.hero.topCamera);
