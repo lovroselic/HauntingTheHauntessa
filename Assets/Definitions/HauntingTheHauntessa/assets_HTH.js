@@ -915,6 +915,10 @@ LoadSprites = [
     { srcName: "EntityPictures/ClearTransa3.jpg", name: "TransBossa" },
     { srcName: "EntityPictures/BlackTransa1.jpg", name: "BlackTransa" },
     { srcName: "EntityPictures/BlackTransa2.jpg", name: "BlackTransaOracle" },
+    { srcName: "EntityPictures/TransWhite.jpg", name: "TransWhite" },
+    { srcName: "EntityPictures/TransRed.jpg", name: "TransRed" },
+    { srcName: "EntityPictures/YellowTransa.jpg", name: "YellowTransa" },
+    { srcName: "EntityPictures/TransGrey.jpg", name: "TransGrey" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },

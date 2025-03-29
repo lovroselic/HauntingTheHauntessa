@@ -77,6 +77,12 @@ const DEBUG = {
             DONE BarGuest wants "BlackLatexpanties", "BlacLatexBra" gives Wine
             DONE "TransBossa" wants "RedCertificate", "WhiteCertificate", "BlackCertificate", "WhiteCertificate", "RedCertificate" give Emerald Key
             DONE "BlackTransa" wants "TransBlackLatexPanties" gives "BlackCertificate"
+            DONE "RedTrans" wans Whitepanties gives RedCertificate
+            DONE "WhiteTrans" wans Whitepanties gives WhiteCertificate
+            DONE "YellowTrans" wants "YellowLatexPanties" gives "YellowCertificate"
+            DONE "GreyTrans" wants "GreyLatexPanties" gives "GreyCertificate"
+
+
 
             DONE Rose, -> EmoTina (16)
         Rose, **quest
@@ -131,11 +137,11 @@ const DEBUG = {
         "ArcadeToken",  **quest
         "ArcadeToken" **quest
             DONE "GoldOre","GoldOre","GoldOre" --> (20)
-        "RedCertificate", 
-        "WhiteCertificate",
+            DONE "RedCertificate", RedTrans((23))
+            DONE "WhiteCertificate", DONW White trans(23)
             DONE "BlackCertificate",  "BlackTransa"--> (23)
-        "WhiteCertificate", "
-        YellowCertificate"
+            DONE "GreyCertificate", GreyTrans (23)
+            DONE YellowCertificate" yellow transa (23)
         "YellowLatexPanties",
         "WhiteLatexPanties",
         "GreyLatexPanties",
@@ -215,29 +221,8 @@ const DEBUG = {
         let invItems = [
 
             //debug
-            //"RedCertificate", "WhiteCertificate", "BlackCertificate", "WhiteCertificate", "YellowCertificate",
-            "YellowLatexPanties","WhiteLatexPanties","GreyLatexPanties","TransRedLatexPanties",
-            //"BlackLatexpanties", "BlackLatexBra",
-            //"GoldOre","GoldOre","GoldOre"
-            //"ArcadeToken", "ArcadeToken", "ArcadeToken",
-            //"GoldBar", "GoldBar", "GoldBar",
-            //"TaoBook", "YinYangBook", "TreeOfLifeBook",
-            //"Skull", "Skull", "Skull", "Skull", "Skull",
-            //"BabyDragon", "BabyDragon", "BabyDragon", "BabyDragon", "BabyDragon",
-            //"BabyGreenSpider","BabyGreenSpider","BabyGreenSpider","BabyGreenSpider","BabyGreenSpider",
-            //"Mushroom", "Mushroom", "Mushroom"
-            //"Shuriken", "Shuriken", "Shuriken",
-            //"Dagger", "Dagger", "Dagger"
-            //"GlassOfBeer", "GlassOfBeer", "GlassOfBeer"
-            //"Beer", "Beer"
-            //"BlackLeatherBoot", "BlackLeatherBoot"
-            //"Rose", "Rose", "Rose"
-            //"Wine", "GlassOfWine"
-            //"DumbBell", "DumbBell",
-            //"BlackLatexGloves", "PinkDuster",
-            //"Document", "Document", "Document",
-            //"Sword", "BattleAxe", "Mace"
-            //"Crown", "GoldenScepter"
+            "GreyLatexPanties",
+
         ];
 
         for (let itm of invItems) {
@@ -353,7 +338,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.12.00",
+    VERSION: "0.12.01",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

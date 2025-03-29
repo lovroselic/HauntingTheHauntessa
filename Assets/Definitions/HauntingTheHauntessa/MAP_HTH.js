@@ -463,7 +463,7 @@ const MAP = {
         gates: '[[105,5,"22.1","21.2","Down"]]',
     }
     ,
-    23: {
+    23 : {
         name: "Trans Community",
         sg: 0,
         maxSpawned: -1,
@@ -477,9 +477,9 @@ const MAP = {
         start: '[306,1]',
         lights: '[[1105,5,"Candelabra08","standardDimmed"],[661,3,"Lamp41","standardYellowSoft"],[1535,5,"Candle52","standardYellow"],[1545,1,"Lights111","standardMuted"],[1545,7,"FluxLight117","standardMuted"]]',
         gates: '[[230,3,"23.1","2.12","Closed"]]',
-        entities: '[[651,5,"TransBossa"],[201,1,"BlackTransa"]]',
+        entities: '[[651,5,"TransBossa"],[201,1,"BlackTransa"],[243,7,"TransWhite"],[80,7,"TransRed"],[374,1,"YellowTransa"],[222,3,"TransGrey"]]',
         oracles: '[[1315,1,"MC_Transa"],[224,5,"ClearTransa"],[894,7,"BlackTransaOracle"]]',
-    }
+        }
     ,
     24: {
         name: "Train Without Pain",

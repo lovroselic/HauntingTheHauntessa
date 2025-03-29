@@ -2172,6 +2172,58 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    TransGrey: {
+        name: "TransGrey",
+        sprite: "TransGrey",
+        category: 'crest',
+        voice: "FemaleLow2",
+        wants: ["GreyLatexPanties"],
+        gives: "GreyCertificate",
+        text: {
+            intro: "Transparent panties, grey and sleek! Lost somewhere, please take a peek!",
+            progress: null,
+            conclusion: "Panties retrieved, you've made my day! Grey certificate, yours today."
+        }
+    },
+    YellowTransa: {
+        name: "YellowTransa",
+        sprite: "YellowTransa",
+        category: 'crest',
+        voice: "FemaleLow",
+        wants: ["YellowLatexPanties"],
+        gives: "YellowCertificate",
+        text: {
+            intro: "Transparent panties, golden glow! Find them quick, they're lost, you know!",
+            progress: null,
+            conclusion: "Panties returned, what a thrill! Yellow certificate, yours to fulfill."
+        }
+    },
+    TransRed: {
+        name: "TransRed",
+        sprite: "TransRed",
+        category: 'crest',
+        voice: "Female2",
+        wants: ["TransRedLatexPanties"],
+        gives: "RedCertificate",
+        text: {
+            intro: "Transparent panties, burning red! Find them fast, I need them to wear tonight, in bed.",
+            progress: null,
+            conclusion: "Panties secured, style's reclaimed! Red certificate, proudly named."
+        }
+    },
+    TransWhite: {
+        name: "TransWhite",
+        sprite: "TransWhite",
+        category: 'crest',
+        voice: "Female",
+        wants: ["WhiteLatexPanties"],
+        gives: "WhiteCertificate",
+        text: {
+            intro: "Transparent panties, pure and white! Lost somewhere, find them tonight!",
+            progress: null,
+            conclusion: "Panties found, you've done just right! A certificate yours, shining bright!"
+        }
+    },
     BlackTransa: {
         name: "BlackTransa",
         sprite: "BlackTransa",
@@ -2190,7 +2242,7 @@ const INTERACTION_ENTITY = {
         sprite: "TransBossa",
         category: 'crest',
         voice: "FemaleLow2",
-        wants: ["RedCertificate", "WhiteCertificate", "BlackCertificate", "WhiteCertificate", "YellowCertificate"],
+        wants: ["RedCertificate", "WhiteCertificate", "BlackCertificate", "GreyCertificate", "YellowCertificate"],
         gives: "EmeraldKey",
         text: {
             intro: "Trans parent sisters need your aid, show your certificates, debts repaid!",
