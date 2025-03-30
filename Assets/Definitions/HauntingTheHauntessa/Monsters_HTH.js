@@ -97,6 +97,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    HeelTransa: {
+        name: "HeelTransa",
+        sprite: "HeelTransa",
+        category: 'crest',
+        voice: "Female2",
+        text: "Our trans community is famous for the inclusion. Everyone is welcome. But if you don't wear high heels then you better fuck off.",
+        interactionCategory: "oracle",
+    },
     BlackTransaOracle: {
         name: "BlackTransaOracle",
         sprite: "BlackTransaOracle",

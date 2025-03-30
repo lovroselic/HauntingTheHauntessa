@@ -188,7 +188,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 26; //
+        GAME.level = 23; //
         GAME.gold = 9999;
         GAME.lives = 1;
 
@@ -221,7 +221,7 @@ const DEBUG = {
         let invItems = [
 
             //debug
-            "GreyLatexPanties",
+            
 
         ];
 
@@ -230,7 +230,7 @@ const DEBUG = {
             HERO.inventory.item.push(item);
         }
 
-        let keys = ["Emerald"];
+        let keys = [];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -338,7 +338,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.12.2",
+    VERSION: "0.12.3",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -774,7 +774,7 @@ const HERO = {
         if (!this.player.actionModes.includes(this.player.mode)) {
             this.player.setMode("idle");
         }
-        if (!this.player.lookingAround && Math.abs(this.player.camera.direction_offset.y) > 0) {
+        if (WebGL.CONFIG.firstperson && !this.player.lookingAround && Math.abs(this.player.camera.direction_offset.y) > 0) {
             this.player.resetCamera();
         }
 

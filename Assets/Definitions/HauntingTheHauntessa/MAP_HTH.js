@@ -474,11 +474,11 @@ const MAP = {
         wall: "GlossyBrownBrickedWall58",
         floor: "MarbleFloor101",
         ceil: "3d wall",
-        start: '[306,1]',
+        start: '[1226,1]',
         lights: '[[1105,5,"Candelabra08","standardDimmed"],[661,3,"Lamp41","standardYellowSoft"],[1535,5,"Candle52","standardYellow"],[1545,1,"Lights111","standardMuted"],[1545,7,"FluxLight117","standardMuted"]]',
         gates: '[[230,3,"23.1","2.12","Closed"]]',
         entities: '[[651,5,"TransBossa"],[201,1,"BlackTransa"],[243,7,"TransWhite"],[80,7,"TransRed"],[374,1,"YellowTransa"],[222,3,"TransGrey"]]',
-        oracles: '[[1315,1,"MC_Transa"],[224,5,"ClearTransa"],[894,7,"BlackTransaOracle"]]',
+        oracles: '[[1315,1,"MC_Transa"],[224,5,"ClearTransa"],[894,7,"BlackTransaOracle"],[1310,1,"HeelTransa"]]',
     }
     ,
     24: {
@@ -516,19 +516,19 @@ const MAP = {
         gates: '[[162,1,"25.1","24.2","Down"]]',
     }
     ,
-    26 : {
+    26: {
         name: "Guest Quarters",
         sg: 0,
         maxSpawned: -1,
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"21","height":"21","depth":5,"map":"BB15AA126BࡁBAA13BAA2BAA14BAA63ÁAA21BAA19BAA2BAA3BB22ÁBB17ŁBB19ABB7AA16BB44ÁBB15ÁBB47$BB110AÁࡁÁBB394ABB809ࡁBÁBB6ÁŁBÁÁ7BB2ɁсBB2ÁBB13ABB253ÁÁ2BB15ÁBB3ÁBÁÁ8ŁÁÁ4AÁAÁÁ12BB5ÁÁ10ŁÁÁ9BB12ÁÁ7BÁÁ2AÁɁBÁсABÁࡁɁɁ2сÁсB"}',
+        data: '{"width":"21","height":"21","depth":5,"map":"BB2ABB9AA48BB4AA28ÁAA11ÁAA3ÁÁ8AA12BB5AA2BAA3ÁAA7BB4ABAA3ࡁBAA7BAA25BAA3BAA9BAA51ÁBAA2BB2AA3BAA6BAA7BB4ÁÁ2BB2AA3BABAA117ŁAA58BAA22BABAA27BAA9BB35ABB4ÁÁ2ŁɁBB3ÁBB27ŁBB13ABB9AŁࡁBɁсBB6ÁÁ3BABB15ABAA6BB6ÁÁ2ABAA2BB2ÁBB23ÁBB29ÁBB23ABB20ÁBB2ÁÁ2BB5ࡁBB17ࡁBB4AA5BB7ABB6AA2BB24ABB15$ABB128ÁBB78ÁBB14ABB129ABB13ÁBB8ÁBÁBB19ÁÁ3BB4ÁÁ6BB28ÁBB9ABB4ABB4ÁBB11ÁBB53ÁBB34сࡁBB3ÁÁ2BB20ABABB10ÁBABB3ÁBB2AÁÁ2AA9BB8ÁÁ4BB16ÁBÁBB4ࡁBB3ÁŁBÁÁ2BB3ɁсAA4BB4ABB93ÁBÁÁ4BB2ÁÁ2BB2ABB5ABÁBB6ÁBB2ÁBB4ÁÁ2BB25ÁÁ4ABABB6ÁÁ16BÁÁ5BÁÁ10AA2ÁÁ9BÁÁ2AŁÁÁ8AÁAÁAÁÁ26BB3ÁÁ6BÁÁ3BÁÁ14BÁÁ13BÁÁ8BÁÁ3BÁÁ10BÁÁ65ŁÁÁ10BÁÁ2BÁÁ34BB2ÁÁ4BB3ÁBB4ÁÁ6BB2ÁBB2ÁÁ4BÁÁ2BB12ÁÁ13BÁÁ12BB2ÁÁ10BB3ÁÁ12BB17ÁÁ45BB8ÁÁ7BÁÁ2ɁÁAA3ɁBB2ÁAA2сс2AŁBB2ÁBࡁࡁ2ɁɁ3сBсс2ÁBB3"}',
         wall: "RockWall_SDXL_001",
         floor: "DarkFloorSDXL338",
         ceil: "MossyRocks42",
-        start: '[1502,5]',
-        lights: '[[220,3,"FluxLight113","standard2"]]',
+        start: '[814,1]',
+        lights: '[[220,3,"FluxLight113","standard2"],[1102,3,"WallLamp17","standardFaint"],[1951,3,"Candelabra02","standardDimmed"],[2196,1,"Fireplace212","fireplace"],[2120,3,"Fireplace206","fireplace"],[2056,1,"DuaLLantern_017","standardUltraFaint"],[1356,3,"Candle57","standardUltraFaint"],[1289,5,"FluxLight124","standardUltraFaint"],[878,1,"FireplaceFLuxU414","fireplace"],[817,1,"Lights108","standardUltraFaint"]]',
         gates: '[[210,5,"26.1","2.14","Closed"]]',
-        }
+    }
 };
