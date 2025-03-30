@@ -1791,10 +1791,6 @@ class $3D_player {
         let nextPos3 = this.pos.translate(DOWN3, dH);                       //it is UP in GL coords
         nextPos3 = nextPos3.translate(this.dir, dXY);                       //in the movement direction, this.dir is already Vector3
 
-        if (this.descendPhase) {
-            if (this.checkLanding(nextPos3)) return this.concludeJump();
-        }
-
         if (!this.isFalling) {
             if (this.ascendPhase) {
                 if (this.upwardCheck(nextPos3)) return this.fallDown();
@@ -1804,6 +1800,10 @@ class $3D_player {
             if (!forwardCheck) return this.fallDown();
 
             if (this.bumpEnemy(Vector3.to_FP_Grid(nextPos3), nextPos3)) return this.fallDown();
+        }
+
+        if (this.descendPhase) {
+            if (this.checkLanding(nextPos3)) return this.concludeJump();
         }
 
         this.setPos(nextPos3);
@@ -1841,6 +1841,8 @@ class $3D_player {
         const feetGrid3D = Vector3.to_Grid3D(feetPos3);
         const gridType = REVERSED_MAPDICT[this.GA.getValue(feetGrid3D)];
 
+       // console.info("checkLanding", "feetPos3", feetPos3, "feetGrid3D", feetGrid3D, "gridType", gridType);
+
         switch (gridType) {
             case undefined:
             case "HOLE":
@@ -1857,9 +1859,6 @@ class $3D_player {
                     return true;
                 }
                 return false;
-            case "WALL":
-                this.resetToGround(nextPos3);
-                return true;
             case "WALL2":
             case "WALL4":
             case "WALL6":
@@ -1870,6 +1869,9 @@ class $3D_player {
                     return true;
                 }
                 return false;
+            case "WALL":
+                this.resetToGround(nextPos3);
+                return true;
             default:
                 console.warn("feetPos3.y", feetPos3.y, "this.velocity_Z", this.velocity_Z, "feetGrid3D", feetGrid3D);
                 throw new Error(`Unsupported gridType fro checkLanding: ${gridType}`);
@@ -1878,6 +1880,7 @@ class $3D_player {
     resetToGround(nextPos3, offset = 0) {
         nextPos3.set_y(this.minY + this.heigth + this.depth + offset);                           //reset to ground, offset required for staircase
         this.setPos(nextPos3);
+        //console.warn("resetToGround", nextPos3);
     }
     floorReference() {
         return this.minY + this.heigth + this.depth;

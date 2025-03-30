@@ -40,7 +40,7 @@ const MAP_TEXT = {
 
 /** Map definitions */
 const MAP = {
-    1: {
+    1 : {
         name: "It Starts In The Bedroom",
         sg: 0,
         maxSpawned: -1,
@@ -64,9 +64,9 @@ const MAP = {
         objects: '[[243,"Cake"],[646,"Crown"],[649,"Orb"],[176,"Orb"]]',
         oracles: '[[232,7,"PrincessBed"],[667,1,"Darksy"]]',
         movables: '[[287,"GreenBat"],[297,"GreenBat"],[384,"GreenBat"],[172,"GreenBat"]]',
-    }
+        }
     ,
-    2: {
+    2 : {
         name: "The Throne Room",
         sg: 0,
         maxSpawned: -1,
@@ -77,14 +77,15 @@ const MAP = {
         wall: "GreyBrownTiles101",
         floor: "BloodMarbleFloorWall_SDXL_030",
         ceil: "DarkMarble50",
-        start: '[1510,1]',
-        decals: '[[519,7,"KnightStatue106","crest"],[521,7,"KnightStatue110","crest"],[523,7,"KnightStatue105","crest"],[525,7,"KnightStatue107","crest"],[881,7,"ShieldDecal02","crest"],[885,7,"ShieldDecal03","crest"],[538,4,"PersianRug06","crest"],[557,4,"PersianRug06","crest"],[539,4,"PersianRug06","crest"],[558,4,"PersianRug06","crest"],[540,4,"PersianRug06","crest"],[559,4,"PersianRug06","crest"],[541,4,"PersianRug06","crest"],[560,4,"PersianRug06","crest"],[542,4,"PersianRug06","crest"],[561,4,"PersianRug06","crest"],[543,4,"PersianRug06","crest"],[562,4,"PersianRug06","crest"],[544,4,"PersianRug06","crest"],[563,4,"PersianRug06","crest"],[520,4,"PersianRug06","crest"],[524,4,"PersianRug06","crest"]]',
+        start: '[382,7]',
+        decals: '[[519,7,"KnightStatue106","crest"],[521,7,"KnightStatue110","crest"],[523,7,"KnightStatue105","crest"],[525,7,"KnightStatue107","crest"],[881,7,"ShieldDecal02","crest"],[885,7,"ShieldDecal03","crest"],[538,4,"PersianRug06","crest"],[557,4,"PersianRug06","crest"],[539,4,"PersianRug06","crest"],[558,4,"PersianRug06","crest"],[540,4,"PersianRug06","crest"],[559,4,"PersianRug06","crest"],[541,4,"PersianRug06","crest"],[560,4,"PersianRug06","crest"],[542,4,"PersianRug06","crest"],[561,4,"PersianRug06","crest"],[543,4,"PersianRug06","crest"],[562,4,"PersianRug06","crest"],[544,4,"PersianRug06","crest"],[563,4,"PersianRug06","crest"],[520,4,"PersianRug06","crest"],[524,4,"PersianRug06","crest"],[418,5,"FemDommes_9059","picture"],[384,5,"FemDommes_5209","picture"],[430,5,"FemDommes_13047","picture"],[436,3,"FemDommes_6308","picture"],[394,3,"FemDommes_6185","picture"],[424,3,"FemDommes_15399","picture"],[397,7,"Morana138","picture"],[383,7,"NurseAlchemyMagic_117","picture"],[381,7,"ShortBlackSkirt_008","picture"],[395,7,"JSW111","picture"]]',
         lights: '[[458,1,"Candelabra01","standardSoft"],[472,1,"Candelabra02","standardSoft"],[370,7,"Candelabra03","standardSoft"],[672,1,"Lamp42","standard"],[676,1,"Lamp42","standard"],[459,7,"FireplaceFLuxU417","fireplace"],[471,7,"FireplaceFLuxU420","fireplaceDim"],[1301,1,"FluxLight126","standardYellowFaint"]]',
         gates: '[[363,7,"2.1","1.1","Closed"],[351,1,"2.2","3.1","Closed"],[1073,1,"2.3","3.3","Closed"],[1795,1,"2.4","3.4","Closed"],[377,7,"2.5","5.1","Closed"],[531,3,"2.6","6.1","Closed"],[513,5,"2.7","7.1","Closed"],[665,5,"2.8","8.1","Closed"],[683,3,"2.9","9.1","Closed"],[1653,5,"2.10","17.1","Closed"],[1671,3,"2.11","21.1","Closed"],[1520,5,"2.12","23.1","Closed"],[1453,7,"2.13","24.1","Emerald"],[1538,3,"2.14","26.1","Closed"]]',
+        monsters: '[[408,"Spider"]]',
         doors: '[427]',
         entities: '[[505,7,"QueenMother"],[589,5,"FashionGuard"],[607,3,"CuteTank"]]',
         oracles: '[[501,7,"PrincessThrone"]]',
-    }
+        }
     ,
     3: {
         name: "Castle Entrance Hall",

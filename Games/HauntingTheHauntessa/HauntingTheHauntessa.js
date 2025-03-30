@@ -188,18 +188,41 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 23; //
-        GAME.gold = 9999;
+        GAME.level = 2; //2
+        GAME.gold = 535;
         GAME.lives = 1;
 
-        //HERO.magic = 87;
-        //HERO.attack = 11;
+        HERO.magic = 5;
+        HERO.attack = 5;
+        HERO.defense = 1;
+        HERO.reference_magic = 5;
+        HERO.reference_attack = 5;
+        HERO.reference_defense = 1;
 
-        //HERO.health = 6;
-        //HERO.mana = 11;
-        //HERO.maxHealth = 576;
+        HERO.mana = 17;
+        HERO.maxMana = 17;
+        HERO.health = 28;
+        HERO.maxHealth = 32;
 
-        let actItems = [];
+        HERO.attackExp = 18;
+        HERO.attackExpGoal = 100;
+        HERO.defenseExp = 4;
+        HERO.defenseExpGoal = 100;
+        HERO.magicExp = 0;
+        HERO.magicExpGoal = 100;
+
+
+        let actItems = [
+            MOVABLE_INTERACTION_OBJECT.GreenBat,
+            MOVABLE_INTERACTION_OBJECT.GreenBat,
+            MOVABLE_INTERACTION_OBJECT.GreenBat,
+            MOVABLE_INTERACTION_OBJECT.GreenBat,
+
+            INTERACTION_OBJECT.Cake,
+
+            INTERACTION_OBJECT.Orb,
+            INTERACTION_OBJECT.Orb
+        ];
 
         for (let obj of actItems) {
             let item = new ActionItem(obj.which, obj.inventorySprite);
@@ -207,7 +230,7 @@ const DEBUG = {
         }
 
         let scrollTypes = [
-            "FeatherFall", "Luck", "Flight",
+            "Luck"
         ];
 
         for (let scrType of scrollTypes) {
@@ -219,7 +242,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-
+            "BlackLatexGloves", "Crown",
             //debug
             
 
@@ -338,7 +361,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.12.3",
+    VERSION: "0.13.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
