@@ -319,16 +319,6 @@ const INTERACTION_OBJECT = {
         inventorySprite: "HealthBox",
         text: "A full box of healing. I should save it for dark times."
     },
-    Candle: {
-        name: "Candle",
-        category: "interaction_item",
-        element: "CANDLE",
-        scale: 1.0 / 2 ** 2,
-        glueToFloor: true,
-        texture: "CandleWax",
-        material: MATERIAL.standard,
-        inventorySprite: "Candle",
-        text: "Simple wax candle. I can light it. Or not."
-    },
+    
    
 };

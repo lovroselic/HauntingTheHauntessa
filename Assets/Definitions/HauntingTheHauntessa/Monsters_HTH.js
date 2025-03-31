@@ -1624,6 +1624,17 @@ const INTERACTION_OBJECT = {
         material: MATERIAL.standard,
         text: "Creeepy?"
     },
+    Candle: {
+        name: "Candle",
+        category: "interaction_item",
+        element: "CANDLE",
+        scale: 1.0 / 2 ** 2,
+        glueToFloor: true,
+        texture: "CandleWax",
+        material: MATERIAL.standard,
+        inventorySprite: "Candle",
+        text: "Simple wax candle. I can light it. Or not."
+    },
 
     //metals
     GoldSphere: {
@@ -2180,6 +2191,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    Saddie: {
+        name: "Saddie",
+        sprite: "Saddie",
+        category: 'crest',
+        voice: "FemaleLow",
+        wants: ["Candle", "Candle", "Candle"],
+        gives: "GoldCoin",
+        text: {
+            intro: "Darkness fills this ghostly place, candles please to light my space!",
+            progress: "One small flame, yet shadows loom. More candles please, dispel this gloom!",
+            conclusion: "Candles burn, the shadows flee! Take this gold, no use to me."
+        }
+    },
     TransGrey: {
         name: "TransGrey",
         sprite: "TransGrey",

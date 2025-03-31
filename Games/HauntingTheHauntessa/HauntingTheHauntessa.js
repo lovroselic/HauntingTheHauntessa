@@ -23,8 +23,8 @@ const DEBUG = {
     FPS: true,
     VERBOSE: true,
     _2D_display: true,
-    INVINCIBLE: true,
-    FREE_MAGIC: true,
+    INVINCIBLE: false,
+    FREE_MAGIC: false,
     keys: true,
     killAllAllowed: true,
     displayInv() {
@@ -81,6 +81,7 @@ const DEBUG = {
             DONE "WhiteTrans" wans Whitepanties gives WhiteCertificate
             DONE "YellowTrans" wants "YellowLatexPanties" gives "YellowCertificate"
             DONE "GreyTrans" wants "GreyLatexPanties" gives "GreyCertificate"
+            DONE Saddie wants "Candle", "Candle", "Candle" give GoldCoin
 
 
 
@@ -147,11 +148,14 @@ const DEBUG = {
         "GreyLatexPanties",
         "TransRedLatexPanties",
         "TransBlackLatexPanties" 
+            DONE "GoldCoin" Saddie (16)
         "GoldCoin"
         "GoldCoin"
         "GoldCoin"
         "GoldCoin"
-        "GoldCoin"
+        "Candle", 
+        "Candle", 
+        "Candle"
 
 
         Maybe: , candle, ,
@@ -188,7 +192,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 2; //2
+        GAME.level = 16; //2
         GAME.gold = 535;
         GAME.lives = 1;
 
@@ -244,6 +248,7 @@ const DEBUG = {
         let invItems = [
             "BlackLatexGloves", "Crown",
             //debug
+            "Candle", "Candle", "Candle",
             
 
         ];
@@ -361,7 +366,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.13.0",
+    VERSION: "0.13.1",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

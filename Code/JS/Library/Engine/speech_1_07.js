@@ -53,9 +53,10 @@ const SPEECH = {
       console.log(`%cSPEECH not ready ....`, "color: #A00");
       return;
     }
-    if (speechSynthesis.pending) {
-      if (SPEECH.VERBOSE) console.log(`%cSPEECH is already speaking. Skipping new text.`, "color: #A00");
-      return;
+
+    if (speechSynthesis.speaking || speechSynthesis.pending) {
+      if (SPEECH.VERBOSE) console.log(`%cSPEECH interrupted. Starting new text.`, "color: #A00");
+      speechSynthesis.cancel();
     }
 
     let msg = new SpeechSynthesisUtterance();
@@ -72,9 +73,10 @@ const SPEECH = {
       console.log(`%cSPEECH not ready ....`, "color: #A00");
       return;
     }
-    if (speechSynthesis.pending || speechSynthesis.speaking) {
-      if (SPEECH.VERBOSE) console.log(`%cSPEECH is already speaking. Skipping new text.`, "color: #A00");
-      return;
+
+    if (speechSynthesis.speaking || speechSynthesis.pending) {
+      if (SPEECH.VERBOSE) console.log(`%cSPEECH interrupted. Starting new text.`, "color: #A00");
+      speechSynthesis.cancel();
     }
 
     const articulations = ".!?<>+-";
