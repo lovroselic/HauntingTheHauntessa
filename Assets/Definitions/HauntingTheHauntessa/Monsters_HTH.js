@@ -1153,6 +1153,16 @@ const CONTAINER_ITEM_TYPE = {
         material: MATERIAL.standard,
         rotateToNorth: Math.PI,
     },
+    BarrelX: {
+        name: "BarrelX",
+        category: "chest",
+        element: "BarrelX",
+        scale: 1.7 / 2 ** 2,
+        glueToFloor: true,
+        texture: "x_barrel_BaseColor",
+        material: MATERIAL.standard,
+        rotateToNorth: Math.PI,
+    },
 
 };
 
@@ -1454,7 +1464,33 @@ const MONSTER_TYPE = {
         missile: Blue3D_Bouncer,
         missileType: COMMON_ITEM_TYPE.BlueBounceball,
     },
-
+    MadHandy: {
+        name: "MadHandy",
+        model: "MadHandy",
+        scale: 1.5 / 2 ** 3,
+        rotateToNorth: Math.PI,
+        midHeight: 0.55,
+        deathType: "BloodExplosion",
+        inventory: null,
+        //
+        mana: 1,
+        health: 10,
+        attack: 1,
+        magic: 5,
+        defense: 0,
+        xp: 99,
+        //
+        caster: true,
+        shootDistance: 15,
+        stalkDistance: 17,
+        attackSound: "HumanAttack1",
+        hurtSound: "Ow",
+        behaviourArguments: [17, ["wanderer"], 15, ["shoot"]],
+        moveSpeed: 1.0,
+        material: MATERIAL.standardShine,
+        missile: BouncingMissile,
+        missileType: COMMON_ITEM_TYPE.Bounceball,
+    },
 };
 
 const HERO_TYPE = {
@@ -2507,6 +2543,19 @@ const INTERACTION_ENTITY = {
 };
 
 const INTERACTION_SHRINE = {
+    LatexNurse: {
+        name: "LatexNurse",
+        sprite: "LatexNurse",
+        category: 'crest',
+        voice: "Female",
+        wants: ["GoldCoin"],
+        gives: "HeartSkill",
+        text: {
+            intro: "For a special price, your health I'll raise. A gold coin here will earn my praise!",
+            progress: null,
+            conclusion: "Coin received, your health enhanced! Feel the strength as life advanced."
+        }
+    },
     CemetaryPet: {
         name: "CemetaryPet",
         sprite: "CemetaryPet",

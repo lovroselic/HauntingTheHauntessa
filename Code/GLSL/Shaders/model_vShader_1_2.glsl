@@ -9,7 +9,7 @@ precision highp float;
 precision mediump float;
 #endif
 
-const int MAX_JOINTS = 160;                             //it needs to have same number as ENGINE.INI.MAX_JOINTS!!!!
+const int MAX_JOINTS = 160;                             //it needs to have same number as ENGINE.INI.MAX_JOINTS!!!! default1 60
 
 in vec4 aVertexPosition;
 in vec3 aVertexNormal;

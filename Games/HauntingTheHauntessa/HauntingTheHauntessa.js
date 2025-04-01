@@ -192,7 +192,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 16; //2
+        GAME.level = 2; //2
         GAME.gold = 535;
         GAME.lives = 1;
 
@@ -248,7 +248,7 @@ const DEBUG = {
         let invItems = [
             "BlackLatexGloves", "Crown",
             //debug
-            "Candle", "Candle", "Candle",
+            //"GoldCoin", 
             
 
         ];
@@ -366,7 +366,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.13.1",
+    VERSION: "0.13.2",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

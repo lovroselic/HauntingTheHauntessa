@@ -124,19 +124,7 @@ const INTERACTION_SHRINE = {
             conclusion: "I have sharpened your heels. You are even more dangerous now.",
         }
     },
-    Hearty: {
-        name: "Hearty",
-        sprite: "Hearty",
-        category: 'crest',
-        voice: "Princess",
-        wants: ["GoldCoin"],
-        gives: "HeartSkill",
-        text: {
-            intro: "For a special gold coin I can get my health improved here.",
-            progress: null,
-            conclusion: "Excellent. I am feeling so much better now.",
-        }
-    },
+   
     Doctress: {
         name: "Doctress",
         sprite: "Doctress",

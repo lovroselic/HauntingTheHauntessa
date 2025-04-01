@@ -774,6 +774,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/Dagger_Base_Color.jpg", name: "Dagger_Base_Color" },
     { srcName: "ObjectTextures/Skull_texture.jpg", name: "Skull_texture" },
     { srcName: "ObjectTextures/CandleWax.jpg", name: "CandleWax" },
+    { srcName: "ObjectTextures/x_barrel_BaseColor.jpg", name: "x_barrel_BaseColor" },
 
     /** other monster textures */
     { srcName: "ObjectTextures/RedGoldBat.jpg", name: "RedGoldBat" },
@@ -852,7 +853,7 @@ LoadObjects = [
     "gem.obj", "coins.obj", "key.obj", "ball.obj", "blockwall.obj",
     "pentagram.obj", "sting.obj", "heart.obj", "shield.obj", "magicFlask.obj",
     "treasure_chest.obj", "wardrobe.obj", "barrel.obj", "Barell2.obj", "Barell3.obj", "crate.obj", "crateFragile.obj", "closet.obj", "bookshelf.obj",
-    "pirate_chest.obj", "closet4.obj", "iron_chest.obj", "Chest10.obj",
+    "pirate_chest.obj", "closet4.obj", "iron_chest.obj", "Chest10.obj", "BarrelX.obj",
     "scroll.obj", "coin.obj",
     "cake.obj", "steak.obj", "can.obj", "wine.obj",
     "apple.obj", "crown.obj", "dagger.obj", "mushroom.obj", "skull.obj", "Candle.obj",
@@ -861,7 +862,8 @@ LoadObjects = [
 LoadModels = [
     'ThePrincess.gltf',
     "Chicken.gltf", "Pig.gltf",
-    "Bat.gltf", "MissGalaxy.gltf", "Spider.gltf", "Dragon.gltf"
+    "Bat.gltf", "MissGalaxy.gltf", "Spider.gltf", "Dragon.gltf",
+    "mandy.gltf",
 ];
 
 LoadSprites = [
@@ -922,6 +924,7 @@ LoadSprites = [
     { srcName: "EntityPictures/TransGrey.jpg", name: "TransGrey" },
     { srcName: "EntityPictures/HeelTransa.jpg", name: "HeelTransa" },
     { srcName: "EntityPictures/Saddie.jpg", name: "Saddie" },
+    { srcName: "EntityPictures/LatexNurse.jpg", name: "LatexNurse" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
@@ -1041,8 +1044,6 @@ LoadSprites = [
     { srcName: "Doors/DungeonDoor_Cyan.png", name: "DungeonDoor_Cyan" },
     { srcName: "Doors/DungeonDoor_Orange.png", name: "DungeonDoor_Orange" },
     { srcName: "Doors/DungeonDoor_Pink.png", name: "DungeonDoor_Pink" },
-
-    //shrines
 
     //scrolls
     { srcName: "Scrolls/SCR_Cripple2.png", name: "SCR_Cripple" },

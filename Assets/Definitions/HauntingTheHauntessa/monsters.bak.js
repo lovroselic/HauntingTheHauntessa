@@ -1,8 +1,8 @@
 const MONSTER_TYPE = {
-    
-    
-    
-    
+
+
+
+
     Wolf: {
         name: "Wolf",
         model: "Wolf",
@@ -44,8 +44,8 @@ const MONSTER_TYPE = {
         moveSpeed: 1.3,
         material: MATERIAL.greenFluence,
     },
-    
-    
+
+
     MissGalaxyGold: {
         name: "MissGalaxyGold",
         texture: "MissGalaxyGold",
@@ -499,7 +499,7 @@ const MONSTER_TYPE = {
         moveSpeed: 1.2,
         material: MATERIAL.standardShine,
     },
-    
+
     RedDragon: {
         name: "RedDragon",
         texture: "RedDragon",
@@ -739,4 +739,34 @@ const MONSTER_TYPE = {
         missile: BouncingMissile,
         missileType: COMMON_ITEM_TYPE.Bounceball,
     },
+
+    //new
+    /*BatCat: {
+       name: "BatCat",
+       model: "BatCat",
+       scale: 1.0 / 2 ** 1,
+       rotateToNorth: Math.PI,
+       midHeight: 0.25,
+       fly: 0.25,
+       deathType: "BloodExplosion",
+ 
+       mana: 1,
+       health: 1,
+       attack: 1,
+       magic: 3,
+       defense: 5,
+       xp: 99,
+ 
+       caster: true,
+       directMagicDamage: true,
+       attackSound: "MonsterAttack1",
+       hurtSound: "MonsterHurt",
+       behaviourArguments: [20, ["wanderer"], 15, ["shoot"]],
+       moveSpeed: 1.0,
+       shootDistance: 15,
+       stalkDistance: 8,
+       material: MATERIAL.gold,
+       missile: Blue3D_Bouncer,
+       missileType: COMMON_ITEM_TYPE.BlueBounceball,
+   },*/
 };
