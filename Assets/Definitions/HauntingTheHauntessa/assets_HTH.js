@@ -863,7 +863,7 @@ LoadModels = [
     'ThePrincess.gltf',
     "Chicken.gltf", "Pig.gltf",
     "Bat.gltf", "MissGalaxy.gltf", "Spider.gltf", "Dragon.gltf",
-    "mandy.gltf", "NeverBlink.gltf", "EvilNun.gltf"
+    "mandy.gltf", "NeverBlink.gltf", "EvilNun.gltf", "LizardMan.gltf", 
 ];
 
 LoadSprites = [
