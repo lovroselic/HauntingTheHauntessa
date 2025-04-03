@@ -841,6 +841,17 @@ LoadAudio = [
     { srcName: "HumanAttack1.mp3", name: "HumanAttack1" },
     { srcName: "Ow.mp3", name: "Ow" },
     { srcName: "MonsterRoar.mp3", name: "MonsterRoar" },
+    { srcName: "BeastAttack.mp3", name: "BeastAttack" },
+    { srcName: "BeastAttack2.mp3", name: "BeastAttack2" },
+    { srcName: "DeepZombieAttack.mp3", name: "DeepZombieAttack" },
+    { srcName: "FemaleAttack1.mp3", name: "FemaleAttack1" },
+    { srcName: "FemaleAttack2.mp3", name: "FemaleAttack2" },
+    { srcName: "FemaleAttack3.mp3", name: "FemaleAttack3" },
+    { srcName: "FemaleAttack4.mp3", name: "FemaleAttack4" },
+    { srcName: "HurtScream.mp3", name: "HurtScream" },
+    { srcName: "Ow2.mp3", name: "Ow2" },
+    { srcName: "PiercingScream.mp3", name: "PiercingScream" },
+    { srcName: "Roar.mp3", name: "Roar" },
 ];
 
 LoadShaders = [
@@ -863,7 +874,7 @@ LoadModels = [
     'ThePrincess.gltf',
     "Chicken.gltf", "Pig.gltf",
     "Bat.gltf", "MissGalaxy.gltf", "Spider.gltf", "Dragon.gltf",
-    "mandy.gltf", "NeverBlink.gltf", "EvilNun.gltf", "LizardMan.gltf", 
+    "mandy.gltf", "NeverBlink.gltf", "EvilNun.gltf", "LizardMan.gltf", "NecroMorph.gltf","CyGirl.gltf"
 ];
 
 LoadSprites = [

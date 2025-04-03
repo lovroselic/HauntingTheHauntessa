@@ -1376,7 +1376,9 @@ const MONSTER_TYPE = {
         moveSpeed: 1.15,
         material: MATERIAL.standard,
     },
-    /////////////
+
+
+    ///////////// - dummies, not properly set !!!
     MissGalaxy: {
         name: "MissGalaxy",
         model: "MissGalaxy",
@@ -1573,8 +1575,61 @@ const MONSTER_TYPE = {
         missile: BouncingMissile,
         missileType: COMMON_ITEM_TYPE.Bounceball,
     },
+    NecroMorph: {
+        name: "NecroMorph",
+        model: "NecroMorph",
+        scale: 0.85 / 2 ** 1,
+        rotateToNorth: Math.PI,
+        midHeight: 0.55,
+        deathType: "BloodExplosion",
+        inventory: null,
+        //
+        mana: 1,
+        health: 10,
+        attack: 1,
+        magic: 5,
+        defense: 0,
+        xp: 99,
+        //
+        caster: true,
+        shootDistance: 15,
+        stalkDistance: 17,
+        attackSound: "HumanAttack1",
+        hurtSound: "Ow",
+        behaviourArguments: [17, ["wanderer"], 15, ["shoot"]],
+        moveSpeed: 0.8,
+        material: MATERIAL.standardShine,
+        missile: BouncingMissile,
+        missileType: COMMON_ITEM_TYPE.Bounceball,
+    },
 
-  
+    CyGirl: {
+        name: "CyGirl",
+        model: "CyGirl",
+        scale: 1.5/ 2 ** 5,
+        rotateToNorth: Math.PI,
+        midHeight: 0.55,
+        deathType: "BloodExplosion",
+        inventory: null,
+        //
+        mana: 1,
+        health: 10,
+        attack: 1,
+        magic: 5,
+        defense: 0,
+        xp: 99,
+        //
+        caster: true,
+        shootDistance: 15,
+        stalkDistance: 17,
+        attackSound: "HumanAttack1",
+        hurtSound: "Ow",
+        behaviourArguments: [17, ["wanderer"], 15, ["shoot"]],
+        moveSpeed: 0.8,
+        material: MATERIAL.standardShine,
+        missile: BouncingMissile,
+        missileType: COMMON_ITEM_TYPE.Bounceball,
+    },
 
 
 };
