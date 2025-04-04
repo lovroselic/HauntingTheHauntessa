@@ -383,6 +383,16 @@ const CONTAINER_ITEM_TYPE = {
         material: MATERIAL.standardShine,
         rotateToNorth: 0,
     },
+    BarrelMedieval: {
+        name: "Barrel",
+        category: "chest",
+        element: "BarrelMedieval",
+        scale: 0.9 / 2 ** 3,
+        glueToFloor: true,
+        texture: "BarrelMedieval",
+        material: MATERIAL.standardShine,
+        rotateToNorth: 0,
+    },
     Barrel_459: {
         name: "Barrel_459",
         category: "chest",
@@ -1606,7 +1616,7 @@ const MONSTER_TYPE = {
     CyGirl: {
         name: "CyGirl",
         model: "CyGirl",
-        scale: 1.5/ 2 ** 5,
+        scale: 1.5 / 2 ** 5,
         rotateToNorth: Math.PI,
         midHeight: 0.55,
         deathType: "BloodExplosion",
@@ -1629,6 +1639,64 @@ const MONSTER_TYPE = {
         material: MATERIAL.standardShine,
         missile: BouncingMissile,
         missileType: COMMON_ITEM_TYPE.Bounceball,
+    },
+    Hunter: {
+        name: "Hunter",
+        model: "Hunter",
+        scale: 0.8 / 2 ** 1,
+        rotateToNorth: Math.PI,
+        midHeight: 0.55,
+        deathType: "BloodExplosion",
+        inventory: null,
+        //
+        mana: 1,
+        health: 10,
+        attack: 1,
+        magic: 5,
+        defense: 0,
+        xp: 99,
+        //
+        caster: true,
+        shootDistance: 15,
+        stalkDistance: 17,
+        attackSound: "HumanAttack1",
+        hurtSound: "Ow",
+        behaviourArguments: [17, ["wanderer"], 15, ["shoot"]],
+        moveSpeed: 0.8,
+        material: MATERIAL.standardShine,
+        missile: BouncingMissile,
+        missileType: COMMON_ITEM_TYPE.Bounceball,
+    },
+    Dragon2: {
+        name: "Dragon2",
+        model: "Dragon2",
+        scale: 1.0 / 2 ** 2,
+        rotateToNorth: Math.PI,
+        midHeight: 0.10,
+        fly: 0.40,
+        deathType: "BloodExplosion",
+        //
+        inventory: GOLD_ITEM_TYPE.GoldBar,
+
+        //
+        mana: 10,
+        health: 1,
+        attack: 2,
+        magic: 20,
+        defense: 5,
+        xp: 99,
+        //
+        caster: true,
+        directMagicDamage: true,
+        attackSound: "MonsterAttack1",
+        hurtSound: "MonsterHurt",
+        behaviourArguments: [20, ["wanderer"], 15, ["shoot"]],
+        moveSpeed: 1.0,
+        shootDistance: 15,
+        stalkDistance: 8,
+        material: MATERIAL.gold,
+        missile: Blue3D_Bouncer,
+        missileType: COMMON_ITEM_TYPE.BlueBounceball,
     },
 
 
@@ -1811,6 +1879,17 @@ const INTERACTION_OBJECT = {
         material: MATERIAL.standard,
         inventorySprite: "Candle",
         text: "Simple wax candle. I can light it. Or not."
+    },
+    HornedHelmet: {
+        name: "HornedHelmet",
+        category: "interaction_item",
+        element: "HornedHelmet",
+        scale: 1.0 / 2 ** 6,
+        glueToFloor: true,
+        texture: "HornedHelmetColor",
+        material: MATERIAL.steel,
+        inventorySprite: "HornedHelmet",
+        text: ""
     },
 
     //metals

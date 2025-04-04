@@ -60,7 +60,10 @@ const LIGHT_COLORS = {
     pink: new Float32Array([1.0, 0.0, 0.5]),
     orangeDimmed: new Float32Array([0.8, 0.52, 0.0]),        // Slightly softer and warmer
     softOrange: new Float32Array([0.7, 0.45, 0.05]),         // Even more gentle, muted orange
-    mutedOrange: new Float32Array([0.6, 0.4, 0.1])           // Most subdued, earthy orange
+    mutedOrange: new Float32Array([0.6, 0.4, 0.1]),           // Most subdued, earthy orange
+    steelAmbient: new Float32Array([0.30, 0.32, 0.34]),    // Soft, cool dark-gray base tone
+    steelDiffuse: new Float32Array([0.55, 0.57, 0.59]),    // Brighter, reflective gray tone
+    steelSpecular: new Float32Array([0.85, 0.87, 0.89]),   // Bright specular highlights with bluish tint
 };
 
 /** Materials */
@@ -86,6 +89,7 @@ const MATERIAL = {
     cyanShine: new Material(LIGHT_COLORS.cyan, LIGHT_COLORS.cyan, LIGHT_COLORS.cyan, 0.99),
     orangeShine: new Material(LIGHT_COLORS.orange, LIGHT_COLORS.orange, LIGHT_COLORS.orange, 0.99),
     pinkShine: new Material(LIGHT_COLORS.pink, LIGHT_COLORS.pink, LIGHT_COLORS.pink, 0.99),
+    steel: new Material(LIGHT_COLORS.steelAmbient, LIGHT_COLORS.steelDiffuse, LIGHT_COLORS.steelSpecular, 0.85),
 };
 console.log(`%cMATERIAL v${MATERIAL.VERSION} loaded.`, "color: #888");
 if (ENGINE.verbose) console.table(MATERIAL);

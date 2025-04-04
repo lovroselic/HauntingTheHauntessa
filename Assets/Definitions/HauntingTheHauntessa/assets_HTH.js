@@ -754,6 +754,8 @@ LoadTextures = [
     { srcName: "ObjectTextures/BarrelTexture_485.jpg", name: "BarrelTexture_485" },
     { srcName: "ObjectTextures/BarrelTexture_486.jpg", name: "BarrelTexture_486" },
     { srcName: "ObjectTextures/Chest10.jpg", name: "Chest10" },
+    { srcName: "ObjectTextures/BarrelMedieval.jpg", name: "BarrelMedieval" },
+    { srcName: "ObjectTextures/HornedHelmetColor.jpg", name: "HornedHelmetColor" },
 
     //common items
     { srcName: "ObjectTextures/FireballTexture2.jpg", name: "FireballTexture" },
@@ -864,17 +866,19 @@ LoadObjects = [
     "gem.obj", "coins.obj", "key.obj", "ball.obj", "blockwall.obj",
     "pentagram.obj", "sting.obj", "heart.obj", "shield.obj", "magicFlask.obj",
     "treasure_chest.obj", "wardrobe.obj", "barrel.obj", "Barell2.obj", "Barell3.obj", "crate.obj", "crateFragile.obj", "closet.obj", "bookshelf.obj",
-    "pirate_chest.obj", "closet4.obj", "iron_chest.obj", "Chest10.obj", "BarrelX.obj",
+    "pirate_chest.obj", "closet4.obj", "iron_chest.obj", "Chest10.obj", "BarrelX.obj","BarrelMedieval.obj",
     "scroll.obj", "coin.obj",
     "cake.obj", "steak.obj", "can.obj", "wine.obj",
     "apple.obj", "crown.obj", "dagger.obj", "mushroom.obj", "skull.obj", "Candle.obj",
+    "HornedHelmet.obj",
 ];
 
 LoadModels = [
     'ThePrincess.gltf',
     "Chicken.gltf", "Pig.gltf",
     "Bat.gltf", "MissGalaxy.gltf", "Spider.gltf", "Dragon.gltf",
-    "mandy.gltf", "NeverBlink.gltf", "EvilNun.gltf", "LizardMan.gltf", "NecroMorph.gltf","CyGirl.gltf"
+    "mandy.gltf", "NeverBlink.gltf", "EvilNun.gltf", "LizardMan.gltf", "NecroMorph.gltf","CyGirl.gltf",
+    "Hunteress.gltf","Dragon2.gltf"
 ];
 
 LoadSprites = [
@@ -1145,6 +1149,7 @@ LoadSprites = [
     { srcName: "Items/WhiteCertificate.png", name: "WhiteCertificate" },
     { srcName: "Items/RedCertificate.png", name: "RedCertificate" },
     { srcName: "Items/Candle.png", name: "Candle" },
+    { srcName: "Items/HornedHelmet.png", name: "HornedHelmet" },
 
     //books
     { srcName: "Items/YoniBook.png", name: "YoniBook" },
