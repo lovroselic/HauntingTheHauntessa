@@ -755,7 +755,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/BarrelTexture_486.jpg", name: "BarrelTexture_486" },
     { srcName: "ObjectTextures/Chest10.jpg", name: "Chest10" },
     { srcName: "ObjectTextures/BarrelMedieval.jpg", name: "BarrelMedieval" },
-    { srcName: "ObjectTextures/HornedHelmetColor.jpg", name: "HornedHelmetColor" },
+    { srcName: "ObjectTextures/x_barrel_BaseColor.jpg", name: "x_barrel_BaseColor" },
 
     //common items
     { srcName: "ObjectTextures/FireballTexture2.jpg", name: "FireballTexture" },
@@ -769,14 +769,20 @@ LoadTextures = [
     { srcName: "ObjectTextures/SteakTexture.jpg", name: "SteakTexture" },
     { srcName: "ObjectTextures/WineBottle.jpg", name: "WineBottle" },
     { srcName: "ObjectTextures/cake_basecolor.jpg", name: "cake_basecolor" },
-    { srcName: "ObjectTextures/MushroomTexture.jpg", name: "MushroomTexture" },
+
+    //mana items
+    { srcName: "ObjectTextures/AmanitaBaseColor.jpg", name: "AmanitaBaseColor" },
+    { srcName: "ObjectTextures/SnailColor.jpg", name: "SnailColor" },
+    { srcName: "ObjectTextures/FrogColor.jpg", name: "FrogColor" },
+
 
     /** other object textures */
     { srcName: "ObjectTextures/Apple_BaseColor.jpg", name: "Apple_BaseColor" },
     { srcName: "ObjectTextures/Dagger_Base_Color.jpg", name: "Dagger_Base_Color" },
     { srcName: "ObjectTextures/Skull_texture.jpg", name: "Skull_texture" },
     { srcName: "ObjectTextures/CandleWax.jpg", name: "CandleWax" },
-    { srcName: "ObjectTextures/x_barrel_BaseColor.jpg", name: "x_barrel_BaseColor" },
+    { srcName: "ObjectTextures/MushroomTexture.jpg", name: "MushroomTexture" },
+    { srcName: "ObjectTextures/HornedHelmetColor.jpg", name: "HornedHelmetColor" },
 
     /** other monster textures */
     { srcName: "ObjectTextures/RedGoldBat.jpg", name: "RedGoldBat" },
@@ -866,9 +872,10 @@ LoadObjects = [
     "gem.obj", "coins.obj", "key.obj", "ball.obj", "blockwall.obj",
     "pentagram.obj", "sting.obj", "heart.obj", "shield.obj", "magicFlask.obj",
     "treasure_chest.obj", "wardrobe.obj", "barrel.obj", "Barell2.obj", "Barell3.obj", "crate.obj", "crateFragile.obj", "closet.obj", "bookshelf.obj",
-    "pirate_chest.obj", "closet4.obj", "iron_chest.obj", "Chest10.obj", "BarrelX.obj","BarrelMedieval.obj",
+    "pirate_chest.obj", "closet4.obj", "iron_chest.obj", "Chest10.obj", "BarrelX.obj", "BarrelMedieval.obj",
     "scroll.obj", "coin.obj",
     "cake.obj", "steak.obj", "can.obj", "wine.obj",
+    "Amanita.obj", "Snail.obj", "Frog.obj",
     "apple.obj", "crown.obj", "dagger.obj", "mushroom.obj", "skull.obj", "Candle.obj",
     "HornedHelmet.obj",
 ];
@@ -877,8 +884,8 @@ LoadModels = [
     'ThePrincess.gltf',
     "Chicken.gltf", "Pig.gltf",
     "Bat.gltf", "MissGalaxy.gltf", "Spider.gltf", "Dragon.gltf",
-    "mandy.gltf", "NeverBlink.gltf", "EvilNun.gltf", "LizardMan.gltf", "NecroMorph.gltf","CyGirl.gltf",
-    "Hunteress.gltf","Dragon2.gltf"
+    "mandy.gltf", "NeverBlink.gltf", "EvilNun.gltf", "LizardMan.gltf", "NecroMorph.gltf", "CyGirl.gltf",
+    "Hunteress.gltf", "Dragon2.gltf"
 ];
 
 LoadSprites = [
@@ -892,7 +899,6 @@ LoadSprites = [
     { srcName: "Slides/HTH_slide4.jpg", name: "HTH_slide4" },
 
     // frescoes - entities
-
     { srcName: "EntityPictures/Darksy.jpg", name: "Darksy" },
     { srcName: "EntityPictures/CuteDemon.jpg", name: "CuteDemon" },
     { srcName: "EntityPictures/PrincessBed2.jpg", name: "PrincessBed" },
@@ -1107,6 +1113,11 @@ LoadSprites = [
     { srcName: "Items/Steak.png", name: "Steak" },
     { srcName: "Items/RoastChicken.png", name: "RoastChicken" },
     { srcName: "Items/RoastPig.png", name: "RoastPig" },
+
+    //mana items
+    { srcName: "Items/Amanita.png", name: "Amanita" },
+    { srcName: "Items/Snail.png", name: "Snail" },
+    { srcName: "Items/ManaFrog.png", name: "ManaFrog" },
 
     // items
     { srcName: "Items/Apple.png", name: "Apple" },

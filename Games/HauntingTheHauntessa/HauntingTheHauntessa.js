@@ -96,7 +96,7 @@ const DEBUG = {
             DONE "BrownLeatherBoots" (5) floor
             DONE "BlueLatexTop" -> Cousin (8)
             DONE "BrownLatexBootyShorts" - Maid(5)
-        "PinkDuster" **quest
+            DONE "PinkDuster" **quest --> (2)
             DONE "BlackLatexGloves" (1) wardrobe
             DONE "Crown" (1) - floor;
             DONE "GoldenScepter" (11) -cont floor
@@ -104,7 +104,7 @@ const DEBUG = {
             DONE "BattleAxe", --> Axxa(13)
             DONE "Mace" ---> NeenJay (13)
             DONE "DumbBell" --> DumbBelle (13)
-        "DumbBell"
+            DONE "DumbBell" --> (2)
             DONE Dagger,  --> SpyedHer (15)
         Dagger, **quest
         Dagger, **quest
@@ -143,22 +143,19 @@ const DEBUG = {
             DONE "BlackCertificate",  "BlackTransa"--> (23)
             DONE "GreyCertificate", GreyTrans (23)
             DONE YellowCertificate" yellow transa (23)
-        "YellowLatexPanties",
+            DONE "YellowLatexPanties", --> (2)
         "WhiteLatexPanties",
         "GreyLatexPanties",
         "TransRedLatexPanties",
         "TransBlackLatexPanties" 
             DONE "GoldCoin" Saddie (16)
+            DONE "GoldCoin" --> (2)
         "GoldCoin"
         "GoldCoin"
         "GoldCoin"
-        "GoldCoin"
-        "Candle", 
+            DONE "Candle", --> (2)
         "Candle", 
         "Candle"
-
-
-        Maybe: , candle, ,
 
 
 
@@ -177,7 +174,7 @@ const DEBUG = {
             - CemetaryPet: health - 2
 
         CoinTrainers
-            -
+            - LatexNurse - health
 
         ?Missing keys:
             DONE Red (15)
@@ -185,7 +182,7 @@ const DEBUG = {
             DONE Emerald TransBossa(23)
 
         Missing scrolls:
-            - flight
+            
 
 
         */
@@ -249,7 +246,7 @@ const DEBUG = {
             "BlackLatexGloves", "Crown",
             //debug
             //"GoldCoin", 
-            
+
 
         ];
 
@@ -351,6 +348,9 @@ const INI = {
     MANA: {
         FireBall: 5,
         GreenBat: 10,
+        Amanita: 20,
+        Snail: 40,
+        ManaFrog: 80,
     },
     HEALTH_INC: 8,
     MANA_INC: 7,
@@ -366,7 +366,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.13.6",
+    VERSION: "0.14.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
