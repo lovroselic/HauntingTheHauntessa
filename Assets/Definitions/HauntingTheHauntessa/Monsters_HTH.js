@@ -2520,6 +2520,19 @@ const INTERACTION_ENTITY = {
 };
 
 const INTERACTION_SHRINE = {
+    Axees: {
+        name: "Axees",
+        sprite: "Axees",
+        category: 'crest',
+        voice: "Female",
+        wants: ["GoldCoin"],
+        gives: "Attack",
+        text: {
+            intro: "Learn to strike with mighty hacks! Just one coin to wield your axe!",
+            progress: null,
+            conclusion: "Coin well spent, your skills are prime! Now axe your foes every time!"
+        }
+    },
     LatexNurse: {
         name: "LatexNurse",
         sprite: "LatexNurse",
@@ -2589,7 +2602,6 @@ const INTERACTION_SHRINE = {
             conclusion: "Stars complete, your strikes precise! Now learn to attack swift and nice."
         }
     },
-
     Muscula: {
         name: "Muscula",
         sprite: "Muscula",

@@ -488,7 +488,7 @@ const MAP = {
         oracles: '[[1315,1,"MC_Transa"],[224,5,"ClearTransa"],[894,7,"BlackTransaOracle"],[1310,1,"HeelTransa"]]',
     }
     ,
-    24: {
+    24 : {
         name: "Train Without Pain",
         sg: 0,
         maxSpawned: -1,
@@ -499,13 +499,13 @@ const MAP = {
         wall: "RedishRocks11",
         floor: "MossyPattern2",
         ceil: "RockWall_SDXL_009",
-        start: '[928,3]',
+        start: '[1088,5]',
         lights: '[[94,7,"Lamp43","standard2"],[1291,1,"Fireplace211","fireplace"],[1370,3,"DuaLLantern_018","standardUltraFaint"],[1517,3,"FluxLight106","standardUltraFaint"],[1601,3,"DuaLLantern_016","standardUltraFaint"],[1527,5,"SkullLantern54","standardUltraFaint"],[1611,5,"FluxLight111c","standardUltraFaint"]]',
         gates: '[[430,1,"24.1","2.13","Open"],[899,7,"24.2","25.1","Up"]]',
         doors: '[1170,1086,1076,1160,1186,929,1004]',
         triggers: '[[301,7,"SmoothWallButton",1,365],[307,7,"SmoothWallButton",1,369]]',
-        trainers: '[[924,5,"LatexNurse"]]',
-    }
+        trainers: '[[924,5,"LatexNurse"],[1091,3,"Axees"]]',
+        }
     ,
     25: {
         name: "North Balcony",
