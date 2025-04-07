@@ -175,6 +175,8 @@ const DEBUG = {
 
         CoinTrainers
             - LatexNurse - health
+            - MoonPriestess - magic
+            - Axees - attack
 
         ?Missing keys:
             DONE Red (15)
@@ -189,7 +191,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 2; //2
+        GAME.level = 5; //3
         GAME.gold = 535;
         GAME.lives = 1;
 
@@ -366,7 +368,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.14.1",
+    VERSION: "0.14.2",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

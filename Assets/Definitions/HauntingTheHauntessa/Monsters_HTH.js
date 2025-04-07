@@ -2520,6 +2520,19 @@ const INTERACTION_ENTITY = {
 };
 
 const INTERACTION_SHRINE = {
+    MoonPriestess: {
+        name: "MoonPriestess",
+        sprite: "MoonPriestess",
+        category: 'crest',
+        voice: "Female",
+        wants: ["GoldCoin"],
+        gives: "Magic",
+        text: {
+            intro: "Fire and water, magic's art. One gold coin, lessons start!",
+            progress: null,
+            conclusion: "The coin is yours no longer mine. Your power grows, your sparks align."
+        }
+    },
     Axees: {
         name: "Axees",
         sprite: "Axees",
