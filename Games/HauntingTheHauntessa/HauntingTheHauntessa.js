@@ -86,7 +86,7 @@ const DEBUG = {
 
 
             DONE Rose, -> EmoTina (16)
-        Rose, **quest
+            DONE Rose, **quest --> (5)
         Rose, **quest
             DONE GlassOfWine,--> MissRose (8)
             DONE Wine **quest BarGuest(21)
@@ -108,7 +108,7 @@ const DEBUG = {
             DONE Dagger,  --> SpyedHer (15)
         Dagger, **quest
         Dagger, **quest
-        "Beer", 
+            DONE "Beer",  --> (5)
         "Beer"
         "GlassOfBeer", **quest
         "GlassOfBeer", **quest
@@ -122,7 +122,7 @@ const DEBUG = {
         "Mushroom", 
         "Mushroom"
             DONE "Skull", --> (16)
-        "Skull", 
+            DONE "Skull", --> (5)
         "Skull", 
         "Skull", 
         "Skull"
@@ -177,6 +177,8 @@ const DEBUG = {
             - LatexNurse - health
             - MoonPriestess - magic
             - Axees - attack
+            - Dafensa - defense
+            - Poola - mana
 
         ?Missing keys:
             DONE Red (15)
@@ -191,7 +193,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 5; //3
+        GAME.level = 5; //5
         GAME.gold = 535;
         GAME.lives = 1;
 
@@ -368,7 +370,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.14.2",
+    VERSION: "0.14.3",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

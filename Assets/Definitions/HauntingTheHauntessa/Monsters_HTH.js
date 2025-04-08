@@ -97,6 +97,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    RedHeadMaid: {
+        name: "RedHeadMaid",
+        sprite: "RedHeadMaid",
+        category: 'crest',
+        voice: "Female2",
+        text: "I wonder where does all those violent mad naked handmaids coming from? Hauntessa again? Do something about it, Princess.",
+        interactionCategory: "oracle",
+    },
     HeelTransa: {
         name: "HeelTransa",
         sprite: "HeelTransa",
@@ -2520,11 +2528,37 @@ const INTERACTION_ENTITY = {
 };
 
 const INTERACTION_SHRINE = {
+    Poola: {
+        name: "Poola",
+        sprite: "Poola",
+        category: 'crest',
+        voice: "FemaleLow2",
+        wants: ["GoldCoin"],
+        gives: "ManaSkill",
+        text: {
+            intro: "Wanna boost that mana pool? Toss a coin and join me in the cool!",
+            progress: null,
+            conclusion: "Splash and sparkle, magic's rule! Your mana's deep like this bikini pool."
+        }
+    },
+    DaFensa: {
+        name: "DaFensa",
+        sprite: "DaFensa",
+        category: 'crest',
+        voice: "FemaleLow",
+        wants: ["GoldCoin"],
+        gives: "Defense",
+        text: {
+            intro: "Defense is the best defense, I always say. One small coin, and you're on your way!",
+            progress: null,
+            conclusion: "You paid the price, the shield is yours. Stand your ground, hold your course!"
+        }
+    },
     MoonPriestess: {
         name: "MoonPriestess",
         sprite: "MoonPriestess",
         category: 'crest',
-        voice: "Female",
+        voice: "Female2",
         wants: ["GoldCoin"],
         gives: "Magic",
         text: {
