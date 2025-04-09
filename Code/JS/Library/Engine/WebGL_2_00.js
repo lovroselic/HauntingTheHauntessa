@@ -1841,7 +1841,7 @@ class $3D_player {
         const feetGrid3D = Vector3.to_Grid3D(feetPos3);
         const gridType = REVERSED_MAPDICT[this.GA.getValue(feetGrid3D)];
 
-       // console.info("checkLanding", "feetPos3", feetPos3, "feetGrid3D", feetGrid3D, "gridType", gridType);
+        // console.info("checkLanding", "feetPos3", feetPos3, "feetGrid3D", feetGrid3D, "gridType", gridType);
 
         switch (gridType) {
             case undefined:
@@ -3976,7 +3976,7 @@ class StaticParticleBomb extends ParticleEmmiter {
 class $3D_Entity {
     constructor(grid, type, dir = UP3) {
         this.fly = 0;
-        this.heigth = WebGL.INI.HERO_HEIGHT;                                        //this is essential for sphere distance calculations!
+        this.heigth = WebGL.INI.HERO_HEIGHT;                                        //height is essential for sphere distance calculations, but gets overwritten with more proper values this is falllback, keept it.
         this.distance = null;
         this.airDistance = null;
         this.proximityDistance = null;                                              //euclidian distance when close up
@@ -3984,8 +3984,8 @@ class $3D_Entity {
         this.dirStack = [];
         this.final_boss = false;
         this.boss = false;
-        this.dropped = false;                                                       //spawned as a trap
-        this.texture = null;                                                        //model is the texture source, until change is forced
+        this.dropped = false;                                                       //spawned as a trap or from lair
+        this.texture = null;                                                        //texture source is model, until change is forced
         this.resetTime();
         this.grid = grid;
         this.type = type;
@@ -4005,7 +4005,13 @@ class $3D_Entity {
         this.translate = Vector3.from_Grid(grid, this.minY + this.fly + this.grid.z);
         this.boundingBox = new BoundingBox(this.model.meshes[0].primitives[0].positions.max, this.model.meshes[0].primitives[0].positions.min, this.scale);
         this.actor = new $3D_ACTOR(this, this.model.animations, this.model.skins[0], this.jointMatrix);
-        if (this.fly > 0) this.heigth = this.midHeight;                                          //fly takes care that pos approximatelly equals body height 
+
+        if (this.fly > 0) {
+            this.heigth = this.midHeight;                                           //fly takes care that pos approximatelly equals body height 
+        } else { 
+           this.heigth = this.boundingBox.max.y - this.boundingBox.min.y;           //superseed height from bounding box
+        }
+
         this.moveState = new $3D_MoveState(this.translate, dir, this.rotateToNorth, this);
 
         const dZ = (this.boundingBox.max.z - this.boundingBox.min.z) / 2;

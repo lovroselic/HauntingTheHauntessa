@@ -1006,8 +1006,9 @@ class Animated_3d_entity extends IAM {
             const BB = enemy.moveState.boundingBox;
             const grids = [];
             const xVals = [BB.min.x, BB.max.x];
-            const yVals = [BB.min.y, BB.max.y];
+            //const yVals = [BB.min.y, BB.max.y];
             const zVals = [BB.min.z, BB.max.z];
+            const yVals = [-(enemy.heigth - 0.001)];                    //just check the feet adjusted by small E
 
             for (const x of xVals) {
                 for (const z of zVals) {

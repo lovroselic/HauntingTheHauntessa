@@ -63,5 +63,5 @@ MON.sort_values(["attack", "defense", "magic", "health", "xp", "mana", "name"], 
 # =============================================================================
 # print(MON.info())
 excel = ExcelWriter("MonsterList.xlsx", engine='xlsxwriter')
-MON.to_excel(excel, 'Monster data')
+MON.to_excel(excel, sheet_name='Monster data')
 excel.close()

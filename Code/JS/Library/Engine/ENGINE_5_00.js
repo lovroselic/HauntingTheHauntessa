@@ -3542,7 +3542,7 @@ class $3D_ACTOR {
     }
 }
 class $3D_MoveState {
-    static E = 0.0001;
+    static E = 0.01;
     constructor(translation_vector, dir, rotation_to_north, parent) {
         this.pos = translation_vector;                            //Vector3
         this.dir = dir;                                           //2D dir
@@ -3606,9 +3606,10 @@ class $3D_MoveState {
     }
     setGrid() {
         this.grid = Vector3.to_FP_Grid3D(this.pos);
-        this.grid.z -= this.parent.minY;                                        //adjusted for minY because some of them are negative and can leak from grid boundaries
-        this.grid.z += this.parent.heigth + $3D_MoveState.E;                    //for FP accuracy and adjustment to body height so that reference coordinates are comparable to HERO, or adds midHeight to flying monsters
-        this.referencePos = Vector3.from_grid3D(this.grid);                     //to display coordinates; which are used for fast collision detection between HERO and Enemies
+        this.grid.z -= this.parent.minY;                                                                 //adjusted for minY because some of them are negative and can leak from grid boundaries
+        this.grid.z += this.parent.heigth + $3D_MoveState.E;                                             // adjusted to height + small E   
+        this.referencePos = Vector3.from_grid3D(this.grid);                                              //to display coordinates; which are used for fast collision detection between HERO and Enemies
+        //console.warn("....setGrid", this.parent.name, this.parent.id, this.grid );
     }
 }
 class _1D_MoveState {

@@ -740,33 +740,7 @@ const MONSTER_TYPE = {
         missileType: COMMON_ITEM_TYPE.Bounceball,
     },
 
-    MissGalaxy: {
-        name: "MissGalaxy",
-        model: "MissGalaxy",
-        scale: 0.9 / 2 ** 2,
-        rotateToNorth: Math.PI,
-        midHeight: 0.55,
-        deathType: "BloodExplosion",
-        inventory: null,
-        //
-        mana: 31,
-        health: 10,
-        attack: 98,
-        magic: 5,
-        defense: 0,
-        xp: 99,
-        //
-        caster: true,
-        shootDistance: 15,
-        stalkDistance: 17,
-        attackSound: "HumanAttack1",
-        hurtSound: "Ow",
-        behaviourArguments: [17, ["wanderer"], 15, ["shoot"]],
-        moveSpeed: 1.0,
-        material: MATERIAL.standardShine,
-        missile: BouncingMissile,
-        missileType: COMMON_ITEM_TYPE.Bounceball,
-    },
+
     MissGalaxyGreen: {
         name: "MissGalaxyGreen",
         texture: "MissGalaxyGreen",
@@ -796,34 +770,7 @@ const MONSTER_TYPE = {
         missileType: COMMON_ITEM_TYPE.RedFireball,
     },
 
-    
-    MadHandy: {
-        name: "MadHandy",
-        model: "MadHandy",
-        scale: 1.5 / 2 ** 3,
-        rotateToNorth: Math.PI,
-        midHeight: 0.55,
-        deathType: "BloodExplosion",
-        inventory: null,
-        //
-        mana: 1,
-        health: 10,
-        attack: 1,
-        magic: 5,
-        defense: 0,
-        xp: 99,
-        //
-        caster: true,
-        shootDistance: 15,
-        stalkDistance: 17,
-        attackSound: "HumanAttack1",
-        hurtSound: "Ow",
-        behaviourArguments: [17, ["wanderer"], 15, ["shoot"]],
-        moveSpeed: 1.0,
-        material: MATERIAL.standardShine,
-        missile: BouncingMissile,
-        missileType: COMMON_ITEM_TYPE.Bounceball,
-    },
+
     NeverBlink: {
         name: "NeverBlink",
         model: "NeverBlink",
