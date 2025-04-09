@@ -14,7 +14,7 @@ const MAP_TEXT = {
     2: "My throne room. Here I listen to the petitions of my subjects. This time they want me to get rid of Hauntessa Spookish.",
     3: "Beyound this hall, there is and outside world. Am I ready yet? Will I ever be?",
     4: "",
-    5: "Better to store everything. You never knw when it's come handy.",
+    5: "Better to store everything. You never know when you need it.",
     6: "The only god this shrines channel is gold. I hope you have a lot of it.",
     7: "It's been 666 days since I trained last. I deserve a doughnut.",
     8: "",
@@ -156,7 +156,7 @@ const MAP = {
         monsterList: '["Bat","RedGoldBat","DarkRedBat"]',
         }
     ,
-    6: {
+    6 : {
         name: "The Temple",
         sg: 0,
         maxSpawned: 6,
@@ -168,14 +168,19 @@ const MAP = {
         floor: "DarkWallSDXL314",
         ceil: "RoughCave08",
         start: '[426,5]',
-        decals: '[[665,5,"Ivy17","crest"],[750,5,"Ivy4","crest"],[801,5,"Ivy16","crest"],[660,3,"Ivy16","crest"],[694,3,"Ivy1","crest"],[762,3,"Ivy12","crest"],[796,3,"Ivy16","crest"],[619,7,"Ivy17","crest"],[621,7,"Ivy1","crest"],[624,7,"Ivy2","crest"],[616,7,"Ivy4","crest"],[829,1,"Ivy4","crest"],[827,1,"Ivy12","crest"],[825,1,"Ivy11","crest"],[822,1,"Ivy12a","crest"],[820,1,"Ivy1","crest"],[926,7,"Ivy303","crest"],[924,7,"Ivy12a","crest"],[922,7,"Ivy17","crest"],[929,7,"Ivy15","crest"],[1093,1,"Ivy16","crest"],[1096,1,"Ivy300","crest"],[1100,1,"Ivy1","crest"],[955,5,"Ivy305","crest"],[1057,5,"Ivy305","crest"],[982,3,"Ivy16","crest"],[1050,3,"Ivy14","crest"],[1229,7,"IvyWall_517","texture"],[1230,7,"IvyWall_517","texture"],[1231,7,"IvyWall_517","texture"],[1232,7,"IvyWall_517","texture"],[1233,7,"IvyWall_517","texture"],[1234,7,"IvyWall_517","texture"],[1235,7,"IvyWall_517","texture"],[1365,1,"IvyWall_518","texture"],[1366,1,"IvyWall_518","texture"],[1367,1,"IvyWall_518","texture"],[1368,1,"IvyWall_518","texture"],[1369,1,"IvyWall_518","texture"],[1370,1,"IvyWall_518","texture"],[1371,1,"IvyWall_518","texture"],[1245,5,"IvyWall_519","texture"],[1262,5,"IvyWall_519","texture"],[1279,5,"IvyWall_519","texture"],[1296,5,"IvyWall_519","texture"],[1313,5,"IvyWall_519","texture"],[1330,5,"IvyWall_519","texture"],[1347,5,"IvyWall_519","texture"],[1253,3,"IvyWall_521","texture"],[1270,3,"IvyWall_521","texture"],[1287,3,"IvyWall_521","texture"],[1304,3,"IvyWall_521","texture"],[1321,3,"IvyWall_521","texture"],[1338,3,"IvyWall_521","texture"],[1355,3,"IvyWall_521","texture"],[375,5,"RetroGames_2057","picture"],[477,5,"RetroGames_2016","picture"],[682,5,"Ivy301","crest"],[700,5,"Ivy4","crest"],[734,5,"Ivy3","crest"],[727,3,"Ivy305","crest"]]',
+        decals: '[[665,5,"Ivy17","crest"],[750,5,"Ivy4","crest"],[801,5,"Ivy16","crest"],[660,3,"Ivy16","crest"],[694,3,"Ivy1","crest"],[762,3,"Ivy12","crest"],[796,3,"Ivy16","crest"],[619,7,"Ivy17","crest"],[621,7,"Ivy1","crest"],[624,7,"Ivy2","crest"],[616,7,"Ivy4","crest"],[829,1,"Ivy4","crest"],[827,1,"Ivy12","crest"],[825,1,"Ivy11","crest"],[822,1,"Ivy12a","crest"],[820,1,"Ivy1","crest"],[926,7,"Ivy303","crest"],[924,7,"Ivy12a","crest"],[922,7,"Ivy17","crest"],[929,7,"Ivy15","crest"],[1093,1,"Ivy16","crest"],[1096,1,"Ivy300","crest"],[1100,1,"Ivy1","crest"],[955,5,"Ivy305","crest"],[1057,5,"Ivy305","crest"],[982,3,"Ivy16","crest"],[1050,3,"Ivy14","crest"],[1229,7,"IvyWall_517","texture"],[1230,7,"IvyWall_517","texture"],[1231,7,"IvyWall_517","texture"],[1232,7,"IvyWall_517","texture"],[1233,7,"IvyWall_517","texture"],[1234,7,"IvyWall_517","texture"],[1235,7,"IvyWall_517","texture"],[1365,1,"IvyWall_518","texture"],[1366,1,"IvyWall_518","texture"],[1367,1,"IvyWall_518","texture"],[1368,1,"IvyWall_518","texture"],[1369,1,"IvyWall_518","texture"],[1370,1,"IvyWall_518","texture"],[1371,1,"IvyWall_518","texture"],[1245,5,"IvyWall_519","texture"],[1262,5,"IvyWall_519","texture"],[1279,5,"IvyWall_519","texture"],[1296,5,"IvyWall_519","texture"],[1313,5,"IvyWall_519","texture"],[1330,5,"IvyWall_519","texture"],[1347,5,"IvyWall_519","texture"],[1253,3,"IvyWall_521","texture"],[1270,3,"IvyWall_521","texture"],[1287,3,"IvyWall_521","texture"],[1304,3,"IvyWall_521","texture"],[1321,3,"IvyWall_521","texture"],[1338,3,"IvyWall_521","texture"],[1355,3,"IvyWall_521","texture"],[375,5,"RetroGames_2057","picture"],[477,5,"RetroGames_2016","picture"],[682,5,"Ivy301","crest"],[700,5,"Ivy4","crest"],[734,5,"Ivy3","crest"],[727,3,"Ivy305","crest"],[144,1,"FemDommes_6045","picture"],[227,1,"FemDommes_15037","picture"],[231,1,"PrincessDragonDomme_023","picture"],[233,1,"ImpossibleMsission110","picture"],[144,7,"GemDommes_132","picture"],[56,7,"FemDommes_12144","picture"],[59,7,"CCC_019","picture"],[62,7,"FemDommes_15314","picture"],[144,5,"GemDommes_013","picture"],[88,5,"FemDommes_10130","picture"],[122,5,"UnusedEntities5089","picture"],[144,3,"FemDommes_5190","picture"],[149,3,"CCC_158","picture"],[183,3,"GemDommes_169","picture"],[110,4,"FloorGrille108","crest"],[178,4,"RustyFloorGrille_01","crest"],[142,4,"FloorGrille102","crest"],[146,4,"FloorGrille112","crest"]]',
         lights: '[[1011,7,"DuaLLantern_007","standardMuted"],[1011,5,"FluxLight115","standardMuted"],[1011,1,"DuaLLantern_030","standardMuted"],[1011,3,"Lantern301","standardMuted"],[443,5,"CandleL1","warmCandle"],[409,5,"CandleR1","warmCandle"],[357,5,"Fireplace01","fireplaceDim"]]',
         gates: '[[425,5,"6.1","2.6","Closed"]]',
-        containers: '[[143,"Chest10","GOLD_ITEM_TYPE.GoldBar",3]]',
+        gold: '[[112,"GoldBar"],[193,"GoldBar"],[326,"GoldCube"],[353,"GoldCube"],[489,"GoldCube"],[536,"GoldCube"],[529,"GoldCube"]]',
+        containers: '[[143,"Chest10","GOLD_ITEM_TYPE.GoldBar",3],[494,"WoodenCrate440","INTERACTION_ITEM.TransBlackLatexPanties",5]]',
         shrines: '[[441,3,"RedRaincoat"],[294,7,"OilyBarba"],[566,1,"ManaCook"],[373,3,"BulletTina"],[509,3,"HeartAttack"]]',
+        entities: '[[300,7,"PlayfulDominatrix"]]',
+        objects: '[[197,"Mushroom"],[90,"GoldBar"],[216,"Cake"]]',
+        oracles: '[[572,1,"ApparitiaHurt"]]',
+        movables: '[[371,"GreenBat"],[439,"GreenBat"],[507,"GreenBat"]]',
         lairs: '[[1003,5,"Lair66"],[1019,3,"Lair52"]]',
         monsterList: '["Bat","RedGoldBat","RedGoldBat","DarkRedBat"]',
-    }
+        }
     ,
     7: {
         name: "Royal Fitness",

@@ -82,6 +82,7 @@ const DEBUG = {
             DONE "YellowTrans" wants "YellowLatexPanties" gives "YellowCertificate"
             DONE "GreyTrans" wants "GreyLatexPanties" gives "GreyCertificate"
             DONE Saddie wants "Candle", "Candle", "Candle" give GoldCoin
+            DONE PlayfulDominatrix wants "Handcuffs","Whip","BlackLeatherBoots" give "BlackLatexpanties"
 
 
 
@@ -118,7 +119,7 @@ const DEBUG = {
         "Shuriken"
             DONE "BlackLeatherBoot" --> Tresuress (12)
             DONE "BlackLeatherBoot" Drinker (8)
-        "Mushroom", 
+            DONE "Mushroom", --> (6)
         "Mushroom", 
         "Mushroom"
             DONE "Skull", --> (16)
@@ -130,9 +131,9 @@ const DEBUG = {
         "YinYangBook",  **quest
             DONE "TreeOfLifeBook" **quest --> Arcadia(##)
             DONE "GoldBar",  **quest --> GoldMelta (20)
-        "GoldBar",  **quest
+            DONE "GoldBar",  **quest --> (6)
         "GoldBar" **quest
-        "BlackLatexpanties",  **quest
+            DONE "BlackLatexpanties",  **quest --> PlayfulDominatrix(6)
         "BlacLatexBra" **quest
         "ArcadeToken",  **quest
         "ArcadeToken",  **quest
@@ -147,7 +148,7 @@ const DEBUG = {
         "WhiteLatexPanties",
         "GreyLatexPanties",
         "TransRedLatexPanties",
-        "TransBlackLatexPanties" 
+            DONE "TransBlackLatexPanties" --> (6)
             DONE "GoldCoin" Saddie (16)
             DONE "GoldCoin" --> (2)
         "GoldCoin"
@@ -156,6 +157,9 @@ const DEBUG = {
             DONE "Candle", --> (2)
         "Candle", 
         "Candle"
+        "Handcuffs", 
+        "Whip", 
+        "BlackLeatherBoots",
 
 
 
@@ -193,7 +197,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 5; //5
+        GAME.level = 6; //2 --> 6
         GAME.gold = 535;
         GAME.lives = 1;
 
@@ -247,9 +251,10 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            "BlackLatexGloves", "Crown",
+            //"BlackLatexGloves", "Crown",
             //debug
             //"GoldCoin", 
+            //"Handcuffs", "Whip", "BlackLeatherBoots",
 
 
         ];
@@ -370,7 +375,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.15.0",
+    VERSION: "0.15.1",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

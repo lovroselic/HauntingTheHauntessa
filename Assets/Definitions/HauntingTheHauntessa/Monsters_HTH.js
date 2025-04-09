@@ -97,6 +97,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    ApparitiaHurt: {
+        name: "ApparitiaHurt",
+        sprite: "ApparitiaHurt",
+        category: 'crest',
+        voice: "Apparitia",
+        text: "Remember me? Remeber how you hurt us? Do you dare come into the Hauntessa's castle? You bitch?.",
+        interactionCategory: "oracle",
+    },
     RedHeadMaid: {
         name: "RedHeadMaid",
         sprite: "RedHeadMaid",
@@ -1916,21 +1924,14 @@ const INTERACTION_ITEM = {
         inventorySprite: "RedKey",
         color: "Red"
     },
-    HeartSkill: {
-        name: "HeartSkill",
-        category: "status",
-        inventorySprite: "HeartSkill",
-        which: "health",
-        level: 1,
-    },
+
+    //items
     GoldCoin: {
         name: "GoldCoin",
         category: "interaction_item",
         inventorySprite: "GoldCoin",
         text: "Face on the coin looks like my mother."
     },
-
-    //items
     Apple: {
         name: "Apple",
         category: "interaction_item",
@@ -2142,6 +2143,24 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "RedCertificate",
     },
+    Whip: {
+        name: "Whip",
+        category: "interaction_item",
+        inventorySprite: "Whip",
+        text: "I can punish someone."
+    },
+    Handcuffs: {
+        name: "Handcuffs",
+        category: "interaction_item",
+        inventorySprite: "Handcuffs",
+        text: "Should I arrest someone?"
+    },
+    BlackLeatherBoots: {
+        name: "BlackLeatherBoots",
+        category: "interaction_item",
+        inventorySprite: "BlackLeatherBoots",
+        text: "This boots look amazing. Did you see those heels?"
+    },
 
     //books
     YoniBook: {
@@ -2262,6 +2281,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    PlayfulDominatrix: {
+        name: "Saddie",
+        sprite: "PlayfulDominatrix",
+        category: 'crest',
+        voice: "FemaleLow2",
+        wants: ["Handcuffs","Whip","BlackLeatherBoots"],
+        gives: "BlackLatexpanties",
+        text: {
+            intro: "In the mood and feelin' bold? Bring my toys! I like control.",
+            progress: "One toy's nice, but I'm not through. I need the rest to play with you!",
+            conclusion: "You brought them all, what a tease. Here's something shiny, just to please."
+        }
+    },
     Saddie: {
         name: "Saddie",
         sprite: "Saddie",

@@ -269,7 +269,7 @@ const SAVE_GAME = {
       const timestamp = new Date(parseInt(JSON.parse(meta[0]).timestamp)).ISO();
       const timers = JSON.parse(SAVE_GAME.decode(localStorage[SAVE_GAME.key + SAVE_GAME.TIMEABR]));
       const game_time = Timer.timeStampToString(JSON.parse(timers.value).now);
-      active = `<p>Active save game: <strong>${room}</strong>, game time: ${game_time}. Saved: ${timestamp} `;
+      active = `<p>Active save game: <strong>${room}</strong>, game time: ${game_time}. Saved (UTC): ${timestamp} `;
       active += `<input type='button' id = 'Refresh_SG_manager' value= 'Refresh'>`;
       active += `</p><hr>`;
       isSG = true;
@@ -298,7 +298,7 @@ const SAVE_GAME = {
         const timers = JSON.parse(unpacked[i]._TMR.value);
         const game_time = Timer.timeStampToString(timers.now);
 
-        line += `<strong>${room}</strong>, game time: ${game_time}. Saved: ${timestamp}  `;
+        line += `<strong>${room}</strong>, game time: ${game_time}. Saved (UTC): ${timestamp}  `;
         line += `<input type="button" class= "red_button export_to_active" id ="export_to_active_${i}" value="Export to active" style="color:white">`;
       } else {
         line += "Nothing";
