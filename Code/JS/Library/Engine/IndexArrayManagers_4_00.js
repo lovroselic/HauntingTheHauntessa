@@ -1006,7 +1006,6 @@ class Animated_3d_entity extends IAM {
             const BB = enemy.moveState.boundingBox;
             const grids = [];
             const xVals = [BB.min.x, BB.max.x];
-            //const yVals = [BB.min.y, BB.max.y];
             const zVals = [BB.min.z, BB.max.z];
             const yVals = [-(enemy.heigth - 0.001)];                    //just check the feet adjusted by small E
 
@@ -1043,8 +1042,8 @@ class Animated_3d_entity extends IAM {
         const GA = this.map.GA;
         this.setup();
         const heroRefGrid = Vector3.to_Grid3D(this.hero.player.pos.translate(UP3, this.hero.player.heigth));
-        GRID.calcDistancesBFS_A_3D(heroRefGrid, map, false, GROUND_MOVE_GRID_EXCLUSION); //ground exlusion 3d on xy plane, this needs to be separate because of hunting on exact position!
-        GRID.calcDistancesBFS_A_3D(heroRefGrid, map, true, AIR_MOVE_GRID_EXCLUSION, "airNodeMap"); //air exclusion fully 3d
+        GRID.calcDistancesBFS_A_3D(heroRefGrid, map, false, GROUND_MOVE_GRID_EXCLUSION);            //ground exlusion 3d on xy plane, this needs to be separate because of hunting on exact position!
+        GRID.calcDistancesBFS_A_3D(heroRefGrid, map, true, AIR_MOVE_GRID_EXCLUSION, "airNodeMap");  //air exclusion fully 3d
 
         for (const entity of this.POOL) {
             if (entity) {

@@ -203,17 +203,18 @@ const AI = {
         return directions;
     },
     shoot(enemy, ARG) {
-        //console.info("********************** SHOOT **********************");
+        console.info("********************** SHOOT **********************");
         if (this.VERBOSE) console.warn(`..${enemy.name}-${enemy.id} tries to shoot.`);
         if (enemy.caster) {
             if (enemy.mana >= Missile.calcMana(enemy.magic)) {
-                //console.log("checking visibility");
+
                 const GA = enemy.parent.map.GA;
                 const IA = enemy.parent.map.enemyIA;
-                if (GRID.vision(this.getPosition(enemy), Grid.toClass(ARG.playerPosition), GA) &&
-                    GRID.freedom(this.getPosition(enemy), Grid.toClass(ARG.playerPosition), IA)) {
-                    enemy.canShoot = true;
-                }
+                const enemyPos = this.getPosition(enemy);
+                const playerGrid = Grid.toClass(ARG.playerPosition);
+                const player3DGrid = Vector3.to_Grid3D(ARG.exactPlayerPosition);
+
+                if ((enemy.shoot3D || GRID.sameFloor(enemyPos, player3DGrid)) && GRID.vision(enemyPos, playerGrid, GA) && GRID.freedom(enemyPos, playerGrid, IA)) enemy.canShoot = true;
                 if (this.VERBOSE) console.info(`..${enemy.name}-${enemy.id} can shoot: ${enemy.canShoot}`);
 
                 if (enemy.distance) {

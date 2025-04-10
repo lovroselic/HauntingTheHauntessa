@@ -291,6 +291,9 @@ const GRID = {
             return false;
         } else return true;
     },
+    sameFloor(startGrid, endGrid) {
+        return startGrid.z === endGrid.z;
+    },
     raycasting(startGrid, endGrid) {
         let normDir = startGrid.direction(endGrid);
         let path = [];

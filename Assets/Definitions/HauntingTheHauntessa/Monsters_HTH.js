@@ -97,6 +97,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    PrayPayNun: {
+        name: "PrayPayNun",
+        sprite: "PrayPayNun",
+        category: 'crest',
+        voice: "Female2",
+        text: "Figured out our shrines yet? You pray, you pay, then you may play. Just bring coins, sinner. Miracles don't come cheap.",
+        interactionCategory: "oracle",
+    },
     ApparitiaHurt: {
         name: "ApparitiaHurt",
         sprite: "ApparitiaHurt",
@@ -1428,6 +1436,7 @@ const MONSTER_TYPE = {
         material: MATERIAL.gold,
         missile: Blue3D_Bouncer,
         missileType: COMMON_ITEM_TYPE.BlueBounceball,
+        shoot3D: true,
     },
     MadHandy: {
         name: "MadHandy",
@@ -1455,22 +1464,20 @@ const MONSTER_TYPE = {
     MissGalaxy: {
         name: "MissGalaxy",
         model: "MissGalaxy",
-        scale: 0.9 / 2 ** 2, // 0.9 / 2 ** 2
+        scale: 0.9 / 2 ** 2,
         rotateToNorth: Math.PI,
         midHeight: 0.55,
         deathType: "BloodExplosion",
         inventory: null,
-
-        mana: 1,
-        health: 1,
-        attack: 1,
-        magic: 1,
-        defense: 0,
-        xp: 1,
-
+        mana: 5,
+        health: 15,
+        attack: 12,
+        magic: 7,
+        defense: 1,
+        xp: 20,
         caster: true,
         shootDistance: 5,
-        stalkDistance: 167,
+        stalkDistance: 6,
         attackSound: "HumanAttack1",
         hurtSound: "Ow",
         behaviourArguments: [10, ["wanderer"], 5, ["shoot"]],
@@ -2286,7 +2293,7 @@ const INTERACTION_ENTITY = {
         sprite: "PlayfulDominatrix",
         category: 'crest',
         voice: "FemaleLow2",
-        wants: ["Handcuffs","Whip","BlackLeatherBoots"],
+        wants: ["Handcuffs", "Whip", "BlackLeatherBoots"],
         gives: "BlackLatexpanties",
         text: {
             intro: "In the mood and feelin' bold? Bring my toys! I like control.",

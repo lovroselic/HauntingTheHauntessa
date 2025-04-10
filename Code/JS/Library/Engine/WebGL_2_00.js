@@ -3981,6 +3981,7 @@ class $3D_Entity {
         this.airDistance = null;
         this.proximityDistance = null;                                              //euclidian distance when close up
         this.swordTipDistance = null;                                               //attack priority resolution
+        this.shoot3D = false;                                                       //default
         this.dirStack = [];
         this.final_boss = false;
         this.boss = false;

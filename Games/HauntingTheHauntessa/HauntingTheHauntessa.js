@@ -88,7 +88,7 @@ const DEBUG = {
 
             DONE Rose, -> EmoTina (16)
             DONE Rose, **quest --> (5)
-        Rose, **quest
+            DONE Rose, **quest --> (3)
             DONE GlassOfWine,--> MissRose (8)
             DONE Wine **quest BarGuest(21)
             DONE "Document" -> CuteTank (2)
@@ -107,10 +107,10 @@ const DEBUG = {
             DONE "DumbBell" --> DumbBelle (13)
             DONE "DumbBell" --> (2)
             DONE Dagger,  --> SpyedHer (15)
-        Dagger, **quest
+            DONE Dagger, **quest --> (3)
         Dagger, **quest
             DONE "Beer",  --> (5)
-        "Beer"
+            DONE "Beer" --> (3)
         "GlassOfBeer", **quest
         "GlassOfBeer", **quest
         "GlassOfBeer" **quest
@@ -197,21 +197,21 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 6; //2 --> 6
+        GAME.level = 21; //2 --> 6-->3-->2--->21
         GAME.gold = 535;
         GAME.lives = 1;
 
         HERO.magic = 5;
-        HERO.attack = 5;
-        HERO.defense = 1;
-        HERO.reference_magic = 5;
-        HERO.reference_attack = 5;
-        HERO.reference_defense = 1;
+        HERO.attack = 50;
+        HERO.defense = 100;
+        HERO.reference_magic = 50;
+        HERO.reference_attack = 50;
+        HERO.reference_defense = 100;
 
         HERO.mana = 17;
         HERO.maxMana = 17;
-        HERO.health = 28;
-        HERO.maxHealth = 32;
+        HERO.health = 280;
+        HERO.maxHealth = 320;
 
         HERO.attackExp = 18;
         HERO.attackExpGoal = 100;
@@ -375,7 +375,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.15.1",
+    VERSION: "0.15.2",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

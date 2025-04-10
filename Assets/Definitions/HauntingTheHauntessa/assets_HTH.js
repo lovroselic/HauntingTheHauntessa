@@ -953,6 +953,7 @@ LoadSprites = [
     { srcName: "EntityPictures/Poola.jpg", name: "Poola" },
     { srcName: "EntityPictures/PlayfulDominatrix.jpg", name: "PlayfulDominatrix" },
     { srcName: "EntityPictures/ApparitiaHurt.jpg", name: "ApparitiaHurt" },
+    { srcName: "EntityPictures/PrayPayNun.jpg", name: "PrayPayNun" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
@@ -1696,6 +1697,13 @@ LoadSprites = [
     { srcName: "ObjDecals/ShieldDecal_514.png", name: "ShieldDecal_514" },
     { srcName: "ObjDecals/ShieldDecal_515.png", name: "ShieldDecal_515" },
     { srcName: "ObjDecals/ShieldDecal_516.png", name: "ShieldDecal_516" },
+    { srcName: "ObjDecals/Skull_782.png", name: "Skull_782" },
+    { srcName: "ObjDecals/Skull_783.png", name: "Skull_783" },
+    { srcName: "ObjDecals/Skull_784.png", name: "Skull_784" },
+    { srcName: "ObjDecals/Skull_785.png", name: "Skull_785" },
+    { srcName: "ObjDecals/Skull_786.png", name: "Skull_786" },
+    { srcName: "ObjDecals/Skull_787.png", name: "Skull_787" },
+    { srcName: "ObjDecals/Skull_788.png", name: "Skull_788" },
 
     //decal-pics - all
     { srcName: "PicDecals/1942_200.png", name: "1942_200" },
