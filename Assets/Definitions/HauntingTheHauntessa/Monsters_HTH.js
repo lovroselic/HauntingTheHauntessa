@@ -97,6 +97,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    Drunka: {
+        name: "Drunka",
+        sprite: "Drunka",
+        category: 'crest',
+        voice: "FemaleLow2",
+        text: "Go on dear. Let me drink in peace. Nothing to do here.",
+        interactionCategory: "oracle",
+    },
     PrayPayNun: {
         name: "PrayPayNun",
         sprite: "PrayPayNun",
@@ -1653,8 +1661,6 @@ const INTERACTION_OBJECT = {
         material: MATERIAL.gold,
         text: "Face on the coin looks like my mother."
     },
-
-
     Sword: {
         name: "Sword",
         category: "interaction_item",
@@ -1720,6 +1726,17 @@ const INTERACTION_OBJECT = {
         material: MATERIAL.steel,
         inventorySprite: "HornedHelmet",
         text: ""
+    },
+    SmallBarrel: {
+        name: "SmallBarrel",
+        category: "interaction_item",
+        element: "BARREL",
+        scale: 1.75 / 2 ** 3,
+        glueToFloor: true,
+        texture: "Barrel",
+        material: MATERIAL.standard,
+        inventorySprite: "SmallBarrel",
+        text: "Such a small barrel. Not a lot of drink."
     },
 
     //metals
@@ -2288,8 +2305,21 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    BeerMaid: {
+        name: "BeerMaid",
+        sprite: "BeerMaid",
+        category: 'crest',
+        voice: "Female",
+        wants: ["SmallBarrel","SmallBarrel","SmallBarrel"],
+        gives: "GlassOfBeer",
+        text: {
+            intro: "How's a maid to pour a brew, with all my barrels lost from view?",
+            progress: "One keg found, but that's too few. I need more to serve the crew!",
+            conclusion: "The barrels are back, the beer is near! Take this glass and spread some cheer!"
+        }
+    },
     PlayfulDominatrix: {
-        name: "Saddie",
+        name: "PlayfulDominatrix",
         sprite: "PlayfulDominatrix",
         category: 'crest',
         voice: "FemaleLow2",

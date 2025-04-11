@@ -83,6 +83,7 @@ const DEBUG = {
             DONE "GreyTrans" wants "GreyLatexPanties" gives "GreyCertificate"
             DONE Saddie wants "Candle", "Candle", "Candle" give GoldCoin
             DONE PlayfulDominatrix wants "Handcuffs","Whip","BlackLeatherBoots" give "BlackLatexpanties"
+            DONE BeerMaid wants "SmallBarrel","SmallBarrel","SmallBarrel" gives "GlassOfBeer"
 
 
 
@@ -111,10 +112,10 @@ const DEBUG = {
         Dagger, **quest
             DONE "Beer",  --> (5)
             DONE "Beer" --> (3)
-        "GlassOfBeer", **quest
-        "GlassOfBeer", **quest
+            DONE "GlassOfBeer", **quest --> BeerMaid (21)
+            DONE "GlassOfBeer", **quest --> (21)
         "GlassOfBeer" **quest
-        "Shuriken", 
+            DONE "Shuriken", -->(21)
         "Shuriken", 
         "Shuriken"
             DONE "BlackLeatherBoot" --> Tresuress (12)
@@ -135,7 +136,7 @@ const DEBUG = {
         "GoldBar" **quest
             DONE "BlackLatexpanties",  **quest --> PlayfulDominatrix(6)
         "BlacLatexBra" **quest
-        "ArcadeToken",  **quest
+            DONE "ArcadeToken",  **quest --> (21)
         "ArcadeToken",  **quest
         "ArcadeToken" **quest
             DONE "GoldOre","GoldOre","GoldOre" --> (20)
@@ -160,6 +161,9 @@ const DEBUG = {
         "Handcuffs", 
         "Whip", 
         "BlackLeatherBoots",
+        "SmallBarrel",
+        "SmallBarrel",
+        "SmallBarrel"
 
 
 
@@ -255,6 +259,7 @@ const DEBUG = {
             //debug
             //"GoldCoin", 
             //"Handcuffs", "Whip", "BlackLeatherBoots",
+            "SmallBarrel","SmallBarrel","SmallBarrel"
 
 
         ];
@@ -375,7 +380,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.15.2",
+    VERSION: "0.15.3",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

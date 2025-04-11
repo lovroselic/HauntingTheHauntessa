@@ -260,17 +260,7 @@ const INTERACTION_OBJECT = {
         material: MATERIAL.standard,
         text: "Oh, it's an apple. A green one."
     },
-    SmallBarrel: {
-        name: "SmallBarrel",
-        category: "interaction_item",
-        element: "BARREL",
-        scale: 1.75 / 2 ** 3,
-        glueToFloor: true,
-        texture: "Barrel",
-        material: MATERIAL.standard,
-        inventorySprite: "SmallBarrel",
-        text: "Such a small barrel. Not a lot of drink."
-    },
+    
     TropicalFish: {
         name: "TropicalFish",
         category: "interaction_item",
