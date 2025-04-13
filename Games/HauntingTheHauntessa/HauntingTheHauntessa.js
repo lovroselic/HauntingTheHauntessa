@@ -116,7 +116,7 @@ const DEBUG = {
             DONE "GlassOfBeer", **quest --> (21)
         "GlassOfBeer" **quest
             DONE "Shuriken", -->(21)
-        "Shuriken", 
+            DONE "Shuriken",  --> (7)
         "Shuriken"
             DONE "BlackLeatherBoot" --> Tresuress (12)
             DONE "BlackLeatherBoot" Drinker (8)
@@ -148,7 +148,7 @@ const DEBUG = {
             DONE "YellowLatexPanties", --> (2)
         "WhiteLatexPanties",
         "GreyLatexPanties",
-        "TransRedLatexPanties",
+            DONE "TransRedLatexPanties", --> (7)
             DONE "TransBlackLatexPanties" --> (6)
             DONE "GoldCoin" Saddie (16)
             DONE "GoldCoin" --> (2)
@@ -161,7 +161,7 @@ const DEBUG = {
         "Handcuffs", 
         "Whip", 
         "BlackLeatherBoots",
-        "SmallBarrel",
+            DONE "SmallBarrel", --> (7)
         "SmallBarrel",
         "SmallBarrel"
 
@@ -201,7 +201,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 21; //2 --> 6-->3-->2--->21
+        GAME.level = 8; //2 --> 6-->3-->2--->21-->2-->7 -->8
         GAME.gold = 535;
         GAME.lives = 1;
 
@@ -380,7 +380,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.15.3",
+    VERSION: "0.15.4",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

@@ -1219,9 +1219,12 @@ const WebGL = {
             WebGL.GAME.disableViewButton("#p1");
             if (WebGL.CONFIG.cameraType === "first_person") return;
             WebGL.CONFIG.set("first_person", true);
-            WebGL.hero.player.clearCamera();
+            WebGL.hero.player.associateExternalCamera(WebGL.hero.firstPersonCamera);
+            WebGL.setCamera(WebGL.hero.firstPersonCamera);
             WebGL.hero.player.moveSpeed = 2.0;
-            WebGL.setCamera(WebGL.hero.player);
+            //position  update
+            WebGL.hero.player.camera.update();
+            WebGL.hero.player.matrixUpdate();
         },
         setThirdPerson() {
             WebGL.GAME.disableViewButton("#p3");
@@ -4009,8 +4012,8 @@ class $3D_Entity {
 
         if (this.fly > 0) {
             this.heigth = this.midHeight;                                           //fly takes care that pos approximatelly equals body height 
-        } else { 
-           this.heigth = this.boundingBox.max.y - this.boundingBox.min.y;           //superseed height from bounding box
+        } else {
+            this.heigth = this.boundingBox.max.y - this.boundingBox.min.y;           //superseed height from bounding box
         }
 
         this.moveState = new $3D_MoveState(this.translate, dir, this.rotateToNorth, this);

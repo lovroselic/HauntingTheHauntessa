@@ -97,6 +97,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    InventoryBabe: {
+        name: "InventoryBabe",
+        sprite: "InventoryBabe",
+        category: 'crest',
+        voice: "FemaleLow",
+        text: "Be mindful of your inventory. If it get0s full, you won't be able to pick anything.",
+        interactionCategory: "oracle",
+    },
     Drunka: {
         name: "Drunka",
         sprite: "Drunka",
