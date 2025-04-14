@@ -66,7 +66,9 @@ const AI = {
         const directions = enemy.parent.map.GA.getDirectionsIfNot(this.getPosition(enemy), gridValue, enemy.fly, enemy.moveState.dir.mirror());
         if (AI.VERBOSE) console.info(enemy.name, enemy.id, "WANDERER", enemy.moveState.pos, "gridValue", gridValue, "dirs", directions, "this.getPosition(enemy)", this.getPosition(enemy));
         if (directions.length) {
-            return [directions.chooseRandom()];
+            const randomDir = directions.chooseRandom();
+            if (randomDir.constructor.name !== "Vector3D") throw "WTF!";  //debug, remove later //////////////////////////////////////////////////////////
+            return [randomDir];
         } else {
             return [enemy.moveState.dir.mirror()];
         }
@@ -95,16 +97,24 @@ const AI = {
             return this.immobile(enemy);
         }
 
-        if (Math.abs(exactPosition.y - enemy.moveState.pos.y) > 0.01) return this.immobile(enemy);
+        const enemyPos = this.getPosition(enemy);
+        const player3DGrid = Vector3.to_Grid3D(ARG.exactPlayerPosition);
+        if (!GRID.sameFloor(enemyPos, player3DGrid)) return this.immobile(enemy); 
 
         /** this is still 2D plane , only works if they are on the same plane */
         const pPos = Vector3.to_FP_Grid(exactPosition);
         const ePos = Vector3.to_FP_Grid(enemy.moveState.pos);
         const direction = ePos.direction(pPos);
-        if (this.VERBOSE) console.log("pPos", pPos, "ePos", ePos, "direction", direction, "enemy.distance", enemy.distance);
         let orto = direction.ortoAlign();
+        const landingGrid = enemy.moveState.startGrid.add(orto);
+        const GA = enemy.parent.map.GA;
+        const nextGridBlocked = GA.check(landingGrid, GROUND_MOVE_GRID_EXCLUSION.sum())
+        if (nextGridBlocked) console.warn("this is going to end in fuckup! return "); // return this.immobile(enemy);
+        if (true) console.log("pPos", pPos, "ePos", ePos, "direction", direction, "enemy.distance", enemy.distance,"orto", orto, "landingGrid", landingGrid);
+        //if (this.VERBOSE) console.log("pPos", pPos, "ePos", ePos, "direction", direction, "enemy.distance", enemy.distance,"orto", orto);
         orto = orto.toVector3D(); // adding z=0 for 3D compatibility, but this still only works on the plane!!!
-        if (this.VERBOSE) console.info(`${enemy.name}-${enemy.id} FP hunt`, orto, "strategy", enemy.behaviour.strategy);
+        //if (this.VERBOSE) console.info(`${enemy.name}-${enemy.id} FP hunt`, orto, "strategy", enemy.behaviour.strategy);
+        if (true) console.info(`${enemy.name}-${enemy.id} FP hunt`, orto, "strategy", enemy.behaviour.strategy);
         return [orto];
     },
     crossroader(enemy, playerPosition, dir, block, exactPosition) {
@@ -203,7 +213,7 @@ const AI = {
         return directions;
     },
     shoot(enemy, ARG) {
-        console.info("********************** SHOOT **********************");
+        //console.info("********************** SHOOT **********************");
         if (this.VERBOSE) console.warn(`..${enemy.name}-${enemy.id} tries to shoot.`);
         if (enemy.caster) {
             if (enemy.mana >= Missile.calcMana(enemy.magic)) {

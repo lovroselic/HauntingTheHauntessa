@@ -3039,21 +3039,20 @@ class Missile extends Drawable_object {
         this.depth = Math.floor(this.pos.y);
     }
     move(lapsedTime, GA) {
+        if (!this.IAM.exists(this.id)) return;
+        
         let length = (lapsedTime / 1000) * this.moveSpeed;
         const pos = this.pos.translate(this.dir, length);
-        //console.log("....move", "pos", pos, "dir", this.dir);
-
         const F = this.r / 4;                                       // pre bounce offset
 
         if (lapsedTime < 0.01) return this.explode(this.IAM);
         if (GA.isWall(Grid3D.toClass(Vector3.to_Grid3D(pos)))) return this.move(lapsedTime / 2, GA);
-
         if (pos.y < F && this.dir.y < 0) {
-            //console.warn("FLOOR bounce ", pos, "F", F, "this.pos", this.pos, "this.dir", this.dir);
+            //console.warn("FLOOR bounce ", this.id, pos, "F", F, "this.pos", this.pos, "this.dir", this.dir);
             this.hitWall(this.IAM, pos, GA, DIR_UP);
             return this.move(lapsedTime, GA);
         } else if (pos.y > this.IAM.map.maxZ - F && this.dir.y > 0) {
-            //console.warn("CEIL bounce ?", pos, "F", F, "this.pos", this.pos, "this.dir", this.dir);
+            //console.warn("CEIL bounce ?", this.id, pos, "F", F, "this.pos", this.pos, "this.dir", this.dir);
             this.hitWall(this.IAM, pos, GA, DIR_DOWN);
             return this.move(lapsedTime, GA);
         }
@@ -3080,10 +3079,12 @@ class Missile extends Drawable_object {
         IAM.remove(this.id);
     }
     explode(IAM) {
-        IAM.remove(this.id);
-        EXPLOSION3D.add(new this.explosionType(this.pos));
-        AUDIO.Explosion.volume = RAY.volume(this.distance);
-        AUDIO.Explosion.play();
+        if (IAM.exists(this.id)) {
+            IAM.remove(this.id);
+            EXPLOSION3D.add(new this.explosionType(this.pos));
+            AUDIO.Explosion.volume = RAY.volume(this.distance);
+            AUDIO.Explosion.play();
+        }
     }
     clean() {
         this.IAM.remove(this.id);
@@ -3156,7 +3157,6 @@ class Blue3D_Bouncer extends BouncingMissile {
         let reflectedDir = this.dir.reflect(faceNormal);
         this.dir = reflectedDir;
         this.bounceCount++;
-        //console.log("blue bounce", "faceNormal", faceNormal, "this.pos.sub(inner)", this.pos.sub(inner), "reflectedDir", reflectedDir,);
     }
 }
 
@@ -3559,7 +3559,8 @@ class ParticleEmmiter {
 
         //age
         let age_data = new Float32Array(number);
-        let age = Date.now() - this.birth;
+        const ageNow = Date.now();
+        let age = ageNow - this.birth;
         age_data.fill(age);
         this.bAge = [gl.createBuffer(), gl.createBuffer()];
         const locAge = 2;
@@ -3662,7 +3663,6 @@ class ParticleEmmiter {
         locOffset = 2;
         locAgeNorm = 3;
         for (let i = 0; i < 2; i++) {
-
             gl.bindVertexArray(this.vaoRender[i]);
 
             //INDEX
@@ -4072,7 +4072,7 @@ class $3D_Entity {
                 this.distance = null;
                 return;
             }
-            /** this is major fuckup */
+            /** this is major fuckup, can happen only if monster is moving through a wall */
             if (ENGINE.verbose) {
                 console.info("...setDistanceFromNodeMap", this.name, this.id, this.moveState.pos, gridPosition);
                 console.info(".......this", this);

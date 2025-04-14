@@ -2975,9 +2975,9 @@ const ENGINE = {
             CTX.miterLimit = 1;
             CTX.lineJoin = "round";
             if (player.pos.constructor === FP_Grid) {
-                this._circle(CTX, player.pos, player.r, player.dir);
+                this._circle(CTX, player.pos, player.r, player.dir, "green");
             } else {
-                this._circle(CTX, Vector3.to_FP_Grid(player.pos), player.r, Vector3.to_FP_Grid(player.dir));
+                this._circle(CTX, Vector3.to_FP_Grid(player.pos), player.r, Vector3.to_FP_Grid(player.dir), "green");
             }
         },
         _circle(CTX, grid, R, dir, color = null) {

@@ -137,7 +137,7 @@ const DEBUG = {
             DONE "BlackLatexpanties",  **quest --> PlayfulDominatrix(6)
         "BlacLatexBra" **quest
             DONE "ArcadeToken",  **quest --> (21)
-        "ArcadeToken",  **quest
+            DONE "ArcadeToken",  **quest --> (8)
         "ArcadeToken" **quest
             DONE "GoldOre","GoldOre","GoldOre" --> (20)
             DONE "RedCertificate", RedTrans((23))
@@ -146,7 +146,7 @@ const DEBUG = {
             DONE "GreyCertificate", GreyTrans (23)
             DONE YellowCertificate" yellow transa (23)
             DONE "YellowLatexPanties", --> (2)
-        "WhiteLatexPanties",
+            DONE "WhiteLatexPanties", --> (8)
         "GreyLatexPanties",
             DONE "TransRedLatexPanties", --> (7)
             DONE "TransBlackLatexPanties" --> (6)
@@ -201,19 +201,19 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 8; //2 --> 6-->3-->2--->21-->2-->7 -->8
+        GAME.level = 9; //2 --> 6-->3-->2--->21-->2-->7 -->8-->9
         GAME.gold = 535;
         GAME.lives = 1;
 
-        HERO.magic = 5;
+        HERO.magic = 50;
         HERO.attack = 50;
         HERO.defense = 100;
         HERO.reference_magic = 50;
         HERO.reference_attack = 50;
         HERO.reference_defense = 100;
 
-        HERO.mana = 17;
-        HERO.maxMana = 17;
+        HERO.mana = 250;
+        HERO.maxMana = 250;
         HERO.health = 280;
         HERO.maxHealth = 320;
 
@@ -380,7 +380,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.15.4",
+    VERSION: "0.15.5",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

@@ -164,6 +164,10 @@ class IAM {
         const filtered = this.POOL.filter((el) => el !== null);
         return filtered.length;
     }
+    exists(id) {
+        if (this.POOL[id - 1]) return true;
+        return false;
+    }
 }
 
 /** Profile IA Managers */

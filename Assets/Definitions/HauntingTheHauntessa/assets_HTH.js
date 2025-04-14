@@ -791,6 +791,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/SpiderRed.jpg", name: "SpiderRed" },
     { srcName: "ObjectTextures/GreenBat.jpg", name: "GreenBat" },
     { srcName: "ObjectTextures/DarkRedBat.jpg", name: "DarkRedBat" },
+    { srcName: "ObjectTextures/DarkMandy.jpg", name: "DarkMandy" },
 
     //title
     { srcName: "Title/HTH_title_768.jpg", name: "Title" },
@@ -957,6 +958,7 @@ LoadSprites = [
     { srcName: "EntityPictures/Beermaid.jpg", name: "BeerMaid" },
     { srcName: "EntityPictures/Drunka.jpg", name: "Drunka" },
     { srcName: "EntityPictures/InventoryBabe.jpg", name: "InventoryBabe" },
+    { srcName: "EntityPictures/ManaBabe.jpg", name: "ManaBabe" },
 
 
     //action movables
