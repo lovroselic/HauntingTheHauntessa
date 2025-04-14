@@ -18,7 +18,7 @@ const MAP_TEXT = {
     6: "The only god this shrines channel is gold. I hope you have a lot of it.",
     7: "It's been 666 days since I trained last. I deserve a doughnut.",
     8: "Maybe I can sit down and relax here. No. No relaxing, until Hauntessa is defeated.",
-    9: "",
+    9: "This part seems old.",
     10: "",
     11: "",
     12: "",
@@ -32,7 +32,7 @@ const MAP_TEXT = {
     20: "",
     21: "Let's stop for a pint here.",
     22: "What a view. But Hauntessa's castle is in other direction.",
-    23: "",
+    23: "Huh? Seriously?",
     24: "Master mistresses. They are expensive, but worth every gold coin. Don't be cheap.",
     25: ""
 
@@ -66,7 +66,7 @@ const MAP = {
         movables: '[[287,"GreenBat"],[297,"GreenBat"],[384,"GreenBat"],[172,"GreenBat"]]',
     }
     ,
-    2 : {
+    2: {
         name: "The Throne Room",
         sg: 0,
         maxSpawned: 10,
@@ -91,9 +91,9 @@ const MAP = {
         oracles: '[[501,7,"PrincessThrone"]]',
         lairs: '[[1449,7,"Lair12"],[1457,7,"Lair47"],[1710,5,"Lair59"],[1728,3,"Lair35"]]',
         monsterList: '["Bat","RedGoldBat","DarkRedBat","DarkRedBat","DarkRedBat","Dragon"]',
-        }
+    }
     ,
-    3 : {
+    3: {
         name: "Castle Entrance Hall",
         sg: 0,
         maxSpawned: 6,
@@ -116,7 +116,7 @@ const MAP = {
         oracles: '[[212,1,"StandingFashionGuard"],[1,7,"CuteDemon"],[569,3,"PrayPayNun"]]',
         lairs: '[[974,3,"Lair67"],[1064,3,"Lair55"],[1119,1,"Lair66"],[1115,1,"Lair54"],[1050,5,"Lair15"],[960,5,"Lair48"],[888,1,"Lair31"],[896,1,"Lair70"],[903,7,"Lair31"],[911,7,"Lair57"]]',
         monsterList: '["Bat","RedGoldBat","DarkRedBat"]',
-        }
+    }
     ,
     4: {
         name: "Castle Yard placeholder",
@@ -159,7 +159,7 @@ const MAP = {
         monsterList: '["Bat","RedGoldBat","DarkRedBat"]',
     }
     ,
-    6 : {
+    6: {
         name: "The Temple",
         sg: 0,
         maxSpawned: 6,
@@ -183,9 +183,9 @@ const MAP = {
         movables: '[[371,"GreenBat"],[439,"GreenBat"],[507,"GreenBat"]]',
         lairs: '[[1003,5,"Lair66"],[1019,3,"Lair52"]]',
         monsterList: '["Bat","RedGoldBat","RedGoldBat","DarkRedBat"]',
-        }
+    }
     ,
-    7 : {
+    7: {
         name: "Royal Fitness",
         sg: 0,
         maxSpawned: 5,
@@ -208,9 +208,9 @@ const MAP = {
         trainers: '[[452,7,"Muscula"],[644,3,"MeanJah"]]',
         lairs: '[[697,7,"Lair48"],[877,1,"Lair40"]]',
         monsterList: '["Bat","RedGoldBat","DarkRedBat"]',
-        }
+    }
     ,
-    8 : {
+    8: {
         name: "Budoir",
         sg: 0,
         maxSpawned: 4,
@@ -236,9 +236,9 @@ const MAP = {
         movables: '[[250,"GreenBat"],[275,"GreenBat"],[244,"GreenBat"],[66,"GreenBat"]]',
         lairs: '[[161,1,"Lair80"],[181,5,"Lair13"],[179,3,"Lair64"],[199,7,"Lair65"]]',
         monsterList: '["Spider","SpiderGreen","SpiderRed","MadHandy"]',
-        }
+    }
     ,
-    9: {
+    9 : {
         name: "Short Corridor",
         sg: 0,
         maxSpawned: -1,
@@ -250,8 +250,12 @@ const MAP = {
         floor: "DarkWallSDXL323",
         ceil: "IvyWall_518",
         start: '[23,5]',
+        decals: '[[30,4,"RustyFloorGrille_06","crest"],[29,4,"RustyFloorGrille_06","crest"],[28,4,"RustyFloorGrille_06","crest"]]',
         gates: '[[22,5,"9.1","2.9","Closed"],[32,3,"9.2","12.1","Red"]]',
-    }
+        monsters: '[[31,"DarkMadHandy"]]',
+        gold: '[[40,"GoldBar"]]',
+        containers: '[[14,"MetalCrate423","INTERACTION_ITEM.GreyLatexPanties",7]]',
+        }
     ,
     10: {
         name: "Deadly Maze",
@@ -462,7 +466,7 @@ const MAP = {
         entities: '[[3,7,"GoldMelta"]]',
     }
     ,
-    21 : {
+    21: {
         name: "Castle Bar",
         sg: 0,
         maxSpawned: 4,
@@ -486,7 +490,7 @@ const MAP = {
         movables: '[[723,"GreenBat"]]',
         lairs: '[[579,7,"Lair25"],[851,1,"Lair24"]]',
         monsterList: '["Bat","RedGoldBat","DarkRedBat","Bat","RedGoldBat","RedGoldBat","DarkRedBat","Dragon"]',
-        }
+    }
     ,
     22: {
         name: "East Balcony",
