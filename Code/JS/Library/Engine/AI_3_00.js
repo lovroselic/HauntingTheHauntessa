@@ -98,8 +98,8 @@ const AI = {
         }
 
         const enemyPos = this.getPosition(enemy);
-        const player3DGrid = Vector3.to_Grid3D(ARG.exactPlayerPosition);
-        if (!GRID.sameFloor(enemyPos, player3DGrid)) return this.immobile(enemy); 
+        const player3DGrid = Vector3.to_Grid3D(exactPosition);
+        if (!GRID.sameFloor(enemyPos, player3DGrid)) return this.immobile(enemy);
 
         /** this is still 2D plane , only works if they are on the same plane */
         const pPos = Vector3.to_FP_Grid(exactPosition);
@@ -110,7 +110,7 @@ const AI = {
         const GA = enemy.parent.map.GA;
         const nextGridBlocked = GA.check(landingGrid, GROUND_MOVE_GRID_EXCLUSION.sum())
         if (nextGridBlocked) console.warn("this is going to end in fuckup! return "); // return this.immobile(enemy);
-        if (true) console.log("pPos", pPos, "ePos", ePos, "direction", direction, "enemy.distance", enemy.distance,"orto", orto, "landingGrid", landingGrid);
+        if (true) console.log("pPos", pPos, "ePos", ePos, "direction", direction, "enemy.distance", enemy.distance, "orto", orto, "landingGrid", landingGrid);
         //if (this.VERBOSE) console.log("pPos", pPos, "ePos", ePos, "direction", direction, "enemy.distance", enemy.distance,"orto", orto);
         orto = orto.toVector3D(); // adding z=0 for 3D compatibility, but this still only works on the plane!!!
         //if (this.VERBOSE) console.info(`${enemy.name}-${enemy.id} FP hunt`, orto, "strategy", enemy.behaviour.strategy);
@@ -151,6 +151,9 @@ const AI = {
         let path = GRID.pathFromNodeMap3D(goal, Astar);
         let directions = GRID.directionsFromPath(path, 1);
         return directions;
+    },
+    hunter(enemy, ARG) {
+        return this.hunt(enemy, ARG.exactPlayerPosition);
     },
     follower(enemy, ARG) {
         return this.crossroader(enemy, ARG.playerPosition, ARG.currentPlayerDir.mirror(), ARG.block, ARG.exactPlayerPosition);

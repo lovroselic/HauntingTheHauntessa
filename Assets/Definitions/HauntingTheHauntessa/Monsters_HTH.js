@@ -97,6 +97,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    BarefootPinka: {
+        name: "BarefootPinka",
+        sprite: "BarefootPinka",
+        category: 'crest',
+        voice: "FemaleLow",
+        text: "Did you notice that the monsters who can cast magic, are probably more resistant to magic? No? Think ...",
+        interactionCategory: "oracle",
+    },
     ManaBabe: {
         name: "ManaBabe",
         sprite: "ManaBabe",
@@ -1487,6 +1495,7 @@ const MONSTER_TYPE = {
     },
     MissGalaxy: {
         name: "MissGalaxy",
+        texture: "MissGalaxyBrighter",
         model: "MissGalaxy",
         scale: 0.9 / 2 ** 2,
         rotateToNorth: Math.PI,
@@ -1534,6 +1543,80 @@ const MONSTER_TYPE = {
         moveSpeed: 1.0,
         material: MATERIAL.standardShine,
     },
+    BigBat: {
+        name: "BigBat",
+        model: "BigBat",
+        scale: 0.55 / 2 ** 1,
+        rotateToNorth: Math.PI / 2,
+        midHeight: 0.0,
+        fly: 0.5,
+        deathType: "SmokeExplosion",
+        inventory: null,
+        mana: 0,
+        health: 10,
+        attack: 7,
+        magic: 5,
+        defense: 2,
+        xp: 10,
+        attackSound: "BatAttack",
+        hurtSound: "BatAttack",
+        behaviourArguments: [Infinity, ["wanderer"], -1],
+        moveSpeed: 1.1,
+        material: MATERIAL.standard,
+    },
+    MissGalaxyGreen: {
+        name: "MissGalaxyGreen",
+        texture: "MissGalaxyGreen",
+        model: "MissGalaxy",
+        scale: 0.8 / 2 ** 2,
+        rotateToNorth: Math.PI,
+        midHeight: 0.55,
+        deathType: "BloodExplosion",
+        inventory: null,
+        mana: 10,
+        health: 30,
+        attack: 18,
+        magic: 20,
+        defense: 2,
+        xp: 30,
+        caster: true,
+        shootDistance: 5,
+        stalkDistance: 6,
+        attackSound: "FemaleAttack3",
+        hurtSound: "Ow2",
+        behaviourArguments: [10, ["wanderer"], 7, ["shoot"]],
+        moveSpeed: 1.1,
+        material: MATERIAL.standardShine,
+        missile: Missile,
+        missileType: COMMON_ITEM_TYPE.RedFireball,
+    },
+    MissGalaxyGreenBouncer: {
+        name: "MissGalaxyGreenBouncer",
+        texture: "MissGalaxyGreen",
+        model: "MissGalaxy",
+        scale: 0.85 / 2 ** 2,
+        rotateToNorth: Math.PI,
+        midHeight: 0.55,
+        deathType: "BloodExplosion",
+        inventory: null,
+        mana: 8,
+        health: 25,
+        attack: 15,
+        magic: 10,
+        defense: 3,
+        xp: 25,
+        caster: true,
+        shootDistance: 5,
+        stalkDistance: 6,
+        attackSound: "FemaleAttack3",
+        hurtSound: "Ow2",
+        behaviourArguments: [10, ["wanderer"], 7, ["shoot"]],
+        moveSpeed: 1.1,
+        material: MATERIAL.standardShine,
+        missile: BouncingMissile,
+        missileType: COMMON_ITEM_TYPE.Bounceball,
+    },
+
 };
 
 const HERO_TYPE = {
@@ -2225,6 +2308,18 @@ const INTERACTION_ITEM = {
         inventorySprite: "BlackLeatherBoots",
         text: "This boots look amazing. Did you see those heels?"
     },
+    Ammo: {
+        name: "Ammo",
+        category: "interaction_item",
+        inventorySprite: "Ammo",
+        text: "Ammunition for a revolver."
+    },
+    Revolver: {
+        name: "Revolver",
+        category: "interaction_item",
+        inventorySprite: "Revolver",
+        text: "Small handgun. I am more of a fireball girl myself."
+    },
 
     //books
     YoniBook: {
@@ -2340,11 +2435,22 @@ const INTERACTION_ITEM = {
         inventorySprite: "IronBar",
         text: "Iron? I can make something from it."
     },
-
-
 };
 
 const INTERACTION_ENTITY = {
+    PoLice: {
+        name: "PoLice",
+        sprite: "PoLice",
+        category: 'crest',
+        voice: "Female2",
+        wants: ["Ammo", "Revolver"],
+        gives: "Handcuffs",
+        text: {
+            intro: "I don't need cuffs when I've got a gun. You bring the firepower, I'll bring the fun.",
+            progress: "That's a start, but I need both. Don't keep me waiting, bring the full load.",
+            conclusion: "Locked and loaded, justice served. These cuffs are yours, if you've got the nerve."
+        }
+    },
     BeerMaid: {
         name: "BeerMaid",
         sprite: "BeerMaid",

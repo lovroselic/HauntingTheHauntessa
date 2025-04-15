@@ -3040,7 +3040,7 @@ class Missile extends Drawable_object {
     }
     move(lapsedTime, GA) {
         if (!this.IAM.exists(this.id)) return;
-        
+
         let length = (lapsedTime / 1000) * this.moveSpeed;
         const pos = this.pos.translate(this.dir, length);
         const F = this.r / 4;                                       // pre bounce offset

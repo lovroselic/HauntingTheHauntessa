@@ -84,9 +84,9 @@ const DEBUG = {
             DONE Saddie wants "Candle", "Candle", "Candle" give GoldCoin
             DONE PlayfulDominatrix wants "Handcuffs","Whip","BlackLeatherBoots" give "BlackLatexpanties"
             DONE BeerMaid wants "SmallBarrel","SmallBarrel","SmallBarrel" gives "GlassOfBeer"
+            DONE PoLice wants "Ammo", "Revolver" gives Handcuffs
 
-
-
+            ----------------------------
             DONE Rose, -> EmoTina (16)
             DONE Rose, **quest --> (5)
             DONE Rose, **quest --> (3)
@@ -109,7 +109,7 @@ const DEBUG = {
             DONE "DumbBell" --> (2)
             DONE Dagger,  --> SpyedHer (15)
             DONE Dagger, **quest --> (3)
-        Dagger, **quest
+            DONE Dagger, **quest --> (23)
             DONE "Beer",  --> (5)
             DONE "Beer" --> (3)
             DONE "GlassOfBeer", **quest --> BeerMaid (21)
@@ -117,11 +117,11 @@ const DEBUG = {
         "GlassOfBeer" **quest
             DONE "Shuriken", -->(21)
             DONE "Shuriken",  --> (7)
-        "Shuriken"
+            DONE "Shuriken" --> (23)
             DONE "BlackLeatherBoot" --> Tresuress (12)
             DONE "BlackLeatherBoot" Drinker (8)
             DONE "Mushroom", --> (6)
-        "Mushroom", 
+            DONE "Mushroom", --> (23)
         "Mushroom"
             DONE "Skull", --> (16)
             DONE "Skull", --> (5)
@@ -138,7 +138,7 @@ const DEBUG = {
         "BlacLatexBra" **quest
             DONE "ArcadeToken",  **quest --> (21)
             DONE "ArcadeToken",  **quest --> (8)
-        "ArcadeToken" **quest
+            DONE "ArcadeToken" **quest --> (23)
             DONE "GoldOre","GoldOre","GoldOre" --> (20)
             DONE "RedCertificate", RedTrans((23))
             DONE "WhiteCertificate", DONW White trans(23)
@@ -147,7 +147,7 @@ const DEBUG = {
             DONE YellowCertificate" yellow transa (23)
             DONE "YellowLatexPanties", --> (2)
             DONE "WhiteLatexPanties", --> (8)
-        "GreyLatexPanties",
+            DONE "GreyLatexPanties", (9)
             DONE "TransRedLatexPanties", --> (7)
             DONE "TransBlackLatexPanties" --> (6)
             DONE "GoldCoin" Saddie (16)
@@ -158,12 +158,14 @@ const DEBUG = {
             DONE "Candle", --> (2)
         "Candle", 
         "Candle"
-        "Handcuffs", 
+            DONE "Handcuffs", --> Police(23)
         "Whip", 
         "BlackLeatherBoots",
             DONE "SmallBarrel", --> (7)
         "SmallBarrel",
         "SmallBarrel"
+        "Ammo", 
+        "Revolver"
 
 
 
@@ -260,6 +262,7 @@ const DEBUG = {
             //"GoldCoin", 
             //"Handcuffs", "Whip", "BlackLeatherBoots",
             //"SmallBarrel","SmallBarrel","SmallBarrel"
+            "Ammo", "Revolver"
 
 
         ];
@@ -380,7 +383,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.15.6",
+    VERSION: "0.15.7",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

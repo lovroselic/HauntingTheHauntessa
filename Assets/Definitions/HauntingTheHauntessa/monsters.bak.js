@@ -741,35 +741,7 @@ const MONSTER_TYPE = {
     },
 
 
-    MissGalaxyGreen: {
-        name: "MissGalaxyGreen",
-        texture: "MissGalaxyGreen",
-        model: "MissGalaxy",
-        scale: 0.8 / 2 ** 2,
-        rotateToNorth: Math.PI,
-        midHeight: 0.55,
-        deathType: "BloodExplosion",
-        inventory: null,
-        //
-        mana: 31,
-        health: 910,
-        attack: 8,
-        magic: 5,
-        defense: 3,
-        xp: 99,
-        //
-        caster: true,
-        shootDistance: 15,
-        stalkDistance: 17,
-        attackSound: "HumanAttack1",
-        hurtSound: "Ow",
-        behaviourArguments: [17, ["wanderer"], 15, ["shoot"]],
-        moveSpeed: 1.1,
-        material: MATERIAL.standardShine,
-        missile: Missile,
-        missileType: COMMON_ITEM_TYPE.RedFireball,
-    },
-
+    
 
     NeverBlink: {
         name: "NeverBlink",
