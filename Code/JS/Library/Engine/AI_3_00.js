@@ -106,10 +106,14 @@ const AI = {
         const ePos = Vector3.to_FP_Grid(enemy.moveState.pos);
         const direction = ePos.direction(pPos);
         let orto = direction.ortoAlign();
-        const landingGrid = enemy.moveState.startGrid.add(orto);
+        const landingGrid = enemy.moveState.startPos.add(orto);
+        console.info("orto", orto, "landingGrid", landingGrid);
         const GA = enemy.parent.map.GA;
         const nextGridBlocked = GA.check(landingGrid, GROUND_MOVE_GRID_EXCLUSION.sum())
-        if (nextGridBlocked) console.warn("this is going to end in fuckup! return "); // return this.immobile(enemy);
+        if (nextGridBlocked) {
+            console.error("this would end in fuckup! luckily was prevented"); // 
+            return this.immobile(enemy);
+        }
         if (true) console.log("pPos", pPos, "ePos", ePos, "direction", direction, "enemy.distance", enemy.distance, "orto", orto, "landingGrid", landingGrid);
         //if (this.VERBOSE) console.log("pPos", pPos, "ePos", ePos, "direction", direction, "enemy.distance", enemy.distance,"orto", orto);
         orto = orto.toVector3D(); // adding z=0 for 3D compatibility, but this still only works on the plane!!!

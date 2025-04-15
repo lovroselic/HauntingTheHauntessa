@@ -13,6 +13,9 @@ known bugs:
     * i don't do bugs
 retests:
 
+ittem problems:
+    - redundant beer in area 1 ??
+
 
  */
 ////////////////////////////////////////////////////
@@ -203,7 +206,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 23; //2 --> 6-->3-->2--->21-->2-->7 -->8-->9-->23
+        GAME.level = 13; //2 --> 6-->3-->2--->21-->2-->7 -->8-->9-->23-->2-->13
         GAME.gold = 535;
         GAME.lives = 1;
 
@@ -257,14 +260,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            //"BlackLatexGloves", "Crown",
-            //debug
-            //"GoldCoin", 
-            //"Handcuffs", "Whip", "BlackLeatherBoots",
-            //"SmallBarrel","SmallBarrel","SmallBarrel"
-            "Ammo", "Revolver"
-
-
+ 
         ];
 
         for (let itm of invItems) {
@@ -383,7 +379,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.15.7",
+    VERSION: "0.15.8",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
