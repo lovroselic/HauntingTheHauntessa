@@ -654,12 +654,7 @@ const INTERACTION_ITEM = {
         inventorySprite: "Kiss",
         text: "This looks like a portable kiss voucher. What a fascinating concept."
     },
-    Spectacles: {
-        name: "Spectacles",
-        category: "interaction_item",
-        inventorySprite: "Spectacles",
-        text: "Spectacles with round rims. This is a fashion hit of the Castle Creep."
-    },
+
     OrangeLeggings: {
         name: "OrangeLeggings",
         category: "interaction_item",

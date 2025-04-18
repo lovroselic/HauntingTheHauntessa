@@ -611,7 +611,6 @@ LoadTextures = [
     { srcName: "Wall/RoughCeiling1.jpg", name: "RoughCeiling1" },
     { srcName: "Wall/ShinyCeiling.jpg", name: "ShinyCeiling" },
     { srcName: "Wall/ShinyGreyBricks100.jpg", name: "ShinyGreyBricks100" },
-
     { srcName: "Wall/IvyWall_517.jpg", name: "IvyWall_517" },
     { srcName: "Wall/IvyWall_518.jpg", name: "IvyWall_518" },
     { srcName: "Wall/IvyWall_519.jpg", name: "IvyWall_519" },
@@ -621,7 +620,6 @@ LoadTextures = [
     { srcName: "Wall/IvyWall_523.jpg", name: "IvyWall_523" },
     { srcName: "Wall/IvyWall_524.jpg", name: "IvyWall_524" },
     { srcName: "Wall/IvyWall_525.jpg", name: "IvyWall_525" },
-
     { srcName: "Wall/BalconyTexture_773.jpg", name: "BalconyTexture_773" },
     { srcName: "Wall/BalconyTexture_774.jpg", name: "BalconyTexture_774" },
     { srcName: "Wall/BalconyTexture_775.jpg", name: "BalconyTexture_775" },
@@ -774,6 +772,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/AmanitaBaseColor.jpg", name: "AmanitaBaseColor" },
     { srcName: "ObjectTextures/SnailColor.jpg", name: "SnailColor" },
     { srcName: "ObjectTextures/FrogColor.jpg", name: "FrogColor" },
+    { srcName: "ObjectTextures/WolfSpiderRed.jpg", name: "WolfSpiderRed" },
 
 
     /** other object textures */
@@ -887,7 +886,7 @@ LoadModels = [
     "Chicken.gltf", "Pig.gltf",
     "Bat.gltf", "MissGalaxy.gltf", "Spider.gltf", "Dragon.gltf",
     "mandy.gltf", "NeverBlink.gltf", "EvilNun.gltf", "LizardMan.gltf", "NecroMorph.gltf", "CyGirl.gltf",
-    "Hunteress.gltf", "Dragon2.gltf", "BigBat.gltf",
+    "Hunteress.gltf", "Dragon2.gltf", "BigBat.gltf", "WolfSpider.gltf"
 ];
 
 LoadSprites = [
@@ -962,10 +961,17 @@ LoadSprites = [
     { srcName: "EntityPictures/ManaBabe.jpg", name: "ManaBabe" },
     { srcName: "EntityPictures/PoLice.jpg", name: "PoLice" },
     { srcName: "EntityPictures/BarefootPinka.jpg", name: "BarefootPinka" },
+    { srcName: "EntityPictures/GreenScrollSellerHalfLife.jpg", name: "GreenScrollSellerHalfLife" },
+    { srcName: "EntityPictures/BlueScrollSellerFluxCripple.jpg", name: "BlueScrollSellerFluxCripple" },
+    { srcName: "EntityPictures/OrangeScrollSellerFluxInvisibility.jpg", name: "OrangeScrollSellerFluxInvisibility" },
+    { srcName: "EntityPictures/FlyScrollSellerID.jpg", name: "FlyScrollSellerID" },
+    { srcName: "EntityPictures/FlyScrollSellerFlux.jpg", name: "FlyScrollSellerFlux" },
+    { srcName: "EntityPictures/SpaceMajor.jpg", name: "SpaceMajor" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
     { srcName: "ActionMovables/BabyDragon.png", name: "BabyDragon" },
+    { srcName: "ActionMovables/RedSpider.png", name: "RedSpider" },
 
     //triggers
     { srcName: "Triggers/MarbleTriggerButton.png", name: "MarbleTriggerButton" },
@@ -1183,6 +1189,10 @@ LoadSprites = [
     { srcName: "Items/SmallBarrel.png", name: "SmallBarrel" },
     { srcName: "Items/Revolver.png", name: "Revolver" },
     { srcName: "Items/Ammo.png", name: "Ammo" },
+    { srcName: "Items/Spectacles.png", name: "Spectacles" },
+    { srcName: "Items/Lipstick.png", name: "Lipstick" },
+    { srcName: "Items/HandMirror3.png", name: "Mirror" },
+    { srcName: "Items/StarDestroyer.png", name: "StarDestroyer" },
 
     //books
     { srcName: "Items/YoniBook.png", name: "YoniBook" },

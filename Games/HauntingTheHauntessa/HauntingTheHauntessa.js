@@ -88,6 +88,16 @@ const DEBUG = {
             DONE PlayfulDominatrix wants "Handcuffs","Whip","BlackLeatherBoots" give "BlackLatexpanties"
             DONE BeerMaid wants "SmallBarrel","SmallBarrel","SmallBarrel" gives "GlassOfBeer"
             DONE PoLice wants "Ammo", "Revolver" gives Handcuffs
+        DarkQueen want "Mirror", "Lipstick" gives BlackLeatherBoots
+        TaoLibrarian wants "Spectacles" gives "TaoBook"
+            DONE SpaceMajor wants "StarDestroyer","StarDestroyer","StarDestroyer" gives "Revolver"
+        GamerOracle 
+        GamePicOracle
+        Scroll selers:
+            - attack 
+            - defense
+            - break sword
+            - break armor
 
             ----------------------------
             DONE Rose, -> EmoTina (16)
@@ -117,7 +127,7 @@ const DEBUG = {
             DONE "Beer" --> (3)
             DONE "GlassOfBeer", **quest --> BeerMaid (21)
             DONE "GlassOfBeer", **quest --> (21)
-        "GlassOfBeer" **quest
+            DONE "GlassOfBeer" **quest --> (13)
             DONE "Shuriken", -->(21)
             DONE "Shuriken",  --> (7)
             DONE "Shuriken" --> (23)
@@ -125,13 +135,13 @@ const DEBUG = {
             DONE "BlackLeatherBoot" Drinker (8)
             DONE "Mushroom", --> (6)
             DONE "Mushroom", --> (23)
-        "Mushroom"
+            DONE "Mushroom" --> (13)
             DONE "Skull", --> (16)
             DONE "Skull", --> (5)
-        "Skull", 
+            DONE "Skull", -->(13) 
         "Skull", 
         "Skull"
-        "TaoBook",  **quest
+        "TaoBook",  **quest --> TaoLibrarian
         "YinYangBook",  **quest
             DONE "TreeOfLifeBook" **quest --> Arcadia(##)
             DONE "GoldBar",  **quest --> GoldMelta (20)
@@ -139,6 +149,7 @@ const DEBUG = {
         "GoldBar" **quest
             DONE "BlackLatexpanties",  **quest --> PlayfulDominatrix(6)
         "BlacLatexBra" **quest
+        "BlackLeatherBoots", --> DarkQueen
             DONE "ArcadeToken",  **quest --> (21)
             DONE "ArcadeToken",  **quest --> (8)
             DONE "ArcadeToken" **quest --> (23)
@@ -155,20 +166,23 @@ const DEBUG = {
             DONE "TransBlackLatexPanties" --> (6)
             DONE "GoldCoin" Saddie (16)
             DONE "GoldCoin" --> (2)
-        "GoldCoin"
+            DONE "GoldCoin" --> (13)
         "GoldCoin"
         "GoldCoin"
             DONE "Candle", --> (2)
-        "Candle", 
+            DONE "Candle", --> (13)
         "Candle"
             DONE "Handcuffs", --> Police(23)
-        "Whip", 
-        "BlackLeatherBoots",
+            DONE "Whip", --> (13)
+        
             DONE "SmallBarrel", --> (7)
-        "SmallBarrel",
+            DONE "SmallBarrel", --> (13)
         "SmallBarrel"
         "Ammo", 
-        "Revolver"
+            DONE "Revolver" --> SpaceGeneral -->()
+        "StarDestroyer"
+        "StarDestroyer"
+        "StarDestroyer"
 
 
 
@@ -207,7 +221,7 @@ const DEBUG = {
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
         GAME.level = 13; //2 --> 6-->3-->2--->21-->2-->7 -->8-->9-->23-->2-->13
-        GAME.gold = 535;
+        GAME.gold = 50035;
         GAME.lives = 1;
 
         HERO.magic = 50;
@@ -260,7 +274,8 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
- 
+            "Lipstick", "Mirror", "Spectacles",
+            "StarDestroyer","StarDestroyer","StarDestroyer",
         ];
 
         for (let itm of invItems) {
@@ -364,6 +379,7 @@ const INI = {
         Amanita: 20,
         Snail: 40,
         ManaFrog: 80,
+        RedWolfSpider: 100,
     },
     HEALTH_INC: 8,
     MANA_INC: 7,
@@ -379,7 +395,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.15.8",
+    VERSION: "0.15.9",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

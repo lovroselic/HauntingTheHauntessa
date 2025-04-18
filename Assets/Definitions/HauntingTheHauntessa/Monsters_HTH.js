@@ -29,6 +29,61 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    FlyScrollSellerFlux: {
+        name: "FlyScrollSellerFlux",
+        sprite: "FlyScrollSellerFlux",
+        which: "Flight",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 250,
+        voice: "Female2",
+        text: "Flight scroll - 250 gold"
+    },
+    FlyScrollSellerID: {
+        name: "FlyScrollSellerID",
+        sprite: "FlyScrollSellerID",
+        which: "Flight",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 250,
+        voice: "Female",
+        text: "Flight scroll - 250 gold"
+    },
+    BlueScrollSellerFluxCripple: {
+        name: "BlueScrollSellerFluxCripple",
+        sprite: "BlueScrollSellerFluxCripple",
+        which: "Cripple",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 499,
+        voice: "FemaleLow2",
+        text: "Cripple scroll - 499 gold"
+    },
+    OrangeScrollSellerFluxInvisibility: {
+        name: "OrangeScrollSellerFluxInvisibility",
+        sprite: "OrangeScrollSellerFluxInvisibility",
+        which: "Invisibility",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 999,
+        voice: "FemaleLow",
+        text: "Invisibility scroll - 999 gold"
+    },
+    GreenScrollSellerHalfLife: {
+        name: "GreenScrollSellerHalfLife",
+        sprite: "GreenScrollSellerHalfLife",
+        which: "HalfLife",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 999,
+        voice: "Female2",
+        text: "HalfLife scroll - 999 gold"
+    },
     HeartAttack: {
         name: "HeartAttack",
         sprite: "HeartAttack",
@@ -1451,17 +1506,17 @@ const MONSTER_TYPE = {
         fly: 0.25,
         deathType: "BloodExplosion",
         inventory: GOLD_ITEM_TYPE.SilverBar,
-        mana: 5, 
+        mana: 5,
         health: 15,
         attack: 10,
-        magic: 6, 
+        magic: 6,
         defense: 3,
         xp: 20,
         caster: true,
         directMagicDamage: false,
         attackSound: "MonsterAttack1",
         hurtSound: "MonsterHurt",
-        behaviourArguments: [10, ["wanderer"], 7, ["shoot"]], 
+        behaviourArguments: [10, ["wanderer"], 7, ["shoot"]],
         moveSpeed: 1.0,
         shootDistance: 7,
         stalkDistance: 6,
@@ -1615,6 +1670,27 @@ const MONSTER_TYPE = {
         material: MATERIAL.standardShine,
         missile: BouncingMissile,
         missileType: COMMON_ITEM_TYPE.Bounceball,
+    },
+    WolfSpider: {
+        name: "WolfSpider",
+        model: "WolfSpider",
+        scale: 1.0 / 2**2,
+        rotateToNorth: Math.PI,
+        midHeight: 0.4,
+        deathType: "BloodExplosion",
+        inventory: null,
+        mana: 0,
+        health: 16,
+        attack: 20,
+        magic: 0,
+        defense: 5,
+        xp: 25,
+        directMagicDamage: false,
+        attackSound: "MonsterAttack1",
+        hurtSound: "MonsterHurt",
+        behaviourArguments: [15, ["wanderer"], 11, ["advancer"]],
+        moveSpeed: 1.15,
+        material: MATERIAL.standard,
     },
 
 };
@@ -1953,6 +2029,21 @@ const MOVABLE_INTERACTION_OBJECT = {
         material: MATERIAL.greenShine,
         behaviourArguments: [Infinity, ["wanderer"], -1],
         inventorySprite: "GreenBat",
+        text: "Reeks with magic. Let's nibble.",
+    },
+    RedWolfSpider: {
+        /** mana */
+        name: "RedWolfSpider",
+        category: "action_item",
+        which: "mana",
+        model: "WolfSpider",
+        scale: 1.0 / 2 ** 4,
+        rotateToNorth: Math.PI,
+        moveSpeed: 1.25,
+        texture: "WolfSpiderRed",
+        material: MATERIAL.standardShine,
+        behaviourArguments: [Infinity, ["wanderer"], -1],
+        inventorySprite: "RedSpider",
         text: "Reeks with magic. Let's nibble.",
     },
     BabyGreenSpider: {
@@ -2320,6 +2411,30 @@ const INTERACTION_ITEM = {
         inventorySprite: "Revolver",
         text: "Small handgun. I am more of a fireball girl myself."
     },
+    Mirror: {
+        name: "Mirror",
+        category: "interaction_item",
+        inventorySprite: "Mirror",
+        text: "Who is the fairest? Me."
+    },
+    Spectacles: {
+        name: "Spectacles",
+        category: "interaction_item",
+        inventorySprite: "Spectacles",
+        text: "Spectacles with round rims. This is a fashion hit of the Castle Creep."
+    },
+    Lipstick: {
+        name: "Lipstick",
+        category: "interaction_item",
+        inventorySprite: "Lipstick",
+        text: "Sexy red color. Suits me fine."
+    },
+    StarDestroyer: {
+        name: "StarDestroyer",
+        category: "interaction_item",
+        inventorySprite: "StarDestroyer",
+        text: "A pocket sized star destroyer."
+    },
 
     //books
     YoniBook: {
@@ -2438,6 +2553,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    SpaceMajor: {
+        name: "SpaceMajor",
+        sprite: "SpaceMajor",
+        category: 'crest',
+        voice: "Female",
+        wants: ["StarDestroyer","StarDestroyer","StarDestroyer"],
+        gives: "Revolver",
+        text: {
+            intro: "The galaxy burns and I need more boom. Fetch me power to seal their doom!",
+            progress: "A mighty ship, but more to go. I need the fleet to strike the blow!",
+            conclusion: "The fleet is set, the stars align. Here's an old relic, its kick is fine."
+        }
+    },
     PoLice: {
         name: "PoLice",
         sprite: "PoLice",
@@ -2456,7 +2584,7 @@ const INTERACTION_ENTITY = {
         sprite: "BeerMaid",
         category: 'crest',
         voice: "Female",
-        wants: ["SmallBarrel","SmallBarrel","SmallBarrel"],
+        wants: ["SmallBarrel", "SmallBarrel", "SmallBarrel"],
         gives: "GlassOfBeer",
         text: {
             intro: "How's a maid to pour a brew, with all my barrels lost from view?",
