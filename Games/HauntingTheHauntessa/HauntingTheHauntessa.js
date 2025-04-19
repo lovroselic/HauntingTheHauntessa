@@ -275,7 +275,6 @@ const DEBUG = {
 
         let invItems = [
             "Lipstick", "Mirror", "Spectacles",
-            "StarDestroyer","StarDestroyer","StarDestroyer",
         ];
 
         for (let itm of invItems) {
@@ -313,7 +312,7 @@ const DEBUG = {
         if (int_decals.length > 0) {
             console.log("int_decals", int_decals);
             for (const ent of int_decals) {
-                console.log(ent.id, ent.name, ent.grid, ent.wants, ent.gives, ent.which, ent.interactionCategory, ent.price);
+                console.log(ent.id, ent.name, ent.grid, "wants", ent.wants, "gives", ent.gives, "which", ent.which, "int.cat", ent.interactionCategory, "price", ent.price);
             }
         }
         console.log("-------------------------------------------");
@@ -326,7 +325,7 @@ const DEBUG = {
         }
         console.log("-------------------------------------------");
         for (const gate of INTERACTIVE_BUMP3D.POOL) {
-            console.log(gate.name, gate.grid, gate.destination.level, gate.color);
+            console.log(gate.name, gate.grid, gate.destination.level, gate.color, "dest", gate.destination, "to", MAP[gate.destination.level].name);
         }
 
         console.info("**** HERO experience ****");
@@ -395,7 +394,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.15.9",
+    VERSION: "0.15.10",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -1616,6 +1615,8 @@ const GAME = {
             console.log("\nDEBUG:");
             console.log("#######################################################");
             ENTITY3D.display();
+            ENTITY3D.analyze();
+            console.log("------------------------------------------------------");
             console.log("map", MAP[GAME.level].map);
             console.log("MAP", MAP[GAME.level]);
             console.log("HERO", HERO);

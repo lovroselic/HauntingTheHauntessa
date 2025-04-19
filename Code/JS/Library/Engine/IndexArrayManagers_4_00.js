@@ -1164,18 +1164,25 @@ class Animated_3d_entity extends IAM {
         let monsterDict = new DefaultDict(0);
         let XP = 0;
         let gold = 0;
+        let ADM = 0;
+        let health = 0;
         for (const enemy of this.POOL) {
             monsterDict[enemy.name]++;
             XP += enemy.xp;
-            gold += enemy.gold;
+            gold += enemy.gold || 0;
+            ADM += enemy.attack + enemy.defense + enemy.magic;
+            health += enemy.health;
         }
 
         console.group("ENEMY analysis");
         for (const item in monsterDict) {
             console.log(item, monsterDict[item], Number(monsterDict[item] / this.POOL.length * 100).toFixed(2), "%");
         }
+        console.log("------------------------------------------");
         console.log("TOTAL XP:", XP);
         console.log("TOTAL Gold:", gold);
+        console.log("TOTAL ADM:", ADM);
+        console.log("TOTAL Health:", health);
         console.groupEnd("ENEMY analysis");
     }
 }
