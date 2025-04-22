@@ -967,6 +967,11 @@ LoadSprites = [
     { srcName: "EntityPictures/FlyScrollSellerID.jpg", name: "FlyScrollSellerID" },
     { srcName: "EntityPictures/FlyScrollSellerFlux.jpg", name: "FlyScrollSellerFlux" },
     { srcName: "EntityPictures/SpaceMajor.jpg", name: "SpaceMajor" },
+    { srcName: "EntityPictures/GreenScrollSellerWeapon.jpg", name: "GreenScrollSellerWeapon" },
+    { srcName: "EntityPictures/TaoLibrarian.jpg", name: "TaoLibrarian" },
+    { srcName: "EntityPictures/ScrollSellerBoostArmor.jpg", name: "ScrollSellerBoostArmor" },
+    { srcName: "EntityPictures/StackOracle.jpg", name: "StackOracle" },
+    { srcName: "EntityPictures/DrainManaScrollSeller.jpg", name: "DrainManaScrollSeller" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
@@ -1725,6 +1730,21 @@ LoadSprites = [
     { srcName: "ObjDecals/Skull_786.png", name: "Skull_786" },
     { srcName: "ObjDecals/Skull_787.png", name: "Skull_787" },
     { srcName: "ObjDecals/Skull_788.png", name: "Skull_788" },
+    { srcName: "ObjDecals/Skull_804.png", name: "Skull_804" },
+    { srcName: "ObjDecals/Skull_805.png", name: "Skull_805" },
+    { srcName: "ObjDecals/Skull_806.png", name: "Skull_806" },
+    { srcName: "ObjDecals/Skull_807.png", name: "Skull_807" },
+    { srcName: "ObjDecals/Skull_808.png", name: "Skull_808" },
+    { srcName: "ObjDecals/Skull_809.png", name: "Skull_809" },
+    { srcName: "ObjDecals/Skull_810.png", name: "Skull_810" },
+    { srcName: "ObjDecals/Skull_811.png", name: "Skull_811" },
+    { srcName: "ObjDecals/Skull_812.png", name: "Skull_812" },
+    { srcName: "ObjDecals/Skull_813.png", name: "Skull_813" },
+    { srcName: "ObjDecals/Skull_814.png", name: "Skull_814" },
+    { srcName: "ObjDecals/Skull_815.png", name: "Skull_815" },
+    { srcName: "ObjDecals/Skull_816.png", name: "Skull_816" },
+    { srcName: "ObjDecals/Skull_817.png", name: "Skull_817" },
+    { srcName: "ObjDecals/Skull_818.png", name: "Skull_818" },
 
     //decal-pics - all
     { srcName: "PicDecals/1942_200.png", name: "1942_200" },

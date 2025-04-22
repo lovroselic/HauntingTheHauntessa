@@ -1167,11 +1167,13 @@ class Animated_3d_entity extends IAM {
         let ADM = 0;
         let health = 0;
         for (const enemy of this.POOL) {
-            monsterDict[enemy.name]++;
-            XP += enemy.xp;
-            gold += enemy.gold || 0;
-            ADM += enemy.attack + enemy.defense + enemy.magic;
-            health += enemy.health;
+            if (enemy) {
+                monsterDict[enemy.name]++;
+                XP += enemy.xp;
+                gold += enemy.gold || 0;
+                ADM += enemy.attack + enemy.defense + enemy.magic;
+                health += enemy.health;
+            }
         }
 
         console.group("ENEMY analysis");

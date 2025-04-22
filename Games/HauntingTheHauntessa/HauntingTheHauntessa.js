@@ -89,12 +89,13 @@ const DEBUG = {
             DONE BeerMaid wants "SmallBarrel","SmallBarrel","SmallBarrel" gives "GlassOfBeer"
             DONE PoLice wants "Ammo", "Revolver" gives Handcuffs
         DarkQueen want "Mirror", "Lipstick" gives BlackLeatherBoots
-        TaoLibrarian wants "Spectacles" gives "TaoBook"
+            DONE TaoLibrarian wants "Spectacles" gives "TaoBook"
             DONE SpaceMajor wants "StarDestroyer","StarDestroyer","StarDestroyer" gives "Revolver"
         GamerOracle 
         GamePicOracle
-        Scroll selers:
-            - attack 
+
+        Scroll sellers:
+
             - defense
             - break sword
             - break armor
@@ -139,9 +140,9 @@ const DEBUG = {
             DONE "Skull", --> (16)
             DONE "Skull", --> (5)
             DONE "Skull", -->(13) 
-        "Skull", 
+            DONE "Skull", --> (27)
         "Skull"
-        "TaoBook",  **quest --> TaoLibrarian
+            DONE "TaoBook",  **quest --> TaoLibrarian
         "YinYangBook",  **quest
             DONE "TreeOfLifeBook" **quest --> Arcadia(##)
             DONE "GoldBar",  **quest --> GoldMelta (20)
@@ -220,7 +221,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 13; //2 --> 6-->3-->2--->21-->2-->7 -->8-->9-->23-->2-->13
+        GAME.level = 27; //2 --> 6-->3-->2--->21-->2-->7 -->8-->9-->23-->2-->13-->27-->13
         GAME.gold = 50035;
         GAME.lives = 1;
 
@@ -274,7 +275,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            "Lipstick", "Mirror", "Spectacles",
+            "Lipstick", "Mirror", 
         ];
 
         for (let itm of invItems) {
@@ -394,7 +395,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.15.11",
+    VERSION: "0.15.12",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

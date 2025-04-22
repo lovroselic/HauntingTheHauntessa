@@ -29,6 +29,39 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    DrainManaScrollSeller: {
+        name: "DrainManaScrollSeller",
+        sprite: "DrainManaScrollSeller",
+        which: "DrainMana",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 666,
+        voice: "FemaleLow",
+        text: "Drain Mana scroll - 666 gold"
+    },
+    ScrollSellerBoostArmor: {
+        name: "ScrollSellerBoostArmor",
+        sprite: "ScrollSellerBoostArmor",
+        which: "BoostArmor",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 499,
+        voice: "FemaleLow",
+        text: "Boost armor scroll - 499 gold"
+    },
+    GreenScrollSellerWeapon: {
+        name: "GreenScrollSellerWeapon",
+        sprite: "GreenScrollSellerWeapon",
+        which: "BoostWeapon",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 499,
+        voice: "FemaleLow",
+        text: "Boost weapon scroll - 499 gold"
+    },
     FlyScrollSellerFlux: {
         name: "FlyScrollSellerFlux",
         sprite: "FlyScrollSellerFlux",
@@ -152,6 +185,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    StackOracle: {
+        name: "StackOracle",
+        sprite: "StackOracle",
+        category: 'crest',
+        voice: "FemaleLow2",
+        text: "Some scroll magic stack by effect, some by duration.",
+        interactionCategory: "oracle",
+    },
     BarefootPinka: {
         name: "BarefootPinka",
         sprite: "BarefootPinka",
@@ -2553,6 +2594,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    TaoLibrarian: {
+        name: "TaoLibrarian",
+        sprite: "TaoLibrarian",
+        category: 'crest',
+        voice: "Female2",
+        wants: ["Spectacles"],
+        gives: "TaoBook",
+        text: {
+            intro: "Wisdom fades without the look. Fetch my specs, then get your book!",
+            progress: null,
+            conclusion: "The frames fit nice, the style is sleek. Here's your book, ancient and chic."
+        }
+    },
     SpaceMajor: {
         name: "SpaceMajor",
         sprite: "SpaceMajor",

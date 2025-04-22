@@ -106,6 +106,7 @@ const AI = {
         const ePos = Vector3.to_FP_Grid(enemy.moveState.pos);
         const direction = ePos.direction(pPos);
         let orto = direction.ortoAlign();
+        orto = orto.toVector3D();                                   // adding z=0 for 3D compatibility, but this still only works on the plane!!!
         const landingGrid = enemy.moveState.startPos.add(orto);
         console.info("orto", orto, "landingGrid", landingGrid);
         const GA = enemy.parent.map.GA;
@@ -116,7 +117,7 @@ const AI = {
         }
         if (true) console.log("pPos", pPos, "ePos", ePos, "direction", direction, "enemy.distance", enemy.distance, "orto", orto, "landingGrid", landingGrid);
         //if (this.VERBOSE) console.log("pPos", pPos, "ePos", ePos, "direction", direction, "enemy.distance", enemy.distance,"orto", orto);
-        orto = orto.toVector3D(); // adding z=0 for 3D compatibility, but this still only works on the plane!!!
+        
         //if (this.VERBOSE) console.info(`${enemy.name}-${enemy.id} FP hunt`, orto, "strategy", enemy.behaviour.strategy);
         if (true) console.info(`${enemy.name}-${enemy.id} FP hunt`, orto, "strategy", enemy.behaviour.strategy);
         return [orto];
