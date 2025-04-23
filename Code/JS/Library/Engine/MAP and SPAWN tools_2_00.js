@@ -22,6 +22,7 @@ const MAP_TOOLS = {
         DIM_3D: true, //if false reverts to 2D
     },
     manageMAP(level) {
+        if (MAP[level].map.spawnDelay < 0) return;
         if (MAP[level].map.stopSpawning) return;
         /** check the lair cooldown */
         if (MAP[level].map.killCount >= MAP[level].map.killCountdown) {
@@ -52,7 +53,6 @@ const MAP_TOOLS = {
     },
     unpack(level) {
         if (this.MAP[level].unpacked) return;                                                   // already unpacked, nothing to do
-
 
         const mapData = JSON.parse(this.MAP[level].data);
         let rebuilt = false;
@@ -141,10 +141,10 @@ const MAP_TOOLS = {
     applyStorageActions(level) {
         if (!this.MAP[level].unused_storage) return;
         if (!this.MAP[level].map.storage.empty()) return;
-        if (ENGINE.verbose) console.info("Applying actions for level", level);
+        //if (ENGINE.verbose) console.info("Applying actions for level", level);
         this.MAP[level].unused_storage.apply();
         this.MAP[level].map.storage.addStorage(this.MAP[level].unused_storage);
-        if (ENGINE.verbose) console.log("this.MAP[level].map.storage", this.MAP[level].map.storage);
+        //if (ENGINE.verbose) console.log("this.MAP[level].map.storage", this.MAP[level].map.storage);
         MAP_TOOLS.setOcclusionMap(level);
     }
 };
@@ -401,9 +401,9 @@ class IAM_Storage {
             if (ENGINE.verbose) console.log(". action", action);
             const IAM = eval(action.IAM);
             const obj = IAM.POOL[action.id - 1];
-            if (ENGINE.verbose) console.log(".... trying", obj, action.action, action.arg);
+            //if (ENGINE.verbose) console.log(".... trying", obj, action.action, action.arg);
             obj[action.action](action.arg);
-            if (ENGINE.verbose) console.log("........ OK", obj, action.action, action.arg);
+            //if (ENGINE.verbose) console.log("........ OK", obj, action.action, action.arg);
         }
     }
     add(item) {

@@ -107,7 +107,7 @@ const AI = {
         const direction = ePos.direction(pPos);
         let orto = direction.ortoAlign();
         orto = orto.toVector3D();                                   // adding z=0 for 3D compatibility, but this still only works on the plane!!!
-        const landingGrid = enemy.moveState.startPos.add(orto);
+        const landingGrid = Grid3D.toClass(enemy.moveState.startPos.add(orto));
         console.info("orto", orto, "landingGrid", landingGrid);
         const GA = enemy.parent.map.GA;
         const nextGridBlocked = GA.check(landingGrid, GROUND_MOVE_GRID_EXCLUSION.sum())
@@ -115,7 +115,7 @@ const AI = {
             console.error("this would end in fuckup! luckily was prevented"); // 
             return this.immobile(enemy);
         }
-        if (true) console.log("pPos", pPos, "ePos", ePos, "direction", direction, "enemy.distance", enemy.distance, "orto", orto, "landingGrid", landingGrid);
+        if (true) console.log("pPos", pPos, "ePos", ePos, "direction", direction, "enemy.distance", enemy.distance, "orto", orto, "landingGrid", landingGrid, "nextGridBlocked", nextGridBlocked);
         //if (this.VERBOSE) console.log("pPos", pPos, "ePos", ePos, "direction", direction, "enemy.distance", enemy.distance,"orto", orto);
         
         //if (this.VERBOSE) console.info(`${enemy.name}-${enemy.id} FP hunt`, orto, "strategy", enemy.behaviour.strategy);
