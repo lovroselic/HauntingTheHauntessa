@@ -1850,8 +1850,9 @@ class $3D_player {
             case undefined:
             case "HOLE":
                 if (feetPos3.y < -0.9) {
-                    console.error("DONE FALLING into HOLE", "feetPos3.y", feetPos3.y, "this.velocity_Z", this.velocity_Z);
+                    console.error("DONE FALLING into HOLE", "feetPos3.y", feetPos3.y, "this.velocity_Z", this.velocity_Z, "nextPos3", nextPos3);
                     this.velocity_Z = -9999999.99;
+                    nextPos3.set_y(0);  
                     this.setPos(nextPos3);
                     return true;
                 }
@@ -2080,6 +2081,7 @@ class $3D_player {
         if (WebGL.CONFIG.dual && WebGL.CONFIG.firstperson) this.setRotation();   //
     }
     bumpEnemy(nextPos, nextPos3) {
+        if (!this.map.enemyIA) return;
         const eCount = WebGL.enemySources.reduce((acc, source) => acc + (source.POOL?.length || 0), 0);
         if (!eCount) return;
 

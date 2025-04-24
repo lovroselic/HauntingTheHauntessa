@@ -175,7 +175,6 @@ const DEBUG = {
         "Candle"
             DONE "Handcuffs", --> Police(23)
             DONE "Whip", --> (13)
-        
             DONE "SmallBarrel", --> (7)
             DONE "SmallBarrel", --> (13)
         "SmallBarrel"
@@ -183,7 +182,10 @@ const DEBUG = {
             DONE "Revolver" --> SpaceGeneral -->()
         "StarDestroyer"
         "StarDestroyer"
-        "StarDestroyer"
+            DONE "StarDestroyer" --> (16)
+            DONE "Spectacles" --> (16)
+        "Mirror", 
+        "Lipstick"
 
 
 
@@ -221,7 +223,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 16; //2 --> 6-->3-->2--->21-->2-->7 -->8-->9-->23-->2-->13-->27-->13-->16
+        GAME.level = 18; //2 --> 6-->3-->2--->21-->2-->7 -->8-->9-->23-->2-->13-->27-->13-->16-->17-->18
         GAME.gold = 50035;
         GAME.lives = 1;
 
@@ -263,7 +265,7 @@ const DEBUG = {
         }
 
         let scrollTypes = [
-            "Luck"
+            "Flight", "Flight", "Flight", "Flight",
         ];
 
         for (let scrType of scrollTypes) {
@@ -275,7 +277,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            "Lipstick", "Mirror", 
+            "Lipstick", "Mirror",
         ];
 
         for (let itm of invItems) {
@@ -295,7 +297,7 @@ const DEBUG = {
         console.warn("level:", GAME.level, "totalKills", MAP[GAME.level].map.totalKills, "killsRequiredToStopSpawning", MAP[GAME.level].map.killsRequiredToStopSpawning, "stopped", MAP[GAME.level].map.stopSpawning, "delay", MAP[GAME.level].map.spawnDelay,
             "killCount", MAP[GAME.level].map.killCount, "killCountdown", MAP[GAME.level].map.killCountdown, "maxSpawned", MAP[GAME.level].map.maxSpawned, "lairs:", LAIR.POOL.length
         );
-        console.info(MAP[GAME.level].monsterList);
+        console.info("monsterList", MAP[GAME.level].monsterList);
     },
     displayCompleteness() {
         console.log("-------------------------------------------");
@@ -386,7 +388,7 @@ const INI = {
     SCROLL_RANGE: 30,
     CRIPPLE_SPEED: 0.1,
     INVISIBILITY_TIME: 60,
-    JUMP_POWER: 1.5,                    // jump distance in grid units 1.5 default
+    JUMP_POWER: 1.55,                    // jump distance in grid units 1.55 default
     MAX_JUMP_POWER: 3.5,
     LUCKY_TIME: 59,
     FLIGHT_TIME: 59,
@@ -395,7 +397,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.15.13",
+    VERSION: "0.15.14",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -931,9 +933,9 @@ const HERO = {
 
         const heroRefGrid = Vector3.to_Grid3D(HERO.player.pos.translate(UP3, HERO.player.heigth));
         const gridValue = REVERSED_MAPDICT[HERO.player.map.GA.getValue(heroRefGrid)];
-        const heightOffset = parseInt(gridValue[4], 10) / 10;
-
-        HERO.player.pos.set_y(0.1 + HERO.player.depth + heightOffset);
+        const heightOffset = parseInt(gridValue[4], 10) / 10 || 0;
+        const depth = Math.max(0, HERO.player.depth);
+        HERO.player.pos.set_y(0.1 + depth + heightOffset);
         WebGL.GAME.setFirstPerson();
         if (GAME.lives <= 0) return HERO.finalDeath();
 

@@ -97,9 +97,9 @@ const MAP_TOOLS = {
         /**
          * hotfixes:
         MAP[GAME.level].map.killCountdown = 4;
-        MAP[GAME.level].map.killsRequiredToStopSpawning = 28;
-        MAP[GAME.level].map.stopSpawning = false;
+        MAP[GAME.level].map.killsRequiredToStopSpawning = 99;
         MAP[GAME.level].map.spawnDelay = 7500;
+          MAP[GAME.level].map.stopSpawning = false;
          */
         const SG = this.MAP[level].sg || null;
         this.MAP[level].map.sg = SG;
@@ -205,7 +205,7 @@ const SPAWN_TOOLS = {
     },
     externalGates(map, GA) {
         for (const G of map.gates) {
-            console.log("spawning gate", G);
+            //console.log("spawning gate", G);
             const color = G[4];
             const grid = GA.indexToGrid(G[0]);
             GA.addStair(grid);
@@ -215,7 +215,7 @@ const SPAWN_TOOLS = {
             const face = DirectionToFace(dir);
             const picture = `DungeonDoor_${color}`;
             const destination = new Destination(G[3], G[3].split(".")[0], G[2]);
-            console.log("pointer", pointer, "Destination", destination);
+            //console.log("pointer", pointer, "Destination", destination);
             let opEn = false;
             if (["Open", "Up", "Down"].includes(color)) opEn = true;
             let locked = true;
@@ -398,7 +398,7 @@ class IAM_Storage {
     }
     apply() {
         for (const action of this.action_list) {
-            if (ENGINE.verbose) console.log(". action", action);
+            //if (ENGINE.verbose) console.log(". action", action);
             const IAM = eval(action.IAM);
             const obj = IAM.POOL[action.id - 1];
             //if (ENGINE.verbose) console.log(".... trying", obj, action.action, action.arg);
