@@ -39,8 +39,10 @@ const SPEECH = {
     });
   },
   use(voice) {
+    console.warn("use voice", voice);
     voice = VOICE[voice];
     SPEECH.voice = SPEECH.voices[voice.voice];
+    if (SPEECH.VERBOSE) console.info(`%cSPEECH voice used ${JSON.stringify(SPEECH.voice)}, voice: ${JSON.stringify(voice)}`, SPEECH.CSS);
     for (const setting in voice.setting) {
       SPEECH.settings[setting] = voice.setting[setting];
     }
@@ -56,7 +58,7 @@ const SPEECH = {
 
     if (speechSynthesis.speaking || speechSynthesis.pending) {
       if (SPEECH.VERBOSE) console.log(`%cSPEECH interrupted. Starting new text.`, "color: #A00");
-      speechSynthesis.cancel();
+      this.silence();
     }
 
     let msg = new SpeechSynthesisUtterance();
@@ -76,7 +78,7 @@ const SPEECH = {
 
     if (speechSynthesis.speaking || speechSynthesis.pending) {
       if (SPEECH.VERBOSE) console.log(`%cSPEECH interrupted. Starting new text.`, "color: #A00");
-      speechSynthesis.cancel();
+      this.silence();
     }
 
     const articulations = ".!?<>+-";
@@ -142,31 +144,36 @@ const SPEECH = {
       speechSynthesis.speak(msg);
     }
   },
-  getVoices() {
-    if (navigator.userAgent.includes("Firefox")) {
-      console.log(`%cInitializing SPEECH - Firefox`, SPEECH.CSS);
-      return new Promise((resolve) => {
-        let voices;
-        voices = speechSynthesis.getVoices();
-        SPEECH.voices = voices;
-        resolve(voices);
-      });
-    } else if (navigator.userAgent.includes("Chrome")) {
-      console.log(`%cInitializing SPEECH - Chrome`, SPEECH.CSS);
-      return new Promise((resolve) => {
-        let voices;
-        speechSynthesis.onvoiceschanged = function () {
-          voices = speechSynthesis.getVoices();
-          SPEECH.voices = voices;
-          resolve(voices);
+  async getVoices() {
+    const voices = await new Promise((resolve) => {
+      const available = speechSynthesis.getVoices();
+      if (available.length) {
+        console.log(`%cVoices loaded immediately (${available.length})`, SPEECH.CSS);
+        resolve(available);
+      } else {
+        const fallbackTimeout = setTimeout(() => {
+          const retry = speechSynthesis.getVoices();
+          if (retry.length) {
+            console.log(`%cVoices loaded after timeout (${retry.length})`, SPEECH.CSS);
+            resolve(retry);
+          } else {
+            console.warn('%c⚠️ No voices available even after timeout.', 'color: red');
+            resolve([]);
+          }
+        }, 500);
+
+        speechSynthesis.onvoiceschanged = () => {
+          clearTimeout(fallbackTimeout);
+          const updated = speechSynthesis.getVoices();
+          console.log(`%cVoices loaded via voiceschanged (${updated.length})`, SPEECH.CSS);
+          resolve(updated);
         };
-      });
-    } else {
-      SPEECH.browserSupport = false;
-      console.log(`%cInitializing SPEECH failed. Browser not supported!`, "color: #F00");
-    }
-  },
-  ready: false
+      }
+    });
+
+    this.voices = voices;
+    return voices;
+  }
 };
 
 class VoiceSetting {

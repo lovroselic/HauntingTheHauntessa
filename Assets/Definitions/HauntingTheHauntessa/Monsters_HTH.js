@@ -185,6 +185,22 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    GrayCutie: {
+        name: "GrayCutie",
+        sprite: "GrayCutie",
+        category: 'crest',
+        voice: "Female2",
+        text: "A lot of wall pictures comes from the legendary 80's computer games. And even more from the unused art from LaughingSkull games. Praised be.",
+        interactionCategory: "oracle",
+    },
+    GreenDungeonie: {
+        name: "GreenDungeonie",
+        sprite: "GreenDungeonie",
+        category: 'crest',
+        voice: "Female",
+        text: "If you find a dungeon too dangerous, then you better leave and return when you are stronger.",
+        interactionCategory: "oracle",
+    },
     StackOracle: {
         name: "StackOracle",
         sprite: "StackOracle",
@@ -1715,7 +1731,7 @@ const MONSTER_TYPE = {
     WolfSpider: {
         name: "WolfSpider",
         model: "WolfSpider",
-        scale: 1.0 / 2**2,
+        scale: 1.0 / 2 ** 2,
         rotateToNorth: Math.PI,
         midHeight: 0.4,
         deathType: "BloodExplosion",
@@ -2594,6 +2610,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    AuntieHauntie: {
+        name: "AuntieHauntie",
+        sprite: "AuntieHauntie",
+        category: 'crest',
+        voice: "Princess",
+        wants: ["Mirror", "Lipstick"],
+        gives: "BlackLeatherBoots",
+        text: {
+            intro: "Hey Auntie Hauntie, I'll bring you the mirror so you will see I am the prettiest of them all. And some better lipstick will not hurt your appearance.",
+            progress: "I have more stuff for you. Just wait a minute.",
+            conclusion: "Thanks for the boots, Auntie Hauntie. You are hot enough even without them."
+        }
+    },
     TaoLibrarian: {
         name: "TaoLibrarian",
         sprite: "TaoLibrarian",
@@ -2612,7 +2641,7 @@ const INTERACTION_ENTITY = {
         sprite: "SpaceMajor",
         category: 'crest',
         voice: "Female",
-        wants: ["StarDestroyer","StarDestroyer","StarDestroyer"],
+        wants: ["StarDestroyer", "StarDestroyer", "StarDestroyer"],
         gives: "Revolver",
         text: {
             intro: "The galaxy burns and I need more boom. Fetch me power to seal their doom!",
@@ -2906,7 +2935,6 @@ const INTERACTION_ENTITY = {
             conclusion: "Oh, delightful, you've saved the day! Take this boot, the other's gone astray."
         }
     },
-
     TheMaid: {
         name: "TheMaid",
         sprite: "TheMaid",

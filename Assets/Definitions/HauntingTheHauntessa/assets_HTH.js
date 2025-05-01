@@ -972,6 +972,9 @@ LoadSprites = [
     { srcName: "EntityPictures/ScrollSellerBoostArmor.jpg", name: "ScrollSellerBoostArmor" },
     { srcName: "EntityPictures/StackOracle.jpg", name: "StackOracle" },
     { srcName: "EntityPictures/DrainManaScrollSeller.jpg", name: "DrainManaScrollSeller" },
+    { srcName: "EntityPictures/DarkQueen2.jpg", name: "AuntieHauntie" },
+    { srcName: "EntityPictures/GreenDungeonie.jpg", name: "GreenDungeonie" },
+    { srcName: "EntityPictures/GrayCutie.jpg", name: "GrayCutie" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },

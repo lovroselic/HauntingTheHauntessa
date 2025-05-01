@@ -1141,7 +1141,9 @@ const ENGINE = {
                     ENGINE.GAME.running = false;
                     return;
                 }
-                func.call(null, ENGINE.GAME.frame.delta);
+                if (DEBUG.max17) {
+                    func.call(null, 17);
+                } else func.call(null, ENGINE.GAME.frame.delta);
                 ENGINE.GAME.frame.start = null;
             }
             if (!ENGINE.GAME.stopAnimation) {
@@ -1268,7 +1270,6 @@ const ENGINE = {
                 ENGINE.GAME.keymap[ENGINE.KEY.map.F4] = false;
             }
         }
-
     },
     VIEWPORT: {
         max: {

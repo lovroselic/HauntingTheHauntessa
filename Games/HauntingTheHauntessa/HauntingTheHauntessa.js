@@ -11,9 +11,11 @@ TODO:
     * 
 known bugs: 
     * i don't do bugs
+    * voices different on diff browsers ??
+    * silence doesn't work if it is the last??
 retests:
 
-ittem problems:
+item problems:
     - redundant beer in area 1 ??
 
 
@@ -30,6 +32,7 @@ const DEBUG = {
     FREE_MAGIC: false,
     keys: true,
     killAllAllowed: true,
+    max17: true,
     displayInv() {
         HERO.inventory.scroll.display();
         const list = [];
@@ -88,7 +91,7 @@ const DEBUG = {
             DONE PlayfulDominatrix wants "Handcuffs","Whip","BlackLeatherBoots" give "BlackLatexpanties"
             DONE BeerMaid wants "SmallBarrel","SmallBarrel","SmallBarrel" gives "GlassOfBeer"
             DONE PoLice wants "Ammo", "Revolver" gives Handcuffs
-        DarkQueen want "Mirror", "Lipstick" gives BlackLeatherBoots
+            DONE AuntieHauntie want "Mirror", "Lipstick" gives BlackLeatherBoots
             DONE TaoLibrarian wants "Spectacles" gives "TaoBook"
             DONE SpaceMajor wants "StarDestroyer","StarDestroyer","StarDestroyer" gives "Revolver"
         GamerOracle 
@@ -96,7 +99,6 @@ const DEBUG = {
 
         Scroll sellers:
 
-            - defense
             - break sword
             - break armor
 
@@ -141,16 +143,16 @@ const DEBUG = {
             DONE "Skull", --> (5)
             DONE "Skull", -->(13) 
             DONE "Skull", --> (27)
-        "Skull"
+            DONE "Skull" --> (18)
             DONE "TaoBook",  **quest --> TaoLibrarian
-        "YinYangBook",  **quest
+            "DONE YinYangBook",  **quest --> (19)
             DONE "TreeOfLifeBook" **quest --> Arcadia(##)
             DONE "GoldBar",  **quest --> GoldMelta (20)
             DONE "GoldBar",  **quest --> (6)
         "GoldBar" **quest
             DONE "BlackLatexpanties",  **quest --> PlayfulDominatrix(6)
-        "BlacLatexBra" **quest
-        "BlackLeatherBoots", --> DarkQueen
+            DONE  "BlacLatexBra" **quest
+            DONE "BlackLeatherBoots", --> AuntieHauntie --> (22)
             DONE "ArcadeToken",  **quest --> (21)
             DONE "ArcadeToken",  **quest --> (8)
             DONE "ArcadeToken" **quest --> (23)
@@ -172,16 +174,16 @@ const DEBUG = {
         "GoldCoin"
             DONE "Candle", --> (2)
             DONE "Candle", --> (13)
-        "Candle"
+            DONE "Candle" (19)
             DONE "Handcuffs", --> Police(23)
             DONE "Whip", --> (13)
             DONE "SmallBarrel", --> (7)
             DONE "SmallBarrel", --> (13)
         "SmallBarrel"
         "Ammo", 
-            DONE "Revolver" --> SpaceGeneral -->()
-        "StarDestroyer"
-        "StarDestroyer"
+            DONE "Revolver" --> SpaceMajor -->(13)
+            DONE "StarDestroyer" --> (22)
+            DONE "StarDestroyer" --> (18)
             DONE "StarDestroyer" --> (16)
             DONE "Spectacles" --> (16)
         "Mirror", 
@@ -223,7 +225,8 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 18; //2 --> 6-->3-->2--->21-->2-->7 -->8-->9-->23-->2-->13-->27-->13-->16-->17-->18
+        GAME.level = 24; //2 --> 6-->3-->2--->21-->2-->7 -->8-->9-->23-->2-->13-->27-->13-->16-->17-->18-->19-->22
+        //-->24
         GAME.gold = 50035;
         GAME.lives = 1;
 
@@ -397,7 +400,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.17.1",
+    VERSION: "0.18.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -486,6 +489,12 @@ const PRG = {
         $(ENGINE.topCanvas).off("mousemove", ENGINE.mouseOver);
         $(ENGINE.topCanvas).off("click", ENGINE.mouseClick);
         $(ENGINE.topCanvas).css("cursor", "");
+
+        if (SPEECH.VERBOSE) {
+            console.info("SPEECH available voices");
+            console.table(SPEECH.voices);
+            console.info(SPEECH.voices);
+        }
 
         $("#startGame").addClass("hidden");
         ENGINE.disableDefaultKeys();
@@ -1373,6 +1382,7 @@ const GAME = {
         if (ENGINE.GAME.stopAnimation) return;
         GAME.movingText.process();
         GAME.titleFrameDraw();
+        SPEECH.silence();
     },
     titleFrameDraw() {
         GAME.movingText.draw();
@@ -1937,7 +1947,6 @@ const TITLE = {
         $("#DOWN")[0].scrollIntoView();
         ENGINE.topCanvas = ENGINE.getCanvasName("ROOM");
         TITLE.drawButtons();
-
         GAME.setTitle();
         ENGINE.GAME.start(16);
         ENGINE.GAME.ANIMATION.next(GAME.runTitle);
