@@ -190,7 +190,7 @@ const ORACLE_TYPE = {
         sprite: "GrayCutie",
         category: 'crest',
         voice: "Female2",
-        text: "A lot of wall pictures comes from the legendary 80's computer games. And even more from the unused art from LaughingSkull games. Praised be.",
+        text: "A lot of wall pictures comes from the legendary 80's computer games. And even more from the unused art from this and previous LaughingSkull games. Praised be.",
         interactionCategory: "oracle",
     },
     GreenDungeonie: {

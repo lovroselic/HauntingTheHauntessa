@@ -34,9 +34,33 @@ const SPEECH = {
         SPEECH.voice = SPEECH.voices[1];
         let def = new VoiceSetting(rate, pitch, volume);
         SPEECH.settings = def;
+        SPEECH.reMapVoices();
         resolve();
       });
     });
+  },
+  reMapVoices() {
+    console.log("----------------------------");
+    console.log("reMapping voices");
+    const mappedVoices = new DefaultArrayDict();
+    for (const [index, tts] of SPEECH.voices.entries()) {
+      const name = tts.name.extractGroup(/Microsoft\s(\w+)/);
+      tts.voiceName = name;
+      tts.index = index;
+      console.info(index, "tts", tts, "name", name);
+      mappedVoices[name].push(index);
+    }
+
+    for (const voice in VOICE) {
+      for (const source of VOICE[voice].source) {
+        if (mappedVoices[source]) {
+          VOICE[voice].voice = mappedVoices[source][0];
+          break;
+        }
+      }
+    }
+    console.table(VOICE);
+    console.log("----------------------------");
   },
   use(voice) {
     console.warn("use voice", voice);
@@ -148,16 +172,13 @@ const SPEECH = {
     const voices = await new Promise((resolve) => {
       const available = speechSynthesis.getVoices();
       if (available.length) {
-        console.log(`%cVoices loaded immediately (${available.length})`, SPEECH.CSS);
         resolve(available);
       } else {
         const fallbackTimeout = setTimeout(() => {
           const retry = speechSynthesis.getVoices();
           if (retry.length) {
-            console.log(`%cVoices loaded after timeout (${retry.length})`, SPEECH.CSS);
             resolve(retry);
           } else {
-            console.warn('%c⚠️ No voices available even after timeout.', 'color: red');
             resolve([]);
           }
         }, 500);
@@ -165,7 +186,6 @@ const SPEECH = {
         speechSynthesis.onvoiceschanged = () => {
           clearTimeout(fallbackTimeout);
           const updated = speechSynthesis.getVoices();
-          console.log(`%cVoices loaded via voiceschanged (${updated.length})`, SPEECH.CSS);
           resolve(updated);
         };
       }
@@ -186,68 +206,104 @@ class VoiceSetting {
 
 const VOICE = {
   'MaleLow': {
+    source: ["David"],
     voice: 0,
     setting: new VoiceSetting(0.75, 0.5, 1.0)
   },
   'Male': {
+    source: ["David"],
     voice: 0,
     setting: new VoiceSetting(0.75, 1.0, 1.0)
   },
   'Strange': {
+    source: ["David"],
     voice: 0,
     setting: new VoiceSetting(0.5, 0.2, 0.9)
   },
   'StrangeFemale': {
-    voice: 1,
+    source: ["Hazel"],
+    voice: 0,
     setting: new VoiceSetting(0.5, 0.2, 0.9)
   },
   'MaleQ': {
+    source: ["David"],
     voice: 0,
     setting: new VoiceSetting(1.3, 0.8, 1.0)
   },
   'Female': {
-    voice: 1,
+    source: ["Hazel"],
+    voice: 0,
     setting: new VoiceSetting(0.75, 1.0, 1.0)
   },
   'Female2': {
-    voice: 1,
+    source: ["Hazel"],
+    voice: 0,
     setting: new VoiceSetting(1.0, 1.0, 1.0)
   },
   'FemaleLow': {
-    voice: 1,
+    source: ["Hazel"],
+    voice: 0,
     setting: new VoiceSetting(0.8, 0.7, 1.0)
   },
   'FemaleLow2': {
-    voice: 6,
+    source: ["Zira"],
+    voice: 0,
     setting: new VoiceSetting(0.7, 0.6, 1.0)
   },
   'MaleLowSlow': {
+    source: ["David"],
     voice: 0,
     setting: new VoiceSetting(0.75, 0.6, 1.0)
   },
   'FemHighQuick': {
-    voice: 1,
+    source: ["Hazel"],
+    voice: 0,
     setting: new VoiceSetting(1.4, 2.0, 1.0)
   },
   'GlaDOS': {
-    voice: 1,
+    source: ["Hazel"],
+    voice: 0,
     setting: new VoiceSetting(0.5, 0.9, 1.0)
   },
   'Princess': {
-    voice: 6,
+    source: ["Zira"],
+    voice: 0,
     setting: new VoiceSetting(1.2, 2.0, 1.0)
   },
   'GhostFace': {
-    voice: 1,
+    source: ["Hazel"],
+    voice: 0,
     setting: new VoiceSetting(2.0, 0.0, 1.0)
   },
   'Apparitia': {
-    voice: 1,
+    source: ["Hazel"],
+    voice: 0,
     setting: new VoiceSetting(1.65, 1.8, 1.0)
   },
   'Hauntessa': {
-    voice: 1,
+    source: ["Hazel"],
+    voice: 0,
     setting: new VoiceSetting(0.85, 0.02, 1.0)
+  },
+  'Female3': {
+    source: ["Linda", "Hazel"],
+    voice: 0,
+    setting: new VoiceSetting(1.0, 1.0, 1.0)
+  },
+  'Female4': {
+    source: ["Susan", "Hazel"],
+    voice: 0,
+    setting: new VoiceSetting(1.0, 1.0, 1.0)
+  },
+  'Female5': {
+    source: ["Heera", "Hazel"],
+    voice: 0,
+    setting: new VoiceSetting(1.0, 1.0, 1.0)
+  },
+  'Female6': {
+    source: ["Catherine", "Hazel"],
+    voice: 0,
+    setting: new VoiceSetting(1.0, 1.0, 1.0)
   },
 };
 console.log(`%cSPEECH ${SPEECH.VERSION} loaded.`, SPEECH.CSS);

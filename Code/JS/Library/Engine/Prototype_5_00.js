@@ -1415,8 +1415,21 @@ class DefaultDict {
             }
         );
     }
-
 }
+
+class DefaultArrayDict {
+    constructor(ArrayType = Array, defaultLength = 0) {
+        return new Proxy({}, {
+            get: (target, name) => {
+                if (!(name in target)) {
+                    target[name] = new ArrayType(defaultLength);
+                }
+                return target[name];
+            }
+        });
+    }
+}
+
 
 const float64ToInt64Binary = (function () {
     //https://stackoverflow.com/questions/9939760/how-do-i-convert-an-integer-to-binary-in-javascript
