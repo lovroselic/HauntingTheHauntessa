@@ -11,8 +11,7 @@ TODO:
     * 
 known bugs: 
     * i don't do bugs
-    * voices different on diff browsers ??
-    * silence doesn't work if it is the last??
+
 retests:
 
 item problems:
@@ -32,7 +31,7 @@ const DEBUG = {
     FREE_MAGIC: false,
     keys: true,
     killAllAllowed: true,
-    max17: true,
+    max17: false,
     displayInv() {
         HERO.inventory.scroll.display();
         const list = [];
@@ -225,8 +224,8 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 24; //2 --> 6-->3-->2--->21-->2-->7 -->8-->9-->23-->2-->13-->27-->13-->16-->17-->18-->19-->22
-        //-->24
+        GAME.level = 14; //2 --> 6-->3-->2--->21-->2-->7 -->8-->9-->23-->2-->13-->27-->13-->16-->17-->18-->19-->22
+        //-->24 --> 25-->14
         GAME.gold = 50035;
         GAME.lives = 1;
 
@@ -400,7 +399,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.18.4",
+    VERSION: "0.19.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
