@@ -42,6 +42,7 @@ const SPEECH = {
   reMapVoices() {
     console.log("----------------------------");
     console.log("reMapping voices");
+    const sources = [];
     const mappedVoices = new DefaultArrayDict();
     for (const [index, tts] of SPEECH.voices.entries()) {
       const name = tts.name.extractGroup(/Microsoft\s(\w+)/);
@@ -55,10 +56,13 @@ const SPEECH = {
       for (const source of VOICE[voice].source) {
         if (mappedVoices[source]) {
           VOICE[voice].voice = mappedVoices[source][0];
+          sources.push(source);
           break;
         }
       }
     }
+
+    $("#speech_sources").html(`The game uses the following text to speech voices: ${JSON.stringify(new Set(sources))}`);
     console.table(VOICE);
     console.log("----------------------------");
   },

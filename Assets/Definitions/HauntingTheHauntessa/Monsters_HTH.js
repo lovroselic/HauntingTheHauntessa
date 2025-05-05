@@ -29,6 +29,19 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    TransMana: {
+        name: "TransMana",
+        sprite: "TransMana",
+        which: "mana",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "ManaSkill",
+        price: 1500,
+        level: 1,
+        text: "Drink this honey, 1500 gold and your mana will increase. The taste suck, though.",
+        introduce: true,
+        voice: "Female6",
+    },
     CrossFire: {
         name: "CrossFire",
         sprite: "CrossFire",

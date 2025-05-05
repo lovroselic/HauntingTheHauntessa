@@ -93,8 +93,6 @@ const DEBUG = {
             DONE AuntieHauntie want "Mirror", "Lipstick" gives BlackLeatherBoots
             DONE TaoLibrarian wants "Spectacles" gives "TaoBook"
             DONE SpaceMajor wants "StarDestroyer","StarDestroyer","StarDestroyer" gives "Revolver"
-        GamerOracle 
-        GamePicOracle
 
         Scroll sellers:
 
@@ -148,7 +146,7 @@ const DEBUG = {
             DONE "TreeOfLifeBook" **quest --> Arcadia(##)
             DONE "GoldBar",  **quest --> GoldMelta (20)
             DONE "GoldBar",  **quest --> (6)
-        "GoldBar" **quest
+            DONE "GoldBar" **quest --> (14)
             DONE "BlackLatexpanties",  **quest --> PlayfulDominatrix(6)
             DONE  "BlacLatexBra" **quest
             DONE "BlackLeatherBoots", --> AuntieHauntie --> (22)
@@ -169,7 +167,7 @@ const DEBUG = {
             DONE "GoldCoin" Saddie (16)
             DONE "GoldCoin" --> (2)
             DONE "GoldCoin" --> (13)
-        "GoldCoin"
+            DONE "GoldCoin" --> (14)
         "GoldCoin"
             DONE "Candle", --> (2)
             DONE "Candle", --> (13)
@@ -399,7 +397,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.19.0",
+    VERSION: "0.19.1",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -429,7 +427,7 @@ const PRG = {
             $("#lib_version").html(LIB.VERSION);
             $("#webgl_version").html(WebGL.VERSION);
             $("#maptools_version").html(MAP_TOOLS.VERSION);
-
+            $("#speech_version").html(SPEECH.VERSION);
         } else {
             $('#debug').hide();
         }
