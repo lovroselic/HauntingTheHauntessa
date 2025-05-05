@@ -11,7 +11,7 @@ TODO:
 ////////////////////////////////////////////////////
 
 const SPEECH = {
-  VERSION: "1.07",
+  VERSION: "1.10",
   CSS: "color: #0A0",
   VERBOSE: true,
   browserSupport: true,
@@ -40,15 +40,12 @@ const SPEECH = {
     });
   },
   reMapVoices() {
-    console.log("----------------------------");
-    console.log("reMapping voices");
     const sources = [];
     const mappedVoices = new DefaultArrayDict();
     for (const [index, tts] of SPEECH.voices.entries()) {
       const name = tts.name.extractGroup(/Microsoft\s(\w+)/);
       tts.voiceName = name;
       tts.index = index;
-      console.info(index, "tts", tts, "name", name);
       mappedVoices[name].push(index);
     }
 
@@ -62,12 +59,11 @@ const SPEECH = {
       }
     }
 
-    $("#speech_sources").html(`The game uses the following text to speech voices: ${JSON.stringify(new Set(sources))}`);
-    console.table(VOICE);
-    console.log("----------------------------");
+    $("#speech_sources").html(`The game uses the following text to speech voices: ${Array.from(new Set(sources))}. To assure the best game playing experience, install the required English based voices packages in Windows (Time and Language > Speech).
+     Failing to find the required voices, the game will default to available voices - regardless of sex.`);
+    if (SPEECH.VERBOSE) console.table(VOICE);
   },
   use(voice) {
-    console.warn("use voice", voice);
     voice = VOICE[voice];
     SPEECH.voice = SPEECH.voices[voice.voice];
     if (SPEECH.VERBOSE) console.info(`%cSPEECH voice used ${JSON.stringify(SPEECH.voice)}, voice: ${JSON.stringify(voice)}`, SPEECH.CSS);
