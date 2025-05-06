@@ -11,7 +11,7 @@ TODO:
 ////////////////////////////////////////////////////
 
 const SPEECH = {
-  VERSION: "1.10",
+  VERSION: "1.11",
   CSS: "color: #0A0",
   VERBOSE: true,
   browserSupport: true,
@@ -31,10 +31,12 @@ const SPEECH = {
       Promise.all([SPEECH.getVoices()]).then(function () {
         SPEECH.ready = true;
         console.log(`%cSPEECH ${SPEECH.VERSION}: ready`, SPEECH.CSS);
-        SPEECH.voice = SPEECH.voices[1];
+        //SPEECH.voice = SPEECH.voices[1];
+
         let def = new VoiceSetting(rate, pitch, volume);
         SPEECH.settings = def;
         SPEECH.reMapVoices();
+        SPEECH.use("Princess");
         resolve();
       });
     });
@@ -63,10 +65,10 @@ const SPEECH = {
      Failing to find the required voices, the game will default to available voices - regardless of sex.`);
     if (SPEECH.VERBOSE) console.table(VOICE);
   },
-  use(voice) {
-    voice = VOICE[voice];
+  use(voiceName) {
+    const voice = VOICE[voiceName];
     SPEECH.voice = SPEECH.voices[voice.voice];
-    if (SPEECH.VERBOSE) console.info(`%cSPEECH voice used ${JSON.stringify(SPEECH.voice)}, voice: ${JSON.stringify(voice)}`, SPEECH.CSS);
+    if (SPEECH.VERBOSE) console.info(`%cSPEECH voice used: ${voiceName} --> ${JSON.stringify(SPEECH.voice)}, voice: ${JSON.stringify(voice)}`, SPEECH.CSS);
     for (const setting in voice.setting) {
       SPEECH.settings[setting] = voice.setting[setting];
     }
@@ -289,6 +291,11 @@ const VOICE = {
     source: ["Linda", "Hazel"],
     voice: 0,
     setting: new VoiceSetting(1.0, 1.0, 1.0)
+  },
+  'FemaleLow3': {
+    source: ["Linda", "Hazel"],
+    voice: 0,
+    setting: new VoiceSetting(0.7, 0.6, 1.0)
   },
   'Female4': {
     source: ["Susan", "Hazel"],

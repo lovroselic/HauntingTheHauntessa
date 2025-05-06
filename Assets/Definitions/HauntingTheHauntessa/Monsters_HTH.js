@@ -1810,7 +1810,26 @@ const MONSTER_TYPE = {
         moveSpeed: 1.1,
         material: MATERIAL.standard,
     },
-
+    Viking: {
+        name: "Viking",
+        model: "Viking",
+        scale: 1.1 / 2 ** 8,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "BloodExplosion",
+        mana: 0,
+        health: 25,
+        attack: 30,
+        magic: 0,
+        defense: 10,
+        xp: 40,
+        directMagicDamage: true,
+        attackSound: "HumanAttack1",
+        hurtSound: "MonsterHurt2",
+        behaviourArguments: [7, ["wanderer"], 4, ["advancer"]],
+        moveSpeed: 1.0,
+        material: MATERIAL.standard,
+    },
 };
 
 const HERO_TYPE = {
