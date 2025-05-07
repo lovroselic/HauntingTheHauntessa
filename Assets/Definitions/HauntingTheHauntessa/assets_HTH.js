@@ -793,6 +793,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/DarkMandy.jpg", name: "DarkMandy" },
     { srcName: "ObjectTextures/MissGalaxyBrighter.jpg", name: "MissGalaxyBrighter" },
     { srcName: "ObjectTextures/WolfSpideGreen.jpg", name: "WolfSpideGreen" },
+    { srcName: "ObjectTextures/RedDragon.jpg", name: "RedDragon" },
 
 
     //title
@@ -980,6 +981,9 @@ LoadSprites = [
     { srcName: "EntityPictures/CrossHeart.jpg", name: "CrossHeart" },
     { srcName: "EntityPictures/CrossFire.jpg", name: "CrossFire" },
     { srcName: "EntityPictures/TransMana.jpg", name: "TransMana" },
+    { srcName: "EntityPictures/Completist.jpg", name: "Completist" },
+    { srcName: "EntityPictures/FireballShutHiny.jpg", name: "FireballShutHiny" },
+    { srcName: "EntityPictures/DonWasteFireball.jpg", name: "DonWasteFireball" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },

@@ -108,18 +108,13 @@ const AI = {
         let orto = direction.ortoAlign();
         orto = orto.toVector3D();                                   // adding z=0 for 3D compatibility, but this still only works on the plane!!!
         const landingGrid = Grid3D.toClass(enemy.moveState.startPos.add(orto));
-        console.info("orto", orto, "landingGrid", landingGrid);
         const GA = enemy.parent.map.GA;
         const nextGridBlocked = GA.check(landingGrid, GROUND_MOVE_GRID_EXCLUSION.sum())
-        if (nextGridBlocked) {
-            console.error("this would end in fuckup! luckily was prevented"); // 
-            return this.immobile(enemy);
-        }
-        if (true) console.log("pPos", pPos, "ePos", ePos, "direction", direction, "enemy.distance", enemy.distance, "orto", orto, "landingGrid", landingGrid, "nextGridBlocked", nextGridBlocked);
-        //if (this.VERBOSE) console.log("pPos", pPos, "ePos", ePos, "direction", direction, "enemy.distance", enemy.distance,"orto", orto);
-        
-        //if (this.VERBOSE) console.info(`${enemy.name}-${enemy.id} FP hunt`, orto, "strategy", enemy.behaviour.strategy);
-        if (true) console.info(`${enemy.name}-${enemy.id} FP hunt`, orto, "strategy", enemy.behaviour.strategy);
+        if (nextGridBlocked) return this.immobile(enemy);
+
+        if (this.VERBOSE) console.log("pPos", pPos, "ePos", ePos, "direction", direction, "enemy.distance", enemy.distance, "orto", orto, "landingGrid", landingGrid, "nextGridBlocked", nextGridBlocked);
+        if (this.VERBOSE) console.info(`${enemy.name}-${enemy.id} FP hunt`, orto, "strategy", enemy.behaviour.strategy);
+
         return [orto];
     },
     crossroader(enemy, playerPosition, dir, block, exactPosition) {
@@ -229,10 +224,11 @@ const AI = {
                 const GA = enemy.parent.map.GA;
                 const IA = enemy.parent.map.enemyIA;
                 const enemyPos = this.getPosition(enemy);
-                const playerGrid = Grid.toClass(ARG.playerPosition);
+                //const playerGrid = Grid.toClass(ARG.playerPosition);
                 const player3DGrid = Vector3.to_Grid3D(ARG.exactPlayerPosition);
 
-                if ((enemy.shoot3D || GRID.sameFloor(enemyPos, player3DGrid)) && GRID.vision(enemyPos, playerGrid, GA) && GRID.freedom(enemyPos, playerGrid, IA)) enemy.canShoot = true;
+                //if ((enemy.shoot3D || GRID.sameFloor(enemyPos, player3DGrid)) && GRID.vision3D(enemyPos, playerGrid, GA) && GRID.freedom3D(enemyPos, playerGrid, IA)) enemy.canShoot = true;
+                if ((enemy.shoot3D || GRID.sameFloor(enemyPos, player3DGrid)) && GRID.vision3D(enemyPos, player3DGrid, GA) && GRID.freedom3D(enemyPos, player3DGrid, IA)) enemy.canShoot = true;
                 if (this.VERBOSE) console.info(`..${enemy.name}-${enemy.id} can shoot: ${enemy.canShoot}`);
 
                 if (enemy.distance) {

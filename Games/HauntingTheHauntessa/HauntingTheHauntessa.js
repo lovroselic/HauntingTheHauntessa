@@ -177,7 +177,7 @@ const DEBUG = {
             DONE "SmallBarrel", --> (7)
             DONE "SmallBarrel", --> (13)
         "SmallBarrel"
-        "Ammo", 
+            DONE "Ammo", -->(15)
             DONE "Revolver" --> SpaceMajor -->(13)
             DONE "StarDestroyer" --> (22)
             DONE "StarDestroyer" --> (18)
@@ -222,8 +222,8 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 15; //2 --> 6-->3-->2--->21-->2-->7 -->8-->9-->23-->2-->13-->27-->13-->16-->17-->18-->19-->22
-        //-->24 --> 25-->14-->15
+        GAME.level = 10; //2 --> 6-->3-->2--->21-->2-->7 -->8-->9-->23-->2-->13-->27-->13-->16-->17-->18-->19-->22
+        //-->24 --> 25-->14-->15------>10
         GAME.gold = 50035;
         GAME.lives = 1;
 
@@ -381,7 +381,7 @@ const INI = {
         Amanita: 20,
         Snail: 40,
         ManaFrog: 80,
-        RedWolfSpider: 100,
+        RedSpider: 100,
     },
     HEALTH_INC: 8,
     MANA_INC: 7,
@@ -397,7 +397,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.19.3",
+    VERSION: "0.19.4",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -1013,6 +1013,7 @@ const HERO = {
     incMana(sprite) {
         let incValue = INI.MANA[sprite];
         HERO._incMana(incValue);
+        console.info("incMana", sprite, incValue);
         AUDIO.Swallow.play();
     },
     _incMana(value) {

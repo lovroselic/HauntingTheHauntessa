@@ -49,7 +49,7 @@ const MAP_TOOLS = {
             byte = 1;
         }
         MAP_TOOLS.INI.GA_BYTE_SIZE = byte;
-        if (ENGINE.verbose) console.log(`MAP TOOLS GA bytesize`, MAP_TOOLS.INI.GA_BYTE_SIZE);
+        if (MAP_TOOLS.INI.VERBOSE) console.log(`MAP TOOLS GA bytesize`, MAP_TOOLS.INI.GA_BYTE_SIZE);
     },
     unpack(level) {
         if (this.MAP[level].unpacked) return;                                                   // already unpacked, nothing to do
@@ -96,10 +96,11 @@ const MAP_TOOLS = {
         /** initialize global map proterties */
         /**
          * hotfixes:
-        MAP[GAME.level].map.killCountdown = 4;
+        MAP[GAME.level].map.killCountdown = 10;
+        MAP[GAME.level].map.killCountdown = 6;
         MAP[GAME.level].map.killsRequiredToStopSpawning = 99;
-        MAP[GAME.level].map.spawnDelay = 7500;
-          MAP[GAME.level].map.stopSpawning = false;
+        MAP[GAME.level].map.spawnDelay = 9999;
+        MAP[GAME.level].map.stopSpawning = false;
          */
         const SG = this.MAP[level].sg || null;
         this.MAP[level].map.sg = SG;
@@ -141,10 +142,10 @@ const MAP_TOOLS = {
     applyStorageActions(level) {
         if (!this.MAP[level].unused_storage) return;
         if (!this.MAP[level].map.storage.empty()) return;
-        //if (ENGINE.verbose) console.info("Applying actions for level", level);
+        if (MAP_TOOLS.INI.VERBOSE) console.info("Applying actions for level", level);
         this.MAP[level].unused_storage.apply();
         this.MAP[level].map.storage.addStorage(this.MAP[level].unused_storage);
-        //if (ENGINE.verbose) console.log("this.MAP[level].map.storage", this.MAP[level].map.storage);
+        if (MAP_TOOLS.INI.VERBOSE) console.log("this.MAP[level].map.storage", this.MAP[level].map.storage);
         MAP_TOOLS.setOcclusionMap(level);
     }
 };
@@ -398,12 +399,12 @@ class IAM_Storage {
     }
     apply() {
         for (const action of this.action_list) {
-            //if (ENGINE.verbose) console.log(". action", action);
+            if (MAP_TOOLS.INI.VERBOSE) console.log(". action", action);
             const IAM = eval(action.IAM);
             const obj = IAM.POOL[action.id - 1];
-            //if (ENGINE.verbose) console.log(".... trying", obj, action.action, action.arg);
+            if (MAP_TOOLS.INI.VERBOSE) console.log(".... trying", obj, action.action, action.arg);
             obj[action.action](action.arg);
-            //if (ENGINE.verbose) console.log("........ OK", obj, action.action, action.arg);
+            if (MAP_TOOLS.INI.VERBOSE) console.log("........ OK", obj, action.action, action.arg);
         }
     }
     add(item) {

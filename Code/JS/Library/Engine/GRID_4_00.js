@@ -283,9 +283,22 @@ const GRID = {
         let path = GRID.raycasting(startGrid, endGrid);
         return GA.pathClear(path);
     },
+    vision3D(startGrid, endGrid, GA) {
+        if (GRID.same3D(startGrid, endGrid)) return true;
+        let path = GRID.raycasting3D(startGrid, endGrid);
+        return GA.pathClear(path);
+    },
     freedom(startGrid, endGrid, IA) {
         if (GRID.same(startGrid, endGrid)) return true;
         let path = GRID.raycasting(startGrid, endGrid).slice(1);
+        let candidates = IA.unrollArray(path);
+        if (candidates.size > 0) {
+            return false;
+        } else return true;
+    },
+    freedom3D(startGrid, endGrid, IA) {
+        if (GRID.same3D(startGrid, endGrid)) return true;
+        let path = GRID.raycasting3D(startGrid, endGrid).slice(1);
         let candidates = IA.unrollArray(path);
         if (candidates.size > 0) {
             return false;
@@ -317,6 +330,61 @@ const GRID = {
             node = new Grid(x, y);
             path.push(node);
         } while (!GRID.same(node, endGrid));
+        return path;
+    },
+    raycasting3D(startGrid, endGrid) {
+        let path = [];
+        path.push(startGrid);
+    
+        let x = startGrid.x;
+        let y = startGrid.y;
+        let z = startGrid.z;
+    
+        let dx = endGrid.x - x;
+        let dy = endGrid.y - y;
+        let dz = endGrid.z - z;
+    
+        let stepX = Math.sign(dx);
+        let stepY = Math.sign(dy);
+        let stepZ = Math.sign(dz);
+    
+        dx = Math.abs(dx);
+        dy = Math.abs(dy);
+        dz = Math.abs(dz);
+    
+        let tMaxX = dx === 0 ? Infinity : 0.5 / dx;
+        let tMaxY = dy === 0 ? Infinity : 0.5 / dy;
+        let tMaxZ = dz === 0 ? Infinity : 0.5 / dz;
+    
+        let tDeltaX = dx === 0 ? Infinity : 1 / dx;
+        let tDeltaY = dy === 0 ? Infinity : 1 / dy;
+        let tDeltaZ = dz === 0 ? Infinity : 1 / dz;
+    
+        let node;
+    
+        while (x !== endGrid.x || y !== endGrid.y || z !== endGrid.z) {
+            if (tMaxX < tMaxY) {
+                if (tMaxX < tMaxZ) {
+                    x += stepX;
+                    tMaxX += tDeltaX;
+                } else {
+                    z += stepZ;
+                    tMaxZ += tDeltaZ;
+                }
+            } else {
+                if (tMaxY < tMaxZ) {
+                    y += stepY;
+                    tMaxY += tDeltaY;
+                } else {
+                    z += stepZ;
+                    tMaxZ += tDeltaZ;
+                }
+            }
+    
+            node = new Grid3D(x, y, z);
+            path.push(node);
+        }
+    
         return path;
     },
     calcDistancesBFS_BH(start, dungeon) {

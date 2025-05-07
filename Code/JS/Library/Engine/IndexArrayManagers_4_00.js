@@ -1081,7 +1081,8 @@ class Animated_3d_entity extends IAM {
                     if (entity.canShoot) {
                         entity.setView(this.hero.player.pos);
                         entity.shoot(GA);
-                        if (IndexArrayManagers.VERBOSE) console.info(`${entity.name}-${entity.id} shooting`);
+                        //if (IndexArrayManagers.VERBOSE) console.info(`${entity.name}-${entity.id} shooting`);
+                        if (true) console.info(`${entity.name}-${entity.id} shooting`);
                     }
                 }
 
