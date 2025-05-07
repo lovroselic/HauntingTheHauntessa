@@ -184,7 +184,7 @@ const DEBUG = {
             DONE "StarDestroyer" --> (16)
             DONE "Spectacles" --> (16)
         "Mirror", 
-        "Lipstick"
+            DONE "Lipstick" --> (10)
 
 
 
@@ -397,7 +397,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.19.4",
+    VERSION: "0.19.5",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

@@ -670,33 +670,7 @@ const MONSTER_TYPE = {
         missileType: COMMON_ITEM_TYPE.Bounceball,
     },
 
-    MissGhostFace: {
-        boss: true,
-        name: "MissGhostFace",
-        model: "MissGhostFace",
-        scale: 1 / 2 ** 1,
-        rotateToNorth: Math.PI,
-        midHeight: 0.5,
-        deathType: "BloodExplosion",
-        inventory: KEY_TYPE.Pearl,
-        mana: 2500,
-        health: 10000,
-        attack: 500,
-        magic: 50,
-        defense: 99,
-        caster: true,
-        directMagicDamage: true,
-        attackSound: "Banshee",
-        hurtSound: "Ow",
-        behaviourArguments: [Infinity, ["wanderer"], 15, ["shoot"]],
-        moveSpeed: 1.2,
-        shootDistance: 15,
-        stalkDistance: 17,
-        material: MATERIAL.standard,
-        missile: BouncingMissile,
-        missileType: COMMON_ITEM_TYPE.Bounceball,
-    },
-
+    
 
     
 

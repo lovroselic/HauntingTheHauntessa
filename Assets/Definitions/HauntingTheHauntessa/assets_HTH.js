@@ -517,7 +517,6 @@ LoadTextures = [
     { srcName: "Wall/Wood8.jpg", name: "Wood8" },
     { srcName: "Wall/Wood9.jpg", name: "Wood9" },
     { srcName: "Wall/marbleFloor106.jpg", name: "marbleFloor106" },
-
     { srcName: "Wall/BrownishTiles101.jpg", name: "BrownishTiles101" },
     { srcName: "Wall/DarkBricks1202.jpg", name: "DarkBricks1202" },
     { srcName: "Wall/DarkFloorSDXL336.jpg", name: "DarkFloorSDXL336" },
@@ -794,7 +793,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/MissGalaxyBrighter.jpg", name: "MissGalaxyBrighter" },
     { srcName: "ObjectTextures/WolfSpideGreen.jpg", name: "WolfSpideGreen" },
     { srcName: "ObjectTextures/RedDragon.jpg", name: "RedDragon" },
-
+    { srcName: "ObjectTextures/PurpleGalaxy.jpg", name: "PurpleGalaxy" },
 
     //title
     { srcName: "Title/HTH_title_768.jpg", name: "Title" },
@@ -889,7 +888,7 @@ LoadModels = [
     "Chicken.gltf", "Pig.gltf",
     "Bat.gltf", "MissGalaxy.gltf", "Spider.gltf", "Dragon.gltf",
     "mandy.gltf", "NeverBlink.gltf", "EvilNun.gltf", "LizardMan.gltf", "NecroMorph.gltf", "CyGirl.gltf",
-    "Hunteress.gltf", "Dragon2.gltf", "BigBat.gltf", "WolfSpider.gltf", "Viking.gltf",
+    "Hunteress.gltf", "Dragon2.gltf", "BigBat.gltf", "WolfSpider.gltf", "Viking.gltf", "MissGhostFace.gltf",
 ];
 
 LoadSprites = [
