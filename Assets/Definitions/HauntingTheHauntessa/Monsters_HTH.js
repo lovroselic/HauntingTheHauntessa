@@ -224,6 +224,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    SaveGameBabe: {
+        name: "SaveGameBabe",
+        sprite: "SaveGameBabe",
+        category: 'crest',
+        voice: "FemaleLow4",
+        text: "You can run out of dungeon any time. This will save your game. Any maybe your life. Don't forget to store your safe saved games. Reading instructions is not a shame.",
+        interactionCategory: "oracle",
+    },
     DonWasteFireball: {
         name: "DonWasteFireball",
         sprite: "DonWasteFireball",

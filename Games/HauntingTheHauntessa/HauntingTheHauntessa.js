@@ -168,7 +168,7 @@ const DEBUG = {
             DONE "GoldCoin" --> (2)
             DONE "GoldCoin" --> (13)
             DONE "GoldCoin" --> (14)
-        "GoldCoin"
+            DONE "GoldCoin" --> (10)
             DONE "Candle", --> (2)
             DONE "Candle", --> (13)
             DONE "Candle" (19)
@@ -397,7 +397,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.19.5",
+    VERSION: "0.19.6",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
