@@ -2094,12 +2094,16 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
         let grid = Vector3.to_Grid3D(pos);
         let gridBelow = grid.add(BELOW3);
 
+        //console.info("findSolidFloor", posGrid, grid, gridBelow);
+
         while (!this.check(gridBelow, ITEM_DROP_EXCLUSION.sum()) && gridBelow.z >= 0) {
             grid = gridBelow;
             gridBelow = grid.add(BELOW3);
+            //console.log("...gridBelow", gridBelow);
         }
 
         const gridValue = REVERSED_MAPDICT[this.getValue(grid)];
+        //console.warn("*** gridValue", gridValue, "grid", grid);
 
         switch (gridValue) {
             case "EMPTY":

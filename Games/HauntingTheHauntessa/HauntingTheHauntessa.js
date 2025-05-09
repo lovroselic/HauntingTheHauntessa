@@ -224,8 +224,8 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 11; //2 --> 6-->3-->2--->21-->2-->7 -->8-->9-->23-->2-->13-->27-->13-->16-->17-->18-->19-->22
-        //-->24 --> 25-->14-->15------>10-->11
+        GAME.level = 9; //2 --> 6-->3-->2--->21-->2-->7 -->8-->9-->23-->2-->13-->27-->13-->16-->17-->18-->19-->22
+        //-->24 --> 25-->14-->15------>10-->11-->12
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -402,7 +402,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.20.0",
+    VERSION: "0.20.1",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -462,11 +462,11 @@ const PRG = {
 
         $("#bottom").css("margin-top", ENGINE.gameHEIGHT + ENGINE.titleHEIGHT + ENGINE.bottomHEIGHT);
         $(ENGINE.gameWindowId).width(ENGINE.gameWIDTH + 2 * ENGINE.sideWIDTH + 4);
-        ENGINE.addBOX("TITLE", ENGINE.titleWIDTH, ENGINE.titleHEIGHT, ["title", "compassRose", "compassNeedle", "lives", "minimap", "gold", "save"], null);
+        ENGINE.addBOX("TITLE", ENGINE.titleWIDTH, ENGINE.titleHEIGHT, ["title", "compassRose", "compassNeedle", "lives", "minimap", "gold"], null);
         ENGINE.addBOX("LSIDE", INI.SCREEN_BORDER, ENGINE.gameHEIGHT, ["Lsideback", "health"], "side");
         ENGINE.addBOX("ROOM", ENGINE.gameWIDTH, ENGINE.gameHEIGHT, ["background", "3d_webgl", "info", "text", "FPS", "button", "click"], "side");
         ENGINE.addBOX("SIDE", ENGINE.sideWIDTH, ENGINE.gameHEIGHT, ["sideback", "keys", "time", "scrolls", "orbs", "skills"], "fside");
-        ENGINE.addBOX("DOWN", ENGINE.bottomWIDTH, ENGINE.bottomHEIGHT, ["bottom", "bottomText", "subtitle"], null);
+        ENGINE.addBOX("DOWN", ENGINE.bottomWIDTH, ENGINE.bottomHEIGHT, ["bottom", "bottomText", "save", "subtitle"], null);
 
         WebGL.HTML.addButtons();
 
@@ -1760,7 +1760,7 @@ const GAME = {
             GAME.setWorld(level);
         } else GAME.reloadIAM(level);
 
-        MAP_TOOLS.applyStorageActions(level);             
+        MAP_TOOLS.applyStorageActions(level);
         GAME.forceOpenDoor(destination.waypoint);
         HERO.player.setMap(MAP[level].map);
 
@@ -1776,7 +1776,7 @@ const GAME = {
         MINIMAP.init(MAP[level].map, INI.MINIMAP_W, INI.MINIMAP_H, HERO.player);
 
         /** SAVE GAME each time */
-        GAME.save(destination);                           
+        GAME.save(destination);
 
         //observe
         if (MAP_TEXT[GAME.level]) {
@@ -2346,8 +2346,8 @@ const TITLE = {
     },
     saved(ok) {
         ENGINE.clearLayer("save");
-        const y = (ENGINE.titleHEIGHT - 64) / 2;
-        const x = INI.SCREEN_BORDER;
+        const y = (ENGINE.bottomHEIGHT - 64) / 2;
+        const x = 8;
         let sprite = null;
         if (ok) {
             sprite = "SavedOK";

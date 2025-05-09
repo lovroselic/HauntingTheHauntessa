@@ -29,6 +29,19 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    DaggerEtte: {
+        name: "DaggerEtte",
+        sprite: "DaggerEtte",
+        which: "crest",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "SkillKick",
+        price: 1500,
+        level: 1,
+        text: "A kick or a stab solves a lot of problems. Sometimes violence is the answer, for 1500 gold, that is.",
+        introduce: true,
+        voice: "FemaleHigh3",
+    },
     YellowJacketDefense: {
         name: "YellowJacketDefense",
         sprite: "YellowJacketDefense",
@@ -1924,7 +1937,7 @@ const MONSTER_TYPE = {
         model: "MissGhostFace",
         scale: 1 / 2 ** 1,
         rotateToNorth: Math.PI,
-        midHeight: 0.5,
+        midHeight: 0.6,
         deathType: "BloodExplosion",
         inventory: GOLD_ITEM_TYPE.GoldBar,
         mana: 8,

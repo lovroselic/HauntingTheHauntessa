@@ -4233,7 +4233,7 @@ class $3D_Entity {
         if (!this.inventory) return;
         const GA = this.IAM.map.GA;
 
-        const placementPosition = GA.findSolidFloor(this.moveState.pos);
+        const placementPosition = GA.findSolidFloor(this.moveState.referencePos);
         if (!placementPosition) return;
         placementPosition.adjuctCirclePos(this.r)
 

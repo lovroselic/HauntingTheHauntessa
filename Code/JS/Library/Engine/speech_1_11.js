@@ -275,7 +275,7 @@ const VOICE = {
   'GhostFace': {
     source: ["Hazel"],
     voice: 0,
-    setting: new VoiceSetting(2.0, 0.0, 1.0)
+    setting: new VoiceSetting(2.0, 0.1, 1.0)
   },
   'Apparitia': {
     source: ["Hazel"],
@@ -296,6 +296,11 @@ const VOICE = {
     source: ["Linda", "Hazel"],
     voice: 0,
     setting: new VoiceSetting(0.7, 0.6, 1.0)
+  },
+  'FemaleHigh3': {
+    source: ["Linda", "Hazel"],
+    voice: 0,
+    setting: new VoiceSetting(0.8, 1.7, 1.0)
   },
   'Female4': {
     source: ["Susan", "Hazel"],

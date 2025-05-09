@@ -67,13 +67,14 @@ const MINIMAP = {
     calcSize(W, H) {
         const widthRatio = W / this.DATA.dungeon.width;
         const heightRatio = H / this.DATA.dungeon.height;
-        this.DATA.PIX_SIZE = Math.min(widthRatio, heightRatio) | 1;             // 1 is min pix size
+        this.DATA.PIX_SIZE = Math.floor(Math.min(widthRatio, heightRatio)) || 1;             // 1 is min pix size
         this.DATA.w = this.DATA.dungeon.width * this.DATA.PIX_SIZE;
         this.DATA.h = this.DATA.dungeon.height * this.DATA.PIX_SIZE;
         this.DATA.drawX = this.DATA.x + ((W - this.DATA.w) / 2) | 0;
         this.DATA.drawY = this.DATA.y + ((H - this.DATA.h) / 2) | 0;
-        this.DATA.surface = this.DATA.dungeon.width * this.DATA.dungeon.width;
-        this.DATA.z = this.DATA.dungeon.depth;
+        this.DATA.surface = this.DATA.dungeon.width * this.DATA.dungeon.height;
+        //console.info("this.DATA.dungeon.width", this.DATA.dungeon.width, "this.DATA.dungeon.height", this.DATA.dungeon.height);
+        //console.info("calcSize", "widthRatio", widthRatio, "heightRatio", heightRatio, "this.DATA.PIX_SIZE", this.DATA.PIX_SIZE, "this.DATA.wh", this.DATA.w, this.DATA.h, "this.DATA.drawXY", this.DATA.drawX, this.DATA.drawY, "surf", this.DATA.surface);
     },
     draw(radar, player = null, viewport = false) {
         ENGINE.clearLayer(this.DATA.layer);
@@ -81,20 +82,14 @@ const MINIMAP = {
         if (MINIMAP.SETTING.FOG) {
             CTX.fillStyle = MINIMAP.LEGEND.FOG;
             CTX.strokeStyle = MINIMAP.LEGEND.FOG;
-            CTX.strokeRect(
-                this.DATA.drawX - this.DATA.rectWidth,
-                this.DATA.drawY - this.DATA.rectWidth,
-                this.DATA.w + 2 * this.DATA.rectWidth,
-                this.DATA.h + 2 * this.DATA.rectWidth
-            );
+            CTX.strokeRect(this.DATA.drawX - this.DATA.rectWidth, this.DATA.drawY - this.DATA.rectWidth, this.DATA.w + 2 * this.DATA.rectWidth, this.DATA.h + 2 * this.DATA.rectWidth);
             CTX.fillRect(this.DATA.drawX, this.DATA.drawY, this.DATA.w, this.DATA.h);
         }
         const GA = this.DATA.dungeon.GA;
-        // this.player.depth
-
-        //for (const [index, value] of GA.map.entries()) {
+        //console.warn("GA", GA);
         const startIndex = this.player.depth * this.DATA.surface;
         const endIndex = startIndex + this.DATA.surface;
+        //console.log("depth", this.player.depth, "startIndex", startIndex, "endIndex", endIndex);
 
         for (let index = startIndex; index < endIndex; index++) {
             const value = GA.map[index];
@@ -160,22 +155,15 @@ const MINIMAP = {
                 }
             }
             let grid = GA.indexToGrid(index);
-            CTX.pixelAt(
-                this.DATA.drawX + grid.x * this.DATA.PIX_SIZE,
-                this.DATA.drawY + grid.y * this.DATA.PIX_SIZE,
-                this.DATA.PIX_SIZE
-            );
+            //console.warn(index, "index,", grid, "grid");
+            CTX.pixelAt(this.DATA.drawX + grid.x * this.DATA.PIX_SIZE, this.DATA.drawY + grid.y * this.DATA.PIX_SIZE, this.DATA.PIX_SIZE);
         }
 
         //keys
         for (const key in this.DATA.dungeon.keys) {
             if (this.DATA.dungeon.GA.isFog(this.DATA.dungeon.keys[key])) continue;
             CTX.fillStyle = key.toLowerCase();
-            CTX.pixelAt(
-                this.DATA.drawX + this.DATA.dungeon.keys[key].x * this.DATA.PIX_SIZE,
-                this.DATA.drawY + this.DATA.dungeon.keys[key].y * this.DATA.PIX_SIZE,
-                this.DATA.PIX_SIZE
-            );
+            CTX.pixelAt(this.DATA.drawX + this.DATA.dungeon.keys[key].x * this.DATA.PIX_SIZE, this.DATA.drawY + this.DATA.dungeon.keys[key].y * this.DATA.PIX_SIZE, this.DATA.PIX_SIZE);
         }
 
         CTX.fillStyle = MINIMAP.LEGEND.HERO;
@@ -187,11 +175,7 @@ const MINIMAP = {
             heroPos = Grid.toClass(Vector3.to_FP_Grid(this.player.pos));
         }
 
-        CTX.pixelAt(
-            this.DATA.drawX + heroPos.x * this.DATA.PIX_SIZE,
-            this.DATA.drawY + heroPos.y * this.DATA.PIX_SIZE,
-            this.DATA.PIX_SIZE
-        );
+        CTX.pixelAt(this.DATA.drawX + heroPos.x * this.DATA.PIX_SIZE, this.DATA.drawY + heroPos.y * this.DATA.PIX_SIZE, this.DATA.PIX_SIZE);
 
         //enemy if radar
         if (radar) {
@@ -207,11 +191,7 @@ const MINIMAP = {
                     } else if (entity.moveState.homeGrid) {
                         position = Grid.toClass(entity.moveState.homeGrid);
                     } else throw "MINIMAP can't get enemy position from grid";
-                    CTX.pixelAt(
-                        this.DATA.drawX + position.x * this.DATA.PIX_SIZE,
-                        this.DATA.drawY + position.y * this.DATA.PIX_SIZE,
-                        this.DATA.PIX_SIZE
-                    );
+                    CTX.pixelAt(this.DATA.drawX + position.x * this.DATA.PIX_SIZE, this.DATA.drawY + position.y * this.DATA.PIX_SIZE, this.DATA.PIX_SIZE);
                 }
             }
         }
