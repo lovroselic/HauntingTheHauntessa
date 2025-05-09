@@ -984,6 +984,8 @@ LoadSprites = [
     { srcName: "EntityPictures/FireballShutHiny.jpg", name: "FireballShutHiny" },
     { srcName: "EntityPictures/DonWasteFireball.jpg", name: "DonWasteFireball" },
     { srcName: "EntityPictures/SaveGameBabe.jpg", name: "SaveGameBabe" },
+    { srcName: "EntityPictures/Painter.jpg", name: "Painter" }, 
+    { srcName: "EntityPictures/YellowjacketDefense.jpg", name: "YellowJacketDefense" }, 
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
@@ -1122,6 +1124,7 @@ LoadSprites = [
     { srcName: "Scrolls/SCR_DestroyArmor2.png", name: "SCR_DestroyArmor" },
     { srcName: "Scrolls/SCR_DrainMana2.png", name: "SCR_DrainMana" },
     { srcName: "Scrolls/SCR_FeatherFall.png", name: "SCR_FeatherFall" },
+    { srcName: "Scrolls/SCR_Radar2.png", name: "SCR_Radar" },
 
     //gold, valuables
     { srcName: "Items/BlueGem.png", name: "BlueGem" },
@@ -1143,6 +1146,7 @@ LoadSprites = [
     { srcName: "Status/Clover2.png", name: "Clover" },
     { srcName: "Status/Wings.png", name: "Wings" },
     { srcName: "Status/FeatherFall.png", name: "FeatherFall" },
+    { srcName: "Status/Radar2.png", name: "Radar" },
 
     //health items
     { srcName: "Items/BeerHealth.png", name: "BeerHealth" },

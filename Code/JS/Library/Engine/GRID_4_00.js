@@ -335,33 +335,33 @@ const GRID = {
     raycasting3D(startGrid, endGrid) {
         let path = [];
         path.push(startGrid);
-    
+
         let x = startGrid.x;
         let y = startGrid.y;
         let z = startGrid.z;
-    
+
         let dx = endGrid.x - x;
         let dy = endGrid.y - y;
         let dz = endGrid.z - z;
-    
+
         let stepX = Math.sign(dx);
         let stepY = Math.sign(dy);
         let stepZ = Math.sign(dz);
-    
+
         dx = Math.abs(dx);
         dy = Math.abs(dy);
         dz = Math.abs(dz);
-    
+
         let tMaxX = dx === 0 ? Infinity : 0.5 / dx;
         let tMaxY = dy === 0 ? Infinity : 0.5 / dy;
         let tMaxZ = dz === 0 ? Infinity : 0.5 / dz;
-    
+
         let tDeltaX = dx === 0 ? Infinity : 1 / dx;
         let tDeltaY = dy === 0 ? Infinity : 1 / dy;
         let tDeltaZ = dz === 0 ? Infinity : 1 / dz;
-    
+
         let node;
-    
+
         while (x !== endGrid.x || y !== endGrid.y || z !== endGrid.z) {
             if (tMaxX < tMaxY) {
                 if (tMaxX < tMaxZ) {
@@ -380,11 +380,11 @@ const GRID = {
                     tMaxZ += tDeltaZ;
                 }
             }
-    
+
             node = new Grid3D(x, y, z);
             path.push(node);
         }
-    
+
         return path;
     },
     calcDistancesBFS_BH(start, dungeon) {
@@ -794,7 +794,7 @@ const reverseDictionary = (dict) => {
 }
 
 const REVERSED_MAPDICT = reverseDictionary(MAPDICT);
-//console.table(REVERSED_MAPDICT);
+if (ENGINE.VERBOSE) console.table(REVERSED_MAPDICT);
 
 const STAIRCASE_GRIDS = [MAPDICT.WALL2, MAPDICT.WALL4, MAPDICT.WALL6, MAPDICT.WALL8];
 const GROUND_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.HOLE, MAPDICT.BLOCKWALL, ...STAIRCASE_GRIDS];

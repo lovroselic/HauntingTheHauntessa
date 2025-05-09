@@ -25,10 +25,23 @@ for (let [index, key] of KEY_TYPES.entries()) {
 
 const SCROLL_TYPE = [
     "Invisibility", "Cripple", "HalfLife", "Explode", "Luck", "Flight", "BoostWeapon", "BoostArmor", "MagicBoost",
-    "DestroyWeapon", "DestroyArmor", "DrainMana", "FeatherFall",
+    "DestroyWeapon", "DestroyArmor", "DrainMana", "FeatherFall","Radar"
 ];
 
 const SHRINE_TYPE = {
+    YellowJacketDefense: {
+        name: "YellowJacketDefense",
+        sprite: "YellowJacketDefense",
+        which: "defense",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "SkillShield",
+        price: 1500,
+        level: 1,
+        text: "Protection from elements is crucial, 1500 gold and you will be better protected.",
+        introduce: true,
+        voice: "FemaleLow6",
+    },
     TransMana: {
         name: "TransMana",
         sprite: "TransMana",
@@ -224,12 +237,20 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    Painter: {
+        name: "Painter",
+        sprite: "Painter",
+        category: 'crest',
+        voice: "FemaleHigh4",
+        text: "The paintings on the wall are not just there because they are pretty. The will help with your orientation.",
+        interactionCategory: "oracle",
+    },
     SaveGameBabe: {
         name: "SaveGameBabe",
         sprite: "SaveGameBabe",
         category: 'crest',
         voice: "FemaleLow4",
-        text: "You can run out of dungeon any time. This will save your game. Any maybe your life. Don't forget to store your safe saved games. Reading instructions is not a shame.",
+        text: "You can run out of dungeon any time. This will save your game. And maybe your life. Don't forget to store your safe saved games. Reading instructions is not a shame.",
         interactionCategory: "oracle",
     },
     DonWasteFireball: {

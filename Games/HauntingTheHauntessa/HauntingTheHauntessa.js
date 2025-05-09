@@ -17,6 +17,8 @@ retests:
 item problems:
     - redundant beer in area 1 ??
 
+scrolls:
+    - add radar scrolls in initial dungeons before round 2
 
  */
 ////////////////////////////////////////////////////
@@ -222,10 +224,10 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 10; //2 --> 6-->3-->2--->21-->2-->7 -->8-->9-->23-->2-->13-->27-->13-->16-->17-->18-->19-->22
-        //-->24 --> 25-->14-->15------>10
+        GAME.level = 11; //2 --> 6-->3-->2--->21-->2-->7 -->8-->9-->23-->2-->13-->27-->13-->16-->17-->18-->19-->22
+        //-->24 --> 25-->14-->15------>10-->11
         GAME.gold = 50035;
-        GAME.lives = 1;
+        GAME.lives = 3;
 
         HERO.magic = 50;
         HERO.attack = 50;
@@ -392,12 +394,15 @@ const INI = {
     MAX_JUMP_POWER: 3.5,
     LUCKY_TIME: 59,
     FLIGHT_TIME: 59,
+    RADAR_TIME: 99,
     FEATHER_TIME: 59,
     BOOST_TIME: 59,
+    MINIMAP_W: 80,
+    MINIMAP_H: 80,
 };
 
 const PRG = {
-    VERSION: "0.19.7",
+    VERSION: "0.20.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -450,20 +455,22 @@ const PRG = {
         ENGINE.titleWIDTH = 1280 + INI.SCREEN_BORDER;
         ENGINE.sideWIDTH = ENGINE.titleWIDTH - ENGINE.gameWIDTH - INI.SCREEN_BORDER;
         ENGINE.gameHEIGHT = 768;
-        ENGINE.titleHEIGHT = 80;
+        ENGINE.titleHEIGHT = 96;
         ENGINE.bottomHEIGHT = 80;
         ENGINE.bottomWIDTH = ENGINE.titleWIDTH;
         MAP_TOOLS.INI.FOG = false;
 
         $("#bottom").css("margin-top", ENGINE.gameHEIGHT + ENGINE.titleHEIGHT + ENGINE.bottomHEIGHT);
         $(ENGINE.gameWindowId).width(ENGINE.gameWIDTH + 2 * ENGINE.sideWIDTH + 4);
-        ENGINE.addBOX("TITLE", ENGINE.titleWIDTH, ENGINE.titleHEIGHT, ["title", "compassRose", "compassNeedle", "lives", "gold", "save"], null);
+        ENGINE.addBOX("TITLE", ENGINE.titleWIDTH, ENGINE.titleHEIGHT, ["title", "compassRose", "compassNeedle", "lives", "minimap", "gold", "save"], null);
         ENGINE.addBOX("LSIDE", INI.SCREEN_BORDER, ENGINE.gameHEIGHT, ["Lsideback", "health"], "side");
         ENGINE.addBOX("ROOM", ENGINE.gameWIDTH, ENGINE.gameHEIGHT, ["background", "3d_webgl", "info", "text", "FPS", "button", "click"], "side");
         ENGINE.addBOX("SIDE", ENGINE.sideWIDTH, ENGINE.gameHEIGHT, ["sideback", "keys", "time", "scrolls", "orbs", "skills"], "fside");
         ENGINE.addBOX("DOWN", ENGINE.bottomWIDTH, ENGINE.bottomHEIGHT, ["bottom", "bottomText", "subtitle"], null);
 
         WebGL.HTML.addButtons();
+
+        MINIMAP.setOffset((INI.SCREEN_BORDER - INI.MINIMAP_W) / 2, (ENGINE.titleHEIGHT - INI.MINIMAP_H) / 2);
 
         if (DEBUG._2D_display) {
             ENGINE.addBOX("LEVEL", ENGINE.gameWIDTH, ENGINE.gameHEIGHT, ["pacgrid", "grid", "coord", "player"], null);
@@ -476,6 +483,7 @@ const PRG = {
             //AI.VERBOSE = true;
             ENGINE.verbose = true;
             //MAP_TOOLS.INI.VERBOSE = true;
+            MINIMAP.verbose();
         }
         //WebGL.PRUNE = false;
     },
@@ -761,6 +769,19 @@ class Scroll {
                     }
                 }
                 break;
+            case "Radar":
+                HERO.setRadar();
+                const radarTimerId = "radarTimer";
+                if (ENGINE.TIMERS.exists(radarTimerId)) {
+                    T = ENGINE.TIMERS.access(radarTimerId);
+                    T.extend(INI.RADAR_TIME);
+                } else {
+                    T = new CountDown(radarTimerId, INI.RADAR_TIME, HERO.clearRadar);
+                    let status = new Status("Radar", "Radar");
+                    HERO.inventory.status.push(status);
+                    TITLE.keys();
+                }
+                break;
             default:
                 console.error("ERROR scroll action", this);
                 break;
@@ -801,6 +822,7 @@ const HERO = {
         this.reset();
         this.revive();
         this.visible();
+        this.clearRadar();
 
         const propsToSave = [
             "health", "maxHealth", "attack", "magic", "defense", "mana", "maxMana",
@@ -811,6 +833,14 @@ const HERO = {
         for (const P of propsToSave) {
             this.attributesForSaveGame.push(`HERO.${P}`);
         }
+    },
+    clearRadar() {
+        HERO.radar = false;
+        HERO.removeStatus("Radar");
+        TITLE.keys();
+    },
+    setRadar() {
+        HERO.radar = true;
     },
     reset() {
         this.unlucky();
@@ -1286,12 +1316,12 @@ const GAME = {
 
         start_grid = new Vector3(start_grid.x + 0.5, start_grid.z + HERO.height, start_grid.y + 0.5);
         HERO.player = new $3D_player(start_grid, Vector3.from_2D_dir(start_dir), MAP[level].map, HERO_TYPE.ThePrincess);
-        //console.warn("HPY", HERO.player.pos, "start_grid", start_grid);
         HERO.player.addToTextureMap("invisible", TEXTURE.TheInvisiblePrincess);
         GAME.setCameraView();
         AI.initialize(HERO.player, "3D3");
         GAME.setWorld(level);
         ENTITY3D.resetTime();
+        MINIMAP.init(MAP[level].map, INI.MINIMAP_W, INI.MINIMAP_H, HERO.player);
     },
     setWorld(level, decalsAreSet = false) {
         console.time("setWorld");
@@ -1426,6 +1456,7 @@ const GAME = {
         WebGL.renderScene(MAP[GAME.level].map);
         TITLE.compassNeedle();
         TITLE.time();
+        MINIMAP.draw(HERO.radar);
 
         if (DEBUG.FPS) {
             GAME.FPS(lapsedTime);
@@ -1729,7 +1760,7 @@ const GAME = {
             GAME.setWorld(level);
         } else GAME.reloadIAM(level);
 
-        MAP_TOOLS.applyStorageActions(level);             //to be developed
+        MAP_TOOLS.applyStorageActions(level);             
         GAME.forceOpenDoor(destination.waypoint);
         HERO.player.setMap(MAP[level].map);
 
@@ -1742,9 +1773,10 @@ const GAME = {
         HERO.player.setPos(start_grid);
         HERO.player.setDir(Vector3.from_2D_dir(start_dir));
         GAME.setCameraView();
+        MINIMAP.init(MAP[level].map, INI.MINIMAP_W, INI.MINIMAP_H, HERO.player);
 
         /** SAVE GAME each time */
-        GAME.save(destination);                           //to be developed
+        GAME.save(destination);                           
 
         //observe
         if (MAP_TEXT[GAME.level]) {
@@ -1952,7 +1984,7 @@ const TITLE = {
     clearAllLayers() {
         ENGINE.layersToClear = new Set(["text",
             "sideback", "button", "title", "FPS", "keys", "info", "subtitle", "compassRose", "compassNeedle", "health", "lives", "skills", "gold", "time", "orbs", "scrolls", "save",
-            "bottomText"]);
+            "bottomText", "minimap"]);
         ENGINE.clearLayerStack();
         WebGL.transparent();
     },
@@ -2223,7 +2255,7 @@ const TITLE = {
     },
     lives() {
         ENGINE.clearLayer("lives");
-        const cX = INI.SCREEN_BORDER / 2;
+        const cX = 3 * INI.SCREEN_BORDER / 2 - 40;
         const y = ENGINE.titleHEIGHT / 2;
         const spread = ENGINE.spreadAroundCenter(GAME.lives, cX, 32);
         for (let x of spread) {

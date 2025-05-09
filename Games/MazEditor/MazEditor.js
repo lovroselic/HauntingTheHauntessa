@@ -1244,7 +1244,7 @@ const GAME = {
       }
       $("#shrine_type").change(function () {
         const entity = $("#shrine_type")[0].value;
-        ENGINE.drawToId("shrinecanvas", 0, 0, ENGINE.conditionalResize(SPRITE[entity], INI.CANVAS_RESOLUTION));
+        ENGINE.drawToId("shrinecanvas", 0, 0, ENGINE.conditionalResize(SPRITE[SHRINE_TYPE[entity].sprite], INI.CANVAS_RESOLUTION));
       });
       $("#shrine_type").trigger("change");
     }
@@ -1255,7 +1255,7 @@ const GAME = {
       }
       $("#item_shrine_type").change(function () {
         const entity = $("#item_shrine_type")[0].value;
-        ENGINE.drawToId("trainercanvas", 0, 0, ENGINE.conditionalResize(SPRITE[entity], INI.CANVAS_RESOLUTION));
+        ENGINE.drawToId("trainercanvas", 0, 0, ENGINE.conditionalResize(SPRITE[INTERACTION_SHRINE[entity].sprite], INI.CANVAS_RESOLUTION));
       });
       $("#item_shrine_type").trigger("change");
     }
@@ -1266,7 +1266,7 @@ const GAME = {
       }
       $("#oracle_type").change(function () {
         const entity = $("#oracle_type")[0].value;
-        ENGINE.drawToId("oraclecanvas", 0, 0, ENGINE.conditionalResize(SPRITE[entity], INI.CANVAS_RESOLUTION));
+        ENGINE.drawToId("oraclecanvas", 0, 0, ENGINE.conditionalResize(SPRITE[ORACLE_TYPE[entity].sprite], INI.CANVAS_RESOLUTION));
       });
       $("#oracle_type").trigger("change");
     }
@@ -1290,7 +1290,7 @@ const GAME = {
       }
       $("#entity_type").change(function () {
         const entity = $("#entity_type")[0].value;
-        ENGINE.drawToId("entitycanvas", 0, 0, ENGINE.conditionalResize(SPRITE[entity], INI.CANVAS_RESOLUTION));
+        ENGINE.drawToId("entitycanvas", 0, 0, ENGINE.conditionalResize(SPRITE[INTERACTION_ENTITY[entity].sprite], INI.CANVAS_RESOLUTION));
       });
       $("#entity_type").trigger("change");
 

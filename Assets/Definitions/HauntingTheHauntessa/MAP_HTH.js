@@ -259,49 +259,57 @@ const MAP = {
         containers: '[[14,"MetalCrate423","INTERACTION_ITEM.GreyLatexPanties",7]]',
     }
     ,
-    10 : {
+    10: {
         name: "Deadly Maze",
         sg: 0,
         maxSpawned: 10,
         killCountdown: 5,
         killsRequiredToStopSpawning: 99,
         spawnDelay: 7500,
-        data: '{"width":"25","height":"25","depth":1,"map":"BB3AA4BABABB2AA2BB2ABABB3AA2EBB4AA4BAA8BABB2AA3BABB5AA4BB5AA4BB2AA3BABB2ABB2AA7BAA2BB2AA3BAA2BAA2BAA4BABAA2BAA5BAA3BAA14BABB2AA2BB4ABB3AA2BABB3ABB2AA2BB2ABB2AA6BABB4ABB3AA2BB4AA2BB8AA2BB3AA2BB2ABABAA2BB4AA2BAA3BB2ABAA5BB4ABB9ABAA3BB4ABB4AA3BABAA3BB4ABB2ABAA4BAA3BABB4AA4BB2ABABB3ABB3ABABB2ABAA4BAA2BB2ABABB4AA2BB2ABAA2BABAA3BB2AA2BB3AA2BB2ABB2AA2BB4ABB2ABABABABABB2ABAA4BABB2AA3BB2ABB2ABAA2BB2ABB7ABAA2BB4ABAA3BAA2BB6ABB2ABAA2BB5AA2BABB4ABB3ABB2ABB8AA4BB3AA2BABAA3BABAA2BB2ABABAA3BB6AA2BB3ABABB3ABB3AA2BB2AA2BB2ABEABB6AA2BABABB2AA2BABABB3ABABABB10ABB6ABB24ABB14A$ABB2AB"}',
+        data: '{"width":"25","height":"25","depth":1,"map":"BB3AA4BABABB2AA2BB2ABABB3AA2BEBB3AA4BAA9BABB2AA2BABB5AA4BB5AA4BB2AA3BABB2ABABAA6BAA2BB2AA3BAA2BAA2BAA4BABAA2BAA5BAA3BAA14BABB2AA2BB4ABB3AA2BABB3ABB2AA2BB2ABB2AA6BABB4ABB3AA2BB4AA2BB8AA2BB3AA2BB3ABABAA2BB4AA2BAA3BB2ABAA5BB4ABB4ABB5ABAA3BB4ABB4AA2BABAA3BB4ABB2ABAA4BAA3BABB4AA4BB2ABABB3ABB3ABABB2ABAA4BAA2BB2ABABB4AA2BB2ABAA2BABAA3BB2AA2BB3AA2BB2ABB2AA2BB5ABB2ABABABABABB2ABAA4BABB2AA3BB2ABB2ABAA2BB2ABB7ABAA2BABB2ABAA3BAA2BB6ABB2ABAA2BB5AA2BABB5ABB3ABB2ABB8AA4BB3AA3BAA3BABAA2BB2ABABAA4BB6AA2BB3ABABB3ABB2AA2BB2AA2BB2ABEABB6AA2BAA2BB2AA2BABABB4ABABB10ABB6ABB24ABB14A$ABB2AB"}',
         wall: "DarkMossy23",
         floor: "BloodMarbleFloorWall_SDXL_010",
         ceil: "Relief04",
         start: '[73,5]',
-        decals: '[[44,5,"Skull_808","crest"],[94,5,"Skull312","crest"],[120,1,"Sorcery31","picture"],[122,1,"SummerGames501","picture"],[122,7,"Zeppelin4","picture"],[48,3,"FemDommes_5159","picture"],[98,3,"FluxDommes2057","picture"],[20,7,"ManiacMansion501","picture"],[22,7,"GemDommes_084","picture"]]',
+        decals: '[[44,5,"Skull_808","crest"],[94,5,"Skull312","crest"],[120,1,"Sorcery31","picture"],[122,1,"SummerGames501","picture"],[122,7,"Zeppelin4","picture"],[48,3,"FemDommes_5159","picture"],[98,3,"FluxDommes2057","picture"],[20,7,"ManiacMansion501","picture"],[22,7,"GemDommes_084","picture"],[64,5,"FemDommes_4030","picture"],[83,5,"FemDommes_13003","picture"],[179,5,"FemDommes_10026","picture"],[25,5,"FemDommes6065","picture"],[100,5,"Domme308","picture"],[150,5,"FemDommes_9133","picture"],[201,5,"FemDommes_4091","picture"],[250,5,"FemDommes_13017","picture"],[300,5,"FemDommes_16258","picture"],[450,5,"FemDommes_5189","picture"],[500,5,"FemDommes_13156","picture"],[575,5,"FluxDommes3021","picture"],[453,5,"Barbarian3","picture"],[529,5,"FemDommes_11001","picture"],[558,5,"FemDommes_5216","picture"],[353,5,"FemDommes_8335","picture"],[253,5,"FemDommes_16193","picture"],[229,5,"ShortBlackSkirt_006","picture"],[231,5,"Karateka200","picture"],[131,5,"FemDommes_8095","picture"],[183,5,"ManiacMansion11","picture"],[234,5,"FemDommes_15221","picture"],[286,5,"FemDommes_9031","picture"],[334,5,"FemDommes_5187","picture"],[510,5,"BlackBeret_117","picture"],[462,5,"FemDommes_10082","picture"],[588,5,"GameScreen1003","picture"],[567,5,"FemDommes_16226","picture"],[518,5,"RetroGames_2340","picture"],[468,5,"FemDommes_8416","picture"],[546,5,"FemDommes_8386","picture"],[596,5,"HalfLife13","picture"],[343,5,"FemDommes_16862","picture"],[144,5,"FemDommes_15737","picture"],[244,5,"FemDommes_15335","picture"],[136,5,"UnusedEntities2094","picture"],[188,5,"FemDommes_16059","picture"],[238,5,"Daggerfall3","picture"],[265,5,"UnusedEntities5023","picture"],[412,5,"BlackBeret_003","picture"],[514,5,"FluxDommes2229","picture"],[79,5,"FemDommes_15713","picture"],[129,5,"FemDommes_5052","picture"],[305,5,"FemDommes_9049","picture"],[89,3,"FalconPatrol70","picture"],[41,3,"FemDommes_4108","picture"],[106,3,"CastleOfTerror4","picture"],[186,3,"FemDommes_4095","picture"],[238,3,"Barbarian3","picture"],[29,3,"FemDommes_14214","picture"],[79,3,"FemDommes_16895","picture"],[154,3,"FemDommes_5067","picture"],[204,3,"NurseAlchemyMagic_098","picture"],[253,3,"EOB11","picture"],[303,3,"FemDommes_16644","picture"],[359,3,"FemDommes_16414","picture"],[410,3,"FemDommes_16161","picture"],[456,3,"FemDommes_17005","picture"],[453,3,"FemDommes_9103","picture"],[504,3,"RetroGames_2112","picture"],[585,3,"FemDommes_16535","picture"],[594,3,"ApparitiaFrame239","picture"],[571,3,"FemDommes_16300","picture"],[549,3,"FemDommes_16095","picture"],[474,3,"FluxDommes3079","picture"],[521,3,"PrincessAI_02","picture"],[518,3,"FemDommes_17108","picture"],[466,3,"SnakeGirl_003","picture"],[416,3,"ImpossibleMsission110","picture"],[341,3,"FemDommes_14045","picture"],[242,3,"GameScreen1043","picture"],[191,3,"Various6024","picture"],[299,3,"FemDommes_5162","picture"],[248,3,"FemDommes_17264","picture"],[173,3,"UnusedEdtitiesFramed_044","picture"],[468,3,"GameScreen2008","picture"],[15,7,"FemDommes_9121","picture"],[13,7,"RetroGames_2110","picture"],[9,7,"FluxDommes2140","picture"],[5,7,"FluxDommes3161","picture"],[108,7,"Princess14","picture"],[110,7,"GemDommes_275","picture"],[112,7,"Portal130","picture"],[165,7,"GameDommes_007","picture"],[1,7,"FemDommes_12246","picture"],[177,7,"FemDommes_15631","picture"],[76,7,"GemDommes_266","picture"],[226,7,"FemDommes_16515","picture"],[277,7,"BlackBeret_057","picture"],[426,7,"FemDommes_17163","picture"],[430,7,"FemDommes_14178","picture"],[432,7,"ShortBlackSkirt_009","picture"],[526,7,"FemDommes_17147","picture"],[509,7,"FemDommes_5235","picture"],[539,7,"FemDommes_13078","picture"],[537,7,"FemDommes_4004","picture"],[543,7,"FemDommes_8036","picture"],[495,7,"FluxDommes2325","picture"],[273,7,"FemDommes_14178","picture"],[315,7,"FemDommes_16254","picture"],[363,7,"FemDommes_8293","picture"],[535,3,"FemDommes_8196","picture"],[535,7,"Various6029","picture"],[90,1,"CCC_040","picture"],[113,1,"FemDommes_8154","picture"],[109,1,"FemDommes_16688","picture"],[128,1,"FemDommes_12125","picture"],[206,1,"FemDommes_11045","picture"],[207,1,"FemDommes_8197","picture"],[228,1,"FemaleWarrior206","picture"],[277,1,"LeisureSuitLarry50","picture"],[477,1,"FemDommes_13027","picture"],[603,1,"FemDommes_10138","picture"],[609,1,"FemDommes_8536","picture"],[555,1,"GemDommes_266","picture"],[507,1,"OlympicSkier6","picture"],[433,1,"GemDommes_050","picture"],[334,1,"PrincessDragonDomme_130","picture"],[360,1,"UnusedEntities2092","picture"],[537,1,"GemDommes_136","picture"],[538,1,"FluxDommes2113","picture"],[540,1,"FemDommes_15708","picture"],[542,1,"UnusedEntities5084","picture"],[618,1,"FemDommes_16040","picture"],[544,1,"FemDommes_12016","picture"],[421,1,"FemDommes_8118","picture"],[321,1,"FemDommes_5120","picture"],[440,1,"FluxDommes2202","picture"],[285,7,"FemDommes_16558","picture"],[207,7,"FemDommes_14057","picture"],[234,3,"NurseAlchemyMagic_005","picture"],[397,3,"GameDommes_301","picture"],[394,5,"FemDommes_17235","picture"],[347,3,"AI_pic204","picture"],[614,1,"FluxDommes2166","picture"],[282,1,"GatewayToApshai140","picture"],[333,7,"AI_pic225","picture"],[331,1,"FemDommes_16614","picture"],[212,1,"AI_PIC_302","picture"],[214,1,"Captive201","picture"],[214,7,"FemDommes_8537","picture"],[212,7,"CastleBabes27","picture"],[291,1,"FemDommes_15662","picture"],[312,1,"CrawlMaster132","picture"],[265,1,"UnusedEntities5016","picture"],[270,1,"FemDommes_15409","picture"],[272,1,"ShinyBlackRuberella18","picture"],[270,7,"UnusedEntities2043","picture"],[272,7,"Imhotep2","picture"],[321,7,"RetroGames_2042","picture"],[437,3,"CCC_080","picture"],[526,1,"UnusedEntities2051","picture"],[216,7,"FemDommes_8240","picture"],[311,3,"GemDommes_050","picture"],[229,7,"FemDommes_4064","picture"],[369,1,"NurseAlchemyMagic_114","picture"],[176,1,"FemDommes_9019","picture"],[326,1,"FemDommes_17118","picture"],[428,1,"FemDommes_8073","picture"],[42,7,"FluxDommes2161","picture"],[479,5,"FluxDommes2320","picture"],[372,5,"FemDommes_8093","picture"],[260,1,"AI_pic239","picture"],[314,1,"FemDommes_6367","picture"],[440,7,"FluxDommes4008","picture"],[438,7,"FemDommes_16866","picture"],[438,1,"FemDommes_16013","picture"],[258,3,"FemDommes_17109","picture"],[379,1,"AI_Pic_142","picture"],[183,3,"FemDommes_15074","picture"],[318,3,"FluxDommes3090","picture"],[391,5,"ShortBlackSkirt_033","picture"],[601,1,"Shamus60","picture"]]',
         lights: '[[21,7,"Candle54","standardFaint"],[37,5,"DuaLLantern_010","standardFaint"],[29,5,"Lights111","standardFaint"],[136,3,"Lights111","standardFaint"],[290,3,"Lamp41","standardFaint"],[114,7,"FluxLight109","standardFaint"],[242,7,"DuaLLantern_016","standardFaint"],[311,7,"FluxLight116","standardFaint"],[231,7,"DuaLLantern_005","standardFaint"],[400,5,"SkullLantern52","standardFaint"],[128,7,"FluxLight120","standardFaint"],[3,7,"Candle65","standardFaint"],[478,7,"Lights113","standardFaint"],[485,3,"WallLamp16","standardFaint"],[565,3,"Lamp48","standardFaint"],[444,7,"WallLamp18","standardFaint"],[623,1,"WallLamp34","standardFaint"],[269,7,"FluxLight106","standardFaint"],[120,7,"Lights107","standardFaint"]]',
         gates: '[[74,3,"10.1","7.2","Up"],[149,3,"10.2","11.1","Silver"]]',
         keys: '[[51,1]]',
         monsters: '[[86,"MissGalaxyGreenBouncer"],[105,"MissGalaxyGreenBouncer"],[135,"WolfSpider"],[287,"WolfSpideGreen"],[190,"WolfSpideGreen"],[517,"Viking"],[336,"Viking"],[354,"Viking"],[302,"Viking"],[452,"RedDragon"],[559,"RedDragon"],[592,"RedDragon"],[473,"RedDragon"],[371,"RedDragon"],[196,"PurpleGalaxy"],[184,"Bat"]]',
-        containers: '[[184,"TreasureChest","INTERACTION_ITEM.Lipstick",5]]',
+        scrolls: '[[395,6],[597,7],[454,11]]',
+        skills: '[[171,"Heart"],[551,"Attack"],[187,"Defense"]]',
+        containers: '[[184,"TreasureChest","INTERACTION_ITEM.Lipstick",5],[233,"Barell3","GOLD_ITEM_TYPE.GoldSphere",3]]',
         doors: '[68,271]',
         triggers: '[[199,3,"SmoothWallButton",1,121],[50,5,"SmoothWallButton",1,104],[280,1,"SmoothWallButton",1,205],[586,1,"SmoothWallButton",1,536],[572,1,"SmoothWallButton",1,493]]',
         objects: '[[32,"Amanita"],[464,"Amanita"],[251,"Snail"],[373,"Snail"],[457,"ManaFrog"],[409,"ManaFrog"],[181,"Cake"],[189,"Cake"],[355,"Cake"],[230,"Steak"],[145,"Steak"],[511,"Steak"],[388,"GoldCoin"]]',
-        oracles: '[[36,3,"FireballShutHiny"],[192,5,"DonWasteFireball"],[142,3,"SaveGameBabe"]]',
+        oracles: '[[36,3,"FireballShutHiny"],[192,5,"DonWasteFireball"],[142,3,"SaveGameBabe"],[117,1,"Painter"]]',
         movables: '[[288,"RoastChicken"],[584,"RoastChicken"],[252,"RedWolfSpider"],[448,"RedWolfSpider"]]',
         lairs: '[[82,7,"Lair43"],[259,7,"Lair41"],[612,1,"Lair74"],[620,1,"Lair28"]]',
         monsterList: '["DarkMadHandy","Dragon","MadHandy","MissGalaxyGreen","MissGalaxyGreenBouncer","WolfSpideGreen","RedDragon","Viking","DarkMadHandy","DarkMadHandy","WolfSpider"]',
-        }
+    }
     ,
-    11: {
+    11 : {
         name: "The Vault",
         sg: 0,
-        maxSpawned: -1,
-        killCountdown: -1,
-        killsRequiredToStopSpawning: 99,
-        spawnDelay: -1,
-        data: '{"width":"21","height":"21","depth":4,"map":"BB6ABABB2AA48ÁÁ4AA47ÁÁ3AÁAA7BB8AA4ÁAA46ÁÁ4AA38BAA60ÁBB37AA2BB17ABAA3BB6ABB111ABB2AA7ࡁBB57$BB21ÁÁ2BB22AÁBB228AA4BB5ࡁBB34ÁÁ14BB25ÁBAA2BB2ABB2ÁAA4BB15ÁÁ13ABÁÁ3ABB148ÁÁ245BB4ÁÁ5BB5ÁÁ155BB4ÁÁ36BÁÁ140BÁÁ2BB14ÁÁ38BB20AA2ŁŁ2ɁɁ2сс2"}',
+        maxSpawned: 6,
+        killCountdown: 5,
+        killsRequiredToStopSpawning: 29,
+        spawnDelay: 9999,
+        data: '{"width":"21","height":"21","depth":4,"map":"BB3AA2BB2AA2BB2AA5BB2AA41ÁÁ4AA47ÁÁ3AÁAA7BB8AA4ÁAA46ÁÁ4AA38BAA45BABAA4ÁAA9ÁÁ3BB2AÁBB45AA2BB2AA2BB13ÁÁ2BB4ABB13ABB7ABB93ÁBB23ABB3AA7ࡁBB86$BB43ÁBB9ÁABB9ABB151ABAA4BB5ࡁBB34ÁÁ14BB25ABAA2BB2ABB2ÁAA4BB15ÁAÁÁ7BÁÁ3AA2BB40ABB5ABB95ÁÁ245BB4ÁÁ5BB4ÁÁ4BÁÁ151BB4ÁÁ36BÁÁ147BÁBB14ÁÁ12BB2ÁÁ18AA2BB16AA2ŁŁ2ɁɁ2сс2"}',
         wall: "MossyPattern1",
         floor: "PrnateFloor107",
         ceil: "GoldBlackSDXL340",
         start: '[211,5]',
+        decals: '[[1535,5,"DemonSkull3","crest"],[1451,5,"Skull317","crest"],[1388,5,"Skull_784","crest"],[1682,5,"Skull_813","crest"],[1619,5,"Skull_782","crest"],[1404,3,"Skull406","crest"],[1467,3,"Skull_782","crest"],[1551,3,"Skull307","crest"],[1635,3,"Skull317","crest"],[1698,3,"Skull314","crest"],[1711,1,"Skull406","crest"],[1708,1,"Skull_785","crest"],[1714,1,"Skull315","crest"],[1718,1,"Skull_808","crest"],[1704,1,"Skull406","crest"],[1375,7,"Skull_813","crest"],[1372,7,"Skull305","crest"],[1368,7,"Skull315","crest"],[1378,7,"Skull308","crest"],[1382,7,"Skull318","crest"],[190,5,"FemDommes_16744","picture"],[232,5,"FemDommes_8092","picture"],[274,5,"FemDommes_11021","picture"],[316,5,"HoleDomme_005","picture"],[379,5,"GemDommes_190","picture"],[148,5,"FemDommes_16056","picture"],[106,5,"FemDommes_6191","picture"],[43,5,"AI_pic225","picture"],[123,3,"FemDommes_12137","picture"],[333,3,"FemDommes_11076","picture"],[302,3,"FemDommes_17179","picture"],[239,3,"FemDommes_16185","picture"],[197,3,"GemDommes_219","picture"],[134,3,"GameDommes_018","picture"],[621,3,"FemDommes_5047","picture"],[705,3,"PrincessDragonDomme_059","picture"],[586,3,"FemDommes_9073","picture"],[754,3,"CastleBabes21","picture"],[1069,3,"FemDommes_17169","picture"],[1153,3,"FemDommes_16356","picture"],[28,7,"UnusedEntities2004","picture"],[24,7,"NurseAlchemyMagic_018","picture"],[38,7,"MonkeyIsland112","picture"],[31,7,"FemDommes_6211","picture"],[34,7,"GameDommes_238","picture"],[302,7,"Paperboy2","picture"],[310,7,"FemDommes_4291","picture"],[305,7,"FemDommes_12178","picture"],[308,7,"FemDommes_12087","picture"],[711,7,"FemDommes_5257","picture"],[706,7,"FemDommes_8307","picture"],[708,7,"FemDommes_5248","picture"],[402,1,"CCC_156","picture"],[405,1,"FemDommes_12022","picture"],[417,1,"FemDommes_15739","picture"],[409,1,"SkoolDaze60","picture"],[412,1,"FemDommes_15287","picture"],[135,1,"FluxDommes3037","picture"],[143,1,"FemDommes_6167","picture"],[138,1,"GemDommes_164","picture"],[141,1,"GameDommes_187","picture"],[621,1,"Apparitias_039","picture"],[626,1,"FemDommes_9116","picture"],[624,1,"UnusedEntities5108","picture"]]',
         lights: '[[1030,5,"FluxLight113","standard2"],[1156,5,"FluxLight102","standard2"],[1380,7,"Lamp42","standard2"],[1716,1,"Lamp41","standard2"],[357,5,"FireplaceFLuxU413","fireplace"],[63,5,"FireplaceFLuxU411","fireplace"],[1111,3,"SkullLantern51","standardUltraFaint"]]',
         gates: '[[210,5,"11.1","10.2","Closed"]]',
-        containers: '[[1108,"TreasureChest","INTERACTION_ITEM.GoldenScepter",3]]',
-    }
+        monsters: '[[79,"MissGalaxyGreenBouncer"],[373,"MissGalaxyGreenBouncer"],[88,"Viking"],[340,"Viking"],[620,"Viking"],[704,"Viking"],[564,"RedDragon"],[774,"RedDragon"],[1110,"PurpleGalaxy"]]',
+        scrolls: '[[358,13]]',
+        containers: '[[1108,"TreasureChest","INTERACTION_ITEM.GoldenScepter",3],[89,"Barrel_471","GOLD_ITEM_TYPE.GoldBar",4],[76,"Closet","GOLD_ITEM_TYPE.GoldBar",4],[318,"WoodenCrate440","GOLD_ITEM_TYPE.GoldBar",4],[349,"WoodenCrate435","GOLD_ITEM_TYPE.GoldBar",4],[395,"Barrel_480","GOLD_ITEM_TYPE.GoldBar",4],[279,"WoodenCrate53","GOLD_ITEM_TYPE.GoldBar",4],[606,"MetalCrate422","GOLD_ITEM_TYPE.GoldBar",4],[750,"WoodenCrate427","GOLD_ITEM_TYPE.GoldBar",4],[683,"Barrel_473","GOLD_ITEM_TYPE.GoldBar",4],[575,"Barrel_469","GOLD_ITEM_TYPE.GoldBar",4],[1067,"MetalCrate52","GOLD_ITEM_TYPE.GoldBar",4],[1147,"MetalCrate421","GOLD_ITEM_TYPE.GoldBar",4]]',
+        shrines: '[[83,3,"YellowJacketDefense"]]',
+        lairs: '[[892,7,"Lair53"],[986,3,"Lair59"],[1238,3,"Lair11"],[1312,1,"Lair22"],[1218,5,"Lair40"],[966,5,"Lair31"]]',
+        monsterList: '["RedDragon","Dragon"]',
+        }
     ,
     12: {
         name: "Treasury",
@@ -373,7 +381,7 @@ const MAP = {
         monsterList: '["Dragon","Dragon","DarkMadHandy","BigBat","MissGalaxyGreen","WolfSpider","WolfSpideGreen"]',
     }
     ,
-    15 : {
+    15: {
         name: "Spidery Mazes",
         sg: 0,
         maxSpawned: 4,
@@ -402,7 +410,7 @@ const MAP = {
         trainers: '[[1387,3,"DragonMotha"]]',
         lairs: '[[1,7,"Lair72"],[489,5,"Lair40"],[362,3,"Lair58"],[1081,5,"Lair39"],[1454,7,"Lair24"],[1563,3,"Lair32"]]',
         monsterList: '["Spider","SpiderGreen","SpiderGreen","SpiderRed","SpiderRed","SpiderRed","WolfSpider","WolfSpider","WolfSpider","WolfSpider","WolfSpideGreen","WolfSpideGreen","Dragon","Dragon","Dragon","Dragon"]',
-        }
+    }
     ,
     16: {
         name: "The Crypt",
