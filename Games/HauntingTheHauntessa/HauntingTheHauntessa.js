@@ -144,7 +144,7 @@ const DEBUG = {
             DONE "Skull", --> (27)
             DONE "Skull" --> (18)
             DONE "TaoBook",  **quest --> TaoLibrarian
-            "DONE YinYangBook",  **quest --> (19)
+            DONE YinYangBook",  **quest --> (19)
             DONE "TreeOfLifeBook" **quest --> Arcadia(##)
             DONE "GoldBar",  **quest --> GoldMelta (20)
             DONE "GoldBar",  **quest --> (6)
@@ -178,17 +178,16 @@ const DEBUG = {
             DONE "Whip", --> (13)
             DONE "SmallBarrel", --> (7)
             DONE "SmallBarrel", --> (13)
-        "SmallBarrel"
+            DONE "SmallBarrel" --> (12)
             DONE "Ammo", -->(15)
             DONE "Revolver" --> SpaceMajor -->(13)
             DONE "StarDestroyer" --> (22)
             DONE "StarDestroyer" --> (18)
             DONE "StarDestroyer" --> (16)
             DONE "Spectacles" --> (16)
-        "Mirror", 
+            DONE "Mirror", --> (12)
             DONE "Lipstick" --> (10)
-
-
+        "Document" **quest --> (26)
 
         Shrines:
             - redCoat defense
@@ -224,7 +223,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 9; //2 --> 6-->3-->2--->21-->2-->7 -->8-->9-->23-->2-->13-->27-->13-->16-->17-->18-->19-->22
+        GAME.level = 12; //2 --> 6-->3-->2--->21-->2-->7 -->8-->9-->23-->2-->13-->27-->13-->16-->17-->18-->19-->22
         //-->24 --> 25-->14-->15------>10-->11-->12
         GAME.gold = 50035;
         GAME.lives = 3;
@@ -402,7 +401,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.20.1",
+    VERSION: "0.20.2",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

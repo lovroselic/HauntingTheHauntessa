@@ -3161,10 +3161,10 @@ const INTERACTION_ENTITY = {
         sprite: "GateKeeper",
         category: 'crest',
         voice: "Female2",
-        wants: ["Document", "Document", "Document"],
+        wants: ["Document", "Document", "Document", "Document"],
         gives: "GoldKey",
         text: {
-            intro: "Princess brave, your path awaits, but first your papers seal your fate. Three proofs I'll see, three tests to pass, without them here you'll never pass!",
+            intro: "Princess brave, your path awaits, but first your papers seal your fate. Four proofs I'll see, four tests to pass, without them here you'll never pass!",
             progress: "One step closer, that's the way. Yet you need more proof today!",
             conclusion: "You've passed each test, proven true. Take this key, adventure awaits you!"
         }
