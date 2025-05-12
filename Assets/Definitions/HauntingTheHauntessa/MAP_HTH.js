@@ -21,7 +21,7 @@ const MAP_TEXT = {
     9: "This part seems old.",
     10: "This maze gives me the creeps.",
     11: "My precious.",
-    12: "Is all than gold mine? No? Why not.",
+    12: "Is all that gold mine? No? Why not.",
     13: "Armory. I might find some weapons here.",
     14: "Smells like sulphur. Are they following royal safety regulations?",
     15: "Silky strands on the walls. Beware of spiders",
@@ -29,13 +29,13 @@ const MAP_TEXT = {
     17: "Watch your step. I mean, watch my step.",
     18: "Let's go to the top.",
     19: "Nice view. But Hauntessa's castle is to the south.",
-    20: "",
+    20: "I can mine some gold ore. Or just pick it up.",
     21: "Let's stop for a pint here.",
     22: "What a view. But Hauntessa's castle is in other direction.",
     23: "Huh? Seriously?",
     24: "Master mistresses. They are expensive, but worth every gold coin. Don't be cheap.",
     25: "Skill upgrades getting more and more expensive. What a surprise.",
-    26: "",
+    26: "Guests? What guests?",
     27: "I can buy some spare scrolls."
 
 };
@@ -68,7 +68,7 @@ const MAP = {
         movables: '[[287,"GreenBat"],[297,"GreenBat"],[384,"GreenBat"],[172,"GreenBat"]]',
     }
     ,
-    2: {
+    2 : {
         name: "The Throne Room",
         sg: 0,
         maxSpawned: 10,
@@ -80,7 +80,7 @@ const MAP = {
         floor: "BloodMarbleFloorWall_SDXL_030",
         ceil: "DarkMarble50",
         start: '[1224,7]',
-        decals: '[[519,7,"KnightStatue106","crest"],[521,7,"KnightStatue110","crest"],[523,7,"KnightStatue105","crest"],[525,7,"KnightStatue107","crest"],[881,7,"ShieldDecal02","crest"],[885,7,"ShieldDecal03","crest"],[538,4,"PersianRug06","crest"],[557,4,"PersianRug06","crest"],[539,4,"PersianRug06","crest"],[558,4,"PersianRug06","crest"],[540,4,"PersianRug06","crest"],[559,4,"PersianRug06","crest"],[541,4,"PersianRug06","crest"],[560,4,"PersianRug06","crest"],[542,4,"PersianRug06","crest"],[561,4,"PersianRug06","crest"],[543,4,"PersianRug06","crest"],[562,4,"PersianRug06","crest"],[544,4,"PersianRug06","crest"],[563,4,"PersianRug06","crest"],[520,4,"PersianRug06","crest"],[524,4,"PersianRug06","crest"],[418,5,"FemDommes_9059","picture"],[384,5,"FemDommes_5209","picture"],[430,5,"FemDommes_13047","picture"],[436,3,"FemDommes_6308","picture"],[394,3,"FemDommes_6185","picture"],[424,3,"FemDommes_15399","picture"],[397,7,"Morana138","picture"],[383,7,"NurseAlchemyMagic_117","picture"],[381,7,"ShortBlackSkirt_008","picture"],[395,7,"JSW111","picture"],[441,3,"FemDommes_12005","picture"],[451,5,"AI_pic242","picture"],[366,7,"FemDommes_8473","picture"],[374,7,"BlackBeret_021","picture"],[407,1,"UnusedEntities2071","picture"],[409,1,"UnusedEntities122","picture"],[425,7,"CCC_123","picture"],[429,7,"CreepyWindow_10","picture"],[502,1,"FemDommes_13022","picture"],[504,1,"BlackBeret_082","picture"],[482,1,"Domme349","picture"],[486,1,"CastleBabes28","picture"],[460,5,"FluxDommes2122","picture"],[495,5,"RetroGames_2132","picture"],[533,5,"Princess410","picture"],[553,5,"FemDommes_4190","picture"],[629,5,"GameScreen1055","picture"],[647,5,"ShortBlackSkirt_018","picture"],[489,3,"FluxDommes3060","picture"],[511,3,"RetroGames_2345","picture"],[549,3,"UnusedEntities144","picture"],[567,3,"FemDommes_15382","picture"],[625,3,"Apparitias_008","picture"],[643,3,"FemDommes_10026","picture"],[663,3,"RetroGames_2126","picture"],[1052,1,"RetroGames_2126","picture"],[1056,1,"AI_pic244","picture"],[1298,1,"RetroGames_2015","picture"],[1304,1,"FemDommes_15413","picture"],[1237,5,"FemDommes_6103","picture"],[1251,3,"FemDommes_14158","picture"],[1470,7,"FemDommes_5094","picture"],[1474,7,"GameScreens012","picture"],[1775,1,"FemDommes_8201","picture"],[1777,1,"FemDommes_12099","picture"],[1788,1,"FemDommes_12045","picture"],[1802,1,"FemDommes_6274","picture"],[1763,1,"CastleBabes29","picture"],[1751,1,"FluxDommes2197","picture"],[1676,1,"FemDommes_9120","picture"],[1686,1,"FemDommes_15380","picture"],[1673,5,"FemDommes_4161","picture"],[1768,5,"GameDommes_021","picture"],[1777,5,"GameDommes_271","picture"],[1616,5,"Domme101","picture"],[1559,5,"GameDommes_049","picture"],[1503,5,"FluxDommes3080","picture"],[1485,5,"Various7007","picture"],[1497,3,"RetroGames_1019","picture"],[1556,3,"RetroGames059","picture"],[1594,3,"FemDommes_6303","picture"],[1651,3,"Apparitia_1030","picture"],[1708,3,"GameDommes_013","picture"],[1784,3,"FemDommes_8570","picture"],[1746,3,"FemDommes_14076","picture"],[1676,3,"GemDommes_234","picture"],[1714,3,"FemDommes_10019","picture"],[1686,5,"FemDommes_6303","picture"],[1724,5,"FemDommes_6164","picture"],[1775,3,"Morana047","picture"],[311,1,"FemDommes_15147","picture"],[315,1,"Domme328","picture"],[298,1,"PrincessDragonDomme_111","picture"],[290,1,"UnusedEntities5004","picture"],[196,7,"FemDommes_14122","picture"],[202,7,"LargePicLadies24","picture"],[261,3,"Blackwyche110","picture"],[232,5,"FemDommes_4190","picture"],[674,1,"FemDommes_15033","picture"],[294,4,"RustyFloorGrille_07","crest"],[536,4,"RustyFloorGrille_07","crest"],[435,4,"RustyFloorGrille_07","crest"],[1508,4,"RustyFloorGrille_07","crest"],[1473,7,"Ivy12","crest"],[1471,7,"Ivy12a","crest"],[700,1,"RetroGames_2087","picture"],[686,1,"BlackBeret_074","picture"],[887,1,"FemDommes_9017","picture"],[879,1,"FemDommes_5041","picture"],[826,3,"AI_Pic_144","picture"],[826,5,"Princess15","picture"],[831,3,"CCC_052","picture"],[1299,7,"Domme409","picture"],[1303,7,"FemDommes_14166","picture"],[1363,3,"FemDommes_10094","picture"],[1353,5,"UnusedEntities2018","picture"],[1760,3,"UnusedEntities5104","picture"],[1754,5,"NurseAlchemyMagic_123","picture"],[1793,1,"UnusedEntities2034","picture"],[1797,1,"FemDommes_4070","picture"],[1182,7,"GemDommes_062","picture"],[1192,7,"CastleLady114","picture"],[1170,7,"FemDommes_12045","picture"],[1166,7,"Popeye2","picture"],[500,3,"FemDommes_12147","picture"],[506,5,"FemDommes_16005","picture"],[1028,5,"FluxDommes2287","picture"],[1042,3,"FemDommes_16026","picture"],[965,3,"Various6004","picture"],[953,5,"RetroGames_2129","picture"],[890,3,"TempleDecal","crest"]]',
+        decals: '[[519,7,"KnightStatue106","crest"],[521,7,"KnightStatue110","crest"],[523,7,"KnightStatue105","crest"],[525,7,"KnightStatue107","crest"],[881,7,"ShieldDecal02","crest"],[885,7,"ShieldDecal03","crest"],[538,4,"PersianRug06","crest"],[557,4,"PersianRug06","crest"],[539,4,"PersianRug06","crest"],[558,4,"PersianRug06","crest"],[540,4,"PersianRug06","crest"],[559,4,"PersianRug06","crest"],[541,4,"PersianRug06","crest"],[560,4,"PersianRug06","crest"],[542,4,"PersianRug06","crest"],[561,4,"PersianRug06","crest"],[543,4,"PersianRug06","crest"],[562,4,"PersianRug06","crest"],[544,4,"PersianRug06","crest"],[563,4,"PersianRug06","crest"],[520,4,"PersianRug06","crest"],[524,4,"PersianRug06","crest"],[418,5,"FemDommes_9059","picture"],[384,5,"FemDommes_5209","picture"],[430,5,"FemDommes_13047","picture"],[436,3,"FemDommes_6308","picture"],[394,3,"FemDommes_6185","picture"],[424,3,"FemDommes_15399","picture"],[397,7,"Morana138","picture"],[383,7,"NurseAlchemyMagic_117","picture"],[381,7,"ShortBlackSkirt_008","picture"],[395,7,"JSW111","picture"],[441,3,"FemDommes_12005","picture"],[451,5,"AI_pic242","picture"],[366,7,"FemDommes_8473","picture"],[374,7,"BlackBeret_021","picture"],[407,1,"UnusedEntities2071","picture"],[409,1,"UnusedEntities122","picture"],[425,7,"CCC_123","picture"],[429,7,"CreepyWindow_10","picture"],[502,1,"FemDommes_13022","picture"],[504,1,"BlackBeret_082","picture"],[482,1,"Domme349","picture"],[486,1,"CastleBabes28","picture"],[460,5,"FluxDommes2122","picture"],[495,5,"RetroGames_2132","picture"],[533,5,"Princess410","picture"],[553,5,"FemDommes_4190","picture"],[629,5,"GameScreen1055","picture"],[647,5,"ShortBlackSkirt_018","picture"],[489,3,"FluxDommes3060","picture"],[511,3,"RetroGames_2345","picture"],[549,3,"UnusedEntities144","picture"],[567,3,"FemDommes_15382","picture"],[625,3,"Apparitias_008","picture"],[643,3,"FemDommes_10026","picture"],[663,3,"RetroGames_2126","picture"],[1052,1,"RetroGames_2126","picture"],[1056,1,"AI_pic244","picture"],[1298,1,"RetroGames_2015","picture"],[1304,1,"FemDommes_15413","picture"],[1237,5,"FemDommes_6103","picture"],[1251,3,"FemDommes_14158","picture"],[1470,7,"FemDommes_5094","picture"],[1474,7,"GameScreens012","picture"],[1775,1,"FemDommes_8201","picture"],[1777,1,"FemDommes_12099","picture"],[1788,1,"FemDommes_12045","picture"],[1802,1,"FemDommes_6274","picture"],[1763,1,"CastleBabes29","picture"],[1751,1,"FluxDommes2197","picture"],[1676,1,"FemDommes_9120","picture"],[1686,1,"FemDommes_15380","picture"],[1673,5,"FemDommes_4161","picture"],[1768,5,"GameDommes_021","picture"],[1777,5,"GameDommes_271","picture"],[1616,5,"Domme101","picture"],[1559,5,"GameDommes_049","picture"],[1503,5,"FluxDommes3080","picture"],[1485,5,"Various7007","picture"],[1497,3,"RetroGames_1019","picture"],[1556,3,"RetroGames059","picture"],[1594,3,"FemDommes_6303","picture"],[1651,3,"Apparitia_1030","picture"],[1708,3,"GameDommes_013","picture"],[1784,3,"FemDommes_8570","picture"],[1746,3,"FemDommes_14076","picture"],[1676,3,"GemDommes_234","picture"],[1714,3,"FemDommes_10019","picture"],[1686,5,"FemDommes_6303","picture"],[1724,5,"FemDommes_6164","picture"],[1775,3,"Morana047","picture"],[311,1,"FemDommes_15147","picture"],[315,1,"Domme328","picture"],[298,1,"PrincessDragonDomme_111","picture"],[290,1,"UnusedEntities5004","picture"],[196,7,"FemDommes_14122","picture"],[202,7,"LargePicLadies24","picture"],[261,3,"Blackwyche110","picture"],[232,5,"FemDommes_4190","picture"],[674,1,"FemDommes_15033","picture"],[294,4,"RustyFloorGrille_07","crest"],[536,4,"RustyFloorGrille_07","crest"],[435,4,"RustyFloorGrille_07","crest"],[1508,4,"RustyFloorGrille_07","crest"],[1473,7,"Ivy12","crest"],[1471,7,"Ivy12a","crest"],[700,1,"RetroGames_2087","picture"],[686,1,"BlackBeret_074","picture"],[887,1,"FemDommes_9017","picture"],[879,1,"FemDommes_5041","picture"],[826,3,"AI_Pic_144","picture"],[826,5,"Princess15","picture"],[831,3,"CCC_052","picture"],[1299,7,"Domme409","picture"],[1303,7,"FemDommes_14166","picture"],[1363,3,"FemDommes_10094","picture"],[1353,5,"UnusedEntities2018","picture"],[1760,3,"UnusedEntities5104","picture"],[1754,5,"NurseAlchemyMagic_123","picture"],[1793,1,"UnusedEntities2034","picture"],[1797,1,"FemDommes_4070","picture"],[1182,7,"GemDommes_062","picture"],[1192,7,"CastleLady114","picture"],[1170,7,"FemDommes_12045","picture"],[1166,7,"Popeye2","picture"],[500,3,"FemDommes_12147","picture"],[506,5,"FemDommes_16005","picture"],[1028,5,"FluxDommes2287","picture"],[1042,3,"FemDommes_16026","picture"],[965,3,"Various6004","picture"],[953,5,"RetroGames_2129","picture"],[890,3,"TempleDecal","crest"],[1518,7,"Skull307","crest"],[1556,1,"DemonSkull1","crest"],[1537,4,"FloorGrille112","crest"]]',
         lights: '[[458,1,"Candelabra01","standardSoft"],[472,1,"Candelabra02","standardSoft"],[370,7,"Candelabra03","standardSoft"],[672,1,"Lamp42","standard"],[676,1,"Lamp42","standard"],[459,7,"FireplaceFLuxU417","fireplace"],[471,7,"FireplaceFLuxU420","fireplaceDim"],[1301,1,"FluxLight126","standardYellowFaint"]]',
         gates: '[[363,7,"2.1","1.1","Closed"],[351,1,"2.2","3.1","Closed"],[1073,1,"2.3","3.3","Closed"],[1795,1,"2.4","3.4","Closed"],[377,7,"2.5","5.1","Closed"],[531,3,"2.6","6.1","Closed"],[513,5,"2.7","7.1","Closed"],[665,5,"2.8","8.1","Closed"],[683,3,"2.9","9.1","Closed"],[1653,5,"2.10","17.1","Closed"],[1671,3,"2.11","21.1","Closed"],[1520,5,"2.12","23.1","Closed"],[1453,7,"2.13","24.1","Emerald"],[1538,3,"2.14","26.1","Closed"]]',
         monsters: '[[408,"Spider"],[313,"SpiderGreen"],[516,"Spider"],[529,"Spider"],[611,"SpiderGreen"],[623,"SpiderGreen"],[1244,"SpiderRed"],[1506,"SpiderRed"],[1764,"SpiderRed"],[1535,"SpiderGreen"],[1769,"SpiderGreen"],[1757,"Dragon"]]',
@@ -93,9 +93,9 @@ const MAP = {
         oracles: '[[501,7,"PrincessThrone"]]',
         lairs: '[[1449,7,"Lair12"],[1457,7,"Lair47"],[1710,5,"Lair59"],[1728,3,"Lair35"]]',
         monsterList: '["Bat","RedGoldBat","DarkRedBat","DarkRedBat","DarkRedBat","Dragon"]',
-    }
+        }
     ,
-    3: {
+    3 : {
         name: "Castle Entrance Hall",
         sg: 0,
         maxSpawned: 6,
@@ -107,7 +107,7 @@ const MAP = {
         floor: "BloodMarbleFloorWall_SDXL_001",
         ceil: "DarkFloorSDXL337",
         start: '[472,7]',
-        decals: '[[21,7,"KnightStatue_504","crest"],[23,7,"KnightStatue_497","crest"],[262,7,"ShieldDecal_505","crest"],[427,1,"ShieldDecal_515","crest"],[621,1,"ShieldDecal_514","crest"],[623,1,"ShieldDecal_510","crest"],[547,7,"ShieldDecal_513","crest"],[395,1,"ShieldDecal02","crest"],[399,1,"ShieldDecal_513","crest"],[51,1,"PharaohCurse110","picture"],[53,1,"FemDommes_4042","picture"],[96,1,"PrincessDragonDomme_139","picture"],[98,1,"FemDommes_8112","picture"],[185,1,"GemDommes_043","picture"],[189,1,"HeavyOnTheMagick60","picture"],[169,1,"FemDommes_5188","picture"],[175,1,"GemDommes_234","picture"],[51,7,"GemDommes_087","picture"],[53,7,"FemDommes_4253","picture"],[96,7,"NurseAlchemyMagic_089","picture"],[98,7,"GemDommes_281","picture"],[18,7,"AI_PIC_306","picture"],[26,7,"CastleLady112","picture"],[77,7,"BlackBeret_098","picture"],[87,7,"KingsQuest50","picture"],[51,3,"Pyjamarama11","picture"],[96,3,"F2","picture"],[87,3,"FemDommes_8057","picture"],[147,3,"FluxDommes2290","picture"],[179,3,"FemDommes_12171","picture"],[59,3,"ShinyBlackRuberella02","picture"],[53,5,"NurseAlchemyMagic_043","picture"],[98,5,"FemDommes_13106","picture"],[45,5,"FemDommes_15679","picture"],[77,5,"FemDommes_8197","picture"],[137,5,"RetroGames_1008","picture"],[165,5,"GemDommes_298","picture"],[377,5,"GameScreens021","picture"],[332,5,"FluxDommes2223","picture"],[272,5,"UnusedEntities2080","picture"],[282,3,"FemDommes_8122","picture"],[342,3,"CCC_052","picture"],[387,3,"FemDommes_8146","picture"],[291,3,"NurseAlchemyMagic_022","picture"],[306,5,"UnusedEntities2017","picture"],[503,1,"FluxDommes3064","picture"],[471,7,"CastleBabes48","picture"],[473,7,"Unknown30","picture"],[467,7,"FemDommes_14010","picture"],[477,7,"Valhalla88","picture"],[475,7,"GameDommes_215","picture"],[469,7,"EyeOfTheBeholder110","picture"],[555,5,"GameDommes_195","picture"],[496,5,"FemDommes_15207","picture"],[526,5,"GameDommes_128","picture"],[586,5,"CrystalCastles2","picture"],[616,5,"Infiltrator70","picture"],[624,5,"PrincessDragonDomme_123","picture"],[508,3,"FemDommes_8322","picture"],[538,3,"FemDommes_8421","picture"],[598,3,"FemDommes_11070","picture"],[628,3,"Princess13","picture"],[620,3,"FemDommes_14206","picture"],[548,5,"UnusedEntities2095","picture"],[533,3,"GemDommes_235","picture"],[921,7,"Skull_782","crest"],[923,7,"Skull_787","crest"]]',
+        decals: '[[21,7,"KnightStatue_504","crest"],[23,7,"KnightStatue_497","crest"],[262,7,"ShieldDecal_505","crest"],[427,1,"ShieldDecal_515","crest"],[621,1,"ShieldDecal_514","crest"],[623,1,"ShieldDecal_510","crest"],[547,7,"ShieldDecal_513","crest"],[395,1,"ShieldDecal02","crest"],[399,1,"ShieldDecal_513","crest"],[51,1,"PharaohCurse110","picture"],[53,1,"FemDommes_4042","picture"],[96,1,"PrincessDragonDomme_139","picture"],[98,1,"FemDommes_8112","picture"],[185,1,"GemDommes_043","picture"],[189,1,"HeavyOnTheMagick60","picture"],[169,1,"FemDommes_5188","picture"],[175,1,"GemDommes_234","picture"],[51,7,"GemDommes_087","picture"],[53,7,"FemDommes_4253","picture"],[96,7,"NurseAlchemyMagic_089","picture"],[98,7,"GemDommes_281","picture"],[18,7,"AI_PIC_306","picture"],[26,7,"CastleLady112","picture"],[77,7,"BlackBeret_098","picture"],[87,7,"KingsQuest50","picture"],[51,3,"Pyjamarama11","picture"],[96,3,"F2","picture"],[87,3,"FemDommes_8057","picture"],[147,3,"FluxDommes2290","picture"],[179,3,"FemDommes_12171","picture"],[59,3,"ShinyBlackRuberella02","picture"],[53,5,"NurseAlchemyMagic_043","picture"],[98,5,"FemDommes_13106","picture"],[45,5,"FemDommes_15679","picture"],[77,5,"FemDommes_8197","picture"],[137,5,"RetroGames_1008","picture"],[165,5,"GemDommes_298","picture"],[377,5,"GameScreens021","picture"],[332,5,"FluxDommes2223","picture"],[272,5,"UnusedEntities2080","picture"],[282,3,"FemDommes_8122","picture"],[342,3,"CCC_052","picture"],[387,3,"FemDommes_8146","picture"],[291,3,"NurseAlchemyMagic_022","picture"],[306,5,"UnusedEntities2017","picture"],[503,1,"FluxDommes3064","picture"],[471,7,"CastleBabes48","picture"],[473,7,"Unknown30","picture"],[467,7,"FemDommes_14010","picture"],[477,7,"Valhalla88","picture"],[475,7,"GameDommes_215","picture"],[469,7,"EyeOfTheBeholder110","picture"],[555,5,"GameDommes_195","picture"],[496,5,"FemDommes_15207","picture"],[526,5,"GameDommes_128","picture"],[586,5,"CrystalCastles2","picture"],[616,5,"Infiltrator70","picture"],[624,5,"PrincessDragonDomme_123","picture"],[508,3,"FemDommes_8322","picture"],[538,3,"FemDommes_8421","picture"],[598,3,"FemDommes_11070","picture"],[628,3,"Princess13","picture"],[620,3,"FemDommes_14206","picture"],[548,5,"UnusedEntities2095","picture"],[533,3,"GemDommes_235","picture"],[921,7,"Skull_782","crest"],[923,7,"Skull_787","crest"],[892,1,"C64Games_3414","picture"]]',
         lights: '[[260,7,"DuaLLantern_021","standard2"],[264,7,"DuaLLantern_021","standard2"],[1102,1,"SkullLantern58","softCandle"],[321,7,"WallLamp31","warmCandle"],[323,7,"WallLamp31","warmCandle"],[137,7,"Candle50","darkgray"],[147,7,"WallLamp19","darkgray"],[13,7,"Candle67","standardYellowFaint"]]',
         gates: '[[7,7,"3.1","2.2","Closed"],[217,1,"3.2","4.1","Gold"],[457,7,"3.3","2.3","Closed"],[907,7,"3.4","2.4","Closed"],[119,3,"3.5","13.1","Closed"],[105,5,"3.6","14.1","Closed"]]',
         monsters: '[[847,"DarkRedBat"],[167,"MadHandy"],[177,"MadHandy"],[140,"MissGalaxy"],[145,"SpiderGreen"],[512,"SpiderGreen"],[597,"SpiderGreen"]]',
@@ -118,7 +118,7 @@ const MAP = {
         oracles: '[[212,1,"StandingFashionGuard"],[1,7,"CuteDemon"],[569,3,"PrayPayNun"]]',
         lairs: '[[974,3,"Lair67"],[1064,3,"Lair55"],[1119,1,"Lair66"],[1115,1,"Lair54"],[1050,5,"Lair15"],[960,5,"Lair48"],[888,1,"Lair31"],[896,1,"Lair70"],[903,7,"Lair31"],[911,7,"Lair57"]]',
         monsterList: '["Bat","RedGoldBat","DarkRedBat"]',
-    }
+        }
     ,
     4: {
         name: "Castle Yard placeholder",
@@ -324,7 +324,7 @@ const MAP = {
         floor: "GoldBlackSDXL349",
         ceil: "StrangeGoldy1",
         start: '[269,5]',
-        decals: '[[431,3,"Skull319","crest"],[436,5,"SittingSkelly2","crest"],[334,7,"Skull307","crest"],[330,7,"Skull_782","crest"],[310,7,"Skull_815","crest"],[482,7,"Skull_814","crest"],[487,7,"Skull321","crest"],[380,1,"DemonSkull2","crest"],[385,1,"DemonSkull1","crest"],[534,1,"Skull_784","crest"],[538,1,"Skull308","crest"],[548,1,"Skull408","crest"]]',
+        decals: '[[431,3,"Skull319","crest"],[436,5,"SittingSkelly2","crest"],[334,7,"Skull307","crest"],[330,7,"Skull_782","crest"],[310,7,"Skull_815","crest"],[482,7,"Skull_814","crest"],[487,7,"Skull321","crest"],[380,1,"DemonSkull2","crest"],[385,1,"DemonSkull1","crest"],[534,1,"Skull_784","crest"],[538,1,"Skull308","crest"],[548,1,"Skull408","crest"],[17,5,"FemDommes_6123","picture"],[36,5,"UnusedEntities145","picture"],[85,5,"FemDommes_16853","picture"],[187,5,"FemDommes_9082","picture"],[255,5,"FemDommes_10044","picture"],[240,5,"UnusedEdtitiesFramed_008","picture"],[268,5,"FluxDommes3170","picture"],[30,5,"UnusedEntities132","picture"],[120,5,"LSL103","picture"],[154,5,"FemDommes_5007","picture"],[125,5,"AticAtac110","picture"],[159,5,"FemDommes_16846","picture"],[33,3,"GameDommes_280","picture"],[117,3,"FemDommes_16509","picture"],[185,3,"FluxDommes3054","picture"],[253,3,"FemDommes_16746","picture"],[49,3,"GemDommes_258","picture"],[130,3,"RetroGames_2026","picture"],[164,3,"CastleLady56","picture"],[107,3,"UnusedEntities2079","picture"],[192,3,"Apparitia_1026","picture"],[199,5,"GameDommes_116","picture"],[130,5,"GameDommes_129","picture"],[164,5,"FemDommes_15414","picture"],[114,5,"ShinyBlackRuberella12","picture"],[125,3,"CastleBabes29","picture"],[159,3,"FemDommes_16418","picture"],[7,7,"GirlOnStairs102","picture"],[11,7,"FemDommes_15673","picture"],[14,7,"PrincessDragonDomme_038","picture"],[22,7,"GameDommes_108","picture"],[107,7,"FemDommes_16454","picture"],[109,7,"FemDommes_17286","picture"],[112,7,"CyberPunk201","picture"],[114,7,"IK2","picture"],[3,7,"FemDommes_4252","picture"],[275,1,"FemDommes_17219","picture"],[279,1,"AA_big__102","picture"],[283,1,"FluxDommes2260","picture"],[175,1,"FemDommes_15145","picture"],[177,1,"SabreWulfAI_103","picture"],[180,1,"FemDommes_12094","picture"],[182,1,"GameDommes_193","picture"],[286,1,"FemDommes_13110","picture"],[260,1,"Pitfall90","picture"],[264,1,"GameScreen2033","picture"],[26,7,"AticAtac206","picture"]]',
         lights: '[[427,5,"SkullLantern53","standardYellowDim"],[439,3,"SkullLantern58","standardYellowDim"],[399,1,"SingleLantern1","standardVeryFaint"],[468,7,"FluxLight119","standardVeryFaint"],[84,3,"Fireplace201","fireplaceDim"],[220,3,"FireplaceFLuxU415","fireplaceDim"]]',
         gates: '[[136,5,"12.1","9.2","Closed"],[271,3,"12.2","20.1","Down"]]',
         monsters: '[[142,"Viking"],[147,"Viking"],[270,"PurpleGalaxy"],[32,"PurpleGalaxy"]]',
@@ -523,24 +523,33 @@ const MAP = {
         monsterList: '["MadHandy","DarkMadHandy","DarkMadHandy","Dragon"]',
     }
     ,
-    20: {
+    20 : {
         name: "Gold Mine",
         sg: 0,
-        maxSpawned: -1,
-        killCountdown: -1,
+        maxSpawned: 5,
+        killCountdown: 6,
         killsRequiredToStopSpawning: 99,
-        spawnDelay: -1,
-        data: '{"width":"19","height":"19","depth":1,"map":"BB2AA3BAA6BAA3BAA7BB3AA2BABAA10BAA4BAA2BB4ABB2ABAA3BB5AA6BAA9BB2ABB2AA6BB3AA2BB3ABAA2BB12ABABABB5ABABB7AA2BB6ABB12AA3BB3ABABB2AA4BB2AA2BB6AA10BB2ABB2AA2BABAA2BB3AA3BABB3AA2BAA2BABB2ABAA3BAA2BB4AA5BAA5BB5AA3BABB2ABB4ABB4AA5BABB3AA4BAA2BB2AA2BABB3AA2BB9ABB2AA2BB3ABABB16ABB6ABB15ABB2$"}',
+        spawnDelay: 9999,
+        data: '{"width":"19","height":"19","depth":1,"map":"BB2AA2EABAA3BAA7BB2AA2BABB3AA11BAA3BAA2BB4AA2BB2AA2BAA3BB5AA5BAA11BB2ABAA6BB2AA2BB3AA2BB12ABABABB4ABABB8AA2BB7ABB4ABB8AA4BB2ABABABABABB3AA2BB6AA8BABB2ABABAA2BB4AA2BB2ABB2ABABAA2BABB2ABAA6BB5AA5BAA5BB6AA4BB2ABB6ABB4AA4BAA2BB3AA5BABB2AA3BAA2BB3AA2BB9ABB2AA2BB3ABABB16ABB7ABB14ABB2$A"}',
         wall: "GoldBlackSDXL347",
         floor: "GoldBlackSDXL341",
         ceil: "RoughCave14",
-        start: '[62,5]',
+        start: '[58,5]',
+        decals: '[[43,3,"UnusedEntities123","picture"],[81,3,"GameScreen1027","picture"],[227,3,"FemDommes_16539","picture"],[37,3,"FemDommes_6074","picture"],[303,3,"NurseAlchemyMagic_091","picture"],[263,3,"FemDommes_12245","picture"],[223,3,"FemDommes_17243","picture"],[185,3,"ManicMiner64","picture"],[145,3,"FemDommes_16892","picture"],[109,3,"UnusedEdtitiesFramed_054","picture"],[335,3,"FemDommes_6349","picture"],[299,3,"FemDommes_10026","picture"],[291,3,"CCC_016","picture"],[253,3,"FluxDommes2228","picture"],[215,3,"FemDommes_11039","picture"],[250,3,"FemDommes_16609","picture"],[288,3,"FemDommes_9135","picture"],[326,3,"FemDommes_15350","picture"],[39,5,"UnusedEntities5027","picture"],[77,5,"LeisureSuitLarry60","picture"],[114,5,"GameDommes_213","picture"],[223,5,"C64Games_3417","picture"],[299,5,"FemDommes_8100","picture"],[257,5,"RetroGames_2101","picture"],[219,5,"UnusedEntities152","picture"],[181,5,"FemDommes_17106","picture"],[139,5,"GameDommes_068","picture"],[101,5,"UnusedEntities2026","picture"],[293,5,"BattleChopper","picture"],[335,5,"C64Games_3346","picture"],[326,5,"Arnie202","picture"],[288,5,"FakeRetro_106","picture"],[250,5,"C64Games_3016","picture"],[209,5,"FemDommes_14023","picture"],[247,5,"FluxDommes3150","picture"],[285,5,"UnusedEdtitiesFramed_011","picture"],[323,5,"FemDommes_8464","picture"],[117,7,"C64_ZX_Classics114","picture"],[154,1,"C64Games_3114","picture"],[156,1,"PrincessDragonDomme_054","picture"],[243,1,"FemDommes_8170","picture"],[321,1,"FemDommes_10117","picture"],[319,1,"FemDommes_14057","picture"],[277,1,"FemDommes6004","picture"],[241,1,"FluxDommes2056","picture"],[201,1,"PrincessDragonDomme_010","picture"],[349,1,"FluxDommes2115","picture"],[353,1,"C64Games_3182","picture"],[313,1,"FemDommes_10078","picture"],[355,1,"FemDommes_16189","picture"],[346,1,"LargePicLadies22","picture"],[343,1,"CastleLady18","picture"],[267,1,"NurseAlchemyMagic_053","picture"],[53,7,"FluxDommes3154","picture"],[243,7,"FemDommes_17130","picture"],[201,7,"FluxDommes2291","picture"],[125,7,"PrincessDragonDomme_084","picture"],[89,7,"GameDommes_058","picture"],[192,7,"GameDommes_319","picture"],[157,7,"FemDommes_8265","picture"],[230,7,"FemDommes_17002","picture"],[267,7,"FemDommes_8134","picture"],[279,7,"FemDommes_17121","picture"],[233,1,"FemDommes_11071","picture"],[306,1,"FemDommes_17221","picture"],[11,7,"FluxDommes3142","picture"],[147,5,"SP62","picture"],[234,5,"FemDommes_8492","picture"],[120,3,"GameDommes_238","picture"],[238,3,"Unknown30","picture"],[111,3,"FemDommes_15254","picture"],[168,5,"GameDommes_098","picture"],[165,7,"NurseAlchemyMagic_051","picture"],[312,7,"FemDommes_16169","picture"]]',
         lights: '[[117,1,"SkullLantern58","standardYellowFaint"],[73,3,"lantern303","standard2"],[24,5,"SkullLantern57","standardDimmed"],[17,7,"Lights111","standardDimmed"],[194,7,"DuaLLantern_022","standardDimmed"],[83,7,"Candelabra02","standardDimmed"],[341,3,"WallLamp15","standardDimmed"]]',
         gates: '[[57,5,"20.1","12.2","Up"]]',
+        monsters: '[[324,"PurpleGalaxy"],[336,"RedDragon"],[26,"Viking"]]',
+        scrolls: '[[115,6],[119,7]]',
+        gold: '[[65,"GoldCube"],[72,"GoldCube"],[129,"GoldCube"],[224,"GoldCube"],[226,"GoldCube"],[169,"GoldCube"],[74,"GoldCube"],[32,"GoldCube"],[29,"GoldCube"],[302,"GoldCube"],[300,"GoldCube"],[260,"GoldCube"],[239,"GoldCube"],[182,"GoldCube"],[144,"GoldCube"],[140,"GoldCube"],[102,"GoldCube"],[106,"GoldCube"],[108,"GoldCube"],[235,"GoldCube"],[330,"GoldCube"],[333,"GoldCube"],[296,"GoldCube"],[256,"GoldCube"],[218,"GoldCube"],[337,"GoldCube"],[339,"GoldCube"],[327,"GoldCube"],[232,"GoldCube"],[210,"GoldCube"],[191,"GoldCube"],[287,"GoldCube"],[249,"GoldCube"]]',
+        skills: '[[176,"Heart"],[252,"Mana"]]',
         containers: '[[25,"MetalCrate50","INTERACTION_ITEM.GoldOre",5],[340,"WoodenCrate432","INTERACTION_ITEM.GoldOre",3],[325,"WoodenCrate59","INTERACTION_ITEM.GoldOre",3]]',
+        doors: '[63]',
         triggers: '[[153,7,"SmoothWallButton",1,174]]',
         entities: '[[3,7,"GoldMelta"]]',
-    }
+        objects: '[[127,"Steak"],[199,"ManaFrog"],[290,"BeerHealth"]]',
+        lairs: '[[180,7,"Lair10"],[146,1,"Lair71"]]',
+        monsterList: '["MissGalaxyGreenBouncer","WolfSpider","WolfSpideGreen","Viking","RedDragon"]',
+        }
     ,
     21: {
         name: "Castle Bar",
@@ -672,13 +681,13 @@ const MAP = {
         monsterList: '["DarkRedBat","Dragon","Dragon","Dragon","BigBat","BigBat"]',
     }
     ,
-    26: {
+    26 : {
         name: "Guest Quarters",
         sg: 0,
-        maxSpawned: -1,
-        killCountdown: -1,
+        maxSpawned: 10,
+        killCountdown: 6,
         killsRequiredToStopSpawning: 99,
-        spawnDelay: -1,
+        spawnDelay: 9999,
         data: '{"width":"21","height":"21","depth":5,"map":"BB2ABB9AA48BB4AA28ÁAA11ÁAA3ÁÁ8AA12BB5AA2BAA3ÁAA7BB4ABAA3ࡁBAA7BAA25BAA3BAA9BAA51ÁBAA2BB2AA3BAA6BAA7BB4ÁÁ2BB2AA3BABAA117ŁAA58BAA22BABAA27BAA9BB35ABB4ÁÁ2ŁɁBB3ÁBB27ŁBB13ABB9AŁࡁBɁсBB6ÁÁ3BABB15ABAA6BB6ÁÁ2ABAA2BB2ÁBB23ÁBB29ÁBB23ABB20ÁBB2ÁÁ2BB5ࡁBB17ࡁBB4AA5BB7ABB6AA2BB24ABB15$ABB128ÁBB78ÁBB14ABB129ABB13ÁBB8ÁBÁBB19ÁÁ3BB4ÁÁ6BB28ÁBB9ABB4ABB4ÁBB11ÁBB53ÁBB34сࡁBB3ÁÁ2BB20ABABB10ÁBABB3ÁBB2AÁÁ2AA9BB8ÁÁ4BB16ÁBÁBB4ࡁBB3ÁŁBÁÁ2BB3ɁсAA4BB4ABB93ÁBÁÁ4BB2ÁÁ2BB2ABB5ABÁBB6ÁBB2ÁBB4ÁÁ2BB25ÁÁ4ABABB6ÁÁ16BÁÁ5BÁÁ10AA2ÁÁ9BÁÁ2AŁÁÁ8AÁAÁAÁÁ26BB3ÁÁ6BÁÁ3BÁÁ14BÁÁ13BÁÁ8BÁÁ3BÁÁ10BÁÁ65ŁÁÁ10BÁÁ2BÁÁ34BB2ÁÁ4BB3ÁBB4ÁÁ6BB2ÁBB2ÁÁ4BÁÁ2BB12ÁÁ13BÁÁ12BB2ÁÁ10BB3ÁÁ12BB17ÁÁ45BB8ÁÁ7BÁÁ2ɁÁAA3ɁBB2ÁAA2сс2AŁBB2ÁBࡁࡁ2ɁɁ3сBсс2ÁBB3"}',
         wall: "RockWall_SDXL_001",
         floor: "DarkFloorSDXL338",
@@ -686,7 +695,7 @@ const MAP = {
         start: '[814,1]',
         lights: '[[220,3,"FluxLight113","standard2"],[1102,3,"WallLamp17","standardFaint"],[1951,3,"Candelabra02","standardDimmed"],[2196,1,"Fireplace212","fireplace"],[2120,3,"Fireplace206","fireplace"],[2056,1,"DuaLLantern_017","standardUltraFaint"],[1356,3,"Candle57","standardUltraFaint"],[1289,5,"FluxLight124","standardUltraFaint"],[878,1,"FireplaceFLuxU414","fireplace"],[817,1,"Lights108","standardUltraFaint"]]',
         gates: '[[210,5,"26.1","2.14","Closed"]]',
-    }
+        }
     ,
     27: {
         name: "Scroll Shop",

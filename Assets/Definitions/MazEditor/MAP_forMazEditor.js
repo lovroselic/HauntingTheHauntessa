@@ -864,7 +864,12 @@ const DECAL_PAINTINGS = [
     "FemDommes_17520", "FemDommes_17521", "FemDommes_17522", "FemDommes_17523", "FemDommes_17524", "FemDommes_17525", "FemDommes_17526", "FemDommes_17527", "FemDommes_17528", "FemDommes_17529", "FemDommes_17530", "FemDommes_17531",
     "FemDommes_17532", "FemDommes_17533", "FemDommes_17534", "FemDommes_17535", "FemDommes_17536", "FemDommes_17537", "FemDommes_17538", "FemDommes_17539", "FemDommes_17540", "FemDommes_17541", "FemDommes_17542", "FemDommes_17543",
     "FemDommes_17544", "FemDommes_17545", "FemDommes_17546", "FemDommes_17547", "FemDommes_17548", "FemDommes_17549", "FemDommes_17550", "FemDommes_17551", "FemDommes_17552", "FemDommes_17553", "FemDommes_17554", "FemDommes_17555",
-    "FemDommes_17556", "FemDommes_17557", "FemDommes_17558", "FemDommes_17559", "FemDommes_17560", "FemDommes_17561", "FemDommes_17562", "FemDommes_17563", "FemDommes_17564", "FemDommes_17565", "FemDommes_17566"
+    "FemDommes_17556", "FemDommes_17557", "FemDommes_17558", "FemDommes_17559", "FemDommes_17560", "FemDommes_17561", "FemDommes_17562", "FemDommes_17563", "FemDommes_17564", "FemDommes_17565", "FemDommes_17566",
+    "ZX_Games_3000", "ZX_Games_3001", "ZX_Games_3002", "ZX_Games_3003", "ZX_Games_3004", "ZX_Games_3005", "ZX_Games_3006", "ZX_Games_3007", "ZX_Games_3008", "ZX_Games_3009", "ZX_Games_3010", "ZX_Games_3011",
+    "ZX_Games_3012", "ZX_Games_3013", "ZX_Games_3014", "ZX_Games_3015", "ZX_Games_3016", "ZX_Games_3017", "ZX_Games_3018", "ZX_Games_3019", "ZX_Games_3020", "ZX_Games_3021", "ZX_Games_3022", "ZX_Games_3023",
+    "ZX_Games_3024", "ZX_Games_3025", "ZX_Games_3026", "ZX_Games_3027", "ZX_Games_3028", "ZX_Games_3029", "ZX_Games_3030", "ZX_Games_3031", "ZX_Games_3032", "ZX_Games_3033", "ZX_Games_3034", "ZX_Games_3035",
+    "ZX_Games_3036", "ZX_Games_3037", "ZX_Games_3038", "ZX_Games_3039", "ZX_Games_3040", "ZX_Games_3041", "ZX_Games_3042", "ZX_Games_3043", "ZX_Games_3044", "ZX_Games_3045", "ZX_Games_3046", "ZX_Games_3047",
+    "ZX_Games_3048", "ZX_Games_3049", "ZX_Games_3050", "ZX_Games_3051", "ZX_Games_3052", "ZX_Games_3053", "ZX_Games_3054", "ZX_Games_3055"
 ].sort();
 
 /** Crests */
