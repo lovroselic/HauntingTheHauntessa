@@ -869,7 +869,13 @@ const DECAL_PAINTINGS = [
     "ZX_Games_3012", "ZX_Games_3013", "ZX_Games_3014", "ZX_Games_3015", "ZX_Games_3016", "ZX_Games_3017", "ZX_Games_3018", "ZX_Games_3019", "ZX_Games_3020", "ZX_Games_3021", "ZX_Games_3022", "ZX_Games_3023",
     "ZX_Games_3024", "ZX_Games_3025", "ZX_Games_3026", "ZX_Games_3027", "ZX_Games_3028", "ZX_Games_3029", "ZX_Games_3030", "ZX_Games_3031", "ZX_Games_3032", "ZX_Games_3033", "ZX_Games_3034", "ZX_Games_3035",
     "ZX_Games_3036", "ZX_Games_3037", "ZX_Games_3038", "ZX_Games_3039", "ZX_Games_3040", "ZX_Games_3041", "ZX_Games_3042", "ZX_Games_3043", "ZX_Games_3044", "ZX_Games_3045", "ZX_Games_3046", "ZX_Games_3047",
-    "ZX_Games_3048", "ZX_Games_3049", "ZX_Games_3050", "ZX_Games_3051", "ZX_Games_3052", "ZX_Games_3053", "ZX_Games_3054", "ZX_Games_3055"
+    "ZX_Games_3048", "ZX_Games_3049", "ZX_Games_3050", "ZX_Games_3051", "ZX_Games_3052", "ZX_Games_3053", "ZX_Games_3054", "ZX_Games_3055",
+    "AtariST_Games_4000", "AtariST_Games_4001", "AtariST_Games_4002", "AtariST_Games_4003", "AtariST_Games_4004", "AtariST_Games_4005", "AtariST_Games_4006", "AtariST_Games_4007", "AtariST_Games_4008", "AtariST_Games_4009", "AtariST_Games_4010", "AtariST_Games_4011",
+    "AtariST_Games_4012", "AtariST_Games_4013", "AtariST_Games_4014", "AtariST_Games_4015", "AtariST_Games_4016", "AtariST_Games_4017", "AtariST_Games_4018", "AtariST_Games_4019", "AtariST_Games_4020", "AtariST_Games_4021", "AtariST_Games_4022", "AtariST_Games_4023",
+    "AtariST_Games_4024", "AtariST_Games_4025", "AtariST_Games_4026", "AtariST_Games_4027", "AtariST_Games_4028", "AtariST_Games_4029", "AtariST_Games_4030", "AtariST_Games_4031", "AtariST_Games_4032", "AtariST_Games_4033", "AtariST_Games_4034", "AtariST_Games_4035",
+    "AtariST_Games_4036", "AtariST_Games_4037", "AtariST_Games_4038", "AtariST_Games_4039", "AtariST_Games_4040", "AtariST_Games_4041", "AtariST_Games_4042", "AtariST_Games_4043", "AtariST_Games_4044", "AtariST_Games_4045", "AtariST_Games_4046", "AtariST_Games_4047",
+    "AtariST_Games_4048", "AtariST_Games_4049", "AtariST_Games_4050", "AtariST_Games_4051", "AtariST_Games_4052", "AtariST_Games_4053", "AtariST_Games_4054", "AtariST_Games_4055", "AtariST_Games_4056", "AtariST_Games_4057", "AtariST_Games_4058", "AtariST_Games_4059",
+    "AtariST_Games_4060", "AtariST_Games_4061", "AtariST_Games_4062", "AtariST_Games_4063", "AtariST_Games_4064"
 ].sort();
 
 /** Crests */

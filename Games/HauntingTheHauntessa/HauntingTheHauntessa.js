@@ -187,7 +187,13 @@ const DEBUG = {
             DONE "Spectacles" --> (16)
             DONE "Mirror", --> (12)
             DONE "Lipstick" --> (10)
-        "Document" **quest --> (26)
+            "Document" **quest --> (26) TaxCollectress (26)
+            "Emerald"
+            "Emerald"
+            "Diamond"
+            "Diamond"
+            "Ruby"
+            "Ruby"
 
         Shrines:
             - redCoat defense
@@ -278,7 +284,9 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            "Lipstick", "Mirror",
+            "Emerald", "Emerald",
+            "Ruby", "Ruby",
+            "Diamond", "Diamond"
         ];
 
         for (let itm of invItems) {
@@ -401,7 +409,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.20.5",
+    VERSION: "0.20.6",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

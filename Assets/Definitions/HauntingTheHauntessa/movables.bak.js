@@ -1,15 +1,5 @@
 const MOVABLE_INTERACTION_OBJECT = {
-    Life: {
-        name: "Life",
-        model: "Princess",
-        scale: 1 / 2 ** 3,
-        rotateToNorth: Math.PI,
-        material: MATERIAL.standard,
-        static: true,
-        category: "life",
-        inventorySprite: "Lives",
-        text: "A backup life. We all need this, right?",
-    },
+    
     BabySheep: {
         name: "BabySheep",
         category: "interaction_item",

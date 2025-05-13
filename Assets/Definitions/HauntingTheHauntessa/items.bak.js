@@ -212,18 +212,8 @@ const INTERACTION_ITEM = {
         inventorySprite: "Helmet",
     },
   
-    Emerald: {
-        name: "Emerald",
-        category: "interaction_item",
-        inventorySprite: "Emerald",
-        text: "Emerald? I can make something from it."
-    },
-    Diamond: {
-        name: "Diamond",
-        category: "interaction_item",
-        inventorySprite: "Diamond",
-        text: "Diamond? My best friend."
-    },
+    
+
     
     Shawl: {
         name: "Shawl",
@@ -557,12 +547,7 @@ const INTERACTION_ITEM = {
         inventorySprite: "KeyMould",
         text: "Mould for making keys. This will come handy."
     },
-    Ruby: {
-        name: "Ruby",
-        category: "interaction_item",
-        inventorySprite: "Ruby",
-        text: "Nice shiny bloodred ruby."
-    },
+
     Sapphire: {
         name: "Sapphire",
         category: "interaction_item",

@@ -25,7 +25,7 @@ for (let [index, key] of KEY_TYPES.entries()) {
 
 const SCROLL_TYPE = [
     "Invisibility", "Cripple", "HalfLife", "Explode", "Luck", "Flight", "BoostWeapon", "BoostArmor", "MagicBoost",
-    "DestroyWeapon", "DestroyArmor", "DrainMana", "FeatherFall","Radar"
+    "DestroyWeapon", "DestroyArmor", "DrainMana", "FeatherFall", "Radar"
 ];
 
 const SHRINE_TYPE = {
@@ -250,6 +250,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    CrissCross: {
+        name: "CrissCross",
+        sprite: "CrissCross",
+        category: 'crest',
+        voice: "FemaleHigh4",
+        text: "Isn't an amazing coincidence that the convention of gem buyers is taking in our guest capacities? Also one of the most dangerous places in the castle?",
+        interactionCategory: "oracle",
+    },
     Painter: {
         name: "Painter",
         sprite: "Painter",
@@ -2338,6 +2346,17 @@ const MOVABLE_INTERACTION_OBJECT = {
         inventorySprite: "BabyDragon",
         text: "Come to mamma."
     },
+    Life: {
+        name: "Life",
+        model: "Princess",
+        scale: 1 / 2 ** 3,
+        rotateToNorth: Math.PI,
+        material: MATERIAL.standard,
+        static: true,
+        category: "life",
+        inventorySprite: "Lives",
+        text: "A backup life. We all need this, right?",
+    },
 };
 
 const INTERACTION_ITEM = {
@@ -2700,6 +2719,30 @@ const INTERACTION_ITEM = {
         inventorySprite: "StarDestroyer",
         text: "A pocket sized star destroyer."
     },
+    Banknote10: {
+        name: "Banknote10",
+        category: "interaction_item",
+        inventorySprite: "Banknote10",
+        text: "That is a lot of money. 10 Castle Marks."
+    },
+    Emerald: {
+        name: "Emerald",
+        category: "interaction_item",
+        inventorySprite: "Emerald",
+        text: "Emerald? I can make something from it."
+    },
+    Ruby: {
+        name: "Ruby",
+        category: "interaction_item",
+        inventorySprite: "Ruby",
+        text: "Nice shiny bloodred ruby."
+    },
+    Diamond: {
+        name: "Diamond",
+        category: "interaction_item",
+        inventorySprite: "Diamond",
+        text: "Diamond? My best friend."
+    },
 
     //books
     YoniBook: {
@@ -2818,6 +2861,32 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    EmeraldBuyer: {
+        name: "EmeraldBuyer",
+        sprite: "EmeraldBuyer",
+        category: 'crest',
+        voice: "Female4",
+        wants: ["Emerald", "Emerald"],
+        gives: "Banknote10",
+        text: {
+            intro: "Shiny green and oh so bright. Two of those, and the price is right!",
+            progress: "One's a start, but don't be slow. I need a pair before I show.",
+            conclusion: "Two gems in hand? You've got the flair. Ten castle marks, a tidy affair."
+        }
+    },
+    TaxCollectress: {
+        name: "TaxCollectress",
+        sprite: "TaxCollectress",
+        category: 'crest',
+        voice: "GlaDOS",
+        wants: ["Banknote10", "Banknote10", "Banknote10"],
+        gives: "Document",
+        text: {
+            intro: "Before you venture out for glory, pay what's due. That's the story.",
+            progress: "Still in debt, that will not do. I need the full sum, not just a few.",
+            conclusion: "Taxes paid, your path is clear. Here's your paper, now disappear."
+        }
+    },
     AuntieHauntie: {
         name: "AuntieHauntie",
         sprite: "AuntieHauntie",
