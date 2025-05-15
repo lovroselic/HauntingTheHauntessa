@@ -127,13 +127,15 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"11","height":"11","depth":1,"map":"BB8AA55BABB13AA6BB15ABABB18A$"}',
+        data: '{"width":"11","height":"11","depth":1,"map":"BB7AA6BAA42BAA7BB12ABB2AA5BB5ABB4ABB5ABB19A$"}',
         wall: "Forest115",
         floor: "Grass16",
         ceil: "DarkSky02",
         start: '[16,7]',
+        decals: '[[16,4,"Cobblestone_0821","texture"],[27,4,"Cobblestone_0821","texture"],[38,4,"Cobblestone_0821","texture"],[49,4,"Cobblestone_0821","texture"],[60,4,"Cobblestone_0821","texture"],[71,4,"Cobblestone_0821","texture"],[82,4,"Cobblestone_0821","texture"],[93,4,"Cobblestone_0821","texture"],[104,4,"Cobblestone_0821","texture"],[12,7,"OuterCastleWall_0828","texture"],[13,7,"OuterCastleWall_0828","texture"],[14,7,"OuterCastleWall_0828","texture"],[15,7,"OuterCastleWall_0828","texture"],[5,7,"OuterCastleWall_0828","texture"],[17,7,"OuterCastleWall_0828","texture"],[18,7,"OuterCastleWall_0828","texture"],[19,7,"OuterCastleWall_0828","texture"],[20,7,"OuterCastleWall_0828","texture"],[15,5,"OuterCastleWall_0828","texture"],[17,3,"OuterCastleWall_0828","texture"]]',
         lights: '[[106,1,"Moon56","moonlightFaint"]]',
         gates: '[[5,7,"4.1","3.2","Closed"]]',
+        objects: '[[84,"Amanita"],[74,"Amanita"],[53,"Amanita"],[67,"Amanita"],[80,"Amanita"]]',
         }
     ,
     5: {

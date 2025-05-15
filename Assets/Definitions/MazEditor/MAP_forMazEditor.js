@@ -58,6 +58,9 @@ const TEXTURE_LIST = [
     "MarbleFloor1004", "MarbleFloor1005", "MarbleTiles1001", "MossyPattern1", "MossyPattern2", "MossyTiles101", "RoughCeiling1", "ShinyCeiling", "ShinyGreyBricks100",
     "IvyWall_517", "IvyWall_518", "IvyWall_519", "IvyWall_520", "IvyWall_521", "IvyWall_522", "IvyWall_523", "IvyWall_524", "IvyWall_525",
     "BalconyTexture_773", "BalconyTexture_774", "BalconyTexture_775", "BalconyTexture_776", "BalconyTexture_777", "BalconyTexture_778", "BalconyTexture_779", "BalconyTexture_780", "BalconyTexture_781",
+    "Cobblestone_0819", "Cobblestone_0820", "Cobblestone_0821", "Cobblestone_0822", "Cobblestone_0823", "Cobblestone_0824", "Cobblestone_0825", "Cobblestone_0826", "OuterCastleWall_0827", "OuterCastleWall_0828", "OuterCastleWall_0829", "OuterCastleWall_0830",
+    "OuterCastleWall_0831", "OuterCastleWall_0832", "OuterCastleWall_0833", "OuterCastleWall_0834", "OuterCastleWall_0835", "OuterCastleWall_0836", "OuterCastleWall_0837", "OuterCastleWall_0838", "OuterCastleWall_0839", "OuterCastleWall_0840", "OuterCastleWall_0841", "OuterCastleWall_0842",
+    "OuterCastleWall_0843", "OuterCastleWall_0844"
 ].sort();
 
 /** Decals */
