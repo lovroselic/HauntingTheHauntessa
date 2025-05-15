@@ -29,6 +29,32 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    LadyGreenHeart: {
+        name: "LadyGreenHeart",
+        sprite: "LadyGreenHeart",
+        which: "health",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "HeartSkill",
+        price: 2000,
+        level: 1,
+        text: "Do you need some health boost, love? 2000 gold.",
+        introduce: true,
+        voice: "Female3",
+    },
+    PurpleManaBabe: {
+        name: "PurpleManaBabe",
+        sprite: "PurpleManaBabe",
+        which: "mana",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "ManaSkill",
+        price: 2000,
+        level: 1,
+        text: "Don't be ridiculous, honey. Of course it's not poison. For 2000 gold it's yours.",
+        introduce: true,
+        voice: "Female6",
+    },
     DaggerEtte: {
         name: "DaggerEtte",
         sprite: "DaggerEtte",
@@ -250,12 +276,20 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    YellowCouchDomme: {
+        name: "YellowCouchDomme",
+        sprite: "YellowCouchDomme",
+        category: 'crest',
+        voice: "FemaleHigh3",
+        text: "If you engage in every single fight and try to win it, you might not survive long. But sure, you will be very experienced. How about balance?",
+        interactionCategory: "oracle",
+    },
     CrissCross: {
         name: "CrissCross",
         sprite: "CrissCross",
         category: 'crest',
         voice: "FemaleHigh4",
-        text: "Isn't an amazing coincidence that the convention of gem buyers is taking in our guest capacities? Also one of the most dangerous places in the castle?",
+        text: "Isn't an amazing coincidence that the convention of gem buyers is taking place in our guest capacities? Also one of the most dangerous places in the castle?",
         interactionCategory: "oracle",
     },
     Painter: {
@@ -2735,7 +2769,7 @@ const INTERACTION_ITEM = {
         name: "Ruby",
         category: "interaction_item",
         inventorySprite: "Ruby",
-        text: "Nice shiny bloodred ruby."
+        text: "Nice shiny blood red ruby."
     },
     Diamond: {
         name: "Diamond",
@@ -2861,6 +2895,32 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    DiamondBuyer: {
+        name: "DiamondBuyer",
+        sprite: "DiamondBuyer",
+        category: 'crest',
+        voice: "FemaleHigh4",
+        wants: ["Diamond", "Diamond"],
+        gives: "Banknote10",
+        text: {
+            intro: "Diamonds sparkle, cold and grand. Two for ten, just as planned!",
+            progress: "That one's bright, but I need more. Bring the second, then we're sure.",
+            conclusion: "Brilliant pair, the deal is done. Ten castle marks, now go have fun."
+        }
+    },    
+    RubyBuyer: {
+        name: "RubyBuyer",
+        sprite: "RubyBuyer",
+        category: 'crest',
+        voice: "Female6",
+        wants: ["Ruby", "Ruby"],
+        gives: "Banknote10",
+        text: {
+            intro: "Red as fire and twice as rare. Two rubies, and you'll get your share!",
+            progress: "That one's lovely, but I need two. Bring the next, and we'll be through.",
+            conclusion: "Gems complete, a flawless score. Ten castle marks, now out the door!"
+        }
+    },
     EmeraldBuyer: {
         name: "EmeraldBuyer",
         sprite: "EmeraldBuyer",

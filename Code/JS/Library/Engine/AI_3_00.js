@@ -83,7 +83,7 @@ const AI = {
         if (exactPosition.hasOwnProperty("exactPlayerPosition")) exactPosition = exactPosition.exactPlayerPosition;
         let nodeMap = enemy.parent.map.GA.nodeMap;
         let grid = this.getPosition(enemy);
-        if (this.VERBOSE) console.log(".....grid", grid);
+        if (this.VERBOSE) console.log(".....enemy position grid", grid);
         let goto = nodeMap[grid.x][grid.y][grid.z]?.goto || NOWAY3;
         if (this.VERBOSE) console.info(`...${enemy.name}-${enemy.id} hunting -> goto:`, goto, "strategy", enemy.behaviour.strategy, "node", JSON.stringify(nodeMap[grid.x][grid.y][grid.z]));
         if (GRID.same3D(goto, NOWAY3) && (this.setting === "3D" || this.setting === "3D3")) return this.hunt_FP(enemy, exactPosition);
@@ -91,7 +91,7 @@ const AI = {
     },
 
     hunt_FP(enemy, exactPosition) {
-        if (this.VERBOSE) console.error("\n", enemy.name, enemy.id, "..hunt_FP: exactPosition", exactPosition, "distance:", enemy.distance);
+        if (this.VERBOSE) console.error(enemy.name, enemy.id, "..hunt_FP: exactPosition", exactPosition, "distance:", enemy.distance, "enemy.moveState.pos", enemy.moveState.pos);
         if (!enemy.distance) {
             if (this.VERBOSE) console.warn("..terminating hunt - null distance");
             return this.immobile(enemy);
@@ -106,21 +106,21 @@ const AI = {
         const ePos = Vector3.to_FP_Grid(enemy.moveState.pos);
         const direction = ePos.direction(pPos);
         let orto = direction.ortoAlign();
-        orto = orto.toVector3D();                                   // adding z=0 for 3D compatibility, but this still only works on the plane!!!
-        const landingGrid = Grid3D.toClass(enemy.moveState.startPos.add(orto));
+        orto = orto.toVector3D();                                               // adding z=0 for 3D compatibility, but this still only works on the plane!!!
+        const landingGrid = Grid3D.toClass(enemy.moveState.endPos.add(orto));   //move was just completed, so endPos!!
         const GA = enemy.parent.map.GA;
         const nextGridBlocked = GA.check(landingGrid, GROUND_MOVE_GRID_EXCLUSION.sum())
         if (nextGridBlocked) return this.immobile(enemy);
 
-        if (this.VERBOSE) console.log("pPos", pPos, "ePos", ePos, "direction", direction, "enemy.distance", enemy.distance, "orto", orto, "landingGrid", landingGrid, "nextGridBlocked", nextGridBlocked);
+        if (this.VERBOSE) console.log("pPos", pPos, "ePos", ePos, "direction", direction, "enemy.distance", enemy.distance, "enemy.moveState.startPos", enemy.moveState.startPos, "orto", orto, "landingGrid", landingGrid, "nextGridBlocked", nextGridBlocked);
         if (this.VERBOSE) console.info(`${enemy.name}-${enemy.id} FP hunt`, orto, "strategy", enemy.behaviour.strategy);
 
         return [orto];
     },
     crossroader(enemy, playerPosition, dir, block, exactPosition) {
         playerPosition = Grid3D.toClass(playerPosition);
-        if (this.VERBOSE) console.log("------------------------------");
-        if (this.VERBOSE) console.info(`Crossroader analysis for ${enemy.name}-${enemy.id}, position: ${JSON.stringify(playerPosition)}`);
+        if (this.VERBOSE) console.log("\n------------------------------");
+        if (this.VERBOSE) console.info(`Crossroader analysis for ${enemy.name}-${enemy.id}, player position: ${JSON.stringify(playerPosition)}, enemy.ms.endPos: ${JSON.stringify(enemy.moveState.endPos)}`);
 
         let goal, _;
         [goal, _] = enemy.parent.map.GA.findNextCrossroad(playerPosition, dir, enemy.fly);

@@ -4076,7 +4076,7 @@ class $3D_Entity {
             }
             /** this is major fuckup, can happen only if monster is moving through a wall */
             if (ENGINE.verbose) {
-                console.info("...setDistanceFromNodeMap", this.name, this.id, this.moveState.pos, gridPosition);
+                console.info("...setDistanceFromNodeMap", this.name, this.id, "this.moveState.pos",this.moveState.pos, "gridPosition", gridPosition);
                 console.info(".......this", this);
                 console.info(".......nodemap", nodemap);
                 console.error(this.name, this.id, "has issue with gridPosition", gridPosition);

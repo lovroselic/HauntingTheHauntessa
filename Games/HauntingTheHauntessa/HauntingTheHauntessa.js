@@ -62,164 +62,22 @@ const DEBUG = {
         HERO.player.pos = Vector3.from_Grid(Grid.toCenter(grid), 0.5);
     },
     checkPoint() {
-        // area-1 - initial training inside the castle
+        // area-2 - countryside
         /*
 
-            DONE GateKeeper wants: CerificateOfAbility,CerificateOfAbility, CerificateOfAbility ..., gives GoldKey
-            DONE MissRose wants Rose, Rose, Rose, gives GlassOfWine
-            DONE FashionGuard wants "BrownLeatherBoots","BlueLatexTop", BrownLatexBootyShorts" gives CertificateOfAbility  === "Document"
-            DONE Maid wants "PinkDuster", "BlackLatexGloves" gives "BrownLatexBootyShorts"
-            DONE QueenMother want's crown and sceptre safe  gives Cerificate Of Ability === "Document"
-            DONE CuteTank wants "Sword", "BattleAxe", "Mace" gives Cerificate Of Ability === "Document"
-            DONE Drinker Wants GlassOfWine and Wine gives "BlackLeatherBoot"
-            DONE Axxa wants "GlassOfBeer", "GlassOfBeer", "GlassOfBeer" and gives BattleAxe
-            DONE NeenJay wants Dagger, Dagger, Dagger and gives Mace
-            DONE Cousin wants "BlackLeatherBoot", "BlackLeatherBoot" gives  "BlueLatexTop"
-            DONE DumbBelle wants DumbBelle wants "Beer", "Beer" gives DumbBell
-            DONE SpyedHer wants: "BabyGreenSpider","BabyGreenSpider","BabyGreenSpider","BabyGreenSpider","BabyGreenSpider" gives Dagger
-            DONE EmoTine wants "TaoBook", "YinYangBook", "TreeOfLifeBook" give s Rose
-            DONE Treasuress wants "GoldBar", "GoldBar", "GoldBar" gives "BlackLeatherBoot"
-            DONE Arcadia wants "ArcadeToken", "ArcadeToken", "ArcadeToken" gives "TreeOfLifeBook"
-            DONE GoldMelta wants 3x gold ore give GoldBar
-            DONE BarGuest wants "BlackLatexpanties", "BlacLatexBra" gives Wine
-            DONE "TransBossa" wants "RedCertificate", "WhiteCertificate", "BlackCertificate", "WhiteCertificate", "RedCertificate" give Emerald Key
-            DONE "BlackTransa" wants "TransBlackLatexPanties" gives "BlackCertificate"
-            DONE "RedTrans" wans Whitepanties gives RedCertificate
-            DONE "WhiteTrans" wans Whitepanties gives WhiteCertificate
-            DONE "YellowTrans" wants "YellowLatexPanties" gives "YellowCertificate"
-            DONE "GreyTrans" wants "GreyLatexPanties" gives "GreyCertificate"
-            DONE Saddie wants "Candle", "Candle", "Candle" give GoldCoin
-            DONE PlayfulDominatrix wants "Handcuffs","Whip","BlackLeatherBoots" give "BlackLatexpanties"
-            DONE BeerMaid wants "SmallBarrel","SmallBarrel","SmallBarrel" gives "GlassOfBeer"
-            DONE PoLice wants "Ammo", "Revolver" gives Handcuffs
-            DONE AuntieHauntie want "Mirror", "Lipstick" gives BlackLeatherBoots
-            DONE TaoLibrarian wants "Spectacles" gives "TaoBook"
-            DONE SpaceMajor wants "StarDestroyer","StarDestroyer","StarDestroyer" gives "Revolver"
-
-        Scroll sellers:
-
-            - break sword
-            - break armor
-
-            ----------------------------
-            DONE Rose, -> EmoTina (16)
-            DONE Rose, **quest --> (5)
-            DONE Rose, **quest --> (3)
-            DONE GlassOfWine,--> MissRose (8)
-            DONE Wine **quest BarGuest(21)
-            DONE "Document" -> CuteTank (2)
-            DONE "Document" -> FashionGuard (2)
-            DONE "Document" -> QueenMother (2)
-            DONE "BrownLeatherBoots" (5) floor
-            DONE "BlueLatexTop" -> Cousin (8)
-            DONE "BrownLatexBootyShorts" - Maid(5)
-            DONE "PinkDuster" **quest --> (2)
-            DONE "BlackLatexGloves" (1) wardrobe
-            DONE "Crown" (1) - floor;
-            DONE "GoldenScepter" (11) -cont floor
-            DONE "Sword", floor (8) 
-            DONE "BattleAxe", --> Axxa(13)
-            DONE "Mace" ---> NeenJay (13)
-            DONE "DumbBell" --> DumbBelle (13)
-            DONE "DumbBell" --> (2)
-            DONE Dagger,  --> SpyedHer (15)
-            DONE Dagger, **quest --> (3)
-            DONE Dagger, **quest --> (23)
-            DONE "Beer",  --> (5)
-            DONE "Beer" --> (3)
-            DONE "GlassOfBeer", **quest --> BeerMaid (21)
-            DONE "GlassOfBeer", **quest --> (21)
-            DONE "GlassOfBeer" **quest --> (13)
-            DONE "Shuriken", -->(21)
-            DONE "Shuriken",  --> (7)
-            DONE "Shuriken" --> (23)
-            DONE "BlackLeatherBoot" --> Tresuress (12)
-            DONE "BlackLeatherBoot" Drinker (8)
-            DONE "Mushroom", --> (6)
-            DONE "Mushroom", --> (23)
-            DONE "Mushroom" --> (13)
-            DONE "Skull", --> (16)
-            DONE "Skull", --> (5)
-            DONE "Skull", -->(13) 
-            DONE "Skull", --> (27)
-            DONE "Skull" --> (18)
-            DONE "TaoBook",  **quest --> TaoLibrarian
-            DONE YinYangBook",  **quest --> (19)
-            DONE "TreeOfLifeBook" **quest --> Arcadia(##)
-            DONE "GoldBar",  **quest --> GoldMelta (20)
-            DONE "GoldBar",  **quest --> (6)
-            DONE "GoldBar" **quest --> (14)
-            DONE "BlackLatexpanties",  **quest --> PlayfulDominatrix(6)
-            DONE  "BlacLatexBra" **quest
-            DONE "BlackLeatherBoots", --> AuntieHauntie --> (22)
-            DONE "ArcadeToken",  **quest --> (21)
-            DONE "ArcadeToken",  **quest --> (8)
-            DONE "ArcadeToken" **quest --> (23)
-            DONE "GoldOre","GoldOre","GoldOre" --> (20)
-            DONE "RedCertificate", RedTrans((23))
-            DONE "WhiteCertificate", DONW White trans(23)
-            DONE "BlackCertificate",  "BlackTransa"--> (23)
-            DONE "GreyCertificate", GreyTrans (23)
-            DONE YellowCertificate" yellow transa (23)
-            DONE "YellowLatexPanties", --> (2)
-            DONE "WhiteLatexPanties", --> (8)
-            DONE "GreyLatexPanties", (9)
-            DONE "TransRedLatexPanties", --> (7)
-            DONE "TransBlackLatexPanties" --> (6)
-            DONE "GoldCoin" Saddie (16)
-            DONE "GoldCoin" --> (2)
-            DONE "GoldCoin" --> (13)
-            DONE "GoldCoin" --> (14)
-            DONE "GoldCoin" --> (10)
-            DONE "Candle", --> (2)
-            DONE "Candle", --> (13)
-            DONE "Candle" (19)
-            DONE "Handcuffs", --> Police(23)
-            DONE "Whip", --> (13)
-            DONE "SmallBarrel", --> (7)
-            DONE "SmallBarrel", --> (13)
-            DONE "SmallBarrel" --> (12)
-            DONE "Ammo", -->(15)
-            DONE "Revolver" --> SpaceMajor -->(13)
-            DONE "StarDestroyer" --> (22)
-            DONE "StarDestroyer" --> (18)
-            DONE "StarDestroyer" --> (16)
-            DONE "Spectacles" --> (16)
-            DONE "Mirror", --> (12)
-            DONE "Lipstick" --> (10)
-            "Document" **quest --> (26) TaxCollectress (26)
-            "Emerald"
-            "Emerald"
-            "Diamond"
-            "Diamond"
-            "Ruby"
-            "Ruby"
+    
 
         Shrines:
-            - redCoat defense
-            - oilybarba attack
-            - manacook1 mana
-            - BulletTina magic
-            - HeartAttack health
+    
 
         Trainers
-            - muscula: defense-2
-            - MeanJah: attack-2
-            - ManACook Trainer : mana-2
-            - DragonMother: magic-2
-            - CemetaryPet: health - 2
+    
 
         CoinTrainers
-            - LatexNurse - health
-            - MoonPriestess - magic
-            - Axees - attack
-            - Dafensa - defense
-            - Poola - mana
+
 
         ?Missing keys:
-            DONE Red (15)
-            DONE Blue (18)
-            DONE Emerald TransBossa(23)
+    
 
         Missing scrolls:
             
@@ -229,8 +87,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 26; //2 --> 6-->3-->2--->21-->2-->7 -->8-->9-->23-->2-->13-->27-->13-->16-->17-->18-->19-->22
-        //-->24 --> 25-->14-->15------>10-->11-->12--->20--->26
+        GAME.level = 4; //4
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -284,9 +141,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            "Emerald", "Emerald",
-            "Ruby", "Ruby",
-            "Diamond", "Diamond"
+   
         ];
 
         for (let itm of invItems) {
@@ -409,7 +264,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.20.6",
+    VERSION: "0.21.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

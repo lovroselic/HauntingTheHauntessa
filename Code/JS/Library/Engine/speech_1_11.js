@@ -332,5 +332,10 @@ const VOICE = {
     voice: 0,
     setting: new VoiceSetting(0.7, 0.6, 1.0)
   },
+  'FemaleHigh6': {
+    source: ["Catherine", "Hazel"],
+    voice: 0,
+    setting: new VoiceSetting(0.7, 1.6, 1.0)
+  },
 };
 console.log(`%cSPEECH ${SPEECH.VERSION} loaded.`, SPEECH.CSS);
