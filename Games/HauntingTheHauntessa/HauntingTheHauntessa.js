@@ -62,12 +62,19 @@ const DEBUG = {
         HERO.player.pos = Vector3.from_Grid(Grid.toCenter(grid), 0.5);
     },
     checkPoint() {
-        // area-2 - countryside
+        // area-2 - the journey part 1
         /*
 
+        Tourist wants: "Postcard", "Postcard", "Postcard" gives
+
+        DONE "Postcard"
+        DONE "Postcard"
+        DONE "Postcard"
     
 
         Shrines:
+            - mana
+            - health
     
 
         Trainers
@@ -76,7 +83,7 @@ const DEBUG = {
         CoinTrainers
 
 
-        ?Missing keys:
+        Missing keys:
     
 
         Missing scrolls:
@@ -87,7 +94,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 4; //4
+        GAME.level = 31; //4 --> 28
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -264,7 +271,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.21.1",
+    VERSION: "0.21.2",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

@@ -60,7 +60,10 @@ const TEXTURE_LIST = [
     "BalconyTexture_773", "BalconyTexture_774", "BalconyTexture_775", "BalconyTexture_776", "BalconyTexture_777", "BalconyTexture_778", "BalconyTexture_779", "BalconyTexture_780", "BalconyTexture_781",
     "Cobblestone_0819", "Cobblestone_0820", "Cobblestone_0821", "Cobblestone_0822", "Cobblestone_0823", "Cobblestone_0824", "Cobblestone_0825", "Cobblestone_0826", "OuterCastleWall_0827", "OuterCastleWall_0828", "OuterCastleWall_0829", "OuterCastleWall_0830",
     "OuterCastleWall_0831", "OuterCastleWall_0832", "OuterCastleWall_0833", "OuterCastleWall_0834", "OuterCastleWall_0835", "OuterCastleWall_0836", "OuterCastleWall_0837", "OuterCastleWall_0838", "OuterCastleWall_0839", "OuterCastleWall_0840", "OuterCastleWall_0841", "OuterCastleWall_0842",
-    "OuterCastleWall_0843", "OuterCastleWall_0844"
+    "OuterCastleWall_0843", "OuterCastleWall_0844",
+    "BlueSky_0852", "BlueSky_0853", "BlueSky_0854", "BlueSky_0855", "BrightForest_0845", "BrightForest_0846", "BrightForest_0847", "BrightForest_0848", "BrightForest_0849", "BrightForest_0850", "BrightForest_0851",
+    "Grass_0856", "Grass_0857", "Grass_0858", "Grass_0859", "Grass_0860", "Grass_0861", "GreanLeafWall_0862", "GreanLeafWall_0863", "GreanLeafWall_0864", "GreanLeafWall_0865", "GreanLeafWall_0866", "GreanLeafWall_0867",
+    "GreanLeafWall_0868", "GreanLeafWall_0869", "GreanLeafWall_0870", "GreanLeafWall_0871",
 ].sort();
 
 /** Decals */
@@ -949,7 +952,7 @@ const LIGHT_DECALS = [
     "SkullLantern57", "SkullLantern58", "Sun1", "Sun2", "WallLamp10", "WallLamp11", "WallLamp12", "WallLamp13", "WallLamp14", "WallLamp15", "WallLamp16", "WallLamp17",
     "WallLamp18", "WallLamp19", "WallLamp20", "WallLamp31", "WallLamp32", "WallLamp33", "WallLamp34", "WallLamp35", "WallLamp9",
     "CandleL1", "CandleR1", "FireplaceFLuxU411", "FireplaceFLuxU412", "FireplaceFLuxU413", "FireplaceFLuxU414", "FireplaceFLuxU415", "FireplaceFLuxU416", "FireplaceFLuxU417", "FireplaceFLuxU418", "FireplaceFLuxU419", "FireplaceFLuxU420",
-    "Lantern301", "Lantern302", "Lantern304", "SingleLantern1", "Torch11", "lantern201", "lantern303"
+    "Lantern301", "Lantern302", "Lantern304", "SingleLantern1", "Torch11", "lantern201", "lantern303", "SettingSun1", "SettingSun2",
 ].sort();
 
 const TRIGGER_DECALS = ["SmoothWallButton", "RockTriggerButton", "MarbleTriggerButton", "PurpleTriggerButton"];

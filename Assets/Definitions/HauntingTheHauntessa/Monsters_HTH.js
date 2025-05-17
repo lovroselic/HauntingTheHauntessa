@@ -29,6 +29,32 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    ForestHeart: {
+        name: "ForestHeart",
+        sprite: "ForestHeart",
+        which: "health",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "HeartSkill",
+        price: 2500,
+        level: 1,
+        text: "Forest's fresh air is not enough for a health boost? 2500 gold and you will be as new. Seventeen again.",
+        introduce: true,
+        voice: "FemaleLow2",
+    },
+    ForestManaWitch: {
+        name: "ForestManaWitch",
+        sprite: "ForestManaWitch",
+        which: "mana",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "ManaSkill",
+        price: 2500,
+        level: 1,
+        text: "Want to taste this brew? For 2500 gold it will make you spit fire.",
+        introduce: true,
+        voice: "Female4",
+    },
     LadyGreenHeart: {
         name: "LadyGreenHeart",
         sprite: "LadyGreenHeart",
@@ -276,6 +302,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    CousinInTheForest: {
+        name: "CousinInTheForest",
+        sprite: "CousinInTheForest",
+        category: 'crest',
+        voice: "Princess",
+        text: "My cute mute cousin has come to wave goodbye? But why she keeps copying my famous outfit? Does she wants to owerthrown me when I am not here? Bitch!",
+        interactionCategory: "oracle",
+    },
     YellowCouchDomme: {
         name: "YellowCouchDomme",
         sprite: "YellowCouchDomme",
@@ -1973,6 +2007,27 @@ const MONSTER_TYPE = {
         missileType: COMMON_ITEM_TYPE.BlueBounceball,
         shoot3D: true,
     },
+    Wolf: {
+        name: "Wolf",
+        model: "Wolf",
+        scale: 1.7 / 2 ** 2,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "BloodExplosion",
+        inventory: null,
+        mana: 0,
+        health: 30,
+        attack: 35,
+        magic: 0,
+        defense: 12,
+        xp: 50,
+        directMagicDamage: false,
+        attackSound: "MonsterAttack1",
+        hurtSound: "MonsterHurt3",
+        behaviourArguments: [6, ["wanderer"], 4, ["advancer"]],
+        moveSpeed: 1.1,
+        material: MATERIAL.standard,
+    },
     PurpleGalaxy: {
         name: "PurpleGalaxy",
         texture: "PurpleGalaxy",
@@ -2000,6 +2055,7 @@ const MONSTER_TYPE = {
         missile: BouncingMissile,
         missileType: COMMON_ITEM_TYPE.Bounceball,
     },
+
 };
 
 const HERO_TYPE = {
@@ -2777,6 +2833,12 @@ const INTERACTION_ITEM = {
         inventorySprite: "Diamond",
         text: "Diamond? My best friend."
     },
+    Postcard: {
+        name: "Postcard",
+        category: "interaction_item",
+        inventorySprite: "Postcard",
+        text: "Postcard from my journey."
+    },
 
     //books
     YoniBook: {
@@ -2907,7 +2969,7 @@ const INTERACTION_ENTITY = {
             progress: "That one's bright, but I need more. Bring the second, then we're sure.",
             conclusion: "Brilliant pair, the deal is done. Ten castle marks, now go have fun."
         }
-    },    
+    },
     RubyBuyer: {
         name: "RubyBuyer",
         sprite: "RubyBuyer",

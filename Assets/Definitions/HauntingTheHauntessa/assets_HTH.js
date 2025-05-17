@@ -25,6 +25,23 @@ LoadFonts = [
 
 LoadTextures = [
     /**wall, floor, ceil */
+    { srcName: "Wall/Grass_0856.jpg", name: "Grass_0856" },
+    { srcName: "Wall/Grass_0857.jpg", name: "Grass_0857" },
+    { srcName: "Wall/Grass_0858.jpg", name: "Grass_0858" },
+    { srcName: "Wall/Grass_0859.jpg", name: "Grass_0859" },
+    { srcName: "Wall/Grass_0860.jpg", name: "Grass_0860" },
+    { srcName: "Wall/Grass_0861.jpg", name: "Grass_0861" },
+    { srcName: "Wall/GreanLeafWall_0862.jpg", name: "GreanLeafWall_0862" },
+    { srcName: "Wall/GreanLeafWall_0863.jpg", name: "GreanLeafWall_0863" },
+    { srcName: "Wall/GreanLeafWall_0864.jpg", name: "GreanLeafWall_0864" },
+    { srcName: "Wall/GreanLeafWall_0865.jpg", name: "GreanLeafWall_0865" },
+    { srcName: "Wall/GreanLeafWall_0866.jpg", name: "GreanLeafWall_0866" },
+    { srcName: "Wall/GreanLeafWall_0867.jpg", name: "GreanLeafWall_0867" },
+    { srcName: "Wall/GreanLeafWall_0868.jpg", name: "GreanLeafWall_0868" },
+    { srcName: "Wall/GreanLeafWall_0869.jpg", name: "GreanLeafWall_0869" },
+    { srcName: "Wall/GreanLeafWall_0870.jpg", name: "GreanLeafWall_0870" },
+    { srcName: "Wall/GreanLeafWall_0871.jpg", name: "GreanLeafWall_0871" },
+
     { srcName: "Wall/3d wall.jpg", name: "3d wall" },
     { srcName: "Wall/3d wall2.jpg", name: "3d wall2" },
     { srcName: "Wall/Beach1.jpg", name: "Beach1" },
@@ -654,6 +671,17 @@ LoadTextures = [
     { srcName: "Wall/OuterCastleWall_0842.jpg", name: "OuterCastleWall_0842" },
     { srcName: "Wall/OuterCastleWall_0843.jpg", name: "OuterCastleWall_0843" },
     { srcName: "Wall/OuterCastleWall_0844.jpg", name: "OuterCastleWall_0844" },
+    { srcName: "Wall/BlueSky_0852.jpg", name: "BlueSky_0852" },
+    { srcName: "Wall/BlueSky_0853.jpg", name: "BlueSky_0853" },
+    { srcName: "Wall/BlueSky_0854.jpg", name: "BlueSky_0854" },
+    { srcName: "Wall/BlueSky_0855.jpg", name: "BlueSky_0855" },
+    { srcName: "Wall/BrightForest_0845.jpg", name: "BrightForest_0845" },
+    { srcName: "Wall/BrightForest_0846.jpg", name: "BrightForest_0846" },
+    { srcName: "Wall/BrightForest_0847.jpg", name: "BrightForest_0847" },
+    { srcName: "Wall/BrightForest_0848.jpg", name: "BrightForest_0848" },
+    { srcName: "Wall/BrightForest_0849.jpg", name: "BrightForest_0849" },
+    { srcName: "Wall/BrightForest_0850.jpg", name: "BrightForest_0850" },
+    { srcName: "Wall/BrightForest_0851.jpg", name: "BrightForest_0851" },
 
     /** decals that are textures */
 
@@ -915,6 +943,7 @@ LoadModels = [
     "Bat.gltf", "MissGalaxy.gltf", "Spider.gltf", "Dragon.gltf",
     "mandy.gltf", "NeverBlink.gltf", "EvilNun.gltf", "LizardMan.gltf", "NecroMorph.gltf", "CyGirl.gltf",
     "Hunteress.gltf", "Dragon2.gltf", "BigBat.gltf", "WolfSpider.gltf", "Viking.gltf", "MissGhostFace.gltf",
+    "Wolf.gltf",
 ];
 
 LoadSprites = [
@@ -1021,6 +1050,9 @@ LoadSprites = [
     { srcName: "EntityPictures/YellowCouchDomme.jpg", name: "YellowCouchDomme" },
     { srcName: "EntityPictures/PurpleManaBabe.jpg", name: "PurpleManaBabe" },
     { srcName: "EntityPictures/LadyGreenHeart.jpg", name: "LadyGreenHeart" },
+    { srcName: "EntityPictures/CousinInTheForest.jpg", name: "CousinInTheForest" },
+    { srcName: "EntityPictures/ForestManaWitch.jpg", name: "ForestManaWitch" },
+    { srcName: "EntityPictures/ForestHeart.jpg", name: "ForestHeart" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
@@ -1253,6 +1285,7 @@ LoadSprites = [
     { srcName: "Items/Emerald2.png", name: "Emerald" },
     { srcName: "Items/Diamond.png", name: "Diamond" },
     { srcName: "Items/Ruby.png", name: "Ruby" },
+    { srcName: "Items/Postcard.png", name: "Postcard" },
 
     //books
     { srcName: "Items/YoniBook.png", name: "YoniBook" },
@@ -1516,7 +1549,8 @@ LoadSprites = [
     { srcName: "Lights/Torch11.png", name: "Torch11" },
     { srcName: "Lights/lantern201.png", name: "lantern201" },
     { srcName: "Lights/lantern303.png", name: "lantern303" },
-
+    { srcName: "Lights/SettingSun1.png", name: "SettingSun1" },
+    { srcName: "Lights/SettingSun2.png", name: "SettingSun2" },
 
     //keys
     { srcName: "Keys/BlueKey2.png", name: "BlueKey" },

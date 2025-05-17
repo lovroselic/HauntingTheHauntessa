@@ -69,7 +69,9 @@ const LIGHT_COLORS = {
     moonlightFaint: new Float32Array([0.30, 0.35, 0.45]),       // Very subtle, dim moonlight for minimal illumination
     sunlightBright: new Float32Array([0.95, 0.92, 0.85]),       // Bright, clear daytime sunlight
     sunlightWarm: new Float32Array([0.85, 0.78, 0.65]),         // Softer, warmer afternoon sunlight
-    sunlightDusk: new Float32Array([0.70, 0.60, 0.50])          // Subtle, warm dusk-like sunlight
+    sunlightDusk: new Float32Array([0.70, 0.60, 0.50]),         // Subtle, warm dusk-like sunlight
+    sunlightGoldenHour: new Float32Array([0.90, 0.68, 0.45]),   // Warm, glowing, rich sunset illumination
+    sunlightGoldenHourSoft: new Float32Array([0.78, 0.56, 0.38]), // Gentle, softer golden-orange, subtle late sunset ambiance
 };
 
 /** Materials */

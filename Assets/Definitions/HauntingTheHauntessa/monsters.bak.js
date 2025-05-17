@@ -3,26 +3,7 @@ const MONSTER_TYPE = {
 
 
 
-    Wolf: {
-        name: "Wolf",
-        model: "Wolf",
-        scale: 1.7 / 2 ** 2,
-        rotateToNorth: Math.PI,
-        midHeight: 0.5,
-        deathType: "BloodExplosion",
-        inventory: null,
-        mana: 0,
-        health: 20,
-        attack: 8,
-        magic: 0,
-        defense: 0,
-        directMagicDamage: true,
-        attackSound: "MonsterAttack1",
-        hurtSound: "MonsterHurt3",
-        behaviourArguments: [10, ["wanderer"], 5, ["advancer"]],
-        moveSpeed: 1.1,
-        material: MATERIAL.standard,
-    },
+
     GreenWolf: {
         name: "Wolf",
         texture: "GreenWolf",
