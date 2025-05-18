@@ -1167,7 +1167,7 @@ class FP_Grid3D extends MasterGridClass3D {
         return new FP_Grid3D(this.x + vector.x * factor, this.y + vector.y * factor, this.z + vector.z * factor);
     }
     static to_center_block(grid3d) {
-        if (grid3d.constructor.name !== "Grid3D") throw new Error(`from_Grid3D_to_center_block_swap_ZY, wrong object type ${grid3d}`);
+        if (grid3d.constructor.name !== "Grid3D") throw new Error(`from_Grid3D_to_center_block_swap_ZY, wrong object type ${JSON.stringify(grid3d)}, object: ${grid3d.constructor.name}`);
         return new FP_Grid3D(grid3d.x + 0.5, grid3d.y + 0.5, grid3d.z + 0.5,);
     }
     absDirection(vector) {

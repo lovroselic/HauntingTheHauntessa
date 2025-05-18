@@ -65,7 +65,7 @@ const DEBUG = {
         // area-2 - the journey part 1
         /*
 
-        Tourist wants: "Postcard", "Postcard", "Postcard" gives
+        Tourist wants: "Postcard", "Postcard", "Postcard" gives PinkKey
 
         DONE "Postcard"
         DONE "Postcard"
@@ -75,6 +75,7 @@ const DEBUG = {
         Shrines:
             - mana
             - health
+            - defense
     
 
         Trainers
@@ -84,9 +85,10 @@ const DEBUG = {
 
 
         Missing keys:
-    
+            -gold
 
         Missing scrolls:
+            - fly
             
 
 
@@ -94,7 +96,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 31; //4 --> 28
+        GAME.level = 34; //4 --> 28
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -148,7 +150,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-   
+            "Postcard", "Postcard", "Postcard"
         ];
 
         for (let itm of invItems) {
@@ -271,7 +273,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.21.2",
+    VERSION: "0.21.3",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -844,7 +846,8 @@ const HERO = {
         WebGL.GAME.setFirstPerson();
         if (GAME.lives <= 0) return HERO.finalDeath();
 
-        const grid = Vector3.toGrid(HERO.player.pos);
+        //const grid = Vector3.toGrid(HERO.player.pos);
+        const grid = Vector3.to_Grid3D(HERO.player.pos);
         const face = DirectionToFace(NOWAY);
         const decal = SPRITE.DeathPlace;
         const deathPlace = new StaticDecal(grid, face, decal, "crest", "DeathPlace", true);

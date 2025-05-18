@@ -29,6 +29,19 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    ForestShield: {
+        name: "ForestShield",
+        sprite: "ForestShield",
+        which: "defense",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "SkillShield",
+        price: 2500,
+        level: 1,
+        text: "Chain mail is good protection from penetration. With sharp objects. Do you want to learn it? 2500 gold. Just today.",
+        introduce: true,
+        voice: "FemaleLow5",
+    },
     ForestHeart: {
         name: "ForestHeart",
         sprite: "ForestHeart",
@@ -2536,6 +2549,12 @@ const INTERACTION_ITEM = {
         inventorySprite: "RedKey",
         color: "Red"
     },
+    PinkKey: {
+        name: "PinkKey",
+        category: "key",
+        inventorySprite: "PinkKey",
+        color: "Pink"
+    },
 
     //items
     GoldCoin: {
@@ -2957,6 +2976,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    TheTourist: {
+        name: "TheTourist",
+        sprite: "TheTourist",
+        category: 'crest',
+        voice: "Female3",
+        wants: ["Postcard", "Postcard", "Postcard"],
+        gives: "PinkKey",
+        text: {
+            intro: "Oh, the world beyond, so vast! Show me postcards from your past!",
+            progress: "What a view, but not the set. I'm sure there's more I haven't met!",
+            conclusion: "All three sights? You've seen the scene! Here's a key to lands unseen."
+        }
+    },    
     DiamondBuyer: {
         name: "DiamondBuyer",
         sprite: "DiamondBuyer",

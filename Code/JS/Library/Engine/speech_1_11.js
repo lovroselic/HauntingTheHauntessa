@@ -322,6 +322,11 @@ const VOICE = {
     voice: 0,
     setting: new VoiceSetting(1.0, 1.0, 1.0)
   },
+  'FemaleLow5': {
+    source: ["Heera", "Hazel"],
+    voice: 0,
+    setting: new VoiceSetting(1.3, 0.6, 1.0)
+  },
   'Female6': {
     source: ["Catherine", "Hazel"],
     voice: 0,
