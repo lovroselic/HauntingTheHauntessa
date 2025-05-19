@@ -69,17 +69,7 @@ const INTERACTION_OBJECT = {
         inventorySprite: "Apple",
         text: "Oh, it's an apple."
     },
-    Pear: {
-        name: "Pear",
-        category: "interaction_item",
-        element: "PEAR",
-        scale: 1 / 2 ** 7,
-        glueToFloor: true,
-        texture: "Pear_baseColor",
-        material: MATERIAL.standard,
-        inventorySprite: "Pear",
-        text: "Juicy pear? How nice."
-    },
+
     RedGem: {
         name: "RedGem",
         category: "interaction_item",

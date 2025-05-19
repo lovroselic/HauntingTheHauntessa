@@ -64,13 +64,65 @@ const DEBUG = {
     checkPoint() {
         // area-2 - the journey part 1
         /*
+        Dutches wants GoldenNecklace, Ring, GoldenBracelet gives GoldKey
+        RedRidingHood "RedLeatherBoots", "RedLatexBra", "RedLatexPanties" gives RedKey
+        Inferna wants "HornedHelmet", "InfernalArmor"  gives blueKEy
+       
 
-        Tourist wants: "Postcard", "Postcard", "Postcard" gives PinkKey
+        ChubbyMaid wants Pie, Pie, JUice gives GoldenBracelet
+        #### wants ------- Gives Ring (sea related)
+        ##### wants _____ gives GoldenNecklace (mountain related)
 
-        DONE "Postcard"
-        DONE "Postcard"
-        DONE "Postcard"
-    
+        ElvenSmith wants "SilverBar", "IronBar", "RedBar", "ArmorBlueprint",   gives InfernalArmor
+
+
+        Apple picker wants "Apple", "Apple", "Apple" gives Pie
+        Pear picker wants "Pear", "Pear", "Pear" gives Pie
+        Orange picker wants "Orange", "Orange", "Orange" gives OrangeJuice
+
+        Fox wants "Chicken", "Chicken", "Chicken" gives RedLeatherBoots
+        Wolf wants "Sheep", "Sheep", "Sheep" gives RedLatexBra
+        Leopardess wants "LittlePiggy", "LittlePiggy", "LittlePiggy" gives RedLatexPanties
+
+
+        
+        
+
+            DONE Tourist wants: "Postcard", "Postcard", "Postcard" gives PinkKey
+
+            DONE "Postcard"
+            DONE "Postcard"
+            DONE "Postcard"
+        "Apple", 
+        "Apple", 
+        Apple
+        "Pear"
+        "Pear"
+        "Pear"
+        "Orange"
+        "Orange"
+        "Orange"
+        "Pie"
+        "Pie"
+        "OrangeJuice"
+        "Chicken"
+        "Chicken"
+        "Chicken"
+        Sheep"
+        Sheep"
+        Sheep"
+        HornedHelmet
+        InfernalArmor
+        "SilverBar", 
+        "IronBar", 
+        "RedBar", 
+        "ArmorBlueprint"
+        GoldenNecklace
+        Ring
+        GoldenBracelet
+        RedLatexPanties
+        RedLatexBra
+        RedLeatherBoots
 
         Shrines:
             - mana
@@ -86,8 +138,11 @@ const DEBUG = {
 
         Missing keys:
             -gold
+            -red
+            -blue
 
         Missing scrolls:
+            - fly
             - fly
             
 
@@ -96,7 +151,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 34; //4 --> 28
+        GAME.level = 32; //4 --> 28
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -150,7 +205,12 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            "Postcard", "Postcard", "Postcard"
+            "Apple", "Apple", "Apple",
+            "Pear", "Pear", "Pear",
+            "Orange", "Orange", "Orange",
+            "HornedHelmet","RedBar",
+            "RedLeatherBoots", "RedLatexBra", "RedLatexPanties",
+
         ];
 
         for (let itm of invItems) {
@@ -158,7 +218,7 @@ const DEBUG = {
             HERO.inventory.item.push(item);
         }
 
-        let keys = [];
+        let keys = ["Blue"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -273,7 +333,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.21.3",
+    VERSION: "0.21.4",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -1716,6 +1776,7 @@ const GAME = {
     },
     spawn(lair) {
         const type = MONSTER_TYPE[MAP[GAME.level].map.monsterList.chooseRandom()];
+        if (!type) return;                                                              //if monsterList is not yet definded - development issue
         const grid = Grid3D.toCenter2D(lair.grid.add(lair.direction));
         const monster = new $3D_Entity(grid, type, lair.direction);
         monster.dropped = true;

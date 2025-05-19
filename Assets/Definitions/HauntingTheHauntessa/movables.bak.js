@@ -1,17 +1,6 @@
 const MOVABLE_INTERACTION_OBJECT = {
     
-    BabySheep: {
-        name: "BabySheep",
-        category: "interaction_item",
-        model: "Sheep",
-        scale: 1.1 / 2 ** 10,
-        rotateToNorth: Math.PI,
-        moveSpeed: 1.25,
-        material: MATERIAL.standard,
-        behaviourArguments: [Infinity, ["wanderer"], -1],
-        inventorySprite: "BabySheep",
-        text: "Poor lamb. Are you hurt?",
-    },
+    
     WolfPuppy: {
         name: "WolfPuppy",
         category: "interaction_item",
@@ -37,19 +26,7 @@ const MOVABLE_INTERACTION_OBJECT = {
         inventorySprite: "LittleChicken",
         text: "Chicken dinner? Yummy."
     },
-    Chicken: {
-        /** alive */
-        name: "Chicken",
-        category: "interaction_item",
-        model: "Chicken",
-        scale: 1 / 2 ** 6,
-        rotateToNorth: -Math.PI / 2,
-        moveSpeed: 1.5,
-        material: MATERIAL.standard,
-        behaviourArguments: [Infinity, ["wanderer"], -1],
-        inventorySprite: "Chicken",
-        text: "Blonde chick. Not yet fried."
-    },
+   
     RoastChicken: {
         /** health */
         name: "RoastChicken",
@@ -78,18 +55,7 @@ const MOVABLE_INTERACTION_OBJECT = {
         inventorySprite: "RoastPig",
         text: "Here piggy piggy piggy.",
     },
-    LittlePiggy: {
-        name: "LittlePiggy",
-        category: "interaction_item",
-        model: "Pig",
-        scale: 1.2 / 2 ** 3,
-        rotateToNorth: -Math.PI / 2,
-        moveSpeed: 1.6,
-        material: MATERIAL.standard,
-        behaviourArguments: [Infinity, ["wanderer"], -1],
-        inventorySprite: "LittlePiggy",
-        text: "Try not to huff and puff.",
-    },
+    
     Cat: {
         name: "Cat",
         category: "interaction_item",

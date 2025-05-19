@@ -236,11 +236,7 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "Dough",
     },
-    Pie: {
-        name: "Pie",
-        category: "interaction_item",
-        inventorySprite: "Pie",
-    },
+
     Amethyst: {
         name: "Amethyst",
         category: "interaction_item",
@@ -529,12 +525,7 @@ const INTERACTION_ITEM = {
         inventorySprite: "EmeraldIngots",
         text: "Ingots made from emerald."
     },
-    Document: {
-        name: "Document",
-        category: "interaction_item",
-        inventorySprite: "Document",
-        text: "Looks like some kind of instructions. Maybe I should read them."
-    },
+    
     GuitarPick: {
         name: "GuitarPick",
         category: "interaction_item",
@@ -566,12 +557,7 @@ const INTERACTION_ITEM = {
         inventorySprite: "RedFishTail",
         text: "Spare outfit for a fish. Or mermaid."
     },
-    RedLatexBra: {
-        name: "RedLatexBra",
-        category: "interaction_item",
-        inventorySprite: "RedLatexBra",
-        text: "Sexy stuff. I should wear these. Maybe in the next game?"
-    },
+   
     PinkLatexGloves: {
         name: "PinkLatexGloves",
         category: "interaction_item",

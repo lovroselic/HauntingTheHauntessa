@@ -1060,6 +1060,9 @@ LoadSprites = [
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
     { srcName: "ActionMovables/BabyDragon.png", name: "BabyDragon" },
     { srcName: "ActionMovables/RedSpider.png", name: "RedSpider" },
+    { srcName: "ActionMovables/Sheep.png", name: "BabySheep" },
+    { srcName: "Items/Chicken.png", name: "Chicken" },
+    { srcName: "ActionMovables/LittlePiggy.png", name: "LittlePiggy" },
 
     //triggers
     { srcName: "Triggers/MarbleTriggerButton.png", name: "MarbleTriggerButton" },
@@ -1209,6 +1212,7 @@ LoadSprites = [
     { srcName: "Items/IronBar.png", name: "IronBar" },
     { srcName: "Items/UraniumBar.png", name: "UraniumBar" },
     { srcName: "Items/GoldSteel.png", name: "GoldSteel" },
+    { srcName: "Items/RedBar.png", name: "RedBar" },
 
     //status
     { srcName: "Status/Invisible2.png", name: "Invisible" },
@@ -1288,6 +1292,17 @@ LoadSprites = [
     { srcName: "Items/Diamond.png", name: "Diamond" },
     { srcName: "Items/Ruby.png", name: "Ruby" },
     { srcName: "Items/Postcard.png", name: "Postcard" },
+    { srcName: "Items/Orange.png", name: "Orange" },
+    { srcName: "Items/Pear.png", name: "Pear" },
+    { srcName: "Items/Pie.png", name: "Pie" },
+    { srcName: "Items/OrangeJuice.png", name: "OrangeJuice" },
+    { srcName: "Items/Ring.png", name: "Ring" },
+    { srcName: "Items/ArmorBlueprint.png", name: "ArmorBlueprint" },
+    { srcName: "Items/GoldenNecklace.png", name: "GoldenNecklace" },
+    { srcName: "Items/GoldenBracelet.png", name: "GoldenBracelet" },
+    { srcName: "Items/RedLatexPanties.png", name: "RedLatexPanties" },
+    { srcName: "Items/RedLatexBra.png", name: "RedLatexBra" },
+    { srcName: "Items/RedLeatherBoots.png", name: "RedLeatherBoots" },
 
     //books
     { srcName: "Items/YoniBook.png", name: "YoniBook" },

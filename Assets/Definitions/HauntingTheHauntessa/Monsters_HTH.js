@@ -2225,6 +2225,17 @@ const INTERACTION_OBJECT = {
         inventorySprite: "Apple",
         text: "Oh, it's an apple."
     },
+    Pear: {
+        name: "Pear",
+        category: "interaction_item",
+        element: "PEAR",
+        scale: 1 / 2 ** 7,
+        glueToFloor: true,
+        texture: "Pear_baseColor",
+        material: MATERIAL.standard,
+        inventorySprite: "Pear",
+        text: "Juicy pear? How nice."
+    },
     GoldCoin: {
         name: "GoldCoin",
         category: "interaction_item",
@@ -2359,6 +2370,17 @@ const INTERACTION_OBJECT = {
         material: MATERIAL.standard,
         text: "Iron? I can make something from it."
     },
+    RedBar: {
+        name: "RedBar",
+        category: "interaction_item",
+        element: "BAR",
+        scale: 1 / 2 ** 4,
+        glueToFloor: true,
+        texture: "RedMetal",
+        inventorySprite: "RedBar",
+        material: MATERIAL.standard,
+        text: "Wow. Infernal red metal.."
+    },
 };
 
 const MOVABLE_INTERACTION_OBJECT = {
@@ -2459,6 +2481,43 @@ const MOVABLE_INTERACTION_OBJECT = {
         category: "life",
         inventorySprite: "Lives",
         text: "A backup life. We all need this, right?",
+    },
+    BabySheep: {
+        name: "BabySheep",
+        category: "interaction_item",
+        model: "Sheep",
+        scale: 1.1 / 2 ** 10,
+        rotateToNorth: Math.PI,
+        moveSpeed: 1.25,
+        material: MATERIAL.standard,
+        behaviourArguments: [Infinity, ["wanderer"], -1],
+        inventorySprite: "BabySheep",
+        text: "Poor lamb. Are you hurt?",
+    },
+    Chicken: {
+        /** alive */
+        name: "Chicken",
+        category: "interaction_item",
+        model: "Chicken",
+        scale: 1 / 2 ** 6,
+        rotateToNorth: -Math.PI / 2,
+        moveSpeed: 1.5,
+        material: MATERIAL.standard,
+        behaviourArguments: [Infinity, ["wanderer"], -1],
+        inventorySprite: "Chicken",
+        text: "Blonde chick. Not yet fried."
+    },
+    LittlePiggy: {
+        name: "LittlePiggy",
+        category: "interaction_item",
+        model: "Pig",
+        scale: 1.2 / 2 ** 3,
+        rotateToNorth: -Math.PI / 2,
+        moveSpeed: 1.6,
+        material: MATERIAL.standard,
+        behaviourArguments: [Infinity, ["wanderer"], -1],
+        inventorySprite: "LittlePiggy",
+        text: "Try not to huff and puff.",
     },
 };
 
@@ -2568,6 +2627,18 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "Apple",
         text: "Oh, it's an apple.",
+    },
+    Pear: {
+        name: "Pear",
+        category: "interaction_item",
+        inventorySprite: "Pear",
+        text: "Ripe juicy pear.",
+    },
+    Orange: {
+        name: "Orange",
+        category: "interaction_item",
+        inventorySprite: "Orange",
+        text: "Ripe juicy orange.",
     },
     BrownLatexBootyShorts: {
         name: "BrownLatexBootyShorts",
@@ -2858,6 +2929,60 @@ const INTERACTION_ITEM = {
         inventorySprite: "Postcard",
         text: "Postcard from my journey."
     },
+    Pie: {
+        name: "Pie",
+        category: "interaction_item",
+        inventorySprite: "Pie",
+        text: "Yummy pie."
+    },
+    OrangeJuice: {
+        name: "OrangeJuice",
+        category: "interaction_item",
+        inventorySprite: "OrangeJuice",
+        text: "Fresh orange juice. No vodka though?"
+    },
+    Ring: {
+        name: "Ring",
+        category: "interaction_item",
+        inventorySprite: "Ring",
+        text: "Will it make me invisible, precious?"
+    },
+    ArmorBlueprint: {
+        name: "ArmorBlueprint",
+        category: "interaction_item",
+        inventorySprite: "ArmorBlueprint",
+        text: "Looks like some kind of blueprint for armor."
+    },
+    GoldenNecklace: {
+        name: "GoldenNecklace",
+        category: "interaction_item",
+        inventorySprite: "GoldenNecklace",
+        text: "Very valuable golden necklace."
+    },
+    GoldenBracelet: {
+        name: "GoldenBracelet",
+        category: "interaction_item",
+        inventorySprite: "GoldenBracelet",
+        text: "Very valuable golden bracelet."
+    },
+    RedLatexBra: {
+        name: "RedLatexBra",
+        category: "interaction_item",
+        inventorySprite: "RedLatexBra",
+        text: "Sexy stuff. I should wear these. Maybe in the next game?"
+    },
+    RedLatexPanties: {
+        name: "RedLatexPanties",
+        category: "interaction_item",
+        inventorySprite: "RedLatexPanties",
+        text: "Sexy stuff. I should wear these. Maybe in the next game?"
+    },
+    RedLeatherBoots: {
+        name: "RedLeatherBoots",
+        category: "interaction_item",
+        inventorySprite: "RedLeatherBoots",
+        text: "Sexy stuff. I should wear these. Maybe in the next game?"
+    },
 
     //books
     YoniBook: {
@@ -2988,7 +3113,7 @@ const INTERACTION_ENTITY = {
             progress: "What a view, but not the set. I'm sure there's more I haven't met!",
             conclusion: "All three sights? You've seen the scene! Here's a key to lands unseen."
         }
-    },    
+    },
     DiamondBuyer: {
         name: "DiamondBuyer",
         sprite: "DiamondBuyer",
