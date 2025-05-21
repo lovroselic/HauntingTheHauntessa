@@ -70,8 +70,8 @@ const DEBUG = {
        
 
         ChubbyMaid wants Pie, Pie, JUice gives GoldenBracelet
-        #### wants ------- Gives Ring (sea related)
-        ##### wants _____ gives GoldenNecklace (mountain related)
+        CaveBabe(####)  wants Pearl, Moonstone, Amethyst Gives Ring 
+        ##### wants _____ gives GoldenNecklace (mountain related, granny?, sorceress - withc)
 
         ElvenSmith wants "SilverBar", "IronBar", "RedBar", "ArmorBlueprint",   gives InfernalArmor
 
@@ -83,6 +83,8 @@ const DEBUG = {
         Fox wants "Chicken", "Chicken", "Chicken" gives RedLeatherBoots
         Wolf wants "Sheep", "Sheep", "Sheep" gives RedLatexBra
         Leopardess wants "LittlePiggy", "LittlePiggy", "LittlePiggy" gives RedLatexPanties
+
+        BitchBabe wants Shell, Shell, Shell gives Pearl
 
 
         
@@ -123,6 +125,12 @@ const DEBUG = {
         RedLatexPanties
         RedLatexBra
         RedLeatherBoots
+        Pearl, 
+        Moonstone, 
+        Amethyst
+        Shell, 
+        Shell, 
+        Shell
 
         Shrines:
             - mana
@@ -151,7 +159,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 32; //4 --> 28
+        GAME.level = 37; //4 --> 28
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -218,7 +226,7 @@ const DEBUG = {
             HERO.inventory.item.push(item);
         }
 
-        let keys = ["Blue"];
+        let keys = ["Blue", "Silver"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -333,7 +341,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.21.4",
+    VERSION: "0.21.5",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

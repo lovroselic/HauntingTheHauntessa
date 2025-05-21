@@ -25,7 +25,7 @@ for (let [index, key] of KEY_TYPES.entries()) {
 
 const SCROLL_TYPE = [
     "Invisibility", "Cripple", "HalfLife", "Explode", "Luck", "Flight", "BoostWeapon", "BoostArmor", "MagicBoost",
-    "DestroyWeapon", "DestroyArmor", "DrainMana", "FeatherFall", "Radar"
+    "DestroyWeapon", "DestroyArmor", "DrainMana", "FeatherFall", "Radar", "VeryLucky"
 ];
 
 const SHRINE_TYPE = {
@@ -315,6 +315,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    Navigator: {
+        name: "Navigator",
+        sprite: "Navigator",
+        category: 'crest',
+        voice: "FemaleHigh6",
+        text: "To find Hauntessa, go south from here, pass over the bridge, and open the passage to the underworld to the south. Pity all the doors are locked tgough, isn't it?",
+        interactionCategory: "oracle",
+    },
     CousinInTheForest: {
         name: "CousinInTheForest",
         sprite: "CousinInTheForest",
@@ -2982,6 +2990,28 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "RedLeatherBoots",
         text: "Sexy stuff. I should wear these. Maybe in the next game?"
+    },
+    Pearl: {
+        name: "Pearl",
+        category: "interaction_item",
+        inventorySprite: "Pearl",
+        text: "Pearl looks like moon's tear."
+    },
+    Amethyst: {
+        name: "Amethyst",
+        category: "interaction_item",
+        inventorySprite: "Amethyst",
+    },
+    Moonstone: {
+        name: "Moonstone",
+        category: "interaction_item",
+        inventorySprite: "Moonstone",
+    },
+    Shell: {
+        name: "Shell",
+        category: "interaction_item",
+        inventorySprite: "Shell",
+        text: "Pretty shell."
     },
 
     //books

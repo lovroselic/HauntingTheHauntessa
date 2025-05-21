@@ -820,7 +820,7 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"15","height":"15","depth":1,"map":"BB3AA3BABB3AA24BAA2BAA5BB2AA21BB2AA7BB2AA2BB4AA7BB3ABABB2AA5BAA7BB2AA8BAA4BB8AA3BB9ABABABB2ABB3ABB5AA2BB2ABB3AA2BAA2BB2ABB2AA3BB8AA7BABB22A$"}',
+        data: '{"width":"15","height":"15","depth":1,"map":"BB3AA3BABB3AA24BAA2BAA5BB2AA20BB2ABABAA6BB2AA2BB2ABAA8BB2ABABB2AA5BAA7BB2AA9BAA3BB8AA3BB9AA2BB2ABB2ABB3ABB6AA3BB2ABB2ABAA2BB2AA2BAA4BB7AA5BABB22A$"}',
         wall: "MistyMeadow3",
         floor: "Grass_0860",
         ceil: "BlueSky_0852",
@@ -828,6 +828,7 @@ const MAP = {
         decals: '[[200,1,"OuterCastleWall_0833","texture"],[201,1,"OuterCastleWall_0833","texture"],[217,1,"OuterCastleWall_0833","texture"],[203,1,"OuterCastleWall_0833","texture"],[204,1,"OuterCastleWall_0833","texture"],[201,5,"OuterCastleWall_0833","texture"],[204,5,"OuterCastleWall_0833","texture"],[200,3,"OuterCastleWall_0833","texture"],[203,3,"OuterCastleWall_0833","texture"],[22,4,"Cobblestone_0822","texture"],[37,4,"Cobblestone_0822","texture"],[52,4,"Cobblestone_0822","texture"],[67,4,"Cobblestone_0822","texture"],[82,4,"Cobblestone_0822","texture"]]',
         lights: '[[112,1,"SettingSun1","sunlightGoldenHour"],[112,7,"SettingSun1","sunlightGoldenHour"],[112,3,"SettingSun2","sunlightGoldenHourSoft"],[112,5,"SettingSun2","sunlightGoldenHourSoft"]]',
         gates: '[[7,7,"31.1","30.2","Closed"],[217,1,"31.2","32.1","Closed"]]',
+        lairs: '[[150,5,"Lair38"],[164,3,"Lair33"]]',
     }
     ,
     32: {
@@ -846,6 +847,7 @@ const MAP = {
         gates: '[[8,7,"32.1","31.2","Closed"],[280,1,"32.2","33.1","Pink"]]',
         doors: '[178]',
         entities: '[[68,5,"TheTourist"]]',
+        oracles: '[[84,3,"Navigator"]]',
     }
     ,
     33: {
@@ -866,7 +868,7 @@ const MAP = {
         lairs: '[[80,7,"Lair31"],[85,7,"Lair456"],[332,1,"Lair31"],[327,1,"Lair22"],[337,1,"Lair65"]]',
         monsterList: '["RedDragon","RedDragon","RedDragon","Dragon"]',
     },
-    34 : {
+    34: {
         name: "Underworld Entrance",
         sg: 0,
         maxSpawned: 4,
@@ -882,7 +884,7 @@ const MAP = {
         gates: '[[1757,7,"34.1","33.2","Closed"],[1823,3,"34.2","35.1","Red"],[1937,3,"34.3","35.2","Closed"],[1805,5,"34.4","36.1","Blue"],[1995,5,"34.5","36.2","Closed"]]',
         triggers: '[[1917,3,"SmoothWallButton",0,1909],[2015,5,"SmoothWallButton",0,2023],[2127,3,"SmoothWallButton",0,1871],[2109,5,"SmoothWallButton",0,2061]]',
         lairs: '[[551,5,"Lair02"],[646,5,"Lair20"],[741,5,"Lair45"],[759,3,"Lair08"],[664,3,"Lair52"],[569,3,"Lair17"]]',
-        }
+    }
     ,
     35: {
         name: "East Passage",
@@ -900,7 +902,7 @@ const MAP = {
         gates: '[[39,5,"35.1","34.2","Closed"],[117,5,"35.2","34.3","Closed"]]',
     }
     ,
-    36 : {
+    36: {
         name: "West Passage",
         sg: 0,
         maxSpawned: 4,
@@ -914,5 +916,24 @@ const MAP = {
         start: '[355,3]',
         lights: '[[695,3,"FluxLight123","standardYellow"],[763,3,"FluxLight123","standardYellow"],[141,5,"Fireplace09","fireplace"]]',
         gates: '[[356,3,"36.1","34.4","Closed"],[526,3,"36.2","34.5","Closed"]]',
+    }
+    ,
+    37 : {
+        name: "Farmland",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"21","height":"21","depth":1,"map":"BB2AA4BB4AA7BAA3BB2AEAA3BAA6BB2ABAA2BB2ABABB2AA4BB3ABB2ABB4ABABAA16BAA11BB4AA3BABB3AA3BB2ABAA2BB3ABB2ABABB2ABB5AA3BB8AA2BAA3BABB2AA2BB14AA5BABABB4ABB10AA5BABABAA3BABABB4AA2BB2AA2BB5AA2BABB2ABABAA2BB3ABB2AA2BB5ABABB3ABAA2BB4AA3BB5ABB3AA2BB2ABABABB2ABB2AA4BABB3ABB3ABB6ABB2AA2BB3ABB2AA3BABABABABB4AA4BB3AA2BB2AA5BB2AA2BABABABAA2BB3AA2BB2AA2BB3ABB4ABB6ABB8AA2BB5AA2BB12ABB18A$A"}',
+        wall: "Farmland_0887",
+        floor: "Grass_0860",
+        ceil: "BlueSky_0852",
+        start: '[82,3]',
+        decals: '[[185,1,"DarkWallSDXL300","texture"],[187,1,"DarkWallSDXL300","texture"],[207,1,"DarkWallSDXL300","texture"],[187,3,"DarkWallSDXL300","texture"],[185,5,"DarkWallSDXL300","texture"],[37,7,"JuggernautDarkwalls_0917","texture"],[17,7,"JuggernautDarkwalls_0917","texture"],[39,7,"JuggernautDarkwalls_0917","texture"],[39,3,"JuggernautDarkwalls_0917","texture"],[37,5,"JuggernautDarkwalls_0917","texture"]]',
+        gates: '[[83,3,"37.1","31.3","Closed"]]',
+        keys: '[[30,1],[402,1]]',
+        doors: '[77]',
+        lairs: '[[66,1,"Lair40"],[372,5,"Lair47"],[251,3,"Lair12"]]',
         }
 };

@@ -64,6 +64,13 @@ const TEXTURE_LIST = [
     "BlueSky_0852", "BlueSky_0853", "BlueSky_0854", "BlueSky_0855", "BrightForest_0845", "BrightForest_0846", "BrightForest_0847", "BrightForest_0848", "BrightForest_0849", "BrightForest_0850", "BrightForest_0851",
     "Grass_0856", "Grass_0857", "Grass_0858", "Grass_0859", "Grass_0860", "Grass_0861", "GreanLeafWall_0862", "GreanLeafWall_0863", "GreanLeafWall_0864", "GreanLeafWall_0865", "GreanLeafWall_0866", "GreanLeafWall_0867",
     "GreanLeafWall_0868", "GreanLeafWall_0869", "GreanLeafWall_0870", "GreanLeafWall_0871",
+    "Farmland_0880", "Farmland_0881", "Farmland_0882", "Farmland_0883", "Farmland_0884", "Farmland_0885", "Farmland_0886", "Farmland_0887", "Farmland_0888", "Farmland_0889", "GreenAndGreyFloor", "GreyRockWall_0872",
+    "GreyRockWall_0873", "GreyRockWall_0874", "GreyRockWall_0875", "GreyRockWall_0876", "GreyRockWall_0877", "GreyRockWall_0878", "GreyRockWall_0879",
+    "GrasslandJuggernaut_0927", "GrasslandJuggernaut_0928", "GrasslandJuggernaut_0929", "GrasslandJuggernaut_0930", "GrasslandJuggernaut_0931", "GrasslandJuggernaut_0932", "JuggernautDarkwalls_0890", "JuggernautDarkwalls_0891", "JuggernautDarkwalls_0892", "JuggernautDarkwalls_0893", "JuggernautDarkwalls_0894", "JuggernautDarkwalls_0895",
+    "JuggernautDarkwalls_0896", "JuggernautDarkwalls_0897", "JuggernautDarkwalls_0898", "JuggernautDarkwalls_0899", "JuggernautDarkwalls_0900", "JuggernautDarkwalls_0901", "JuggernautDarkwalls_0902", "JuggernautDarkwalls_0903", "JuggernautDarkwalls_0904", "JuggernautDarkwalls_0905", "JuggernautDarkwalls_0906", "JuggernautDarkwalls_0907",
+    "JuggernautDarkwalls_0908", "JuggernautDarkwalls_0909", "JuggernautDarkwalls_0910", "JuggernautDarkwalls_0911", "JuggernautDarkwalls_0912", "JuggernautDarkwalls_0913", "JuggernautDarkwalls_0914", "JuggernautDarkwalls_0915", "JuggernautDarkwalls_0916", "JuggernautDarkwalls_0917", "JuggernautDarkwalls_0918", "JuggernautDarkwalls_0919",
+    "JuggernautDarkwalls_0920", "JuggernautDarkwalls_0921", "JuggernautDarkwalls_0922", "JuggernautDarkwalls_0923", "JuggernautDarkwalls_0924", "JuggernautDarkwalls_0925", "JuggernautDarkwalls_0926", "RockAndWoodWall1", "RockWall441", "RockWall442", "RoughRockCeiling1", "XCeiling1",
+    "XCeiling2", "XCeiling3", "XCeiling6",
 ].sort();
 
 /** Decals */

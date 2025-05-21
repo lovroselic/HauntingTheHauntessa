@@ -22,12 +22,7 @@ const INTERACTION_ITEM = {
         inventorySprite: "Acorn",
         text: "Squirrels like them."
     },
-    Pearl: {
-        name: "Pearl",
-        category: "interaction_item",
-        inventorySprite: "Pearl",
-        text: "Pearl looks like moon's tear."
-    },
+
     Fish: {
         name: "Fish",
         category: "interaction_item",
@@ -237,16 +232,7 @@ const INTERACTION_ITEM = {
         inventorySprite: "Dough",
     },
 
-    Amethyst: {
-        name: "Amethyst",
-        category: "interaction_item",
-        inventorySprite: "Amethyst",
-    },
-    Moonstone: {
-        name: "Moonstone",
-        category: "interaction_item",
-        inventorySprite: "Moonstone",
-    },
+    
     PocketRocket: {
         name: "PocketRocket",
         category: "interaction_item",
@@ -310,12 +296,7 @@ const INTERACTION_ITEM = {
         inventorySprite: "PurpleTear",
     },
    
-    Shell: {
-        name: "Shell",
-        category: "interaction_item",
-        inventorySprite: "Shell",
-        text: "Pretty shell."
-    },
+   
     Crown: {
         name: "Crown",
         category: "interaction_item",
