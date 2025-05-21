@@ -29,6 +29,19 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    RedHeadForestWariorr: {
+        name: "RedHeadForestWariorr",
+        sprite: "RedHeadForestWariorr",
+        which: "attack",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "SkillKick",
+        price: 2500,
+        level: 1,
+        text: "Wanna kick some balls? For 2500 gold I will let you win.",
+        introduce: true,
+        voice: "FemaleLow6",
+    },
     ForestShield: {
         name: "ForestShield",
         sprite: "ForestShield",
@@ -97,7 +110,7 @@ const SHRINE_TYPE = {
     DaggerEtte: {
         name: "DaggerEtte",
         sprite: "DaggerEtte",
-        which: "crest",
+        which: "attack",
         category: 'crest',
         interactionCategory: 'shrine',
         inventorySprite: "SkillKick",
@@ -3131,6 +3144,45 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    OrangePicker: {
+        name: "OrangePicker",
+        sprite: "OrangePicker",
+        category: 'crest',
+        voice: "Female",
+        wants: ["Orange", "Orange", "Orange"],
+        gives: "OrangeJuice",
+        text: {
+            intro: "Wanna squeeze something sweet and bold? I've got oranges begging to be rolled.",
+            progress: "You're getting close, the zest is right. A few more fruits to squeeze real tight!",
+            conclusion: "Juice is flowing, what a treat. Here's your glass, fresh and neat."
+        }
+    },
+    PearPicker: {
+        name: "PearPicker",
+        sprite: "PearPicker",
+        category: 'crest',
+        voice: "Female6",
+        wants: ["Pear", "Pear", "Pear"],
+        gives: "Pie",
+        text: {
+            intro: "Looking for something firm and round? I've got pears all over the ground.",
+            progress: "Mmm, juicy start, but not quite there. Bring me more, if you dare!",
+            conclusion: "That basket's full and so am I. Here's your pear pie perfectly sly."
+        }
+    },
+    ApplePicker: {
+        name: "ApplePicker",
+        sprite: "ApplePicker",
+        category: 'crest',
+        voice: "Female4",
+        wants: ["Apple", "Apple", "Apple"],
+        gives: "Pie",
+        text: {
+            intro: "Care to help me fill my sack? I'm picking apples round the back.",
+            progress: "You're halfway there, don't make me pout. A few more apples, then we make out... the pie, I mean.",
+            conclusion: "You filled my basket, oh what a thrill! Here's your pie, hot and ready. Fresh from the still."
+        }
+    },
     TheTourist: {
         name: "TheTourist",
         sprite: "TheTourist",

@@ -1126,6 +1126,10 @@ LoadSprites = [
     { srcName: "EntityPictures/TheTourist.jpg", name: "TheTourist" },
     { srcName: "EntityPictures/ForestShield.jpg", name: "ForestShield" },
     { srcName: "EntityPictures/Navigator.jpg", name: "Navigator" },
+    { srcName: "EntityPictures/ApplePicker2.jpg", name: "ApplePicker" },
+    { srcName: "EntityPictures/RedHeadForestWariorr.jpg", name: "RedHeadForestWariorr" },
+    { srcName: "EntityPictures/PearPicker.jpg", name: "PearPicker" },
+    { srcName: "EntityPictures/OrangePicker.jpg", name: "OrangePicker" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
@@ -1268,6 +1272,7 @@ LoadSprites = [
     { srcName: "Scrolls/SCR_DrainMana2.png", name: "SCR_DrainMana" },
     { srcName: "Scrolls/SCR_FeatherFall.png", name: "SCR_FeatherFall" },
     { srcName: "Scrolls/SCR_Radar2.png", name: "SCR_Radar" },
+    { srcName: "Scrolls/SCR_VeryLucky.png", name: "SCR_VeryLucky" },
 
     //gold, valuables
     { srcName: "Items/BlueGem.png", name: "BlueGem" },
@@ -1291,6 +1296,7 @@ LoadSprites = [
     { srcName: "Status/Wings.png", name: "Wings" },
     { srcName: "Status/FeatherFall.png", name: "FeatherFall" },
     { srcName: "Status/Radar2.png", name: "Radar" },
+    { srcName: "Status/GoldClover.png", name: "GoldClover" },
 
     //health items
     { srcName: "Items/BeerHealth.png", name: "BeerHealth" },

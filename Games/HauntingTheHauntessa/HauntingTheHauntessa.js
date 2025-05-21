@@ -76,9 +76,9 @@ const DEBUG = {
         ElvenSmith wants "SilverBar", "IronBar", "RedBar", "ArmorBlueprint",   gives InfernalArmor
 
 
-        Apple picker wants "Apple", "Apple", "Apple" gives Pie
-        Pear picker wants "Pear", "Pear", "Pear" gives Pie
-        Orange picker wants "Orange", "Orange", "Orange" gives OrangeJuice
+            DONE Apple picker wants "Apple", "Apple", "Apple" gives Pie
+            DONE Pear picker wants "Pear", "Pear", "Pear" gives Pie
+            DONE Orange picker wants "Orange", "Orange", "Orange" gives OrangeJuice
 
         Fox wants "Chicken", "Chicken", "Chicken" gives RedLeatherBoots
         Wolf wants "Sheep", "Sheep", "Sheep" gives RedLatexBra
@@ -104,9 +104,9 @@ const DEBUG = {
         "Orange"
         "Orange"
         "Orange"
-        "Pie"
-        "Pie"
-        "OrangeJuice"
+            DONE "Pie" --> (37) ApplePicker
+            DONE "Pie" -->(37) PearPicker
+            DONE "OrangeJuice"--> (37) OrangePicker
         "Chicken"
         "Chicken"
         "Chicken"
@@ -136,6 +136,8 @@ const DEBUG = {
             - mana
             - health
             - defense
+            - attack
+        NOT YET: magic (forbidden forest) 
     
 
         Trainers
@@ -159,7 +161,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 37; //4 --> 28
+        GAME.level = 38; //4 --> 28
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -213,10 +215,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            "Apple", "Apple", "Apple",
-            "Pear", "Pear", "Pear",
-            "Orange", "Orange", "Orange",
-            "HornedHelmet","RedBar",
+            "HornedHelmet", "RedBar",
             "RedLeatherBoots", "RedLatexBra", "RedLatexPanties",
 
         ];
@@ -332,6 +331,7 @@ const INI = {
     JUMP_POWER: 1.55,                    // jump distance in grid units 1.55 default
     MAX_JUMP_POWER: 3.5,
     LUCKY_TIME: 59,
+    VERY_LUCKY_LUCK: 5,
     FLIGHT_TIME: 59,
     RADAR_TIME: 99,
     FEATHER_TIME: 59,
@@ -341,7 +341,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.21.5",
+    VERSION: "0.21.6",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -418,11 +418,11 @@ const PRG = {
 
         /** dev settings */
         if (DEBUG.VERBOSE) {
-            WebGL.VERBOSE = true;
+            //WebGL.VERBOSE = true;
             //AI.VERBOSE = true;
             ENGINE.verbose = true;
             //MAP_TOOLS.INI.VERBOSE = true;
-            MINIMAP.verbose();
+            //MINIMAP.verbose();
         }
         //WebGL.PRUNE = false;
     },
@@ -507,6 +507,7 @@ class Scroll {
         console.warn("scroll action", this);
         let T;
         let count = 0;
+        const luckyTimerId = "luckyTimer";
         switch (this.type) {
             case "Cripple":
                 for (let enemy of ENTITY3D.POOL) {
@@ -642,13 +643,24 @@ class Scroll {
                 break;
             case "Luck":
                 HERO.lucky();
-                const luckyTimerId = "luckyTimer";
                 if (ENGINE.TIMERS.exists(luckyTimerId)) {
                     T = ENGINE.TIMERS.access(luckyTimerId);
                     T.extend(INI.LUCKY_TIME);
                 } else {
                     T = new CountDown(luckyTimerId, INI.LUCKY_TIME, HERO.cancelLuck);
                     let status = new Status("Luck", "Clover");
+                    HERO.inventory.status.push(status);
+                    TITLE.keys();
+                }
+                break;
+            case "VeryLucky":
+                HERO.lucky(INI.VERY_LUCKY_LUCK);
+                if (ENGINE.TIMERS.exists(luckyTimerId)) {
+                    T = ENGINE.TIMERS.access(luckyTimerId);
+                    T.extend(INI.LUCKY_TIME);
+                } else {
+                    T = new CountDown(luckyTimerId, INI.LUCKY_TIME, HERO.cancelLuck);
+                    let status = new Status("VeryLucky", "GoldClover");
                     HERO.inventory.status.push(status);
                     TITLE.keys();
                 }
@@ -1075,8 +1087,8 @@ const HERO = {
             }
         }
     },
-    lucky() {
-        HERO.luck++;
+    lucky(luck = 1) {
+        HERO.luck += luck;
     },
     unlucky() {
         HERO.luck = 0;
