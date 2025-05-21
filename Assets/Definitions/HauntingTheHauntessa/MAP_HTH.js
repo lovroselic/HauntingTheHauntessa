@@ -47,8 +47,8 @@ const MAP_TEXT = {
     35: "",
     36: "",
     37: "Smooth grassland with rolling hills. What am I doing here?",
-    38: "Looks like a farm.",
-    39: "",
+    38: "Looks like a farm. Smells like a farm. I guess its a ... farm.",
+    39: "The castle of Dutchessa Nylonessa. One of my many cousins. Or something.",
 
 };
 
@@ -925,7 +925,7 @@ const MAP = {
         gates: '[[356,3,"36.1","34.4","Closed"],[526,3,"36.2","34.5","Closed"]]',
     }
     ,
-    37 : {
+    37: {
         name: "Farmland",
         sg: 0,
         maxSpawned: -1,
@@ -944,16 +944,16 @@ const MAP = {
         shrines: '[[32,5,"RedHeadForestWariorr"]]',
         doors: '[77]',
         lairs: '[[66,1,"Lair40"],[372,5,"Lair47"],[251,3,"Lair12"]]',
-        }
+    }
     ,
-    38 : {
+    38: {
         name: "The Farm",
         sg: 0,
         maxSpawned: -1,
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"19","height":"19","depth":3,"map":"BB3AA3BABAA7BAA11BB2AA6BAA6BB2AA12ÁAA8BABAA6BAA14BAA2BŁAɁсࡁABB2ABB4AA4ÁÁ3AA5ÁAA3ÁAA10BB5AA7BB5ABB2AA3BB2AA6BAA3BB2AA8BABAA11BB7AA2BB4ABB37ABABB6AA3BB4AA5BAA2BB2ABB3ABB3ABB42ABAA2BB2ABB19ABB8ABB6ABB9ABAA2BB11ABB31ABB8AA2BAA3BB11ABB6ABB9ABB92ABB24ÁBB135$ABB73ÁBB3ÁÁ5BB7ÁBÁÁ2BB8ÁÁ3BB53ÁBB13ÁÁ118BB2AA6ÁBÁÁ43BB6ÁBÁÁ7BB4AA4"}',
+        data: '{"width":"19","height":"19","depth":3,"map":"BB3AA3BABAA7BAA11BB2AA6BAA6BB2AA12ÁAA8BABAA6BAA14BAA2BŁAɁсࡁABB2ABB4AA4ÁÁ3AA5ÁAA3ÁAA10BB5AA7BB5ABB2AA3BB2AA2BAA4BAA3BB2AA8BABB2AA11BB7AA2BB4ABB39ABABB6AA3BB4AA5BABABB2ABB4ABB3ABB18ABB26ABAA2BB2ABB20ABB8ABB7ABB9ABABABB11ABB34ABB5ÁBB3AA2BAA3BB11ABB6ABB9ABB81ABB7ABB147$ABB73ÁBB3ÁÁ5BB7ÁBÁÁ2BB8ÁÁ3BB53ÁBB13ÁÁ118BB2AA6ÁBÁÁ43BB6ÁBÁÁ7BB4AA4"}',
         wall: "RockWall_SDXL_002",
         floor: "Wood8",
         ceil: "IvyBricks101",
@@ -961,7 +961,21 @@ const MAP = {
         lights: '[[503,1,"FluxLight111c","standardSoft"],[503,3,"DuaLLantern_016","standardSoft"],[503,5,"DuaLLantern_029","standardSoft"],[864,7,"SkullLantern57","standardYellow"]]',
         gates: '[[351,1,"38.1","37.2","Closed"]]',
         entities: '[[370,7,"ApplePicker"],[512,3,"PearPicker"],[494,5,"OrangePicker"]]',
-        }
+        lairs: '[[1052,1,"Lair66"],[1056,1,"Lair69"]]',
+    }
     ,
-    39: {}
+    39: {
+        name: "Castle of Dutchessa Nylonessa",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"21","height":"21","depth":5,"map":"BB2ABABB55ABB24$BB2119A"}',
+        wall: "DarkWallSDXL332",
+        floor: "RedMArbleFloor3",
+        ceil: "DarkWallSDXL322",
+        start: '[31,7]',
+        gates: '[[10,7,"39.1","37.3","Closed"]]',
+    }
 };

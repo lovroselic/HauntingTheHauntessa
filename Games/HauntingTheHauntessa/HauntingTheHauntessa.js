@@ -71,7 +71,7 @@ const DEBUG = {
 
         ChubbyMaid wants Pie, Pie, JUice gives GoldenBracelet
         CaveBabe(####)  wants Pearl, Moonstone, Amethyst Gives Ring 
-        ##### wants _____ gives GoldenNecklace (mountain related, granny?, sorceress - withc)
+        ##### wants _____ gives GoldenNecklace (mountain related, granny?, sorceress - withc, alien)
 
         ElvenSmith wants "SilverBar", "IronBar", "RedBar", "ArmorBlueprint",   gives InfernalArmor
 
@@ -161,7 +161,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 38; //4 --> 28
+        GAME.level = 39; //4 --> 28
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -341,7 +341,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.21.6",
+    VERSION: "0.21.7",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
