@@ -125,7 +125,6 @@ class IAM {
                 this.poolToIA(map[this.IA]);
                 break;
             case "3D":
-                console.warn("setup in progress", ...arguments);
                 map[this.IA] = new IndexArray3D(map.width, map.height, map.depth, byte, banks);
                 this.poolToIA3D(map[this.IA]);
                 break;

@@ -267,6 +267,11 @@ const VOICE = {
     voice: 0,
     setting: new VoiceSetting(0.5, 0.9, 1.0)
   },
+  'GlaDOSHigh': {
+    source: ["Hazel"],
+    voice: 0,
+    setting: new VoiceSetting(0.5, 1.9, 1.0)
+  },
   'Princess': {
     source: ["Zira"],
     voice: 0,

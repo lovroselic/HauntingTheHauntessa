@@ -2543,11 +2543,13 @@ const ENGINE = {
         },
         start(start, z) {
             let grid = this.GA.indexTo2DGridSlice(start[0], z);
+            if (!grid) return;
             let mid = GRID.gridToCenterPX(grid);
             ENGINE.drawCircle(this.CTX, mid, ENGINE.DD.decalWidth * 2, "#000000");
         },
         light(light, z) {
             let grid = this.GA.indexTo2DGridSlice(light[0], z);
+            if (!grid) return;
             let dir = Vector.fromInt(light[1]);
             let color = colorVectorToHex(LIGHT_COLORS[light[3]]);
             let mid = GRID.gridToCenterPX(grid);
@@ -2556,17 +2558,20 @@ const ENGINE = {
         },
         decal(decal, z) {
             let grid = this.GA.indexTo2DGridSlice(decal[0], z);
+            if (!grid) return;
             let dir = Vector.fromInt(decal[1]);
             this.dotOrLine(grid, dir, "#0000FF");
         },
         object(obj, z) {
             let grid = this.GA.indexTo2DGridSlice(obj[0], z);
+            if (!grid) return;
             let mid = GRID.gridToCenterPX(grid);
             let text = `-${obj[1]}-`;
             this.write(mid, text, "#00F");
         },
         gold(gold, z) {
             let grid = this.GA.indexTo2DGridSlice(gold[0], z);
+            if (!grid) return;
             let mid = GRID.gridToCenterPX(grid).translate(UpLeft, this.W / 2);
             this.CTX.fillStyle = "gold";
             this.CTX.fillRect(mid.x, mid.y, this.W, this.W / 2);
@@ -2575,6 +2580,7 @@ const ENGINE = {
         },
         entity(entity, z, color) {
             let grid = this.GA.indexTo2DGridSlice(entity[0], z);
+            if (!grid) return;
             let dir = Vector.fromInt(entity[1]);
             this.dotOrLine(grid, dir, color);
             let mid = GRID.gridToCenterPX(grid);
@@ -2582,6 +2588,7 @@ const ENGINE = {
         },
         shrine(shrine, z) {
             let grid = this.GA.indexTo2DGridSlice(shrine[0], z);
+            if (!grid) return;
             let mid = GRID.gridToCenterPX(grid);
             let dir = Vector.fromInt(shrine[1]);
             let start = mid.translate(dir, this.W);
@@ -2594,6 +2601,7 @@ const ENGINE = {
         },
         gate(gate, z) {
             let grid = this.GA.indexTo2DGridSlice(gate[0], z);
+            if (!grid) return;
             let bottomMid = GRID.gridToBottomCenterPX(grid);
             let point = bottomMid;
             this.CTX.strokeStyle = "#966F33";
@@ -2675,6 +2683,7 @@ const ENGINE = {
         },
         lair(lair, z) {
             let grid = this.GA.indexTo2DGridSlice(lair[0], z);
+            if (!grid) return;
             let start = GRID.gridToCenterPX(grid);
             let dir = Vector.fromInt(lair[1]);
             let end = start.translate(dir, this.W);
@@ -2690,6 +2699,7 @@ const ENGINE = {
         },
         key(key, z) {
             let grid = this.GA.indexTo2DGridSlice(key[0], z);
+            if (!grid) return;
             const KEY_COLORS = ["gold", "silver", "red", "green", "blue", "#50C878", "purple", "beige", "cyan", "orange", "pink"];
             const color = KEY_COLORS[key[1]];
             let mid = GRID.gridToCenterPX(grid).translate(LEFT, this.W / 2);
@@ -2700,11 +2710,13 @@ const ENGINE = {
         },
         monster(monster, z) {
             let grid = this.GA.indexTo2DGridSlice(monster[0], z);
+            if (!grid) return;
             let mid = GRID.gridToCenterPX(grid);
             this.write(mid, monster[1]);
         },
         scroll(scroll, z) {
             let grid = this.GA.indexTo2DGridSlice(scroll[0], z);
+            if (!grid) return;
             let mid = GRID.gridToCenterPX(grid).translate(UpLeft, this.W / 2);
             this.CTX.fillStyle = "yellow";
             this.CTX.fillRect(mid.x, mid.y, this.W, this.W);
@@ -2716,6 +2728,7 @@ const ENGINE = {
         },
         container(container, z) {
             let grid = this.GA.indexTo2DGridSlice(container[0], z);
+            if (!grid) return;
             let mid = GRID.gridToCenterPX(grid);
             let start = mid.translate(LEFT, this.W / 2);
             this.CTX.fillStyle = "brown";
@@ -2731,6 +2744,7 @@ const ENGINE = {
         },
         skill(skill, z) {
             let grid = this.GA.indexTo2DGridSlice(skill[0], z);
+            if (!grid) return;
             let mid = GRID.gridToCenterPX(grid);
             const color = "red";
             this.write(mid, `* ${skill[1]} *`, color);
@@ -2739,6 +2753,7 @@ const ENGINE = {
         },
         potion(potion, z) {
             let grid = this.GA.indexTo2DGridSlice(potion[0], z);
+            if (!grid) return;
             let mid = GRID.gridToCenterPX(grid);
             let color = POTION_TYPES[potion[1]].toLowerCase();
             ENGINE.drawCircle(this.CTX, mid, decalWidth * 2, color);
@@ -2746,26 +2761,37 @@ const ENGINE = {
         },
         trigger(trigger, z) {
             let grid = this.GA.indexTo2DGridSlice(trigger[0], z);
-            let dir = Vector.fromInt(trigger[1]);
-            let pStart = this.dotOrLine(grid, dir, "#00FF00");
-            let mid2 = GRID.gridToCenterPX(this.GA.indexTo2DGridSlice(trigger[4], z));
-            this.CTX.save();
-            this.CTX.setLineDash([2, 3]);
-            ENGINE.drawLine(this.CTX, pStart, mid2, "#666", 1);
-            this.CTX.restore();
-            ENGINE.drawCircle(this.CTX, mid2, this.decalWidth * 1.5, "#CC0000");
+            let pStart = null;
+            if (grid) {
+                let dir = Vector.fromInt(trigger[1]);
+                pStart = this.dotOrLine(grid, dir, "#00FF00");
+            }
+            let grid2 = this.GA.indexTo2DGridSlice(trigger[4], z);
+            if (grid2) {
+                let mid = GRID.gridToCenterPX(grid2);
+                this.CTX.save();
+                this.CTX.setLineDash([2, 3]);
+                if (pStart) ENGINE.drawLine(this.CTX, pStart, mid, "#666", 1);
+                this.CTX.restore();
+                ENGINE.drawCircle(this.CTX, mid, this.decalWidth * 1.5, "#CC0000");
+            }
         },
         trap(trigger, z) {
             let grid = this.GA.indexTo2DGridSlice(trigger[0], z);
-            let dir = Vector.fromInt(trigger[1]);
-            let pStart = this.dotOrLine(grid, dir, "#00FF00");
-            let mid2 = GRID.gridToCenterPX(this.GA.indexTo2DGridSlice(trigger[5], z));
-            this.CTX.save();
-            this.CTX.setLineDash([2, 3]);
-            ENGINE.drawLine(this.CTX, pStart, mid2, "#666", 1);
-            this.CTX.restore();
-            ENGINE.drawCircle(this.CTX, mid2, this.decalWidth * 1.5, "#EE0033");
-            this.write(mid2, trigger[4])
+            let pStart = null;
+            if (grid) {
+                let dir = Vector.fromInt(trigger[1]);
+                pStart = this.dotOrLine(grid, dir, "#00FF00");
+            }
+            let grid2 = this.GA.indexTo2DGridSlice(trigger[5], z);
+            if (grid2) {
+                let mid = GRID.gridToCenterPX(grid2);
+                this.CTX.save();
+                this.CTX.setLineDash([2, 3]);
+                if (pStart) ENGINE.drawLine(this.CTX, pStart, mid, "#666", 1);
+                this.CTX.restore();
+                ENGINE.drawCircle(this.CTX, mid, this.decalWidth * 1.5, "#EE0033");
+            }
         }
     },
     BLOCKGRID: {

@@ -29,6 +29,19 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    CyBorgessia: {
+        name: "CyBorgessia",
+        sprite: "CyBorgessia",
+        which: "magic",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "SkillFireball",
+        price: 2500,
+        level: 1,
+        text: "Magic is just scince not understood. For 2500 gold I will teach you.",
+        introduce: true,
+        voice: "GlaDOSHigh",
+    },
     RedHeadForestWariorr: {
         name: "RedHeadForestWariorr",
         sprite: "RedHeadForestWariorr",
@@ -3025,6 +3038,12 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "Shell",
         text: "Pretty shell."
+    },
+    Moon: {
+        name: "Moon",
+        category: "interaction_item",
+        inventorySprite: "Moon",
+        text: "Moon? Really? What's next."
     },
 
     //books

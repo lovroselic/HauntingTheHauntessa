@@ -425,12 +425,7 @@ const INTERACTION_ITEM = {
         text: "Hey, it's a hay."
     },
    
-    Moon: {
-        name: "Moon",
-        category: "interaction_item",
-        inventorySprite: "Moon",
-        text: "Moon? Really? What's next."
-    },
+
     EmptyBottle: {
         name: "EmptyBottle",
         category: "interaction_item",

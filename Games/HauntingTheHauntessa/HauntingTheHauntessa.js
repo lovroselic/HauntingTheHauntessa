@@ -71,7 +71,7 @@ const DEBUG = {
 
         ChubbyMaid wants Pie, Pie, JUice gives GoldenBracelet
         CaveBabe(####)  wants Pearl, Moonstone, Amethyst Gives Ring 
-        ##### wants _____ gives GoldenNecklace (mountain related, granny?, sorceress - withc, alien)
+        Spacy ##### wants Moon, Moon, Moon gives GoldenNecklace 
 
         ElvenSmith wants "SilverBar", "IronBar", "RedBar", "ArmorBlueprint",   gives InfernalArmor
 
@@ -131,6 +131,9 @@ const DEBUG = {
         Shell, 
         Shell, 
         Shell
+        "Moon"
+        "Moon"
+        "Moon"
 
         Shrines:
             - mana
@@ -152,6 +155,7 @@ const DEBUG = {
             -blue
 
         Missing scrolls:
+            - fly
             - fly
             - fly
             
@@ -215,6 +219,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
+            "Moon", "Moon", "Moon",
             "HornedHelmet", "RedBar",
             "RedLeatherBoots", "RedLatexBra", "RedLatexPanties",
 
@@ -341,7 +346,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.21.7",
+    VERSION: "0.21.8",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

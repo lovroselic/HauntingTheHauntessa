@@ -1751,7 +1751,12 @@ class ArrayBasedDataStructure3D {
     indexTo2DGridSlice(index, z) {
         let offset = this.width * this.height * z;
         index -= offset;
-        return new Grid(index % this.width, Math.floor(index / this.width));
+        if (index < 0) return null;
+        let y1 = Math.floor(index / this.width);
+        let y2 = y1 % this.height;
+        if (y1 !== y2) return null;                             // it's not position on the slice
+        const grid = new Grid(index % this.width, y2);
+        return grid;
     }
 }
 

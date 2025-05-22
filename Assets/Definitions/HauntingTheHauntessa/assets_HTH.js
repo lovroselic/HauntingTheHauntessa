@@ -1130,6 +1130,7 @@ LoadSprites = [
     { srcName: "EntityPictures/RedHeadForestWariorr.jpg", name: "RedHeadForestWariorr" },
     { srcName: "EntityPictures/PearPicker.jpg", name: "PearPicker" },
     { srcName: "EntityPictures/OrangePicker.jpg", name: "OrangePicker" },
+    { srcName: "EntityPictures/CyBorgessia.jpg", name: "CyBorgessia" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
@@ -1384,6 +1385,7 @@ LoadSprites = [
     { srcName: "Items/Moonstone.png", name: "Moonstone" },
     { srcName: "Items/Pearl.png", name: "Pearl" },
     { srcName: "Items/Shell.png", name: "Shell" },
+    { srcName: "Items/Moon.png", name: "Moon" },
 
     //books
     { srcName: "Items/YoniBook.png", name: "YoniBook" },
