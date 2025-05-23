@@ -49,6 +49,10 @@ const MAP_TEXT = {
     37: "Smooth grassland with rolling hills. What am I doing here?",
     38: "Looks like a farm. Smells like a farm. I guess its a ... farm.",
     39: "The castle of Dutchessa Nylonessa. One of my many cousins. Or something.",
+    40: "",
+    41: "",
+    42: "",
+    43: "",
 
 };
 
@@ -975,9 +979,9 @@ const MAP = {
         wall: "DarkWallSDXL332",
         floor: "RedMArbleFloor3",
         ceil: "DarkWallSDXL322",
-        start: '[745,7]',
+        start: '[416,5]',
         lights: '[[740,5,"Fireplace101","fireplace"],[750,3,"Fireplace204","fireplace"],[932,7,"SkullLantern53","standard2"],[936,7,"SkullLantern58","standard2"],[1577,1,"Candelabra01","standardYellowDim"],[1774,7,"Candelabra01","standardYellowFaint"]]',
-        gates: '[[10,7,"39.1","37.3","Closed"]]',
+        gates: '[[10,7,"39.1","37.3","Closed"],[419,3,"39.2","43.1","Down"]]',
         doors: '[150,164]',
         triggers: '[[1828,1,"SmoothWallButton",0,1485]]',
         entities: '[[850,1,"DutchessaNylonessa"]]',
@@ -1033,5 +1037,20 @@ const MAP = {
         decals: '[[470,7,"HauntedForest02","texture"],[471,7,"HauntedForest02","texture"],[473,7,"HauntedForest02","texture"],[474,7,"HauntedForest02","texture"],[473,3,"HauntedForest02","texture"],[496,3,"HauntedForest02","texture"],[517,3,"HauntedForest02","texture"],[490,5,"HauntedForest02","texture"],[511,5,"HauntedForest02","texture"],[471,5,"HauntedForest02","texture"],[568,5,"HauntedForest04","texture"],[589,5,"HauntedForest04","texture"],[631,5,"HauntedForest04","texture"],[652,5,"HauntedForest04","texture"],[548,7,"HauntedForest04","texture"],[549,7,"HauntedForest04","texture"],[589,7,"HauntedForest04","texture"],[631,1,"HauntedForest04","texture"],[674,1,"HauntedForest04","texture"],[675,1,"HauntedForest04","texture"],[586,3,"HauntedForest10","texture"],[607,3,"HauntedForest10","texture"],[649,3,"HauntedForest10","texture"],[670,3,"HauntedForest10","texture"],[563,7,"HauntedForest10","texture"],[564,7,"HauntedForest10","texture"],[607,7,"HauntedForest10","texture"],[689,1,"HauntedForest10","texture"],[690,1,"HauntedForest10","texture"],[649,1,"HauntedForest10","texture"]]',
         lights: '[[808,1,"Moon58","moonlightBright"]]',
         gates: '[[430,1,"42.1","41.2","Closed"]]',
+    }
+    ,
+    43: {
+        name: "The Cellar",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":21,"height":21,"depth":1,"map":"BB87$BB353A"}',
+        wall: "DarkWallSDXL332",
+        floor: "RedMArbleFloor3",
+        ceil: "DarkWallSDXL322",
+        start: '[43,5]',
+        gates: '[[42,5,"43.1","39.2","Up"]]',
     }
 };
