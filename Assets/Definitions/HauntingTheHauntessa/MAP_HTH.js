@@ -964,6 +964,25 @@ const MAP = {
         lairs: '[[1052,1,"Lair66"],[1056,1,"Lair69"]]',
     }
     ,
+    39: {
+        name: "Castle of Dutchessa Nylonessa",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"21","height":"21","depth":5,"map":"BB2AA5BAA2BB3AA4ÁABB2ABB2AA20BAA6BAA23BABB2AA5ࡁсAA11BB3ABB2AA13BB2AA16ŁAA10ÁAŁBEBAA4BB2AA4BB7AA2BAA3BAA4BB5AA4BB3AA3BAA2BB4AA6BÁAA4BAA12EAA3ÁAA13BB2AA2BAA7BAA7BAA6BAA2BAA2BB5ÁBB2AA7BŁBAA4BAA5BABABB2AŁÁAA5ÁABAA8BAA7BB2AA2BB2AA3ÁABABB2ABABB3AA6ŁAÁAA2BB2AA2BB43ÁBB5ABB9ABB20ABB18ࡁBB20ÁBB17AA2BB3ABAA2BABB3ABB2ABB6ABB13AA2BB6AA3BсBB2ABB21ABB4AA2BB3ABB7ABB15ABB18AA4BABB5AA3BABB10ÁBB20AA2BB8ABB7ABAA2BB9ABB13ABB12AA2ÁÁ2ABB14ABABABB3ABB16ŁBB3AÁBB3ABB22ABB4AA2BB38ࡁBB14AA5BB4ABABB11AA2BB9ABABÁBÁABB15ABB10ࡁBB5ABB19ABABB4ABB4$BB159ÁBB39ÁÁ2BB13ABB70ÁBB110ÁABB8ÁBB15ÁBB2ÁBB16ÁÁ2BB13ABB7ÁABB10ÁBB2ÁÁ2BAA2BB12AÁBÁÁ2BB2ÁBB23ÁBB2ÁBÁBB20ÁÁ3BB6ABB3ABB7ABB2AA2BAA2BB93ABB36ABB6ÁBABABB40ABB9AA3BB17ɁBB44ÁBAA2ÁÁ21BÁÁ19AÁÁ18BÁÁ40BÁÁ2BÁÁ27BÁAA2ÁÁ25BB2ÁÁ13BÁBB4ÁÁ9BB2ÁÁ57BÁÁ11BÁÁ14BB2ÁÁ5BÁBÁÁ2BÁÁ8BB8ÁBB2ÁÁ9BB5ÁÁ7BB4ɁŁɁɁ2ࡁɁŁŁ3AA4сɁBсс2ɁŁŁ3сBB2ࡁࡁ2сAɁɁ2ࡁBсс2BB3ࡁA"}',
+        wall: "DarkWallSDXL332",
+        floor: "RedMArbleFloor3",
+        ceil: "DarkWallSDXL322",
+        start: '[745,7]',
+        lights: '[[740,5,"Fireplace101","fireplace"],[750,3,"Fireplace204","fireplace"],[932,7,"SkullLantern53","standard2"],[936,7,"SkullLantern58","standard2"],[1577,1,"Candelabra01","standardYellowDim"],[1774,7,"Candelabra01","standardYellowFaint"]]',
+        gates: '[[10,7,"39.1","37.3","Closed"]]',
+        doors: '[150,164]',
+        triggers: '[[1828,1,"SmoothWallButton",0,1485]]',
+        entities: '[[850,1,"DutchessaNylonessa"]]',
+    }
+    ,
     40: {
         name: "Entrance to the Forbidden Forest",
         sg: 0,
@@ -999,7 +1018,7 @@ const MAP = {
         shrines: '[[129,1,"CyBorgessia"]]',
     }
     ,
-    42 : {
+    42: {
         name: "Animal Kingdom",
         sg: 0,
         maxSpawned: -1,
@@ -1014,5 +1033,5 @@ const MAP = {
         decals: '[[470,7,"HauntedForest02","texture"],[471,7,"HauntedForest02","texture"],[473,7,"HauntedForest02","texture"],[474,7,"HauntedForest02","texture"],[473,3,"HauntedForest02","texture"],[496,3,"HauntedForest02","texture"],[517,3,"HauntedForest02","texture"],[490,5,"HauntedForest02","texture"],[511,5,"HauntedForest02","texture"],[471,5,"HauntedForest02","texture"],[568,5,"HauntedForest04","texture"],[589,5,"HauntedForest04","texture"],[631,5,"HauntedForest04","texture"],[652,5,"HauntedForest04","texture"],[548,7,"HauntedForest04","texture"],[549,7,"HauntedForest04","texture"],[589,7,"HauntedForest04","texture"],[631,1,"HauntedForest04","texture"],[674,1,"HauntedForest04","texture"],[675,1,"HauntedForest04","texture"],[586,3,"HauntedForest10","texture"],[607,3,"HauntedForest10","texture"],[649,3,"HauntedForest10","texture"],[670,3,"HauntedForest10","texture"],[563,7,"HauntedForest10","texture"],[564,7,"HauntedForest10","texture"],[607,7,"HauntedForest10","texture"],[689,1,"HauntedForest10","texture"],[690,1,"HauntedForest10","texture"],[649,1,"HauntedForest10","texture"]]',
         lights: '[[808,1,"Moon58","moonlightBright"]]',
         gates: '[[430,1,"42.1","41.2","Closed"]]',
-        }
+    }
 };
