@@ -64,12 +64,12 @@ const DEBUG = {
     checkPoint() {
         // area-2 - the journey part 1
         /*
-        Dutches wants GoldenNecklace, Ring, GoldenBracelet gives GoldKey
+            DONE Dutches wants GoldenNecklace, Ring, GoldenBracelet gives GoldKey
         RedRidingHood "RedLeatherBoots", "RedLatexBra", "RedLatexPanties" gives RedKey
         Inferna wants "HornedHelmet", "InfernalArmor"  gives blueKEy
        
 
-        ChubbyMaid wants Pie, Pie, JUice gives GoldenBracelet
+        HungryMaid wants Pie, Pie, JUice gives GoldenBracelet
         CaveBabe(####)  wants Pearl, Moonstone, Amethyst Gives Ring 
         Spacy ##### wants Moon, Moon, Moon gives GoldenNecklace 
 
@@ -86,15 +86,11 @@ const DEBUG = {
 
         BitchBabe wants Shell, Shell, Shell gives Pearl
 
-
-        
-        
-
             DONE Tourist wants: "Postcard", "Postcard", "Postcard" gives PinkKey
+            DONE "Postcard"
+            DONE "Postcard"
+            DONE "Postcard"
 
-            DONE "Postcard"
-            DONE "Postcard"
-            DONE "Postcard"
         "Apple", 
         "Apple", 
         Apple
@@ -140,7 +136,7 @@ const DEBUG = {
             - health
             - defense
             - attack
-        NOT YET: magic (forbidden forest) 
+            - magic 
     
 
         Trainers
@@ -150,9 +146,12 @@ const DEBUG = {
 
 
         Missing keys:
-            -gold
             -red
             -blue
+
+        KEy yet unused:
+             -pink RRH
+             -cyan Inferna
 
         Missing scrolls:
             - fly
@@ -165,7 +164,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 39; //4 --> 28
+        GAME.level = 42; //4 --> 28
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -346,7 +345,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.21.8",
+    VERSION: "0.21.9",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

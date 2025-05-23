@@ -38,7 +38,7 @@ const SHRINE_TYPE = {
         inventorySprite: "SkillFireball",
         price: 2500,
         level: 1,
-        text: "Magic is just scince not understood. For 2500 gold I will teach you.",
+        text: "Magic is just science not understood. For 2500 gold I will teach you.",
         introduce: true,
         voice: "GlaDOSHigh",
     },
@@ -3163,6 +3163,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    DutchessaNylonessa: {
+        name: "DutchessaNylonessa",
+        sprite: "DutchessaNylonessa",
+        category: 'crest',
+        voice: "FemaleHigh4",
+        wants: ["GoldenNecklace", "Ring", "GoldenBracelet"],
+        gives: "GoldKey",
+        text: {
+            intro: "My jewels are gone, it is quite a mess. Find them now, or face my stress!",
+            progress: "That shines a bit, but not enough. Bring the rest, I've lost my stuff!",
+            conclusion: "All returned, my wrath at bay. Here's your key, now go away."
+        }
+    },
     OrangePicker: {
         name: "OrangePicker",
         sprite: "OrangePicker",
