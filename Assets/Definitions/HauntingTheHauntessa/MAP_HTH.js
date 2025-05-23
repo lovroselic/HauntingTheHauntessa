@@ -1001,7 +1001,7 @@ const MAP = {
         start: '[248,5]',
         decals: '[[76,3,"HauntedForest09","texture"],[102,3,"HauntedForest09","texture"],[90,3,"HauntedForest09","texture"],[76,7,"HauntedForest09","texture"],[102,1,"HauntedForest09","texture"]]',
         lights: '[[418,5,"WallLamp33","standard2"]]',
-        gates: '[[247,5,"40.1","31.4","Closed"],[90,3,"40.2","41.1","Down"]]',
+        gates: '[[247,5,"40.1","31.4","Closed"],[90,3,"40.2","41.1","Down"],[177,7,"40.2","44.1","Cyan"],[333,1,"40.3","45.1","Pink"]]',
     }
     ,
     41: {
@@ -1046,11 +1046,19 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":21,"height":21,"depth":1,"map":"BB87$BB353A"}',
-        wall: "DarkWallSDXL332",
-        floor: "RedMArbleFloor3",
-        ceil: "DarkWallSDXL322",
+        data: '{"width":"21","height":"21","depth":1,"map":"BB2AA5BAA2BB2AA3BB3ABB2ABAA2BABABB3AA13BB2AA2BAA2BB2ABB5AA9BB4ABAA2BAA19BAA5BAA4BABAA2BB12AA3BB2ABAA2BAA3BB2ABB2ABB3ABABB2ABB4ABB2ABB2AA4BABB3ABB2ABB2ABABB6ABB4ABB5ABABB3ABB6AA2BB2AA9BB4AA2BB2AA6BABB2AA3BAA4BAA3BB2ABB2ABABABAA4BB3ABB2AA2BAA3BB2ABABB3ABB2AA3BB3ABB3AA6BB2ABB6ABABABB2AA2BABABB2ABB8ABB2AA2BB3ABB2ABB3ABB2ABABB2ABABAA4BABAA5BB5AA5BB3AA3BB4AA2BAA2BB2ABB32A$"}',
+        wall: "BlackWall43",
+        floor: "BlackWall40",
+        ceil: "MarbleFloor1003",
         start: '[43,5]',
         gates: '[[42,5,"43.1","39.2","Up"]]',
+    }
+    ,
+    44: {
+        //Inferna
+    }
+    ,
+    45: {
+        //redRidingHood
     }
 };
