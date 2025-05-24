@@ -861,7 +861,7 @@ const MAP = {
         oracles: '[[84,3,"Navigator"]]',
     }
     ,
-    33 : {
+    33: {
         name: "Old Bridge",
         sg: 0,
         maxSpawned: 4,
@@ -878,7 +878,7 @@ const MAP = {
         gates: '[[1320,7,"33.1","32.2","Closed"],[1738,1,"33.2","34.1","Gold"],[1424,3,"33.3","46.1","Closed"]]',
         lairs: '[[80,7,"Lair31"],[85,7,"Lair456"],[332,1,"Lair31"],[327,1,"Lair22"],[337,1,"Lair65"]]',
         monsterList: '["RedDragon","RedDragon","RedDragon","Dragon"]',
-        }
+    }
     ,
     34: {
         name: "Underworld Entrance",
@@ -1063,7 +1063,19 @@ const MAP = {
         //redRidingHood
     }
     ,
-    46:{
-        //cave
-    }
+    46 : {
+        name: "Underground Cave",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"17","height":"17","depth":9,"map":"BB13AA60BAA64BAA14BB2AA12BAA2ŁŁ2AÁABB67AA12BÁBB5ÁBABB7ÁBB4ÁBÁBB86$BB72ÁBB17ÁÁ2BB36ÁBB72ÁBB51ABB3ÁÁ3BB428ÁÁ2BÁBB20ÁÁ6BÁÁ3BB19ÁÁ3BB22ÁÁ4BB4ÁÁ3BB23ÁÁ5BB7ÁÁ8BB27ÁÁ9BÁÁ5BÁÁ6BÁÁ20BB3ÁÁ4BB13ÁBB173ÁBÁÁ4BB67ÁBÁBB6ÁÁ98AÁÁ95BÁÁ4BB2ÁÁ97BÁÁ92BB4ÁÁ190BÁÁ6BÁBÁÁ7BÁÁ9AÁÁ51AÁÁ6BÁAÁÁ33ࡁBŁBB3ÁÁ27AÁBÁÁ8ɁсÁÁ5BAÁBÁÁ5BB7AࡁBÁÁ7сÁÁ53BÁÁ4BÁÁ35BÁÁ13BÁÁ5BB4ÁÁ51ࡁÁBB4ÁÁ8AÁÁ21BÁÁ5AŁɁсBB43ÁÁ6BB5ɁɁ2ÁBÁBÁсÁÁ2BࡁÁÁ2BB2"}',
+        wall: "RoughCave09",
+        floor: "Relief08",
+        ceil: "RoughCave01",
+        start: '[42,5]',
+        lights: '[[1310,5,"SkullLantern51","standardYellowDim"],[1175,7,"Candle57","standardYellowDim"],[49,3,"Candle66","standardYellowFaint"]]',
+        gates: '[[2160,5,"46.1","33.3","Closed"]]',
+        }
 };

@@ -752,6 +752,23 @@ LoadTextures = [
     { srcName: "Wall/XCeiling2.jpg", name: "XCeiling2" },
     { srcName: "Wall/XCeiling3.jpg", name: "XCeiling3" },
     { srcName: "Wall/XCeiling6.jpg", name: "XCeiling6" },
+    { srcName: "Wall/Dune_0933.jpg", name: "Dune_0933" },
+    { srcName: "Wall/Dune_0934.jpg", name: "Dune_0934" },
+    { srcName: "Wall/Dune_0935.jpg", name: "Dune_0935" },
+    { srcName: "Wall/Dune_0936.jpg", name: "Dune_0936" },
+    { srcName: "Wall/Dune_0937.jpg", name: "Dune_0937" },
+    { srcName: "Wall/Dune_0938.jpg", name: "Dune_0938" },
+    { srcName: "Wall/Dune_0939.jpg", name: "Dune_0939" },
+    { srcName: "Wall/Dune_0940.jpg", name: "Dune_0940" },
+    { srcName: "Wall/Dune_0941.jpg", name: "Dune_0941" },
+    { srcName: "Wall/Dune_0942.jpg", name: "Dune_0942" },
+    { srcName: "Wall/Dune_0943.jpg", name: "Dune_0943" },
+    { srcName: "Wall/Dune_0944.jpg", name: "Dune_0944" },
+    { srcName: "Wall/Dune_0945.jpg", name: "Dune_0945" },
+    { srcName: "Wall/Dune_0946.jpg", name: "Dune_0946" },
+    { srcName: "Wall/Dune_0947.jpg", name: "Dune_0947" },
+    { srcName: "Wall/Dune_0948.jpg", name: "Dune_0948" },
+    { srcName: "Wall/Dune_0949.jpg", name: "Dune_0949" },
 
     /** decals that are textures */
 
@@ -11869,7 +11886,6 @@ LoadSprites = [
     { srcName: "PicDecals/FemDommes_17787.jpg", name: "FemDommes_17787" },
     { srcName: "PicDecals/FemDommes_17788.jpg", name: "FemDommes_17788" },
     { srcName: "PicDecals/FemDommes_17789.jpg", name: "FemDommes_17789" },
-
 ];
 
 console.log("%cAssets for CastleHaunt2 ready.", "color: orange");

@@ -71,6 +71,8 @@ const TEXTURE_LIST = [
     "JuggernautDarkwalls_0908", "JuggernautDarkwalls_0909", "JuggernautDarkwalls_0910", "JuggernautDarkwalls_0911", "JuggernautDarkwalls_0912", "JuggernautDarkwalls_0913", "JuggernautDarkwalls_0914", "JuggernautDarkwalls_0915", "JuggernautDarkwalls_0916", "JuggernautDarkwalls_0917", "JuggernautDarkwalls_0918", "JuggernautDarkwalls_0919",
     "JuggernautDarkwalls_0920", "JuggernautDarkwalls_0921", "JuggernautDarkwalls_0922", "JuggernautDarkwalls_0923", "JuggernautDarkwalls_0924", "JuggernautDarkwalls_0925", "JuggernautDarkwalls_0926", "RockAndWoodWall1", "RockWall441", "RockWall442", "RoughRockCeiling1", "XCeiling1",
     "XCeiling2", "XCeiling3", "XCeiling6",
+    "Dune_0933", "Dune_0934", "Dune_0935", "Dune_0936", "Dune_0937", "Dune_0938", "Dune_0939", "Dune_0940", "Dune_0941", "Dune_0942", "Dune_0943", "Dune_0944",
+    "Dune_0945", "Dune_0946", "Dune_0947", "Dune_0948", "Dune_0949"
 ].sort();
 
 /** Decals */
