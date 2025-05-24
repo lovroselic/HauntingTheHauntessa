@@ -3045,6 +3045,11 @@ const INTERACTION_ITEM = {
         inventorySprite: "Moon",
         text: "Moon? Really? What's next."
     },
+    InfernalArmor: {
+        name: "InfernalArmor",
+        category: "interaction_item",
+        inventorySprite: "InfernalArmor",
+    },
 
     //books
     YoniBook: {

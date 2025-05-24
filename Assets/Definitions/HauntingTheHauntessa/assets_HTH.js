@@ -1387,6 +1387,7 @@ LoadSprites = [
     { srcName: "Items/Pearl.png", name: "Pearl" },
     { srcName: "Items/Shell.png", name: "Shell" },
     { srcName: "Items/Moon.png", name: "Moon" },
+    { srcName: "Items/InfernalArmor.png", name: "InfernalArmor" },
 
     //books
     { srcName: "Items/YoniBook.png", name: "YoniBook" },
