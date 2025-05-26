@@ -875,7 +875,7 @@ const MAP = {
         start: '[1419,5]',
         decals: '[[210,4,"Water30","texture"],[211,4,"Water30","texture"],[212,4,"Water30","texture"],[213,4,"Water30","texture"],[214,4,"Water30","texture"],[215,4,"Water30","texture"],[216,4,"Water30","texture"],[217,4,"Water30","texture"],[218,4,"Water30","texture"],[219,4,"Water30","texture"],[220,4,"Water30","texture"],[221,4,"Water30","texture"],[222,4,"Water30","texture"],[223,4,"Water30","texture"],[224,4,"Water30","texture"],[225,4,"Water30","texture"],[226,4,"Water30","texture"],[207,4,"Water30","texture"],[206,4,"Water30","texture"],[205,4,"Water30","texture"],[204,4,"Water30","texture"],[203,4,"Water30","texture"],[202,4,"Water30","texture"],[201,4,"Water30","texture"],[200,4,"Water30","texture"],[199,4,"Water30","texture"],[198,4,"Water30","texture"],[197,4,"Water30","texture"],[196,4,"Water30","texture"],[195,4,"Water30","texture"],[194,4,"Water30","texture"],[193,4,"Water30","texture"],[192,4,"Water30","texture"],[191,4,"Water30","texture"],[229,4,"Water30","texture"],[230,4,"Water30","texture"],[231,4,"Water30","texture"],[232,4,"Water30","texture"],[233,4,"Water30","texture"],[234,4,"Water30","texture"],[235,4,"Water30","texture"],[236,4,"Water30","texture"],[237,4,"Water30","texture"],[238,4,"Water30","texture"],[239,4,"Water30","texture"],[240,4,"Water30","texture"],[241,4,"Water30","texture"],[242,4,"Water30","texture"],[243,4,"Water30","texture"],[244,4,"Water30","texture"],[245,4,"Water30","texture"],[264,4,"Water30","texture"],[263,4,"Water30","texture"],[262,4,"Water30","texture"],[261,4,"Water30","texture"],[260,4,"Water30","texture"],[259,4,"Water30","texture"],[258,4,"Water30","texture"],[257,4,"Water30","texture"],[256,4,"Water30","texture"],[255,4,"Water30","texture"],[254,4,"Water30","texture"],[253,4,"Water30","texture"],[252,4,"Water30","texture"],[251,4,"Water30","texture"],[250,4,"Water30","texture"],[249,4,"Water30","texture"],[248,4,"Water30","texture"],[172,4,"Water30","texture"],[173,4,"Water30","texture"],[174,4,"Water30","texture"],[175,4,"Water30","texture"],[176,4,"Water30","texture"],[177,4,"Water30","texture"],[178,4,"Water30","texture"],[179,4,"Water30","texture"],[180,4,"Water30","texture"],[181,4,"Water30","texture"],[182,4,"Water30","texture"],[183,4,"Water30","texture"],[184,4,"Water30","texture"],[185,4,"Water30","texture"],[186,4,"Water30","texture"],[187,4,"Water30","texture"],[188,4,"Water30","texture"],[169,4,"Water30","texture"],[168,4,"Water30","texture"],[167,4,"Water30","texture"],[165,4,"Water30","texture"],[166,4,"Water30","texture"],[164,4,"Water30","texture"],[163,4,"Water30","texture"],[162,4,"Water30","texture"],[161,4,"Water30","texture"],[160,4,"Water30","texture"],[159,4,"Water30","texture"],[158,4,"Water30","texture"],[157,4,"Water30","texture"],[156,4,"Water30","texture"],[155,4,"Water30","texture"],[154,4,"Water30","texture"],[153,4,"Water30","texture"],[267,4,"Water30","texture"],[268,4,"Water30","texture"],[269,4,"Water30","texture"],[270,4,"Water30","texture"],[271,4,"Water30","texture"],[272,4,"Water30","texture"],[273,4,"Water30","texture"],[274,4,"Water30","texture"],[275,4,"Water30","texture"],[276,4,"Water30","texture"],[277,4,"Water30","texture"],[278,4,"Water30","texture"],[279,4,"Water30","texture"],[280,4,"Water30","texture"],[281,4,"Water30","texture"],[282,4,"Water30","texture"],[283,4,"Water30","texture"]]',
         lights: '[[1792,7,"FluxLight127","standard2"],[1798,7,"FluxLight127","standard2"],[948,3,"Candelabra17","standardYellowDim"],[73,7,"WallLamp35","standardYellowDim"]]',
-        gates: '[[1320,7,"33.1","32.2","Closed"],[1738,1,"33.2","34.1","Gold"],[1424,3,"33.3","46.1","Closed"]]',
+        gates: '[[1320,7,"33.1","32.2","Closed"],[1738,1,"33.2","34.1","Gold"],[1424,3,"33.3","46.1","Closed"],[1387,5,"33.4","49.1","Closed"]]',
         lairs: '[[80,7,"Lair31"],[85,7,"Lair456"],[332,1,"Lair31"],[327,1,"Lair22"],[337,1,"Lair65"]]',
         monsterList: '["RedDragon","RedDragon","RedDragon","Dragon"]',
     }
@@ -1081,10 +1081,67 @@ const MAP = {
     }
     ,
     47: {
-        //Mountains
+        name: "The Mountains",
+        sg: 0,
+        maxSpawned: 4,
+        killCountdown: 4,
+        killsRequiredToStopSpawning: 29,
+        spawnDelay: 9999,
+        data: '{"width":"17","height":"17","depth":1,"map":"BB3AA10BAA8BABB3AA4BB2AA14BB5ABB6AA2BB4ABABB3ABB2ABB15ABABABB5ABAA4BB3ABB4ABB3AA3BB2AA2BB4AA2BB3ABAA8BB7ABB4AA2BB2AA2BB5ABABB8ABB17AA5BB2AA5BB2AA2BB3ABB9ABB2ABB16AA2BB34ABB7$"}',
+        wall: "Mountains3",
+        floor: "Dirt1",
+        ceil: "BlueSky_0853",
+        start: '[207,5]',
+        gates: '[[221,5,"47.1","46.2","Closed"],[276,1,"47.2","51.1","Closed"]]',
     }
     ,
     48: {
         //Elven Smithy
     }
+    ,
+    49: {
+        name: "First Bitch",
+        sg: 0,
+        maxSpawned: 4,
+        killCountdown: 4,
+        killsRequiredToStopSpawning: 29,
+        spawnDelay: 9999,
+        data: '{"width":"17","height":"17","depth":1,"map":"BB3ABB11AA157BB44ABB3AA11BB36ABB2ABB18$"}',
+        wall: "Beach1",
+        floor: "Dune_0933",
+        ceil: "BlueSky_0855",
+        start: '[49,3]',
+        gates: '[[50,3,"49.1","33.4","Closed"],[287,1,"49.2","50.1","Closed"]]',
+    }
+    ,
+    50: {
+        name: "Second Bitch",
+        sg: 0,
+        maxSpawned: 4,
+        killCountdown: 4,
+        killsRequiredToStopSpawning: 29,
+        spawnDelay: 9999,
+        data: '{"width":17,"height":17,"depth":1,"map":"BB2ABB12AA143BAA13BB31AA2BB13AA11BB56$BB3A"}',
+        wall: "Beach2",
+        floor: "Dune_0934",
+        ceil: "BlueSky_0853",
+        start: '[32,7]',
+        gates: '[[15,7,"50.1","49.2","Closed"]]',
+    }
+    ,
+    51 : {
+        name: "Planet Arium",
+        sg: 0,
+        maxSpawned: 4,
+        killCountdown: 4,
+        killsRequiredToStopSpawning: 29,
+        spawnDelay: 9999,
+        data: '{"width":"17","height":"17","depth":3,"map":"BࡁBсAA9BB3AA15BAA3BAA11ÁÁ4AA7BAA6BB2AA13BB2AA2BABB3AA2BB2AA7ÁÁ2AA2ÁÁ2BB3AA3BB2AA2BB2AA7BB2AA2BB6ABB3ABB4AA2BABAA4ÁÁ6AÁAÁÁ7AÁAÁÁ3BB2AA3BABAA5BB2AA3BB10ABAA6BB10AA2BB7AA2BB26ÁBAA2BAA7BB4AA2BB3AA4ŁBB17ÁBB6ÁABB10ABB51$BB9ÁBB18ÁBB5ÁBABB23ÁBB5ÁÁ8BB4ÁÁ12BÁBB29ÁÁ2BB3ABB11ÁÁ4BB34ÁBB2ÁBÁÁ2BB4ÁÁ2BB16ABAA2ÁÁ2AA2ÁÁ7BB4ÁÁ4BB3ÁÁ2BÁBB2ÁAA3ÁAA4ÁÁ4AÁAÁÁ10BB2ÁÁ10BB3ÁBÁÁ7BÁÁ14AA2ÁÁ2AA2ÁÁ9AA2ÁÁ17BB2ÁÁ2BB2ÁÁ3BB2ÁÁ5AÁAA2ÁÁ4AÁÁ29BÁBÁÁ7BB2ÁÁ28AA3ÁÁ45BB6ÁBÁBB4ɁBB3"}',
+        wall: "RockWall_SDXL_002",
+        floor: "DetailedFloor1",
+        ceil: "NightSky1",
+        start: '[25,7]',
+        lights: '[[739,1,"Moon54","moonlightBright"],[739,7,"Moon55","moonlightSoft"]]',
+        gates: '[[8,7,"51.1","47.2","Closed"]]',
+        }
 };
