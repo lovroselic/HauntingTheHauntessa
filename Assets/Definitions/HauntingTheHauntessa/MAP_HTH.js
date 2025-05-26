@@ -1063,20 +1063,28 @@ const MAP = {
         //redRidingHood
     }
     ,
-    46 : {
+    46: {
         name: "Underground Cave",
         sg: 0,
         maxSpawned: -1,
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"17","height":"17","depth":9,"map":"BB7AA12BB2AA23BABB2AA7ÁAA3ࡁAA38BABAA8BAA4BAA2BB3AA10BAA4BÁAA3BB3AA4BAA7BAŁAA3BB4AA3ÁÁ2AA5ŁŁ2AÁABB3AÁÁ3BB9AA2BB2ABB10ABB4ABB48ÁBB2ÁBB8AA6ࡁɁBB3ÁŁсABB9ÁBABB6ÁBB9ÁBB9ÁBB3ÁBB26ÁABB9ÁBB12ABABB62$BB72ABB17ÁÁ2BB72ÁBB36ABB18ABB16ABB3ࡁBB11ABB325ÁBB15ÁBÁBÁBB22ÁÁ6BÁÁ3BB20ÁÁ3BB23ÁÁ5BB4ÁÁ3BÁBB24ÁÁ5BB8ÁÁ15BB29ÁÁ5BB2ÁÁ3BÁÁ12BB3ÁÁ4BB22ÁÁ2BB43ÁÁ5BB8ÁBÁBÁÁ2BB3ÁBB77ABB11ÁÁ2BB8ÁÁ4BB13ÁBÁÁ4BB50ÁBÁBÁÁ2BÁBÁBB4ABB2ABB3ABB2ÁAA2ÁÁ2BÁAÁÁ37AÁÁ9сBÁÁ7ɁࡁÁÁ35BB2ÁÁ9AÁÁ9BÁÁ9AÁÁ68BÁÁ10BB4ÁÁ8BB2ÁBÁÁ87BÁÁ5BÁBÁBÁÁ86BB4ÁÁ96AÁÁ3ࡁÁÁ32ɁÁÁ26ŁсÁÁ16BB2ÁÁ8BÁBÁBÁBÁÁ7BÁÁ10AÁÁ26AÁÁ21BÁÁ2BÁAÁÁ31ࡁBŁBB3ÁÁ11AÁÁ4ɁсÁÁ9BÁÁ7BABÁBB7AࡁÁBÁÁ7сÁÁ37BÁÁ3BÁÁ4BÁÁ39BÁBB5ÁÁ38ࡁÁBB4ÁBÁÁ3AÁÁ12AŁɁсÁÁ5AÁÁ4BB19ÁÁ4ŁɁсBB7ÁÁ2BB3ÁBB3ÁÁ2AÁÁ5AÁÁ18BÁÁ2BB2ÁÁ2BB2ÁɁɁ2BÁÁ2BB2ABÁÁ3BB2ÁсŁBÁÁ4BB2ࡁɁBB2сÁÁ4BB2"}',
-        wall: "RoughCave09",
+        data: '{"width":"17","height":"17","depth":9,"map":"BB7AA12BAA7BAA14BABABAA6ÁAA3ࡁAA22ÁAA3BAA2ŁAA12BAA2BAA9BB2ABAA4BAA3BB4AA12BB2AÁAA5BÁAA4BB2ABAA6BB2AA8BB2ABŁABABB3AÁÁ5AA3BB2AA3ÁÁ2AA4ÁAA2ŁŁ2AÁABABB2AÁÁ3BB9AA2BB3ABB14ABB2AA2BB5ABB52ABB2ÁBB5ÁBB2ÁBB11AA6ɁࡁBB5ÁŁсABB8ABB4ÁBABB6ÁBB4ÁBB11ÁBB12ÁBABB4ÁBB4ABB29ÁBB13ÁBB12ABB7ABABB5ABB78Á$BB72ABB17ÁÁ2BB96ABB8ABࡁBB9ABB90ABB169ÁBB14ÁÁ2BÁBB20ÁÁ6BB10ABB6ÁBÁBB2ÁÁ2BB15ABB2ÁÁ6BB6ÁࡁɁсBB22ÁÁ5BB4AŁAA3BB3ÁBÁÁ4BB2ÁÁ7BB5ÁBÁBB10ABB6ÁÁ2BB5ÁÁ4BB2ÁÁ6BB2ÁÁ2BB4ÁÁ3BÁBB23ÁBB11ÁBB2ÁBB21ABB5ÁÁ2BB3ÁBB6ÁBÁÁ2BÁBB5ÁBB39ABB35ABB13ÁÁ7BB6ÁBB2ÁÁ7BB5ÁÁ3BB8ÁÁ2BB51ÁBÁÁ3BB2ÁÁ2BB3ABB2ABB3ABB4ÁÁ3AÁÁ5AÁÁ3BÁAÁÁ35AÁÁ8сBÁBB4ɁࡁÁÁ2BÁÁ27BÁÁ5BÁÁ13AÁÁ17BÁÁ11AÁÁ56BÁÁ11BࡁÁÁ2BB3ÁÁ7BB3ÁÁ8BÁÁ12BÁÁ44AÁÁ9BÁÁ4BÁÁ5BÁÁ7BÁBÁÁ9BÁÁ75BB4ÁÁ18AÁÁ72ɁÁÁ9AÁÁ30ɁÁÁ15ŁсÁÁ12BB3ÁBÁÁ2BÁÁ6AÁÁ9BB2ÁÁ2BÁBÁÁ5BÁÁ29AÁÁ15BÁÁ9BÁÁ2AÁÁ26ŁAÁÁ15BÁÁ9BсࡁBÁBÁÁ5ABÁBB5AÁÁ40сÁÁ3BÁÁ4BB3ÁÁ5BÁÁ29BB3ÁÁ2ABÁBB5ÁÁ27BB2ÁÁ2ࡁÁBB5ÁÁ4AÁÁ6AŁɁсÁÁ3AÁÁ3BB13ÁÁ2ŁɁBB4ÁÁ4сࡁBB2ÁBÁÁ7BÁBB2ÁÁ2BÁBÁÁ2AÁÁ7AÁÁ16BÁÁ7BÁÁ3BB2ÁÁ3BɁÁɁɁ2BÁÁ3BB2ABÁÁ4BB2сÁсŁBÁÁ4BB2Áࡁࡁ2ɁBB2сÁÁ3BB2ÁBB2"}',
+        wall: "RoughCave20",
         floor: "Relief08",
         ceil: "RoughCave01",
-        start: '[1415,3]',
-        lights: '[[1310,5,"SkullLantern51","standardYellowDim"],[1175,7,"Candle57","standardYellowDim"],[49,3,"Candle66","standardYellowFaint"],[1120,3,"FluxLight128","standardYellowSoft"]]',
-        gates: '[[2160,5,"46.1","33.3","Closed"]]',
-        triggers: '[[1142,1,"SmoothWallButton",0,1075],[860,1,"SmoothWallButton",0,1041]]',
-        }
+        start: '[1577,1]',
+        lights: '[[1310,5,"SkullLantern51","standardYellowDim"],[1175,7,"Candle57","standardYellowDim"],[49,3,"Candle66","standardYellowFaint"],[1120,3,"FluxLight128","standardYellowSoft"],[1728,1,"DuaLLantern_004","standardSoft"],[2156,1,"FluxLight117","fireSoft"],[2040,5,"DuaLLantern_028","fireSoft"]]',
+        gates: '[[2160,5,"46.1","33.3","Closed"],[1835,3,"46.2","47.1","Closed"],[255,5,"46.3","48.1","Down"]]',
+        triggers: '[[1142,1,"SmoothWallButton",0,1075],[860,1,"SmoothWallButton",0,1041],[1698,7,"SmoothWallButton",0,1660],[1732,1,"SmoothWallButton",0,1643],[1631,3,"SmoothWallButton",0,1594],[2076,1,"SmoothWallButton",1,2109]]',
+    }
+    ,
+    47: {
+        //Mountains
+    }
+    ,
+    48: {
+        //Elven Smithy
+    }
 };
