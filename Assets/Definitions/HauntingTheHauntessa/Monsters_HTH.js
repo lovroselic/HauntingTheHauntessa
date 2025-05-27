@@ -3168,6 +3168,45 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    LeonaPard: {
+        name: "LeonaPard",
+        sprite: "LeonaPard",
+        category: 'crest',
+        voice: "FemaleVeryLow3",
+        wants: ["LittlePiggy", "LittlePiggy", "LittlePiggy"],
+        gives: "RedLatexPanties",
+        text: {
+            intro: "Piggies are tender, with a squeal so fine. Fetch me some, and the prize is mine!",
+            progress: "Snouts and squeaks, I smell the trail. Bring me more, and you won't fail.",
+            conclusion: "Three little piggies, juicy and neat. Here's my friend's panties, she made a tasty treat."
+        }
+    },
+    Foxie: {
+        name: "Foxie",
+        sprite: "Foxie",
+        category: 'crest',
+        voice: "FemaleVeryLow4",
+        wants: ["Chicken", "Chicken", "Chicken"],
+        gives: "RedLeatherBoots",
+        text: {
+            intro: "Chicks are my weakness, soft and sweet. Bring me three, a tasty treat!",
+            progress: "Mmm, feathers in the air. Keep 'em coming, we're almost there!",
+            conclusion: "Three fine birds, what a catch. Here's my friend's boots, she had great taste..."
+        }
+    },
+    Wolfie: {
+        name: "Wolfie",
+        sprite: "Wolfie",
+        category: 'crest',
+        voice: "FemaleVeryLow6",
+        wants: ["BabySheep", "BabySheep", "BabySheep"],
+        gives: "RedLatexBra",
+        text: {
+            intro: "I just love sheep, they're such sweet snacks, I mean friends! Bring me three, for snuggles and ends.",
+            progress: "How cute. But I need the set. Bring me more, don't make me fret.",
+            conclusion: "Three little lambs, how divine. Here's some lingerie, ex snack, I mean friend of mine."
+        }
+    },
     HungryMaid: {
         name: "HungryMaid",
         sprite: "HungryMaid",

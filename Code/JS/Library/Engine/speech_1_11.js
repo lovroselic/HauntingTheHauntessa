@@ -302,6 +302,11 @@ const VOICE = {
     voice: 0,
     setting: new VoiceSetting(0.7, 0.6, 1.0)
   },
+  'FemaleVeryLow3': {
+    source: ["Linda", "Hazel"],
+    voice: 0,
+    setting: new VoiceSetting(0.9, 0.2, 1.0)
+  },
   'FemaleHigh3': {
     source: ["Linda", "Hazel"],
     voice: 0,
@@ -316,6 +321,11 @@ const VOICE = {
     source: ["Susan", "Hazel"],
     voice: 0,
     setting: new VoiceSetting(0.7, 0.6, 1.0)
+  },
+  'FemaleVeryLow4': {
+    source: ["Susan", "Hazel"],
+    voice: 0,
+    setting: new VoiceSetting(0.95, 0.1, 1.0)
   },
   'FemaleHigh4': {
     source: ["Susan", "Hazel"],
@@ -346,6 +356,11 @@ const VOICE = {
     source: ["Catherine", "Hazel"],
     voice: 0,
     setting: new VoiceSetting(0.7, 1.6, 1.0)
+  },
+  'FemaleVeryLow6': {
+    source: ["Catherine", "Hazel"],
+    voice: 0,
+    setting: new VoiceSetting(1.1, 0.1, 1.0)
   },
 };
 console.log(`%cSPEECH ${SPEECH.VERSION} loaded.`, SPEECH.CSS);

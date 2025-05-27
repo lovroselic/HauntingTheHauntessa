@@ -67,30 +67,22 @@ const DEBUG = {
             DONE Dutches wants GoldenNecklace, Ring, GoldenBracelet gives GoldKey
         RedRidingHood "RedLeatherBoots", "RedLatexBra", "RedLatexPanties" gives RedKey
         Inferna wants "HornedHelmet", "InfernalArmor"  gives blueKEy
-       
-
             DONE HungryMaid wants Pie, Pie, JUice gives GoldenBracelet
         CaveBabe(####)  wants Pearl, Moonstone, Amethyst Gives Ring 
         Spacy ##### wants Moon, Moon, Moon gives GoldenNecklace 
-
         ElvenSmith wants "SilverBar", "IronBar", "RedBar", "ArmorBlueprint",   gives InfernalArmor
-
-
             DONE Apple picker wants "Apple", "Apple", "Apple" gives Pie
             DONE Pear picker wants "Pear", "Pear", "Pear" gives Pie
             DONE Orange picker wants "Orange", "Orange", "Orange" gives OrangeJuice
-
-        Fox wants "Chicken", "Chicken", "Chicken" gives RedLeatherBoots
-        Wolf wants "Sheep", "Sheep", "Sheep" gives RedLatexBra
-        Leopardess wants "LittlePiggy", "LittlePiggy", "LittlePiggy" gives RedLatexPanties
-
+            DONE Foxie wants "Chicken", "Chicken", "Chicken" gives RedLeatherBoots
+            DONE Wolf wants "BabySheep", "BabySheep", "BabySheep" gives RedLatexBra
+            DONE Leopardess wants "LittlePiggy", "LittlePiggy", "LittlePiggy" gives RedLatexPanties
         BitchBabe wants Shell, Shell, Shell gives Pearl
-
             DONE Tourist wants: "Postcard", "Postcard", "Postcard" gives PinkKey
-            DONE "Postcard"
-            DONE "Postcard"
-            DONE "Postcard"
 
+            DONE "Postcard"
+            DONE "Postcard"
+            DONE "Postcard"
         "Apple", 
         "Apple", 
         Apple
@@ -106,9 +98,9 @@ const DEBUG = {
         "Chicken"
         "Chicken"
         "Chicken"
-        Sheep"
-        Sheep"
-        Sheep"
+       "BabySheep", 
+       "BabySheep", "
+       BabySheep"
         HornedHelmet
         InfernalArmor
         "SilverBar", 
@@ -118,9 +110,9 @@ const DEBUG = {
         GoldenNecklace
         Ring
             DONE GoldenBracelet -->HungryMaid(39)
-        RedLatexPanties
-        RedLatexBra
-        RedLeatherBoots
+            DONE RedLatexPanties --> Leona Pard (42)
+            DONE RedLatexBra-->Wolfie (42)
+            DONE RedLeatherBoots --> Foxie (42)
         Pearl, 
         Moonstone, 
         Amethyst
@@ -346,7 +338,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.21.18",
+    VERSION: "0.21.19",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
