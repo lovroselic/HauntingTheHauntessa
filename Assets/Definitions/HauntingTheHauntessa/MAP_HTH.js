@@ -969,7 +969,7 @@ const MAP = {
         lairs: '[[1052,1,"Lair66"],[1056,1,"Lair69"]]',
     }
     ,
-    39: {
+    39 : {
         name: "Castle of Dutchessa Nylonessa",
         sg: 0,
         maxSpawned: -1,
@@ -980,15 +980,15 @@ const MAP = {
         wall: "DarkWallSDXL332",
         floor: "RedMArbleFloor3",
         ceil: "DarkWallSDXL322",
-        start: '[416,5]',
+        start: '[1514,1]',
         lights: '[[740,5,"Fireplace101","fireplace"],[750,3,"Fireplace204","fireplace"],[932,7,"SkullLantern53","standard2"],[936,7,"SkullLantern58","standard2"],[1577,1,"Candelabra01","standardYellowDim"],[1774,7,"Candelabra01","standardYellowFaint"]]',
         gates: '[[10,7,"39.1","37.3","Closed"],[419,3,"39.2","43.1","Down"]]',
         doors: '[150,164]',
         triggers: '[[1828,1,"SmoothWallButton",0,1485]]',
-        entities: '[[850,1,"DutchessaNylonessa"]]',
-    }
+        entities: '[[850,1,"DutchessaNylonessa"],[1388,7,"HungryMaid"]]',
+        }
     ,
-    40: {
+    40 : {
         name: "Entrance to the Forbidden Forest",
         sg: 0,
         maxSpawned: -1,
@@ -1000,10 +1000,10 @@ const MAP = {
         floor: "marbleFloor106",
         ceil: "WebbedFloor5",
         start: '[248,5]',
-        decals: '[[76,3,"HauntedForest09","texture"],[102,3,"HauntedForest09","texture"],[90,3,"HauntedForest09","texture"],[76,7,"HauntedForest09","texture"],[102,1,"HauntedForest09","texture"]]',
+        decals: '[[76,3,"HauntedForest09","texture"],[102,3,"HauntedForest09","texture"],[90,3,"HauntedForest09","texture"],[76,7,"HauntedForest09","texture"],[102,1,"HauntedForest09","texture"],[231,3,"ForbiddenForest90","picture"],[283,3,"ForbiddenForest99","picture"],[206,3,"BeyondForbiddenForest111","picture"],[310,3,"ForbiddenForest90","picture"],[211,5,"ForbiddenForest91","picture"],[289,5,"ForbiddenForest502","picture"],[60,7,"FF_AI_1","picture"],[112,1,"FF5","picture"],[289,1,"FF101","picture"],[211,7,"FF_AI_3","picture"]]',
         lights: '[[418,5,"WallLamp33","standard2"]]',
         gates: '[[247,5,"40.1","31.4","Closed"],[90,3,"40.2","41.1","Down"],[177,7,"40.2","44.1","Cyan"],[333,1,"40.3","45.1","Pink"]]',
-    }
+        }
     ,
     41: {
         name: "Forbidden Forest",

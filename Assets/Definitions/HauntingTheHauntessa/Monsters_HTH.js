@@ -3168,6 +3168,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    HungryMaid: {
+        name: "HungryMaid",
+        sprite: "HungryMaid",
+        category: 'crest',
+        voice: "Female5",
+        wants: ["Pie", "Pie", "OrangeJuice"],
+        gives: "GoldenBracelet",
+        text: {
+            intro: "Found a bracelet, or maybe I swiped it... But I'm too hungry to be hyped yet.",
+            progress: "A bite, but not the meal. Bring more goodies to seal the deal!",
+            conclusion: "Full and happy, no complaints. Here's the bracelet, don't tell the saints."
+        }
+    },    
     DutchessaNylonessa: {
         name: "DutchessaNylonessa",
         sprite: "DutchessaNylonessa",

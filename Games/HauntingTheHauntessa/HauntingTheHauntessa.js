@@ -69,7 +69,7 @@ const DEBUG = {
         Inferna wants "HornedHelmet", "InfernalArmor"  gives blueKEy
        
 
-        HungryMaid wants Pie, Pie, JUice gives GoldenBracelet
+            DONE HungryMaid wants Pie, Pie, JUice gives GoldenBracelet
         CaveBabe(####)  wants Pearl, Moonstone, Amethyst Gives Ring 
         Spacy ##### wants Moon, Moon, Moon gives GoldenNecklace 
 
@@ -117,7 +117,7 @@ const DEBUG = {
         "ArmorBlueprint"
         GoldenNecklace
         Ring
-        GoldenBracelet
+            DONE GoldenBracelet -->HungryMaid(39)
         RedLatexPanties
         RedLatexBra
         RedLeatherBoots
@@ -164,7 +164,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 51; //4 --> 28
+        GAME.level = 42; //4 --> 28
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -346,7 +346,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.21.17",
+    VERSION: "0.21.18",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
