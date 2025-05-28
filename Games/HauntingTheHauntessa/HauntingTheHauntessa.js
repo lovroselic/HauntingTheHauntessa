@@ -69,7 +69,7 @@ const DEBUG = {
         Inferna wants "HornedHelmet", "InfernalArmor"  gives blueKEy
             DONE HungryMaid wants Pie, Pie, JUice gives GoldenBracelet
         CaveBabe(####)  wants Pearl, Moonstone, Amethyst Gives Ring 
-        Spacy ##### wants Moon, Moon, Moon gives GoldenNecklace 
+            DONE SilverSpacy  wants Moon, Moon, Moon gives GoldenNecklace 
         ElvenSmith wants "SilverBar", "IronBar", "RedBar", "ArmorBlueprint",   gives InfernalArmor
             DONE Apple picker wants "Apple", "Apple", "Apple" gives Pie
             DONE Pear picker wants "Pear", "Pear", "Pear" gives Pie
@@ -107,7 +107,7 @@ const DEBUG = {
         "IronBar", 
         "RedBar", 
         "ArmorBlueprint"
-        GoldenNecklace
+            DONE GoldenNecklace --> SilverSpacy (51)
         Ring
             DONE GoldenBracelet -->HungryMaid(39)
             DONE RedLatexPanties --> Leona Pard (42)
@@ -156,7 +156,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 42; //4 --> 28
+        GAME.level = 44; //4 --> 28
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -222,7 +222,7 @@ const DEBUG = {
             HERO.inventory.item.push(item);
         }
 
-        let keys = ["Blue", "Silver"];
+        let keys = ["Cyan", "Silver", "Blue"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -338,7 +338,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.21.19",
+    VERSION: "0.21.20",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

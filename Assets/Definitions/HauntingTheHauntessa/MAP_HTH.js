@@ -969,7 +969,7 @@ const MAP = {
         lairs: '[[1052,1,"Lair66"],[1056,1,"Lair69"]]',
     }
     ,
-    39 : {
+    39: {
         name: "Castle of Dutchessa Nylonessa",
         sg: 0,
         maxSpawned: -1,
@@ -986,9 +986,9 @@ const MAP = {
         doors: '[150,164]',
         triggers: '[[1828,1,"SmoothWallButton",0,1485]]',
         entities: '[[850,1,"DutchessaNylonessa"],[1388,7,"HungryMaid"]]',
-        }
+    }
     ,
-    40 : {
+    40: {
         name: "Entrance to the Forbidden Forest",
         sg: 0,
         maxSpawned: -1,
@@ -1003,7 +1003,7 @@ const MAP = {
         decals: '[[76,3,"HauntedForest09","texture"],[102,3,"HauntedForest09","texture"],[90,3,"HauntedForest09","texture"],[76,7,"HauntedForest09","texture"],[102,1,"HauntedForest09","texture"],[231,3,"ForbiddenForest90","picture"],[283,3,"ForbiddenForest99","picture"],[206,3,"BeyondForbiddenForest111","picture"],[310,3,"ForbiddenForest90","picture"],[211,5,"ForbiddenForest91","picture"],[289,5,"ForbiddenForest502","picture"],[60,7,"FF_AI_1","picture"],[112,1,"FF5","picture"],[289,1,"FF101","picture"],[211,7,"FF_AI_3","picture"]]',
         lights: '[[418,5,"WallLamp33","standard2"]]',
         gates: '[[247,5,"40.1","31.4","Closed"],[90,3,"40.2","41.1","Down"],[177,7,"40.2","44.1","Cyan"],[333,1,"40.3","45.1","Pink"]]',
-        }
+    }
     ,
     41: {
         name: "Forbidden Forest",
@@ -1023,7 +1023,7 @@ const MAP = {
         shrines: '[[129,1,"CyBorgessia"]]',
     }
     ,
-    42 : {
+    42: {
         name: "Animal Kingdom",
         sg: 0,
         maxSpawned: -1,
@@ -1039,7 +1039,7 @@ const MAP = {
         lights: '[[808,1,"Moon58","moonlightBright"],[1039,1,"Moon56","moonlightFaint"],[1039,3,"Moon50","moonlightFaint"],[1039,5,"Moon60","moonlightFaint"]]',
         gates: '[[430,1,"42.1","41.2","Closed"]]',
         entities: '[[451,7,"Wolfie"],[629,3,"Foxie"],[609,5,"LeonaPard"]]',
-        }
+    }
     ,
     43: {
         name: "The Cellar",
@@ -1056,9 +1056,20 @@ const MAP = {
         gates: '[[42,5,"43.1","39.2","Up"]]',
     }
     ,
-    44: {
-        //Inferna
-    }
+    44 : {
+        name: "Inferna",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"21","height":"21","depth":4,"map":"BB2ABABB3AA4BABAA4BAA9BB3AA4BB4AA22BAA3BB2AA9BAA25BB2AA2BABB2ABAA8BABB2ABAA2BB3AA3BB8ŁAɁсBB7ABB5ABB2ABB13ABABB46AA2BB126ABB2ABB21AÁBABB2ࡁABB2AÁÁ3BB2AA2BABB9ABB10ÁBB7AA2BB16ABABB49ABB875A$BB284ࡁBB13AA2BB18AA2BB16ABB2ABB32ABB10ABŁBɁсB"}',
+        wall: "JuggernautDarkwalls_0892",
+        floor: "MarbleTiles1001",
+        ceil: "ShinyGreyBricks100",
+        start: '[510,5]',
+        gates: '[[863,1,"44.1","40.2","Closed"]]',
+        }
     ,
     45: {
         //redRidingHood
@@ -1137,12 +1148,13 @@ const MAP = {
         killCountdown: 4,
         killsRequiredToStopSpawning: 29,
         spawnDelay: 9999,
-        data: '{"width":"17","height":"17","depth":3,"map":"BࡁBсAA9BB3AA15BAA3BAA11ÁÁ4AA7BAA6BB2AA13BB2AA2BABB3AA2BB2AA7ÁÁ2AA2ÁÁ2BB3AA3BB2AA2BB2AA7BB2AA2BB6ABB3ABB4AA2BABAA4ÁÁ6AÁAÁÁ7AÁAÁÁ3BB2AA3BABAA5BB2AA3BB10ABAA6BB10AA2BB7AA2BB26ÁBAA2BAA7BB4AA2BB3AA4ŁBB17ÁBB6ÁABB10ABB51$BB9ÁBB18ÁBB5ÁBABB23ÁBB5ÁÁ8BB4ÁÁ12BÁBB29ÁÁ2BB3ABB11ÁÁ4BB34ÁBB2ÁBÁÁ2BB4ÁÁ2BB16ABAA2ÁÁ2AA2ÁÁ7BB4ÁÁ4BB3ÁÁ2BÁBB2ÁAA3ÁAA4ÁÁ4AÁAÁÁ10BB2ÁÁ10BB3ÁBÁÁ7BÁÁ14AA2ÁÁ2AA2ÁÁ9AA2ÁÁ17BB2ÁÁ2BB2ÁÁ3BB2ÁÁ5AÁAA2ÁÁ4AÁÁ29BÁBÁÁ7BB2ÁÁ28AA3ÁÁ45BB6ÁBÁBB4ɁBB3"}',
+        data: '{"width":"17","height":"17","depth":3,"map":"BࡁBсAA9BB3AA15BAA3BAA11ÁÁ4AA7BAA6BB2AA13BB2AA2BABB3AA2BB2AA7ÁÁ2AA2ÁÁ2BB3AA3BB2AA2BB2AA7BB2AA2BB6ABB3ABB4AA2BB2ABAA4ÁÁ6AÁAÁÁ7AÁAÁÁ3BB2AA3BABAA5BB2AA3BB10ABAA6BB11AA2BB7AA2BB28ÁBAA2BAA7BB4AA2BB4AA4BŁBB14ABB7ÁBB6ÁAA2BB50$BB9ÁBB18ÁBB5ÁBABB23ÁBB5ÁÁ8BB4ÁÁ12BÁBB29ÁÁ2BB3ABB11ÁÁ4BB34ÁBB2ÁBÁÁ2BB4ÁÁ2BB16ABAA2ÁÁ2AA2ÁÁ7BB4ÁÁ4BB3ÁÁ2BÁBB2ÁAA3ÁAA4ÁÁ4AÁAÁÁ10BB2ÁÁ10BB3ÁBÁÁ7BÁÁ14AA2ÁÁ2AA2ÁÁ9AA2ÁÁ17BB2ÁÁ2BB2ÁÁ3BB2ÁÁ5AÁAA2ÁÁ4AÁÁ29BÁBÁÁ7BB2ÁÁ28AA3ÁÁ45BB6ÁBÁBB4ɁBB3"}',
         wall: "RockWall_SDXL_002",
         floor: "DetailedFloor1",
         ceil: "NightSky1",
         start: '[25,7]',
         lights: '[[739,1,"Moon54","moonlightBright"],[739,7,"Moon55","moonlightSoft"]]',
         gates: '[[8,7,"51.1","47.2","Closed"]]',
+        entities: '[[280,1,"SilverSpacy"]]',
         }
 };

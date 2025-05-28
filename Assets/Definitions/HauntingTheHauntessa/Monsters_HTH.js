@@ -3168,6 +3168,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    SilverSpacy: {
+        name: "SilverSpacy",
+        sprite: "SilverSpacy",
+        category: 'crest',
+        voice: "Female6",
+        wants: ["Moon", "Moon", "Moon"],
+        gives: "GoldenNecklace",
+        text: {
+            intro: "I'm decorating space with moons so bright. Bring me some to get it right!",
+            progress: "Moons are floating, space looks fine. A few more, and the stars align!",
+            conclusion: "Three moons launched, what a sight. Here's my necklace, glowing bright!"
+        }
+    },
     LeonaPard: {
         name: "LeonaPard",
         sprite: "LeonaPard",
@@ -3219,7 +3232,7 @@ const INTERACTION_ENTITY = {
             progress: "A bite, but not the meal. Bring more goodies to seal the deal!",
             conclusion: "Full and happy, no complaints. Here's the bracelet, don't tell the saints."
         }
-    },    
+    },
     DutchessaNylonessa: {
         name: "DutchessaNylonessa",
         sprite: "DutchessaNylonessa",
