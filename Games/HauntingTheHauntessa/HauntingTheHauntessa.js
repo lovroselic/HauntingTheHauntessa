@@ -65,7 +65,7 @@ const DEBUG = {
         // area-2 - the journey part 1
         /*
             DONE Dutches wants GoldenNecklace, Ring, GoldenBracelet gives GoldKey
-        RedRidingHood "RedLeatherBoots", "RedLatexBra", "RedLatexPanties" gives RedKey
+            DONE RedRidingHood "RedLeatherBoots", "RedLatexBra", "RedLatexPanties" gives RedKey
         Inferna wants "HornedHelmet", "InfernalArmor"  gives blueKEy
             DONE HungryMaid wants Pie, Pie, JUice gives GoldenBracelet
         CaveBabe(####)  wants Pearl, Moonstone, Amethyst Gives Ring 
@@ -138,12 +138,11 @@ const DEBUG = {
 
 
         Missing keys:
-            -red
+                DONE red:: RRH
             -blue
 
         KEy yet unused:
-             -pink RRH
-             -cyan Inferna
+         
 
         Missing scrolls:
             - fly
@@ -210,11 +209,8 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            "InfernalArmor",
-            "Moon", "Moon", "Moon",
-            "HornedHelmet", "RedBar",
-            "RedLeatherBoots", "RedLatexBra", "RedLatexPanties",
-
+            "InfernalArmor", "HornedHelmet",
+            "RedBar",
         ];
 
         for (let itm of invItems) {
@@ -222,7 +218,7 @@ const DEBUG = {
             HERO.inventory.item.push(item);
         }
 
-        let keys = ["Cyan", "Silver", "Blue"];
+        let keys = ["Blue", "Red"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -338,7 +334,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.21.20",
+    VERSION: "0.21.21",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

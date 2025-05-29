@@ -1063,17 +1063,33 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"21","height":"21","depth":4,"map":"BB2ABABB3AA4BABAA4BAA9BB3AA4BB4AA22BAA3BB2AA9BAA25BB2AA2BABB2ABAA8BABB2ABAA2BB3AA3BB8ŁAɁсBB7ABB5ABB2ABB13ABABB46AA2BB126ABB2ABB21AÁBABB2ࡁABB2AÁÁ3BB2AA2BABB9ABB10ÁBB7AA2BB16ABABB49ABB875A$BB284ࡁBB13AA2BB18AA2BB16ABB2ABB32ABB10ABŁBɁсB"}',
+        data: '{"width":"21","height":"21","depth":4,"map":"BB2ABABB4AA4BAA2BAA4BB3ABAÁBB6AA19BB3AA4BB4AA15BAA3BAA28BAA2BB2ABB3AA14BAA6BABAA26BAA18BB2ABB2AA4BABB4ABAA10BB2AA11BAA2BABABB3AA3BB2ABAA2BB10ŁBB8AɁсBB9ABB2AA2BABB3ABB5ABABB2ABB25ABABB24ABB41ࡁBB20AA2BB98ABB128ABB3ABB39ABB11ÁBB3ABB4ࡁBABABB2ÁBÁÁ2BAA2BAA2BB37ABB2ABABB7AA9BB2ABB2AÁBB6ABB8ABABB7ABB5ABB8ABB2ABB74ABB39ÁBB11A$BB223ABB130ABÁBÁBB2ÁÁ3BB2ÁÁ8BÁÁ2BB18AA2BB45ABB38AA2BB69ABB69ABB28AÁÁ2BÁBÁÁ2BB19ÁBB5ÁÁ15BÁÁ2BÁBÁÁ14BÁÁ2BÁÁ12BÁÁ3BB2ÁÁ14BB2ÁBÁÁ21BB12ABŁBɁBс"}',
         wall: "JuggernautDarkwalls_0892",
         floor: "MarbleTiles1001",
         ceil: "ShinyGreyBricks100",
-        start: '[510,5]',
+        start: '[1213,7]',
+        lights: '[[1060,5,"Fireplace208","fireplace"],[1633,1,"FluxLight116","standardYellowSoft"],[1633,7,"FluxLight128","mutedOrange"],[596,1,"Fireplace202","fireplace"],[785,1,"Fireplace106","fireplace"],[288,7,"FireplaceFLuxU420","fireplace"]]',
         gates: '[[863,1,"44.1","40.2","Closed"]]',
         }
     ,
-    45: {
-        //redRidingHood
-    }
+    45 : {
+        name: "Red Riding Hood",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"21","height":"21","depth":5,"map":"BB2AA11BÁABAA3BAA3ÁAA4ÁAA8BAA2BABAÁAA4BB2AÁAA6ÁÁ2AA2BABABB4AA3BB4AA5BB4AA2BB3ABB4AA5ÁABB13ÁBB3ÁÁ4BABB2ÁBB8ABAA3BAA2BB2ABB3ABB2AA3BAA2BB5AA2BB7ÁABB2AÁBÁBB3ABB5ABB13ABB153ÁBB9ÁÁ2BB21ÁBB89ABB66$BB154ÁBB68ÁBB4ÁBB2ÁÁ2BB24ÁBB7ÁÁ2BB2ÁÁ2BB4ÁÁ8BB2ÁBB28ÁÁ3BÁBB2ÁÁ3BÁBB12ÁÁ5BÁÁ16BÁÁ8BB5ÁBB40ABB19ÁBÁBB8ABB6ÁÁ2BB2ÁÁ2BB59ÁBB53ÁÁ2BB2ÁBB10ÁÁ2BB68ABB3ABB4ÁBÁBB3ABÁÁ3BÁÁ5BB18AA4BB34ÁÁ2AÁÁ2BÁÁ71BB2ÁBÁÁ3BÁÁ10BABB2ÁÁ2AÁÁ2AÁÁ19BÁÁ50BB4ÁBÁÁ9BÁÁ24BÁÁ48BÁÁ2BB2ÁBÁÁ5AÁÁ8BÁÁ3BÁÁ52BB3ÁÁ3AÁÁ8BÁÁ6BB2ÁÁ11BÁÁ15BÁÁ21BÁÁ17BÁÁ48AÁBÁÁ21BB2ÁÁ24BÁÁ8BB2ÁÁ12BÁÁ3BÁÁ41BÁAÁÁ5BÁÁ8BÁÁ16BÁÁ2BÁÁ158BÁÁ3BB8ÁÁ68BB38"}',
+        wall: "DarkWallSDXL329",
+        floor: "MossyFloor212",
+        ceil: "LightWallSDXL300",
+        start: '[1249,1]',
+        lights: '[[1375,7,"Candle51","standardSoft"],[945,5,"DuaLLantern_030","standardSoft"],[920,7,"WallLamp31","standardSoft"],[2047,7,"FluxLight121","standardSoft"]]',
+        gates: '[[892,7,"45.1","40.3","Closed"]]',
+        scrolls: '[[940,5]]',
+        triggers: '[[908,7,"SmoothWallButton",0,948],[905,7,"SmoothWallButton",0,959],[1005,1,"SmoothWallButton",0,1060],[1030,7,"SmoothWallButton",0,997],[1048,7,"SmoothWallButton",0,1039],[1125,3,"SmoothWallButton",0,1122],[1121,5,"SmoothWallButton",0,1143]]',
+        entities: '[[1312,1,"RedRidingHood"]]',
+        }
     ,
     46: {
         name: "Underground Cave",
@@ -1141,7 +1157,7 @@ const MAP = {
         gates: '[[15,7,"50.1","49.2","Closed"]]',
     }
     ,
-    51 : {
+    51: {
         name: "Planet Arium",
         sg: 0,
         maxSpawned: 4,
@@ -1156,5 +1172,5 @@ const MAP = {
         lights: '[[739,1,"Moon54","moonlightBright"],[739,7,"Moon55","moonlightSoft"]]',
         gates: '[[8,7,"51.1","47.2","Closed"]]',
         entities: '[[280,1,"SilverSpacy"]]',
-        }
+    }
 };

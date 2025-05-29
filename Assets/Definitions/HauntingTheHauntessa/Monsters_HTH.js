@@ -3168,6 +3168,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    RedRidingHood: {
+        name: "RedRidingHood",
+        sprite: "RedRidingHood",
+        category: 'crest',
+        voice: "Female2",
+        wants: ["RedLeatherBoots", "RedLatexBra", "RedLatexPanties"],
+        gives: "RedKey",
+        text: {
+            intro: "My outfit's fire but not complete. Bring me red and make it heat!",
+            progress: "Getting steamy, piece by piece. Don't stop now, my look must feast!",
+            conclusion: "Now I'm dressed to turn a head. Take this key, it's bold and red!"
+        }
+    },
     SilverSpacy: {
         name: "SilverSpacy",
         sprite: "SilverSpacy",
