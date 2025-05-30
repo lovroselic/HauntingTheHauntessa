@@ -3168,6 +3168,32 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    RedBikiniVenus: {
+        name: "RedBikiniVenus",
+        sprite: "RedBikiniVenus",
+        category: 'crest',
+        voice: "FemaleHigh4",
+        wants: ["Shell", "Shell", "Shell"],
+        gives: "Pearl",
+        text: {
+            intro: "intro",
+            progress: "progress",
+            conclusion: "conclusion"
+        }
+    },
+    Inferna: {
+        name: "Inferna",
+        sprite: "Inferna",
+        category: 'crest',
+        voice: "FemaleVeryLow6",
+        wants: ["HornedHelmet", "InfernalArmor"],
+        gives: "BlueKey",
+        text: {
+            intro: "I burn with wrath, the fight draws near. Bring my armor, lose your fear!",
+            progress: "Steel me up, I'm halfway clad. One more piece to make me glad.",
+            conclusion: "Fully forged and flaming true. Take this key, the path is blue."
+        }
+    },
     RedRidingHood: {
         name: "RedRidingHood",
         sprite: "RedRidingHood",

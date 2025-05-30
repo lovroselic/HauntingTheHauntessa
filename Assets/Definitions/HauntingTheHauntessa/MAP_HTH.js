@@ -1056,7 +1056,7 @@ const MAP = {
         gates: '[[42,5,"43.1","39.2","Up"]]',
     }
     ,
-    44 : {
+    44: {
         name: "Inferna",
         sg: 0,
         maxSpawned: -1,
@@ -1070,9 +1070,10 @@ const MAP = {
         start: '[1213,7]',
         lights: '[[1060,5,"Fireplace208","fireplace"],[1633,1,"FluxLight116","standardYellowSoft"],[1633,7,"FluxLight128","mutedOrange"],[596,1,"Fireplace202","fireplace"],[785,1,"Fireplace106","fireplace"],[288,7,"FireplaceFLuxU420","fireplace"]]',
         gates: '[[863,1,"44.1","40.2","Closed"]]',
-        }
+        entities: '[[1318,1,"Inferna"]]',
+    }
     ,
-    45 : {
+    45: {
         name: "Red Riding Hood",
         sg: 0,
         maxSpawned: -1,
@@ -1089,7 +1090,7 @@ const MAP = {
         scrolls: '[[940,5]]',
         triggers: '[[908,7,"SmoothWallButton",0,948],[905,7,"SmoothWallButton",0,959],[1005,1,"SmoothWallButton",0,1060],[1030,7,"SmoothWallButton",0,997],[1048,7,"SmoothWallButton",0,1039],[1125,3,"SmoothWallButton",0,1122],[1121,5,"SmoothWallButton",0,1143]]',
         entities: '[[1312,1,"RedRidingHood"]]',
-        }
+    }
     ,
     46: {
         name: "Underground Cave",
@@ -1102,7 +1103,7 @@ const MAP = {
         wall: "RoughCave20",
         floor: "Relief08",
         ceil: "RoughCave01",
-        start: '[1577,1]',
+        start: '[258,3]',
         lights: '[[1310,5,"SkullLantern51","standardYellowDim"],[1175,7,"Candle57","standardYellowDim"],[49,3,"Candle66","standardYellowFaint"],[1120,3,"FluxLight128","standardYellowSoft"],[1728,1,"DuaLLantern_004","standardSoft"],[2156,1,"FluxLight117","fireSoft"],[2040,5,"DuaLLantern_028","fireSoft"]]',
         gates: '[[2160,5,"46.1","33.3","Closed"],[1835,3,"46.2","47.1","Closed"],[255,5,"46.3","48.1","Down"]]',
         triggers: '[[1142,1,"SmoothWallButton",0,1075],[860,1,"SmoothWallButton",0,1041],[1698,7,"SmoothWallButton",0,1660],[1732,1,"SmoothWallButton",0,1643],[1631,3,"SmoothWallButton",0,1594],[2076,1,"SmoothWallButton",1,2109]]',
@@ -1124,38 +1125,55 @@ const MAP = {
     }
     ,
     48: {
-        //Elven Smithy
+        name: "Elven Smithy",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"17","height":"17","depth":4,"map":"BB2ABB2AA4BAA3BB6AA10BAA55BAA12BAA12BAA14BB11ABABB4AA2BAA7BB6AA2ÁABÁBB2AA5BAA3BB2ABB9AA2BAA2BAA2BB7ABABB6ABB2AA2BABB27ABB3AA6BB5ABB6ࡁBB8AA2BÁBB14ABB11ÁBABB7ABB8$BB35ÁÁ2BB9ABB10ABB195ÁÁ10BB2ÁÁ2BÁÁ14ࡁBB30AÁÁ4BB66ABB40ÁÁ2BB27ÁBÁBÁÁ2BB2ÁBÁÁ30BB4ÁÁ100BÁÁ159BÁÁ31BB31AA2ŁŁ2ɁɁ2сс2"}',
+        wall: "DarkWallSDXL322",
+        floor: "BloodMarbleFloorWall_SDXL_003",
+        ceil: "RockWall201",
+        start: '[831,3]',
+        lights: '[[555,3,"DuaLLantern_023","standardYellowFaint"],[86,7,"FluxLight119","standardYellowFaint"],[1102,3,"WallLamp33","standardYellow"],[20,7,"Fireplace208","fireplace"],[30,7,"Fireplace207","fireplace"],[22,7,"Fireplace03","fireplace"],[28,7,"Fireplace212","fireplace"],[285,1,"Lamp43","standardUltraFaint"]]',
+        gates: '[[832,3,"48.1","46.3","Up"]]',
+        triggers: '[[170,5,"SmoothWallButton",1,172]]',
     }
     ,
-    49: {
+    49 : {
         name: "First Bitch",
         sg: 0,
         maxSpawned: 4,
         killCountdown: 4,
         killsRequiredToStopSpawning: 29,
         spawnDelay: 9999,
-        data: '{"width":"17","height":"17","depth":1,"map":"BB3ABB11AA157BB44ABB3AA11BB36ABB2ABB18$"}',
+        data: '{"width":"17","height":"17","depth":1,"map":"BB4AA4BABB4AA8BAA8BAA4BABAA28BAA6BAA34BAA14BAA30BABAA5BAA2BB2AA7BB3AA4BB14AA2BABB2AA2BB6ABB11ABB5ABABABB3ABB2ABB2AA5BAA2BABB3AA4BABABB25A$"}',
         wall: "Beach1",
         floor: "Dune_0933",
         ceil: "BlueSky_0855",
         start: '[49,3]',
+        lights: '[[144,3,"SettingSun2","sunlightGoldenHour"],[144,1,"SettingSun2","sunlightGoldenHour"]]',
         gates: '[[50,3,"49.1","33.4","Closed"],[287,1,"49.2","50.1","Closed"]]',
-    }
+        }
     ,
-    50: {
+    50 : {
         name: "Second Bitch",
         sg: 0,
         maxSpawned: 4,
         killCountdown: 4,
         killsRequiredToStopSpawning: 29,
         spawnDelay: 9999,
-        data: '{"width":17,"height":17,"depth":1,"map":"BB2ABB12AA143BAA13BB31AA2BB13AA11BB56$BB3A"}',
+        data: '{"width":"17","height":"17","depth":1,"map":"BB2ABB2ABAA2BAA3BB2AA8BABABAA7BAA10BAA8BAA20BAA23BAA14BAA14BABB2AA18BAA6BAA5BAA5BB2ABAA4BB10ABB2AA2BB3ABABB6ABABB20ABB4AA3BB7ABAA2BB3AA5BAA2BAA3BB25A$"}',
         wall: "Beach2",
         floor: "Dune_0934",
         ceil: "BlueSky_0853",
         start: '[32,7]',
+        decals: '[[137,4,"SeaWater1","texture"],[120,7,"SeaWaterWall","texture"],[154,1,"SeaWaterWall","texture"],[120,5,"SeaWaterWall","texture"],[154,5,"SeaWaterWall","texture"]]',
+        lights: '[[145,3,"SettingSun1","sunlightWarm"],[145,7,"SettingSun1","sunlightDusk"]]',
         gates: '[[15,7,"50.1","49.2","Closed"]]',
-    }
+        entities: '[[136,5,"RedBikiniVenus"]]',
+        }
     ,
     51: {
         name: "Planet Arium",

@@ -66,7 +66,7 @@ const DEBUG = {
         /*
             DONE Dutches wants GoldenNecklace, Ring, GoldenBracelet gives GoldKey
             DONE RedRidingHood "RedLeatherBoots", "RedLatexBra", "RedLatexPanties" gives RedKey
-        Inferna wants "HornedHelmet", "InfernalArmor"  gives blueKEy
+            DONE Inferna wants "HornedHelmet", "InfernalArmor"  gives blueKEy
             DONE HungryMaid wants Pie, Pie, JUice gives GoldenBracelet
         CaveBabe(####)  wants Pearl, Moonstone, Amethyst Gives Ring 
             DONE SilverSpacy  wants Moon, Moon, Moon gives GoldenNecklace 
@@ -77,7 +77,7 @@ const DEBUG = {
             DONE Foxie wants "Chicken", "Chicken", "Chicken" gives RedLeatherBoots
             DONE Wolf wants "BabySheep", "BabySheep", "BabySheep" gives RedLatexBra
             DONE Leopardess wants "LittlePiggy", "LittlePiggy", "LittlePiggy" gives RedLatexPanties
-        BitchBabe wants Shell, Shell, Shell gives Pearl
+            DONE RedBikiniVenus wants Shell, Shell, Shell gives Pearl
             DONE Tourist wants: "Postcard", "Postcard", "Postcard" gives PinkKey
 
             DONE "Postcard"
@@ -113,7 +113,7 @@ const DEBUG = {
             DONE RedLatexPanties --> Leona Pard (42)
             DONE RedLatexBra-->Wolfie (42)
             DONE RedLeatherBoots --> Foxie (42)
-        Pearl, 
+            DONE Pearl, RedBikiniVenus --> (50)
         Moonstone, 
         Amethyst
         Shell, 
@@ -139,7 +139,7 @@ const DEBUG = {
 
         Missing keys:
                 DONE red:: RRH
-            -blue
+                DONE -blue:: inferna
 
         KEy yet unused:
          
@@ -155,7 +155,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 44; //4 --> 28
+        GAME.level = 49; //4 --> 28
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -209,7 +209,6 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            "InfernalArmor", "HornedHelmet",
             "RedBar",
         ];
 
@@ -334,7 +333,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.21.21",
+    VERSION: "0.21.22",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
