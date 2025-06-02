@@ -277,24 +277,9 @@ const INTERACTION_ITEM = {
         inventorySprite: "HikingBoot",
         text: "Not my size."
     },
-    SunScreen: {
-        name: "SunScreen",
-        category: "interaction_item",
-        inventorySprite: "SunScreen",
-        text: "Sun screen factor 50."
-    },
-    Towel: {
-        name: "Towel",
-        category: "interaction_item",
-        inventorySprite: "Towel",
-        text: "A towel. Pity I am not wet."
-    },
     
-    PurpleTear: {
-        name: "PurpleTear",
-        category: "interaction_item",
-        inventorySprite: "PurpleTear",
-    },
+    
+
    
    
     Crown: {
@@ -400,18 +385,7 @@ const INTERACTION_ITEM = {
         inventorySprite: "Anvil",
         text: "Anvil. Blacksmistress might want it."
     },
-    Fins: {
-        name: "Fins",
-        category: "interaction_item",
-        inventorySprite: "Fins",
-        text: "Fins. For scuba diving."
-    },
-    ScubaMask: {
-        name: "ScubaMask",
-        category: "interaction_item",
-        inventorySprite: "ScubaMask",
-        text: "Mask. For scuba diving."
-    },
+
     LeatherHide: {
         name: "LeatherHide",
         category: "interaction_item",
@@ -483,18 +457,7 @@ const INTERACTION_ITEM = {
         inventorySprite: "Mouse",
         text: "Cute little mouse. Someone will want to eat it."
     },
-    RedSandals: {
-        name: "RedSandals",
-        category: "interaction_item",
-        inventorySprite: "RedSandals",
-        text: "Beatchwear. Bitchwear?"
-    },
-    RedLeatherHat: {
-        name: "RedLeatherHat",
-        category: "interaction_item",
-        inventorySprite: "RedLeatherHat",
-        text: "Too big for my cute small head."
-    },
+   
     EmeraldIngots: {
         name: "EmeraldIngots",
         category: "interaction_item",

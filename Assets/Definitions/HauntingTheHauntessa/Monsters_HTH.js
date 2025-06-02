@@ -3033,6 +3033,12 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "Moonstone",
     },
+    PurpleTear: {
+        name: "PurpleTear",
+        category: "interaction_item",
+        inventorySprite: "PurpleTear",
+        text: "Beautiful and precious gem."
+    },
     Shell: {
         name: "Shell",
         category: "interaction_item",
@@ -3050,6 +3056,49 @@ const INTERACTION_ITEM = {
         category: "interaction_item",
         inventorySprite: "InfernalArmor",
     },
+    Butterfly: {
+        name: "Butterfly",
+        category: "interaction_item",
+        inventorySprite: "Butterfly",
+        text: "Fly made of butter? So funny."
+    },
+    SunScreen: {
+        name: "SunScreen",
+        category: "interaction_item",
+        inventorySprite: "SunScreen",
+        text: "Sun screen factor 50."
+    },
+    Towel: {
+        name: "Towel",
+        category: "interaction_item",
+        inventorySprite: "Towel",
+        text: "A towel. Pity I am not wet."
+    },
+    RedSandals: {
+        name: "RedSandals",
+        category: "interaction_item",
+        inventorySprite: "RedSandals",
+        text: "Beatchwear. Bitchwear?"
+    },
+    RedLeatherHat: {
+        name: "RedLeatherHat",
+        category: "interaction_item",
+        inventorySprite: "RedLeatherHat",
+        text: "Too big for my cute small head."
+    },
+    Fins: {
+        name: "Fins",
+        category: "interaction_item",
+        inventorySprite: "Fins",
+        text: "Fins. For scuba diving."
+    },
+    ScubaMask: {
+        name: "ScubaMask",
+        category: "interaction_item",
+        inventorySprite: "ScubaMask",
+        text: "Mask. For scuba diving."
+    },
+
 
     //books
     YoniBook: {
@@ -3168,6 +3217,45 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    ScubaBabe: {
+        name: "ScubaBabe",
+        sprite: "ScubaBabe",
+        category: 'crest',
+        voice: "FemaleHigh2",
+        wants: ["Fins","ScubaMask"],
+        gives: "PurpleTear",
+        text: {
+            intro: "intro",
+            progress: "progress",
+            conclusion: "conclusion"
+        }
+    },
+    GreenBikiniRedVenus: {
+        name: "GreenBikiniRedVenus",
+        sprite: "GreenBikiniRedVenus",
+        category: 'crest',
+        voice: "FemaleHigh3",
+        wants: ["RedSandals", "RedLeatherHat"],
+        gives: "Shell",
+        text: {
+            intro: "intro",
+            progress: "progress",
+            conclusion: "conclusion"
+        }
+    },
+    BlackBikiniVenus: {
+        name: "BlackBikiniVenus",
+        sprite: "BlackBikiniVenus",
+        category: 'crest',
+        voice: "FemaleHigh6",
+        wants: ["SunScreen", "Towel"],
+        gives: "Shell",
+        text: {
+            intro: "intro",
+            progress: "progress",
+            conclusion: "conclusion"
+        }
+    },
     RedBikiniVenus: {
         name: "RedBikiniVenus",
         sprite: "RedBikiniVenus",

@@ -1157,6 +1157,9 @@ LoadSprites = [
     { srcName: "EntityPictures/RedRidingHood3.jpg", name: "RedRidingHood" },
     { srcName: "EntityPictures/Inferna.jpg", name: "Inferna" },
     { srcName: "EntityPictures/RedBikiniVenus.jpg", name: "RedBikiniVenus" },
+    { srcName: "EntityPictures/BlackBikiniVenus.jpg", name: "BlackBikiniVenus" },
+    { srcName: "EntityPictures/GreenBikiniRedVenus.jpg", name: "GreenBikiniRedVenus" },
+    { srcName: "EntityPictures/ScubaBabe.jpg", name: "ScubaBabe" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
@@ -1413,6 +1416,14 @@ LoadSprites = [
     { srcName: "Items/Shell.png", name: "Shell" },
     { srcName: "Items/Moon.png", name: "Moon" },
     { srcName: "Items/InfernalArmor.png", name: "InfernalArmor" },
+    { srcName: "Items/Butterfly.png", name: "Butterfly" },
+    { srcName: "Items/SunScreen.png", name: "SunScreen" },
+    { srcName: "Items/Towel.png", name: "Towel" },
+    { srcName: "Items/RedSandals.png", name: "RedSandals" },
+    { srcName: "Items/RedLeatherHat.png", name: "RedLeatherHat" },
+    { srcName: "Items/Fins.png", name: "Fins" },
+    { srcName: "Items/ScubaMask.png", name: "ScubaMask" },
+    { srcName: "Items/PurpleTear.png", name: "PurpleTear" },
 
     //books
     { srcName: "Items/YoniBook.png", name: "YoniBook" },

@@ -1153,8 +1153,10 @@ const MAP = {
         floor: "Dune_0933",
         ceil: "BlueSky_0855",
         start: '[49,3]',
+        decals: '[[137,4,"Water12","texture"],[120,7,"SeaWaterWall","texture"],[154,1,"SeaWaterWall","texture"],[25,4,"Water11","texture"],[26,3,"SeaWaterWall","texture"],[24,5,"SeaWaterWall","texture"]]',
         lights: '[[144,3,"SettingSun2","sunlightGoldenHour"],[144,1,"SettingSun2","sunlightGoldenHour"]]',
         gates: '[[50,3,"49.1","33.4","Closed"],[287,1,"49.2","50.1","Closed"]]',
+        entities: '[[136,5,"BlackBikiniVenus"],[8,7,"GreenBikiniRedVenus"]]',
         }
     ,
     50 : {
@@ -1169,10 +1171,10 @@ const MAP = {
         floor: "Dune_0934",
         ceil: "BlueSky_0853",
         start: '[32,7]',
-        decals: '[[137,4,"SeaWater1","texture"],[120,7,"SeaWaterWall","texture"],[154,1,"SeaWaterWall","texture"],[120,5,"SeaWaterWall","texture"],[154,5,"SeaWaterWall","texture"]]',
+        decals: '[[137,4,"SeaWater1","texture"],[120,7,"SeaWaterWall","texture"],[154,1,"SeaWaterWall","texture"],[120,5,"SeaWaterWall","texture"],[154,5,"SeaWaterWall","texture"],[263,4,"Water32","texture"],[264,3,"SeaWaterWall","texture"],[262,5,"SeaWaterWall","texture"]]',
         lights: '[[145,3,"SettingSun1","sunlightWarm"],[145,7,"SettingSun1","sunlightDusk"]]',
         gates: '[[15,7,"50.1","49.2","Closed"]]',
-        entities: '[[136,5,"RedBikiniVenus"]]',
+        entities: '[[136,5,"RedBikiniVenus"],[280,1,"ScubaBabe"]]',
         }
     ,
     51: {

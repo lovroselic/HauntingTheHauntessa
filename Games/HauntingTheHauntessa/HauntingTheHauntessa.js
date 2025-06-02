@@ -68,7 +68,7 @@ const DEBUG = {
             DONE RedRidingHood "RedLeatherBoots", "RedLatexBra", "RedLatexPanties" gives RedKey
             DONE Inferna wants "HornedHelmet", "InfernalArmor"  gives blueKEy
             DONE HungryMaid wants Pie, Pie, JUice gives GoldenBracelet
-        CaveBabe(####)  wants Pearl, Moonstone, Amethyst Gives Ring 
+        CaveBabe(####)  wants Pearl, Moonstone, Amethyst, "PurpleTear" Gives Ring 
             DONE SilverSpacy  wants Moon, Moon, Moon gives GoldenNecklace 
         ElvenSmith wants "SilverBar", "IronBar", "RedBar", "ArmorBlueprint",   gives InfernalArmor
             DONE Apple picker wants "Apple", "Apple", "Apple" gives Pie
@@ -79,6 +79,10 @@ const DEBUG = {
             DONE Leopardess wants "LittlePiggy", "LittlePiggy", "LittlePiggy" gives RedLatexPanties
             DONE RedBikiniVenus wants Shell, Shell, Shell gives Pearl
             DONE Tourist wants: "Postcard", "Postcard", "Postcard" gives PinkKey
+        ButterFlyLady$$$ wants "Butterfly", "Butterfly", "Butterfly" gives  Amethyst
+            DONE BlackBikiniVenus wants Towel, SunScreen gives Shell 
+            DONE GreenBikiniRedVenus wants "RedSandals","RedLeatherHat" give Shell
+            DONE ScubaBabe wants "Fins","ScubaMask", gives "PurpleTear"
 
             DONE "Postcard"
             DONE "Postcard"
@@ -102,13 +106,13 @@ const DEBUG = {
        "BabySheep", "
        BabySheep"
         HornedHelmet
-        InfernalArmor
+        InfernalArmor --> ElvenSmith ()
         "SilverBar", 
         "IronBar", 
         "RedBar", 
         "ArmorBlueprint"
             DONE GoldenNecklace --> SilverSpacy (51)
-        Ring
+        Ring --> CaveBabe
             DONE GoldenBracelet -->HungryMaid(39)
             DONE RedLatexPanties --> Leona Pard (42)
             DONE RedLatexBra-->Wolfie (42)
@@ -117,11 +121,18 @@ const DEBUG = {
         Moonstone, 
         Amethyst
         Shell, 
-        Shell, 
-        Shell
+            DONE Shell,  GreenBikiniRedVenus -> (49)
+            DONE Shell BlackBikiniVenus -> (49)
         "Moon"
         "Moon"
         "Moon"
+        Towel
+        SunScreen
+        "RedSandals",
+        "RedLeatherHat"
+        "Fins",
+        "ScubaMask",
+            DONE "PurpleTear" ScubaBabe (50)
 
         Shrines:
             - mana
@@ -155,7 +166,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 49; //4 --> 28
+        GAME.level = 50; //4 --> 28
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -209,6 +220,9 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
+            "Fins","ScubaMask","PurpleTear",
+            "SunScreen", "Towel",
+            "RedSandals","RedLeatherHat",
             "RedBar",
         ];
 
@@ -333,7 +347,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.21.22",
+    VERSION: "0.21.23",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
