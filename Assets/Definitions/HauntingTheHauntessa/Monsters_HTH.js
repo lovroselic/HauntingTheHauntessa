@@ -341,6 +341,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    CaveDomme: {
+        name: "CaveDomme",
+        sprite: "CaveDomme",
+        category: 'crest',
+        voice: "FemaleHigh6",
+        text: "You know you can still return to your castle, right?",
+        interactionCategory: "oracle",
+    },
     Navigator: {
         name: "Navigator",
         sprite: "Navigator",
@@ -3237,6 +3245,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    CaveGemma: {
+        name: "CaveGemma",
+        sprite: "CaveGemma",
+        category: 'crest',
+        voice: "FemaleHigh3",
+        wants: ["Pearl", "Moonstone", "Amethyst", "PurpleTear"],
+        gives: "Ring",
+        text: {
+            intro: "intro",
+            progress: "progress",
+            conclusion: "conclusion"
+        }
+    },
     ButterFlyLady: {
         name: "ButterFlyLady",
         sprite: "ButterFlyLady",

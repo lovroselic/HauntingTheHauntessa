@@ -68,7 +68,7 @@ const DEBUG = {
             DONE RedRidingHood "RedLeatherBoots", "RedLatexBra", "RedLatexPanties" gives RedKey
             DONE Inferna wants "HornedHelmet", "InfernalArmor"  gives blueKEy
             DONE HungryMaid wants Pie, Pie, JUice gives GoldenBracelet
-        CaveBabe(####)  wants Pearl, Moonstone, Amethyst, "PurpleTear" Gives Ring 
+            DONE CaveBabe wants Pearl, Moonstone, Amethyst, "PurpleTear" Gives Ring 
             DONE SilverSpacy  wants Moon, Moon, Moon gives GoldenNecklace 
         ElvenSmith wants "SilverBar", "IronBar", "RedBar", "ArmorBlueprint",   gives InfernalArmor
             DONE Apple picker wants "Apple", "Apple", "Apple" gives Pie
@@ -83,6 +83,7 @@ const DEBUG = {
             DONE BlackBikiniVenus wants Towel, SunScreen gives Shell 
             DONE GreenBikiniRedVenus wants "RedSandals","RedLeatherHat" give Shell
             DONE ScubaBabe wants "Fins","ScubaMask", gives "PurpleTear"
+        $$$$ wants ### gives "ArmorBlueprint"
 
             DONE "Postcard"
             DONE "Postcard"
@@ -112,7 +113,7 @@ const DEBUG = {
         "RedBar", 
         "ArmorBlueprint"
             DONE GoldenNecklace --> SilverSpacy (51)
-        Ring --> CaveBabe
+            DONE Ring --> CaveBabe (46)
             DONE GoldenBracelet -->HungryMaid(39)
             DONE RedLatexPanties --> Leona Pard (42)
             DONE RedLatexBra-->Wolfie (42)
@@ -169,7 +170,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 31; //4 --> 28
+        GAME.level = 46; //4 --> 28
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -223,6 +224,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
+            "Pearl", "Moonstone", "Amethyst", "PurpleTear",
             "SilverBar", "IronBar", "RedBar", "ArmorBlueprint",
         ];
 
@@ -347,7 +349,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.21.24",
+    VERSION: "0.21.25",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

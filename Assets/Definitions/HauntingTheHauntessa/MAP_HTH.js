@@ -824,7 +824,7 @@ const MAP = {
         movables: '[[145,"RoastChicken"]]',
     }
     ,
-    31 : {
+    31: {
         name: "The Valley",
         sg: 0,
         maxSpawned: -1,
@@ -842,7 +842,7 @@ const MAP = {
         entities: '[[12,7,"ButterFlyLady"]]',
         movables: '[[157,"Butterfly"]]',
         lairs: '[[150,5,"Lair38"],[164,3,"Lair33"]]',
-        }
+    }
     ,
     32: {
         name: "The Lodge",
@@ -1094,14 +1094,14 @@ const MAP = {
         entities: '[[1312,1,"RedRidingHood"]]',
     }
     ,
-    46: {
+    46 : {
         name: "Underground Cave",
         sg: 0,
         maxSpawned: -1,
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"17","height":"17","depth":9,"map":"BB7AA12BAA7BAA14BABABAA6ÁAA3ࡁAA22ÁAA3BAA2ŁAA12BAA2BAA9BB2ABAA4BAA3BB4AA12BB2AÁAA5BÁAA4BB2ABAA3BB2AA3BAA8BB2ABŁABABB3AÁÁ5AA3BB2AA3ÁÁ2AA4ÁAA2ŁŁ2AÁABABB2AÁÁ3BB9AA2BB3ABABB12ABABAA2BB5ABB53ÁBB5ÁBB2ÁBB11AA6ɁࡁBB5ÁŁсABB8ABB4ÁBABB6ÁBB4ÁBB11ÁBB12ÁBABB4ÁBB4ABB29ÁBB13ÁBB12ABB7ABABB5ABB78Á$BB72ABB17ÁÁ2BB96ABB8ABࡁBB9ABB90ABB169ÁBB14ÁÁ2BÁBB20ÁÁ6BB10ABB6ÁBÁBB2ÁÁ2BB15ABB2ÁÁ6BB6ÁࡁɁсBB22ÁÁ5BB4AŁAA3BB3ÁBÁÁ4BB2ÁÁ7BB5ÁBÁBB10ABB6ÁÁ2BB5ÁÁ4BB2ÁÁ6BB2ÁÁ2BB4ÁÁ3BÁBB23ÁBB11ÁBB2ÁBB21ABB5ÁÁ2BB3ÁBB6ÁBÁÁ2BÁBB5ÁBB39ABB35ABB13ÁÁ7BB6ÁBB2ÁÁ7BB5ÁÁ3BB8ÁÁ2BB51ÁBÁÁ3BB2ÁÁ2BB3ABB2ABB3ABB4ÁÁ3AÁÁ5AÁÁ3BÁAÁÁ35AÁÁ8сBÁBB4ɁࡁÁÁ2BÁÁ27BÁÁ5BÁÁ13AÁÁ17BÁÁ11AÁÁ56BÁÁ11BࡁÁÁ2BB3ÁÁ7BB3ÁÁ8BÁÁ12BÁÁ44AÁÁ9BÁÁ4BÁÁ5BÁÁ7BÁBÁÁ9BÁÁ75BB4ÁÁ18AÁÁ72ɁÁÁ9AÁÁ30ɁÁÁ15ŁсÁÁ12BB3ÁBÁÁ2BÁÁ6AÁÁ9BB2ÁÁ2BÁBÁÁ5BÁÁ29AÁÁ15BÁÁ9BÁÁ2AÁÁ26ŁAÁÁ15BÁÁ9BсࡁBÁBÁÁ5ABÁBB5AÁÁ40сÁÁ3BÁÁ4BB3ÁÁ5BÁÁ29BB3ÁÁ2ABÁBB5ÁÁ27BB2ÁÁ2ࡁÁBB5ÁÁ4AÁÁ6AŁɁсÁÁ3AÁÁ3BB13ÁÁ2ŁɁBB4ÁÁ4сࡁBB2ÁBÁÁ7BÁBB2ÁÁ2BÁBÁÁ2AÁÁ7AÁÁ16BÁÁ7BÁÁ3BB2ÁÁ3BɁÁɁɁ2BÁÁ3BB2ABÁÁ4BB2сÁсŁBÁÁ4BB2Áࡁࡁ2ɁBB2сÁÁ3BB2ÁBB2"}',
+        data: '{"width":"17","height":"17","depth":9,"map":"BB7AA12BAA7BAA14BABABAA6ÁAA3ࡁAA22ÁAA3BAA2ŁAA12BAA2BAA9BB2ABAA4BAA3BB4AA12BB2AÁAA5BÁAA4BB2ABAA3BB2AA3BAA8BB3ABŁABABB3AÁÁ5AA3BB2AA3ÁÁ2AA4ÁAA2ŁŁ2AÁABABB2AÁÁ3BB9AA2BB3ABABB12ABABABABB5ABB54ÁBB5ÁBB2ÁBB12AA6ɁࡁBB5ÁŁсABB9ABB4ÁBABB6ÁBB5ÁBB11ÁBB13ÁBAA2BB4ÁBB4ABB29ÁBB13ÁBB12ABB7ABABB5ABB47$BB23ÁBB72ABB17ÁÁ2BB96ABB8ABࡁBB9ABB90ABB169ÁBB14ÁÁ2BÁBB20ÁÁ6BB10ABB6ÁBÁBB2ÁÁ2BB15ABB2ÁÁ6BB6ÁࡁɁсBB22ÁÁ5BB4AŁAA3BB3ÁBÁÁ4BB2ÁÁ7BB5ÁBÁBB10ABB6ÁÁ2BB5ÁÁ4BB2ÁÁ6BB2ÁÁ2BB4ÁÁ3BÁBB23ÁBB11ÁBB2ÁBB21ABB5ÁÁ2BB3ÁBB6ÁBÁÁ2BÁBB5ÁBB39ABB35ABB13ÁÁ7BB6ÁBB2ÁÁ7BB5ÁÁ3BB8ÁÁ2BB51ÁBÁÁ3BB2ÁÁ2BB3ABB2ABB3ABB4ÁÁ3AÁÁ5AÁÁ3BÁAÁÁ35AÁÁ8сBÁBB4ɁࡁÁÁ2BÁÁ27BÁÁ5BÁÁ13AÁÁ17BÁÁ11AÁÁ56BÁÁ11BࡁÁÁ2BB3ÁÁ7BB3ÁÁ8BÁÁ12BÁÁ44AÁÁ9BÁÁ4BÁÁ5BÁÁ7BÁBÁÁ9BÁÁ75BB4ÁÁ18AÁÁ72ɁÁÁ9AÁÁ30ɁÁÁ15ŁсÁÁ12BB3ÁBÁÁ2BÁÁ6AÁÁ9BB2ÁÁ2BÁBÁÁ5BÁÁ29AÁÁ15BÁÁ9BÁÁ2AÁÁ26ŁAÁÁ15BÁÁ9BсࡁBÁBÁÁ5ABÁBB5AÁÁ40сÁÁ3BÁÁ4BB3ÁÁ5BÁÁ29BB3ÁÁ2ABÁBB5ÁÁ27BB2ÁÁ2ࡁÁBB5ÁÁ4AÁÁ6AŁɁсÁÁ3AÁÁ3BB13ÁÁ2ŁɁBB4ÁÁ4сࡁBB2ÁBÁÁ7BÁBB2ÁÁ2BÁBÁÁ2AÁÁ7AÁÁ16BÁÁ7BÁÁ3BB2ÁÁ3BɁÁɁɁ2BÁÁ3BB2ABÁÁ4BB2сÁсŁBÁÁ4BB2Áࡁࡁ2ɁBB2сÁÁ3BB2ÁBB2"}',
         wall: "RoughCave20",
         floor: "Relief08",
         ceil: "RoughCave01",
@@ -1109,7 +1109,9 @@ const MAP = {
         lights: '[[1310,5,"SkullLantern51","standardYellowDim"],[1175,7,"Candle57","standardYellowDim"],[49,3,"Candle66","standardYellowFaint"],[1120,3,"FluxLight128","standardYellowSoft"],[1728,1,"DuaLLantern_004","standardSoft"],[2156,1,"FluxLight117","fireSoft"],[2040,5,"DuaLLantern_028","fireSoft"],[260,1,"FireplaceFLuxU414","fireplace"],[161,7,"WallLamp31","fireSoft"]]',
         gates: '[[2160,5,"46.1","33.3","Closed"],[1835,3,"46.2","47.1","Closed"],[255,5,"46.3","48.1","Down"]]',
         triggers: '[[1142,1,"SmoothWallButton",0,1075],[860,1,"SmoothWallButton",0,1041],[1698,7,"SmoothWallButton",0,1660],[1732,1,"SmoothWallButton",0,1643],[1631,3,"SmoothWallButton",0,1594],[2076,1,"SmoothWallButton",1,2109]]',
-    }
+        entities: '[[280,1,"CaveGemma"]]',
+        oracles: '[[11,7,"CaveDomme"]]',
+        }
     ,
     47: {
         name: "The Mountains",
