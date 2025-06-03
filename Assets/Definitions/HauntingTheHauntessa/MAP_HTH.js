@@ -824,23 +824,25 @@ const MAP = {
         movables: '[[145,"RoastChicken"]]',
     }
     ,
-    31: {
+    31 : {
         name: "The Valley",
         sg: 0,
         maxSpawned: -1,
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"15","height":"15","depth":1,"map":"BB3AA3BABB3AA24BAA2BAA5BB2AA20BB2ABABAA6BB2AA2BB2ABAA8BB2ABABB2AA5BAA7BB2AA9BAA3BB8AA3BB9AA2BB2ABB2ABB3ABB6AA3BB2ABB2ABAA2BB2AA2BAA4BB7AA5BABB22A$"}',
+        data: '{"width":"15","height":"15","depth":1,"map":"BB3AA2BABABABAA24BAA3BAA4BB2AA20BB2ABAA2BAA5BB2AA2BABAA8BABABB3AA5BAA6BB2ABAA9BAA2BB8AA3BB8AA2BB2ABB2ABB11AA3BB2ABABAA2BB3AA4BAA3BB2ABB4AA3BAA2BB22A$"}',
         wall: "MistyMeadow3",
         floor: "Grass_0860",
         ceil: "BlueSky_0852",
         start: '[22,7]',
-        decals: '[[200,1,"OuterCastleWall_0833","texture"],[201,1,"OuterCastleWall_0833","texture"],[217,1,"OuterCastleWall_0833","texture"],[203,1,"OuterCastleWall_0833","texture"],[204,1,"OuterCastleWall_0833","texture"],[201,5,"OuterCastleWall_0833","texture"],[204,5,"OuterCastleWall_0833","texture"],[200,3,"OuterCastleWall_0833","texture"],[203,3,"OuterCastleWall_0833","texture"],[22,4,"Cobblestone_0822","texture"],[37,4,"Cobblestone_0822","texture"],[52,4,"Cobblestone_0822","texture"],[67,4,"Cobblestone_0822","texture"],[82,4,"Cobblestone_0822","texture"]]',
+        decals: '[[200,1,"OuterCastleWall_0833","texture"],[201,1,"OuterCastleWall_0833","texture"],[217,1,"OuterCastleWall_0833","texture"],[203,1,"OuterCastleWall_0833","texture"],[204,1,"OuterCastleWall_0833","texture"],[201,5,"OuterCastleWall_0833","texture"],[204,5,"OuterCastleWall_0833","texture"],[200,3,"OuterCastleWall_0833","texture"],[203,3,"OuterCastleWall_0833","texture"],[22,4,"Cobblestone_0822","texture"],[37,4,"Cobblestone_0822","texture"],[52,4,"Cobblestone_0822","texture"],[67,4,"Cobblestone_0822","texture"],[82,4,"Cobblestone_0822","texture"],[28,3,"GrasslandJuggernaut_0927","texture"],[26,5,"GrasslandJuggernaut_0927","texture"]]',
         lights: '[[112,1,"SettingSun1","sunlightGoldenHour"],[112,7,"SettingSun1","sunlightGoldenHour"],[112,3,"SettingSun2","sunlightGoldenHourSoft"],[112,5,"SettingSun2","sunlightGoldenHourSoft"]]',
         gates: '[[7,7,"31.1","30.2","Closed"],[217,1,"31.2","32.1","Closed"],[105,5,"31.3","37.1","Closed"],[119,3,"31.4","40.1","Closed"]]',
+        entities: '[[12,7,"ButterFlyLady"]]',
+        movables: '[[157,"Butterfly"]]',
         lairs: '[[150,5,"Lair38"],[164,3,"Lair33"]]',
-    }
+        }
     ,
     32: {
         name: "The Lodge",
@@ -1099,12 +1101,12 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"17","height":"17","depth":9,"map":"BB7AA12BAA7BAA14BABABAA6ÁAA3ࡁAA22ÁAA3BAA2ŁAA12BAA2BAA9BB2ABAA4BAA3BB4AA12BB2AÁAA5BÁAA4BB2ABAA6BB2AA8BB2ABŁABABB3AÁÁ5AA3BB2AA3ÁÁ2AA4ÁAA2ŁŁ2AÁABABB2AÁÁ3BB9AA2BB3ABB14ABB2AA2BB5ABB52ABB2ÁBB5ÁBB2ÁBB11AA6ɁࡁBB5ÁŁсABB8ABB4ÁBABB6ÁBB4ÁBB11ÁBB12ÁBABB4ÁBB4ABB29ÁBB13ÁBB12ABB7ABABB5ABB78Á$BB72ABB17ÁÁ2BB96ABB8ABࡁBB9ABB90ABB169ÁBB14ÁÁ2BÁBB20ÁÁ6BB10ABB6ÁBÁBB2ÁÁ2BB15ABB2ÁÁ6BB6ÁࡁɁсBB22ÁÁ5BB4AŁAA3BB3ÁBÁÁ4BB2ÁÁ7BB5ÁBÁBB10ABB6ÁÁ2BB5ÁÁ4BB2ÁÁ6BB2ÁÁ2BB4ÁÁ3BÁBB23ÁBB11ÁBB2ÁBB21ABB5ÁÁ2BB3ÁBB6ÁBÁÁ2BÁBB5ÁBB39ABB35ABB13ÁÁ7BB6ÁBB2ÁÁ7BB5ÁÁ3BB8ÁÁ2BB51ÁBÁÁ3BB2ÁÁ2BB3ABB2ABB3ABB4ÁÁ3AÁÁ5AÁÁ3BÁAÁÁ35AÁÁ8сBÁBB4ɁࡁÁÁ2BÁÁ27BÁÁ5BÁÁ13AÁÁ17BÁÁ11AÁÁ56BÁÁ11BࡁÁÁ2BB3ÁÁ7BB3ÁÁ8BÁÁ12BÁÁ44AÁÁ9BÁÁ4BÁÁ5BÁÁ7BÁBÁÁ9BÁÁ75BB4ÁÁ18AÁÁ72ɁÁÁ9AÁÁ30ɁÁÁ15ŁсÁÁ12BB3ÁBÁÁ2BÁÁ6AÁÁ9BB2ÁÁ2BÁBÁÁ5BÁÁ29AÁÁ15BÁÁ9BÁÁ2AÁÁ26ŁAÁÁ15BÁÁ9BсࡁBÁBÁÁ5ABÁBB5AÁÁ40сÁÁ3BÁÁ4BB3ÁÁ5BÁÁ29BB3ÁÁ2ABÁBB5ÁÁ27BB2ÁÁ2ࡁÁBB5ÁÁ4AÁÁ6AŁɁсÁÁ3AÁÁ3BB13ÁÁ2ŁɁBB4ÁÁ4сࡁBB2ÁBÁÁ7BÁBB2ÁÁ2BÁBÁÁ2AÁÁ7AÁÁ16BÁÁ7BÁÁ3BB2ÁÁ3BɁÁɁɁ2BÁÁ3BB2ABÁÁ4BB2сÁсŁBÁÁ4BB2Áࡁࡁ2ɁBB2сÁÁ3BB2ÁBB2"}',
+        data: '{"width":"17","height":"17","depth":9,"map":"BB7AA12BAA7BAA14BABABAA6ÁAA3ࡁAA22ÁAA3BAA2ŁAA12BAA2BAA9BB2ABAA4BAA3BB4AA12BB2AÁAA5BÁAA4BB2ABAA3BB2AA3BAA8BB2ABŁABABB3AÁÁ5AA3BB2AA3ÁÁ2AA4ÁAA2ŁŁ2AÁABABB2AÁÁ3BB9AA2BB3ABABB12ABABAA2BB5ABB53ÁBB5ÁBB2ÁBB11AA6ɁࡁBB5ÁŁсABB8ABB4ÁBABB6ÁBB4ÁBB11ÁBB12ÁBABB4ÁBB4ABB29ÁBB13ÁBB12ABB7ABABB5ABB78Á$BB72ABB17ÁÁ2BB96ABB8ABࡁBB9ABB90ABB169ÁBB14ÁÁ2BÁBB20ÁÁ6BB10ABB6ÁBÁBB2ÁÁ2BB15ABB2ÁÁ6BB6ÁࡁɁсBB22ÁÁ5BB4AŁAA3BB3ÁBÁÁ4BB2ÁÁ7BB5ÁBÁBB10ABB6ÁÁ2BB5ÁÁ4BB2ÁÁ6BB2ÁÁ2BB4ÁÁ3BÁBB23ÁBB11ÁBB2ÁBB21ABB5ÁÁ2BB3ÁBB6ÁBÁÁ2BÁBB5ÁBB39ABB35ABB13ÁÁ7BB6ÁBB2ÁÁ7BB5ÁÁ3BB8ÁÁ2BB51ÁBÁÁ3BB2ÁÁ2BB3ABB2ABB3ABB4ÁÁ3AÁÁ5AÁÁ3BÁAÁÁ35AÁÁ8сBÁBB4ɁࡁÁÁ2BÁÁ27BÁÁ5BÁÁ13AÁÁ17BÁÁ11AÁÁ56BÁÁ11BࡁÁÁ2BB3ÁÁ7BB3ÁÁ8BÁÁ12BÁÁ44AÁÁ9BÁÁ4BÁÁ5BÁÁ7BÁBÁÁ9BÁÁ75BB4ÁÁ18AÁÁ72ɁÁÁ9AÁÁ30ɁÁÁ15ŁсÁÁ12BB3ÁBÁÁ2BÁÁ6AÁÁ9BB2ÁÁ2BÁBÁÁ5BÁÁ29AÁÁ15BÁÁ9BÁÁ2AÁÁ26ŁAÁÁ15BÁÁ9BсࡁBÁBÁÁ5ABÁBB5AÁÁ40сÁÁ3BÁÁ4BB3ÁÁ5BÁÁ29BB3ÁÁ2ABÁBB5ÁÁ27BB2ÁÁ2ࡁÁBB5ÁÁ4AÁÁ6AŁɁсÁÁ3AÁÁ3BB13ÁÁ2ŁɁBB4ÁÁ4сࡁBB2ÁBÁÁ7BÁBB2ÁÁ2BÁBÁÁ2AÁÁ7AÁÁ16BÁÁ7BÁÁ3BB2ÁÁ3BɁÁɁɁ2BÁÁ3BB2ABÁÁ4BB2сÁсŁBÁÁ4BB2Áࡁࡁ2ɁBB2сÁÁ3BB2ÁBB2"}',
         wall: "RoughCave20",
         floor: "Relief08",
         ceil: "RoughCave01",
-        start: '[258,3]',
-        lights: '[[1310,5,"SkullLantern51","standardYellowDim"],[1175,7,"Candle57","standardYellowDim"],[49,3,"Candle66","standardYellowFaint"],[1120,3,"FluxLight128","standardYellowSoft"],[1728,1,"DuaLLantern_004","standardSoft"],[2156,1,"FluxLight117","fireSoft"],[2040,5,"DuaLLantern_028","fireSoft"]]',
+        start: '[160,7]',
+        lights: '[[1310,5,"SkullLantern51","standardYellowDim"],[1175,7,"Candle57","standardYellowDim"],[49,3,"Candle66","standardYellowFaint"],[1120,3,"FluxLight128","standardYellowSoft"],[1728,1,"DuaLLantern_004","standardSoft"],[2156,1,"FluxLight117","fireSoft"],[2040,5,"DuaLLantern_028","fireSoft"],[260,1,"FireplaceFLuxU414","fireplace"],[161,7,"WallLamp31","fireSoft"]]',
         gates: '[[2160,5,"46.1","33.3","Closed"],[1835,3,"46.2","47.1","Closed"],[255,5,"46.3","48.1","Down"]]',
         triggers: '[[1142,1,"SmoothWallButton",0,1075],[860,1,"SmoothWallButton",0,1041],[1698,7,"SmoothWallButton",0,1660],[1732,1,"SmoothWallButton",0,1643],[1631,3,"SmoothWallButton",0,1594],[2076,1,"SmoothWallButton",1,2109]]',
     }
@@ -1141,7 +1143,7 @@ const MAP = {
         triggers: '[[170,5,"SmoothWallButton",1,172]]',
     }
     ,
-    49 : {
+    49: {
         name: "First Bitch",
         sg: 0,
         maxSpawned: 4,
@@ -1157,9 +1159,9 @@ const MAP = {
         lights: '[[144,3,"SettingSun2","sunlightGoldenHour"],[144,1,"SettingSun2","sunlightGoldenHour"]]',
         gates: '[[50,3,"49.1","33.4","Closed"],[287,1,"49.2","50.1","Closed"]]',
         entities: '[[136,5,"BlackBikiniVenus"],[8,7,"GreenBikiniRedVenus"]]',
-        }
+    }
     ,
-    50 : {
+    50: {
         name: "Second Bitch",
         sg: 0,
         maxSpawned: 4,
@@ -1172,10 +1174,10 @@ const MAP = {
         ceil: "BlueSky_0853",
         start: '[32,7]',
         decals: '[[137,4,"SeaWater1","texture"],[120,7,"SeaWaterWall","texture"],[154,1,"SeaWaterWall","texture"],[120,5,"SeaWaterWall","texture"],[154,5,"SeaWaterWall","texture"],[263,4,"Water32","texture"],[264,3,"SeaWaterWall","texture"],[262,5,"SeaWaterWall","texture"]]',
-        lights: '[[145,3,"SettingSun1","sunlightWarm"],[145,7,"SettingSun1","sunlightDusk"]]',
+        lights: '[[145,3,"SettingSun1","sunlightWarm"],[145,7,"SettingSun1","sunlightDusk"],[96,7,"SettingSun1","sunlightGoldenHourSoft"]]',
         gates: '[[15,7,"50.1","49.2","Closed"]]',
         entities: '[[136,5,"RedBikiniVenus"],[280,1,"ScubaBabe"]]',
-        }
+    }
     ,
     51: {
         name: "Planet Arium",

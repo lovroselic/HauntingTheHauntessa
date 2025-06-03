@@ -1030,7 +1030,7 @@ LoadModels = [
     "Bat.gltf", "MissGalaxy.gltf", "Spider.gltf", "Dragon.gltf",
     "mandy.gltf", "NeverBlink.gltf", "EvilNun.gltf", "LizardMan.gltf", "NecroMorph.gltf", "CyGirl.gltf",
     "Hunteress.gltf", "Dragon2.gltf", "BigBat.gltf", "WolfSpider.gltf", "Viking.gltf", "MissGhostFace.gltf",
-    "Wolf.gltf",
+    "Wolf.gltf", "ButterFly.gltf",
 ];
 
 LoadSprites = [
@@ -1160,6 +1160,7 @@ LoadSprites = [
     { srcName: "EntityPictures/BlackBikiniVenus.jpg", name: "BlackBikiniVenus" },
     { srcName: "EntityPictures/GreenBikiniRedVenus.jpg", name: "GreenBikiniRedVenus" },
     { srcName: "EntityPictures/ScubaBabe.jpg", name: "ScubaBabe" },
+    { srcName: "EntityPictures/ButterFlyLadyFlux2.jpg", name: "ButterFlyLady" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },

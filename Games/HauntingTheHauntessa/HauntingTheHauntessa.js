@@ -79,7 +79,7 @@ const DEBUG = {
             DONE Leopardess wants "LittlePiggy", "LittlePiggy", "LittlePiggy" gives RedLatexPanties
             DONE RedBikiniVenus wants Shell, Shell, Shell gives Pearl
             DONE Tourist wants: "Postcard", "Postcard", "Postcard" gives PinkKey
-        ButterFlyLady$$$ wants "Butterfly", "Butterfly", "Butterfly" gives  Amethyst
+            DONE ButterFlyLady wants "Butterfly", "Butterfly", "Butterfly" gives  Amethyst
             DONE BlackBikiniVenus wants Towel, SunScreen gives Shell 
             DONE GreenBikiniRedVenus wants "RedSandals","RedLeatherHat" give Shell
             DONE ScubaBabe wants "Fins","ScubaMask", gives "PurpleTear"
@@ -119,7 +119,7 @@ const DEBUG = {
             DONE RedLeatherBoots --> Foxie (42)
             DONE Pearl, RedBikiniVenus --> (50)
         Moonstone, 
-        Amethyst
+            DONE Amethyst ButterFlyLady (31)
         Shell, 
             DONE Shell,  GreenBikiniRedVenus -> (49)
             DONE Shell BlackBikiniVenus -> (49)
@@ -133,6 +133,9 @@ const DEBUG = {
         "Fins",
         "ScubaMask",
             DONE "PurpleTear" ScubaBabe (50)
+            DONE "Butterfly", -->>(31)
+        "Butterfly", 
+        "Butterfly"
 
         Shrines:
             - mana
@@ -166,7 +169,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 50; //4 --> 28
+        GAME.level = 31; //4 --> 28
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -220,10 +223,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            "Fins","ScubaMask","PurpleTear",
-            "SunScreen", "Towel",
-            "RedSandals","RedLeatherHat",
-            "RedBar",
+            "SilverBar", "IronBar", "RedBar", "ArmorBlueprint",
         ];
 
         for (let itm of invItems) {
@@ -347,7 +347,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.21.23",
+    VERSION: "0.21.24",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

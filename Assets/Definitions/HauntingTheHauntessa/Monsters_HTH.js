@@ -2553,6 +2553,20 @@ const MOVABLE_INTERACTION_OBJECT = {
         inventorySprite: "LittlePiggy",
         text: "Try not to huff and puff.",
     },
+    Butterfly: {
+        name: "Butterfly",
+        category: "interaction_item",
+        model: "Butterfly",
+        scale: 1.25 / 2 ** 6,
+        fly: 0.5,
+        midHeight: 0.0,
+        rotateToNorth: Math.PI,
+        moveSpeed: 1.6,
+        material: MATERIAL.standard,
+        behaviourArguments: [Infinity, ["wanderer"], -1],
+        inventorySprite: "Butterfly",
+        text: "Very cute butterfly.",
+    },
 };
 
 const INTERACTION_ITEM = {
@@ -3098,6 +3112,12 @@ const INTERACTION_ITEM = {
         inventorySprite: "ScubaMask",
         text: "Mask. For scuba diving."
     },
+    Butterfly: {
+        name: "Butterfly",
+        category: "interaction_item",
+        inventorySprite: "Butterfly",
+        text: "Very cute butterfly."
+    },
 
 
     //books
@@ -3217,12 +3237,25 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    ButterFlyLady: {
+        name: "ButterFlyLady",
+        sprite: "ButterFlyLady",
+        category: 'crest',
+        voice: "FemaleHigh",
+        wants: ["Butterfly", "Butterfly", "Butterfly"],
+        gives: "Amethyst",
+        text: {
+            intro: "intro",
+            progress: "progress",
+            conclusion: "conclusion"
+        }
+    },
     ScubaBabe: {
         name: "ScubaBabe",
         sprite: "ScubaBabe",
         category: 'crest',
         voice: "FemaleHigh2",
-        wants: ["Fins","ScubaMask"],
+        wants: ["Fins", "ScubaMask"],
         gives: "PurpleTear",
         text: {
             intro: "intro",
