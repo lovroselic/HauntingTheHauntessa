@@ -1163,6 +1163,7 @@ LoadSprites = [
     { srcName: "EntityPictures/ButterFlyLadyFlux2.jpg", name: "ButterFlyLady" },
     { srcName: "EntityPictures/CaveGemma.jpg", name: "CaveGemma" },
     { srcName: "EntityPictures/CaveDomme.jpg", name: "CaveDomme" },
+    { srcName: "EntityPictures/ElvenSmithBabe.jpg", name: "ElvenSmith" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
@@ -1427,6 +1428,9 @@ LoadSprites = [
     { srcName: "Items/Fins.png", name: "Fins" },
     { srcName: "Items/ScubaMask.png", name: "ScubaMask" },
     { srcName: "Items/PurpleTear.png", name: "PurpleTear" },
+    { srcName: "Items/Scroll.png", name: "Scroll" },
+    { srcName: "Items/Quill.png", name: "Quill" },
+    { srcName: "Items/Blood.png", name: "Blood" },
 
     //books
     { srcName: "Items/YoniBook.png", name: "YoniBook" },

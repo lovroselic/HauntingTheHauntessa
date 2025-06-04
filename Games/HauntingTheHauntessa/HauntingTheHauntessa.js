@@ -70,7 +70,7 @@ const DEBUG = {
             DONE HungryMaid wants Pie, Pie, JUice gives GoldenBracelet
             DONE CaveBabe wants Pearl, Moonstone, Amethyst, "PurpleTear" Gives Ring 
             DONE SilverSpacy  wants Moon, Moon, Moon gives GoldenNecklace 
-        ElvenSmith wants "SilverBar", "IronBar", "RedBar", "ArmorBlueprint",   gives InfernalArmor
+            DONE ElvenSmith wants "SilverBar", "IronBar", "RedBar", "ArmorBlueprint",   gives InfernalArmor
             DONE Apple picker wants "Apple", "Apple", "Apple" gives Pie
             DONE Pear picker wants "Pear", "Pear", "Pear" gives Pie
             DONE Orange picker wants "Orange", "Orange", "Orange" gives OrangeJuice
@@ -83,7 +83,7 @@ const DEBUG = {
             DONE BlackBikiniVenus wants Towel, SunScreen gives Shell 
             DONE GreenBikiniRedVenus wants "RedSandals","RedLeatherHat" give Shell
             DONE ScubaBabe wants "Fins","ScubaMask", gives "PurpleTear"
-        $$$$ wants ### gives "ArmorBlueprint"
+        $$$$ wants "Scroll", "Quill", "Blood", "Skull" gives "ArmorBlueprint"
 
             DONE "Postcard"
             DONE "Postcard"
@@ -107,7 +107,7 @@ const DEBUG = {
        "BabySheep", "
        BabySheep"
         HornedHelmet
-        InfernalArmor --> ElvenSmith ()
+            DONE InfernalArmor --> ElvenSmith (48)
         "SilverBar", 
         "IronBar", 
         "RedBar", 
@@ -137,6 +137,10 @@ const DEBUG = {
             DONE "Butterfly", -->>(31)
         "Butterfly", 
         "Butterfly"
+        "Scroll", 
+        "Quill", 
+        "Blood", "
+        Skull"
 
         Shrines:
             - mana
@@ -170,7 +174,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 46; //4 --> 28
+        GAME.level = 48; //4 --> 28
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -224,8 +228,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            "Pearl", "Moonstone", "Amethyst", "PurpleTear",
-            "SilverBar", "IronBar", "RedBar", "ArmorBlueprint",
+            "Scroll", "Quill", "Blood", "Skull"
         ];
 
         for (let itm of invItems) {
@@ -349,7 +352,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.21.25",
+    VERSION: "0.21.26",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

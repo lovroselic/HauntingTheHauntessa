@@ -282,12 +282,7 @@ const INTERACTION_ITEM = {
 
    
    
-    Crown: {
-        name: "Crown",
-        category: "interaction_item",
-        inventorySprite: "Crown",
-        text: "My."
-    },
+
     FishBone: {
         name: "FishBone",
         category: "interaction_item",

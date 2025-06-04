@@ -2366,6 +2366,17 @@ const INTERACTION_OBJECT = {
         inventorySprite: "SmallBarrel",
         text: "Such a small barrel. Not a lot of drink."
     },
+    Scroll: {
+        name: "Scroll",
+        category: "interaction_item",
+        element: "SCROLL",
+        scale: 1.6 / 2 ** 4,
+        glueToFloor: true,
+        texture: "ScrollTexture",
+        material: MATERIAL.paper,
+        inventorySprite: "Scroll",
+        text: "It's empty? I should write a poem."
+    },
 
     //metals
     GoldSphere: {
@@ -3126,7 +3137,18 @@ const INTERACTION_ITEM = {
         inventorySprite: "Butterfly",
         text: "Very cute butterfly."
     },
-
+    Quill: {
+        name: "Quill",
+        category: "interaction_item",
+        inventorySprite: "Quill",
+        text: "Quill? For writing, I guess?."
+    },
+    Blood: {
+        name: "Blood",
+        category: "interaction_item",
+        inventorySprite: "Blood",
+        text: "Blood? Yuck."
+    },
 
     //books
     YoniBook: {
@@ -3245,6 +3267,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    ElvenSmith: {
+        name: "ElvenSmith",
+        sprite: "ElvenSmith",
+        category: 'crest',
+        voice: "FemaleHigh6",
+        wants: ["SilverBar", "IronBar", "RedBar", "ArmorBlueprint"],
+        gives: "InfernalArmor",
+        text: {
+            intro: "intro",
+            progress: "progress",
+            conclusion: "conclusion"
+        }
+    },
     CaveGemma: {
         name: "CaveGemma",
         sprite: "CaveGemma",
