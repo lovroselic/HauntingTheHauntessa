@@ -3267,6 +3267,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    MoonDemoness: {
+        name: "MoonDemoness",
+        sprite: "MoonDemoness",
+        category: 'crest',
+        voice: "Female3",
+        wants: ["Scroll", "Quill", "Blood", "Skull" ],
+        gives: "ArmorBlueprint",
+        text: {
+            intro: "intro",
+            progress: "progress",
+            conclusion: "conclusion"
+        }
+    },
     ElvenSmith: {
         name: "ElvenSmith",
         sprite: "ElvenSmith",

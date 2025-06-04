@@ -1139,12 +1139,12 @@ const MAP = {
         wall: "DarkWallSDXL322",
         floor: "BloodMarbleFloorWall_SDXL_003",
         ceil: "RockWall201",
-        start: '[686,1]',
+        start: '[114,1]',
         lights: '[[555,3,"DuaLLantern_023","standardYellowFaint"],[86,7,"FluxLight119","standardYellowFaint"],[1102,3,"WallLamp33","standardYellow"],[20,7,"Fireplace208","fireplace"],[30,7,"Fireplace207","fireplace"],[22,7,"Fireplace03","fireplace"],[28,7,"Fireplace212","fireplace"],[285,1,"Lamp43","standardUltraFaint"],[178,1,"Fireplace205","fireplaceDim"]]',
         gates: '[[832,3,"48.1","46.3","Up"]]',
         scrolls: '[[103,5]]',
         triggers: '[[170,5,"SmoothWallButton",1,172]]',
-        entities: '[[8,7,"ElvenSmith"]]',
+        entities: '[[8,7,"ElvenSmith"],[84,3,"MoonDemoness"]]',
         }
     ,
     49: {

@@ -157,8 +157,7 @@ const DEBUG = {
 
 
         Missing keys:
-                DONE red:: RRH
-                DONE -blue:: inferna
+         
 
         KEy yet unused:
          
@@ -174,7 +173,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 48; //4 --> 28
+        GAME.level = 31; //4 --> 28
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -228,7 +227,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            "Scroll", "Quill", "Blood", "Skull"
+        
         ];
 
         for (let itm of invItems) {
@@ -236,7 +235,7 @@ const DEBUG = {
             HERO.inventory.item.push(item);
         }
 
-        let keys = ["Blue", "Red"];
+        let keys = [];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -352,7 +351,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.21.26",
+    VERSION: "0.22.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
