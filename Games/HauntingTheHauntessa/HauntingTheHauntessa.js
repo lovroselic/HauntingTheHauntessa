@@ -83,18 +83,18 @@ const DEBUG = {
             DONE BlackBikiniVenus wants Towel, SunScreen gives Shell 
             DONE GreenBikiniRedVenus wants "RedSandals","RedLeatherHat" give Shell
             DONE ScubaBabe wants "Fins","ScubaMask", gives "PurpleTear"
-        $$$$ wants "Scroll", "Quill", "Blood", "Skull" gives "ArmorBlueprint"
+            DONE MoonDemoness wants "Scroll", "Quill", "Blood", "Skull" gives "ArmorBlueprint"
 
             DONE "Postcard"
             DONE "Postcard"
             DONE "Postcard"
-        "Apple", 
-        "Apple", 
+            DONE "Apple", --> (31)
+            DONE "Apple", --> (32)
         Apple
+            DONE "Pear" --> (31)
         "Pear"
         "Pear"
-        "Pear"
-        "Orange"
+            DONE"Orange" -->(32)
         "Orange"
         "Orange"
             DONE "Pie" --> (37) ApplePicker
@@ -111,7 +111,7 @@ const DEBUG = {
         "SilverBar", 
         "IronBar", 
         "RedBar", 
-        "ArmorBlueprint"
+            DONE "ArmorBlueprint" --> MoonDemoness (48)
             DONE GoldenNecklace --> SilverSpacy (51)
             DONE Ring --> CaveBabe (46)
             DONE GoldenBracelet -->HungryMaid(39)
@@ -165,7 +165,7 @@ const DEBUG = {
         Missing scrolls:
             - fly
             - fly
-            - fly
+    
             
 
 
@@ -173,7 +173,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 31; //4 --> 28
+        GAME.level = 33; //4 --> 28
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -351,7 +351,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.22.1",
+    VERSION: "0.22.2",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
