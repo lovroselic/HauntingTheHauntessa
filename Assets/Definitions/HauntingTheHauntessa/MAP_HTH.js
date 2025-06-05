@@ -824,7 +824,7 @@ const MAP = {
         movables: '[[145,"RoastChicken"]]',
     }
     ,
-    31 : {
+    31: {
         name: "The Valley",
         sg: 0,
         maxSpawned: -1,
@@ -845,7 +845,7 @@ const MAP = {
         objects: '[[16,"Apple"],[208,"Pear"]]',
         movables: '[[157,"Butterfly"]]',
         lairs: '[[150,5,"Lair38"],[164,3,"Lair33"]]',
-        }
+    }
     ,
     32: {
         name: "The Lodge",
@@ -866,26 +866,28 @@ const MAP = {
         oracles: '[[84,3,"Navigator"]]',
     }
     ,
-    33 : {
+    33: {
         name: "Old Bridge",
         sg: 0,
         maxSpawned: 4,
         killCountdown: 4,
         killsRequiredToStopSpawning: 29,
         spawnDelay: 9999,
-        data: '{"width":"19","height":"23","depth":5,"map":"BB10AA8BABAA9BB3AA16BAA13BAA33BAA17BAA88ÁAA17BAA19BAA5ÁÁ2AA18ÁAA14BB2AA3BB4AA2BŁBAA2BB3ŁABAA7ÁÁ4BB23ABB13AA8BB19ABB4AÁBÁBB20AA4BÁBÁBABABB2ABB6ABB3ABB9AA2BB38AA2BB38ABB5ABB165ÁBB13$BB195ÁBB22AÁBB95ABB91ÁBB54ÁBB34ABB5ࡁBB33ÁBB19ÁÁ16BB6ABB43ABB3ABAÁBÁBB25ÁBB2ÁBB2ÁÁ8BB18ÁÁ14BB17ÁÁ4BB39ÁÁ131AÁÁ67AÁÁ6BB2ÁÁ47BÁÁ7ABÁÁ107BB2ÁÁ4AÁBÁÁ18BB2ÁÁ4AÁÁ3BÁÁ19BB4ÁÁ19ABAÁABÁBÁÁ7ABÁÁ5BB4ÁÁ2BÁÁ126BÁBB16ÁÁ59BB15ɁɁ2Aсс2Łࡁࡁ2ɁсBB2"}',
+        data: '{"width":"19","height":"23","depth":5,"map":"BB10AA8BABAA9BB3AA16BAA13BAA33BB2AA106ÁAA17BAA19BB2AA5ÁÁ2ABAA18ÁAA5BABABAA8BB2ŁBAA3BB4AA2BB4ABABABB2ŁABAA7ÁÁ4BB25ABB2AA2BB3ABB5ABB6AA8BB24ABB4AÁBÁBB9ABB9ABB5AA4BÁBÁBB4ABABB3ABB5ABB6ABB2ABABB7ABB35ABB10ABB11ABB26AA2BB5ABB10$BB119ÁBB188ÁBB30AÁBB95ABB91ÁBB54ÁBB34ABB5ࡁBB33ÁBB19ÁÁ16BB6ABB43ABB3ABAÁBÁBB25ÁBB2ÁBB2ÁÁ8BB18ÁÁ14BB17ÁÁ4BB39ÁÁ131AÁÁ67AÁÁ6BB2ÁÁ47BÁÁ7ABÁÁ107BB2ÁÁ4AÁBÁÁ18BB2ÁÁ4AÁÁ3BÁÁ19BB4ÁÁ19ABAÁABÁBÁÁ7ABÁÁ5BB4ÁÁ2BÁÁ126BÁBB16ÁÁ59BB15ɁɁ2Aсс2Łࡁࡁ2ɁсBB2"}',
         wall: "RedishVinesWall1",
         floor: "Cobblestone_0825",
         ceil: "Relief17",
-        start: '[293,1]',
+        start: '[1352,3]',
         decals: '[[210,4,"Water30","texture"],[211,4,"Water30","texture"],[212,4,"Water30","texture"],[213,4,"Water30","texture"],[214,4,"Water30","texture"],[215,4,"Water30","texture"],[216,4,"Water30","texture"],[217,4,"Water30","texture"],[218,4,"Water30","texture"],[219,4,"Water30","texture"],[220,4,"Water30","texture"],[221,4,"Water30","texture"],[222,4,"Water30","texture"],[223,4,"Water30","texture"],[224,4,"Water30","texture"],[225,4,"Water30","texture"],[226,4,"Water30","texture"],[207,4,"Water30","texture"],[206,4,"Water30","texture"],[205,4,"Water30","texture"],[204,4,"Water30","texture"],[203,4,"Water30","texture"],[202,4,"Water30","texture"],[201,4,"Water30","texture"],[200,4,"Water30","texture"],[199,4,"Water30","texture"],[198,4,"Water30","texture"],[197,4,"Water30","texture"],[196,4,"Water30","texture"],[195,4,"Water30","texture"],[194,4,"Water30","texture"],[193,4,"Water30","texture"],[192,4,"Water30","texture"],[191,4,"Water30","texture"],[229,4,"Water30","texture"],[230,4,"Water30","texture"],[231,4,"Water30","texture"],[232,4,"Water30","texture"],[233,4,"Water30","texture"],[234,4,"Water30","texture"],[235,4,"Water30","texture"],[236,4,"Water30","texture"],[237,4,"Water30","texture"],[238,4,"Water30","texture"],[239,4,"Water30","texture"],[240,4,"Water30","texture"],[241,4,"Water30","texture"],[242,4,"Water30","texture"],[243,4,"Water30","texture"],[244,4,"Water30","texture"],[245,4,"Water30","texture"],[264,4,"Water30","texture"],[263,4,"Water30","texture"],[262,4,"Water30","texture"],[261,4,"Water30","texture"],[260,4,"Water30","texture"],[259,4,"Water30","texture"],[258,4,"Water30","texture"],[257,4,"Water30","texture"],[256,4,"Water30","texture"],[255,4,"Water30","texture"],[254,4,"Water30","texture"],[253,4,"Water30","texture"],[252,4,"Water30","texture"],[251,4,"Water30","texture"],[250,4,"Water30","texture"],[249,4,"Water30","texture"],[248,4,"Water30","texture"],[172,4,"Water30","texture"],[173,4,"Water30","texture"],[174,4,"Water30","texture"],[175,4,"Water30","texture"],[176,4,"Water30","texture"],[177,4,"Water30","texture"],[178,4,"Water30","texture"],[179,4,"Water30","texture"],[180,4,"Water30","texture"],[181,4,"Water30","texture"],[182,4,"Water30","texture"],[183,4,"Water30","texture"],[184,4,"Water30","texture"],[185,4,"Water30","texture"],[186,4,"Water30","texture"],[187,4,"Water30","texture"],[188,4,"Water30","texture"],[169,4,"Water30","texture"],[168,4,"Water30","texture"],[167,4,"Water30","texture"],[165,4,"Water30","texture"],[166,4,"Water30","texture"],[164,4,"Water30","texture"],[163,4,"Water30","texture"],[162,4,"Water30","texture"],[161,4,"Water30","texture"],[160,4,"Water30","texture"],[159,4,"Water30","texture"],[158,4,"Water30","texture"],[157,4,"Water30","texture"],[156,4,"Water30","texture"],[155,4,"Water30","texture"],[154,4,"Water30","texture"],[153,4,"Water30","texture"],[267,4,"Water30","texture"],[268,4,"Water30","texture"],[269,4,"Water30","texture"],[270,4,"Water30","texture"],[271,4,"Water30","texture"],[272,4,"Water30","texture"],[273,4,"Water30","texture"],[274,4,"Water30","texture"],[275,4,"Water30","texture"],[276,4,"Water30","texture"],[277,4,"Water30","texture"],[278,4,"Water30","texture"],[279,4,"Water30","texture"],[280,4,"Water30","texture"],[281,4,"Water30","texture"],[282,4,"Water30","texture"],[283,4,"Water30","texture"]]',
-        lights: '[[1792,7,"FluxLight127","standard2"],[1798,7,"FluxLight127","standard2"],[948,3,"Candelabra17","standardYellowDim"],[73,7,"WallLamp35","standardYellowDim"]]',
+        lights: '[[1792,7,"FluxLight127","standard2"],[1798,7,"FluxLight127","standard2"],[948,3,"Candelabra17","standardYellowDim"],[73,7,"WallLamp35","standardYellowDim"],[2,7,"Candle56","standardYellowFaint"]]',
         gates: '[[1320,7,"33.1","32.2","Closed"],[1738,1,"33.2","34.1","Gold"],[1424,3,"33.3","46.1","Closed"],[1387,5,"33.4","49.1","Closed"]]',
         scrolls: '[[64,5]]',
+        gold: '[[1333,"SilverBar"],[1335,"SilverBar"]]',
         triggers: '[[311,1,"SmoothWallButton",1,102]]',
+        objects: '[[321,"HornedHelmet"],[41,"Blood"],[1331,"SilverBar"]]',
         lairs: '[[80,7,"Lair31"],[85,7,"Lair456"],[332,1,"Lair31"],[327,1,"Lair22"],[337,1,"Lair65"]]',
         monsterList: '["RedDragon","RedDragon","RedDragon","Dragon"]',
-        }
+    }
     ,
     34: {
         name: "Underworld Entrance",
@@ -955,6 +957,7 @@ const MAP = {
         keys: '[[30,1],[402,1]]',
         shrines: '[[32,5,"RedHeadForestWariorr"]]',
         doors: '[77]',
+        movables: '[[213,"BabySheep"],[412,"Chicken"],[64,"Butterfly"]]',
         lairs: '[[66,1,"Lair40"],[372,5,"Lair47"],[251,3,"Lair12"]]',
     }
     ,
@@ -1099,7 +1102,7 @@ const MAP = {
         entities: '[[1312,1,"RedRidingHood"]]',
     }
     ,
-    46 : {
+    46: {
         name: "Underground Cave",
         sg: 0,
         maxSpawned: -1,
@@ -1116,7 +1119,7 @@ const MAP = {
         triggers: '[[1142,1,"SmoothWallButton",0,1075],[860,1,"SmoothWallButton",0,1041],[1698,7,"SmoothWallButton",0,1660],[1732,1,"SmoothWallButton",0,1643],[1631,3,"SmoothWallButton",0,1594],[2076,1,"SmoothWallButton",1,2109]]',
         entities: '[[280,1,"CaveGemma"]]',
         oracles: '[[11,7,"CaveDomme"]]',
-        }
+    }
     ,
     47: {
         name: "The Mountains",
@@ -1133,7 +1136,7 @@ const MAP = {
         gates: '[[221,5,"47.1","46.2","Closed"],[276,1,"47.2","51.1","Closed"]]',
     }
     ,
-    48 : {
+    48: {
         name: "Elven Smithy",
         sg: 0,
         maxSpawned: -1,
@@ -1150,7 +1153,7 @@ const MAP = {
         scrolls: '[[103,5]]',
         triggers: '[[170,5,"SmoothWallButton",1,172]]',
         entities: '[[8,7,"ElvenSmith"],[84,3,"MoonDemoness"]]',
-        }
+    }
     ,
     49: {
         name: "First Bitch",

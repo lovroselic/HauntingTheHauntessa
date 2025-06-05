@@ -2353,7 +2353,7 @@ const INTERACTION_OBJECT = {
         texture: "HornedHelmetColor",
         material: MATERIAL.steel,
         inventorySprite: "HornedHelmet",
-        text: ""
+        text: "Wow. I would wear that but it would ruin my hairdo."
     },
     SmallBarrel: {
         name: "SmallBarrel",
@@ -2376,6 +2376,17 @@ const INTERACTION_OBJECT = {
         material: MATERIAL.paper,
         inventorySprite: "Scroll",
         text: "It's empty? I should write a poem."
+    },
+    Blood: {
+        name: "Blood",
+        category: "interaction_item",
+        element: "FLASK",
+        scale: 1.1 / 2 ** 5,
+        glueToFloor: true,
+        texture: "BloodTexture",
+        inventorySprite: "Blood",
+        material: MATERIAL.redShine,
+        text: "Disgusting. Give it to someone else."
     },
 
     //metals

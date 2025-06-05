@@ -2468,17 +2468,7 @@ const INTERACTION_OBJECT = {
         material: MATERIAL.gold,
         text: "Face on the coin looks like my mother."
     },
-    Blood: {
-        name: "Blood",
-        category: "interaction_item",
-        element: "FLASK",
-        scale: 1.1 / 2 ** 5,
-        glueToFloor: true,
-        texture: "BloodTexture",
-        inventorySprite: "Blood",
-        material: MATERIAL.redShine,
-        text: "Disgusting. Give it to someone else."
-    },
+    
 };
 
 const MOVABLE_INTERACTION_OBJECT = {

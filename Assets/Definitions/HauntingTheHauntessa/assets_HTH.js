@@ -922,6 +922,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/CandleWax.jpg", name: "CandleWax" },
     { srcName: "ObjectTextures/MushroomTexture.jpg", name: "MushroomTexture" },
     { srcName: "ObjectTextures/HornedHelmetColor.jpg", name: "HornedHelmetColor" },
+    { srcName: "ObjectTextures/BloodTexture.jpg", name: "BloodTexture" },
 
     /** other monster textures */
     { srcName: "ObjectTextures/RedGoldBat.jpg", name: "RedGoldBat" },
@@ -1021,7 +1022,7 @@ LoadObjects = [
     "cake.obj", "steak.obj", "can.obj", "wine.obj",
     "Amanita.obj", "Snail.obj", "Frog.obj",
     "apple.obj", "crown.obj", "dagger.obj", "mushroom.obj", "skull.obj", "Candle.obj",
-    "HornedHelmet.obj",
+    "HornedHelmet.obj", "flask.obj",
 ];
 
 LoadModels = [

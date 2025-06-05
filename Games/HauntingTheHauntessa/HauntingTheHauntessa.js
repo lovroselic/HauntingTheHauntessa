@@ -102,13 +102,13 @@ const DEBUG = {
             DONE "OrangeJuice"--> (37) OrangePicker
         "Chicken"
         "Chicken"
-        "Chicken"
-       "BabySheep", 
+            DONE "Chicken" --> (37)
+        DONE "BabySheep", --> (37)
        "BabySheep", "
        BabySheep"
-        HornedHelmet
+            DONE HornedHelmet --> (33)
             DONE InfernalArmor --> ElvenSmith (48)
-        "SilverBar", 
+            DONE "SilverBar", --> (33)
         "IronBar", 
         "RedBar", 
             DONE "ArmorBlueprint" --> MoonDemoness (48)
@@ -135,11 +135,11 @@ const DEBUG = {
         "ScubaMask",
             DONE "PurpleTear" ScubaBabe (50)
             DONE "Butterfly", -->>(31)
-        "Butterfly", 
+            DONE "Butterfly", --> (37)
         "Butterfly"
         "Scroll", 
         "Quill", 
-        "Blood", "
+            DONE "Blood", --> (33)
         Skull"
 
         Shrines:
@@ -173,7 +173,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 33; //4 --> 28
+        GAME.level = 38; //4 --> 28
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -351,7 +351,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.22.2",
+    VERSION: "0.22.3",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
