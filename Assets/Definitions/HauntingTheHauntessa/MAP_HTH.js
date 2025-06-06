@@ -961,7 +961,7 @@ const MAP = {
         lairs: '[[66,1,"Lair40"],[372,5,"Lair47"],[251,3,"Lair12"]]',
     }
     ,
-    38 : {
+    38: {
         name: "The Farm",
         sg: 0,
         maxSpawned: -1,
@@ -979,9 +979,9 @@ const MAP = {
         entities: '[[370,7,"ApplePicker"],[512,3,"PearPicker"],[494,5,"OrangePicker"]]',
         objects: '[[687,"Skull"]]',
         lairs: '[[1052,1,"Lair66"],[1056,1,"Lair69"]]',
-        }
+    }
     ,
-    39 : {
+    39: {
         name: "Castle of Dutchessa Nylonessa",
         sg: 0,
         maxSpawned: -1,
@@ -1000,7 +1000,7 @@ const MAP = {
         triggers: '[[1828,1,"SmoothWallButton",0,1485]]',
         entities: '[[850,1,"DutchessaNylonessa"],[1388,7,"HungryMaid"]]',
         objects: '[[37,"Apple"],[1930,"Pear"],[2182,"IronBar"]]',
-        }
+    }
     ,
     40: {
         name: "Entrance to the Forbidden Forest",
@@ -1019,7 +1019,7 @@ const MAP = {
         gates: '[[247,5,"40.1","31.4","Closed"],[90,3,"40.2","41.1","Down"],[177,7,"40.2","44.1","Cyan"],[333,1,"40.3","45.1","Pink"]]',
     }
     ,
-    41 : {
+    41: {
         name: "Forbidden Forest",
         sg: 0,
         maxSpawned: -1,
@@ -1037,7 +1037,7 @@ const MAP = {
         shrines: '[[129,1,"CyBorgessia"]]',
         objects: '[[402,"RedBar"]]',
         movables: '[[303,"BabySheep"],[280,"Chicken"]]',
-        }
+    }
     ,
     42: {
         name: "Animal Kingdom",
@@ -1046,7 +1046,7 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"21","height":"21","depth":3,"map":"BB2AA7BABB2AA8BABAA9BAA8BB3ABB3AA2BÁAA2BABAA7BAA8ࡁсAA2BB3AA11BB3AA2BAA3BAA2ŁɁAA2BABB4AA2BAA2BABABAA9BAA4BAA23BB2AA4BB4ABAA2BABAA4BB2ABB2ABABABB2AA4BABAA8BABB2ABAA5BB2ABB3ABB2AA2BB3ABB9AA2BB6ABAA3BB3ABB9ABB7ABB11ABÁBB5ABABB7AA3BB3ABB4ÁBB4ABB2ABB4ABB8ABB6ABB7ABB2ABB5ABAA3BB4ABB4ABB2ÁBB4ABB3ABB13ABÁABB5ABB17ABB9ABB12ABB3ABB19ABB5AA2BB15ABB12ABB3ABB3ABB3ABB11ABB9ABB101ABB74ÁBB167$ABB117ÁÁ2BB3ÁBB8ÁBÁÁ3BB4ÁBÁÁ3BB51ABB26AA2BB18ABB6ÁÁ2BB2ÁÁ3BB14ÁÁ34BÁÁ3BÁÁ3BB2ÁÁ49BÁBB3ÁÁ15BB2ÁBB4ÁÁ14ABB2ÁÁ10BB5AA4"}',
+        data: '{"width":"21","height":"21","depth":3,"map":"BB2AA7BABB2AA8BABAA9BAA8BB3ABB3AA2BÁAA2BABAA6BAA9ࡁсAA2BB3AA11BB3AA2BAA3BAA2ŁɁAA2BABB4AA2BAA2BABABAA9BAA4BAA23BB2AA4BB2ABABAA2BAA4BB3ABB2ABABABB2AA4BABAA8BABB2ABAA5BB2ABB3ABB2AA2BB3ABB9AA2BB6ABAA3BB20ABB11ABÁBB5ABABB7AA2BB3AA2BB5ÁBB4ABB2ABB4ABB8ABB6ABB7AA2BB2ABB5ABAA3BB4ABB4ABB2ÁBB4ABB3ABB13ABÁABB5ABB17ABB9ABB12ABB3ABB19ABB5AA2BB15ABB12ABB3ABB3ABB3ABB11ABB9ABB101ABB74ÁBB167$ABB117ÁÁ2BB3ÁBB8ÁBÁÁ3BB4ÁBÁÁ3BB51ABB26AA2BB18ABB6ÁÁ2BB2ÁÁ3BB14ÁÁ34BÁÁ3BÁÁ3BB2ÁÁ49BÁBB3ÁÁ15BB2ÁBB4ÁÁ14ABB2ÁÁ10BB5AA4"}',
         wall: "DarkWallSDXL318",
         floor: "MarbleFloor105",
         ceil: "Relief12",
@@ -1054,10 +1054,11 @@ const MAP = {
         decals: '[[470,7,"HauntedForest02","texture"],[471,7,"HauntedForest02","texture"],[473,7,"HauntedForest02","texture"],[474,7,"HauntedForest02","texture"],[473,3,"HauntedForest02","texture"],[496,3,"HauntedForest02","texture"],[517,3,"HauntedForest02","texture"],[490,5,"HauntedForest02","texture"],[511,5,"HauntedForest02","texture"],[471,5,"HauntedForest02","texture"],[568,5,"HauntedForest04","texture"],[589,5,"HauntedForest04","texture"],[631,5,"HauntedForest04","texture"],[652,5,"HauntedForest04","texture"],[548,7,"HauntedForest04","texture"],[549,7,"HauntedForest04","texture"],[589,7,"HauntedForest04","texture"],[631,1,"HauntedForest04","texture"],[674,1,"HauntedForest04","texture"],[675,1,"HauntedForest04","texture"],[586,3,"HauntedForest10","texture"],[607,3,"HauntedForest10","texture"],[649,3,"HauntedForest10","texture"],[670,3,"HauntedForest10","texture"],[563,7,"HauntedForest10","texture"],[564,7,"HauntedForest10","texture"],[607,7,"HauntedForest10","texture"],[689,1,"HauntedForest10","texture"],[690,1,"HauntedForest10","texture"],[649,1,"HauntedForest10","texture"]]',
         lights: '[[808,1,"Moon58","moonlightBright"],[1039,1,"Moon56","moonlightFaint"],[1039,3,"Moon50","moonlightFaint"],[1039,5,"Moon60","moonlightFaint"]]',
         gates: '[[430,1,"42.1","41.2","Closed"]]',
+        containers: '[[463,"MetalCrate51","INTERACTION_ITEM.Moon",7],[838,"WoodenCrate57","INTERACTION_ITEM.Moonstone",7],[542,"Barrel_465","INTERACTION_ITEM.Fins",5]]',
         entities: '[[451,7,"Wolfie"],[629,3,"Foxie"],[609,5,"LeonaPard"]]',
     }
     ,
-    43 : {
+    43: {
         name: "The Cellar",
         sg: 0,
         maxSpawned: -1,
@@ -1072,7 +1073,7 @@ const MAP = {
         gates: '[[42,5,"43.1","39.2","Up"]]',
         oracles: '[[17,7,"ButterFlyLadyOracle"]]',
         movables: '[[217,"BabySheep"],[309,"Chicken"],[80,"Butterfly"]]',
-        }
+    }
     ,
     44: {
         name: "Inferna",
@@ -1088,7 +1089,9 @@ const MAP = {
         start: '[1213,7]',
         lights: '[[1060,5,"Fireplace208","fireplace"],[1633,1,"FluxLight116","standardYellowSoft"],[1633,7,"FluxLight128","mutedOrange"],[596,1,"Fireplace202","fireplace"],[785,1,"Fireplace106","fireplace"],[288,7,"FireplaceFLuxU420","fireplace"]]',
         gates: '[[863,1,"44.1","40.2","Closed"]]',
+        containers: '[[1125,"Chest10","INTERACTION_ITEM.Orange",5],[376,"TreasureChest","INTERACTION_ITEM.Moon",3]]',
         entities: '[[1318,1,"Inferna"]]',
+        objects: '[[463,"Pear"]]',
     }
     ,
     45: {
@@ -1106,6 +1109,7 @@ const MAP = {
         lights: '[[1375,7,"Candle51","standardSoft"],[945,5,"DuaLLantern_030","standardSoft"],[920,7,"WallLamp31","standardSoft"],[2047,7,"FluxLight121","standardSoft"]]',
         gates: '[[892,7,"45.1","40.3","Closed"]]',
         scrolls: '[[940,5]]',
+        containers: '[[1174,"WoodenCrate54","INTERACTION_ITEM.Quill",7],[1093,"MetalCrate53","INTERACTION_ITEM.RedSandals",1]]',
         triggers: '[[908,7,"SmoothWallButton",0,948],[905,7,"SmoothWallButton",0,959],[1005,1,"SmoothWallButton",0,1060],[1030,7,"SmoothWallButton",0,997],[1048,7,"SmoothWallButton",0,1039],[1125,3,"SmoothWallButton",0,1122],[1121,5,"SmoothWallButton",0,1143]]',
         entities: '[[1312,1,"RedRidingHood"]]',
     }
@@ -1117,7 +1121,7 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"17","height":"17","depth":9,"map":"BB7AA12BAA7BAA14BABABAA6ÁAA3ࡁAA22ÁAA3BAA2ŁAA12BAA2BAA9BB2ABAA4BAÁAA2BB4AA12BB2AÁAA5BÁAA5BB2ABAA3BB2AA3BAA8BB3ABŁABABB3AÁÁ5AA3BB2AA3ÁÁ2AA5ÁAA2BŁŁ2AÁABABAÁÁ3BB9AA2BB3ABABB12ABABABABB5ABB54ÁBB5ÁBB2ÁBB12AA6ɁࡁBB5ÁŁсABB9ABB4ÁBABB6ÁBB5ÁBB11ÁBB13ÁBAA2BB5ÁBB3ABB29ÁBB13ÁBB12ABB7ABABB5ABB47$BB23ÁBB72ABB17ÁÁ2BB96ABB8ABࡁBB6ABB93ABB170ÁBB14ÁÁ2BÁBB20ÁÁ6BB10ABB6ÁBÁBÁÁ2BB16ABB2ÁÁ6BB5ÁࡁɁсBB23ÁÁ5BB3AŁAA3BB3ÁBÁÁ4BB2ÁÁ7BB6ÁBÁBB10ABB6ÁÁ2BB5ÁÁ4BÁÁ6BB2ÁÁ2BB4ÁÁ3BÁBB11ÁBB13ÁBB11ÁBB2ÁBB20ABB5ÁÁ2BB3ÁBB6ÁBÁÁ2BÁBB5ÁBB41ABB34ABB13ÁÁ7BB6ÁBB2ÁÁ2BÁÁ5BB5ÁÁ3BB9ÁÁ2BB50ÁBÁÁ3BB2ÁÁ2BB3ABB2ABB3ABB4ÁÁ4AÁÁ5AÁÁ3BÁAÁÁ35AÁÁ8сBÁBB4ɁࡁÁÁ2BÁÁ28BÁÁ5BÁÁ13AÁÁ18BÁÁ11AÁÁ57BÁÁ11BࡁÁÁ2BB3ÁÁ7BB3ÁÁ9BÁÁ12BÁÁ35ABÁÁ7AÁÁ10BÁÁ4BÁÁ5BÁÁ7BÁBÁÁ10BÁÁ74BB4ÁÁ19AÁÁ72ɁÁÁ9AÁÁ30ɁÁÁ13ŁсÁÁ4AÁÁ8BB3ÁBÁÁ2BÁÁ2BÁÁ4AÁÁ9BB2ÁÁ2BÁBÁÁ5BÁÁ27AÁÁ15BÁÁ9BÁÁ2AÁÁ26ŁAÁÁ13BÁÁ9BсࡁBÁBÁÁ5ABÁBB5AÁÁ38сÁÁ3BÁÁ4BB3ÁÁ5BÁÁ27BB3ÁÁ2ABÁBB5ÁÁ25BB2ÁÁ2ࡁÁBB5ÁÁ9AŁɁсÁÁ3AÁÁ3BB12ÁÁ2ŁɁBB4ÁÁ4сࡁBB2ÁBÁÁ7BÁBB2ÁÁ2BÁBÁÁ2AÁÁ7AÁÁ16BÁÁ7BÁÁ3BB2ÁÁ3BɁÁɁɁ2BÁÁ3BB2ABÁÁ4BB2сÁсŁBÁÁ4BB2Áࡁࡁ2ɁBB2сÁÁ3BB2ÁBB2"}',
+        data: '{"width":"17","height":"17","depth":9,"map":"BB4ABB2ABAA12BAA7BAA14BABAA5BAA2ÁAA3ࡁAA22ÁAA3BAA2ŁAA12BAA2BAA9BB2ABAA4BAÁAA2BB4AA12BB2AÁAA5BÁAA5BB2ABAA3BB2AA3BAA8BB3ABŁABABB3AÁÁ5AA3BB2AA3ÁÁ2AA5ÁAA2BŁŁ2AÁABABAÁÁ3BB9AA2BB3ABABB12ABABABABB5ABB41AA2BB11ÁBB5ÁBB2ÁBB12AA4ɁࡁBB5ÁŁсABB9ABB4ÁBABB6ÁBB5ÁBB11ÁBB13ÁBAA2BB5ÁBB3ABB29ÁBB13ÁBB12ABB7ABABB5ABB47$BB23ÁBB72ABB17ÁÁ2BB96ABB8ABࡁBB6ABB93ABB170ÁBB14ÁÁ2BÁBB20ÁÁ6BB10ABB6ÁBÁBÁÁ2BB16ABB2ÁÁ6BB5ÁࡁɁсBB23ÁÁ5BB3AŁAA3BB3ÁBÁÁ4BB2ÁÁ7BB6ÁBÁBB10ABB6ÁÁ2BB5ÁÁ4BÁÁ6BB2ÁÁ2BB4ÁÁ3BÁBB11ÁBB13ÁBB11ÁBB2ÁBB20ABB5ÁÁ2BB3ÁBB6ÁBÁÁ2BÁBB5ÁBB41ABB34ABB13ÁÁ7BB6ÁBB2ÁÁ2BÁÁ5BB5ÁÁ3BB9ÁÁ2BB50ÁBÁÁ3BB2ÁÁ2BB3ABB2ABB3ABB4ÁÁ4AÁÁ5AÁÁ3BÁAÁÁ35AÁÁ8сBÁBB4ɁࡁÁÁ2BÁÁ28BÁÁ5BÁÁ13AÁÁ18BÁÁ11AÁÁ57BÁÁ11BࡁÁÁ2BB3ÁÁ7BB3ÁÁ9BÁÁ12BÁÁ35ABÁÁ7AÁÁ10BÁÁ4BÁÁ5BÁÁ7BÁBÁÁ10BÁÁ74BB4ÁÁ19AÁÁ72ɁÁÁ9AÁÁ30ɁÁÁ13ŁсÁÁ4AÁÁ8BB3ÁBÁÁ2BÁÁ2BÁÁ4AÁÁ9BB2ÁÁ2BÁBÁÁ5BÁÁ27AÁÁ15BÁÁ9BÁÁ2AÁÁ26ŁAÁÁ13BÁÁ9BсࡁBÁBÁÁ5ABÁBB5AÁÁ38сÁÁ3BÁÁ4BB3ÁÁ5BÁÁ27BB3ÁÁ2ABÁBB5ÁÁ25BB2ÁÁ2ࡁÁBB5ÁÁ9AŁɁсÁÁ3AÁÁ3BB12ÁÁ2ŁɁBB4ÁÁ4сࡁBB2ÁBÁÁ7BÁBB2ÁÁ2BÁBÁÁ2AÁÁ7AÁÁ16BÁÁ7BÁÁ3BB2ÁÁ3BɁÁɁɁ2BÁÁ3BB2ABÁÁ4BB2сÁсŁBÁÁ4BB2Áࡁࡁ2ɁBB2сÁÁ3BB2ÁBB2"}',
         wall: "RoughCave20",
         floor: "Relief08",
         ceil: "RoughCave01",
