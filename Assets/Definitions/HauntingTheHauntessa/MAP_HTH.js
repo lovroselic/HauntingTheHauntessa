@@ -961,7 +961,7 @@ const MAP = {
         lairs: '[[66,1,"Lair40"],[372,5,"Lair47"],[251,3,"Lair12"]]',
     }
     ,
-    38: {
+    38 : {
         name: "The Farm",
         sg: 0,
         maxSpawned: -1,
@@ -975,11 +975,13 @@ const MAP = {
         start: '[465,1]',
         lights: '[[503,1,"FluxLight111c","standardSoft"],[503,3,"DuaLLantern_016","standardSoft"],[503,5,"DuaLLantern_029","standardSoft"],[864,7,"SkullLantern57","standardYellow"]]',
         gates: '[[351,1,"38.1","37.2","Closed"]]',
+        containers: '[[397,"WoodenCrate55","INTERACTION_ITEM.SunScreen",7]]',
         entities: '[[370,7,"ApplePicker"],[512,3,"PearPicker"],[494,5,"OrangePicker"]]',
+        objects: '[[687,"Skull"]]',
         lairs: '[[1052,1,"Lair66"],[1056,1,"Lair69"]]',
-    }
+        }
     ,
-    39: {
+    39 : {
         name: "Castle of Dutchessa Nylonessa",
         sg: 0,
         maxSpawned: -1,
@@ -993,10 +995,12 @@ const MAP = {
         start: '[1514,1]',
         lights: '[[740,5,"Fireplace101","fireplace"],[750,3,"Fireplace204","fireplace"],[932,7,"SkullLantern53","standard2"],[936,7,"SkullLantern58","standard2"],[1577,1,"Candelabra01","standardYellowDim"],[1774,7,"Candelabra01","standardYellowFaint"]]',
         gates: '[[10,7,"39.1","37.3","Closed"],[419,3,"39.2","43.1","Down"]]',
+        containers: '[[2126,"Barrel_463","INTERACTION_ITEM.Orange",5]]',
         doors: '[150,164]',
         triggers: '[[1828,1,"SmoothWallButton",0,1485]]',
         entities: '[[850,1,"DutchessaNylonessa"],[1388,7,"HungryMaid"]]',
-    }
+        objects: '[[37,"Apple"],[1930,"Pear"],[2182,"IronBar"]]',
+        }
     ,
     40: {
         name: "Entrance to the Forbidden Forest",
@@ -1015,7 +1019,7 @@ const MAP = {
         gates: '[[247,5,"40.1","31.4","Closed"],[90,3,"40.2","41.1","Down"],[177,7,"40.2","44.1","Cyan"],[333,1,"40.3","45.1","Pink"]]',
     }
     ,
-    41: {
+    41 : {
         name: "Forbidden Forest",
         sg: 0,
         maxSpawned: -1,
@@ -1031,7 +1035,9 @@ const MAP = {
         gates: '[[63,5,"41.1","40.2","Closed"],[3,7,"41.2","42.1","Closed"]]',
         keys: '[[149,8],[292,10]]',
         shrines: '[[129,1,"CyBorgessia"]]',
-    }
+        objects: '[[402,"RedBar"]]',
+        movables: '[[303,"BabySheep"],[280,"Chicken"]]',
+        }
     ,
     42: {
         name: "Animal Kingdom",
@@ -1051,7 +1057,7 @@ const MAP = {
         entities: '[[451,7,"Wolfie"],[629,3,"Foxie"],[609,5,"LeonaPard"]]',
     }
     ,
-    43: {
+    43 : {
         name: "The Cellar",
         sg: 0,
         maxSpawned: -1,
@@ -1062,9 +1068,11 @@ const MAP = {
         wall: "BlackWall43",
         floor: "BlackWall40",
         ceil: "MarbleFloor1003",
-        start: '[43,5]',
+        start: '[59,1]',
         gates: '[[42,5,"43.1","39.2","Up"]]',
-    }
+        oracles: '[[17,7,"ButterFlyLadyOracle"]]',
+        movables: '[[217,"BabySheep"],[309,"Chicken"],[80,"Butterfly"]]',
+        }
     ,
     44: {
         name: "Inferna",

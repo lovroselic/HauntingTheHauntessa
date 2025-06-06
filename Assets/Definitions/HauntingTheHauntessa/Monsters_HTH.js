@@ -341,6 +341,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    ButterFlyLadyOracle: {
+        name: "ButterFlyLadyOracle",
+        sprite: "ButterFlyLadyOracle",
+        category: 'crest',
+        voice: "Female6",
+        text: "I think I saw a butterfly in this maze? Keep an eye out.",
+        interactionCategory: "oracle",
+    },
     CaveDomme: {
         name: "CaveDomme",
         sprite: "CaveDomme",

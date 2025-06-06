@@ -1027,7 +1027,7 @@ LoadObjects = [
 
 LoadModels = [
     'ThePrincess.gltf',
-    "Chicken.gltf", "Pig.gltf",
+    "Chicken.gltf", "Pig.gltf", "Sheep.gltf",
     "Bat.gltf", "MissGalaxy.gltf", "Spider.gltf", "Dragon.gltf",
     "mandy.gltf", "NeverBlink.gltf", "EvilNun.gltf", "LizardMan.gltf", "NecroMorph.gltf", "CyGirl.gltf",
     "Hunteress.gltf", "Dragon2.gltf", "BigBat.gltf", "WolfSpider.gltf", "Viking.gltf", "MissGhostFace.gltf",
@@ -1166,6 +1166,7 @@ LoadSprites = [
     { srcName: "EntityPictures/CaveDomme.jpg", name: "CaveDomme" },
     { srcName: "EntityPictures/ElvenSmithBabe.jpg", name: "ElvenSmith" },
     { srcName: "EntityPictures/MoonDemoness.jpg", name: "MoonDemoness" },
+    { srcName: "EntityPictures/ButterFlyLady2.jpg", name: "ButterFlyLadyOracle" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },

@@ -90,27 +90,27 @@ const DEBUG = {
             DONE "Postcard"
             DONE "Apple", --> (31)
             DONE "Apple", --> (32)
-        Apple
+            DONE Apple --> (39)
             DONE "Pear" --> (31)
-        "Pear"
+            DONE"Pear" --> (39)
         "Pear"
             DONE"Orange" -->(32)
-        "Orange"
+            DONE "Orange" --> (39)
         "Orange"
             DONE "Pie" --> (37) ApplePicker
             DONE "Pie" -->(37) PearPicker
             DONE "OrangeJuice"--> (37) OrangePicker
-        "Chicken"
-        "Chicken"
+            DONE "Chicken" -->(41)
+            "DONE Chicken" --> (43)
             DONE "Chicken" --> (37)
-        DONE "BabySheep", --> (37)
-       "BabySheep", "
-       BabySheep"
+            DONE "BabySheep", --> (37)
+            DONE "BabySheep", --> (41)
+            DONE BabySheep" --> (43)
             DONE HornedHelmet --> (33)
             DONE InfernalArmor --> ElvenSmith (48)
             DONE "SilverBar", --> (33)
-        "IronBar", 
-        "RedBar", 
+            DONE "IronBar", --> (39)
+            DONE "RedBar", --> (41)
             DONE "ArmorBlueprint" --> MoonDemoness (48)
             DONE GoldenNecklace --> SilverSpacy (51)
             DONE Ring --> CaveBabe (46)
@@ -128,7 +128,7 @@ const DEBUG = {
         "Moon"
         "Moon"
         Towel
-        SunScreen
+            DONE SunScreen --> (38)
         "RedSandals",
         "RedLeatherHat"
         "Fins",
@@ -136,11 +136,11 @@ const DEBUG = {
             DONE "PurpleTear" ScubaBabe (50)
             DONE "Butterfly", -->>(31)
             DONE "Butterfly", --> (37)
-        "Butterfly"
+            DONE "Butterfly" --> (43)
         "Scroll", 
         "Quill", 
             DONE "Blood", --> (33)
-        Skull"
+            DONE Skull" --> (38)
 
         Shrines:
             - mana
@@ -173,7 +173,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 38; //4 --> 28
+        GAME.level = 43; //4 --> 28
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -351,7 +351,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.22.3",
+    VERSION: "0.22.4",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
