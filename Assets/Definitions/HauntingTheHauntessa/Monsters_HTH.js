@@ -3291,12 +3291,12 @@ const INTERACTION_ENTITY = {
         sprite: "MoonDemoness",
         category: 'crest',
         voice: "Female3",
-        wants: ["Scroll", "Quill", "Blood", "Skull" ],
+        wants: ["Scroll", "Quill", "Blood", "Skull"],
         gives: "ArmorBlueprint",
         text: {
-            intro: "intro",
-            progress: "progress",
-            conclusion: "conclusion"
+            intro: "Armor born of cursed design. Bring scroll and skull, and blood like wine. The quill shall scratch what none forget.",
+            progress: "The ritual stirs, the ink runs red. I need more still to raise the dead.",
+            conclusion: "Written in blood, sealed with a spell. This cursed blueprint, let the blacksmith tell."
         }
     },
     ElvenSmith: {
@@ -3307,9 +3307,9 @@ const INTERACTION_ENTITY = {
         wants: ["SilverBar", "IronBar", "RedBar", "ArmorBlueprint"],
         gives: "InfernalArmor",
         text: {
-            intro: "intro",
-            progress: "progress",
-            conclusion: "conclusion"
+            intro: "To forge a suit for fire and flame, bring bars and plans to earn your name!",
+            progress: "Metal and blueprint, sparks arise. Still more needed for the grand surprise!",
+            conclusion: "The forge is hot, the work is done. Infernal armor, now go stun!"
         }
     },
     CaveGemma: {
@@ -3320,9 +3320,9 @@ const INTERACTION_ENTITY = {
         wants: ["Pearl", "Moonstone", "Amethyst", "PurpleTear"],
         gives: "Ring",
         text: {
-            intro: "intro",
-            progress: "progress",
-            conclusion: "conclusion"
+            intro: "Deep in my cave where treasures gleam, I seek the gems of every dream!",
+            progress: "One sparkles nice, the others call. I need them all to cast the thrall!",
+            conclusion: "A trove complete, what perfect bling. As promised, take this precious ring."
         }
     },
     ButterFlyLady: {
@@ -3333,9 +3333,9 @@ const INTERACTION_ENTITY = {
         wants: ["Butterfly", "Butterfly", "Butterfly"],
         gives: "Amethyst",
         text: {
-            intro: "intro",
-            progress: "progress",
-            conclusion: "conclusion"
+            intro: "My fluttering sisters are lost in the breeze. Find them quick, oh pretty please!",
+            progress: "Wings are few, but not yet all. Keep on chasing, heed their call!",
+            conclusion: "Three returns, what joyful flight! Here's an amethyst, pure and bright."
         }
     },
     ScubaBabe: {
@@ -3346,9 +3346,9 @@ const INTERACTION_ENTITY = {
         wants: ["Fins", "ScubaMask"],
         gives: "PurpleTear",
         text: {
-            intro: "intro",
-            progress: "progress",
-            conclusion: "conclusion"
+            intro: "I'll dive down deep where legends sleep, but gearless girls the current keeps!",
+            progress: "Almost set to make the splash. Just a bit more for my dash!",
+            conclusion: "With mask and fins, I’ve made the sweep. Here’s the tear from oceans deep."
         }
     },
     GreenBikiniRedVenus: {

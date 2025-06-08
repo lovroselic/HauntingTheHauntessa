@@ -824,13 +824,13 @@ const MAP = {
         movables: '[[145,"RoastChicken"]]',
     }
     ,
-    31: {
+    31 : {
         name: "The Valley",
         sg: 0,
-        maxSpawned: -1,
-        killCountdown: -1,
-        killsRequiredToStopSpawning: 99,
-        spawnDelay: -1,
+        maxSpawned: 4,
+        killCountdown: 4,
+        killsRequiredToStopSpawning: 25,
+        spawnDelay: 9999,
         data: '{"width":"15","height":"15","depth":1,"map":"BB3AA2BABABABAA24BAA3BAA4BB2AA20BB2ABAA2BAA5BB2AA2BABAA8BABABB3AA5BAA6BB2ABAA9BAA2BB8AA3BB8AA2BB2ABB2ABB11AA3BB2ABABAA2BB3AA4BAA3BB2ABB4AA3BAA2BB22A$"}',
         wall: "MistyMeadow3",
         floor: "Grass_0860",
@@ -839,13 +839,15 @@ const MAP = {
         decals: '[[200,1,"OuterCastleWall_0833","texture"],[201,1,"OuterCastleWall_0833","texture"],[217,1,"OuterCastleWall_0833","texture"],[203,1,"OuterCastleWall_0833","texture"],[204,1,"OuterCastleWall_0833","texture"],[201,5,"OuterCastleWall_0833","texture"],[204,5,"OuterCastleWall_0833","texture"],[200,3,"OuterCastleWall_0833","texture"],[203,3,"OuterCastleWall_0833","texture"],[22,4,"Cobblestone_0822","texture"],[37,4,"Cobblestone_0822","texture"],[52,4,"Cobblestone_0822","texture"],[67,4,"Cobblestone_0822","texture"],[82,4,"Cobblestone_0822","texture"],[28,3,"GrasslandJuggernaut_0927","texture"],[26,5,"GrasslandJuggernaut_0927","texture"]]',
         lights: '[[112,1,"SettingSun1","sunlightGoldenHour"],[112,7,"SettingSun1","sunlightGoldenHour"],[112,3,"SettingSun2","sunlightGoldenHourSoft"],[112,5,"SettingSun2","sunlightGoldenHourSoft"]]',
         gates: '[[7,7,"31.1","30.2","Closed"],[217,1,"31.2","32.1","Closed"],[105,5,"31.3","37.1","Closed"],[119,3,"31.4","40.1","Closed"]]',
+        monsters: '[[142,"Wolf"]]',
         gold: '[[48,"SilverBar"],[110,"SilverBar"],[116,"SilverBar"],[56,"SilverBar"],[172,"SilverBar"],[192,"SilverBar"],[153,"SilverBar"]]',
         containers: '[[196,"Crate","GOLD_ITEM_TYPE.SilverBar",4],[80,"MetalCrate53","GOLD_ITEM_TYPE.SilverBar",4],[144,"WoodenCrate55","GOLD_ITEM_TYPE.SilverBar",4],[58,"MetalCrate424","GOLD_ITEM_TYPE.GoldBar",3]]',
         entities: '[[12,7,"ButterFlyLady"]]',
         objects: '[[16,"Apple"],[208,"Pear"]]',
         movables: '[[157,"Butterfly"]]',
         lairs: '[[150,5,"Lair38"],[164,3,"Lair33"]]',
-    }
+        monsterList: '["Wolf","Dragon","WolfSpider","WolfSpideGreen","RedDragon"]',
+        }
     ,
     32: {
         name: "The Lodge",
@@ -1128,12 +1130,14 @@ const MAP = {
         start: '[160,7]',
         lights: '[[1310,5,"SkullLantern51","standardYellowDim"],[1175,7,"Candle57","standardYellowDim"],[49,3,"Candle66","standardYellowFaint"],[1120,3,"FluxLight128","standardYellowSoft"],[1728,1,"DuaLLantern_004","standardSoft"],[2156,1,"FluxLight117","fireSoft"],[2040,5,"DuaLLantern_028","fireSoft"],[260,1,"FireplaceFLuxU414","fireplace"],[161,7,"WallLamp31","fireSoft"]]',
         gates: '[[2160,5,"46.1","33.3","Closed"],[1835,3,"46.2","47.1","Closed"],[255,5,"46.3","48.1","Down"]]',
+        containers: '[[1766,"MetalCrate424","INTERACTION_ITEM.Moon",7]]',
         triggers: '[[1142,1,"SmoothWallButton",0,1075],[860,1,"SmoothWallButton",0,1041],[1698,7,"SmoothWallButton",0,1660],[1732,1,"SmoothWallButton",0,1643],[1631,3,"SmoothWallButton",0,1594],[2076,1,"SmoothWallButton",1,2109]]',
         entities: '[[280,1,"CaveGemma"]]',
+        objects: '[[120,"Scroll"]]',
         oracles: '[[11,7,"CaveDomme"]]',
     }
     ,
-    47: {
+    47 : {
         name: "The Mountains",
         sg: 0,
         maxSpawned: 4,
@@ -1146,7 +1150,8 @@ const MAP = {
         ceil: "BlueSky_0853",
         start: '[207,5]',
         gates: '[[221,5,"47.1","46.2","Closed"],[276,1,"47.2","51.1","Closed"]]',
-    }
+        containers: '[[75,"Barrel_477","INTERACTION_ITEM.Towel",3],[146,"WoodenCrate442","INTERACTION_ITEM.ScubaMask",1]]',
+        }
     ,
     48: {
         name: "Elven Smithy",
@@ -1182,6 +1187,7 @@ const MAP = {
         decals: '[[137,4,"Water12","texture"],[120,7,"SeaWaterWall","texture"],[154,1,"SeaWaterWall","texture"],[25,4,"Water11","texture"],[26,3,"SeaWaterWall","texture"],[24,5,"SeaWaterWall","texture"]]',
         lights: '[[144,3,"SettingSun2","sunlightGoldenHour"],[144,1,"SettingSun2","sunlightGoldenHour"]]',
         gates: '[[50,3,"49.1","33.4","Closed"],[287,1,"49.2","50.1","Closed"]]',
+        containers: '[[151,"WoodenCrate442","INTERACTION_ITEM.Shell",3]]',
         entities: '[[136,5,"BlackBikiniVenus"],[8,7,"GreenBikiniRedVenus"]]',
     }
     ,
@@ -1203,7 +1209,7 @@ const MAP = {
         entities: '[[136,5,"RedBikiniVenus"],[280,1,"ScubaBabe"]]',
     }
     ,
-    51: {
+    51 : {
         name: "Planet Arium",
         sg: 0,
         maxSpawned: 4,
@@ -1217,6 +1223,7 @@ const MAP = {
         start: '[25,7]',
         lights: '[[739,1,"Moon54","moonlightBright"],[739,7,"Moon55","moonlightSoft"]]',
         gates: '[[8,7,"51.1","47.2","Closed"]]',
+        containers: '[[559,"MetalCrate50","INTERACTION_ITEM.RedLeatherHat",4]]',
         entities: '[[280,1,"SilverSpacy"]]',
-    }
+        }
 };

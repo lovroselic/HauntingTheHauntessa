@@ -121,23 +121,23 @@ const DEBUG = {
             DONE Pearl, RedBikiniVenus --> (50)
             DONE Moonstone, --> (42)
             DONE Amethyst ButterFlyLady (31)
-        Shell, 
+            DONE Shell, --> (49)
             DONE Shell,  GreenBikiniRedVenus -> (49)
             DONE Shell BlackBikiniVenus -> (49)
             DONE "Moon" --> (44)
             DONE "Moon" --> (42)
-        "Moon"
-        Towel
+            DONE "Moon" --> (46)
+            DONE Towel --> 47
             DONE SunScreen --> (38)
             DONE "RedSandals", --> (45)
-        "RedLeatherHat"
+            DONE "RedLeatherHat" --> (51)
             DONE "Fins", --> (42)
-        "ScubaMask",
+            DONE "ScubaMask", --> (47)
             DONE "PurpleTear" ScubaBabe (50)
             DONE "Butterfly", -->>(31)
             DONE "Butterfly", --> (37)
             DONE "Butterfly" --> (43)
-        "Scroll", 
+            DONE "Scroll", --> (46)
             DONE "Quill", --> (45)
             DONE "Blood", --> (33)
             DONE Skull" --> (38)
@@ -174,7 +174,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 46; //4 --> 28
+        GAME.level = 32; //4 --> 28
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -352,7 +352,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.22.5",
+    VERSION: "0.22.6",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
