@@ -154,7 +154,8 @@ const DEBUG = {
         Trainers
     
 
-        CoinTrainers
+        CoinTrainers, coins 1x:
+        - RedAxa in 32 
 
 
         Missing keys:
@@ -165,10 +166,6 @@ const DEBUG = {
 
         Missing scrolls:
             - fly
-            - fly
-    
-            
-
 
         */
 
@@ -228,7 +225,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-        
+            "GoldCoin",
         ];
 
         for (let itm of invItems) {
@@ -352,7 +349,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.22.6",
+    VERSION: "0.22.7",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

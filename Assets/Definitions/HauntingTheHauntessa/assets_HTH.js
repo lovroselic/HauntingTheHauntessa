@@ -1032,7 +1032,7 @@ LoadModels = [
     "Bat.gltf", "MissGalaxy.gltf", "Spider.gltf", "Dragon.gltf",
     "mandy.gltf", "NeverBlink.gltf", "EvilNun.gltf", "LizardMan.gltf", "NecroMorph.gltf", "CyGirl.gltf",
     "Hunteress.gltf", "Dragon2.gltf", "BigBat.gltf", "WolfSpider.gltf", "Viking.gltf", "MissGhostFace.gltf",
-    "Wolf.gltf", "ButterFly.gltf",
+    "Wolf.gltf", "ButterFly.gltf", "Cat.gltf",
 ];
 
 LoadSprites = [
@@ -1168,6 +1168,7 @@ LoadSprites = [
     { srcName: "EntityPictures/ElvenSmithBabe.jpg", name: "ElvenSmith" },
     { srcName: "EntityPictures/MoonDemoness.jpg", name: "MoonDemoness" },
     { srcName: "EntityPictures/ButterFlyLady2.jpg", name: "ButterFlyLadyOracle" },
+    { srcName: "EntityPictures/RedAxxa.jpg", name: "RedAxxa" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },

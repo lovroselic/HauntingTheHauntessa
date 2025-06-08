@@ -4,28 +4,7 @@ const MONSTER_TYPE = {
 
 
 
-    GreenWolf: {
-        name: "Wolf",
-        texture: "GreenWolf",
-        model: "Wolf",
-        scale: 1.6 / 2 ** 2,
-        rotateToNorth: Math.PI,
-        midHeight: 0.5,
-        deathType: "BloodExplosion",
-        inventory: null,
-        mana: 0,
-        health: 60,
-        attack: 120,
-        magic: 0,
-        defense: 0,
-        directMagicDamage: true,
-        attackSound: "MonsterAttack1",
-        hurtSound: "MonsterHurt3",
-        behaviourArguments: [16, ["wanderer"], 14, ["advancer"]],
-        moveSpeed: 1.3,
-        material: MATERIAL.greenFluence,
-    },
-
+   
 
     MissGalaxyGold: {
         name: "MissGalaxyGold",
@@ -111,25 +90,7 @@ const MONSTER_TYPE = {
         missile: BouncingMissile,
         missileType: COMMON_ITEM_TYPE.Bounceball,
     },
-    AngrySheep: {
-        name: "AngrySheep",
-        model: "Sheep",
-        scale: 1.5 / 2 ** 9,
-        rotateToNorth: Math.PI,
-        midHeight: 0.5,
-        deathType: "BloodExplosion",
-        mana: 0,
-        health: 5,
-        attack: 50,
-        magic: 0,
-        defense: 0,
-        directMagicDamage: true,
-        attackSound: "Sheep",
-        hurtSound: "PainSqueek",
-        behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
-        moveSpeed: 1.0,
-        material: MATERIAL.standard,
-    },
+   
     GhostMinion: {
         name: "GhostMinion",
         model: "GhostFace",
@@ -424,25 +385,7 @@ const MONSTER_TYPE = {
         moveSpeed: 1.2,
         material: MATERIAL.standard,
     },
-    GreatCat: {
-        name: "GreatCat",
-        model: "Cat",
-        scale: 1.7 / 2 ** 7,
-        rotateToNorth: Math.PI,
-        midHeight: 0.5,
-        deathType: "BloodExplosion",
-        mana: 0,
-        health: 8,
-        attack: 75,
-        magic: 0,
-        defense: 0,
-        directMagicDamage: true,
-        attackSound: "AngryCat",
-        hurtSound: "PainSqueek",
-        behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
-        moveSpeed: 1.2,
-        material: MATERIAL.standard,
-    },
+   
     SkeleDwarf: {
         name: "SkeleDwarf",
         model: "SkeleDwarf",
@@ -765,33 +708,7 @@ const MONSTER_TYPE = {
         missileType: COMMON_ITEM_TYPE.Bounceball,
     },
 
-    CyGirl: {
-        name: "CyGirl",
-        model: "CyGirl",
-        scale: 1.5 / 2 ** 5,
-        rotateToNorth: Math.PI,
-        midHeight: 0.55,
-        deathType: "BloodExplosion",
-        inventory: null,
-        //
-        mana: 1,
-        health: 10,
-        attack: 1,
-        magic: 5,
-        defense: 0,
-        xp: 99,
-        //
-        caster: true,
-        shootDistance: 15,
-        stalkDistance: 17,
-        attackSound: "HumanAttack1",
-        hurtSound: "Ow",
-        behaviourArguments: [17, ["wanderer"], 15, ["shoot"]],
-        moveSpeed: 0.8,
-        material: MATERIAL.standardShine,
-        missile: BouncingMissile,
-        missileType: COMMON_ITEM_TYPE.Bounceball,
-    },
+   
     Hunter: {
         name: "Hunter",
         model: "Hunter",
