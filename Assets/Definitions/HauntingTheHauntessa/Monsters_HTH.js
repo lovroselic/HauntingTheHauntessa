@@ -4101,6 +4101,19 @@ const INTERACTION_ENTITY = {
 };
 
 const INTERACTION_SHRINE = {
+    BlackMagic: {
+        name: "BlackMagic",
+        sprite: "BlackMagic",
+        category: 'crest',
+        voice: "FemaleHigh3",
+        wants: ["GoldCoin"],
+        gives: "Magic",
+        text: {
+            intro: "Black is the color, and magic's my game. One gold coin, and you'll never be the same.",
+            progress: null,
+            conclusion: "You've paid the price, now feel the spark. A little black magic to leave your mark."
+        }
+    },
     GirlOnTheBeach: {
         name: "GirlOnTheBeach",
         sprite: "GirlOnTheBeach",
@@ -4113,7 +4126,7 @@ const INTERACTION_SHRINE = {
             progress: null,
             conclusion: "You've paid your dues, so here's the pitch, stay hot and healthy, with a little kitsch."
         }
-    },    
+    },
     RedAxxa: {
         name: "RedAxxa",
         sprite: "RedAxxa",

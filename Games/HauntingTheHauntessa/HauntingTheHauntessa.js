@@ -157,9 +157,9 @@ const DEBUG = {
         CoinTrainers, not assigned coins 4x:
             DONE - RedAxa in 32 -- Attack
             DONE Forest Girl - 44 -- Defense
-        Beach girl - 33
+            DONE Beach girl - 33 -- Health
         XXX - 39
-        Alpinist in 47
+        LatexBabeInTheForest in 47 -- Mana
 
         Missing keys:
          
@@ -174,7 +174,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 33; //4 --> 28
+        GAME.level = 47; //4 --> 28
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -352,7 +352,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.22.8",
+    VERSION: "0.22.9",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
