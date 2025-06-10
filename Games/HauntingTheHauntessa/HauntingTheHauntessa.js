@@ -154,9 +154,12 @@ const DEBUG = {
         Trainers
     
 
-        CoinTrainers, coins 1x:
-        - RedAxa in 32 
-
+        CoinTrainers, not assigned coins 4x:
+            DONE - RedAxa in 32 -- Attack
+            DONE Forest Girl - 44 -- Defense
+        Beach girl - 33
+        XXX - 39
+        Alpinist in 47
 
         Missing keys:
          
@@ -171,7 +174,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 32; //4 --> 28
+        GAME.level = 33; //4 --> 28
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -349,7 +352,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.22.7",
+    VERSION: "0.22.8",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

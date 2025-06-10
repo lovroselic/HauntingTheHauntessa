@@ -4101,6 +4101,19 @@ const INTERACTION_ENTITY = {
 };
 
 const INTERACTION_SHRINE = {
+    GirlOnTheBeach: {
+        name: "GirlOnTheBeach",
+        sprite: "GirlOnTheBeach",
+        category: 'crest',
+        voice: "Female6",
+        wants: ["GoldCoin"],
+        gives: "HeartSkill",
+        text: {
+            intro: "I bask in sun, all silky and sleek. For just one coin, I'll share my technique.",
+            progress: null,
+            conclusion: "You've paid your dues, so here's the pitch, stay hot and healthy, with a little kitsch."
+        }
+    },    
     RedAxxa: {
         name: "RedAxxa",
         sprite: "RedAxxa",
@@ -4109,7 +4122,7 @@ const INTERACTION_SHRINE = {
         wants: ["GoldCoin"],
         gives: "Attack",
         text: {
-            intro: "Wanna learn to axe with flair? One gold coin, and I’ll show you where to tear.",
+            intro: "Wanna learn to axe with flair? One gold coin, and I will show you where to tear.",
             progress: null,
             conclusion: "Lesson's done, heads may fly. Go forth and cleave, don't be shy."
         }
