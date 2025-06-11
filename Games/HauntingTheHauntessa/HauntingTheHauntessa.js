@@ -352,7 +352,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.23.0",
+    VERSION: "0.23.1",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -1106,6 +1106,7 @@ const HERO = {
     },
     cancelLuck() {
         HERO.removeStatus("Luck");
+        HERO.removeStatus("VeryLucky");
         HERO.unlucky();
         TITLE.keys();
     },

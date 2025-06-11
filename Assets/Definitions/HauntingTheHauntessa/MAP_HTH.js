@@ -849,7 +849,7 @@ const MAP = {
         monsterList: '["Wolf","Dragon","WolfSpider","WolfSpideGreen","RedDragon"]',
     }
     ,
-    32: {
+    32 : {
         name: "The Lodge",
         sg: 0,
         maxSpawned: 3,
@@ -870,12 +870,12 @@ const MAP = {
         containers: '[[38,"WoodenCrate58","GOLD_ITEM_TYPE.SilverBar",7],[47,"Barrel_477","GOLD_ITEM_TYPE.SilverBar",7],[146,"WoodenCrate57","GOLD_ITEM_TYPE.SilverBar",7],[167,"WoodenCrate426","GOLD_ITEM_TYPE.SilverBar",7],[208,"WoodenCrate427","GOLD_ITEM_TYPE.GoldBar",3],[231,"WoodenCrate432","GOLD_ITEM_TYPE.GoldBar",3]]',
         doors: '[178]',
         entities: '[[68,5,"TheTourist"]]',
-        objects: '[[93,"GoldCoin"]]',
+        objects: '[[93,"GoldCoin"],[227,"Cake"],[44,"Amanita"],[242,"Amanita"]]',
         oracles: '[[84,3,"Navigator"]]',
         trainers: '[[285,1,"RedAxxa"]]',
         lairs: '[[237,3,"Lair61"],[221,5,"Lair454"]]',
         monsterList: '["Viking","Viking","WolfSpideGreen","RedDragon","Wolf"]',
-    }
+        }
     ,
     33: {
         name: "Old Bridge",
