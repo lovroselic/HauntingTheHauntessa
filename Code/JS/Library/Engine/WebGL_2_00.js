@@ -484,7 +484,15 @@ const WebGL = {
         if (flip) gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
         const texture = gl.createTexture();
         gl.bindTexture(gl.TEXTURE_2D, texture);
-        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, T);
+
+        try {
+            gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, T);
+
+        } catch (error) {
+            console.error(`Issues with ${T}`);
+            throw error;
+        }
+
         if (isPowerOf2(T.width) && isPowerOf2(T.height)) {
             gl.generateMipmap(gl.TEXTURE_2D);
         } else {
@@ -1852,7 +1860,7 @@ class $3D_player {
                 if (feetPos3.y < -0.9) {
                     console.error("DONE FALLING into HOLE", "feetPos3.y", feetPos3.y, "this.velocity_Z", this.velocity_Z, "nextPos3", nextPos3);
                     this.velocity_Z = -9999999.99;
-                    nextPos3.set_y(0);  
+                    nextPos3.set_y(0);
                     this.setPos(nextPos3);
                     return true;
                 }
@@ -4076,7 +4084,7 @@ class $3D_Entity {
             }
             /** this is major fuckup, can happen only if monster is moving through a wall */
             if (ENGINE.verbose) {
-                console.info("...setDistanceFromNodeMap", this.name, this.id, "this.moveState.pos",this.moveState.pos, "gridPosition", gridPosition);
+                console.info("...setDistanceFromNodeMap", this.name, this.id, "this.moveState.pos", this.moveState.pos, "gridPosition", gridPosition);
                 console.info(".......this", this);
                 console.info(".......nodemap", nodemap);
                 console.error(this.name, this.id, "has issue with gridPosition", gridPosition);

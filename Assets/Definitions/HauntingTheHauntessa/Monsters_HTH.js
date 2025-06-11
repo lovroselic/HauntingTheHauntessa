@@ -4101,6 +4101,19 @@ const INTERACTION_ENTITY = {
 };
 
 const INTERACTION_SHRINE = {
+    CastleMana: {
+        name: "CastleMana",
+        sprite: "CastleMana",
+        category: 'crest',
+        voice: "FemaleLow2",
+        wants: ["GoldCoin"],
+        gives: "ManaSkill",
+        text: {
+            intro: "Green and glowing, brewed just right. One gold coin might spark your might.",
+            progress: null,
+            conclusion: "You took the sip, now feel the thrill. Your mana's rising, what a chill."
+        }
+    },
     BlackMagic: {
         name: "BlackMagic",
         sprite: "BlackMagic",

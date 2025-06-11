@@ -158,8 +158,8 @@ const DEBUG = {
             DONE - RedAxa in 32 -- Attack
             DONE Forest Girl - 44 -- Defense
             DONE Beach girl - 33 -- Health
-        XXX - 39
-        LatexBabeInTheForest in 47 -- Mana
+        RedManaGer - 39 -- Mana
+            DONE LatexBabeInTheForest in 47 -- Magic
 
         Missing keys:
          
@@ -174,7 +174,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 47; //4 --> 28
+        GAME.level = 31; //4 --> 28
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -352,7 +352,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.22.9",
+    VERSION: "0.22.10",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

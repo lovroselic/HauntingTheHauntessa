@@ -924,6 +924,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/MushroomTexture.jpg", name: "MushroomTexture" },
     { srcName: "ObjectTextures/HornedHelmetColor.jpg", name: "HornedHelmetColor" },
     { srcName: "ObjectTextures/BloodTexture.jpg", name: "BloodTexture" },
+    { srcName: "ObjectTextures/IronTexture.jpg", name: "IronTexture" },
 
     /** other monster textures */
     { srcName: "ObjectTextures/RedGoldBat.jpg", name: "RedGoldBat" },
@@ -1172,6 +1173,7 @@ LoadSprites = [
     { srcName: "EntityPictures/GirlInTheForest.jpg", name: "GirlInTheForest" },
     { srcName: "EntityPictures/GirlOnTheBeach.jpg", name: "GirlOnTheBeach" },
     { srcName: "EntityPictures/BlackMagic.jpg", name: "BlackMagic" },
+    { srcName: "EntityPictures/CastleMana.jpg", name: "CastleMana" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },

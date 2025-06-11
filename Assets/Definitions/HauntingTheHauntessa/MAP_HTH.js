@@ -877,7 +877,7 @@ const MAP = {
         monsterList: '["Viking","Viking","WolfSpideGreen","RedDragon","Wolf"]',
     }
     ,
-    33 : {
+    33: {
         name: "Old Bridge",
         sg: 0,
         maxSpawned: 4,
@@ -899,7 +899,7 @@ const MAP = {
         trainers: '[[427,1,"GirlOnTheBeach"]]',
         lairs: '[[80,7,"Lair31"],[85,7,"Lair456"],[332,1,"Lair31"],[327,1,"Lair22"],[337,1,"Lair65"]]',
         monsterList: '["RedDragon","RedDragon","RedDragon","Dragon"]',
-        }
+    }
     ,
     34: {
         name: "Underworld Entrance",
@@ -1011,7 +1011,7 @@ const MAP = {
         wall: "DarkWallSDXL332",
         floor: "RedMArbleFloor3",
         ceil: "DarkWallSDXL322",
-        start: '[1514,1]',
+        start: '[44,5]',
         lights: '[[740,5,"Fireplace101","fireplace"],[750,3,"Fireplace204","fireplace"],[932,7,"SkullLantern53","standard2"],[936,7,"SkullLantern58","standard2"],[1577,1,"Candelabra01","standardYellowDim"],[1774,7,"Candelabra01","standardYellowFaint"]]',
         gates: '[[10,7,"39.1","37.3","Closed"],[419,3,"39.2","43.1","Down"]]',
         containers: '[[2126,"Barrel_463","INTERACTION_ITEM.Orange",5]]',
@@ -1019,6 +1019,7 @@ const MAP = {
         triggers: '[[1828,1,"SmoothWallButton",0,1485]]',
         entities: '[[850,1,"DutchessaNylonessa"],[1388,7,"HungryMaid"]]',
         objects: '[[37,"Apple"],[1930,"Pear"],[2182,"IronBar"]]',
+        trainers: '[[48,3,"CastleMana"]]',
     }
     ,
     40: {
@@ -1156,7 +1157,7 @@ const MAP = {
         oracles: '[[11,7,"CaveDomme"]]',
     }
     ,
-    47 : {
+    47: {
         name: "The Mountains",
         sg: 0,
         maxSpawned: 4,
@@ -1172,7 +1173,7 @@ const MAP = {
         gates: '[[221,5,"47.1","46.2","Closed"],[276,1,"47.2","51.1","Closed"]]',
         containers: '[[75,"Barrel_477","INTERACTION_ITEM.Towel",3],[146,"WoodenCrate442","INTERACTION_ITEM.ScubaMask",1]]',
         trainers: '[[8,7,"BlackMagic"]]',
-        }
+    }
     ,
     48: {
         name: "Elven Smithy",
