@@ -849,7 +849,7 @@ const MAP = {
         monsterList: '["Wolf","Dragon","WolfSpider","WolfSpideGreen","RedDragon"]',
     }
     ,
-    32 : {
+    32: {
         name: "The Lodge",
         sg: 0,
         maxSpawned: 3,
@@ -875,7 +875,7 @@ const MAP = {
         trainers: '[[285,1,"RedAxxa"]]',
         lairs: '[[237,3,"Lair61"],[221,5,"Lair454"]]',
         monsterList: '["Viking","Viking","WolfSpideGreen","RedDragon","Wolf"]',
-        }
+    }
     ,
     33: {
         name: "Old Bridge",
@@ -951,7 +951,7 @@ const MAP = {
         gates: '[[356,3,"36.1","34.4","Closed"],[526,3,"36.2","34.5","Closed"]]',
     }
     ,
-    37: {
+    37 : {
         name: "Farmland",
         sg: 0,
         maxSpawned: 10,
@@ -963,7 +963,7 @@ const MAP = {
         floor: "Grass_0860",
         ceil: "BlueSky_0852",
         start: '[34,3]',
-        decals: '[[185,1,"DarkWallSDXL300","texture"],[187,1,"DarkWallSDXL300","texture"],[207,1,"DarkWallSDXL300","texture"],[187,3,"DarkWallSDXL300","texture"],[185,5,"DarkWallSDXL300","texture"],[37,7,"JuggernautDarkwalls_0917","texture"],[17,7,"JuggernautDarkwalls_0917","texture"],[39,7,"JuggernautDarkwalls_0917","texture"],[39,3,"JuggernautDarkwalls_0917","texture"],[37,5,"JuggernautDarkwalls_0917","texture"],[33,4,"FloorTiles_SDXL_011","texture"],[12,7,"BrightForest_0851","texture"],[54,1,"BrightForest_0850","texture"],[13,7,"BrightForest_0851","texture"]]',
+        decals: '[[185,1,"DarkWallSDXL300","texture"],[187,1,"DarkWallSDXL300","texture"],[207,1,"DarkWallSDXL300","texture"],[187,3,"DarkWallSDXL300","texture"],[185,5,"DarkWallSDXL300","texture"],[37,7,"JuggernautDarkwalls_0917","texture"],[17,7,"JuggernautDarkwalls_0917","texture"],[39,7,"JuggernautDarkwalls_0917","texture"],[39,3,"JuggernautDarkwalls_0917","texture"],[37,5,"JuggernautDarkwalls_0917","texture"],[33,4,"FloorTiles_SDXL_011","texture"],[12,7,"BrightForest_0851","texture"],[54,1,"BrightForest_0850","texture"],[13,7,"BrightForest_0851","texture"],[82,4,"1942_200","picture"],[81,4,"1942_200","picture"],[80,4,"1942_200","picture"],[59,4,"1942_200","picture"],[38,4,"1942_200","picture"],[101,4,"1942_200","picture"],[122,4,"1942_200","picture"],[123,4,"1942_200","picture"],[144,4,"1942_200","picture"],[165,4,"1942_200","picture"],[186,4,"1942_200","picture"]]',
         lights: '[[286,1,"SettingSun1","sunlightGoldenHourSoft"],[430,1,"SettingSun1","sunlightGoldenHourSoft"],[439,1,"SettingSun1","sunlightGoldenHourSoft"],[295,1,"SettingSun1","sunlightGoldenHourSoft"],[93,1,"SettingSun1","sunlightGoldenHourSoft"],[421,1,"SettingSun1","sunlightGoldenHourSoft"]]',
         gates: '[[83,3,"37.1","31.3","Closed"],[17,7,"37.2","38.1","Silver"],[207,1,"37.3","39.1","Silver"]]',
         keys: '[[30,1],[402,1]]',
@@ -973,10 +973,11 @@ const MAP = {
         containers: '[[267,"Barrel_485","GOLD_ITEM_TYPE.GoldBar",3],[364,"Barrel_460","GOLD_ITEM_TYPE.GoldBar",3],[316,"WoodenCrate53","GOLD_ITEM_TYPE.GoldBar",7],[255,"WoodenCrate55","GOLD_ITEM_TYPE.GoldBar",7]]',
         shrines: '[[32,5,"RedHeadForestWariorr"]]',
         doors: '[77]',
-        movables: '[[213,"BabySheep"],[412,"Chicken"],[64,"Butterfly"]]',
+        objects: '[[250,"Snail"],[45,"Snail"],[373,"Snail"],[367,"Steak"],[109,"BeerHealth"],[118,"Amanita"]]',
+        movables: '[[213,"BabySheep"],[412,"Chicken"],[64,"Butterfly"],[202,"GreenBat"],[198,"GreenBat"],[196,"GreenBat"],[173,"GreenBat"],[169,"GreenBat"],[320,"GreenBat"],[307,"GreenBat"],[406,"GreenBat"],[334,"GreenBat"],[248,"GreenBat"]]',
         lairs: '[[66,1,"Lair40"],[372,5,"Lair47"],[251,3,"Lair12"]]',
         monsterList: '["WolfSpideGreen","Viking","RedDragon","Wolf","GreenWolf"]',
-    }
+        }
     ,
     38: {
         name: "The Farm",
