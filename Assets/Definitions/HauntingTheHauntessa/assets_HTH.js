@@ -938,6 +938,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/WolfSpideGreen.jpg", name: "WolfSpideGreen" },
     { srcName: "ObjectTextures/RedDragon.jpg", name: "RedDragon" },
     { srcName: "ObjectTextures/PurpleGalaxy.jpg", name: "PurpleGalaxy" },
+    { srcName: "ObjectTextures/GreenWolf.jpg", name: "GreenWolf" },
 
     //title
     { srcName: "Title/HTH_title_768.jpg", name: "Title" },
@@ -1174,6 +1175,7 @@ LoadSprites = [
     { srcName: "EntityPictures/GirlOnTheBeach.jpg", name: "GirlOnTheBeach" },
     { srcName: "EntityPictures/BlackMagic.jpg", name: "BlackMagic" },
     { srcName: "EntityPictures/CastleMana.jpg", name: "CastleMana" },
+    { srcName: "EntityPictures/CorneredBabe.jpg", name: "CorneredBabe" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },

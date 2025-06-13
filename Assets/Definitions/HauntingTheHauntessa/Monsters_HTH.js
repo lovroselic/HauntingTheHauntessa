@@ -341,6 +341,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    CorneredBabe: {
+        name: "CorneredBabe",
+        sprite: "CorneredBabe",
+        category: 'crest',
+        voice: "Female",
+        text: "Don't get cornered. Save some mana for the hard times.",
+        interactionCategory: "oracle",
+    },
     ButterFlyLadyOracle: {
         name: "ButterFlyLadyOracle",
         sprite: "ButterFlyLadyOracle",
@@ -2169,7 +2177,7 @@ const MONSTER_TYPE = {
     AngrySheep: {
         name: "AngrySheep",
         model: "Sheep",
-        scale: 1.5 / 2 ** 9,
+        scale: 1.25 / 2 ** 9,
         rotateToNorth: Math.PI,
         midHeight: 0.5,
         deathType: "BloodExplosion",
@@ -2211,7 +2219,7 @@ const MONSTER_TYPE = {
     GreatCat: {
         name: "GreatCat",
         model: "Cat",
-        scale: 1.7 / 2 ** 7,
+        scale: 1.5 / 2 ** 7,
         rotateToNorth: Math.PI,
         midHeight: 0.5,
         deathType: "BloodExplosion",
