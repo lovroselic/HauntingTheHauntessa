@@ -341,6 +341,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    PinkBalance: {
+        name: "PinkBalance",
+        sprite: "PinkBalance",
+        category: 'crest',
+        voice: "Female2",
+        text: "Magic seems alluringm but then it runs out. An you are all alone in a corner with a deadly beast in front of you.",
+        interactionCategory: "oracle",
+    },
     CorneredBabe: {
         name: "CorneredBabe",
         sprite: "CorneredBabe",
