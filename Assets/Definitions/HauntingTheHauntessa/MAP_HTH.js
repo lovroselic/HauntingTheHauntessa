@@ -52,7 +52,7 @@ const MAP_TEXT = {
     40: "",
     41: "",
     42: "",
-    43: "",
+    43: "Old cellars always have secrets.",
 
 };
 
@@ -1005,7 +1005,7 @@ const MAP = {
         monsterList: '["RedDragon"]',
     }
     ,
-    39 : {
+    39: {
         name: "Castle of Dutchessa Nylonessa",
         sg: 0,
         maxSpawned: 6,
@@ -1034,7 +1034,7 @@ const MAP = {
         trainers: '[[48,3,"CastleMana"]]',
         lairs: '[[1894,5,"Lair69"],[1957,5,"Lair17"],[892,7,"Lair56"]]',
         monsterList: '["RedDragon","RedDragon","RedDragon","RedDragon"]',
-        }
+    }
     ,
     40: {
         name: "Entrance to the Forbidden Forest",
@@ -1092,22 +1092,30 @@ const MAP = {
         entities: '[[451,7,"Wolfie"],[629,3,"Foxie"],[609,5,"LeonaPard"]]',
     }
     ,
-    43: {
+    43 : {
         name: "The Cellar",
         sg: 0,
-        maxSpawned: -1,
-        killCountdown: -1,
+        maxSpawned: 5,
+        killCountdown: 5,
         killsRequiredToStopSpawning: 99,
-        spawnDelay: -1,
-        data: '{"width":"21","height":"21","depth":1,"map":"BB2AA5BAA2BB2AA3BB3ABB2ABAA2BABABB3AA13BB2AA2BAA2BB2ABB5AA9BB4ABAA2BAA19BAA5BAA4BABAA2BB12AA3BB2ABAA2BAA3BB2ABB2ABB3ABABB2ABB4ABB2ABB2AA4BABB3ABB2ABB2ABABB6ABB4ABB5ABABB3ABB6AA2BB2AA9BB4AA2BB2AA6BABB2AA3BAA4BAA3BB2ABB2ABABABAA4BB3ABB2AA2BAA3BB2ABABB3ABB2AA3BB3ABB3AA6BB2ABB6ABABABB2AA2BABABB2ABB8ABB2AA2BB3ABB2ABB3ABB2ABABB2ABABAA4BABAA5BB5AA5BB3AA3BB4AA2BAA2BB2ABB32A$"}',
+        spawnDelay: 9999,
+        data: '{"width":"21","height":"21","depth":1,"map":"BB2AA5BAA2BB2AA3BB3ABABAA2BABABB3AA12BAA2BAA2BB7AA9BB4ABABAA5BABAA12BAA5BB2AA4BABABB12AA3BB2ABAA2BAA3BB2ABB2ABB3ABAA2BB2ABB4ABB2ABB2AA3BABABB3ABB2ABB2ABAA2BB6ABB2ABB6ABABB4ABB5AA2BB2AA8BB2AA2BB2AA2BAA4BABB5AA3BAA4BAA3BB2ABB2ABABABAA4BB3ABB2AA2BAA4BB2ABABB3ABB2AA3BB2ABB3AA6BB2ABB6ABABABABB2AA2BABABB2ABB8ABB2AA2BB2ABB2ABB3ABABB2AA2BB2ABABAA4BABAA4BB5AA5BB3AA3BB4AA2BAA2BB2ABB32A$"}',
         wall: "BlackWall43",
         floor: "BlackWall40",
         ceil: "MarbleFloor1003",
         start: '[59,1]',
+        decals: '[[22,5,"ShieldDecal_510","crest"],[64,5,"ShieldDecal_515","crest"],[3,7,"GameScreen2027","picture"],[7,7,"FemDommes_12058","picture"],[9,7,"FemDommes_13125","picture"],[35,7,"GameDommes_128","picture"],[118,7,"FemDommes_13219","picture"],[120,7,"FemDommes_16292","picture"],[74,7,"FemDommes_8319","picture"],[69,7,"GameScreens053","picture"],[89,7,"FemDommes_17214","picture"],[64,7,"FemDommes_6031","picture"],[108,7,"FemDommes_16087","picture"],[148,7,"C64Games_3126","picture"],[154,7,"FemDommes_16153","picture"],[187,7,"ZX_Games_3012","picture"],[227,7,"FemDommes_16179","picture"],[290,7,"CCC_016","picture"],[200,7,"FluxDommes2003","picture"],[234,7,"EricTheViking10","picture"],[284,7,"FemDommes_16882","picture"],[317,7,"UnusedEntities5003","picture"],[319,7,"FemDommes_8047","picture"],[321,7,"FemDommes_17659","picture"],[324,7,"BlackBeret_059","picture"],[328,7,"FemDommes_12237","picture"],[312,7,"RetroGames_2023","picture"],[107,1,"GameDommes_074","picture"],[148,1,"FemDommes_5304","picture"],[234,1,"ShinyBlackRuberella105","picture"],[316,1,"FemDommes_15210","picture"],[426,1,"UnusedEntities5011","picture"],[431,1,"FemDommes_10019","picture"],[433,1,"AticAtac205","picture"],[435,1,"FemDommes6017","picture"],[353,1,"FemDommes_4056","picture"],[355,1,"BlueMax11","picture"],[368,1,"NurseAlchemyMagic_016","picture"],[408,1,"C64Games_3404","picture"],[364,1,"FemDommes_19132","picture"],[320,1,"PrincessDragonDomme_103","picture"],[324,1,"GameDommes_032","picture"],[284,1,"FemDommes_14039","picture"],[200,1,"FemDommes_16558","picture"],[156,1,"C64Games_3347","picture"],[119,1,"FemDommes_4111","picture"],[74,1,"GameDommes_265","picture"],[121,1,"FemDommes_17541","picture"],[123,1,"FemDommes_18577","picture"],[185,1,"FemDommes_15348","picture"],[290,1,"FemDommes_6285","picture"],[84,5,"C64Games_3428","picture"],[126,5,"FemDommes_12175","picture"],[210,5,"FemDommes_12175","picture"],[273,5,"FemDommes_18612","picture"],[254,5,"BlackBeret_143","picture"],[357,5,"FemDommes_16269","picture"],[383,5,"FemDommes_13006","picture"],[411,5,"FemDommes_16273","picture"],[344,5,"Domme406","picture"],[392,5,"FemDommes_15282","picture"],[306,5,"GameDommes_332","picture"],[331,5,"FemDommes_15424","picture"],[266,5,"FemDommes_4171","picture"],[203,5,"FemDommes_13058","picture"],[161,5,"C64Games_3251","picture"],[138,5,"RetroGames_2352","picture"],[94,5,"FemDommes_15362","picture"],[52,5,"FemDommes_9030","picture"],[133,5,"Cauldron10","picture"],[57,5,"FemDommes_13215","picture"],[99,5,"FemDommes_8428","picture"],[298,5,"FemDommes_18077","picture"],[260,5,"RetroGames_2343","picture"],[174,5,"KnightLore110","picture"],[113,5,"C64Games_3274","picture"],[341,5,"FemDommes_6228","picture"],[87,1,"ReturnToCastleWolfenstein12","picture"],[46,3,"FemDommes_4189","picture"],[31,3,"PrincessDragonDomme_133","picture"],[57,3,"CastleBabes11","picture"],[99,3,"FemDommes_11069","picture"],[117,3,"FemDommes_18544","picture"],[182,3,"FemDommes_17491","picture"],[167,3,"FemDommes_14029","picture"],[209,3,"FemDommes_16127","picture"],[335,3,"FemDommes_13114","picture"],[270,3,"BlackBeret_048","picture"],[224,3,"FemDommes_8031","picture"],[258,3,"RetroGames_2330","picture"],[304,3,"FemDommes_16270","picture"],[350,3,"UnusedEntities110","picture"],[398,3,"FemDommes_6012","picture"],[415,3,"FemDommes_8069","picture"],[390,3,"CCC_097","picture"],[383,3,"FemDommes_17101","picture"],[130,3,"FemDommes_19305","picture"],[112,3,"FemDommes_16739","picture"],[112,1,"Various6024","picture"]]',
+        lights: '[[5,7,"FluxLight118","standardUltraFaint"],[193,7,"FluxLight119","standardUltraFaint"],[119,7,"WallLamp16","standardUltraFaint"],[83,3,"Lantern302","standardUltraFaint"],[364,3,"WallLamp20","standardUltraFaint"],[287,7,"Candle54","standardUltraFaint"],[327,7,"FluxLight116","standardUltraFaint"],[76,5,"Candelabra18","standardUltraFaint"],[252,5,"DuaLLantern_008","standardUltraFaint"]]',
         gates: '[[42,5,"43.1","39.2","Up"]]',
-        oracles: '[[17,7,"ButterFlyLadyOracle"]]',
-        movables: '[[217,"BabySheep"],[309,"Chicken"],[80,"Butterfly"]]',
-    }
+        monsters: '[[213,"GreatCat"],[93,"GreatCat"],[221,"GreatCat"],[301,"PurpleGalaxy"],[360,"PurpleGalaxy"],[101,"PurpleGalaxy"],[396,"CyGirl"],[347,"GreenWolf"],[179,"GreenWolf"],[53,"RedDragon"],[162,"RedDragon"],[292,"RedDragon"],[330,"RedDragon"]]',
+        scrolls: '[[134,14],[358,13],[82,6],[417,15],[407,11]]',
+        skills: '[[402,"Mana"],[271,"Heart"]]',
+        objects: '[[169,"Cake"],[405,"Cake"],[397,"Cake"],[145,"Cake"],[410,"ManaFrog"],[295,"ManaFrog"],[248,"ManaFrog"]]',
+        oracles: '[[17,7,"ButterFlyLadyOracle"],[423,1,"SternDomme"]]',
+        movables: '[[217,"BabySheep"],[309,"Chicken"],[80,"Butterfly"],[305,"Life"],[223,"RoastChicken"]]',
+        lairs: '[[68,1,"Lair45"],[438,1,"Lair71"],[428,1,"Lair54"],[11,7,"Lair05"],[124,7,"Lair28"]]',
+        monsterList: '["Wolf","GreenWolf","PurpleGalaxy","GreatCat"]',
+        }
     ,
     44: {
         name: "Inferna",

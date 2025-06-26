@@ -25,7 +25,7 @@ for (let [index, key] of KEY_TYPES.entries()) {
 
 const SCROLL_TYPE = [
     "Invisibility", "Cripple", "HalfLife", "Explode", "Luck", "Flight", "BoostWeapon", "BoostArmor", "MagicBoost",
-    "DestroyWeapon", "DestroyArmor", "DrainMana", "FeatherFall", "Radar", "VeryLucky"
+    "DestroyWeapon", "DestroyArmor", "DrainMana", "FeatherFall", "Radar", "VeryLucky", "Death",
 ];
 
 const SHRINE_TYPE = {
@@ -341,12 +341,20 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    SternDomme: {
+        name: "SternDomme",
+        sprite: "SternDomme",
+        category: 'crest',
+        voice: "Female3",
+        text: "Some spells affect only the monsters which are close by. Lure them close to you then cast it.",
+        interactionCategory: "oracle",
+    },
     PinkBalance: {
         name: "PinkBalance",
         sprite: "PinkBalance",
         category: 'crest',
         voice: "Female2",
-        text: "Magic seems alluringm but then it runs out. An you are all alone in a corner with a deadly beast in front of you.",
+        text: "Magic seems alluring, but then it runs out. And you are all alone in a corner with a deadly beast in front of you.",
         interactionCategory: "oracle",
     },
     CorneredBabe: {

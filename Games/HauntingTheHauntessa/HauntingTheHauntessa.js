@@ -155,7 +155,7 @@ const DEBUG = {
     
 
         CoinTrainers, not assigned coins 4x:
-            DONE - RedAxa in 32 -- Attack
+            DONE RedAxa in 32 -- Attack
             DONE Forest Girl - 44 -- Defense
             DONE Beach girl - 33 -- Health
             DONE RedManaGer - 39 -- Mana
@@ -352,7 +352,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.23.6",
+    VERSION: "0.23.7",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
