@@ -352,7 +352,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.23.7",
+    VERSION: "0.23.8",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -935,9 +935,9 @@ const HERO = {
         const depth = Math.max(0, HERO.player.depth);
         HERO.player.pos.set_y(0.1 + depth + heightOffset);
         WebGL.GAME.setFirstPerson();
+        WebGL.GAME.positionUpdate();
         if (GAME.lives <= 0) return HERO.finalDeath();
 
-        //const grid = Vector3.toGrid(HERO.player.pos);
         const grid = Vector3.to_Grid3D(HERO.player.pos);
         const face = DirectionToFace(NOWAY);
         const decal = SPRITE.DeathPlace;
@@ -1821,6 +1821,7 @@ const GAME = {
             ENGINE.GAME.ANIMATION.waitThen(GAME.resurect);
         }
         const date = Date.now();
+        //WebGL.GAME.setFirstPerson();
         EXPLOSION3D.manage(date);
         ENTITY3D.manage(lapsedTime, date, [HERO.invisible, HERO.dead]);
         GAME.lifeLostFrameDraw(lapsedTime);
@@ -1854,24 +1855,10 @@ const GAME = {
             ENGINE.GAME.ANIMATION.waitThen(TITLE.startTitle);
         }
         const date = Date.now();
+        //WebGL.GAME.setFirstPerson();
         EXPLOSION3D.manage(date);
         ENTITY3D.manage(lapsedTime, date, [HERO.invisible, HERO.dead]);
-        GAME.gameOverFrameDraw(lapsedTime);
-    },
-    gameOverFrameDraw(lapsedTime) {
-        if (DEBUG._2D_display) {
-            GAME.drawPlayer();
-        }
-        WebGL.renderScene(MAP[GAME.level].map);
-
-        if (DEBUG.FPS) {
-            GAME.FPS(lapsedTime);
-        }
-        if (DEBUG._2D_display) {
-            ENGINE.BLOCKGRID.draw(MAP[GAME.level].map);
-            MISSILE3D.draw();
-            ENTITY3D.drawVector2D();
-        }
+        GAME.lifeLostFrameDraw(lapsedTime);
     },
     won() {
         console.info("GAME WON");

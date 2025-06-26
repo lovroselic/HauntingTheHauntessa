@@ -1230,9 +1230,7 @@ const WebGL = {
             WebGL.hero.player.associateExternalCamera(WebGL.hero.firstPersonCamera);
             WebGL.setCamera(WebGL.hero.firstPersonCamera);
             WebGL.hero.player.moveSpeed = 2.0;
-            //position  update
-            WebGL.hero.player.camera.update();
-            WebGL.hero.player.matrixUpdate();
+            WebGL.GAME.positionUpdate();
         },
         setThirdPerson() {
             WebGL.GAME.disableViewButton("#p3");
@@ -1241,9 +1239,7 @@ const WebGL = {
             WebGL.hero.player.associateExternalCamera(WebGL.hero.topCamera);
             WebGL.hero.player.moveSpeed = 2.0;
             WebGL.setCamera(WebGL.hero.topCamera);
-            //position  update
-            WebGL.hero.player.camera.update();
-            WebGL.hero.player.matrixUpdate();
+            WebGL.GAME.positionUpdate();
         },
         setTopDownView() {
             WebGL.GAME.disableViewButton("#pt5");
@@ -1252,9 +1248,7 @@ const WebGL = {
             WebGL.hero.player.associateExternalCamera(WebGL.hero.overheadCamera);
             WebGL.hero.player.moveSpeed = 2.0;
             WebGL.setCamera(WebGL.hero.overheadCamera);
-            //position  update
-            WebGL.hero.player.camera.update();
-            WebGL.hero.player.matrixUpdate();
+            WebGL.GAME.positionUpdate();
         },
         setOrtoTopDownView() {
             WebGL.GAME.disableViewButton("#pt7");
@@ -1263,7 +1257,9 @@ const WebGL = {
             WebGL.hero.player.associateExternalCamera(WebGL.hero.orto_overheadCamera);
             WebGL.hero.player.moveSpeed = 2.0;
             WebGL.setCamera(WebGL.hero.orto_overheadCamera);
-            //position  update
+            WebGL.GAME.positionUpdate();
+        },
+        positionUpdate() {
             WebGL.hero.player.camera.update();
             WebGL.hero.player.matrixUpdate();
         },
