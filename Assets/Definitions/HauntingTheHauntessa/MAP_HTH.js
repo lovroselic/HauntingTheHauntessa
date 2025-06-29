@@ -50,8 +50,8 @@ const MAP_TEXT = {
     38: "Looks like a farm. Smells like a farm. I guess its a ... farm.",
     39: "The castle of Dutchessa Nylonessa. One of my many cousins. Or something.",
     40: "From here I can enter into the Forbidden Forest. I am sure the name means nothing. Easy peasy.",
-    41: "",
-    42: "",
+    41: "I am sure the monsters in this forest are super friendly.",
+    42: "A dwelling of some forest animal cuties.",
     43: "Old cellars always have secrets.",
 
 };
@@ -1005,7 +1005,7 @@ const MAP = {
         monsterList: '["RedDragon"]',
     }
     ,
-    39 : {
+    39: {
         name: "Castle of Dutchessa Nylonessa",
         sg: 0,
         maxSpawned: 6,
@@ -1034,9 +1034,9 @@ const MAP = {
         trainers: '[[48,3,"CastleMana"]]',
         lairs: '[[1894,5,"Lair69"],[1957,5,"Lair17"],[892,7,"Lair56"]]',
         monsterList: '["RedDragon","RedDragon","RedDragon","RedDragon"]',
-        }
+    }
     ,
-    40 : {
+    40: {
         name: "Entrance to the Forbidden Forest",
         sg: 0,
         maxSpawned: -1,
@@ -1050,20 +1050,20 @@ const MAP = {
         start: '[248,5]',
         decals: '[[76,3,"HauntedForest09","texture"],[102,3,"HauntedForest09","texture"],[90,3,"HauntedForest09","texture"],[76,7,"HauntedForest09","texture"],[102,1,"HauntedForest09","texture"],[231,3,"ForbiddenForest90","picture"],[283,3,"ForbiddenForest99","picture"],[206,3,"BeyondForbiddenForest111","picture"],[310,3,"ForbiddenForest90","picture"],[211,5,"ForbiddenForest91","picture"],[289,5,"ForbiddenForest502","picture"],[60,7,"FF_AI_1","picture"],[112,1,"FF5","picture"],[289,1,"FF101","picture"],[211,7,"FF_AI_3","picture"],[258,3,"Skull_810","crest"],[211,1,"FemDommes6056","picture"],[327,1,"FemDommes_4268","picture"],[317,1,"FemDommes_6282","picture"],[289,7,"FemDommes_16349","picture"],[171,7,"FemDommes_6122","picture"],[188,7,"FemDommes_17258","picture"],[195,5,"FemDommes_17255","picture"],[235,5,"FemDommes_17065","picture"],[261,5,"UnusedEdtitiesFramed_034","picture"],[299,5,"FemDommes_17090","picture"],[211,3,"FemDommes_18526","picture"],[289,3,"CCC_042","picture"]]',
         lights: '[[418,5,"WallLamp33","standard2"]]',
-        gates: '[[247,5,"40.1","31.4","Closed"],[90,3,"40.2","41.1","Down"],[177,7,"40.2","44.1","Cyan"],[333,1,"40.3","45.1","Pink"]]',
+        gates: '[[247,5,"40.1","31.4","Closed"],[90,3,"40.2","41.1","Down"],[177,7,"40.3","44.1","Cyan"],[333,1,"40.4","45.1","Pink"]]',
         monsters: '[[218,"CyGirl"],[296,"CyGirl"],[88,"CyGirl"]]',
         scrolls: '[[309,7]]',
         gold: '[[215,"GoldCube"],[238,"GoldCube"],[293,"GoldCube"],[295,"GoldCube"],[303,"GoldCube"],[263,"GoldCube"],[87,"GoldCube"]]',
         containers: '[[183,"WoodenCrate435","GOLD_ITEM_TYPE.GoldSphere",7],[315,"WoodenCrate50","GOLD_ITEM_TYPE.GoldSphere",1]]',
-        }
+    }
     ,
     41: {
         name: "Forbidden Forest",
         sg: 0,
-        maxSpawned: -1,
-        killCountdown: -1,
+        maxSpawned: 10,
+        killCountdown: 5,
         killsRequiredToStopSpawning: 99,
-        spawnDelay: -1,
+        spawnDelay: 9999,
         data: '{"width":"21","height":"21","depth":1,"map":"BB2AA5BB2AA6BB3AA7BAA2BAA2BAA5BAA4BB4ABABABAA4BB2AA2BABB3ABABAA13BB3AA3BAA2BAA5BABAA9BABB2ABB2ABB2ABABB4ABAA3BB4ABB4ABB2AA3BAA2BB3ABB2ABB4ABB2AA3BAA2BB4ABB3ABB3ABB2ABB2ABABAA2BB3ABB2ABB3ABB3ABB2ABB2AA3BB7ABB4ABB3ABABB8AA2BB2ABB2AA2BABABABB2ABB5ABABB3AA2BABAA4BB3ABB4ABAA2BB3ABB3ABABABABB3ABB2ABABAA3BABB3ABB3AA3BABABABB3ABB3ABB3ABB3AA2BABAA3BAA2BB3ABB5ABABABB3ABABB8AA4BB7AA2BB5ABB2ABB24ABB2$"}',
         wall: "HauntedForest02",
         floor: "ForestFloor02",
@@ -1072,31 +1072,45 @@ const MAP = {
         lights: '[[71,3,"Moon56","moonlightSoft"],[148,7,"Moon54","moonlightSoft"],[125,3,"Moon59","moonlightSoft"],[419,3,"Moon62","moonlightSoft"],[387,1,"Moon56","moonlightSoft"]]',
         gates: '[[63,5,"41.1","40.2","Closed"],[3,7,"41.2","42.1","Closed"]]',
         keys: '[[149,8],[292,10]]',
+        monsters: '[[190,"Goblin"],[291,"Goblin"],[280,"CyGirl"],[379,"CyGirl"],[409,"CyGirl"],[32,"GreenWolf"],[114,"GreenWolf"],[122,"GreenWolf"],[240,"GreenWolf"],[265,"GreenWolf"],[374,"GreenWolf"]]',
+        scrolls: '[[88,14],[39,14],[318,14],[328,14],[341,14],[161,13],[364,13]]',
+        gold: '[[68,"GoldCube"],[28,"GoldCube"],[33,"GoldCube"],[98,"GoldCube"],[163,"GoldCube"],[124,"GoldCube"],[61,"GoldCube"],[58,"GoldCube"],[208,"GoldCube"],[225,"GoldCube"],[264,"GoldCube"],[304,"GoldCube"],[261,"GoldCube"],[200,"GoldCube"],[156,"GoldCube"],[113,"GoldCube"],[153,"GoldCube"],[194,"GoldCube"],[233,"GoldCube"],[295,"GoldCube"],[276,"GoldCube"],[259,"GoldCube"],[322,"GoldCube"],[366,"GoldCube"],[370,"GoldCube"],[414,"GoldCube"],[410,"GoldCube"],[405,"GoldCube"],[361,"GoldCube"],[358,"GoldCube"],[400,"GoldCube"],[417,"GoldCube"],[375,"GoldCube"],[334,"GoldCube"],[330,"GoldCube"],[288,"GoldCube"],[290,"GoldCube"]]',
+        skills: '[[267,"Magic"],[347,"Magic"],[401,"Mana"]]',
+        containers: '[[74,"Crate","GOLD_ITEM_TYPE.SilverBar",4],[203,"Barrel_482","GOLD_ITEM_TYPE.SilverBar",4],[374,"WoodenCrate58","GOLD_ITEM_TYPE.SilverBar",4],[154,"MetalCrate53","GOLD_ITEM_TYPE.SilverBar",4],[186,"MetalCrate50","GOLD_ITEM_TYPE.GoldBar",4],[180,"Barrel2","GOLD_ITEM_TYPE.GoldBar",4],[196,"Barrel_461","GOLD_ITEM_TYPE.GoldSphere",3],[80,"MetalCrate51","GOLD_ITEM_TYPE.GoldSphere",3],[237,"WoodenCrate50","GOLD_ITEM_TYPE.GoldSphere",5]]',
         shrines: '[[129,1,"CyBorgessia"]]',
         objects: '[[402,"RedBar"]]',
-        movables: '[[303,"BabySheep"],[280,"Chicken"]]',
+        movables: '[[303,"BabySheep"],[280,"Chicken"],[282,"RedWolfSpider"],[368,"RoastChicken"],[411,"RedWolfSpider"],[404,"RoastChicken"]]',
+        lairs: '[[26,5,"Lair61"],[138,3,"Lair82"],[327,5,"Lair42"],[320,7,"Lair78"]]',
+        monsterList: '["WolfSpider","WolfSpideGreen","RedDragon","Wolf","GreenWolf","GreenWolf","PurpleGalaxy","CyGirl","GreatCat"]',
     }
     ,
-    42: {
+    42 : {
         name: "Animal Kingdom",
         sg: 0,
-        maxSpawned: -1,
-        killCountdown: -1,
-        killsRequiredToStopSpawning: 99,
-        spawnDelay: -1,
-        data: '{"width":"21","height":"21","depth":3,"map":"BB2AA7BABB2AA8BABAA9BAA8BB3ABB3AA2BÁAA2BABAA6BAA9ࡁсAA2BB3AA11BB3AA2BAA3BAA2ŁɁAA2BABB4AA2BAA2BABABAA9BAA4BAA23BB2AA4BB2ABABAA2BAA4BB3ABB2ABABABB2AA4BABAA8BABB2ABAA5BB2ABB3ABB2AA2BB3ABB9AA2BB6ABAA3BB20ABB11ABÁBB5ABABB7AA2BB3AA2BB5ÁBB4ABB2ABB4ABB8ABB6ABB7AA2BB2ABB5ABAA3BB4ABB4ABB2ÁBB4ABB3ABB13ABÁABB5ABB17ABB9ABB12ABB3ABB19ABB5AA2BB15ABB12ABB3ABB3ABB3ABB11ABB9ABB101ABB74ÁBB167$ABB117ÁÁ2BB3ÁBB8ÁBÁÁ3BB4ÁBÁÁ3BB51ABB26AA2BB18ABB6ÁÁ2BB2ÁÁ3BB14ÁÁ34BÁÁ3BÁÁ3BB2ÁÁ49BÁBB3ÁÁ15BB2ÁBB4ÁÁ14ABB2ÁÁ10BB5AA4"}',
+        maxSpawned: 4,
+        killCountdown: 5,
+        killsRequiredToStopSpawning: 39,
+        spawnDelay: 7500,
+        data: '{"width":"21","height":"21","depth":3,"map":"BB2AA7BABB2AA8BABAA9BAA8BB3ABB3AA2BÁAA2BABAA6BAA9ࡁсAA2BB3AA11BB3AA2BAA3BAA2ŁɁAA2BABB4AA2BAA2BABABAA9BAA4BAA23BB2AA4BB2ABABAA2BAA4BB3ABB2ABABABB3AA4BABAA8BABB3ABAA5BB2ABB3ABB2AA2BB3ABB9AA2BB6ABAA3BB22ABB11ABÁBB5ABABB7AA2BB3AA2BB5ÁBB6ABB2ABB4ABB8ABB6ABB7AA2BB3ABB6ABAA3BB4ABB4ABB2ÁBB4ABB5ABB13ABÁABB5ABABB18ABB9ABB13ABB3ABB21ABB5AA2BB17ABB13ABB4ABB3ABB4ABB13ABB12ABB135ABB111ÁBB45ABB144$ÁÁ2BB2ÁBB3ABB3ÁBÁÁ3BB4ÁBÁÁ3BB51ABB26AA2BB18ABB6ÁÁ2BB2ÁÁ3BB14ÁÁ34BÁÁ3BÁÁ3BB2ÁÁ49BÁBB3ÁÁ15BB2ÁBB4ÁÁ14ABB2ÁÁ10BB5AA4"}',
         wall: "DarkWallSDXL318",
         floor: "MarbleFloor105",
         ceil: "Relief12",
         start: '[556,1]',
-        decals: '[[470,7,"HauntedForest02","texture"],[471,7,"HauntedForest02","texture"],[473,7,"HauntedForest02","texture"],[474,7,"HauntedForest02","texture"],[473,3,"HauntedForest02","texture"],[496,3,"HauntedForest02","texture"],[517,3,"HauntedForest02","texture"],[490,5,"HauntedForest02","texture"],[511,5,"HauntedForest02","texture"],[471,5,"HauntedForest02","texture"],[568,5,"HauntedForest04","texture"],[589,5,"HauntedForest04","texture"],[631,5,"HauntedForest04","texture"],[652,5,"HauntedForest04","texture"],[548,7,"HauntedForest04","texture"],[549,7,"HauntedForest04","texture"],[589,7,"HauntedForest04","texture"],[631,1,"HauntedForest04","texture"],[674,1,"HauntedForest04","texture"],[675,1,"HauntedForest04","texture"],[586,3,"HauntedForest10","texture"],[607,3,"HauntedForest10","texture"],[649,3,"HauntedForest10","texture"],[670,3,"HauntedForest10","texture"],[563,7,"HauntedForest10","texture"],[564,7,"HauntedForest10","texture"],[607,7,"HauntedForest10","texture"],[689,1,"HauntedForest10","texture"],[690,1,"HauntedForest10","texture"],[649,1,"HauntedForest10","texture"]]',
+        decals: '[[470,7,"HauntedForest02","texture"],[471,7,"HauntedForest02","texture"],[473,7,"HauntedForest02","texture"],[474,7,"HauntedForest02","texture"],[473,3,"HauntedForest02","texture"],[496,3,"HauntedForest02","texture"],[517,3,"HauntedForest02","texture"],[490,5,"HauntedForest02","texture"],[511,5,"HauntedForest02","texture"],[471,5,"HauntedForest02","texture"],[568,5,"HauntedForest04","texture"],[589,5,"HauntedForest04","texture"],[631,5,"HauntedForest04","texture"],[652,5,"HauntedForest04","texture"],[548,7,"HauntedForest04","texture"],[549,7,"HauntedForest04","texture"],[589,7,"HauntedForest04","texture"],[631,1,"HauntedForest04","texture"],[674,1,"HauntedForest04","texture"],[675,1,"HauntedForest04","texture"],[586,3,"HauntedForest10","texture"],[607,3,"HauntedForest10","texture"],[649,3,"HauntedForest10","texture"],[670,3,"HauntedForest10","texture"],[563,7,"HauntedForest10","texture"],[564,7,"HauntedForest10","texture"],[607,7,"HauntedForest10","texture"],[689,1,"HauntedForest10","texture"],[690,1,"HauntedForest10","texture"],[649,1,"HauntedForest10","texture"],[240,7,"FemDommes_16700","picture"],[237,7,"FemDommes_18749","picture"],[242,7,"FemDommes_5193","picture"],[245,7,"UnusedEntities5057","picture"],[442,7,"C64Games_3148","picture"],[465,7,"FemDommes_9120","picture"],[509,7,"FemDommes_17718","picture"],[533,7,"FemDommes_15102","picture"],[537,7,"FemDommes_5183","picture"],[531,7,"FemDommes_13106","picture"],[539,7,"BlackBeret_101","picture"],[456,7,"FemDommes_15199","picture"],[460,7,"FemDommes_18707","picture"],[574,7,"Domme328","picture"],[598,7,"FemDommes_5257","picture"],[580,7,"NurseAlchemyMagic_077","picture"],[643,7,"FemDommes_14094","picture"],[637,7,"FemDommes_15144","picture"],[691,7,"FemDommes_18641","picture"],[675,7,"RetroGames_2079","picture"],[715,7,"FemDommes_15008","picture"],[751,7,"FluxDommes2072","picture"],[759,7,"FemDommes_12154","picture"],[782,7,"FemDommes_17492","picture"],[817,7,"FemDommes_18073","picture"],[386,1,"RetroGames_2170","picture"],[390,1,"FemDommes_5234","picture"],[370,1,"FemDommes_10110","picture"],[364,1,"C64Games_3020","picture"],[300,1,"FemDommes_18279","picture"],[308,1,"AtariST_Games_4009","picture"],[505,1,"FemDommes_4167","picture"],[549,1,"FemDommes_13139","picture"],[574,1,"FemDommes_14085","picture"],[598,1,"Arena2","picture"],[580,1,"FemDommes_17679","picture"],[643,1,"FemDommes_17786","picture"],[637,1,"FemDommes_17250","picture"],[565,1,"GameDommes_134","picture"],[796,1,"BlackBeret_076","picture"],[877,1,"Geek_004","picture"],[880,1,"FemDommes_14064","picture"],[759,1,"BookShelf24","picture"],[862,1,"AticAtac131","picture"],[866,1,"FemDommes_16659","picture"],[822,1,"FluxDommes3098","picture"],[655,1,"FemDommes_16317","picture"],[667,1,"ZX_Games_3012","picture"],[719,1,"FemDommes_10131","picture"],[729,1,"FemDommes_16561","picture"],[805,1,"FemDommes_15195","picture"],[811,1,"FemDommes_16645","picture"],[321,5,"FemDommes_8308","picture"],[483,5,"FemDommes_19051","picture"],[527,5,"FemDommes_8001","picture"],[571,5,"RetroGames058","picture"],[574,5,"FemDommes_17085","picture"],[598,5,"FemDommes_16601","picture"],[580,5,"FluxDommes2100","picture"],[637,5,"CastleBabes44","picture"],[643,5,"Apparitia_1059","picture"],[676,5,"FemDommes_17253","picture"],[695,5,"FemDommes_8131","picture"],[735,5,"FemDommes_16684","picture"],[840,5,"GemDommes_018","picture"],[800,5,"FemDommes_13000","picture"],[855,5,"GameScreen2019","picture"],[771,5,"FemDommes_5173","picture"],[476,5,"FemDommes_6129","picture"],[541,5,"FemDommes_8205","picture"],[482,3,"JungleHunt2","picture"],[545,3,"UnusedEntities123","picture"],[583,3,"Soccer3","picture"],[667,3,"ZimSalaBim2","picture"],[713,3,"FemDommes_18189","picture"],[776,3,"FemDommes_8249","picture"],[860,3,"GameDommes_304","picture"],[846,3,"NurseAlchemyMagic_089","picture"],[804,3,"FemDommes_15732","picture"],[574,3,"C64Games_3383","picture"],[637,3,"Captive201","picture"],[598,3,"FemDommes_12051","picture"],[580,3,"GemDommes_008","picture"],[643,3,"Apparitias_003","picture"]]',
         lights: '[[808,1,"Moon58","moonlightBright"],[1039,1,"Moon56","moonlightFaint"],[1039,3,"Moon50","moonlightFaint"],[1039,5,"Moon60","moonlightFaint"]]',
         gates: '[[430,1,"42.1","41.2","Closed"]]',
-        containers: '[[463,"MetalCrate51","INTERACTION_ITEM.Moon",7],[838,"WoodenCrate57","INTERACTION_ITEM.Moonstone",7],[542,"Barrel_465","INTERACTION_ITEM.Fins",5]]',
+        monsters: '[[514,"GreatCat"],[611,"GreatChick"],[627,"AngrySheep"],[577,"CyGirl"],[801,"PurpleGalaxy"],[859,"PurpleGalaxy"]]',
+        scrolls: '[[612,6],[624,9],[535,11]]',
+        gold: '[[280,"SilverBar"],[286,"SilverBar"],[615,"SilverBar"],[661,"SilverBar"],[626,"SilverBar"],[519,"SilverBar"],[738,"SilverBar"],[814,"SilverBar"],[845,"SilverBar"]]',
+        skills: '[[323,"Heart"],[327,"Mana"],[780,"Mana"]]',
+        containers: '[[463,"MetalCrate51","INTERACTION_ITEM.Moon",7],[838,"WoodenCrate57","INTERACTION_ITEM.Moonstone",7],[542,"Barrel_465","INTERACTION_ITEM.Fins",5],[258,"WoodenCrate434","GOLD_ITEM_TYPE.GoldBar",7],[266,"Barrel_473","GOLD_ITEM_TYPE.GoldBar",7],[530,"Barrel_471","GOLD_ITEM_TYPE.GoldBar",7],[558,"Barell3","GOLD_ITEM_TYPE.GoldBar",7],[696,"Chest10","GOLD_ITEM_TYPE.GoldBar",7],[772,"WoodenCrate57","GOLD_ITEM_TYPE.GoldBar",7]]',
         entities: '[[451,7,"Wolfie"],[629,3,"Foxie"],[609,5,"LeonaPard"]]',
-    }
+        movables: '[[594,"RoastChicken"],[603,"RoastChicken"],[657,"RedWolfSpider"],[666,"RedWolfSpider"]]',
+        lairs: '[[952,7,"Lair25"],[958,7,"Lair25"]]',
+        monsterList: '["RedDragon"]',
+        }
     ,
-    43 : {
+    43: {
         name: "The Cellar",
         sg: 0,
         maxSpawned: 5,
@@ -1119,7 +1133,7 @@ const MAP = {
         movables: '[[217,"BabySheep"],[309,"Chicken"],[80,"Butterfly"],[305,"Life"],[223,"RoastChicken"]]',
         lairs: '[[68,1,"Lair45"],[438,1,"Lair71"],[428,1,"Lair54"],[11,7,"Lair05"],[124,7,"Lair28"]]',
         monsterList: '["Wolf","GreenWolf","PurpleGalaxy","GreatCat"]',
-        }
+    }
     ,
     44: {
         name: "Inferna",
@@ -1135,7 +1149,7 @@ const MAP = {
         start: '[701,1]',
         decals: '[[638,4,"ForestFloor03","texture"],[637,5,"HauntedForest04","texture"],[639,3,"HauntedForest04","texture"]]',
         lights: '[[1060,5,"Fireplace208","fireplace"],[1633,1,"FluxLight116","standardYellowSoft"],[1633,7,"FluxLight128","mutedOrange"],[596,1,"Fireplace202","fireplace"],[785,1,"Fireplace106","fireplace"],[288,7,"FireplaceFLuxU420","fireplace"]]',
-        gates: '[[863,1,"44.1","40.2","Closed"]]',
+        gates: '[[863,1,"44.1","40.3","Closed"]]',
         containers: '[[1125,"Chest10","INTERACTION_ITEM.Orange",5],[376,"TreasureChest","INTERACTION_ITEM.Moon",3]]',
         entities: '[[1318,1,"Inferna"]]',
         objects: '[[463,"Pear"]]',
@@ -1155,7 +1169,7 @@ const MAP = {
         ceil: "LightWallSDXL300",
         start: '[1249,1]',
         lights: '[[1375,7,"Candle51","standardSoft"],[945,5,"DuaLLantern_030","standardSoft"],[920,7,"WallLamp31","standardSoft"],[2047,7,"FluxLight121","standardSoft"]]',
-        gates: '[[892,7,"45.1","40.3","Closed"]]',
+        gates: '[[892,7,"45.1","40.4","Closed"]]',
         scrolls: '[[940,5]]',
         containers: '[[1174,"WoodenCrate54","INTERACTION_ITEM.Quill",7],[1093,"MetalCrate53","INTERACTION_ITEM.RedSandals",1]]',
         triggers: '[[908,7,"SmoothWallButton",0,948],[905,7,"SmoothWallButton",0,959],[1005,1,"SmoothWallButton",0,1060],[1030,7,"SmoothWallButton",0,997],[1048,7,"SmoothWallButton",0,1039],[1125,3,"SmoothWallButton",0,1122],[1121,5,"SmoothWallButton",0,1143]]',

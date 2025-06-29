@@ -64,32 +64,7 @@ const MONSTER_TYPE = {
         missileType: COMMON_ITEM_TYPE.Bounceball,
         boss: true,
     },
-    Goblin: {
-        name: "Goblin",
-        model: "Goblin",
-        scale: 1.01 / 2 ** 1,
-        rotateToNorth: Math.PI,
-        midHeight: 0.5,
-        deathType: "BloodExplosion",
-        //
-        mana: 7,
-        health: 20,
-        attack: 16,
-        magic: 2,
-        defense: 0,
-        directMagicDamage: true,
-        //
-        caster: true,
-        shootDistance: 7,
-        stalkDistance: 8,
-        attackSound: "MonsterAttack1",
-        hurtSound: "MonsterHurt",
-        behaviourArguments: [10, ["wanderer"], 7, ["shoot"]],
-        moveSpeed: 1.0,
-        material: MATERIAL.standard,
-        missile: BouncingMissile,
-        missileType: COMMON_ITEM_TYPE.Bounceball,
-    },
+   
    
     GhostMinion: {
         name: "GhostMinion",
