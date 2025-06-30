@@ -29,6 +29,19 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    AlpineClimber: {
+        name: "AlpineClimber",
+        sprite: "AlpineClimber",
+        which: "health",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "HeartSkill",
+        price: 3000,
+        level: 1,
+        text: "Climbing is good for your health? 3000 gold and I will guide you to become more robust.",
+        introduce: true,
+        voice: "FemaleLow2",
+    },
     CyBorgessia: {
         name: "CyBorgessia",
         sprite: "CyBorgessia",
@@ -3239,11 +3252,13 @@ const INTERACTION_ITEM = {
         name: "Amethyst",
         category: "interaction_item",
         inventorySprite: "Amethyst",
+        text: "Beautiful and precious Amethyst."
     },
     Moonstone: {
         name: "Moonstone",
         category: "interaction_item",
         inventorySprite: "Moonstone",
+        text: "Beautiful and precious Moonstone."
     },
     PurpleTear: {
         name: "PurpleTear",
@@ -4151,6 +4166,20 @@ const INTERACTION_ENTITY = {
 };
 
 const INTERACTION_SHRINE = {
+    GirlInTheForest: {
+        name: "GirlInTheForest",
+        sprite: "GirlInTheForest",
+        category: 'crest',
+        voice: "Female4",
+        wants: ["GoldCoin"],
+        gives: "Defense",
+        text: {
+            intro: "In these woods, defense is grace. For just one coin, I'll teach you how to vanish without a trace.",
+            progress: null,
+            conclusion: "Lesson learned, you now possess the power to hide and dodge the mess."
+        }
+    }
+    ,
     CastleMana: {
         name: "CastleMana",
         sprite: "CastleMana",

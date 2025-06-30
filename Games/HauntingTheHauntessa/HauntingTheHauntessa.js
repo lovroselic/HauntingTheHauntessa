@@ -149,6 +149,13 @@ const DEBUG = {
             - defense
             - attack
             - magic 
+
+          Shrines 3000:
+        mana
+        health
+            DONE defense -->44
+        attack
+        magic 
     
 
         Trainers
@@ -156,10 +163,10 @@ const DEBUG = {
 
         CoinTrainers, not assigned coins 4x:
             DONE RedAxa in 32 -- Attack
-            DONE Forest Girl - 44 -- Defense
+            DONE GirlInTheForest - 44 -- Defense
             DONE Beach girl - 33 -- Health
-            DONE RedManaGer - 39 -- Mana
-            DONE LatexBabeInTheForest in 47 -- Magic
+            DONE CastleMana - 39 -- Mana
+            DONE BlackMagic in 47 -- Magic
 
         Missing keys:
          
@@ -174,7 +181,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 42; //31-->32-->31-->37-->38-->39
+        GAME.level = 45; //31-->32-->31-->37-->38-->39
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -352,7 +359,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.23.10",
+    VERSION: "0.23.11",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
