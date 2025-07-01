@@ -1008,6 +1008,9 @@ LoadAudio = [
     { srcName: "Ow2.mp3", name: "Ow2" },
     { srcName: "PiercingScream.mp3", name: "PiercingScream" },
     { srcName: "Roar.mp3", name: "Roar" },
+    { srcName: "PigSqueal.mp3", name: "PigSqueal" },
+    { srcName: "PigAttack.mp3", name: "PigAttack" },
+    { srcName: "DragonRoar.mp3", name: "DragonRoar" },
 ];
 
 LoadShaders = [
@@ -1179,6 +1182,7 @@ LoadSprites = [
     { srcName: "EntityPictures/PinkBalance.jpg", name: "PinkBalance" },
     { srcName: "EntityPictures/SternDomme.jpg", name: "SternDomme" },
     { srcName: "EntityPictures/AlpineClimber.jpg", name: "AlpineClimber" },
+    { srcName: "EntityPictures/CyanManaRedhead.jpg", name: "CyanManaRedhead" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },

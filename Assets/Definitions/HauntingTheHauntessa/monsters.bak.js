@@ -35,35 +35,7 @@ const MONSTER_TYPE = {
         missile: BouncingMissile,
         missileType: COMMON_ITEM_TYPE.Bounceball,
     },
-    MissGalaxyGold_Boss: {
-        name: "MissGalaxyGold_Boss",
-        texture: "MissGalaxyGold",
-        model: "MissGalaxy",
-        scale: 1.1 / 2 ** 2,
-        rotateToNorth: Math.PI,
-        midHeight: 0.5,
-        deathType: "BloodExplosion",
-        inventory: KEY_TYPE.Gold,
-        //
-        mana: 16,
-        health: 50,
-        attack: 50,
-        magic: 5,
-        defense: 0,
-        directMagicDamage: true,
-        //
-        caster: true,
-        shootDistance: 11,
-        stalkDistance: 10,
-        attackSound: "HumanAttack1",
-        hurtSound: "Ow",
-        behaviourArguments: [11, ["wanderer"], 10, ["shoot"]],
-        moveSpeed: 1.0,
-        material: MATERIAL.gold,
-        missile: BouncingMissile,
-        missileType: COMMON_ITEM_TYPE.Bounceball,
-        boss: true,
-    },
+
    
    
     GhostMinion: {
@@ -340,25 +312,6 @@ const MONSTER_TYPE = {
         missile: BouncingMissile,
         missileType: COMMON_ITEM_TYPE.Bounceball,
         material: MATERIAL.gold,
-    },
-    GreatChick: {
-        name: "GreatChick",
-        model: "Chicken",
-        scale: 1 / 2 ** 5,
-        rotateToNorth: -Math.PI / 2,
-        midHeight: 0.5,
-        deathType: "BloodExplosion",
-        mana: 0,
-        health: 10,
-        attack: 100,
-        magic: 0,
-        defense: 0,
-        directMagicDamage: true,
-        attackSound: "MonsterAttack1",
-        hurtSound: "PainSqueek",
-        behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
-        moveSpeed: 1.2,
-        material: MATERIAL.standard,
     },
    
     SkeleDwarf: {
@@ -711,36 +664,6 @@ const MONSTER_TYPE = {
         missile: BouncingMissile,
         missileType: COMMON_ITEM_TYPE.Bounceball,
     },
-    Dragon2: {
-        name: "Dragon2",
-        model: "Dragon2",
-        scale: 1.0 / 2 ** 2,
-        rotateToNorth: Math.PI,
-        midHeight: 0.10,
-        fly: 0.40,
-        deathType: "BloodExplosion",
-        //
-        inventory: GOLD_ITEM_TYPE.GoldBar,
-
-        //
-        mana: 10,
-        health: 1,
-        attack: 2,
-        magic: 20,
-        defense: 5,
-        xp: 99,
-        //
-        caster: true,
-        directMagicDamage: true,
-        attackSound: "MonsterAttack1",
-        hurtSound: "MonsterHurt",
-        behaviourArguments: [20, ["wanderer"], 15, ["shoot"]],
-        moveSpeed: 1.0,
-        shootDistance: 15,
-        stalkDistance: 8,
-        material: MATERIAL.gold,
-        missile: Blue3D_Bouncer,
-        missileType: COMMON_ITEM_TYPE.BlueBounceball,
-    },
+    
 
 };

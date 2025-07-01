@@ -53,7 +53,16 @@ const MAP_TEXT = {
     41: "I am sure the monsters in this forest are super friendly.",
     42: "A dwelling of some forest animal cuties.",
     43: "Old cellars always have secrets.",
-    44: "The home of Inferna. Infernal demon. Hopefully on my side."
+    44: "The home of Inferna. Infernal demon. Hopefully on my side.",
+    45: "",
+    46: "",
+    47: "",
+    48: "",
+    49: "",
+    50: "",
+    51: "",
+    52: "Smells like little piggies",
+
 
 };
 
@@ -832,14 +841,14 @@ const MAP = {
         killCountdown: 4,
         killsRequiredToStopSpawning: 25,
         spawnDelay: 9999,
-        data: '{"width":"15","height":"15","depth":1,"map":"BB3AA2BABABABAA24BAA3BAA4BB2AA20BB2ABAA2BAA5BB2AA2BABAA8BABABB3AA5BAA6BB2ABAA9BAA2BB8AA3BB8AA2BB2ABB2ABB11AA3BB2ABABAA2BB3AA4BAA3BB2ABB4AA3BAA2BB22A$"}',
+        data: '{"width":"15","height":"15","depth":1,"map":"BB3AA2BABABABAA24BAA3BAA4BB2AA20BB2ABAA2BB2AA5BB2AA2BABAA9BABABB2AA5BAA6BB2ABAA9BAA2BB8AA3BB4ABB4ABB2ABB2ABB11AA3BB2ABABAA2BB3AA8BB2ABB4AA2BAA2BB22A$"}',
         wall: "MistyMeadow3",
         floor: "Grass_0860",
         ceil: "BlueSky_0852",
         start: '[22,7]',
         decals: '[[200,1,"OuterCastleWall_0833","texture"],[201,1,"OuterCastleWall_0833","texture"],[217,1,"OuterCastleWall_0833","texture"],[203,1,"OuterCastleWall_0833","texture"],[204,1,"OuterCastleWall_0833","texture"],[201,5,"OuterCastleWall_0833","texture"],[204,5,"OuterCastleWall_0833","texture"],[200,3,"OuterCastleWall_0833","texture"],[203,3,"OuterCastleWall_0833","texture"],[22,4,"Cobblestone_0822","texture"],[37,4,"Cobblestone_0822","texture"],[52,4,"Cobblestone_0822","texture"],[67,4,"Cobblestone_0822","texture"],[82,4,"Cobblestone_0822","texture"],[28,3,"GrasslandJuggernaut_0927","texture"],[26,5,"GrasslandJuggernaut_0927","texture"]]',
         lights: '[[112,1,"SettingSun1","sunlightGoldenHour"],[112,7,"SettingSun1","sunlightGoldenHour"],[112,3,"SettingSun2","sunlightGoldenHourSoft"],[112,5,"SettingSun2","sunlightGoldenHourSoft"]]',
-        gates: '[[7,7,"31.1","30.2","Closed"],[217,1,"31.2","32.1","Closed"],[105,5,"31.3","37.1","Closed"],[119,3,"31.4","40.1","Closed"]]',
+        gates: '[[7,7,"31.1","30.2","Closed"],[217,1,"31.2","32.1","Closed"],[105,5,"31.3","37.1","Closed"],[119,3,"31.4","40.1","Closed"],[89,3,"31.5","52.1","Closed"]]',
         monsters: '[[142,"Wolf"]]',
         gold: '[[48,"SilverBar"],[110,"SilverBar"],[116,"SilverBar"],[56,"SilverBar"],[172,"SilverBar"],[192,"SilverBar"],[153,"SilverBar"]]',
         containers: '[[196,"Crate","GOLD_ITEM_TYPE.SilverBar",4],[80,"MetalCrate53","GOLD_ITEM_TYPE.SilverBar",4],[144,"WoodenCrate55","GOLD_ITEM_TYPE.SilverBar",4],[58,"MetalCrate424","GOLD_ITEM_TYPE.GoldBar",3]]',
@@ -850,7 +859,7 @@ const MAP = {
         monsterList: '["Wolf","Dragon","WolfSpider","WolfSpideGreen","RedDragon"]',
     }
     ,
-    32: {
+    32 : {
         name: "The Lodge",
         sg: 0,
         maxSpawned: 3,
@@ -868,15 +877,15 @@ const MAP = {
         monsters: '[[55,"DarkMadHandy"],[62,"DarkMadHandy"],[217,"DarkMadHandy"],[190,"DarkMadHandy"],[110,"CyGirl"],[212,"PurpleGalaxy"]]',
         scrolls: '[[240,5],[99,14],[252,7]]',
         gold: '[[89,"GoldCube"],[166,"GoldCube"],[214,"GoldCube"],[63,"SilverBar"],[207,"SilverBar"],[193,"SilverBar"],[56,"GoldBar"],[142,"GoldBar"],[233,"GoldBar"]]',
-        containers: '[[38,"WoodenCrate58","GOLD_ITEM_TYPE.SilverBar",7],[47,"Barrel_477","GOLD_ITEM_TYPE.SilverBar",7],[146,"WoodenCrate57","GOLD_ITEM_TYPE.SilverBar",7],[167,"WoodenCrate426","GOLD_ITEM_TYPE.SilverBar",7],[208,"WoodenCrate427","GOLD_ITEM_TYPE.GoldBar",3],[231,"WoodenCrate432","GOLD_ITEM_TYPE.GoldBar",3]]',
+        containers: '[[38,"WoodenCrate58","GOLD_ITEM_TYPE.SilverBar",7],[47,"Barrel_477","GOLD_ITEM_TYPE.SilverBar",7],[146,"WoodenCrate57","GOLD_ITEM_TYPE.SilverBar",7],[167,"WoodenCrate426","GOLD_ITEM_TYPE.SilverBar",7],[208,"WoodenCrate427","GOLD_ITEM_TYPE.GoldBar",3],[231,"WoodenCrate432","GOLD_ITEM_TYPE.GoldBar",3],[197,"WoodenCrate53","INTERACTION_ITEM.Orange",4]]',
         doors: '[178]',
         entities: '[[68,5,"TheTourist"]]',
-        objects: '[[93,"GoldCoin"],[227,"Cake"],[44,"Amanita"],[242,"Amanita"]]',
+        objects: '[[93,"GoldCoin"],[227,"Cake"],[44,"Amanita"],[242,"Amanita"],[258,"Apple"]]',
         oracles: '[[84,3,"Navigator"]]',
         trainers: '[[285,1,"RedAxxa"]]',
         lairs: '[[237,3,"Lair61"],[221,5,"Lair454"]]',
         monsterList: '["Viking","Viking","WolfSpideGreen","RedDragon","Wolf"]',
-    }
+        }
     ,
     33: {
         name: "Old Bridge",
@@ -1136,7 +1145,7 @@ const MAP = {
         monsterList: '["Wolf","GreenWolf","PurpleGalaxy","GreatCat"]',
     }
     ,
-    44 : {
+    44: {
         name: "Inferna",
         sg: 0,
         maxSpawned: 4,
@@ -1164,26 +1173,29 @@ const MAP = {
         trainers: '[[617,7,"GirlInTheForest"]]',
         lairs: '[[1438,5,"Lair33"],[1627,5,"Lair30"]]',
         monsterList: '["RedDragon"]',
-        }
+    }
     ,
     45: {
         name: "Red Riding Hood",
         sg: 0,
-        maxSpawned: -1,
-        killCountdown: -1,
-        killsRequiredToStopSpawning: 99,
-        spawnDelay: -1,
-        data: '{"width":"21","height":"21","depth":5,"map":"BB2AA11BÁABAA3BAA3ÁAA4ÁAA8BAA2BABAÁAA4BB2AÁAA6ÁÁ2AA2BABABB4AA3BB4AA5BB4AA2BB3ABB4AA5ÁABB13ÁBB3ÁÁ4BABB2ÁBB8ABAA3BAA2BB2ABB3ABB2AA3BAA2BB5AA2BB7ÁABB2AÁBÁBB3ABB5ABB13ABB153ÁBB9ÁÁ2BB21ÁBB89ABB66$BB154ÁBB68ÁBB4ÁBB2ÁÁ2BB24ÁBB7ÁÁ2BB2ÁÁ2BB4ÁÁ8BB2ÁBB28ÁÁ3BÁBB2ÁÁ3BÁBB12ÁÁ5BÁÁ16BÁÁ8BB5ÁBB40ABB19ÁBÁBB8ABB6ÁÁ2BB2ÁÁ2BB59ÁBB53ÁÁ2BB2ÁBB10ÁÁ2BB68ABB3ABB4ÁBÁBB3ABÁÁ3BÁÁ5BB18AA4BB34ÁÁ2AÁÁ2BÁÁ71BB2ÁBÁÁ3BÁÁ10BABB2ÁÁ2AÁÁ2AÁÁ19BÁÁ50BB4ÁBÁÁ9BÁÁ24BÁÁ48BÁÁ2BB2ÁBÁÁ5AÁÁ8BÁÁ3BÁÁ52BB3ÁÁ3AÁÁ8BÁÁ6BB2ÁÁ11BÁÁ15BÁÁ21BÁÁ17BÁÁ48AÁBÁÁ21BB2ÁÁ24BÁÁ8BB2ÁÁ12BÁÁ3BÁÁ41BÁAÁÁ5BÁÁ8BÁÁ16BÁÁ2BÁÁ158BÁÁ3BB8ÁÁ68BB38"}',
+        maxSpawned: 5,
+        killCountdown: 4,
+        killsRequiredToStopSpawning: 29,
+        spawnDelay: 9999,
+        data: '{"width":"21","height":"21","depth":5,"map":"BB2AA11BÁABAA3BAA3ÁAA4ÁAA8BAA2BABAÁAA4BB2AÁAA6ÁÁ2AA2BABABB4AA3BB4AA5BB4AA2ÁBB3ABB4AA5ÁABB14ÁBB3ÁÁ4BABB2ÁBB9ABAA3BAA2BB2ABB3ABB2AA3BAA2BB6AA2BB8ÁABB2AÁBÁBB4ABB2ÁBB3ABB13ABB153ÁBB9ÁÁ2BB21ÁBB89ABB66$BB154ÁBB68ÁBB4ÁBB2ÁÁ2BB24ÁBB7ÁÁ2BB2ÁÁ2BB4ÁÁ8BB3ÁBB27ÁÁ3BÁBB2ÁÁ3BÁBB12ÁÁ6BÁÁ11BÁÁ6BÁÁ4BB4ÁBB42ABB8ABB7ÁBÁBB8ABB6ÁÁ2BB2ÁÁ2BB58ÁBB52ÁÁ2BB2ÁBB10ÁÁ2BB67ABB3ABB4ÁBÁBB3ABÁÁ3BÁÁ5BB18AA4BB33ÁÁ2AÁÁ2BÁÁ71BB2ÁBÁÁ3BÁÁ10BABB2ÁÁ2AÁÁ2AÁÁ21BÁÁ48BB4ÁBÁÁ9BÁÁ26BÁÁ46BÁÁ2BB2ÁBÁÁ6AÁÁ9BÁÁ3BÁÁ50BB3ÁÁ3AÁÁ9BÁÁ7BB2ÁÁ11BÁÁ16BÁÁ18BÁÁ19BÁÁ47AÁBÁÁ22BB2ÁÁ26BÁÁ4BB2ÁÁ14BÁÁ3BÁÁ40BÁAÁÁ6BÁÁ8BÁÁ18BÁÁ2BÁÁ156BÁÁ3BB8ÁÁ66BABB36"}',
         wall: "DarkWallSDXL329",
         floor: "MossyFloor212",
         ceil: "LightWallSDXL300",
         start: '[1249,1]',
         lights: '[[1375,7,"Candle51","standardSoft"],[945,5,"DuaLLantern_030","standardSoft"],[920,7,"WallLamp31","standardSoft"],[2047,7,"FluxLight121","standardSoft"]]',
         gates: '[[892,7,"45.1","40.4","Closed"]]',
-        scrolls: '[[940,5]]',
+        monsters: '[[1297,"BigDragon"],[1072,"Goblin"],[1090,"Goblin"],[963,"PurpleGalaxy"]]',
+        scrolls: '[[940,5],[967,0],[1111,7],[1135,3],[1269,10],[1215,14]]',
         containers: '[[1174,"WoodenCrate54","INTERACTION_ITEM.Quill",7],[1093,"MetalCrate53","INTERACTION_ITEM.RedSandals",1]]',
         triggers: '[[908,7,"SmoothWallButton",0,948],[905,7,"SmoothWallButton",0,959],[1005,1,"SmoothWallButton",0,1060],[1030,7,"SmoothWallButton",0,997],[1048,7,"SmoothWallButton",0,1039],[1125,3,"SmoothWallButton",0,1122],[1121,5,"SmoothWallButton",0,1143]]',
         entities: '[[1312,1,"RedRidingHood"]]',
+        lairs: '[[1450,5,"Lair16"],[1468,3,"Lair39"]]',
+        monsterList: '["RedDragon"]',
     }
     ,
     46: {
@@ -1301,4 +1313,29 @@ const MAP = {
         entities: '[[280,1,"SilverSpacy"]]',
         objects: '[[421,"GoldCoin"]]',
     }
+    ,
+    52 : {
+        name: "Pigsty",
+        sg: 0,
+        maxSpawned: 6,
+        killCountdown: 5,
+        killsRequiredToStopSpawning: 49,
+        spawnDelay: 9999,
+        data: '{"width":"19","height":"19","depth":3,"map":"BB5AA14BABAA37BB2AA6BB2AA2BB2AA26BAA2BB2AA2ÁÁ4AA6ŁBABABAA6BAÁÁ7AA4ÁÁ9BB3AA2BB2AA2BB2AA3BB12ÁBB13ABAA2ÁÁ14ABB4ABB6AA4BB7AA3BABÁÁ13AA5ÁAA6ÁÁ2AA8ÁÁ4AÁÁ8BB15ABB4AA2BB5ࡁࡁ2ɁɁ2BB2AA4BAA4BB3AA2BB4ABB10AA2сс2BB4AA5BB5AA4BB32AA2BB2ABB3AA4BB4AA4BABB4AA5BB4ABB3ABAA15BB5ABAA17BAA4BABABB3AA2BB45AB$BB39ÁABB55ÁÁ14BB46AA5BB4AA4ÁAÁAA4ÁÁ15AA5ÁÁ2AA6ÁÁ5AA4ÁÁ12AÁÁ3AA7ÁÁ15BB2ÁÁ7BB4ÁAÁÁ2AÁAA3ÁÁ41BÁÁ4BB2ÁÁ19AA2ÁÁ21AA2ÁÁ116AA2ÁÁ34AA15BB2AA7"}',
+        wall: "Wood10",
+        floor: "Wood5",
+        ceil: "GoldishWall5",
+        start: '[172,5]',
+        decals: '[[323,5,"OuterCastleWall_0836","texture"],[304,5,"OuterCastleWall_0836","texture"],[325,3,"OuterCastleWall_0836","texture"],[21,7,"FemDommes_5132","picture"],[5,7,"C64Games_3227","picture"],[9,7,"FluxDommes2203","picture"],[26,7,"FemDommes_15175","picture"],[30,7,"FemDommes_14011","picture"],[13,7,"FemDommes_13148","picture"],[35,7,"EyeOfTheBeholder110","picture"],[140,7,"FemDommes_16118","picture"],[142,7,"FemDommes_8021","picture"],[181,7,"GemDommes_230","picture"],[145,7,"BlackBeret_073","picture"],[110,7,"FemDommes_4254","picture"],[205,7,"HoleDomme_005","picture"],[107,7,"FemDommes_19238","picture"],[105,7,"ShortBlackSkirt_036","picture"],[103,7,"GemDommes_231","picture"],[177,7,"BlackBeret_038","picture"],[179,7,"FemDommes_18384","picture"],[220,7,"FluxDommes3138","picture"],[184,7,"FemDommes_13166","picture"],[250,7,"NurseAlchemyMagic_107","picture"],[294,7,"FemDommes_15377","picture"],[299,7,"C64Games_3243","picture"],[325,1,"NurseAlchemyMagic_099","picture"],[347,1,"FemDommes_18610","picture"],[351,1,"Domme348","picture"],[330,1,"FemDommes_18097","picture"],[334,1,"C64Games_3433","picture"],[355,1,"FemDommes_18609","picture"],[339,1,"FemDommes_18589","picture"],[255,1,"PrincessDragonDomme_132","picture"],[257,1,"BlackBeret_037","picture"],[218,1,"C64Games_3297","picture"],[216,1,"C64Games_3009","picture"],[179,1,"Domme135","picture"],[181,1,"FemDommes_5201","picture"],[144,1,"RetroGames054","picture"],[167,1,"FemDommes_8258","picture"],[147,1,"C64Games_3258","picture"],[65,1,"Ishar13","picture"],[71,1,"BlackBeret_113","picture"],[38,5,"FemDommes_6061","picture"],[76,5,"FemDommes_12054","picture"],[114,5,"GemDommes_160","picture"],[228,5,"FemDommes_16082","picture"],[266,5,"Amiga_Games_5037","picture"],[82,5,"GameDommes_064","picture"],[156,5,"FemDommes_15265","picture"],[118,5,"Apparitias_025","picture"],[194,5,"FemDommes_19121","picture"],[232,5,"CCC_174","picture"],[272,5,"CastleLady64","picture"],[280,5,"FemDommes_15053","picture"],[185,5,"UnusedEntities5052","picture"],[201,5,"NurseAlchemyMagic_032","picture"],[90,5,"FemDommes_17159","picture"],[56,3,"C64_ZX_Classics107","picture"],[94,3,"EveryoneIsAWally2","picture"],[132,3,"Morana035","picture"],[189,3,"ShortBlackSkirt_026","picture"],[246,3,"FemDommes_16479","picture"],[284,3,"UnusedEntities5100","picture"],[322,3,"C64Games_3249","picture"],[163,3,"FemDommes_16498","picture"],[201,3,"Apparitias_023","picture"],[88,3,"FemDommes_15268","picture"],[278,3,"FemDommes_11002","picture"],[272,3,"AticAtac200","picture"],[82,3,"FemDommes_9071","picture"],[153,5,"FemDommes_5009","picture"],[191,5,"Prince50","picture"]]',
+        lights: '[[533,5,"Lamp44","standard2"],[731,7,"FluxLight122","standard2"],[1073,1,"FluxLight118","standard2"],[549,3,"FluxLight122","standard2"]]',
+        gates: '[[171,5,"52.1","31.5","Closed"]]',
+        monsters: '[[131,"GreatPig"],[245,"GreatPig"],[28,"GreatPig"],[332,"GreatPig"],[183,"GreatPig"],[178,"GreatPig"],[433,"RedDragon"],[661,"RedDragon"]]',
+        gold: '[[78,"GoldBar"],[268,"GoldBar"],[290,"GoldBar"],[176,"GoldBar"],[120,"GoldBar"],[160,"GoldBar"],[198,"GoldBar"],[180,"GoldBar"],[238,"GoldBar"],[275,"GoldBar"],[315,"GoldBar"],[301,"GoldBar"],[241,"GoldBar"],[165,"GoldBar"],[89,"GoldBar"],[85,"GoldBar"],[43,"GoldBar"],[49,"GoldBar"],[54,"GoldBar"],[148,"GoldBar"],[340,"GoldBar"],[503,"SilverBar"],[576,"SilverBar"],[582,"SilverBar"],[584,"SilverBar"],[622,"SilverBar"],[451,"SilverBar"],[430,"SilverBar"],[462,"SilverBar"],[427,"SilverBar"],[422,"SilverBar"],[555,"SilverBar"],[633,"SilverBar"],[579,"SilverBar"],[655,"SilverBar"],[649,"SilverBar"]]',
+        containers: '[[328,"Barrel_470","GOLD_ITEM_TYPE.SilverBar",1],[336,"Barrel_470","GOLD_ITEM_TYPE.SilverBar",1],[24,"WoodenCrate442","GOLD_ITEM_TYPE.SilverBar",7],[32,"WoodenCrate434","GOLD_ITEM_TYPE.SilverBar",7]]',
+        shrines: '[[343,1,"CyanManaRedhead"]]',
+        objects: '[[28,"Steak"],[229,"Steak"],[77,"Steak"],[332,"Steak"],[186,"Steak"],[498,"Snail"],[505,"Snail"],[538,"Snail"],[540,"Snail"],[620,"Snail"],[617,"Snail"],[501,"Snail"],[527,"Snail"],[267,"Amanita"],[115,"Amanita"],[91,"Amanita"],[281,"ManaFrog"]]',
+        movables: '[[93,"LittlePiggy"],[188,"LittlePiggy"],[283,"LittlePiggy"]]',
+        lairs: '[[1,7,"Lair458"],[17,7,"Lair454"],[359,1,"Lair22"]]',
+        monsterList: '["GreatPig"]',
+        }
 };

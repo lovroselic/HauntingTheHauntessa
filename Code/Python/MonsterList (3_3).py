@@ -3,7 +3,7 @@
 Created on Sun Aug  1 09:20:45 2021
 
 @author: lovro selic
-@version 0.4.9
+@version 0.3.3
 
 private tool for creation of excel files from monster
 definition in MAP module of CH2 game
@@ -24,9 +24,7 @@ monsters = re.search(firstPattern, data).group(0)
 monsterExtractionPattern = re.compile(
     r'(\w+\:\s{[\s\w\:\"\,\.\(\)\[\]\-\/\'\*]*})')
 
-# attributePattern = re.compile(r'((?<!\/)\b\w+\:\s*\"?[\-\w\.\s\*\/]*\"?),?')
-attributePattern = re.compile(r'(\w+):\s*([^,\n]+)')
-
+attributePattern = re.compile(r'((?<!\/)\b\w+\:\s*\"?[\-\w\.\s\*\/]*\"?),?')
 MonsterList = defaultdict(dict)
 
 for match in re.finditer(monsterExtractionPattern, monsters):
@@ -34,9 +32,9 @@ for match in re.finditer(monsterExtractionPattern, monsters):
     monsterName = monster.split(':')[0]
 
     for attr in re.finditer(attributePattern, monster.split('{')[1]):
-        key, value = attr.groups()
-        value = value.strip().strip(',').strip('"').strip("'")
-        MonsterList[key][monsterName] = value
+        attribute = attr.group(0)
+        [key, value] = attribute.split(':')
+        MonsterList[key][monsterName] = value.strip('\",')
     
 
 MON = pd.DataFrame(MonsterList)

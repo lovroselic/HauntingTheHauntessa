@@ -141,6 +141,9 @@ const DEBUG = {
             DONE "Quill", --> (45)
             DONE "Blood", --> (33)
             DONE Skull" --> (38)
+            DONE LittlePiggy --> (52)
+            DONE LittlePiggy  --> (52)
+            DONE LittlePiggy  --> (52)
 
 
         Shrines:
@@ -181,7 +184,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 45; //31-->32-->31-->37-->38-->39
+        GAME.level = 52; //31-->32-->31-->37-->38-->39
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -359,7 +362,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.23.11",
+    VERSION: "0.23.12",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
