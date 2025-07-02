@@ -29,6 +29,19 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    ChampagneMana: {
+        name: "ChampagneMana",
+        sprite: "ChampagneMana",
+        which: "mana",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "ManaSkill",
+        price: 3000,
+        level: 1,
+        text: "Wanna take a sip of bubbly? 3000 gold and your mana pool will bubble up.",
+        introduce: true,
+        voice: "Female5",
+    },
     CyanManaRedhead: {
         name: "CyanManaRedhead",
         sprite: "CyanManaRedhead",
@@ -3366,7 +3379,7 @@ const INTERACTION_ITEM = {
         name: "RedSandals",
         category: "interaction_item",
         inventorySprite: "RedSandals",
-        text: "Beatchwear. Bitchwear?"
+        text: "Beatchwear. Bitchwear? Bitch. Where?"
     },
     RedLeatherHat: {
         name: "RedLeatherHat",
@@ -3584,7 +3597,7 @@ const INTERACTION_ENTITY = {
         text: {
             intro: "I'll dive down deep where legends sleep, but gearless girls the current keeps!",
             progress: "Almost set to make the splash. Just a bit more for my dash!",
-            conclusion: "With mask and fins, I’ve made the sweep. Here’s the tear from oceans deep."
+            conclusion: "With mask and fins, I've made the sweep. Here's the tear from oceans deep."
         }
     },
     GreenBikiniRedVenus: {
@@ -3595,9 +3608,9 @@ const INTERACTION_ENTITY = {
         wants: ["RedSandals", "RedLeatherHat"],
         gives: "Shell",
         text: {
-            intro: "intro",
-            progress: "progress",
-            conclusion: "conclusion"
+            intro: "Sun, sass, and sand are swell. Fetch me some bitch wear, you'll get a shell!",
+            progress: "Mmm, we're halfway to fab. One more piece, then it's a grab!",
+            conclusion: "Red hot look, you brought the flair. Here's your shell, now strut with care."
         }
     },
     BlackBikiniVenus: {
@@ -3608,9 +3621,9 @@ const INTERACTION_ENTITY = {
         wants: ["SunScreen", "Towel"],
         gives: "Shell",
         text: {
-            intro: "intro",
-            progress: "progress",
-            conclusion: "conclusion"
+            intro: "Too much sun and no escape? I need your help to keep my shape!",
+            progress: "You've got the goods, but not the pair. Bring the rest, show you care!",
+            conclusion: "Now I'm set for beachy bliss. Take this shell and blow a kiss!"
         }
     },
     RedBikiniVenus: {
@@ -3621,9 +3634,9 @@ const INTERACTION_ENTITY = {
         wants: ["Shell", "Shell", "Shell"],
         gives: "Pearl",
         text: {
-            intro: "intro",
-            progress: "progress",
-            conclusion: "conclusion"
+            intro: "Shells are pretty, but I've seen enough. Hand me more, not just the fluff!",
+            progress: "A few in hand, but not the score. Keep 'em coming, I want more!",
+            conclusion: "So many shells, I'm losing track. Take this pearl, I want my beach bag back!"
         }
     },
     Inferna: {
@@ -3775,7 +3788,7 @@ const INTERACTION_ENTITY = {
         category: 'crest',
         voice: "Female3",
         wants: ["Postcard", "Postcard", "Postcard"],
-        gives: "PinkKey",
+        gives: "OrangeKey",
         text: {
             intro: "Oh, the world beyond, so vast! Show me postcards from your past!",
             progress: "What a view, but not the set. I'm sure there's more I haven't met!",

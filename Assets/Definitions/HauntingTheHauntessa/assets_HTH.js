@@ -900,6 +900,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/ScrollTexture.jpg", name: "ScrollTexture" },
     { srcName: "ObjectTextures/RedFireballTexture.jpg", name: "RedFireballTexture" },
     { srcName: "ObjectTextures/BluBallTexture.jpg", name: "BluBallTexture" },
+    { srcName: "ObjectTextures/Explosion2.jpg", name: "Explosion2" },
 
     //health items
     { srcName: "ObjectTextures/CanTexture.jpg", name: "CanTexture" },
@@ -1182,7 +1183,7 @@ LoadSprites = [
     { srcName: "EntityPictures/PinkBalance.jpg", name: "PinkBalance" },
     { srcName: "EntityPictures/SternDomme.jpg", name: "SternDomme" },
     { srcName: "EntityPictures/AlpineClimber.jpg", name: "AlpineClimber" },
-    { srcName: "EntityPictures/CyanManaRedhead.jpg", name: "CyanManaRedhead" },
+    { srcName: "EntityPictures/ChampagneMana.jpg", name: "ChampagneMana" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },

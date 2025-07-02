@@ -58,8 +58,8 @@ const MAP_TEXT = {
     46: "",
     47: "",
     48: "",
-    49: "",
-    50: "",
+    49: "Nice beach. And some bitches.",
+    50: "Another beach and another bitch.",
     51: "",
     52: "Smells like little piggies",
 
@@ -859,7 +859,7 @@ const MAP = {
         monsterList: '["Wolf","Dragon","WolfSpider","WolfSpideGreen","RedDragon"]',
     }
     ,
-    32 : {
+    32: {
         name: "The Lodge",
         sg: 0,
         maxSpawned: 3,
@@ -873,7 +873,7 @@ const MAP = {
         start: '[25,7]',
         decals: '[[127,4,"RustyFloorGrille_06","crest"],[229,4,"FloorGrille108","crest"],[24,7,"FemDommes_11043","picture"],[26,7,"FluxDommes3041","picture"],[29,7,"Choplifter11","picture"],[21,7,"AtariST_Games_4043","picture"],[36,7,"FemDommes_6084","picture"],[48,7,"FemDommes_16721","picture"],[76,7,"GemDommes_213","picture"],[125,7,"Domme243","picture"],[129,7,"FemDommes_9109","picture"],[122,7,"NurseAlchemyMagic_109","picture"],[132,7,"FemDommes_18529","picture"],[138,7,"FemDommes_6178","picture"],[150,7,"GameScreens002","picture"],[177,7,"C64Games_3125","picture"],[179,7,"LeisureSuitLarry88","picture"],[76,1,"FemDommes_16064","picture"],[125,1,"FemDommes_16413","picture"],[129,1,"FemDommes_4262","picture"],[177,1,"Barbarian112","picture"],[179,1,"FemDommes_18086","picture"],[181,1,"C64_ZX_Classics120","picture"],[175,1,"FemDommes_4089","picture"],[122,1,"FemDommes_16023","picture"],[132,1,"FemDommes_14192","picture"],[262,1,"FemDommes_8386","picture"],[264,1,"FemDommes_15153","picture"],[275,1,"FemDommes_6189","picture"],[467,1,"FemDommes_12244","picture"],[413,1,"RetroGames_2301","picture"],[420,1,"GameDommes_183","picture"],[371,3,"FemDommes_9101","picture"],[359,5,"FluxDommes3105","picture"],[76,5,"FemDommes_6125","picture"],[125,5,"FemDommes_18694","picture"],[129,5,"FemDommes_16296","picture"],[122,5,"FemDommes_4090","picture"],[104,5,"FemDommes_13226","picture"],[209,5,"FemDommes_15101","picture"],[188,5,"AI_PIC_311","picture"],[76,3,"FemDommes_13047","picture"],[125,3,"FemDommes_11005","picture"],[129,3,"FemDommes_17061","picture"],[132,3,"FemDommes_8114","picture"],[116,3,"FemDommes_5082","picture"],[202,3,"FemDommes_15644","picture"],[215,3,"Domme303","picture"],[226,3,"FluxDommes3022","picture"],[232,5,"FemDommes_18316","picture"],[181,5,"FemDommes_18686","picture"],[175,3,"C64Games_3113","picture"]]',
         lights: '[[186,3,"Fireplace107","fireplaceDim"],[170,5,"FireplaceFLuxU419","fireplaceDim"],[365,3,"DuaLLantern_012","standardVeryFaint"],[365,5,"DuaLLantern_022","standardVeryFaint"],[365,7,"lantern303","standardVeryFaint"]]',
-        gates: '[[8,7,"32.1","31.2","Closed"],[280,1,"32.2","33.1","Pink"]]',
+        gates: '[[8,7,"32.1","31.2","Closed"],[280,1,"32.2","33.1","Orange"]]',
         monsters: '[[55,"DarkMadHandy"],[62,"DarkMadHandy"],[217,"DarkMadHandy"],[190,"DarkMadHandy"],[110,"CyGirl"],[212,"PurpleGalaxy"]]',
         scrolls: '[[240,5],[99,14],[252,7]]',
         gold: '[[89,"GoldCube"],[166,"GoldCube"],[214,"GoldCube"],[63,"SilverBar"],[207,"SilverBar"],[193,"SilverBar"],[56,"GoldBar"],[142,"GoldBar"],[233,"GoldBar"]]',
@@ -885,7 +885,7 @@ const MAP = {
         trainers: '[[285,1,"RedAxxa"]]',
         lairs: '[[237,3,"Lair61"],[221,5,"Lair454"]]',
         monsterList: '["Viking","Viking","WolfSpideGreen","RedDragon","Wolf"]',
-        }
+    }
     ,
     33: {
         name: "Old Bridge",
@@ -899,9 +899,10 @@ const MAP = {
         floor: "Cobblestone_0825",
         ceil: "Relief17",
         start: '[1662,7]',
-        decals: '[[210,4,"Water30","texture"],[211,4,"Water30","texture"],[212,4,"Water30","texture"],[213,4,"Water30","texture"],[214,4,"Water30","texture"],[215,4,"Water30","texture"],[216,4,"Water30","texture"],[217,4,"Water30","texture"],[218,4,"Water30","texture"],[219,4,"Water30","texture"],[220,4,"Water30","texture"],[221,4,"Water30","texture"],[222,4,"Water30","texture"],[223,4,"Water30","texture"],[224,4,"Water30","texture"],[225,4,"Water30","texture"],[226,4,"Water30","texture"],[207,4,"Water30","texture"],[206,4,"Water30","texture"],[205,4,"Water30","texture"],[204,4,"Water30","texture"],[203,4,"Water30","texture"],[202,4,"Water30","texture"],[201,4,"Water30","texture"],[200,4,"Water30","texture"],[199,4,"Water30","texture"],[198,4,"Water30","texture"],[197,4,"Water30","texture"],[196,4,"Water30","texture"],[195,4,"Water30","texture"],[194,4,"Water30","texture"],[193,4,"Water30","texture"],[192,4,"Water30","texture"],[191,4,"Water30","texture"],[229,4,"Water30","texture"],[230,4,"Water30","texture"],[231,4,"Water30","texture"],[232,4,"Water30","texture"],[233,4,"Water30","texture"],[234,4,"Water30","texture"],[235,4,"Water30","texture"],[236,4,"Water30","texture"],[237,4,"Water30","texture"],[238,4,"Water30","texture"],[239,4,"Water30","texture"],[240,4,"Water30","texture"],[241,4,"Water30","texture"],[242,4,"Water30","texture"],[243,4,"Water30","texture"],[244,4,"Water30","texture"],[245,4,"Water30","texture"],[264,4,"Water30","texture"],[263,4,"Water30","texture"],[262,4,"Water30","texture"],[261,4,"Water30","texture"],[260,4,"Water30","texture"],[259,4,"Water30","texture"],[258,4,"Water30","texture"],[257,4,"Water30","texture"],[256,4,"Water30","texture"],[255,4,"Water30","texture"],[254,4,"Water30","texture"],[253,4,"Water30","texture"],[252,4,"Water30","texture"],[251,4,"Water30","texture"],[250,4,"Water30","texture"],[249,4,"Water30","texture"],[248,4,"Water30","texture"],[172,4,"Water30","texture"],[173,4,"Water30","texture"],[174,4,"Water30","texture"],[175,4,"Water30","texture"],[176,4,"Water30","texture"],[177,4,"Water30","texture"],[178,4,"Water30","texture"],[179,4,"Water30","texture"],[180,4,"Water30","texture"],[181,4,"Water30","texture"],[182,4,"Water30","texture"],[183,4,"Water30","texture"],[184,4,"Water30","texture"],[185,4,"Water30","texture"],[186,4,"Water30","texture"],[187,4,"Water30","texture"],[188,4,"Water30","texture"],[169,4,"Water30","texture"],[168,4,"Water30","texture"],[167,4,"Water30","texture"],[165,4,"Water30","texture"],[166,4,"Water30","texture"],[164,4,"Water30","texture"],[163,4,"Water30","texture"],[162,4,"Water30","texture"],[161,4,"Water30","texture"],[160,4,"Water30","texture"],[159,4,"Water30","texture"],[158,4,"Water30","texture"],[157,4,"Water30","texture"],[156,4,"Water30","texture"],[155,4,"Water30","texture"],[154,4,"Water30","texture"],[153,4,"Water30","texture"],[267,4,"Water30","texture"],[268,4,"Water30","texture"],[269,4,"Water30","texture"],[270,4,"Water30","texture"],[271,4,"Water30","texture"],[272,4,"Water30","texture"],[273,4,"Water30","texture"],[274,4,"Water30","texture"],[275,4,"Water30","texture"],[276,4,"Water30","texture"],[277,4,"Water30","texture"],[278,4,"Water30","texture"],[279,4,"Water30","texture"],[280,4,"Water30","texture"],[281,4,"Water30","texture"],[282,4,"Water30","texture"],[283,4,"Water30","texture"],[408,4,"Sand3","texture"],[407,5,"Beach2","texture"],[409,3,"Beach2","texture"],[306,1,"GemDommes_152","picture"],[310,1,"FemaleWarrior108","picture"],[315,1,"FemDommes_12053","picture"],[320,1,"FluxDommes2264","picture"],[340,1,"FemDommes_11001","picture"],[392,1,"BlackBeret_045","picture"],[115,1,"FemDommes_18393","picture"],[60,1,"PrincessDragonDomme_105","picture"],[544,1,"FemDommes_6037","picture"],[1698,1,"CCC_010","picture"],[1702,1,"FakeRetro_102","picture"],[1705,1,"Tutamkham50","picture"],[1695,1,"UnusedEntities103","picture"],[1674,1,"Domme326","picture"],[1688,1,"FemDommes_17711","picture"],[1369,1,"FemDommes_18646","picture"],[1,7,"FemDommes_15285","picture"],[3,7,"RetroGames_2023","picture"],[45,7,"FemDommes_6131","picture"],[78,7,"RetroGames_2090","picture"],[101,7,"FemDommes_17674","picture"],[106,7,"BlackBeret_032","picture"],[129,7,"Domme242","picture"],[131,7,"RetroGames_2146","picture"],[115,7,"CCC_148","picture"],[1312,7,"FemDommes_5223","picture"],[1314,7,"FemDommes_5306","picture"],[1316,7,"C64_ZX_Classics206","picture"],[1338,7,"BlackBeret_056","picture"],[1340,7,"FluxDommes2024","picture"],[1344,7,"GemDommes_193","picture"],[909,7,"FemDommes_8275","picture"],[982,7,"FemDommes_16490","picture"],[133,5,"FemDommes_16267","picture"],[285,5,"FluxDommes3135","picture"],[95,5,"Amiga_Games_5027","picture"],[19,5,"FemDommes_15666","picture"],[115,5,"FemDommes_17179","picture"],[368,5,"FemDommes_16946","picture"],[1349,5,"FemDommes_8348","picture"],[1407,5,"Apparitias_040","picture"],[1635,5,"RetroGames_1019","picture"],[151,3,"GameDommes_255","picture"],[303,3,"FemDommes_4050","picture"],[374,3,"FemDommes_18036","picture"],[98,3,"FakeRetro_103","picture"],[1404,3,"ShortBlackSkirt_002","picture"],[1442,3,"Jawbreaker","picture"],[1651,3,"FemDommes_17699","picture"],[93,3,"FemDommes_10139","picture"],[487,7,"GameDommes_157","picture"],[1732,1,"C64Games_3291","picture"],[1744,1,"FemDommes_13128","picture"],[1674,5,"FluxDommes3057","picture"],[1724,5,"PrincessDragonDomme_035","picture"],[1688,3,"FluxDommes2252","picture"],[1714,3,"GemDommes_213","picture"]]',
+        decals: '[[210,4,"Water30","texture"],[211,4,"Water30","texture"],[212,4,"Water30","texture"],[213,4,"Water30","texture"],[214,4,"Water30","texture"],[215,4,"Water30","texture"],[216,4,"Water30","texture"],[217,4,"Water30","texture"],[218,4,"Water30","texture"],[219,4,"Water30","texture"],[220,4,"Water30","texture"],[221,4,"Water30","texture"],[222,4,"Water30","texture"],[223,4,"Water30","texture"],[224,4,"Water30","texture"],[225,4,"Water30","texture"],[226,4,"Water30","texture"],[207,4,"Water30","texture"],[206,4,"Water30","texture"],[205,4,"Water30","texture"],[204,4,"Water30","texture"],[203,4,"Water30","texture"],[202,4,"Water30","texture"],[201,4,"Water30","texture"],[200,4,"Water30","texture"],[199,4,"Water30","texture"],[198,4,"Water30","texture"],[197,4,"Water30","texture"],[196,4,"Water30","texture"],[195,4,"Water30","texture"],[194,4,"Water30","texture"],[193,4,"Water30","texture"],[192,4,"Water30","texture"],[191,4,"Water30","texture"],[229,4,"Water30","texture"],[230,4,"Water30","texture"],[231,4,"Water30","texture"],[232,4,"Water30","texture"],[233,4,"Water30","texture"],[234,4,"Water30","texture"],[235,4,"Water30","texture"],[236,4,"Water30","texture"],[237,4,"Water30","texture"],[238,4,"Water30","texture"],[239,4,"Water30","texture"],[240,4,"Water30","texture"],[241,4,"Water30","texture"],[242,4,"Water30","texture"],[243,4,"Water30","texture"],[244,4,"Water30","texture"],[245,4,"Water30","texture"],[264,4,"Water30","texture"],[263,4,"Water30","texture"],[262,4,"Water30","texture"],[261,4,"Water30","texture"],[260,4,"Water30","texture"],[259,4,"Water30","texture"],[258,4,"Water30","texture"],[257,4,"Water30","texture"],[256,4,"Water30","texture"],[255,4,"Water30","texture"],[254,4,"Water30","texture"],[253,4,"Water30","texture"],[252,4,"Water30","texture"],[251,4,"Water30","texture"],[250,4,"Water30","texture"],[249,4,"Water30","texture"],[248,4,"Water30","texture"],[172,4,"Water30","texture"],[173,4,"Water30","texture"],[174,4,"Water30","texture"],[175,4,"Water30","texture"],[176,4,"Water30","texture"],[177,4,"Water30","texture"],[178,4,"Water30","texture"],[179,4,"Water30","texture"],[180,4,"Water30","texture"],[181,4,"Water30","texture"],[182,4,"Water30","texture"],[183,4,"Water30","texture"],[184,4,"Water30","texture"],[185,4,"Water30","texture"],[186,4,"Water30","texture"],[187,4,"Water30","texture"],[188,4,"Water30","texture"],[169,4,"Water30","texture"],[168,4,"Water30","texture"],[167,4,"Water30","texture"],[165,4,"Water30","texture"],[166,4,"Water30","texture"],[164,4,"Water30","texture"],[163,4,"Water30","texture"],[162,4,"Water30","texture"],[161,4,"Water30","texture"],[160,4,"Water30","texture"],[159,4,"Water30","texture"],[158,4,"Water30","texture"],[157,4,"Water30","texture"],[156,4,"Water30","texture"],[155,4,"Water30","texture"],[154,4,"Water30","texture"],[153,4,"Water30","texture"],[267,4,"Water30","texture"],[268,4,"Water30","texture"],[269,4,"Water30","texture"],[270,4,"Water30","texture"],[271,4,"Water30","texture"],[272,4,"Water30","texture"],[273,4,"Water30","texture"],[274,4,"Water30","texture"],[275,4,"Water30","texture"],[276,4,"Water30","texture"],[277,4,"Water30","texture"],[278,4,"Water30","texture"],[279,4,"Water30","texture"],[280,4,"Water30","texture"],[281,4,"Water30","texture"],[282,4,"Water30","texture"],[283,4,"Water30","texture"],[408,4,"Sand3","texture"],[407,5,"Beach2","texture"],[409,3,"Beach2","texture"],[306,1,"GemDommes_152","picture"],[310,1,"FemaleWarrior108","picture"],[315,1,"FemDommes_12053","picture"],[320,1,"FluxDommes2264","picture"],[340,1,"FemDommes_11001","picture"],[392,1,"BlackBeret_045","picture"],[115,1,"FemDommes_18393","picture"],[60,1,"PrincessDragonDomme_105","picture"],[544,1,"FemDommes_6037","picture"],[1698,1,"CCC_010","picture"],[1702,1,"FakeRetro_102","picture"],[1705,1,"Tutamkham50","picture"],[1695,1,"UnusedEntities103","picture"],[1674,1,"Domme326","picture"],[1688,1,"FemDommes_17711","picture"],[1369,1,"FemDommes_18646","picture"],[1,7,"FemDommes_15285","picture"],[3,7,"RetroGames_2023","picture"],[45,7,"FemDommes_6131","picture"],[78,7,"RetroGames_2090","picture"],[101,7,"FemDommes_17674","picture"],[106,7,"BlackBeret_032","picture"],[129,7,"Domme242","picture"],[131,7,"RetroGames_2146","picture"],[115,7,"CCC_148","picture"],[1312,7,"FemDommes_5223","picture"],[1314,7,"FemDommes_5306","picture"],[1316,7,"C64_ZX_Classics206","picture"],[1338,7,"BlackBeret_056","picture"],[1340,7,"FluxDommes2024","picture"],[1344,7,"GemDommes_193","picture"],[909,7,"FemDommes_8275","picture"],[982,7,"FemDommes_16490","picture"],[133,5,"FemDommes_16267","picture"],[285,5,"FluxDommes3135","picture"],[95,5,"Amiga_Games_5027","picture"],[19,5,"FemDommes_15666","picture"],[115,5,"FemDommes_17179","picture"],[368,5,"FemDommes_16946","picture"],[1349,5,"FemDommes_8348","picture"],[1407,5,"Apparitias_040","picture"],[1635,5,"RetroGames_1019","picture"],[151,3,"GameDommes_255","picture"],[303,3,"FemDommes_4050","picture"],[374,3,"FemDommes_18036","picture"],[98,3,"FakeRetro_103","picture"],[1404,3,"ShortBlackSkirt_002","picture"],[1442,3,"Jawbreaker","picture"],[1651,3,"FemDommes_17699","picture"],[93,3,"FemDommes_10139","picture"],[487,7,"GameDommes_157","picture"],[1732,1,"C64Games_3291","picture"],[1744,1,"FemDommes_13128","picture"],[1674,5,"FluxDommes3057","picture"],[1724,5,"PrincessDragonDomme_035","picture"],[1688,3,"FluxDommes2252","picture"],[1714,3,"GemDommes_213","picture"],[1377,4,"FloorGrille112","crest"],[1396,4,"FloorGrille112","crest"],[1394,4,"RustyFloorGrille_05","crest"],[1392,4,"RustyFloorGrille_07","crest"],[1389,4,"RustyFloorGrille_04","crest"]]',
         lights: '[[1792,7,"FluxLight127","standard2"],[1798,7,"FluxLight127","standard2"],[948,3,"Candelabra17","standardYellowDim"],[73,7,"WallLamp35","standardYellowDim"],[2,7,"Candle56","standardYellowFaint"],[332,7,"Candelabra01","standardUltraFaint"]]',
         gates: '[[1320,7,"33.1","32.2","Closed"],[1738,1,"33.2","34.1","Gold"],[1424,3,"33.3","46.1","Closed"],[1387,5,"33.4","49.1","Closed"]]',
+        monsters: '[[1700,"BigDragon"],[1656,"CyGirl"],[1668,"CyGirl"],[136,"CyGirl"],[147,"CyGirl"],[294,"CyGirl"],[1390,"PurpleGalaxy"],[1421,"PurpleGalaxy"]]',
         scrolls: '[[64,5]]',
         gold: '[[1333,"SilverBar"],[1335,"SilverBar"]]',
         triggers: '[[311,1,"SmoothWallButton",1,102],[1710,5,"SmoothWallButton",0,1510],[1728,3,"SmoothWallButton",0,1548]]',
@@ -1187,13 +1188,17 @@ const MAP = {
         floor: "MossyFloor212",
         ceil: "LightWallSDXL300",
         start: '[1249,1]',
+        decals: '[[912,7,"FemDommes_4060","picture"],[914,7,"FemDommes_17610","picture"],[932,7,"FemDommes_10003","picture"],[936,7,"GameDommes_096","picture"],[909,7,"ZX_Games_3035","picture"],[904,7,"FemDommes_18648","picture"],[921,7,"FemDommes_18751","picture"],[1121,7,"FemDommes_4085","picture"],[1114,7,"FemDommes_18456","picture"],[1153,7,"NurseAlchemyMagic_081","picture"],[1125,7,"Amiga_Games_5012","picture"],[1165,7,"Amiga_Games_5018","picture"],[989,1,"AtariST_Games_4037","picture"],[1132,1,"RetroGames057","picture"],[1114,1,"FemDommes_16580","picture"],[1184,1,"FemDommes_15309","picture"],[1303,1,"FemDommes_6107","picture"],[1308,1,"FemDommes_19151","picture"],[1268,1,"FluxDommes3083","picture"],[1272,1,"LargePicLadies20","picture"],[1315,1,"FemDommes_18263","picture"],[1321,1,"FemDommes_17705","picture"],[1165,1,"FluxDommes2036","picture"],[1125,1,"FemDommes_9138","picture"],[1120,1,"BlackBeret_118","picture"],[966,5,"FemDommes_18103","picture"],[939,5,"FemDommes_18114","picture"],[1071,5,"FemDommes_16311","picture"],[1155,5,"FemDommes_4248","picture"],[1281,5,"FemDommes_6147","picture"],[1241,5,"FemDommes_17407","picture"],[1293,5,"FemDommes_16876","picture"],[1165,5,"SP111","picture"],[965,3,"GemDommes_073","picture"],[1091,3,"FemDommes_10035","picture"],[1165,3,"FemDommes_16276","picture"],[1217,3,"Domme226","picture"],[1301,3,"FemDommes_16460","picture"],[1257,3,"FemDommes_5230","picture"],[1288,3,"FemDommes_16705","picture"],[1181,3,"GameDommes_328","picture"],[2007,1,"Skull304","crest"],[2047,1,"Skull304","crest"],[2003,1,"Skull304","crest"],[1141,5,"RetroGames_2307","picture"],[1178,5,"FluxDommes2076","picture"]]',
         lights: '[[1375,7,"Candle51","standardSoft"],[945,5,"DuaLLantern_030","standardSoft"],[920,7,"WallLamp31","standardSoft"],[2047,7,"FluxLight121","standardSoft"]]',
         gates: '[[892,7,"45.1","40.4","Closed"]]',
         monsters: '[[1297,"BigDragon"],[1072,"Goblin"],[1090,"Goblin"],[963,"PurpleGalaxy"]]',
         scrolls: '[[940,5],[967,0],[1111,7],[1135,3],[1269,10],[1215,14]]',
-        containers: '[[1174,"WoodenCrate54","INTERACTION_ITEM.Quill",7],[1093,"MetalCrate53","INTERACTION_ITEM.RedSandals",1]]',
+        gold: '[[954,"SilverBar"],[951,"SilverBar"],[947,"SilverBar"],[962,"SilverBar"],[1073,"SilverBar"],[1079,"SilverBar"],[1085,"SilverBar"],[1089,"SilverBar"],[1161,"GoldBar"],[1219,"GoldBar"],[1284,"GoldBar"],[1248,"GoldBar"],[1298,"GoldBar"],[1216,"GoldSphere"]]',
+        containers: '[[1174,"WoodenCrate54","INTERACTION_ITEM.Quill",7],[1093,"MetalCrate53","INTERACTION_ITEM.RedSandals",1],[964,"BarrelMedieval","GOLD_ITEM_TYPE.GoldSphere",3]]',
         triggers: '[[908,7,"SmoothWallButton",0,948],[905,7,"SmoothWallButton",0,959],[1005,1,"SmoothWallButton",0,1060],[1030,7,"SmoothWallButton",0,997],[1048,7,"SmoothWallButton",0,1039],[1125,3,"SmoothWallButton",0,1122],[1121,5,"SmoothWallButton",0,1143]]',
         entities: '[[1312,1,"RedRidingHood"]]',
+        objects: '[[1069,"BeerHealth"],[1271,"BeerHealth"]]',
+        movables: '[[1245,"RedWolfSpider"]]',
         lairs: '[[1450,5,"Lair16"],[1468,3,"Lair39"]]',
         monsterList: '["RedDragon"]',
     }
@@ -1257,10 +1262,10 @@ const MAP = {
         objects: '[[600,"GoldCoin"]]',
     }
     ,
-    49: {
+    49 : {
         name: "First Bitch",
         sg: 0,
-        maxSpawned: 4,
+        maxSpawned: 2,
         killCountdown: 4,
         killsRequiredToStopSpawning: 29,
         spawnDelay: 9999,
@@ -1269,18 +1274,24 @@ const MAP = {
         floor: "Dune_0933",
         ceil: "BlueSky_0855",
         start: '[49,3]',
-        decals: '[[137,4,"Water12","texture"],[120,7,"SeaWaterWall","texture"],[154,1,"SeaWaterWall","texture"],[25,4,"Water11","texture"],[26,3,"SeaWaterWall","texture"],[24,5,"SeaWaterWall","texture"]]',
+        decals: '[[137,4,"Water12","texture"],[120,7,"SeaWaterWall","texture"],[154,1,"SeaWaterWall","texture"],[25,4,"Water11","texture"],[26,3,"SeaWaterWall","texture"],[24,5,"SeaWaterWall","texture"],[257,3,"SeaWaterWall","texture"],[238,5,"SeaWaterWall","texture"],[255,5,"SeaWaterWall","texture"],[239,4,"SeaWater2","texture"],[256,4,"SeaWater2","texture"]]',
         lights: '[[144,3,"SettingSun2","sunlightGoldenHour"],[144,1,"SettingSun2","sunlightGoldenHour"]]',
         gates: '[[50,3,"49.1","33.4","Closed"],[287,1,"49.2","50.1","Closed"]]',
-        containers: '[[151,"WoodenCrate442","INTERACTION_ITEM.Shell",3]]',
+        monsters: '[[93,"PurpleGalaxy"],[141,"PurpleGalaxy"],[212,"PurpleGalaxy"],[148,"PurpleGalaxy"]]',
+        gold: '[[79,"SilverBar"],[72,"SilverBar"],[139,"SilverBar"],[177,"SilverBar"],[233,"SilverBar"],[242,"SilverBar"],[29,"GoldBar"],[100,"GoldBar"],[188,"GoldBar"],[110,"GoldBar"]]',
+        containers: '[[151,"WoodenCrate442","INTERACTION_ITEM.Shell",3],[22,"WoodenCrate50","GOLD_ITEM_TYPE.SilverBar",4],[192,"Barrel_484","GOLD_ITEM_TYPE.SilverBar",4],[265,"MetalCrate424","GOLD_ITEM_TYPE.SilverBar",4],[219,"Barrel_465","GOLD_ITEM_TYPE.SilverBar",4],[97,"Barrel_479","GOLD_ITEM_TYPE.SilverBar",4]]',
+        shrines: '[[273,1,"ChampagneMana"]]',
         entities: '[[136,5,"BlackBikiniVenus"],[8,7,"GreenBikiniRedVenus"]]',
-    }
+        objects: '[[18,"Champagne"],[259,"Champagne"]]',
+        lairs: '[[280,1,"Lair67"],[85,5,"Lair18"],[186,3,"Lair46"]]',
+        monsterList: '["PurpleGalaxy"]',
+        }
     ,
-    50: {
+    50 : {
         name: "Second Bitch",
         sg: 0,
-        maxSpawned: 4,
-        killCountdown: 4,
+        maxSpawned: 2,
+        killCountdown: 3,
         killsRequiredToStopSpawning: 29,
         spawnDelay: 9999,
         data: '{"width":"17","height":"17","depth":1,"map":"BB2ABB2ABAA2BAA3BB2AA8BABABAA7BAA10BAA8BAA20BAA23BAA14BAA14BABB2AA18BAA6BAA5BAA5BB2ABAA4BB10ABB2AA2BB3ABABB6ABABB20ABB4AA3BB7ABAA2BB3AA5BAA2BAA3BB25A$"}',
@@ -1291,9 +1302,15 @@ const MAP = {
         decals: '[[137,4,"SeaWater1","texture"],[120,7,"SeaWaterWall","texture"],[154,1,"SeaWaterWall","texture"],[120,5,"SeaWaterWall","texture"],[154,5,"SeaWaterWall","texture"],[263,4,"Water32","texture"],[264,3,"SeaWaterWall","texture"],[262,5,"SeaWaterWall","texture"]]',
         lights: '[[145,3,"SettingSun1","sunlightWarm"],[145,7,"SettingSun1","sunlightDusk"],[96,7,"SettingSun1","sunlightGoldenHourSoft"]]',
         gates: '[[15,7,"50.1","49.2","Closed"]]',
+        monsters: '[[258,"PurpleGalaxy"],[268,"PurpleGalaxy"],[162,"PurpleGalaxy"]]',
+        scrolls: '[[142,0],[83,7]]',
+        skills: '[[27,"Mana"],[151,"Attack"]]',
         entities: '[[136,5,"RedBikiniVenus"],[280,1,"ScubaBabe"]]',
-        objects: '[[270,"GoldCoin"]]',
-    }
+        objects: '[[270,"GoldCoin"],[18,"BeerHealth"],[202,"BeerHealth"],[256,"BeerHealth"],[22,"BeerHealth"]]',
+        movables: '[[76,"RedWolfSpider"],[195,"RedWolfSpider"]]',
+        lairs: '[[84,3,"Lair21"]]',
+        monsterList: '["PurpleGalaxy"]',
+        }
     ,
     51: {
         name: "Planet Arium",
@@ -1314,7 +1331,7 @@ const MAP = {
         objects: '[[421,"GoldCoin"]]',
     }
     ,
-    52 : {
+    52: {
         name: "Pigsty",
         sg: 0,
         maxSpawned: 6,
@@ -1337,5 +1354,5 @@ const MAP = {
         movables: '[[93,"LittlePiggy"],[188,"LittlePiggy"],[283,"LittlePiggy"]]',
         lairs: '[[1,7,"Lair458"],[17,7,"Lair454"],[359,1,"Lair22"]]',
         monsterList: '["GreatPig"]',
-        }
+    }
 };

@@ -154,9 +154,10 @@ const DEBUG = {
             - magic 
 
           Shrines 3000:
-        mana
-        health
-            DONE defense -->44
+            DONE mana--> 52
+            DONE mana -->49 Champagne mana
+        defense
+            DONE health -->44
         attack
         magic 
     
@@ -184,7 +185,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 52; //31-->32-->31-->37-->38-->39
+        GAME.level = 50; //31-->32-->31-->37-->38-->39
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -362,7 +363,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.23.12",
+    VERSION: "0.23.13",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -1052,7 +1053,7 @@ const HERO = {
             "Miss me? Didn't think so.",
             "Invisible no more... fabulous as ever.",
             "Back to being everyone's favorite target.",
-            "Hide-and-seek's over, I guess.",
+            "Hide and seek's over, I guess.",
             "So much for stealth mode.",
             "Can everyone see me now? Great.",
             "Back to dodging monsters the hard way!",
@@ -1060,7 +1061,7 @@ const HERO = {
             "The magic wore off... typical.",
             "Stealth was fun while it lasted.",
             "Guess I'll have to fight fair now!",
-            "Aaaand I'm back in the spotlight.",
+            "And I'm back in the spotlight.",
             "Surprise! Did you miss me?",
             "Oops, cover's blown.",
             "Guess the magic ran out...",

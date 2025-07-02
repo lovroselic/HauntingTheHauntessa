@@ -247,7 +247,7 @@ const VOICE = {
     voice: 0,
     setting: new VoiceSetting(0.8, 1.7, 1.0)
   },
-  'FemaleHig2h': {
+  'FemaleHigh2': {
     source: ["Zira","Hazel"],
     voice: 0,
     setting: new VoiceSetting(0.4, 1.2, 1.0)
