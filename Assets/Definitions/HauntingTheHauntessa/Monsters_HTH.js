@@ -29,6 +29,32 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    GlassGirl: {
+        name: "GlassGirl",
+        sprite: "GlassGirl",
+        which: "defense",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "SkillShield",
+        price: 3000,
+        level: 1,
+        text: "I am so fragile. For 3000 gold I will teach you to be more careful. Like me.",
+        introduce: true,
+        voice: "FemaleLow5",
+    },
+    ProfAttacka: {
+        name: "ProfAttacka",
+        sprite: "ProfAttacka",
+        which: "attack",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "SkillKick",
+        price: 3000,
+        level: 1,
+        text: "Stick them with the pointy end. For 3000 gold I will show you where and how.",
+        introduce: true,
+        voice: "FemaleHigh3",
+    },
     ChampagneMana: {
         name: "ChampagneMana",
         sprite: "ChampagneMana",
@@ -380,6 +406,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    SlowCousin: {
+        name: "SlowCousin",
+        sprite: "SlowCousin",
+        category: 'crest',
+        voice: "Female5",
+        text: "You are progressing slowly, dear cousin.",
+        interactionCategory: "oracle",
+    },
     SternDomme: {
         name: "SternDomme",
         sprite: "SternDomme",
@@ -2344,7 +2378,7 @@ const MONSTER_TYPE = {
         model: "Dragon2",
         scale: 1.0 / 2 ** 2,
         rotateToNorth: Math.PI,
-        midHeight: 0.10,
+        midHeight: 0.15,
         fly: 0.40,
         deathType: "BloodExplosion",
         inventory: GOLD_ITEM_TYPE.GoldBar,

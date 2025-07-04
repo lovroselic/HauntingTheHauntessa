@@ -96,8 +96,8 @@ const MAP_TOOLS = {
         /** initialize global map proterties */
         /**
          * hotfixes:
-        MAP[GAME.level].map.maxSpawned = 4;
-        MAP[GAME.level].map.killCountdown = 4;
+        MAP[GAME.level].map.maxSpawned = 3;
+        MAP[GAME.level].map.killCountdown = 3;
         MAP[GAME.level].map.killsRequiredToStopSpawning = 25;
         MAP[GAME.level].map.spawnDelay = 9999;
         MAP[GAME.level].map.stopSpawning = false;

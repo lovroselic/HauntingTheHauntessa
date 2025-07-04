@@ -64,140 +64,42 @@ const DEBUG = {
     checkPoint() {
         // area-2 - the journey part 1
         /*
-            DONE Dutches wants GoldenNecklace, Ring, GoldenBracelet gives GoldKey
-            DONE RedRidingHood "RedLeatherBoots", "RedLatexBra", "RedLatexPanties" gives RedKey
-            DONE Inferna wants "HornedHelmet", "InfernalArmor"  gives blueKEy
-            DONE HungryMaid wants Pie, Pie, JUice gives GoldenBracelet
-            DONE CaveBabe wants Pearl, Moonstone, Amethyst, "PurpleTear" Gives Ring 
-            DONE SilverSpacy  wants Moon, Moon, Moon gives GoldenNecklace 
-            DONE ElvenSmith wants "SilverBar", "IronBar", "RedBar", "ArmorBlueprint",   gives InfernalArmor
-            DONE Apple picker wants "Apple", "Apple", "Apple" gives Pie
-            DONE Pear picker wants "Pear", "Pear", "Pear" gives Pie
-            DONE Orange picker wants "Orange", "Orange", "Orange" gives OrangeJuice
-            DONE Foxie wants "Chicken", "Chicken", "Chicken" gives RedLeatherBoots
-            DONE Wolf wants "BabySheep", "BabySheep", "BabySheep" gives RedLatexBra
-            DONE Leopardess wants "LittlePiggy", "LittlePiggy", "LittlePiggy" gives RedLatexPanties
-            DONE RedBikiniVenus wants Shell, Shell, Shell gives Pearl
-            DONE Tourist wants: "Postcard", "Postcard", "Postcard" gives PinkKey
-            DONE ButterFlyLady wants "Butterfly", "Butterfly", "Butterfly" gives  Amethyst
-            DONE BlackBikiniVenus wants Towel, SunScreen gives Shell 
-            DONE GreenBikiniRedVenus wants "RedSandals","RedLeatherHat" give Shell
-            DONE ScubaBabe wants "Fins","ScubaMask", gives "PurpleTear"
-            DONE MoonDemoness wants "Scroll", "Quill", "Blood", "Skull" gives "ArmorBlueprint"
-
-            DONE "Postcard"
-            DONE "Postcard"
-            DONE "Postcard"
-            DONE "Apple", --> (31)
-            DONE "Apple", --> (32)
-            DONE Apple --> (39)
-            DONE "Pear" --> (31)
-            DONE"Pear" --> (39)
-            DONE "Pear" --> (44)
-            DONE"Orange" -->(32)
-            DONE "Orange" --> (39)
-            DONE "Orange" --> (44)
-            DONE "Pie" --> (37) ApplePicker
-            DONE "Pie" -->(37) PearPicker
-            DONE "OrangeJuice"--> (37) OrangePicker
-            DONE "Chicken" -->(41)
-            "DONE Chicken" --> (43)
-            DONE "Chicken" --> (37)
-            DONE "BabySheep", --> (37)
-            DONE "BabySheep", --> (41)
-            DONE BabySheep" --> (43)
-            DONE HornedHelmet --> (33)
-            DONE InfernalArmor --> ElvenSmith (48)
-            DONE "SilverBar", --> (33)
-            DONE "IronBar", --> (39)
-            DONE "RedBar", --> (41)
-            DONE "ArmorBlueprint" --> MoonDemoness (48)
-            DONE GoldenNecklace --> SilverSpacy (51)
-            DONE Ring --> CaveBabe (46)
-            DONE GoldenBracelet -->HungryMaid(39)
-            DONE RedLatexPanties --> Leona Pard (42)
-            DONE RedLatexBra-->Wolfie (42)
-            DONE RedLeatherBoots --> Foxie (42)
-            DONE Pearl, RedBikiniVenus --> (50)
-            DONE Moonstone, --> (42)
-            DONE Amethyst ButterFlyLady (31)
-            DONE Shell, --> (49)
-            DONE Shell,  GreenBikiniRedVenus -> (49)
-            DONE Shell BlackBikiniVenus -> (49)
-            DONE "Moon" --> (44)
-            DONE "Moon" --> (42)
-            DONE "Moon" --> (46)
-            DONE Towel --> 47
-            DONE SunScreen --> (38)
-            DONE "RedSandals", --> (45)
-            DONE "RedLeatherHat" --> (51)
-            DONE "Fins", --> (42)
-            DONE "ScubaMask", --> (47)
-            DONE "PurpleTear" ScubaBabe (50)
-            DONE "Butterfly", -->>(31)
-            DONE "Butterfly", --> (37)
-            DONE "Butterfly" --> (43)
-            DONE "Scroll", --> (46)
-            DONE "Quill", --> (45)
-            DONE "Blood", --> (33)
-            DONE Skull" --> (38)
-            DONE LittlePiggy --> (52)
-            DONE LittlePiggy  --> (52)
-            DONE LittlePiggy  --> (52)
-
 
         Shrines:
-            - mana
-            - health
-            - defense
-            - attack
-            - magic 
-
-          Shrines 3000:
-            DONE mana--> 52
-            DONE mana -->49 Champagne mana
-        defense
-            DONE health -->44
-        attack
-        magic 
+    
     
 
         Trainers
     
 
-        CoinTrainers, not assigned coins 4x:
-            DONE RedAxa in 32 -- Attack
-            DONE GirlInTheForest - 44 -- Defense
-            DONE Beach girl - 33 -- Health
-            DONE CastleMana - 39 -- Mana
-            DONE BlackMagic in 47 -- Magic
+        CoinTrainers, not assigned coins:
+  
 
         Missing keys:
          
 
         KEy yet unused:
          
-
         Missing scrolls:
-            - fly
+            
 
         */
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 46; //31-->32-->31-->37-->38-->39
+        GAME.level = 51; //31-->32-->31-->37-->38-->39
         GAME.gold = 50035;
         GAME.lives = 3;
 
-        HERO.magic = 50;
+        HERO.magic = 25;
         HERO.attack = 50;
         HERO.defense = 100;
         HERO.reference_magic = 50;
         HERO.reference_attack = 50;
         HERO.reference_defense = 100;
 
-        HERO.mana = 250;
-        HERO.maxMana = 250;
+        HERO.mana = 2999;
+        HERO.maxMana = 2999;
         HERO.health = 280;
         HERO.maxHealth = 320;
 
@@ -363,7 +265,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.23.14",
+    VERSION: "0.24.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

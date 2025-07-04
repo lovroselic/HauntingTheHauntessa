@@ -165,7 +165,7 @@ const AI = {
         console.error("running away - untested", enemy);
         let nodeMap = enemy.parent.map.GA.nodeMap;
         let grid = this.getPosition(enemy);
-        let directions = enemy.parent.map.GA.getDirectionsFromNodeMap(grid, nodeMap, nodeMap[grid.x][grid.y][grid.z].goto);
+        let directions = enemy.parent.map.GA.getDirectionsFromNodeMap(grid, nodeMap, enemy.fly, nodeMap[grid.x][grid.y][grid.z].goto);
         directions.push(NOWAY3);
         let distances = [];
         for (const dir of directions) {
