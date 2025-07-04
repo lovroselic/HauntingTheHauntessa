@@ -87,7 +87,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 51; //31-->32-->31-->37-->38-->39
+        GAME.level = 54; //31-->32-->31-->37-->38-->39
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -265,7 +265,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.24.0",
+    VERSION: "0.25.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -2048,7 +2048,7 @@ const TITLE = {
         const x = (ENGINE.sideWIDTH / 4 | 0);
         const dx = 12;
 
-        const fs = 20;
+        const fs = 16; //20
         CTX.font = `200 ${fs}px CPU`
         //CTX.fillStyle = "#DDD";
         CTX.textAlign = "center";

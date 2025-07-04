@@ -314,25 +314,7 @@ const MONSTER_TYPE = {
         material: MATERIAL.gold,
     },
    
-    SkeleDwarf: {
-        name: "SkeleDwarf",
-        model: "SkeleDwarf",
-        scale: 1.2 / 2 ** 4,
-        rotateToNorth: Math.PI,
-        midHeight: 0.5,
-        deathType: "BloodExplosion",
-        mana: 0,
-        health: 50,
-        attack: 100,
-        magic: 0,
-        defense: 0,
-        directMagicDamage: true,
-        attackSound: "MonsterAttack1",
-        hurtSound: "MonsterHurt3",
-        behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
-        moveSpeed: 1.2,
-        material: MATERIAL.standardShine,
-    },
+   
 
     
     Astro: {

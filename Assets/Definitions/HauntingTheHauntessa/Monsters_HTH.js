@@ -29,6 +29,19 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    TransManaRedLast: {
+        name: "TransManaRedLast",
+        sprite: "TransManaRedLast",
+        which: "mana",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "ManaSkill",
+        price: 3000,
+        level: 1,
+        text: "Last chance to buy mana upgrade before Underworld? Cheap. 3000 gold only.",
+        introduce: true,
+        voice: "FemaleLow3",
+    },
     GlassGirl: {
         name: "GlassGirl",
         sprite: "GlassGirl",
@@ -406,6 +419,22 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    FaceDragon: {
+        name: "FaceDragon",
+        sprite: "FaceDragon",
+        category: 'crest',
+        voice: "FemaleHigh3",
+        text: "Only those who defeat the dragon may proceed.",
+        interactionCategory: "oracle",
+    },
+    MissRoseDescent: {
+        name: "MissRoseDescent",
+        sprite: "MissRoseDescent",
+        category: 'crest',
+        voice: "FemaleHigh6",
+        text: "Once you descent into the Underworld you will not be able to return to the castle.",
+        interactionCategory: "oracle",
+    },
     SlowCousin: {
         name: "SlowCousin",
         sprite: "SlowCousin",
@@ -2399,7 +2428,55 @@ const MONSTER_TYPE = {
         material: MATERIAL.gold,
         missile: Blue3D_Bouncer,
         missileType: COMMON_ITEM_TYPE.BlueBounceball,
-    }
+    },
+    SkeleDwarf: {
+        name: "SkeleDwarf",
+        model: "SkeleDwarf",
+        scale: 1.2 / 2 ** 4,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "BloodExplosion",
+        mana: 0,
+        health: 50,
+        attack: 60,
+        magic: 0,
+        defense: 20,
+        xp: 100,
+        directMagicDamage: false,
+        attackSound: "MonsterAttack1",
+        hurtSound: "MonsterHurt3",
+        behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
+        moveSpeed: 1.2,
+        material: MATERIAL.standardShine,
+    },
+    BigDragonBoss: {
+        name: "BigDragon",
+        model: "Dragon2",
+        scale: 1.0 / 2 ** 2,
+        rotateToNorth: Math.PI,
+        midHeight: 0.15,
+        fly: 0.40,
+        deathType: "BloodExplosion",
+        boss:true,
+        inventory: KEY_TYPE.Pearl,
+        mana: 12,
+        health: 50,
+        attack: 50,
+        magic: 30,
+        defense: 20,
+        xp: 100,
+        caster: true,
+        directMagicDamage: false,
+        attackSound: "DragonRoar",
+        hurtSound: "MonsterHurt",
+        behaviourArguments: [12, ["wanderer"], 10, ["shoot"]],
+        moveSpeed: 1.0,
+        shootDistance: 10,
+        stalkDistance: 8,
+        material: MATERIAL.gold,
+        missile: Blue3D_Bouncer,
+        missileType: COMMON_ITEM_TYPE.BlueBounceball,
+    },
 };
 
 const HERO_TYPE = {
