@@ -65,7 +65,9 @@ const MAP_TEXT = {
     53: "This time I have to face the dragon.",
     54: "Such a small room, but so much relief.",
     55: "Must I really jump?",
-    56: "The Underworld. NExt stage of my journey. Now I need to find a way back up."
+    56: "The Underworld. Next stage of my journey. Now I need to find a way back up.",
+    57: "The prayers are getting more and more expensive.",
+    58: "I can purchase some extra scrolls. I am rich, right? Right?",
 };
 
 /** Map definitions */
@@ -1456,7 +1458,7 @@ const MAP = {
         movables: '[[37,"Life"]]',
     }
     ,
-    55 : {
+    55: {
         name: "The Pit",
         sg: 1,
         maxSpawned: -1,
@@ -1476,9 +1478,9 @@ const MAP = {
         skills: '[[630,"Magic"],[1220,"Attack"],[79,"Heart"],[89,"Mana"]]',
         containers: '[[28,"Barrel_461","GOLD_ITEM_TYPE.GoldBar",7],[30,"IronChest","GOLD_ITEM_TYPE.GoldBar",7],[33,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[35,"Barrel_484","GOLD_ITEM_TYPE.GoldBar",7],[134,"WoodenCrate441","GOLD_ITEM_TYPE.GoldBar",1],[133,"Barrel_480","GOLD_ITEM_TYPE.GoldBar",1],[139,"MetalCrate53","GOLD_ITEM_TYPE.GoldBar",1],[137,"Barrel_461","GOLD_ITEM_TYPE.GoldBar",1]]',
         oracles: '[[1185,7,"GhostOracle"],[1193,7,"JumpHiny"],[6,7,"ExtraBabe"]]',
-        }
+    }
     ,
-    56 : {
+    56: {
         name: "Welcome to the Underworld",
         sg: 1,
         maxSpawned: -1,
@@ -1489,8 +1491,40 @@ const MAP = {
         wall: "JuggernautDarkwalls_0904",
         floor: "BloodMarbleFloorWall_SDXL_021",
         ceil: "OrnateWall2",
-        start: '[994,1]',
+        start: '[314,7]',
         lights: '[[620,7,"DuaLLantern_021","standardSoft"],[1113,1,"Candle70","standard"],[494,5,"DuaLLantern_012","standardFaint"],[508,3,"SkullLantern52","standardFaint"]]',
-        gates: '[[297,7,"56.1","55.2","Up"]]',
+        gates: '[[297,7,"56.1","55.2","Up"],[441,3,"56.2","57.1","Closed"],[425,5,"56.3","58.1","Closed"]]',
+    }
+    ,
+    57: {
+        name: "Underground Temple",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"19","height":"19","depth":3,"map":"BB3AA2BABABB6AA50BB2AA10BAA3BAA38BB2AA2BAA5BAA25BB2AA17BB2AA13BB2AA30BB5ABB12AA2BABB2AA4BB2AA2BB29AA2BB5AA2BABABB9AA2BAA6BB2AA4BB5ABABB33$BB76ÁÁ2BB76ABB186ÁÁ8BB11ÁÁ5BB2ÁBB10ÁÁ3BÁBB121ÁÁ4BB2ÁBÁBB17ÁÁ53BÁÁ17BB5ÁÁ10BÁÁ9BÁÁ16BÁBÁÁ48BB8ÁÁ2BB2ÁÁ10BB6"}',
+        wall: "JuggernautDarkwalls_0915",
+        floor: "Relief08",
+        ceil: "IvyWall3",
+        start: '[172,5]',
+        lights: '[[541,1,"Candelabra06","standard2"],[541,7,"Lights102","standard2"],[541,3,"SkullLantern58","standard2"],[541,5,"SkullLantern56","standard2"]]',
+        gates: '[[171,5,"57.1","56.2","Closed"]]',
+    }
+    ,
+    58 : {
+        name: "Scroll Market",
+        sg: 1,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"17","height":"17","depth":4,"map":"BB5ABABAA42BAA8BB2AA5BB4AA11ŁAA4ÁAA6ÁAA7BB5AA4BB2AA3BAA2BB5AA4BAA3BB21ABB3ABB22AA2BB14AA2BB4ABB6AA2BB4AA2BB6ABAA7ÁBB4AA2BB4ABB9ABB14AA2BB12ÁBB6ࡁBB124ÁBB180ࡁBB120A$BB70ABB119ÁÁ4BB44ÁÁ2BB2ÁÁ2BÁÁ2BB46AA2ÁÁ3BB17ABB5ÁÁ41BB4ÁÁ6BB3ÁÁ11BB2ÁÁ10AÁÁ2BB3ÁÁ2BÁÁ16BB4ɁAA2сŁŁ2ࡁɁɁ2сс2B"}',
+        wall: "JuggernautDarkwalls_0911",
+        floor: "BloodMarbleFloorWall_SDXL_002",
+        ceil: "LightWallSDXL306",
+        start: '[718,3]',
+        lights: '[[440,3,"Candle63","standardYellowDim"],[1009,3,"Lamp43","standardYellowSoft"],[962,1,"Candle72","standardYellowSoft"],[1064,7,"FluxLight124","standardYellowSoft"]]',
+        gates: '[[152,3,"58.1","56.3","Closed"]]',
         }
 };

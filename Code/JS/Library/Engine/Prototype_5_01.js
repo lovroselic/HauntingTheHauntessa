@@ -6,7 +6,7 @@
 console.clear();
 
 const LIB = {
-    VERSION: "5.00",
+    VERSION: "5.01",
     CSS: "color: #EFE",
     log: function () {
         console.log(`%cPrototype LIB ${LIB.VERSION} loaded`, LIB.CSS);
@@ -19,6 +19,7 @@ as used by LS
 
 changelog:
 5.00: new fresh version, 3D grids vectors
+5.01: typed array, extend
 
 */
 
@@ -612,6 +613,18 @@ Set.prototype.removeArray = function (arr) {
 Set.prototype.intersect = function (x) {
     return new Set([...this].filter(el => x.has(el)));
 };
+
+/** typed arrays */
+
+[Uint8Array, Uint16Array, Uint32Array].forEach(TypedArrayClass => {
+    TypedArrayClass.prototype.extend = function (extraLength, fill = 0) {
+        const extended = new TypedArrayClass(this.length + extraLength);
+        extended.set(this);
+        if (fill) extended.fill(fill, this.length);
+        return extended;
+    };
+});
+
 
 /** Grids */
 class MasterGridClass {

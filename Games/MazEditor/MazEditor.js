@@ -68,7 +68,7 @@ const INI = {
 };
 
 const PRG = {
-  VERSION: "0.16.00",
+  VERSION: "0.16.01",
   NAME: "MazEditor",
   YEAR: "2022, 2023, 2024, 2025",
   CSS: "color: #239AFF;",
@@ -104,6 +104,7 @@ const PRG = {
     $("#hint_down").click(GAME.hintDown);
     $("#hint_up").click(GAME.hintUp);
     $("#clearHint").click(GAME.clearHints);
+    $("#floor_on_top").click(GAME.addFloor);
 
     $("#buttons").on("click", "#new", GAME.init);
     $("#buttons").on("click", "#arena", GAME.arena);
@@ -590,19 +591,11 @@ const GAME = {
         switch (GAME.stack.fillCount) {
           case 1:
             GAME.stack.startGrid = grid;
-            /*$("#error_message").html(`
-              <pre>Will fill from top left ${JSON.stringify(GAME.stack.startGrid, null, 2)}
-              to and including ...</pre>
-          `);*/
             break;
 
           case 2:
             //success
             GAME.stack.endGrid = grid;
-            /*$("#error_message").html(`
-              <pre>Will fill from top left ${JSON.stringify(GAME.stack.startGrid, null, 2)}
-              to and including ${JSON.stringify(GAME.stack.endGrid, null, 2)}</pre>
-          `);*/
 
             const txt = GAME.fillArea(GAME.stack.startGrid, GAME.stack.endGrid, fill_value);
             if (txt) $("#error_message").html(txt);
@@ -1605,6 +1598,19 @@ ceil: "${$("#ceiltexture")[0].value}",\n`;
   },
   clearHints() {
     ENGINE.clearLayer("hint");
+  },
+  addFloor() {
+    const GA = $MAP.map.GA;
+    GA.depth++;
+    GA.maxZ++;
+    GA.map = GA.map.extend(GA.width * GA.height, MAPDICT.WALL);
+    $MAP.depth = GA.depth;
+    console.warn("adding floor", $MAP.map.GA, $MAP);
+    $("#depthGrid").val(GA.depth);
+    $("#depthGrid").trigger("change");
+    GAME.setFloorButtons();
+    GAME.render();
+    $("#error_message").html(`Added floor, current depth: ${GA.depth}`);
   }
 };
 

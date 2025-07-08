@@ -65,10 +65,11 @@ const DEBUG = {
         // area-3 - underworld
         /*
 
+        DarkSkulla wants Skull, Skull,Skull ---> ????????
+
         Shrines:
     
     
-
         Trainers
     
 
@@ -81,13 +82,15 @@ const DEBUG = {
         KEy yet unused:
          
         Missing scrolls:
+
+        Scroll sellers:
             
 
         */
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 56; //
+        GAME.level = 58; //
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -265,7 +268,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.25.1",
+    VERSION: "0.25.2",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
