@@ -68,7 +68,7 @@ const INI = {
 };
 
 const PRG = {
-  VERSION: "0.16.01",
+  VERSION: "0.16.02",
   NAME: "MazEditor",
   YEAR: "2022, 2023, 2024, 2025",
   CSS: "color: #239AFF;",
@@ -1600,17 +1600,19 @@ ceil: "${$("#ceiltexture")[0].value}",\n`;
     ENGINE.clearLayer("hint");
   },
   addFloor() {
-    const GA = $MAP.map.GA;
-    GA.depth++;
-    GA.maxZ++;
-    GA.map = GA.map.extend(GA.width * GA.height, MAPDICT.WALL);
-    $MAP.depth = GA.depth;
-    console.warn("adding floor", $MAP.map.GA, $MAP);
-    $("#depthGrid").val(GA.depth);
-    $("#depthGrid").trigger("change");
-    GAME.setFloorButtons();
-    GAME.render();
-    $("#error_message").html(`Added floor, current depth: ${GA.depth}`);
+    if (confirm("Do you really want to add floor above?")) {
+      const GA = $MAP.map.GA;
+      GA.depth++;
+      GA.maxZ++;
+      GA.map = GA.map.extend(GA.width * GA.height, MAPDICT.WALL);
+      $MAP.depth = GA.depth;
+      console.warn("adding floor", $MAP.map.GA, $MAP);
+      $("#depthGrid").val(GA.depth);
+      $("#depthGrid").trigger("change");
+      GAME.setFloorButtons();
+      GAME.render();
+      $("#error_message").html(`Added floor, current depth: ${GA.depth}`);
+    }
   }
 };
 

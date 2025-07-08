@@ -65,7 +65,19 @@ const DEBUG = {
         // area-3 - underworld
         /*
 
+        Entities:
         DarkSkulla wants Skull, Skull,Skull ---> ????????
+        Tridenta wants .......... ---> ??????????
+        PainterElle wants EmptyPainting, Palette, Brush ----->  Painting
+        UnderworldDarkQueen wants Painting, ....... ------------> some key
+
+        Items:
+        GoldCoin
+        GoldCoin
+        GoldCoin
+        GoldCoin
+        GoldCoin
+
 
         Shrines:
     
@@ -73,7 +85,7 @@ const DEBUG = {
         Trainers
     
 
-        CoinTrainers, not assigned coins:
+        CoinTrainers, not assigned coins, not placed coins 5x:
   
 
         Missing keys:
@@ -90,7 +102,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 58; //
+        GAME.level = 60; //
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -268,7 +280,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.25.2",
+    VERSION: "0.25.3",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

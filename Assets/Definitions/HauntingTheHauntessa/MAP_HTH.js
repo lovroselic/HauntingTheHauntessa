@@ -1493,7 +1493,7 @@ const MAP = {
         ceil: "OrnateWall2",
         start: '[314,7]',
         lights: '[[620,7,"DuaLLantern_021","standardSoft"],[1113,1,"Candle70","standard"],[494,5,"DuaLLantern_012","standardFaint"],[508,3,"SkullLantern52","standardFaint"]]',
-        gates: '[[297,7,"56.1","55.2","Up"],[441,3,"56.2","57.1","Closed"],[425,5,"56.3","58.1","Closed"]]',
+        gates: '[[297,7,"56.1","55.2","Up"],[441,3,"56.2","57.1","Closed"],[425,5,"56.3","58.1","Closed"],[858,1,"56.4","59.1","Closed"]]',
     }
     ,
     57: {
@@ -1512,7 +1512,7 @@ const MAP = {
         gates: '[[171,5,"57.1","56.2","Closed"]]',
     }
     ,
-    58 : {
+    58: {
         name: "Scroll Market",
         sg: 1,
         maxSpawned: -1,
@@ -1526,5 +1526,36 @@ const MAP = {
         start: '[718,3]',
         lights: '[[440,3,"Candle63","standardYellowDim"],[1009,3,"Lamp43","standardYellowSoft"],[962,1,"Candle72","standardYellowSoft"],[1064,7,"FluxLight124","standardYellowSoft"]]',
         gates: '[[152,3,"58.1","56.3","Closed"]]',
+    }
+    ,
+    59 : {
+        name: "Light Tower",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"21","height":"21","depth":7,"map":"BB4AA5BABAA9BABAA21BB4AA2BAA4BABB2ÁÁ2ABB2ABABAA15BB4AA3BB2ABAA16ÁÁ2AÁAA24ÁABB2AA7BABAA30ÁÁ2AA40BB2AA25BABB4AA4ÁÁ2AÁÁ2AÁAA2ÁÁ3AA2BB10EBABB15ABB25AA2BABB2AA3BAA4BB15ABB5ABAÁBB14ABB3AA3BB13ABB2ABB6ABABB12ABABB21ABABB26ABABB34ABB2AÁBB54$BB148ÁBB377ÁBB832AA3BB124ABB14ÁBÁBÁÁ3BÁBB18ÁBB4ÁBÁBB3ÁBÁÁ3BB16ÁBB7ÁÁ3BB2ÁÁ3BB2ÁBB2ÁBB3ÁBB16ÁBB3ÁBB6ÁÁ3BÁBB14ÁÁ2BÁBÁBB3ÁBÁBB10ÁBB2ÁBB6ÁBB3ÁBB4ÁÁ2BÁÁ2BB3ÁBB6ÁBB4ÁBB12ÁÁ5BB8ABB23ÁÁ2BB81ABB4ÁÁ2BB6ÁÁ2BB9ÁBB12ÁÁ3BB7ÁBB20ÁÁ4AA2ÁÁ20BÁÁ8BÁÁ130BB2ÁÁ7ABÁÁ3ABÁÁ47BB2ÁÁ77BB2ÁÁ4BB2ÁÁ4AÁABÁÁ5ABÁBB3ÁÁ23AÁBÁÁ10BB2ÁÁ5BB2ÁÁ2BÁÁ6ABÁÁ14BB2ÁÁ6ABÁÁ2ABÁÁ8BÁÁ4BB6ÁBÁÁ8ABABÁÁ2AA2BB2ÁÁ2ABÁÁ6BB5ÁÁ19BB2ÁÁ36BÁBÁÁ31BÁÁ2BB2ÁBÁÁ21BB5ÁBÁÁ11BB6"}',
+        wall: "RockWall_SDXL_002",
+        floor: "MarbleTiles1001",
+        ceil: "GoldBlackSDXL348",
+        start: '[1060,1]',
+        gates: '[[10,7,"59.1","56.4","Closed"],[430,1,"59.2","60.1","Closed"]]',
+        doors: '[157]',
+        }
+    ,
+    60 : {
+        name: "Dark Tower",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"21","height":"21","depth":7,"map":"BB25AA192ɁABAA23BB2ŁAA22сAA4BABAA8ÁAA18ÁÁ2AÁÁ3AA5BB6AA209BAA2BAA3ÁAA6сÁBB63ABB37ABB2ABB10ABAA29BB38ABB2ABB56$BB335ÁBB748ÁÁ2BB132ABB26ABB240ÁÁ3BB3ÁÁ2BB76ÁÁ20BB2ÁÁ8BB115ÁBB31AA2BÁBB38AÁÁ5AÁBÁÁ3сÁɁࡁBÁÁ75AÁÁ33BÁÁ38AA5BÁÁ2BÁÁ59BÁÁ12BÁÁ15ŁAÁÁ2ࡁÁÁ180BB29ÁÁ8BB2ÁÁ11BɁABŁÁࡁÁÁ4B"}',
+        wall: "DARKBricks107",
+        floor: "MarbleFloor105",
+        ceil: "RoughCave20",
+        start: '[1143,7]',
+        gates: '[[10,7,"60.1","59.2","Closed"]]',
         }
 };
