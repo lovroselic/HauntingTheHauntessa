@@ -64,7 +64,8 @@ const MAP_TEXT = {
     52: "Smells like little piggies",
     53: "This time I have to face the dragon.",
     54: "Such a small room, but so much relief.",
-    55: "",
+    55: "Must I really jump?",
+    56: "The Underworld. NExt stage of my journey. Now I need to find a way back up."
 };
 
 /** Map definitions */
@@ -1425,6 +1426,7 @@ const MAP = {
         floor: "MarbleFloor1001",
         ceil: "PebbleWall3",
         start: '[19,7]',
+        decals: '[[18,7,"NurseAlchemyMagic_099","picture"],[20,7,"BeyondForbiddenForest2","picture"],[15,7,"FemDommes_6136","picture"],[23,7,"FluxDommes2138","picture"],[56,7,"RetroGames_1002","picture"],[60,7,"RetroGames058","picture"],[110,7,"FemDommes_13073","picture"],[160,7,"GemDommes_034","picture"],[164,7,"RetroGames_1000","picture"],[197,1,"FemDommes_10142","picture"],[200,1,"UnusedEntities5070","picture"],[202,1,"GameDommes_060","picture"],[205,1,"FemDommes_13054","picture"],[160,1,"JSW110","picture"],[164,1,"FemDommes_6311","picture"],[110,1,"RetroGames_2081","picture"],[56,1,"Popeye2","picture"],[60,1,"C64Games_3161","picture"],[117,5,"ImpossibleMission90","picture"],[156,5,"DungeonMaster204","picture"],[56,5,"FemDommes_19277","picture"],[60,5,"FluxDommes2275","picture"],[110,5,"FemDommes_8168","picture"],[164,5,"RetroGames_2067","picture"],[160,5,"FemDommes_16511","picture"],[183,5,"FemDommes_18509","picture"],[27,5,"FemDommes_17287","picture"],[92,5,"FemDommes_8421","picture"],[37,3,"GameDommes_064","picture"],[64,3,"FemDommes_4111","picture"],[76,3,"FemDommes_13028","picture"],[115,3,"ManicMiner50","picture"],[142,3,"FemDommes_15372","picture"],[154,3,"LadyTut10","picture"],[181,3,"FemDommes_15669","picture"],[56,3,"FemDommes_19220","picture"],[60,3,"FemDommes_6078","picture"],[110,3,"CCC_091","picture"],[160,3,"FemDommes_8481","picture"],[164,3,"FemDommes_10049","picture"],[84,4,"FloorGrille104","crest"],[108,4,"RustyFloorGrille_10","crest"],[136,4,"FloorGrille107","crest"],[112,4,"FloorGrille111","crest"]]',
         lights: '[[552,7,"DuaLLantern_003","standard2"],[277,1,"Candle60","standardYellowFaint"],[281,1,"Candle60","standardYellowFaint"],[103,3,"FireplaceFLuxU416","fireplaceDim"],[78,5,"FireplaceFLuxU420","fireplaceDim"]]',
         gates: '[[6,7,"53.1","34.6","Up"],[214,1,"53.2","54.1","Pearl"]]',
         monsters: '[[188,"BigDragonBoss"]]',
@@ -1434,7 +1436,7 @@ const MAP = {
         movables: '[[123,"RoastChicken"],[109,"RedWolfSpider"],[111,"RedWolfSpider"]]',
     }
     ,
-    54 : {
+    54: {
         name: "Tiny",
         sg: 2,
         maxSpawned: -1,
@@ -1452,7 +1454,43 @@ const MAP = {
         monsters: '[[40,"Bat"]]',
         skills: '[[43,"Heart"]]',
         movables: '[[37,"Life"]]',
+    }
+    ,
+    55 : {
+        name: "The Pit",
+        sg: 1,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"13","height":"13","depth":9,"map":"BB3AA2BAA2BB7AA60ÁAA12BABB2AA7BABÁBAÁÁ6BB35AA2BB4ABB3AA2BB3ABAA3BAA3BB19ABB2ABB32$BB16ÁBB15ÁÁ2BB14ÁÁ5BB53ABB289ÁBB7ÁÁ2AÁÁ5BÁÁ49BB2ÁÁ4BB4ÁBB147ÁÁ6BB62ÁÁ84AA2ÁÁ14BÁÁ60BÁÁ86BB6ÁÁ3BÁÁ3AA2ÁAA3BÁBB3ÁÁ17BÁÁ2AÁÁ29BB6ÁÁ224BB56"}',
+        wall: "DatkMossy103",
+        floor: "BloodMarbleFloorWall_SDXL_022",
+        ceil: "BloodMarbleFloorWall_SDXL_003",
+        start: '[1280,7]',
+        decals: '[[148,1,"FemDommes_6012","picture"],[150,1,"FemDommes_18317","picture"],[145,1,"FemDommes_19072","picture"],[153,1,"FemDommes_8491","picture"],[17,7,"MonkeyIsland102","picture"],[21,7,"ZimSalaBim200","picture"],[23,7,"FemDommes_15093","picture"],[15,7,"C64Games_3291","picture"],[27,5,"C64Games_3199","picture"],[53,5,"FemDommes_18150","picture"],[78,5,"Domme226","picture"],[105,5,"FemDommes_6002","picture"],[131,5,"FemDommes_4291","picture"],[37,3,"LodeRunner11","picture"],[63,3,"FemDommes_8062","picture"],[90,3,"RetroGames_2350","picture"],[115,3,"FemDommes_10093","picture"],[141,3,"C64Games_3089","picture"],[1201,7,"GemDommes_085","picture"],[1203,7,"BlackBeret_071","picture"],[1199,7,"FemDommes_8372","picture"],[1205,7,"FemDommes_6177","picture"],[1332,1,"FemDommes_15410","picture"],[1221,3,"FemDommes_16825","picture"],[1209,5,"Portal130","picture"],[656,1,"FemDommes_15300","picture"],[84,4,"BloodPuddleDecal10","crest"],[71,4,"BloodPuddleDecal08","crest"],[83,4,"BloodPuddleDecal08","crest"],[97,4,"BloodPuddleDecal10","crest"],[85,4,"BloodPuddleDecal03","crest"]]',
+        lights: '[[1371,7,"Candelabra01","standardYellowSoft"],[318,1,"FluxLight119","standardYellowFaint"]]',
+        gates: '[[1189,7,"55.1","54.2","Up"],[162,1,"55.2","56.1","Down"]]',
+        scrolls: '[[1210,12]]',
+        gold: '[[45,"GoldSphere"]]',
+        skills: '[[630,"Magic"],[1220,"Attack"],[79,"Heart"],[89,"Mana"]]',
+        containers: '[[28,"Barrel_461","GOLD_ITEM_TYPE.GoldBar",7],[30,"IronChest","GOLD_ITEM_TYPE.GoldBar",7],[33,"TreasureChest","GOLD_ITEM_TYPE.GoldBar",7],[35,"Barrel_484","GOLD_ITEM_TYPE.GoldBar",7],[134,"WoodenCrate441","GOLD_ITEM_TYPE.GoldBar",1],[133,"Barrel_480","GOLD_ITEM_TYPE.GoldBar",1],[139,"MetalCrate53","GOLD_ITEM_TYPE.GoldBar",1],[137,"Barrel_461","GOLD_ITEM_TYPE.GoldBar",1]]',
+        oracles: '[[1185,7,"GhostOracle"],[1193,7,"JumpHiny"],[6,7,"ExtraBabe"]]',
         }
     ,
-    55: {}
+    56 : {
+        name: "Welcome to the Underworld",
+        sg: 1,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"17","height":"17","depth":5,"map":"BB2AA2BB3AA4BAA10BAA4ÁAA14ÁÁ2AA12BB2ABAA2BAA3BAA4BAÁAA3BB2AA3BAA2ŁÁAA7ɁAA6BABAA2ÁAA2BAA2ÁBAÁAA7сAA2ŁࡁAA12ÁBAÁAA4ÁBABB4AA4BB4AA5ÁAA2BB2AÁAA2ÁÁ3AA5BB3AA2BB2AA2ÁBAA3BAA7BB4ÁAA6BB5ABB8ABB3ABABB4AA2BB17ABB3ABB14AA3BB16ABB2AA3BB3ABB2AA2BB4AA2BB4ABB7ABB4ABABB7AA2ÁAA2BB2AA4BB9ABB2ABABB4ABB21AÁBB56ABB64ABB16ABB117$ÁÁ2BB160ÁBB2ÁBÁBB5ÁBB2ŁɁсࡁBB4ÁÁ5BÁÁ2BB8ÁBÁBB3ࡁBB13ÁÁ2ABÁBÁBB2ÁBB2ÁBB6ÁÁ9BB2ABŁBɁBсBB2ÁBB11ÁBB40ࡁBB25ÁBB21ÁBÁBB26AÁÁ12AÁÁ8BÁÁ3BÁÁ30AÁAÁÁ15BÁÁ25BÁÁ4BB3ÁABABÁÁ4AÁÁ2ABÁÁ2BB2ÁÁ6BAA3BAÁÁ11BÁÁ2ŁÁÁ8BÁÁ15BÁÁ6ɁÁÁ5BÁÁ12BÁÁ19BÁÁ2BÁÁ80AA4ÁBB6ÁÁ19BB10сࡁÁÁ10AÁÁ2AÁÁ15ABAÁBB2AÁBB3AÁBɁBAÁсB"}',
+        wall: "JuggernautDarkwalls_0904",
+        floor: "BloodMarbleFloorWall_SDXL_021",
+        ceil: "OrnateWall2",
+        start: '[994,1]',
+        lights: '[[620,7,"DuaLLantern_021","standardSoft"],[1113,1,"Candle70","standard"],[494,5,"DuaLLantern_012","standardFaint"],[508,3,"SkullLantern52","standardFaint"]]',
+        gates: '[[297,7,"56.1","55.2","Up"]]',
+        }
 };

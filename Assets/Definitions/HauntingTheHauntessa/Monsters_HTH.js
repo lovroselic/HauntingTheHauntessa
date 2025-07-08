@@ -419,6 +419,30 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    ExtraBabe: {
+        name: "ExtraBabe",
+        sprite: "ExtraBabe",
+        category: 'crest',
+        voice: "FemaleLow6",
+        text: "You survived! How cute. Go on now, further adventure awaits.",
+        interactionCategory: "oracle",
+    },
+    JumpHiny: {
+        name: "JumpHiny",
+        sprite: "JumpHiny",
+        category: 'crest',
+        voice: "FemaleLow4",
+        text: "Conclude your business. Once you jump, there will be no way back.",
+        interactionCategory: "oracle",
+    },
+    GhostOracle: {
+        name: "GhostOracle",
+        sprite: "GhostOracle",
+        category: 'crest',
+        voice: "FemaleHigh4",
+        text: "Only one way forward. Jump!.",
+        interactionCategory: "oracle",
+    },
     FaceDragon: {
         name: "FaceDragon",
         sprite: "FaceDragon",

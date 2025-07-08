@@ -62,7 +62,7 @@ const DEBUG = {
         HERO.player.pos = Vector3.from_Grid(Grid.toCenter(grid), 0.5);
     },
     checkPoint() {
-        // area-2 - the journey part 1
+        // area-3 - underworld
         /*
 
         Shrines:
@@ -87,7 +87,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 54; //31-->32-->31-->37-->38-->39
+        GAME.level = 56; //
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -129,7 +129,7 @@ const DEBUG = {
         }
 
         let scrollTypes = [
-            "Flight", "Flight", "Flight", "Flight",
+            "FeatherFall", "Flight", "Flight", "Flight",
         ];
 
         for (let scrType of scrollTypes) {
@@ -265,7 +265,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.25.0",
+    VERSION: "0.25.1",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
