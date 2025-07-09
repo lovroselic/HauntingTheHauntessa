@@ -1528,21 +1528,23 @@ const MAP = {
         gates: '[[152,3,"58.1","56.3","Closed"]]',
     }
     ,
-    59 : {
+    59: {
         name: "Light Tower",
         sg: 0,
         maxSpawned: -1,
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"21","height":"21","depth":7,"map":"BB4AA5BABAA9BABAA21BB4AA2BAA4BABB2ÁÁ2ABB2ABABAA15BB4AA3BB2ABAA16ÁÁ2AÁAA24ÁABB2AA7BABAA30ÁÁ2AA40BB2AA25BABB4AA4ÁÁ2AÁÁ2AÁAA2ÁÁ3AA2BB10EBABB15ABB25AA2BABB2AA3BAA4BB15ABB5ABAÁBB14ABB3AA3BB13ABB2ABB6ABABB12ABABB21ABABB26ABABB34ABB2AÁBB54$BB148ÁBB377ÁBB832AA3BB124ABB14ÁBÁBÁÁ3BÁBB18ÁBB4ÁBÁBB3ÁBÁÁ3BB16ÁBB7ÁÁ3BB2ÁÁ3BB2ÁBB2ÁBB3ÁBB16ÁBB3ÁBB6ÁÁ3BÁBB14ÁÁ2BÁBÁBB3ÁBÁBB10ÁBB2ÁBB6ÁBB3ÁBB4ÁÁ2BÁÁ2BB3ÁBB6ÁBB4ÁBB12ÁÁ5BB8ABB23ÁÁ2BB81ABB4ÁÁ2BB6ÁÁ2BB9ÁBB12ÁÁ3BB7ÁBB20ÁÁ4AA2ÁÁ20BÁÁ8BÁÁ130BB2ÁÁ7ABÁÁ3ABÁÁ47BB2ÁÁ77BB2ÁÁ4BB2ÁÁ4AÁABÁÁ5ABÁBB3ÁÁ23AÁBÁÁ10BB2ÁÁ5BB2ÁÁ2BÁÁ6ABÁÁ14BB2ÁÁ6ABÁÁ2ABÁÁ8BÁÁ4BB6ÁBÁÁ8ABABÁÁ2AA2BB2ÁÁ2ABÁÁ6BB5ÁÁ19BB2ÁÁ36BÁBÁÁ31BÁÁ2BB2ÁBÁÁ21BB5ÁBÁÁ11BB6"}',
+        data: '{"width":"21","height":"21","depth":8,"map":"BB4AA5BABAA9BABAA21BB4AA2BAA4BABB2ÁÁ2ABB2ABABAA15BB4AA3BB2ABAA16ÁÁ2BAÁAA24ÁABB2AA7ÁABABAA23BB2AA3BAA4ÁÁ4ABB2AA50BB2AA25BABB5AA2BAA4BB6AÁÁ4AÁÁ2AÁAA3BAÁÁ3AA4ÁÁ3AÁÁ4BÁBB10EBABB16ABB22ABB17AA2BABB2AA3BB2AA2BB5AA2BB24ABB5ABABÁBB2ÁBB25ABB3AA3BB12ÁÁ3BÁÁ2BB9ABB2ABB12ÁBB2ABABB9ÁÁ2BB6ÁÁ2BABABB6ÁBB12ÁBB8ABABB16ÁBB14ABABB39ABB3AÁBB7ABB48$BB53ÁBB46ÁBB8ÁÁ3BB22ABB18ABB2ABB311ABB29ÁÁ2BÁBÁÁ6BB5ÁÁ3BB36ÁÁ2BB4ÁBÁBB10ÁÁ4BB3ÁÁ6BB32ÁBB2ÁÁ2BB6ÁÁ3BB2ÁÁ3BB8ÁBB9ÁÁ4BB5ÁÁ3BB3ÁBB2ÁÁ2BB2ÁBB12ÁBB9ÁBB18ÁÁ5BB3ÁÁ3BB4ÁBÁÁ3BB2ÁÁ2BÁBB13ÁÁ2BÁBÁBB9ÁÁ2BÁBB24ÁÁ3BB6ÁÁ3BB20ÁBB3ÁBB4ÁÁ2BÁÁ2BB3ÁBB13ÁBB4ÁÁ3BB32ÁÁ15BB24ABB21ABB8ÁBÁÁ3BB58ABB44ABB71ABB18ÁÁ2BÁÁ2BB6ÁÁ2BB9ÁBB21ÁÁ2BB2ÁBB7ÁÁ3BB11ÁÁ2BÁÁ2BB9ÁÁ4BB33ÁÁ4AA2ÁÁ15BÁÁ40BÁÁ17BÁÁ89BÁÁ16AA2ÁÁ8BB3AA4ÁÁ128BB2ÁÁ9BB7ÁÁ4AA3ÁÁ2BB2ÁÁ21AÁÁ2BÁÁ5ABÁÁ61BÁÁ34BB2ÁÁ2BB2ÁÁ149BB2ÁÁ4BB2ÁÁ4AÁÁ19ABÁÁ15ABÁÁ3BÁÁ2BB2ÁÁ47AÁBÁÁ22BB2ÁÁ7BB2ÁÁ2BÁÁ30ABÁÁ42BB2ÁÁ10ABÁÁ2ABÁÁ20BÁÁ6BB5AÁAÁAÁÁ7BB7ÁÁ4BB3ÁÁ25BABABÁÁ8BÁÁ3BAA2BB2ÁÁ6ABÁÁ18BB5ÁÁ73BB6ÁÁ76AÁÁ6BÁÁ63ABB4ÁÁ5BB3ABÁÁ49AÁAA2ÁÁ4BÁÁ5BÁÁ5ABB2ÁÁ32AA4BB4ÁÁ2BB2ÁÁ3BB3ÁÁ6ABB4ÁÁ53BB11ÁÁ3BB3ÁÁ33BB18"}',
         wall: "RockWall_SDXL_002",
         floor: "MarbleTiles1001",
         ceil: "GoldBlackSDXL348",
-        start: '[1060,1]',
-        gates: '[[10,7,"59.1","56.4","Closed"],[430,1,"59.2","60.1","Closed"]]',
+        start: '[2378,7]',
+        lights: '[[2425,3,"Candelabra03","standardSoft"],[1102,1,"DuaLLantern_020","standardSoft"],[1102,7,"DuaLLantern_015","standardSoft"]]',
+        gates: '[[10,7,"59.1","56.4","Closed"],[430,1,"59.2","60.1","Closed"],[1312,1,"59.3","60.2","Up"],[892,7,"59.4","61.1","Closed"],[2207,7,"59.5","61.2","Closed"],[2628,1,"59.6","60.3","Closed"]]',
         doors: '[157]',
-        }
+        triggers: '[[2543,7,"SmoothWallButton",0,2420],[2374,5,"SmoothWallButton",0,2419],[2458,5,"SmoothWallButton",0,2421]]',
+    }
     ,
     60 : {
         name: "Dark Tower",
@@ -1551,11 +1553,28 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"21","height":"21","depth":7,"map":"BB25AA192ɁABAA23BB2ŁAA22сAA4BABAA8ÁAA18ÁÁ2AÁÁ3AA5BB6AA209BAA2BAA3ÁAA6сÁBB63ABB37ABB2ABB10ABAA29BB38ABB2ABB56$BB335ÁBB748ÁÁ2BB132ABB26ABB240ÁÁ3BB3ÁÁ2BB76ÁÁ20BB2ÁÁ8BB115ÁBB31AA2BÁBB38AÁÁ5AÁBÁÁ3сÁɁࡁBÁÁ75AÁÁ33BÁÁ38AA5BÁÁ2BÁÁ59BÁÁ12BÁÁ15ŁAÁÁ2ࡁÁÁ180BB29ÁÁ8BB2ÁÁ11BɁABŁÁࡁÁÁ4B"}',
+        data: '{"width":"21","height":"21","depth":7,"map":"BB4AA2BABAA2BAA2BB21ABB2AA232BAA4ɁAA2BAA5BAA18BAA3BAA2ŁAÁAA22сAA5BABB2AA8ÁAA23ÁAA2ÁÁ2AÁAA6BABB4AA164ÁAA28ÁÁ10AA12BB11AA11BAA40BB2AA2BB5AA3ÁAA7сAA10ÁBB32ABB31AA2BB27ABB30ABABB25ABB2AA2BB4ABB15ABB4AA2BABAA38BB78AA2BB4AA2BB8ABB8ABB61$BB104ÁBB175ÁBB32ÁÁ2BB123ABB44ABB23ABB289ÁÁ3BB4ÁÁ2BB67ÁÁ10BB28ÁBÁBB10ÁÁ18BB2ÁÁ8BB149ÁBB41AA2BÁBB3ÁÁ2BB2ÁBB44AÁAÁÁ16BÁÁ4сÁɁࡁBÁÁ124AÁÁ44BÁÁ66AA5ÁÁ13BÁBÁÁ42BÁÁ11BÁÁ39BABÁÁ31BÁÁ4BÁÁ12ŁABÁÁ22ࡁÁÁ203AA10ÁÁ2BB10ÁÁ48BB28ÁÁ8BB2ÁÁ11BɁABŁÁࡁÁÁ4B"}',
         wall: "DARKBricks107",
         floor: "MarbleFloor105",
         ceil: "RoughCave20",
-        start: '[1143,7]',
-        gates: '[[10,7,"60.1","59.2","Closed"]]',
+        start: '[2264,1]',
+        lights: '[[493,7,"DuaLLantern_029","standardDimmed"],[1627,1,"Candelabra11","standardMuted"],[2950,7,"FluxLight101","standardYellow"]]',
+        gates: '[[10,7,"60.1","59.2","Closed"],[1333,7,"60.2","59.3","Down"],[2207,7,"60.3","59.6","Closed"]]',
         }
+    ,
+    61: {
+        name: "North Staircase",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"15","height":"15","depth":5,"map":"BB2ABABB8AA2BAA62BAA12BB3AA41ŁAA3BAA2BB3ŁBB41ABABB17AA8BB18ÁBB37ABB3ABB4AA2BB5ABAA2BB3ÁBB33ÁÁ2BB65ABB21ÁBB88ABB68$BB16ÁÁ3BÁBB3ÁBB46ÁÁ8BB20ÁÁ2BB36ÁÁ7BÁÁ3BB31ÁBÁBB33ÁBB8ÁBB8AŁBB61ɁBB8ࡁBB14ࡁсBB7ÁÁ5BB4ÁÁ24BÁÁ5BÁÁ24BÁÁ65ABÁÁ13BB3ÁBB7ÁÁ11BB2ÁÁ27BB13ɁBB3сBB2ࡁɁсBB2"}',
+        wall: "DarkBricks101",
+        floor: "Cracked01",
+        ceil: "XCeiling1",
+        start: '[97,1]',
+        lights: '[[412,1,"Candelabra09","standardSoft"],[74,3,"FireplaceFLuxU414","fireplace"],[60,5,"FireplaceFLuxU417","fireplace"],[240,5,"Lights112","standardYellowFaint"],[768,7,"FluxLight104","standardYellowFaint"],[840,5,"DuaLLantern_005","standardYellowFaint"]]',
+        gates: '[[220,1,"61.1","59.4","Closed"],[887,1,"61.2","59.5","Closed"]]',
+    }
 };

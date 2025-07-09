@@ -69,6 +69,7 @@ const DEBUG = {
         DarkSkulla wants Skull, Skull,Skull ---> ????????
         Tridenta wants .......... ---> ??????????
         PainterElle wants EmptyPainting, Palette, Brush ----->  Painting
+        RubySilka wants Ruby, Ruby, Ruby ------> 
         UnderworldDarkQueen wants Painting, ....... ------------> some key
 
         Items:
@@ -280,7 +281,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.25.3",
+    VERSION: "0.25.4",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
