@@ -68,6 +68,10 @@ const MAP_TEXT = {
     56: "The Underworld. Next stage of my journey. Now I need to find a way back up.",
     57: "The prayers are getting more and more expensive.",
     58: "I can purchase some extra scrolls. I am rich, right? Right?",
+    59: "",
+    60: "",
+    61: "",
+    62: "Her Majesty, the Queen of Underground. Is she my cousin as well? Probably. I need to appease her greed.",
 };
 
 /** Map definitions */
@@ -1535,18 +1539,18 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"21","height":"21","depth":8,"map":"BB4AA5BABAA9BABAA21BB4AA2BAA4BABB2ÁÁ2ABB2ABABAA15BB4AA3BB2ABAA16ÁÁ2BAÁAA24ÁABB2AA7ÁABABAA23BB2AA3BAA4ÁÁ4ABB2AA50BB2AA25BABB5AA2BAA4BB6AÁÁ4AÁÁ2AÁAA3BAÁÁ3AA4ÁÁ3AÁÁ4BÁBB10EBABB16ABB22ABB17AA2BABB2AA3BB2AA2BB5AA2BB24ABB5ABABÁBB2ÁBB25ABB3AA3BB12ÁÁ3BÁÁ2BB9ABB2ABB12ÁBB2ABABB9ÁÁ2BB6ÁÁ2BABABB6ÁBB12ÁBB8ABABB16ÁBB14ABABB39ABB3AÁBB7ABB48$BB53ÁBB46ÁBB8ÁÁ3BB22ABB18ABB2ABB311ABB29ÁÁ2BÁBÁÁ6BB5ÁÁ3BB36ÁÁ2BB4ÁBÁBB10ÁÁ4BB3ÁÁ6BB32ÁBB2ÁÁ2BB6ÁÁ3BB2ÁÁ3BB8ÁBB9ÁÁ4BB5ÁÁ3BB3ÁBB2ÁÁ2BB2ÁBB12ÁBB9ÁBB18ÁÁ5BB3ÁÁ3BB4ÁBÁÁ3BB2ÁÁ2BÁBB13ÁÁ2BÁBÁBB9ÁÁ2BÁBB24ÁÁ3BB6ÁÁ3BB20ÁBB3ÁBB4ÁÁ2BÁÁ2BB3ÁBB13ÁBB4ÁÁ3BB32ÁÁ15BB24ABB21ABB8ÁBÁÁ3BB58ABB44ABB71ABB18ÁÁ2BÁÁ2BB6ÁÁ2BB9ÁBB21ÁÁ2BB2ÁBB7ÁÁ3BB11ÁÁ2BÁÁ2BB9ÁÁ4BB33ÁÁ4AA2ÁÁ15BÁÁ40BÁÁ17BÁÁ89BÁÁ16AA2ÁÁ8BB3AA4ÁÁ128BB2ÁÁ9BB7ÁÁ4AA3ÁÁ2BB2ÁÁ21AÁÁ2BÁÁ5ABÁÁ61BÁÁ34BB2ÁÁ2BB2ÁÁ149BB2ÁÁ4BB2ÁÁ4AÁÁ19ABÁÁ15ABÁÁ3BÁÁ2BB2ÁÁ47AÁBÁÁ22BB2ÁÁ7BB2ÁÁ2BÁÁ30ABÁÁ42BB2ÁÁ10ABÁÁ2ABÁÁ20BÁÁ6BB5AÁAÁAÁÁ7BB7ÁÁ4BB3ÁÁ25BABABÁÁ8BÁÁ3BAA2BB2ÁÁ6ABÁÁ18BB5ÁÁ73BB6ÁÁ76AÁÁ6BÁÁ63ABB4ÁÁ5BB3ABÁÁ49AÁAA2ÁÁ4BÁÁ5BÁÁ5ABB2ÁÁ32AA4BB4ÁÁ2BB2ÁÁ3BB3ÁÁ6ABB4ÁÁ53BB11ÁÁ3BB3ÁÁ33BB18"}',
+        data: '{"width":"21","height":"21","depth":8,"map":"BB4AA5BABAA9BABAA21BB4AA2BAA4BABB2ÁÁ2ABB2ABABAA15BB4AA3BB2ABAA16ÁÁ2BAÁAA24ÁABB2AA7ÁABABAA7BÁAA4BAA12BB2AA3BAA2ÁÁ2AA2ÁÁ2ABB2AA16ÁAA16ÁÁ2AA21BB2AA12ÁAA7ÁÁ5AA4ÁÁ2AA6BB2ABB5AA2ÁŁAA2BAA4BB6AÁÁ4AÁÁ2ABAA2ÁAA2ÁÁ3AA3ÁÁ2AA2ÁÁ5BÁBB10EBABB16ABB2ÁBB22ABB17AA2BABB2AA3BB2AA2BB6AA2BB25ABB5ABABÁÁ2BAA2BABB9ABB14ABB3AA3сࡁBABB6ɁAA5BB9ABB2ABB9ABABB6ABB6ABABABB23ABABB29ABABB19ABB17ABAÁBB55$BB53ÁBB47ÁBB7ÁÁ3BB34ABB2ABB72ABB220ABB22ABB6ÁBB2ÁBÁBÁÁ6BB4ÁÁ2BB36ÁBB2ÁÁ2BB4ÁBÁBB9ÁÁ4BB3ÁÁ4BB19ABB8ÁÁ2BB6ÁBB2ÁÁ2BB2ÁBB4ÁÁ3BB2ÁÁ3BB8ÁBB9ÁBÁÁ2BB4ÁÁ3BB5ÁÁ2BÁÁ5BB16ÁBB9ÁBB18ÁÁ5BB2ÁÁ4BB5AA3BB22ÁÁ3BÁBÁBB9ÁBÁBB24ÁÁ3BB6ÁÁ3BB22ÁBB3ÁBB4ÁÁ2BB2ÁÁ2BB3ÁBB12ÁBB4ÁÁ3BB32ÁÁ15BB6ÁBB20ABB11ÁBÁBB17ÁÁ2BB3ABB56ÁBB2ABB47ABB71ABB5ÁBB15ÁÁ2BÁÁ2BB6ÁÁ2BB9ÁBB21ÁÁ3BB9ÁÁ3BB8ÁBB3ÁÁ2BÁÁ5BB41ÁBB3ÁÁ4AA2ÁÁ7BÁÁ27BÁÁ21BÁÁ11BÁÁ6BÁÁ8BÁÁ81BÁÁ27AA2ÁÁ8ABAA3BB2ÁÁ114BB2ÁÁ9BB7ÁÁ5AÁAA2ÁÁ13BB2ÁÁ9AÁÁ2BÁÁ5ABÁÁ52BÁÁ39BB2ÁÁ4BB2ÁÁ149BB2ÁÁ16BB2ÁÁ5AÁÁ6ABÁÁ14ABÁÁ3BÁÁ3BB2ÁÁ42AÁBÁÁ25BB2ÁÁ8BB2ÁÁ3AÁAÁÁ3AÁÁ4BÁÁ18ABÁÁ9BÁÁ10BÁÁ2BÁÁ13BB2ÁÁ10ABÁÁ2ABÁÁ23BÁÁ8BB2ÁÁ8BB3ÁBB6ÁÁ4BB2ÁÁ25ABABÁÁ7AA2BB2ÁÁ6ABÁÁ18BB4ÁBB3ÁÁ71BB3ÁBB3ÁÁ85BÁÁ52AÁAÁÁ4AA2ÁABB5ÁÁ4BB5ÁÁ42BÁAA5ÁÁ13BB5ÁÁ28ABB4ÁÁ2BB2ÁÁ3BB2ÁÁ36BÁÁ24BB11ÁÁ3BB3ÁÁ33BB18AÁÁ11BB3"}',
         wall: "RockWall_SDXL_002",
         floor: "MarbleTiles1001",
         ceil: "GoldBlackSDXL348",
-        start: '[2378,7]',
+        start: '[2580,7]',
         lights: '[[2425,3,"Candelabra03","standardSoft"],[1102,1,"DuaLLantern_020","standardSoft"],[1102,7,"DuaLLantern_015","standardSoft"]]',
-        gates: '[[10,7,"59.1","56.4","Closed"],[430,1,"59.2","60.1","Closed"],[1312,1,"59.3","60.2","Up"],[892,7,"59.4","61.1","Closed"],[2207,7,"59.5","61.2","Closed"],[2628,1,"59.6","60.3","Closed"]]',
+        gates: '[[10,7,"59.1","56.4","Closed"],[430,1,"59.2","60.1","Closed"],[1312,1,"59.3","60.2","Up"],[892,7,"59.4","61.1","Closed"],[2207,7,"59.5","61.2","Closed"],[2628,1,"59.6","60.3","Closed"],[2643,1,"59.7","60.4","Closed"]]',
         doors: '[157]',
         triggers: '[[2543,7,"SmoothWallButton",0,2420],[2374,5,"SmoothWallButton",0,2419],[2458,5,"SmoothWallButton",0,2421]]',
     }
     ,
-    60 : {
+    60: {
         name: "Dark Tower",
         sg: 0,
         maxSpawned: -1,
@@ -1559,8 +1563,8 @@ const MAP = {
         ceil: "RoughCave20",
         start: '[2264,1]',
         lights: '[[493,7,"DuaLLantern_029","standardDimmed"],[1627,1,"Candelabra11","standardMuted"],[2950,7,"FluxLight101","standardYellow"]]',
-        gates: '[[10,7,"60.1","59.2","Closed"],[1333,7,"60.2","59.3","Down"],[2207,7,"60.3","59.6","Closed"]]',
-        }
+        gates: '[[10,7,"60.1","59.2","Closed"],[1333,7,"60.2","59.3","Down"],[2207,7,"60.3","59.6","Closed"],[2222,7,"60.4","59.7","Closed"],[430,1,"60.5","62.1","Closed"]]',
+    }
     ,
     61: {
         name: "North Staircase",
@@ -1576,5 +1580,21 @@ const MAP = {
         start: '[97,1]',
         lights: '[[412,1,"Candelabra09","standardSoft"],[74,3,"FireplaceFLuxU414","fireplace"],[60,5,"FireplaceFLuxU417","fireplace"],[240,5,"Lights112","standardYellowFaint"],[768,7,"FluxLight104","standardYellowFaint"],[840,5,"DuaLLantern_005","standardYellowFaint"]]',
         gates: '[[220,1,"61.1","59.4","Closed"],[887,1,"61.2","59.5","Closed"]]',
+    }
+    ,
+    62: {
+        name: "The Queen Underground",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"19","height":"21","depth":5,"map":"BB2ABAA8BB7AA18BAA20BAA12ŁAɁAA9BABB2AA2ŁAA7сAA4ࡁABAA2BB2AA2ÁBAA15BAA7ÁAÁÁ4AA14ŁAA3BB5AA2BAA3BB9AA8BAA3BB2AA9BABB7AA3BAA13BB48ABB33ABABAA7BB13ABB5ABB3ABB15ABB15AA3BB48ÁBB10ABB4ABB19ABABB3ABB7ABB4AA5BB3AA2BABB11ÁBB28ABB25AA2BB23AA7BB5ABB35$BB32ÁBB246AA2BB50ABB61ABB195ÁBB8ÁBB3ÁBB2ÁÁ11BB35ÁÁ12BB117ÁÁ6BB71ÁBB35ÁÁ138BÁÁ28BÁÁ8BÁÁ78BÁÁ76BB12ÁÁ44AA6ÁBB13ÁÁ27BB7ɁŁɁŁAA3Ɂсс2ɁAŁŁ2сࡁࡁ2сAɁɁ2ࡁсс2ࡁA"}',
+        wall: "BrownidhMossy102",
+        floor: "WebbedFloor4",
+        ceil: "GoldBlackSDXL343",
+        start: '[1529,7]',
+        lights: '[[845,7,"DuaLLantern_009","standard2"],[512,3,"Fireplace103","fireplaceDim"],[494,5,"Fireplace212","fireplaceDim"],[1890,7,"FluxLight106","standardYellow"],[1061,3,"Fireplace208","fireplace"],[1047,5,"FireplaceFLuxU415","fireplace"]]',
+        gates: '[[9,7,"62.1","60.5","Closed"]]',
     }
 };

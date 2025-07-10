@@ -66,11 +66,12 @@ const DEBUG = {
         /*
 
         Entities:
-        DarkSkulla wants Skull, Skull,Skull ---> ????????
-        Tridenta wants .......... ---> ??????????
+        DarkSkulla wants Skull, Skull,Skull, skull, Skull ---> ????????
+        Tridenta wants .......... ---> Trident
         PainterElle wants EmptyPainting, Palette, Brush ----->  Painting
         RubySilka wants Ruby, Ruby, Ruby ------> 
-        UnderworldDarkQueen wants Painting, ....... ------------> some key
+        UnderworldDarkQueen wants Painting, JeweledCrown, ....... ------------> GoldKey
+        ### wants Ruby, Emerald, Amethyst, Silver, Gold gives ---> JeweledCrown
 
         Items:
         GoldCoin
@@ -78,6 +79,19 @@ const DEBUG = {
         GoldCoin
         GoldCoin
         GoldCoin
+        Skull, 
+        Skull,
+        Skull, 
+        Skull, 
+        Skull
+        Painting
+        JeweledCrown
+        EmptyPainting, 
+        Palette, 
+        Brush
+        Ruby, 
+        Ruby, 
+        Ruby
 
 
         Shrines:
@@ -103,7 +117,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 60; //
+        GAME.level = 62; //
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -281,7 +295,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.25.4",
+    VERSION: "0.25.5",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

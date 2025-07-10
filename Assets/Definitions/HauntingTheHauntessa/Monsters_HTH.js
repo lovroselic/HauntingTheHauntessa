@@ -3552,6 +3552,48 @@ const INTERACTION_ITEM = {
         inventorySprite: "Blood",
         text: "Blood? Yuck."
     },
+    JeweledCrown: {
+        name: "JeweledCrown",
+        category: "interaction_item",
+        inventorySprite: "JeweledCrown",
+        text: "Jeweled Crown. Expensive."
+    },
+    Painting: {
+        name: "Painting",
+        category: "interaction_item",
+        inventorySprite: "Painting",
+        text: "Greate painting of a nude woman."
+    },
+    EmptyPainting: {
+        name: "EmptyPainting",
+        category: "interaction_item",
+        inventorySprite: "EmptyPainting",
+        text: "Empty canvas. Pity I don't paint."
+    },
+    PaintBrush: {
+        name: "PaintBrush",
+        category: "interaction_item",
+        inventorySprite: "PaintBrush",
+        text: "PaintBrush? Painter's friend."
+    },
+    Palette: {
+        name: "Palette",
+        category: "interaction_item",
+        inventorySprite: "Palette",
+        text: "Palette? Painter's friend."
+    },
+    Trident: {
+        name: "Trident",
+        category: "interaction_item",
+        inventorySprite: "Trident",
+        text: "Trident? Very strange weapon. For specialists."
+    },
+    GoldenGoblet: {
+        name: "GoldenGoblet",
+        category: "interaction_item",
+        inventorySprite: "GoldenGoblet",
+        text: "Golden goblet? For expensive drinks."
+    },
 
     //books
     YoniBook: {

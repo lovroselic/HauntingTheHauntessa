@@ -1460,6 +1460,13 @@ LoadSprites = [
     { srcName: "Items/Scroll.png", name: "Scroll" },
     { srcName: "Items/Quill.png", name: "Quill" },
     { srcName: "Items/Blood.png", name: "Blood" },
+    { srcName: "Items/JeweledCrown.png", name: "JeweledCrown" },
+    { srcName: "Items/Painting.png", name: "Painting" },
+    { srcName: "Items/EmptyPainting.png", name: "EmptyPainting" },
+    { srcName: "Items/PaintBrush.png", name: "PaintBrush" },
+    { srcName: "Items/Palette.png", name: "Palette" },
+    { srcName: "Items/Trident.png", name: "Trident" },
+    { srcName: "Items/GoldenGoblet.png", name: "GoldenGoblet" },
 
     //books
     { srcName: "Items/YoniBook.png", name: "YoniBook" },
@@ -1725,6 +1732,16 @@ LoadSprites = [
     { srcName: "Lights/lantern303.png", name: "lantern303" },
     { srcName: "Lights/SettingSun1.png", name: "SettingSun1" },
     { srcName: "Lights/SettingSun2.png", name: "SettingSun2" },
+    { srcName: "Lights/Fireplace_1037.jpg", name: "Fireplace_1037" },
+    { srcName: "Lights/Fireplace_1038.jpg", name: "Fireplace_1038" },
+    { srcName: "Lights/Fireplace_1039.jpg", name: "Fireplace_1039" },
+    { srcName: "Lights/Fireplace_1040.jpg", name: "Fireplace_1040" },
+    { srcName: "Lights/Fireplace_1041.jpg", name: "Fireplace_1041" },
+    { srcName: "Lights/Fireplace_1042.jpg", name: "Fireplace_1042" },
+    { srcName: "Lights/Fireplace_1043.jpg", name: "Fireplace_1043" },
+    { srcName: "Lights/Fireplace_1044.jpg", name: "Fireplace_1044" },
+    { srcName: "Lights/Fireplace_1045.jpg", name: "Fireplace_1045" },
+    { srcName: "Lights/Fireplace_1046.jpg", name: "Fireplace_1046" },
 
     //keys
     { srcName: "Keys/BlueKey2.png", name: "BlueKey" },
