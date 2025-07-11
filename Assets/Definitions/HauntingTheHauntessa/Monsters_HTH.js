@@ -3594,6 +3594,12 @@ const INTERACTION_ITEM = {
         inventorySprite: "GoldenGoblet",
         text: "Golden goblet? For expensive drinks."
     },
+    RedThighHighBoots: {
+        name: "RedThighHighBoots",
+        category: "interaction_item",
+        inventorySprite: "RedThighHighBoots",
+        text: "This boots are so hot."
+    },
 
     //books
     YoniBook: {
@@ -3712,6 +3718,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    UnderworldDarkQueen: {
+        name: "UnderworldDarkQueen",
+        sprite: "UnderworldDarkQueen",
+        category: 'crest',
+        voice: "Female4",
+        wants: ["Painting", "JeweledCrown", "GoldenGoblet", "RedThighHighBoots"],
+        gives: "GoldKey",
+        text: {
+            intro: "Art, jewels, goblets, boots. Bring me luxury or grow your roots.",
+            progress: "A fine gift, but my greed still breathes. Do not stop until desire seethes.",
+            conclusion: "You've spoiled me well, now take your key. Escape this realm, if you dare flee."
+        }
+    },
     MoonDemoness: {
         name: "MoonDemoness",
         sprite: "MoonDemoness",

@@ -1582,7 +1582,7 @@ const MAP = {
         gates: '[[220,1,"61.1","59.4","Closed"],[887,1,"61.2","59.5","Closed"]]',
     }
     ,
-    62: {
+    62 : {
         name: "The Queen Underground",
         sg: 0,
         maxSpawned: -1,
@@ -1596,5 +1596,6 @@ const MAP = {
         start: '[1529,7]',
         lights: '[[845,7,"DuaLLantern_009","standard2"],[512,3,"Fireplace103","fireplaceDim"],[494,5,"Fireplace212","fireplaceDim"],[1890,7,"FluxLight106","standardYellow"],[1061,3,"Fireplace208","fireplace"],[1047,5,"FireplaceFLuxU415","fireplace"]]',
         gates: '[[9,7,"62.1","60.5","Closed"]]',
-    }
+        entities: '[[1586,1,"UnderworldDarkQueen"]]',
+        }
 };

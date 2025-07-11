@@ -70,7 +70,7 @@ const DEBUG = {
         Tridenta wants .......... ---> Trident
         PainterElle wants EmptyPainting, Palette, Brush ----->  Painting
         RubySilka wants Ruby, Ruby, Ruby ------> 
-        UnderworldDarkQueen wants Painting, JeweledCrown, ....... ------------> GoldKey
+        UnderworldDarkQueen wants Painting, JeweledCrown, GoldenGoblet, RedThighHighBoots ------------> GoldKey
         ### wants Ruby, Emerald, Amethyst, Silver, Gold gives ---> JeweledCrown
 
         Items:
@@ -87,6 +87,7 @@ const DEBUG = {
         Painting
         JeweledCrown
         EmptyPainting, 
+        RedThighHighBoots
         Palette, 
         Brush
         Ruby, 
@@ -171,6 +172,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
+            "Painting", "JeweledCrown", "GoldenGoblet", "RedThighHighBoots",
             "GoldCoin",
         ];
 
@@ -295,7 +297,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.25.5",
+    VERSION: "0.25.6",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
