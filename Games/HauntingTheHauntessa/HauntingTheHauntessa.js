@@ -70,7 +70,7 @@ const DEBUG = {
         Tridenta wants .......... ---> Trident
         PainterElle wants EmptyPainting, Palette, Brush ----->  Painting
         RubySilka wants Ruby, Ruby, Ruby ------> 
-        UnderworldDarkQueen wants Painting, JeweledCrown, GoldenGoblet, RedThighHighBoots ------------> GoldKey
+            DONE UnderworldDarkQueen wants Painting, JeweledCrown, GoldenGoblet, RedThighHighBoots ------------> GoldKey
         ### wants Ruby, Emerald, Amethyst, Silver, Gold gives ---> JeweledCrown
 
         Items:
@@ -118,7 +118,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 62; //
+        GAME.level = 57; //
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -297,7 +297,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.25.6",
+    VERSION: "0.25.7",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

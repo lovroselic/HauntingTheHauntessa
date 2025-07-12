@@ -1500,7 +1500,7 @@ const MAP = {
         gates: '[[297,7,"56.1","55.2","Up"],[441,3,"56.2","57.1","Closed"],[425,5,"56.3","58.1","Closed"],[858,1,"56.4","59.1","Closed"]]',
     }
     ,
-    57: {
+    57 : {
         name: "Underground Temple",
         sg: 0,
         maxSpawned: -1,
@@ -1512,9 +1512,11 @@ const MAP = {
         floor: "Relief08",
         ceil: "IvyWall3",
         start: '[172,5]',
+        decals: '[[123,4,"RustyFloorGrille_07","crest"],[177,4,"FloorGrille113","crest"],[237,4,"RustyFloorGrille_08","crest"],[183,4,"FloorGrille107","crest"],[80,4,"FloorGrille106","crest"],[90,4,"RustyFloorGrille_02","crest"],[270,4,"FloorGrille102","crest"],[280,4,"FloorGrille106","crest"],[180,3,"CrawlMaster131","picture"],[137,3,"ZX_Games_3051","picture"],[213,3,"FemDommes_18735","picture"],[273,3,"FemDommes_15138","picture"],[277,3,"CCC_039","picture"],[223,3,"FluxDommes3062","picture"],[147,3,"FemDommes_8440","picture"],[87,3,"FemDommes_15723","picture"],[83,3,"FemDommes_14103","picture"],[83,5,"FemDommes_4166","picture"],[87,5,"FemaleWarrior107","picture"],[147,5,"FemDommes_13069","picture"],[137,5,"FluxDommes2244","picture"],[180,5,"CrawlMaster2","picture"],[213,5,"Various6035","picture"],[273,5,"ZX_Games_3043","picture"],[277,5,"GameScreen1007","picture"],[223,5,"FemDommes_12107","picture"],[83,1,"Ultima11","picture"],[87,1,"RetroGames_2055","picture"],[147,1,"FemDommes_8301","picture"],[137,1,"C64Games_3197","picture"],[180,1,"CastleLady109","picture"],[213,1,"FemDommes_19031","picture"],[273,1,"RMC50","picture"],[277,1,"FemDommes_17444","picture"],[223,1,"FemDommes_15722","picture"],[83,7,"GameDommes_035","picture"],[87,7,"AI_pic219","picture"],[137,7,"Domme322","picture"],[180,7,"FemDommes_6244","picture"],[147,7,"GemDommes_069","picture"],[223,7,"BC90","picture"],[277,7,"FemDommes_14157","picture"],[273,7,"FemDommes_15407","picture"],[213,7,"FluxDommes2045","picture"]]',
         lights: '[[541,1,"Candelabra06","standard2"],[541,7,"Lights102","standard2"],[541,3,"SkullLantern58","standard2"],[541,5,"SkullLantern56","standard2"]]',
         gates: '[[171,5,"57.1","56.2","Closed"]]',
-    }
+        shrines: '[[189,3,"DeathWarder"],[9,7,"ThornMana"]]',
+        }
     ,
     58: {
         name: "Scroll Market",

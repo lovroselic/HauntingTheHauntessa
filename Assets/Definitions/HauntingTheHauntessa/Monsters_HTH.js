@@ -29,6 +29,32 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    ThornMana: {
+        name: "ThornMana",
+        sprite: "ThornMana",
+        which: "mana",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "ManaSkill",
+        price: 3500,
+        level: 1,
+        text: "Drink this cute pinky brew to spit more fire? Dirt cheap. 3500 gold only.",
+        introduce: true,
+        voice: "FemaleVeryLow6",
+    },
+    DeathWarder: {
+        name: "DeathWarder",
+        sprite: "DeathWarder",
+        which: "attack",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "SkillKick",
+        price: 3500,
+        level: 1,
+        text: "Murder and death. 3500 gold.",
+        introduce: true,
+        voice: "FemaleVeryLow4",
+    },
     TransManaRedLast: {
         name: "TransManaRedLast",
         sprite: "TransManaRedLast",
