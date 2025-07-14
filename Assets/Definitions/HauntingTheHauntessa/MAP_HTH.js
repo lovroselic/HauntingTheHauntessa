@@ -1515,7 +1515,7 @@ const MAP = {
         decals: '[[123,4,"RustyFloorGrille_07","crest"],[177,4,"FloorGrille113","crest"],[237,4,"RustyFloorGrille_08","crest"],[183,4,"FloorGrille107","crest"],[80,4,"FloorGrille106","crest"],[90,4,"RustyFloorGrille_02","crest"],[270,4,"FloorGrille102","crest"],[280,4,"FloorGrille106","crest"],[180,3,"CrawlMaster131","picture"],[137,3,"ZX_Games_3051","picture"],[213,3,"FemDommes_18735","picture"],[273,3,"FemDommes_15138","picture"],[277,3,"CCC_039","picture"],[223,3,"FluxDommes3062","picture"],[147,3,"FemDommes_8440","picture"],[87,3,"FemDommes_15723","picture"],[83,3,"FemDommes_14103","picture"],[83,5,"FemDommes_4166","picture"],[87,5,"FemaleWarrior107","picture"],[147,5,"FemDommes_13069","picture"],[137,5,"FluxDommes2244","picture"],[180,5,"CrawlMaster2","picture"],[213,5,"Various6035","picture"],[273,5,"ZX_Games_3043","picture"],[277,5,"GameScreen1007","picture"],[223,5,"FemDommes_12107","picture"],[83,1,"Ultima11","picture"],[87,1,"RetroGames_2055","picture"],[147,1,"FemDommes_8301","picture"],[137,1,"C64Games_3197","picture"],[180,1,"CastleLady109","picture"],[213,1,"FemDommes_19031","picture"],[273,1,"RMC50","picture"],[277,1,"FemDommes_17444","picture"],[223,1,"FemDommes_15722","picture"],[83,7,"GameDommes_035","picture"],[87,7,"AI_pic219","picture"],[137,7,"Domme322","picture"],[180,7,"FemDommes_6244","picture"],[147,7,"GemDommes_069","picture"],[223,7,"BC90","picture"],[277,7,"FemDommes_14157","picture"],[273,7,"FemDommes_15407","picture"],[213,7,"FluxDommes2045","picture"]]',
         lights: '[[541,1,"Candelabra06","standard2"],[541,7,"Lights102","standard2"],[541,3,"SkullLantern58","standard2"],[541,5,"SkullLantern56","standard2"]]',
         gates: '[[171,5,"57.1","56.2","Closed"]]',
-        shrines: '[[189,3,"DeathWarder"],[9,7,"ThornMana"]]',
+        shrines: '[[189,3,"DeathWarder"],[9,7,"ThornMana"],[351,1,"ThornPriestess"],[95,5,"MaskedDefense"]]',
         }
     ,
     58: {
@@ -1541,13 +1541,13 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"21","height":"21","depth":8,"map":"BB4AA5BABAA9BABAA21BB4AA2BAA4BABB2ÁÁ2ABB2ABABAA15BB4AA3BB2ABAA16ÁÁ2BAÁAA24ÁABB2AA7ÁABABAA7BÁAA4BAA12BB2AA3BAA2ÁÁ2AA2ÁÁ2ABB2AA16ÁAA16ÁÁ2AA21BB2AA12ÁAA7ÁÁ5AA4ÁÁ2AA6BB2ABB5AA2ÁŁAA2BAA4BB6AÁÁ4AÁÁ2ABAA2ÁAA2ÁÁ3AA3ÁÁ2AA2ÁÁ5BÁBB10EBABB16ABB2ÁBB22ABB17AA2BABB2AA3BB2AA2BB6AA2BB25ABB5ABABÁÁ2BAA2BABB9ABB14ABB3AA3сࡁBABB6ɁAA5BB9ABB2ABB9ABABB6ABB6ABABABB23ABABB29ABABB19ABB17ABAÁBB55$BB53ÁBB47ÁBB7ÁÁ3BB34ABB2ABB72ABB220ABB22ABB6ÁBB2ÁBÁBÁÁ6BB4ÁÁ2BB36ÁBB2ÁÁ2BB4ÁBÁBB9ÁÁ4BB3ÁÁ4BB19ABB8ÁÁ2BB6ÁBB2ÁÁ2BB2ÁBB4ÁÁ3BB2ÁÁ3BB8ÁBB9ÁBÁÁ2BB4ÁÁ3BB5ÁÁ2BÁÁ5BB16ÁBB9ÁBB18ÁÁ5BB2ÁÁ4BB5AA3BB22ÁÁ3BÁBÁBB9ÁBÁBB24ÁÁ3BB6ÁÁ3BB22ÁBB3ÁBB4ÁÁ2BB2ÁÁ2BB3ÁBB12ÁBB4ÁÁ3BB32ÁÁ15BB6ÁBB20ABB11ÁBÁBB17ÁÁ2BB3ABB56ÁBB2ABB47ABB71ABB5ÁBB15ÁÁ2BÁÁ2BB6ÁÁ2BB9ÁBB21ÁÁ3BB9ÁÁ3BB8ÁBB3ÁÁ2BÁÁ5BB41ÁBB3ÁÁ4AA2ÁÁ7BÁÁ27BÁÁ21BÁÁ11BÁÁ6BÁÁ8BÁÁ81BÁÁ27AA2ÁÁ8ABAA3BB2ÁÁ114BB2ÁÁ9BB7ÁÁ5AÁAA2ÁÁ13BB2ÁÁ9AÁÁ2BÁÁ5ABÁÁ52BÁÁ39BB2ÁÁ4BB2ÁÁ149BB2ÁÁ16BB2ÁÁ5AÁÁ6ABÁÁ14ABÁÁ3BÁÁ3BB2ÁÁ42AÁBÁÁ25BB2ÁÁ8BB2ÁÁ3AÁAÁÁ3AÁÁ4BÁÁ18ABÁÁ9BÁÁ10BÁÁ2BÁÁ13BB2ÁÁ10ABÁÁ2ABÁÁ23BÁÁ8BB2ÁÁ8BB3ÁBB6ÁÁ4BB2ÁÁ25ABABÁÁ7AA2BB2ÁÁ6ABÁÁ18BB4ÁBB3ÁÁ71BB3ÁBB3ÁÁ85BÁÁ52AÁAÁÁ4AA2ÁABB5ÁÁ4BB5ÁÁ42BÁAA5ÁÁ13BB5ÁÁ28ABB4ÁÁ2BB2ÁÁ3BB2ÁÁ36BÁÁ24BB11ÁÁ3BB3ÁÁ33BB18AÁÁ11BB3"}',
+        data: '{"width":"21","height":"21","depth":8,"map":"BB3AA3BAA6BABAA9BABAA21BB4ABAA5BABB2ÁÁ2ABB2ABABAA15BB4AA3BB2ABAA16ÁÁ2BAÁAA24ÁABB2AA7ÁABABAA7BÁAA4BAA12BB2AA3BAA2ÁÁ2AA2ÁÁ2ABB2AA16ÁAA16ÁÁ2AA21BB2AA12ÁAA7ÁÁ5AA6ÁÁ2AA4BB2ABB5AA2ÁŁAA2BAA4BB6AÁÁ4AÁÁ2ABAA2ÁAA2ÁÁ3AA3ÁÁ2AA2ÁÁ5BÁBB10EABB17ABB2ÁBB22ABB17AA2BABB2AA3BB2AA2BB6AA2BB25ABB5ABABÁÁ2BAA2BABB9ABB14ABB3AA3сࡁBABB6ɁAA5BB3AA2BB4ABB2ABB9ABABB4ABB6ABB25ABABB29ABABB19ABB17ABAÁBB55$BB53ÁBB47ÁBB7ÁÁ3BB34ABB2ABB72ABB220ABB22ABB6ÁBB2ÁBÁBÁÁ6BB4ÁÁ2BB36ÁBB2ÁÁ2BB4ÁBÁBB9ÁÁ4BB3ÁÁ4BB19ABB8ÁÁ2BB6ÁBB2ÁÁ2BB2ÁBB4ÁÁ3BB2ÁÁ3BB8ÁBB9ÁBÁÁ2BB4ÁÁ3BB5ÁÁ2BÁÁ5BB16ÁBB9ÁBB18ÁÁ5BB2ÁÁ4BB5AA3BB22ÁÁ3BÁBÁBB9ÁBÁBB24ÁÁ3BB6ÁÁ3BB22ÁBB3ÁBB4ÁÁ2BB2ÁÁ2BB3ÁBB12ÁBB4ÁÁ3BB32ÁÁ15BB6ÁBB20ABB11ÁBÁBB17ÁÁ2BB3ABB56ÁBB2ABB47ABB71ABB5ÁBB15ÁÁ2BÁÁ2BB6ÁÁ2BB9ÁBB21ÁÁ3BB9ÁÁ3BB8ÁBB3ÁÁ2BÁÁ5BB41ÁBB3ÁÁ4AA2ÁÁ7BÁÁ27BÁÁ21BÁÁ11BÁÁ6BÁÁ8BÁÁ81BÁÁ27AA2ÁÁ8ABAA3BB2ÁÁ114BB2ÁÁ9BB7ÁÁ5AÁAA2ÁÁ13BB2ÁÁ9AÁÁ2BÁÁ5ABÁÁ52BÁÁ39BB2ÁÁ4BB2ÁÁ149BB2ÁÁ16BB2ÁÁ5AÁÁ6ABÁÁ14ABÁÁ3BÁÁ3BB2ÁÁ42AÁBÁÁ25BB2ÁÁ8BB2ÁÁ3AÁAÁÁ3AÁÁ4BÁÁ18ABÁÁ9BÁÁ10BÁÁ2BÁÁ13BB2ÁÁ10ABÁÁ2ABÁÁ23BÁÁ8BB2ÁÁ8BB3ÁBB6ÁÁ4BB2ÁÁ25ABABÁÁ7AA2BB2ÁÁ6ABÁÁ18BB4ÁBB3ÁÁ71BB3ÁBB3ÁÁ85BÁÁ52AÁAÁÁ4AA2ÁABB5ÁÁ4BB5ÁÁ42BÁAA5ÁÁ13BB5ÁÁ28ABB4ÁÁ2BB2ÁÁ3BB2ÁÁ36BÁÁ24BB11ÁÁ3BB3ÁÁ33BB18AÁÁ11BB3"}',
         wall: "RockWall_SDXL_002",
         floor: "MarbleTiles1001",
         ceil: "GoldBlackSDXL348",
-        start: '[2580,7]',
-        lights: '[[2425,3,"Candelabra03","standardSoft"],[1102,1,"DuaLLantern_020","standardSoft"],[1102,7,"DuaLLantern_015","standardSoft"]]',
-        gates: '[[10,7,"59.1","56.4","Closed"],[430,1,"59.2","60.1","Closed"],[1312,1,"59.3","60.2","Up"],[892,7,"59.4","61.1","Closed"],[2207,7,"59.5","61.2","Closed"],[2628,1,"59.6","60.3","Closed"],[2643,1,"59.7","60.4","Closed"]]',
+        start: '[31,7]',
+        lights: '[[2425,3,"Candelabra03","standardSoft"],[1102,1,"DuaLLantern_020","standardSoft"],[1102,7,"DuaLLantern_015","standardSoft"],[124,3,"Fireplace207","fireplace"],[334,3,"Fireplace206","fireplace"],[106,5,"FireplaceFLuxU417","fireplace"],[316,5,"Fireplace202","fireplace"]]',
+        gates: '[[10,7,"59.1","56.4","Closed"],[430,1,"59.2","60.1","Closed"],[1312,1,"59.3","60.2","Up"],[892,7,"59.4","61.1","Closed"],[2207,7,"59.5","61.2","Closed"],[2628,1,"59.6","60.3","Closed"],[2643,1,"59.7","60.4","Closed"],[210,5,"59.8","63.1","Closed"]]',
         doors: '[157]',
         triggers: '[[2543,7,"SmoothWallButton",0,2420],[2374,5,"SmoothWallButton",0,2419],[2458,5,"SmoothWallButton",0,2421]]',
     }
@@ -1584,7 +1584,7 @@ const MAP = {
         gates: '[[220,1,"61.1","59.4","Closed"],[887,1,"61.2","59.5","Closed"]]',
     }
     ,
-    62 : {
+    62: {
         name: "The Queen Underground",
         sg: 0,
         maxSpawned: -1,
@@ -1599,5 +1599,20 @@ const MAP = {
         lights: '[[845,7,"DuaLLantern_009","standard2"],[512,3,"Fireplace103","fireplaceDim"],[494,5,"Fireplace212","fireplaceDim"],[1890,7,"FluxLight106","standardYellow"],[1061,3,"Fireplace208","fireplace"],[1047,5,"FireplaceFLuxU415","fireplace"]]',
         gates: '[[9,7,"62.1","60.5","Closed"]]',
         entities: '[[1586,1,"UnderworldDarkQueen"]]',
-        }
+    }
+    ,
+    63: {
+        name: "Painter Elle",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"17","height":"17","depth":3,"map":"BB2ABB12AA156BB36ABB6AA6BAA5BB63$BB577A"}',
+        wall: "GreyWall101",
+        floor: "MossyPattern1",
+        ceil: "SmallBlackBricks48",
+        start: '[151,3]',
+        gates: '[[152,3,"63.1","59.8","Closed"]]',
+    }
 };

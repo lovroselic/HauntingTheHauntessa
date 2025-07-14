@@ -96,6 +96,8 @@ const DEBUG = {
 
 
         Shrines:
+            DeathWarder
+            ThornMana
     
     
         Trainers
@@ -118,7 +120,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 57; //
+        GAME.level = 57; //63
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -297,7 +299,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.25.7",
+    VERSION: "0.25.8",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

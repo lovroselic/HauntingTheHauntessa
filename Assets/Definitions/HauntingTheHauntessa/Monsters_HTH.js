@@ -29,6 +29,32 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    MaskedDefense: {
+        name: "MaskedDefense",
+        sprite: "MaskedDefense",
+        which: "defense",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "SkillShield",
+        price: 3500,
+        level: 1,
+        text: "Best defense is don't be seen. For 3500 gold I will show you some tricks.",
+        introduce: true,
+        voice: "Female",
+    },
+    ThornPriestess: {
+        name: "ThornPriestess",
+        sprite: "ThornPriestess",
+        which: "magic",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "SkillFireball",
+        price: 3500,
+        level: 1,
+        text: "Follow me for more magic. 3500 gold.",
+        introduce: true,
+        voice: "StrangeFemale",
+    },
     ThornMana: {
         name: "ThornMana",
         sprite: "ThornMana",
