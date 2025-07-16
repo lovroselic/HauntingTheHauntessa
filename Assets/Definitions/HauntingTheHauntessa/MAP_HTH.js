@@ -1497,7 +1497,7 @@ const MAP = {
         ceil: "OrnateWall2",
         start: '[314,7]',
         lights: '[[620,7,"DuaLLantern_021","standardSoft"],[1113,1,"Candle70","standard"],[494,5,"DuaLLantern_012","standardFaint"],[508,3,"SkullLantern52","standardFaint"]]',
-        gates: '[[297,7,"56.1","55.2","Up"],[441,3,"56.2","57.1","Closed"],[425,5,"56.3","58.1","Closed"],[858,1,"56.4","59.1","Pink"],[290,7,"56.5","64.1","Closed"],[304,7,"56.6","65.1","Silver"],[220,3,"56.7","66.1","Closed"]]',
+        gates: '[[297,7,"56.1","55.2","Up"],[441,3,"56.2","57.1","Closed"],[425,5,"56.3","58.1","Closed"],[858,1,"56.4","59.1","Pink"],[290,7,"56.5","64.1","Closed"],[304,7,"56.6","65.1","Silver"],[220,3,"56.7","66.1","Closed"],[204,5,"56.8","67.1","Closed"]]',
         entities: '[[416,1,"BlondeSkulla"]]',
     }
     ,
@@ -1516,7 +1516,8 @@ const MAP = {
         decals: '[[123,4,"RustyFloorGrille_07","crest"],[177,4,"FloorGrille113","crest"],[237,4,"RustyFloorGrille_08","crest"],[183,4,"FloorGrille107","crest"],[80,4,"FloorGrille106","crest"],[90,4,"RustyFloorGrille_02","crest"],[270,4,"FloorGrille102","crest"],[280,4,"FloorGrille106","crest"],[180,3,"CrawlMaster131","picture"],[137,3,"ZX_Games_3051","picture"],[213,3,"FemDommes_18735","picture"],[273,3,"FemDommes_15138","picture"],[277,3,"CCC_039","picture"],[223,3,"FluxDommes3062","picture"],[147,3,"FemDommes_8440","picture"],[87,3,"FemDommes_15723","picture"],[83,3,"FemDommes_14103","picture"],[83,5,"FemDommes_4166","picture"],[87,5,"FemaleWarrior107","picture"],[147,5,"FemDommes_13069","picture"],[137,5,"FluxDommes2244","picture"],[180,5,"CrawlMaster2","picture"],[213,5,"Various6035","picture"],[273,5,"ZX_Games_3043","picture"],[277,5,"GameScreen1007","picture"],[223,5,"FemDommes_12107","picture"],[83,1,"Ultima11","picture"],[87,1,"RetroGames_2055","picture"],[147,1,"FemDommes_8301","picture"],[137,1,"C64Games_3197","picture"],[180,1,"CastleLady109","picture"],[213,1,"FemDommes_19031","picture"],[273,1,"RMC50","picture"],[277,1,"FemDommes_17444","picture"],[223,1,"FemDommes_15722","picture"],[83,7,"GameDommes_035","picture"],[87,7,"AI_pic219","picture"],[137,7,"Domme322","picture"],[180,7,"FemDommes_6244","picture"],[147,7,"GemDommes_069","picture"],[223,7,"BC90","picture"],[277,7,"FemDommes_14157","picture"],[273,7,"FemDommes_15407","picture"],[213,7,"FluxDommes2045","picture"]]',
         lights: '[[541,1,"Candelabra06","standard2"],[541,7,"Lights102","standard2"],[541,3,"SkullLantern58","standard2"],[541,5,"SkullLantern56","standard2"]]',
         gates: '[[171,5,"57.1","56.2","Closed"]]',
-        shrines: '[[189,3,"DeathWarder"],[9,7,"ThornMana"],[351,1,"ThornPriestess"],[95,5,"MaskedDefense"]]',
+        shrines: '[[189,3,"DeathWarder"],[9,7,"ThornMana"],[351,1,"ThornPriestess"],[95,5,"MaskedDefense"],[247,5,"LatexHeart"]]',
+        oracles: '[[113,3,"StaircaseTransa"]]',
     }
     ,
     58: {
@@ -1651,7 +1652,7 @@ const MAP = {
         gates: '[[430,1,"65.1","56.6","Closed"]]',
     }
     ,
-    66 : {
+    66: {
         name: "Tatooed",
         sg: 0,
         maxSpawned: -1,
@@ -1662,10 +1663,28 @@ const MAP = {
         wall: "DarkWallSDXL309",
         floor: "GoldBrownTiles100",
         ceil: "DarkMossy24",
-        start: '[652,5]',
+        start: '[667,5]',
         lights: '[[1110,3,"Lights107","standardSoft"],[1306,1,"FireplaceFLuxU417","fireplace"],[886,7,"FireplaceFLuxU411","fireplace"],[965,3,"DuaLLantern_031","standardYellowDim"],[1259,3,"DuaLLantern_003","standardYellowDim"]]',
         gates: '[[651,5,"66.1","56.7","Closed"]]',
         triggers: '[[919,7,"SmoothWallButton",0,664],[1293,1,"SmoothWallButton",0,659],[1215,7,"SmoothWallButton",0,701],[744,1,"SmoothWallButton",0,725],[562,7,"SmoothWallButton",0,661],[772,1,"SmoothWallButton",0,663],[997,1,"SmoothWallButton",0,727],[911,7,"SmoothWallButton",0,617]]',
+        entities: '[[671,3,"SkullTattoo"]]',
         traps: '[[576,7,"SmoothWallButton",0,"Bounceball",606],[915,7,"SmoothWallButton",1,"Goblin",951],[1205,7,"SmoothWallButton",1,"Goblin",1245],[1001,1,"SmoothWallButton",1,"Goblin",950],[1297,1,"SmoothWallButton",1,"Goblin",1245]]',
-        }
+    }
+    ,
+    67: {
+        name: "Cavern",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"19","height":"19","depth":5,"map":"BB2ABAA2BAA5BAA8BABAA3BAA4BABB2AA6BAA4BB3AA2BAA11BAA2BAA3BABAA17BABAA2BABAA8BAA5BAA4BB3AA2BAA2BB2AA5BAA3BAA2BAA42BB2ABAA3BAA15BAA2BB7ABAA2BABB3ABB2AA3BB3ABABB3ABB8ABB4ABB8AA2BB2ABABB5ABB2ABABB4AA2BAA2BAA2BB2ABAA2BB3ABB3AA3BB9ABB3ABAA2BAA2BB4ABB25$BB79ÁÁ2BB42ÁBB77ÁBB110ABB202ÁBB2ÁBB4ÁBB11ÁÁ7BB15ÁBB8ÁÁ2BÁBB3ÁÁ2BB3ÁBB2ÁBB2ÁBÁBÁBB2ÁBB7ÁBB23ÁBB3ÁÁ2BÁBB2ÁÁ3BB9ÁBB2ÁÁ2BB3ÁÁ3BB15ÁBB24ÁBB26ÁÁ2BB9ÁBÁBB7ÁÁ3BÁBB4ÁÁ3BB9ÁBB5ÁBB4ÁBB6ÁBB3ÁÁ2BB75ÁÁ2BB2ÁÁ2BB5ÁBÁÁ2BÁÁ2BB10ÁBÁÁ2BB5ÁÁ3BÁÁ4BB4ÁÁ2BB7ÁÁ2BB4ÁÁ3BB2ÁÁ2BB16ÁÁ11BÁBÁÁ8BÁÁ51BÁÁ28BÁÁ2BÁÁ13BÁÁ16BÁÁ3BÁÁ16BÁÁ6BÁÁ6BB2ÁÁ23BÁBB3ÁÁ3BÁÁ3BÁÁ4BÁÁ2BÁÁ2BÁÁ12BB5ÁÁ4BÁÁ10BÁBÁÁ19BÁBÁÁ6BB2ÁÁ12BB2ÁÁ2BÁÁ2BÁÁ5BB2ÁÁ4BÁÁ22BÁBÁÁ2BÁÁ4BB3ÁÁ4BÁBÁÁ3BÁÁ2BÁÁ7BÁÁ12BÁÁ3BÁBB2ÁBÁÁ2BÁÁ8BÁÁ2BÁBÁÁ2BÁBÁBÁÁ6BÁÁ4BÁBB3ÁÁ2BÁBB2ÁBÁBB2ÁÁ10BB2ÁÁ10BB2ÁBÁBÁÁ6BÁÁ3BÁBB2ÁÁ3BB2"}',
+        wall: "RoughCave01",
+        floor: "MarbleFloor1005",
+        ceil: "RoughCave02",
+        start: '[188,3]',
+        lights: '[[246,3,"Fireplace103","fireplace"],[95,5,"Fireplace210","fireplace"],[351,1,"Fireplace212","fireplace"],[69,7,"Torch11","fireNew"]]',
+        gates: '[[189,3,"67.1","56.8","Closed"]]',
+        entities: '[[171,5,"RubySilka"]]',
+    }
 };

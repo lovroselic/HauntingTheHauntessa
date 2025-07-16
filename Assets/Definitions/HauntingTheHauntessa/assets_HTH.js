@@ -1201,6 +1201,10 @@ LoadSprites = [
     { srcName: "EntityPictures/MaskedDefense.jpg", name: "MaskedDefense" },
     { srcName: "EntityPictures/PainterElle.jpg", name: "PainterElle" },
     { srcName: "EntityPictures/BlondeSkulla.jpg", name: "BlondeSkulla" },
+    { srcName: "EntityPictures/LatexHeart.jpg", name: "LatexHeart" },
+    { srcName: "EntityPictures/StaircaseTransa.jpg", name: "StaircaseTransa" },
+    { srcName: "EntityPictures/SkullTattoo.jpg", name: "SkullTattoo" },
+    { srcName: "EntityPictures/RubySilka.jpg", name: "RubySilka" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
@@ -1478,6 +1482,14 @@ LoadSprites = [
     { srcName: "Items/RedThighHighBoots.png", name: "RedThighHighBoots" },
     { srcName: "Items/Bone.png", name: "Bone" },
     { srcName: "Items/SkeletonDoll.png", name: "SkeletonDoll" },
+    { srcName: "Items/SkeletonCat.png", name: "SkeletonCat" },
+    { srcName: "Items/SkeletonBird.png", name: "SkeletonBird" },
+    { srcName: "Items/GreenPanties.png", name: "GreenPanties" },
+    { srcName: "Items/GreenDress.png", name: "GreenDress" },
+    { srcName: "Items/GreenBoots.png", name: "GreenBoots" },
+    { srcName: "Items/WhitePanties.png", name: "WhitePanties" },
+    { srcName: "Items/WhiteDress.png", name: "WhiteDress" },
+    { srcName: "Items/WhiteBoots.png", name: "WhiteBoots" },
 
     //books
     { srcName: "Items/YoniBook.png", name: "YoniBook" },

@@ -66,13 +66,13 @@ const DEBUG = {
         /*
 
         Entities:
-            DONE DarkSkulla wants Skull, Skull,Skull, Bone, Bone ---> SkeletonDoll
+            DONE BlondeSkulla wants Skull, Skull,Skull, Bone, Bone ---> SkeletonDoll
         Tridenta wants .......... ---> Trident
             DONE PainterElle wants EmptyPainting, Palette, PaintBrush ----->  Painting
-        RubySilka wants  ------> Ruby
+        RubySilka wants  "GreenPanties", "GreenDress", "GreenBoots" ------> Ruby
             DONE UnderworldDarkQueen wants Painting, JeweledCrown, GoldenGoblet, RedThighHighBoots ------------> GoldKey
         ### wants Ruby, Emerald, Amethyst, Silver, Gold gives ---> JeweledCrown
-        SkeleGirl wants SkeletonDoll, ....  --> PinkKey
+            DONE SkullTattoo wants  SkeletonCat", "SkeletonDoll", "SkeletonBird",  --> PinkKey
 
         Items:
         GoldCoin
@@ -92,11 +92,20 @@ const DEBUG = {
         RedThighHighBoots
         Palette, 
         PaintBrush
-        Ruby, 
+            DONE Ruby, ---> RubySilka (67)
         Emerald
         Amethyst
         SilverBar
         GoldBar
+        "GreenPanties", 
+        "GreenDress", 
+        "GreenBoots"
+        "SkeletonCat",
+        "WhitePanties",
+        "WhiteDress",
+        "WhiteBoots",
+        "SkeletonCat", 
+        "SkeletonBird",
 
 
 
@@ -105,6 +114,7 @@ const DEBUG = {
             ThornMana
             MaskedDefense
             ThornPriestess
+            LatexHeart
     
     
         Trainers
@@ -114,7 +124,7 @@ const DEBUG = {
   
 
         Missing keys:
-            Pink
+            
          
 
         KEy yet unused:
@@ -130,7 +140,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 66; //63
+        GAME.level = 67; //63
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -184,7 +194,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            "Skull", "Skull", "Skull", "Bone", "Bone",
+            "WhitePanties", "WhiteDress", "WhiteBoots",
             "GoldCoin",
         ];
 
@@ -309,7 +319,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.25.9",
+    VERSION: "0.25.10",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

@@ -29,6 +29,19 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    LatexHeart: {
+        name: "LatexHeart",
+        sprite: "LatexHeart",
+        which: "health",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "HeartSkill",
+        price: 3500,
+        level: 1,
+        text: "I am sharing my metal heart with you, 3500 gold.",
+        introduce: true,
+        voice: "Female3",
+    },
     MaskedDefense: {
         name: "MaskedDefense",
         sprite: "MaskedDefense",
@@ -471,6 +484,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    StaircaseTransa: {
+        name: "StaircaseTransa",
+        sprite: "StaircaseTransa",
+        category: 'crest',
+        voice: "FemaleHigh",
+        text: "You realized you can't be followed on the staircase by monsters who cannot fly? Right?",
+        interactionCategory: "oracle",
+    },
     ExtraBabe: {
         name: "ExtraBabe",
         sprite: "ExtraBabe",
@@ -3755,6 +3776,61 @@ const INTERACTION_ITEM = {
         inventorySprite: "RavenBook",
         text: "It seems like an interesting book, full of ancient knowledge."
     },
+    GreenPanties: {
+        name: "GreenPanties",
+        category: "interaction_item",
+        inventorySprite: "GreenPanties",
+        text: "Wow, that's hot."
+    },
+    GreenDress: {
+        name: "GreenDress",
+        category: "interaction_item",
+        inventorySprite: "GreenDress",
+        text: "Wow, that's hot."
+    },
+    GreenBoots: {
+        name: "GreenBoots",
+        category: "interaction_item",
+        inventorySprite: "GreenBoots",
+        text: "Wow, that's hot."
+    },
+    WhitePanties: {
+        name: "WhitePanties",
+        category: "interaction_item",
+        inventorySprite: "WhitePanties",
+        text: "Wow, that's hot."
+    },
+    WhiteDress: {
+        name: "WhiteDress",
+        category: "interaction_item",
+        inventorySprite: "WhiteDress",
+        text: "Wow, that's hot."
+    },
+    WhiteBoots: {
+        name: "WhiteBoots",
+        category: "interaction_item",
+        inventorySprite: "WhiteBoots",
+        text: "Wow, that's hot."
+    },
+    SkeletonDoll: {
+        name: "SkeletonDoll",
+        category: "interaction_item",
+        inventorySprite: "SkeletonDoll",
+        text: "Creepy skeleton toy."
+    },
+    SkeletonCat: {
+        name: "SkeletonCat",
+        category: "interaction_item",
+        inventorySprite: "SkeletonCat",
+        text: "Creepy skeleton toy."
+    },
+    SkeletonBird: {
+        name: "SkeletonBird",
+        category: "interaction_item",
+        inventorySprite: "SkeletonBird",
+        text: "Creepy skeleton toy."
+    },
+
 
     //metals
     GoldBar: {
@@ -3787,6 +3863,32 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    RubySilka: {
+        name: "RubySilka",
+        sprite: "RubySilka",
+        category: 'crest',
+        voice: "FemaleVeryLow3",
+        wants: ["GreenPanties", "GreenDress", "GreenBoots"],
+        gives: "Ruby",
+        text: {
+            intro: "Ugh, white again? Dress me in green before I scream.",
+            progress: "Getting closer to the look I crave. But I'm still a few threads from chic and brave.",
+            conclusion: "Now that's the color of envy and pride. Here, take this ruby I no longer hide."
+        }
+    },
+    SkullTattoo: {
+        name: "SkullTattoo",
+        sprite: "SkullTattoo",
+        category: 'crest',
+        voice: "FemaleLow2",
+        wants: ["SkeletonCat", "SkeletonDoll", "SkeletonBird"],
+        gives: "PinkKey",
+        text: {
+            intro: "Bones and toys, my favorite blend. Bring them all, and reach the end.",
+            progress: "Nice additions to my stash. One or two more to make it flash.",
+            conclusion: "My spooky shelf is now complete. Take this key, your little treat."
+        }
+    },
     BlondeSkulla: {
         name: "BlondeSkulla",
         sprite: "BlondeSkulla",
