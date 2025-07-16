@@ -2533,7 +2533,7 @@ const MONSTER_TYPE = {
         midHeight: 0.15,
         fly: 0.40,
         deathType: "BloodExplosion",
-        boss:true,
+        boss: true,
         inventory: KEY_TYPE.Pearl,
         mana: 12,
         health: 50,
@@ -2829,6 +2829,17 @@ const INTERACTION_OBJECT = {
         inventorySprite: "Blood",
         material: MATERIAL.redShine,
         text: "Disgusting. Give it to someone else."
+    },
+    Bone: {
+        name: "Bone",
+        category: "interaction_item",
+        element: "BONE",
+        scale: 1.0 / 2 ** 4,
+        glueToFloor: true,
+        texture: "Marble",
+        material: MATERIAL.standard,
+        inventorySprite: "Bone",
+        text: "Bone. Human? Or animal? I don't know. Does it matter to you?"
     },
 
     //metals
@@ -3652,6 +3663,12 @@ const INTERACTION_ITEM = {
         inventorySprite: "RedThighHighBoots",
         text: "This boots are so hot."
     },
+    SkeletonDoll: {
+        name: "SkeletonDoll",
+        category: "interaction_item",
+        inventorySprite: "SkeletonDoll",
+        text: "Cute skeleton doll for little skeleton children."
+    },
 
     //books
     YoniBook: {
@@ -3770,6 +3787,32 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    BlondeSkulla: {
+        name: "BlondeSkulla",
+        sprite: "BlondeSkulla",
+        category: 'crest',
+        voice: "Female2",
+        wants: ["Skull", "Skull", "Skull", "Bone", "Bone"],
+        gives: "SkeletonDoll",
+        text: {
+            intro: "The skeleton kids are crying again. Help me build a bony doll to soothe their pain.",
+            progress: "You're piling pieces, what a treat. A few more parts and it's complete!",
+            conclusion: "Perfectly creepy, cuddly and tall; here's your skeleton doll, bones and all."
+        }
+    },
+    PainterElle: {
+        name: "PainterElle",
+        sprite: "PainterElle",
+        category: 'crest',
+        voice: "Female2",
+        wants: ["EmptyPainting", "Palette", "PaintBrush"],
+        gives: "Painting",
+        text: {
+            intro: "A canvas bare, a blush to show. Bring my tools, let's start the glow.",
+            progress: "Inspiration stirs, but something's still amiss. Bring the rest, we're close to bliss.",
+            conclusion: "All set and done, the curves divine. Enjoy your nude, pure art, not crime."
+        }
+    },
     UnderworldDarkQueen: {
         name: "UnderworldDarkQueen",
         sprite: "UnderworldDarkQueen",

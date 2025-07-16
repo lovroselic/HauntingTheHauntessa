@@ -66,12 +66,13 @@ const DEBUG = {
         /*
 
         Entities:
-        DarkSkulla wants Skull, Skull,Skull, skull, Skull ---> ????????
+            DONE DarkSkulla wants Skull, Skull,Skull, Bone, Bone ---> SkeletonDoll
         Tridenta wants .......... ---> Trident
-        PainterElle wants EmptyPainting, Palette, Brush ----->  Painting
-        RubySilka wants Ruby, Ruby, Ruby ------> 
+            DONE PainterElle wants EmptyPainting, Palette, PaintBrush ----->  Painting
+        RubySilka wants  ------> Ruby
             DONE UnderworldDarkQueen wants Painting, JeweledCrown, GoldenGoblet, RedThighHighBoots ------------> GoldKey
         ### wants Ruby, Emerald, Amethyst, Silver, Gold gives ---> JeweledCrown
+        SkeleGirl wants SkeletonDoll, ....  --> PinkKey
 
         Items:
         GoldCoin
@@ -79,25 +80,31 @@ const DEBUG = {
         GoldCoin
         GoldCoin
         GoldCoin
-        Skull, 
-        Skull,
-        Skull, 
-        Skull, 
-        Skull
-        Painting
+            DONE Skull, --> (64)
+            DONE Skull, --> (64)
+            DONE Skull, --> (64)
+            DONE Bone, --> (64)
+            DONE Bone--> (64)
+            DONE SkeletonDoll ---> BlondeSkulla (56)
+            DONE Painting ---> PainterElle (63)
         JeweledCrown
         EmptyPainting, 
         RedThighHighBoots
         Palette, 
-        Brush
+        PaintBrush
         Ruby, 
-        Ruby, 
-        Ruby
+        Emerald
+        Amethyst
+        SilverBar
+        GoldBar
+
 
 
         Shrines:
             DeathWarder
             ThornMana
+            MaskedDefense
+            ThornPriestess
     
     
         Trainers
@@ -107,9 +114,12 @@ const DEBUG = {
   
 
         Missing keys:
+            Pink
          
 
         KEy yet unused:
+            Gold
+            
          
         Missing scrolls:
 
@@ -120,7 +130,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 57; //63
+        GAME.level = 66; //63
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -174,7 +184,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            "Painting", "JeweledCrown", "GoldenGoblet", "RedThighHighBoots",
+            "Skull", "Skull", "Skull", "Bone", "Bone",
             "GoldCoin",
         ];
 
@@ -299,7 +309,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.25.8",
+    VERSION: "0.25.9",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

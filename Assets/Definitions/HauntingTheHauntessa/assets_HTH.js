@@ -926,6 +926,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/HornedHelmetColor.jpg", name: "HornedHelmetColor" },
     { srcName: "ObjectTextures/BloodTexture.jpg", name: "BloodTexture" },
     { srcName: "ObjectTextures/IronTexture.jpg", name: "IronTexture" },
+    { srcName: "ObjectTextures/Marble.jpg", name: "Marble" },
 
     /** other monster textures */
     { srcName: "ObjectTextures/RedGoldBat.jpg", name: "RedGoldBat" },
@@ -1198,6 +1199,8 @@ LoadSprites = [
     { srcName: "EntityPictures/ThornMana.jpg", name: "ThornMana" },
     { srcName: "EntityPictures/ThornPriestess.jpg", name: "ThornPriestess" },
     { srcName: "EntityPictures/MaskedDefense.jpg", name: "MaskedDefense" },
+    { srcName: "EntityPictures/PainterElle.jpg", name: "PainterElle" },
+    { srcName: "EntityPictures/BlondeSkulla.jpg", name: "BlondeSkulla" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
@@ -1473,6 +1476,8 @@ LoadSprites = [
     { srcName: "Items/Trident.png", name: "Trident" },
     { srcName: "Items/GoldenGoblet.png", name: "GoldenGoblet" },
     { srcName: "Items/RedThighHighBoots.png", name: "RedThighHighBoots" },
+    { srcName: "Items/Bone.png", name: "Bone" },
+    { srcName: "Items/SkeletonDoll.png", name: "SkeletonDoll" },
 
     //books
     { srcName: "Items/YoniBook.png", name: "YoniBook" },
