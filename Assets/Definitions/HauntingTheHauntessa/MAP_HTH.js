@@ -1671,7 +1671,7 @@ const MAP = {
         traps: '[[576,7,"SmoothWallButton",0,"Bounceball",606],[915,7,"SmoothWallButton",1,"Goblin",951],[1205,7,"SmoothWallButton",1,"Goblin",1245],[1001,1,"SmoothWallButton",1,"Goblin",950],[1297,1,"SmoothWallButton",1,"Goblin",1245]]',
     }
     ,
-    67: {
+    67 : {
         name: "Cavern",
         sg: 0,
         maxSpawned: -1,
@@ -1683,8 +1683,9 @@ const MAP = {
         floor: "MarbleFloor1005",
         ceil: "RoughCave02",
         start: '[188,3]',
+        decals: '[[183,5,"OilDommes_1090","picture"]]',
         lights: '[[246,3,"Fireplace103","fireplace"],[95,5,"Fireplace210","fireplace"],[351,1,"Fireplace212","fireplace"],[69,7,"Torch11","fireNew"]]',
         gates: '[[189,3,"67.1","56.8","Closed"]]',
         entities: '[[171,5,"RubySilka"]]',
-    }
+        }
 };
