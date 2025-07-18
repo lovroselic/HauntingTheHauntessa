@@ -69,10 +69,11 @@ const DEBUG = {
             DONE BlondeSkulla wants Skull, Skull,Skull, Bone, Bone ---> SkeletonDoll
         Tridenta wants .......... ---> Trident
             DONE PainterElle wants EmptyPainting, Palette, PaintBrush ----->  Painting
-        RubySilka wants  "GreenPanties", "GreenDress", "GreenBoots" ------> Ruby
+            DONE RubySilka wants  "GreenPanties", "GreenDress", "GreenBoots" ------> Ruby
             DONE UnderworldDarkQueen wants Painting, JeweledCrown, GoldenGoblet, RedThighHighBoots ------------> GoldKey
-        ### wants Ruby, Emerald, Amethyst, Silver, Gold gives ---> JeweledCrown
+            DONE MissMuscleSmith wants "Ruby", "Emerald", "Amethyst", "SilverBar", "GoldBar" gives ---> JeweledCrown
             DONE SkullTattoo wants  SkeletonCat", "SkeletonDoll", "SkeletonBird",  --> PinkKey
+            DONE HAcker want "Floppy","Floppy","Floppy" gives --> GoldenGoblet
 
         Items:
         GoldCoin
@@ -87,7 +88,8 @@ const DEBUG = {
             DONE Bone--> (64)
             DONE SkeletonDoll ---> BlondeSkulla (56)
             DONE Painting ---> PainterElle (63)
-        JeweledCrown
+            DONE JeweledCrown --> MissMuscleSmith(69)
+            DONE GoldenGoblet --> Hacker(68)
         EmptyPainting, 
         RedThighHighBoots
         Palette, 
@@ -106,6 +108,9 @@ const DEBUG = {
         "WhiteBoots",
         "SkeletonCat", 
         "SkeletonBird",
+        "Floppy"
+        "Floppy"
+        "Floppy"
 
 
 
@@ -140,7 +145,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 67; //63
+        GAME.level = 69; //63
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -194,6 +199,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
+            "Ruby", "Emerald", "Amethyst", "SilverBar", "GoldBar",
             "WhitePanties", "WhiteDress", "WhiteBoots",
             "GoldCoin",
         ];
@@ -319,7 +325,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.25.11",
+    VERSION: "0.25.12",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

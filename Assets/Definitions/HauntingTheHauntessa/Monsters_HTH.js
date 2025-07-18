@@ -3690,6 +3690,12 @@ const INTERACTION_ITEM = {
         inventorySprite: "SkeletonDoll",
         text: "Cute skeleton doll for little skeleton children."
     },
+    Floppy: {
+        name: "Floppy",
+        category: "interaction_item",
+        inventorySprite: "Floppy",
+        text: "Floppy disk? I can store my memoirs on it."
+    },
 
     //books
     YoniBook: {
@@ -3863,6 +3869,32 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    MissMuscleSmith: {
+        name: "MissMuscleSmith",
+        sprite: "MissMuscleSmith",
+        category: 'crest',
+        voice: "FemaleHigh6",
+        wants: ["Ruby", "Emerald", "Amethyst", "SilverBar", "GoldBar"],
+        gives: "JeweledCrown",
+        text: {
+            intro: "You want a crown? Then bring the bling. Gems and metals, everything.",
+            progress: "Some sparkle's here, but not yet enough. I need more shiny, royal stuff.",
+            conclusion: "Fit for a queen and forged with pride. Here's your crown, now rule with stride."
+        }
+    },
+    Hacker: {
+        name: "Hacker",
+        sprite: "Hacker",
+        category: 'crest',
+        voice: "Female4",
+        wants: ["Floppy", "Floppy", "Floppy"],
+        gives: "GoldenGoblet",
+        text: {
+            intro: "I'm dying to play CastleHaunt. Three floppies, that's what I want.",
+            progress: "One step closer to the digital thrill. But we're not booting up just still.",
+            conclusion: "Game's installed, I'm set to vibe. Take this goblet, not my tribe."
+        }
+    },
     RubySilka: {
         name: "RubySilka",
         sprite: "RubySilka",

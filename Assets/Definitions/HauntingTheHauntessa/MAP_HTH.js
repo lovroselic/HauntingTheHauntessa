@@ -1549,7 +1549,7 @@ const MAP = {
         ceil: "GoldBlackSDXL348",
         start: '[31,7]',
         lights: '[[2425,3,"Candelabra03","standardSoft"],[1102,1,"DuaLLantern_020","standardSoft"],[1102,7,"DuaLLantern_015","standardSoft"],[124,3,"Fireplace207","fireplace"],[334,3,"Fireplace206","fireplace"],[106,5,"FireplaceFLuxU417","fireplace"],[316,5,"Fireplace202","fireplace"]]',
-        gates: '[[10,7,"59.1","56.4","Closed"],[430,1,"59.2","60.1","Closed"],[1312,1,"59.3","60.2","Up"],[892,7,"59.4","61.1","Closed"],[2207,7,"59.5","61.2","Closed"],[2628,1,"59.6","60.3","Closed"],[2643,1,"59.7","60.4","Closed"],[210,5,"59.8","63.1","Closed"]]',
+        gates: '[[10,7,"59.1","56.4","Closed"],[430,1,"59.2","60.1","Closed"],[1312,1,"59.3","60.2","Up"],[892,7,"59.4","61.1","Closed"],[2207,7,"59.5","61.2","Closed"],[2628,1,"59.6","60.3","Closed"],[2643,1,"59.7","60.4","Closed"],[210,5,"59.8","63.1","Closed"],[230,3,"59.9","68.1","Closed"]]',
         doors: '[157]',
         triggers: '[[2543,7,"SmoothWallButton",0,2420],[2374,5,"SmoothWallButton",0,2419],[2458,5,"SmoothWallButton",0,2421]]',
     }
@@ -1567,7 +1567,8 @@ const MAP = {
         ceil: "RoughCave20",
         start: '[2264,1]',
         lights: '[[493,7,"DuaLLantern_029","standardDimmed"],[1627,1,"Candelabra11","standardMuted"],[2950,7,"FluxLight101","standardYellow"]]',
-        gates: '[[10,7,"60.1","59.2","Closed"],[1333,7,"60.2","59.3","Down"],[2207,7,"60.3","59.6","Closed"],[2222,7,"60.4","59.7","Closed"],[430,1,"60.5","62.1","Closed"]]',
+        gates: '[[10,7,"60.1","59.2","Closed"],[1333,7,"60.2","59.3","Down"],[2207,7,"60.3","59.6","Closed"],[2222,7,"60.4","59.7","Closed"],[430,1,"60.5","62.1","Closed"],[210,5,"60.6","69.1","Green"]]',
+        keys: '[[352,3]]',
     }
     ,
     61: {
@@ -1671,7 +1672,7 @@ const MAP = {
         traps: '[[576,7,"SmoothWallButton",0,"Bounceball",606],[915,7,"SmoothWallButton",1,"Goblin",951],[1205,7,"SmoothWallButton",1,"Goblin",1245],[1001,1,"SmoothWallButton",1,"Goblin",950],[1297,1,"SmoothWallButton",1,"Goblin",1245]]',
     }
     ,
-    67 : {
+    67: {
         name: "Cavern",
         sg: 0,
         maxSpawned: -1,
@@ -1687,5 +1688,42 @@ const MAP = {
         lights: '[[246,3,"Fireplace103","fireplace"],[95,5,"Fireplace210","fireplace"],[351,1,"Fireplace212","fireplace"],[69,7,"Torch11","fireNew"]]',
         gates: '[[189,3,"67.1","56.8","Closed"]]',
         entities: '[[171,5,"RubySilka"]]',
+    }
+    ,
+    68: {
+        name: "Server Room",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"19","height":"19","depth":4,"map":"BB2AA3BAA6BAA2BB2AA3BB2AA2BAA2BAA2BAA4BB4AA3BABAA6BAA3BAA15BAA4BAA2BABB2ABB3ABAA16BAA17BAA5BAA2BABB5ABABB3ABEBAA3BABABAA2BB2ABB5ABB7ABB3ABAA2BABB3ABB8ABABABB3ABABAA2BAA2BB3AA3BB6ABAA3BAA6BB2AA5BB2ABABAA5BAA3BB2AA3BB2AA4BB2ABB2ABB4ABB8ABB2ABB3AA2BB7ABB5AA3BB2AA2BB7AA2BABB3AA2BB25$BB138ÁÁ2BB151ÁBB4ABB63ÁÁ2BB2ÁÁ4BB18ÁÁ2BB31ÁÁ2BB28ÁÁ3BB16ÁÁ2BB9ÁÁ3BB46ÁÁ2BB3ÁBB18ÁÁ5BÁBÁÁ3BB48ÁÁ4BB3ÁÁ4BB19ÁBB2ÁBB22ÁBB10ÁBB8ÁÁ2BB2ÁBÁBÁÁ2BB21ÁÁ2BB10ÁÁ2BB3ÁBÁÁ2BB3ÁBB2ÁBB2ÁÁ2BB5ÁBB2ÁBB3ÁÁ2BB6ÁÁ2BB5ÁÁ6BB5ÁBÁBB4ÁÁ2BÁÁ12BÁÁ2BB3ÁÁ2BB5ÁBB2ÁÁ3BB3ÁBB4ÁBB8ÁBB4ÁÁ2BÁBB8ÁBB2ABB21ÁÁ2BB11ÁÁ6BB6ÁBB2ÁÁ2BÁBB12ÁBB18ÁBÁBB5ÁÁ9BÁÁ32BB4ÁBÁÁ2BB2ÁÁ2BÁÁ6BÁÁ8BÁÁ7BÁBÁÁ5BÁÁ4BB5ÁÁ4BÁBÁÁ2BÁBB2ÁÁ3BÁÁ2BÁÁ4BÁÁ3B"}',
+        wall: "MossyRocks42",
+        floor: "MossFloor105",
+        ceil: "DarkWallSDXL326",
+        start: '[182,3]',
+        lights: '[[546,3,"Candle60","standardDimmed"],[378,7,"Candelabra11","standardYellowDim"],[362,7,"WallLamp31","standardYellowDim"],[661,1,"FluxLight120","standardYellowDim"],[710,1,"Lights111","standardYellowDim"],[556,7,"FluxLight124","standardYellowDim"],[659,3,"WallLamp11","standardYellowDim"],[494,5,"WallLamp13","standardYellowDim"]]',
+        gates: '[[171,5,"68.1","59.9","Closed"]]',
+        doors: '[185]',
+        triggers: '[[123,7,"SmoothWallButton",1,141]]',
+        entities: '[[178,5,"Hacker"]]',
+    }
+    ,
+    69 : {
+        name: "Infernal Smithy",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"21","height":"21","depth":5,"map":"BB3AA2BB2AA2BB2AA4BŁAA6BB2AA4ɁAA21сAA73BB2AA18BAA8BB3AA15ÁÁ2AA5BAA4BB2AA7BB3AA5ÁAA22ÁÁ2AA23BB2AA3BAA3ÁÁ2AA4BÁÁ2AÁBB11AA3BB6ABࡁBB4ABB22AA2BB2AA2BB8AA2BB7ABB12AA3BB2AA2BABAA2BB2ABB7ABB2ABB21ɁBB101ÁBB36ÁÁ2BB16ÁBB29ABB77$BB198ÁBB36ÁBB4ÁBÁBÁÁ2ABB4ÁBÁÁ3BB3ÁÁ26BB7ABB5ÁɁBABABB2ÁBB6ࡁBB12ABB7ÁÁ3BB2сABB16ABB3ÁBB33ÁÁ4ŁBB7ࡁBB9сBB2ÁBB5ࡁBB37ÁABB4ABB66ABB5ÁBÁÁ6BB10ÁÁ8BB51ÁBB5ÁÁ8BÁÁ82BÁÁ46AÁÁ22BB2AÁÁ32BB3ÁÁ2BB2ÁÁ71BB2ÁÁ12BB8ÁÁ48BÁÁ57BB8ÁÁ146BÁÁ139BÁÁ8BÁÁ37BB3ÁÁ5BB4ÁÁ33BB7ÁÁ2BB21ÁÁ8BB2ÁBB3ÁÁ4BB4ÁBB3ÁÁ2BÁÁ33AÁÁ2BÁÁ12BÁBABŁÁŁBÁAɁBÁсÁ"}',
+        wall: "DarkRedBricks3",
+        floor: "RedMarbleFloor7",
+        ceil: "DarkWallSDXL328",
+        start: '[325,7]',
+        lights: '[[1993,3,"Candle61","standardDimmed"],[2035,3,"DuaLLantern_003","standardDimmed"],[946,5,"Lamp45","standardYellow"],[1801,7,"Lights115","standardSoft"],[336,5,"Fireplace101","fireplace"],[356,3,"Fireplace209","fireplace"],[167,3,"FireplaceFLuxU418","fireplace"]]',
+        gates: '[[2015,3,"69.1","60.6","Closed"]]',
+        triggers: '[[191,7,"SmoothWallButton",0,509],[897,7,"SmoothWallButton",1,941]]',
+        entities: '[[430,1,"MissMuscleSmith"]]',
         }
 };

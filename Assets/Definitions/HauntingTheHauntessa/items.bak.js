@@ -58,12 +58,7 @@ const INTERACTION_ITEM = {
         inventorySprite: "BlueRose",
     },
 
-    Floppy: {
-        name: "Floppy",
-        category: "interaction_item",
-        inventorySprite: "Floppy",
-        text: "Floppy disk? I can store my memoirs on it."
-    },
+
     GoldKey: {
         name: "GoldKey",
         category: "key",
