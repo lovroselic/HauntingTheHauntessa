@@ -3869,6 +3869,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    Emeraldine: {
+        name: "Emeraldine",
+        sprite: "Emeraldine",
+        category: 'crest',
+        voice: "Female3",
+        wants: ["WhitePanties", "WhiteDress", "WhiteBoots"],
+        gives: "Emerald",
+        text: {
+            intro: "This red's a drag, it makes me scream. Dress me white so I don't get mean.",
+            progress: "Closer now, but don't be slow. I need the full look to make it glow.",
+            conclusion: "You nailed the fit, I'm serene at last. Take this emerald, bold and glassed."
+        }
+    },
     MissMuscleSmith: {
         name: "MissMuscleSmith",
         sprite: "MissMuscleSmith",

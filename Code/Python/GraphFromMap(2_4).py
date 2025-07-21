@@ -49,7 +49,7 @@ def getColor(col):
     if col == "Cyan":
         return "#00FFFF"
     if col == "Orange":
-        return "##FFA500"
+        return "#FFA500"
     
     return col
 
@@ -93,7 +93,7 @@ for room in MAP:
     gates = [g.strip("[]") for g in gates]
     gates = [g.split(",")[2:] for g in gates]
     for g in gates:
-        # print("..gate", g)
+        print("..gate", g)
         out = int(g[1].split(".")[0].strip('"'))
         node = int(g[0].split(".")[0].strip('"'))
         col = getColor(g[-1].strip('"'))

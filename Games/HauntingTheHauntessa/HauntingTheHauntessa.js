@@ -74,6 +74,7 @@ const DEBUG = {
             DONE MissMuscleSmith wants "Ruby", "Emerald", "Amethyst", "SilverBar", "GoldBar" gives ---> JeweledCrown
             DONE SkullTattoo wants  SkeletonCat", "SkeletonDoll", "SkeletonBird",  --> PinkKey
             DONE HAcker want "Floppy","Floppy","Floppy" gives --> GoldenGoblet
+            DOEN Emeraldine wants "WhitePanties", "WhiteDress", "WhiteBoots" gives Emerald
 
         Items:
         GoldCoin
@@ -95,7 +96,7 @@ const DEBUG = {
         Palette, 
         PaintBrush
             DONE Ruby, ---> RubySilka (67)
-        Emerald
+            DONE Emerald ---> Emeraldine (70)
         Amethyst
         SilverBar
         GoldBar
@@ -145,7 +146,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 69; //63
+        GAME.level = 70; //63
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -199,8 +200,6 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            "Ruby", "Emerald", "Amethyst", "SilverBar", "GoldBar",
-            "WhitePanties", "WhiteDress", "WhiteBoots",
             "GoldCoin",
         ];
 
@@ -325,7 +324,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.25.12",
+    VERSION: "0.25.13",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

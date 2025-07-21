@@ -772,7 +772,8 @@ const MAP = {
         entities: '[[10,7,"TaoLibrarian"]]',
         objects: '[[70,"Steak"],[150,"Cake"],[195,"Skull"]]',
         oracles: '[[68,5,"StackOracle"]]',
-    },
+    }
+    ,
     28: {
         name: "The Forest",
         sg: 0,
@@ -784,7 +785,7 @@ const MAP = {
         wall: "BrightForest_0845",
         floor: "ForestFloor03",
         ceil: "BlueSky_0855",
-        start: '[92,1]',
+        start: '[21,7]',
         decals: '[[339,4,"Cobblestone_0819","texture"],[320,4,"Cobblestone_0819","texture"],[301,4,"Cobblestone_0819","texture"],[282,4,"Cobblestone_0819","texture"],[281,4,"Cobblestone_0819","texture"],[280,4,"Cobblestone_0819","texture"],[279,4,"Cobblestone_0819","texture"],[260,4,"Cobblestone_0819","texture"],[241,4,"Cobblestone_0819","texture"],[222,4,"Cobblestone_0819","texture"],[221,4,"Cobblestone_0819","texture"],[220,4,"Cobblestone_0819","texture"],[201,4,"Cobblestone_0819","texture"],[182,4,"Cobblestone_0819","texture"],[163,4,"Cobblestone_0819","texture"],[162,4,"Cobblestone_0819","texture"],[161,4,"Cobblestone_0819","texture"],[160,4,"Cobblestone_0819","texture"],[159,4,"Cobblestone_0819","texture"],[140,4,"Cobblestone_0819","texture"],[121,4,"Cobblestone_0819","texture"],[120,4,"Cobblestone_0819","texture"],[119,4,"Cobblestone_0819","texture"],[118,4,"Cobblestone_0819","texture"],[117,4,"Cobblestone_0819","texture"],[116,4,"Cobblestone_0819","texture"],[97,4,"Cobblestone_0819","texture"],[78,4,"Cobblestone_0819","texture"],[59,4,"Cobblestone_0819","texture"],[40,4,"Cobblestone_0819","texture"],[21,4,"Cobblestone_0819","texture"]]',
         lights: '[[135,1,"Sun1","sunlightWarm"],[164,3,"Sun1","sunlightWarm"],[219,5,"Sun1","sunlightWarm"],[244,7,"Sun1","sunlightWarm"]]',
         gates: '[[2,7,"28.1","4.2","Closed"],[358,1,"28.2","29.1","Closed"]]',
@@ -1561,14 +1562,15 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"21","height":"21","depth":7,"map":"BB4AA2BABAA2BAA2BB21ABB2AA232BAA4ɁAA2BAA5BAA18BAA3BAA2ŁAÁAA22сAA5BABB2AA8ÁAA23ÁAA2ÁÁ2AÁAA6BABB4AA164ÁAA28ÁÁ10AA12BB11AA11BAA40BB2AA2BB5AA3ÁAA7сAA10ÁBB32ABB31AA2BB27ABB30ABABB25ABB2AA2BB4ABB15ABB4AA2BABAA38BB78AA2BB4AA2BB8ABB8ABB61$BB104ÁBB175ÁBB32ÁÁ2BB123ABB44ABB23ABB289ÁÁ3BB4ÁÁ2BB67ÁÁ10BB28ÁBÁBB10ÁÁ18BB2ÁÁ8BB149ÁBB41AA2BÁBB3ÁÁ2BB2ÁBB44AÁAÁÁ16BÁÁ4сÁɁࡁBÁÁ124AÁÁ44BÁÁ66AA5ÁÁ13BÁBÁÁ42BÁÁ11BÁÁ39BABÁÁ31BÁÁ4BÁÁ12ŁABÁÁ22ࡁÁÁ203AA10ÁÁ2BB10ÁÁ48BB28ÁÁ8BB2ÁÁ11BɁABŁÁࡁÁÁ4B"}',
+        data: '{"width":"21","height":"21","depth":7,"map":"BB4AA2BABAA2BAA2BB17ABAA96BB4AA24BAA87BAA8ɁAA6BAA6BAA9BAA7BAA2ŁAÁAA18сAA5BABB2AA12ÁAA19ÁAA2ÁÁ2AÁAA6BABB4AA82BB3AA10BAA80ÁAA27ÁÁ10AA13BB11AA15BAA39BB2AA2BB5AA4ÁAA7сAA10ÁBB31ABB11AA4BB21AA2BB27ABB30ABABB25ABB2AA2BB4ABB15ABB4AA2BABAA15BAA22BB10EBB68AA2BB4AA2BB8ABB8ABB61$BB104ÁBB175ÁBB32ÁÁ2BB101ABB44ABB23ABB285ÁBB4ÁÁ2BÁBB4ÁÁ2BB55ÁBB21ÁBÁÁ9BB31ÁBÁÁ2BB11ÁÁ14BB2ÁÁ8BB11ÁÁ2BB85ABB56ÁBB41AA2BB2ÁBB2ÁÁ3BB2ÁÁ2BB3ÁBB43ABÁAÁÁ16BÁÁ5сÁɁࡁBÁÁ131AÁÁ45BÁÁ25BB2ÁÁ37BB2ÁÁ7AA5ÁÁ13BB2ÁÁ43BÁÁ11BÁÁ36BÁÁ3ABÁÁ28BÁÁ2BÁÁ14ŁAÁÁ3BÁÁ22ࡁÁÁ124BÁÁ30BB3ÁÁ41AA10ÁBB10ÁÁ41BB24ÁÁ8BB2ÁÁ11BɁABŁÁࡁÁÁ4B"}',
         wall: "DARKBricks107",
         floor: "MarbleFloor105",
         ceil: "RoughCave20",
-        start: '[2264,1]',
-        lights: '[[493,7,"DuaLLantern_029","standardDimmed"],[1627,1,"Candelabra11","standardMuted"],[2950,7,"FluxLight101","standardYellow"]]',
-        gates: '[[10,7,"60.1","59.2","Closed"],[1333,7,"60.2","59.3","Down"],[2207,7,"60.3","59.6","Closed"],[2222,7,"60.4","59.7","Closed"],[430,1,"60.5","62.1","Closed"],[210,5,"60.6","69.1","Green"]]',
+        start: '[185,7]',
+        lights: '[[493,7,"DuaLLantern_029","standardDimmed"],[1627,1,"Candelabra11","standardMuted"],[2950,7,"FluxLight101","standardYellow"],[857,1,"Lights113","standardYellowFaint"]]',
+        gates: '[[10,7,"60.1","59.2","Closed"],[1333,7,"60.2","59.3","Down"],[2207,7,"60.3","59.6","Closed"],[2222,7,"60.4","59.7","Closed"],[430,1,"60.5","62.1","Closed"],[210,5,"60.6","69.1","Green"],[230,3,"60.7","70.1","Up"]]',
         keys: '[[352,3]]',
+        doors: '[311]',
     }
     ,
     61: {
@@ -1709,7 +1711,7 @@ const MAP = {
         entities: '[[178,5,"Hacker"]]',
     }
     ,
-    69 : {
+    69: {
         name: "Infernal Smithy",
         sg: 0,
         maxSpawned: -1,
@@ -1725,5 +1727,22 @@ const MAP = {
         gates: '[[2015,3,"69.1","60.6","Closed"]]',
         triggers: '[[191,7,"SmoothWallButton",0,509],[897,7,"SmoothWallButton",1,941]]',
         entities: '[[430,1,"MissMuscleSmith"]]',
+    }
+    ,
+    70 : {
+        name: "Deep Cave",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"19","height":"19","depth":6,"map":"BB3AA2сBB2AA2BAA23BAA2BAA8ŁBAA8BAA14BB2AA6BAA3BB2ABAA8BAࡁAA3BABB2ŁABB5AA3BAA4BAA4BAA12BAA9BAA10BAA2BAA8BAA2BB2AA4BAA5BAA2BAA2BAA2BAA9BABB6ABABABB2ABAA2BB2AA2BABB2AA2BB5ABB2ABB14AA2BABAA2BB6ABB3ABB2AA2BB5ABB2ABB2ABB3AA2BB6AA4BÁAA3BAA4BB30$BB121ÁÁ2BB43ÁBB80ÁBB121ÁBB240ABB329ÁBB2ÁBÁBB5ÁBÁBB11ÁBÁBB3ÁBB7ÁBB3ÁBB2ÁÁ3BB15ÁBÁBB15ÁÁ2BB6ÁBB2ÁÁ2BB19ÁBB7ÁBB3ÁBB14ÁBB2ÁBB2ÁBB3ÁBB2ÁÁ3BB20ÁBB2ÁBB4ÁBB4ÁBB5ÁÁ2BÁABB4ÁBB2ÁBB37ABB46AÁBB4ÁÁ2BB9ÁBB5ÁBB59ÁBB22ÁBB5ÁÁ2BÁÁ2BB10ÁÁ3BÁÁ4BB4ÁBÁÁ5BB2ÁÁ2BÁÁ2BB7ÁÁ4BÁÁ3BÁBB3ÁBB13ABB3ÁÁ21BÁÁ10BÁÁ23BÁÁ6BB2ÁÁ4BÁÁ15BÁÁ8BÁÁ3BÁÁ11BÁÁ3BÁÁ4BÁÁ10BÁÁ11BB2ÁÁ2BÁÁ2BB2ÁÁ8BB2ÁÁ3BÁÁ2BÁBÁÁ4BB2ÁÁ11BÁÁ2BÁÁ4BÁBÁÁ7BÁÁ11BB3ÁÁ5BB4ÁBÁÁ4BÁÁ3BÁÁ8BÁBB3ÁBÁBÁÁ2BÁBB3ÁBB3ÁBAÁÁ3BÁBÁÁ11BÁBÁBÁÁ9BÁBB2ÁÁ10BÁÁ12BÁÁ6BB2ÁÁ3BÁÁ7BB2ÁÁ3BÁÁ8BB2ÁÁ2BB2ÁÁ6BÁÁ6BB2ÁÁ3BB4ɁBB4"}',
+        wall: "RoughCave22",
+        floor: "Cracked03",
+        ceil: "RoughCave20",
+        start: '[533,5]',
+        lights: '[[265,3,"Fireplace104","fireplace"],[6,7,"Fireplace_1046","fireplace"],[348,1,"Fireplace_1045","fireplace"],[228,5,"FireplaceFLuxU418","fireplace"]]',
+        gates: '[[532,5,"70.1","60.7","Up"]]',
+        entities: '[[353,1,"Emeraldine"]]',
         }
 };
