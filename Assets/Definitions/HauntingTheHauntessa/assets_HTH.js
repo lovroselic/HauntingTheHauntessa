@@ -941,6 +941,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/RedDragon.jpg", name: "RedDragon" },
     { srcName: "ObjectTextures/PurpleGalaxy.jpg", name: "PurpleGalaxy" },
     { srcName: "ObjectTextures/GreenWolf.jpg", name: "GreenWolf" },
+    { srcName: "ObjectTextures/Fish.jpg", name: "FishTexture" },
 
     //title
     { srcName: "Title/HTH_title_768.jpg", name: "Title" },
@@ -1030,7 +1031,7 @@ LoadObjects = [
     "cake.obj", "steak.obj", "can.obj", "wine.obj",
     "Amanita.obj", "Snail.obj", "Frog.obj",
     "apple.obj", "crown.obj", "dagger.obj", "mushroom.obj", "skull.obj", "Candle.obj",
-    "HornedHelmet.obj", "flask.obj", "pear.obj",
+    "HornedHelmet.obj", "flask.obj", "pear.obj", "fish.obj",
 ];
 
 LoadModels = [
@@ -1208,6 +1209,9 @@ LoadSprites = [
     { srcName: "EntityPictures/Hacker.jpg", name: "Hacker" },
     { srcName: "EntityPictures/MissMuscleSmith.jpg", name: "MissMuscleSmith" },
     { srcName: "EntityPictures/Emeraldine.jpg", name: "Emeraldine" },
+    { srcName: "EntityPictures/Amethyste.jpg", name: "Amethyste" },
+    { srcName: "EntityPictures/DaggerElle.jpg", name: "DaggerElle" },
+    { srcName: "EntityPictures/FishNetty.jpg", name: "FishNetty" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
@@ -1494,6 +1498,11 @@ LoadSprites = [
     { srcName: "Items/WhiteDress.png", name: "WhiteDress" },
     { srcName: "Items/WhiteBoots.png", name: "WhiteBoots" },
     { srcName: "Items/Floppy.png", name: "Floppy" },
+    { srcName: "Items/YellowDress.png", name: "YellowDress" },
+    { srcName: "Items/YellowLatexThongs.png", name: "YellowLatexThongs" },
+    { srcName: "Items/YellowBoots.png", name: "YellowBoots" },
+    { srcName: "Items/TropicalFish.png", name: "TropicalFish" },
+    { srcName: "Items/Fish.png", name: "Fish" },
 
     //books
     { srcName: "Items/YoniBook.png", name: "YoniBook" },

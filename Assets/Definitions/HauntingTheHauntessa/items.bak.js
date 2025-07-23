@@ -23,12 +23,7 @@ const INTERACTION_ITEM = {
         text: "Squirrels like them."
     },
 
-    Fish: {
-        name: "Fish",
-        category: "interaction_item",
-        inventorySprite: "Fish",
-        text: "Smelly little swimmer."
-    },
+
     Frog: {
         name: "Frog",
         category: "interaction_item",

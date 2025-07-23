@@ -2862,6 +2862,17 @@ const INTERACTION_OBJECT = {
         inventorySprite: "Bone",
         text: "Bone. Human? Or animal? I don't know. Does it matter to you?"
     },
+    TropicalFish: {
+        name: "TropicalFish",
+        category: "interaction_item",
+        element: "FISH",
+        scale: 1.5 / 2 ** 4,
+        glueToFloor: true,
+        texture: "FishTexture",
+        material: MATERIAL.standard,
+        inventorySprite: "TropicalFish",
+        text: "Also smelly, but more colors."
+    },
 
     //metals
     GoldSphere: {
@@ -3696,6 +3707,12 @@ const INTERACTION_ITEM = {
         inventorySprite: "Floppy",
         text: "Floppy disk? I can store my memoirs on it."
     },
+    Fish: {
+        name: "Fish",
+        category: "interaction_item",
+        inventorySprite: "Fish",
+        text: "Smelly little swimmer."
+    },
 
     //books
     YoniBook: {
@@ -3836,6 +3853,24 @@ const INTERACTION_ITEM = {
         inventorySprite: "SkeletonBird",
         text: "Creepy skeleton toy."
     },
+    YellowLatexThongs: {
+        name: "YellowLatexThongs",
+        category: "interaction_item",
+        inventorySprite: "YellowLatexThongs",
+        text: "Wow, that's hot."
+    },
+    YellowDress: {
+        name: "YellowDress",
+        category: "interaction_item",
+        inventorySprite: "YellowDress",
+        text: "Wow, that's hot."
+    },
+    YellowBoots: {
+        name: "YellowBoots",
+        category: "interaction_item",
+        inventorySprite: "YellowBoots",
+        text: "Wow, that's hot."
+    },
 
 
     //metals
@@ -3869,6 +3904,32 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    FishNetty: {
+        name: "FishNetty",
+        sprite: "FishNetty",
+        category: 'crest',
+        voice: "FemaleVeryLow4",
+        wants: ["Fish", "TropicalFish"],
+        gives: "EmptyPainting",
+        text: {
+            intro: "I'm all net and no catch. Help me trap something slippery and splashy, maybe?",
+            progress: "That tickles... but I'm still craving more. Something lively to adore.",
+            conclusion: "You've filled my nets with wiggle and glee. Take this canvas, no one paints me, because I am too pretty."
+        }
+    },
+    Amethyste: {
+        name: "Amethyste",
+        sprite: "Amethyste",
+        category: 'crest',
+        voice: "Female6",
+        wants: ["YellowDress", "YellowLatexThongs", "YellowBoots"],
+        gives: "Amethyst",
+        text: {
+            intro: "Cave life is dull, so dark and tight. Bring me sunshine wrapped in latex delight.",
+            progress: "Ooh, a shimmer but it's not the full glow. More sunny glam, then I'll bestow.",
+            conclusion: "You've brightened my gloom with golden zest. Here's your amethyst, my shiny bequest."
+        }
+    },
     Emeraldine: {
         name: "Emeraldine",
         sprite: "Emeraldine",
@@ -4678,6 +4739,19 @@ const INTERACTION_ENTITY = {
 };
 
 const INTERACTION_SHRINE = {
+    DaggerElle: {
+        name: "DaggerElle",
+        sprite: "DaggerElle",
+        category: 'crest',
+        voice: "Female6",
+        wants: ["GoldCoin"],
+        gives: "Attack",
+        text: {
+            intro: "Wanna hit hard but stay unseen? One gold coin, and I'll make you mean.",
+            progress: null,
+            conclusion: "Now you're trained to stab from the back. Go cause chaos with your sneak attack."
+        }
+    },
     GirlInTheForest: {
         name: "GirlInTheForest",
         sprite: "GirlInTheForest",
@@ -4690,8 +4764,7 @@ const INTERACTION_SHRINE = {
             progress: null,
             conclusion: "Lesson learned, you now possess the power to hide and dodge the mess."
         }
-    }
-    ,
+    },
     CastleMana: {
         name: "CastleMana",
         sprite: "CastleMana",

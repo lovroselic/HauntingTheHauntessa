@@ -1568,7 +1568,7 @@ const MAP = {
         ceil: "RoughCave20",
         start: '[185,7]',
         lights: '[[493,7,"DuaLLantern_029","standardDimmed"],[1627,1,"Candelabra11","standardMuted"],[2950,7,"FluxLight101","standardYellow"],[857,1,"Lights113","standardYellowFaint"]]',
-        gates: '[[10,7,"60.1","59.2","Closed"],[1333,7,"60.2","59.3","Down"],[2207,7,"60.3","59.6","Closed"],[2222,7,"60.4","59.7","Closed"],[430,1,"60.5","62.1","Closed"],[210,5,"60.6","69.1","Green"],[230,3,"60.7","70.1","Up"]]',
+        gates: '[[10,7,"60.1","59.2","Closed"],[1333,7,"60.2","59.3","Down"],[2207,7,"60.3","59.6","Closed"],[2222,7,"60.4","59.7","Closed"],[430,1,"60.5","62.1","Closed"],[210,5,"60.6","69.1","Green"],[230,3,"60.7","70.1","Up"],[1553,3,"60.8","71.1","Closed"],[1533,5,"60.9","72.1","Closed"]]',
         keys: '[[352,3]]',
         doors: '[311]',
     }
@@ -1729,7 +1729,7 @@ const MAP = {
         entities: '[[430,1,"MissMuscleSmith"]]',
     }
     ,
-    70 : {
+    70: {
         name: "Deep Cave",
         sg: 0,
         maxSpawned: -1,
@@ -1744,5 +1744,40 @@ const MAP = {
         lights: '[[265,3,"Fireplace104","fireplace"],[6,7,"Fireplace_1046","fireplace"],[348,1,"Fireplace_1045","fireplace"],[228,5,"FireplaceFLuxU418","fireplace"]]',
         gates: '[[532,5,"70.1","60.7","Up"]]',
         entities: '[[353,1,"Emeraldine"]]',
+    }
+    ,
+    71: {
+        name: "Small Cave",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"17","height":"17","depth":3,"map":"BB3AA5BABB3ABAA8BABAA3BAA6BAA18BAA2BAA12BB2AA4BAA2BAA3BB3ABB2AA8BAA6BAA6BAA5BABAA4BAA7BABAA3BB2ABAA6BAA5BB7AA2BB3ABABAA3BB2AA2BB2AA2BB2ABB20ABB9AA3BB2ABB2ABABB2AA2BAA2BABB6ABB2ABB2AA3BABABB3ABB2ABB28$BB51ÁÁ2BB53ABB130ÁÁ2BB2ÁÁ2BÁÁ2BB2ÁÁ3BB2ÁBB9ÁBB5ÁÁ2BB3ÁÁ2BB6ÁÁ3BB82ÁÁ6BB2ÁÁ3BB2ÁÁ3BB2ÁBB4ÁÁ2BB5ÁÁ2BB6ÁÁ4BÁÁ2BB2ÁBÁÁ2BÁÁ18BB2ÁÁ10BÁÁ2BB2ÁÁ14BB2ÁÁ26BÁÁ3BB2ÁÁ12BB2ÁÁ9BB2ÁÁ8BB2ÁBÁÁ15BB2ÁÁ2BB4ÁÁ5BB3ÁBB3ÁBÁB"}',
+        wall: "RoughCave12",
+        floor: "BloodMarbleFloorWall_SDXL_012",
+        ceil: "RoughCave17",
+        start: '[256,5]',
+        lights: '[[279,1,"Fireplace_1040","fire"],[4,7,"Fireplace201","fire"],[102,5,"FireplaceFLuxU415","fire"]]',
+        gates: '[[255,5,"71.1","60.8","Closed"]]',
+        entities: '[[152,3,"Amethyste"]]',
+        trainers: '[[8,7,"DaggerElle"]]',
+    }
+    ,
+    72 : {
+        name: "FishNette",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"21","height":"21","depth":7,"map":"BÁAA2ÁAÁÁ3AÁBAA5ÁÁ2AÁÁ3ABB2AA6BB2AA20BB2AÁÁ5AÁÁ2AA8ÁÁ2AA2BB17ABB3ABB3ÁAA2BB24ÁBB63ÁBB31ÁÁ5BB49ABB158$BB186ABB13ÁBB2ÁÁ3BB19ÁBB12ÁBB3ÁBB11ÁBB14ÁÁ3BB12ÁÁ2BB3ÁÁ4BÁÁ3BB3ÁÁ6BB2ÁÁ10AÁBÁÁ75BB245ÁÁ5BB4ÁÁ2BB19ÁÁ2BB97ÁÁ5AÁÁ5AA5ÁÁ15BÁÁ108BB5ÁÁ278BÁÁ24BÁÁ111BÁÁ6AA4ÁÁ12BÁBB2ÁÁ3ABÁÁ99BB2ÁÁ2BB4ÁÁ5AÁBÁÁ7BB3AA2ÁABB2ÁBB2ÁÁ120ABÁÁ79BB2ÁÁ15AÁÁ5BABÁÁ75BB2ÁÁ194AA2ÁÁ6BB2ÁÁ552BB93"}',
+        wall: "DARKBricks107",
+        floor: "MarbleFloor105",
+        ceil: "RoughCave20",
+        start: '[2434,3]',
+        lights: '[[2677,7,"FluxLight107","standardYellow"],[2857,5,"FluxLight106","standardYellow"],[2875,3,"Lights114","standardYellow"],[3076,1,"Lamp53","standardYellow"]]',
+        gates: '[[2435,3,"72.1","60.9","Closed"]]',
+        entities: '[[2415,5,"FishNetty"]]',
         }
 };

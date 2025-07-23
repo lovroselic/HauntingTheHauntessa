@@ -75,6 +75,8 @@ const DEBUG = {
             DONE SkullTattoo wants  SkeletonCat", "SkeletonDoll", "SkeletonBird",  --> PinkKey
             DONE HAcker want "Floppy","Floppy","Floppy" gives --> GoldenGoblet
             DOEN Emeraldine wants "WhitePanties", "WhiteDress", "WhiteBoots" gives Emerald
+            DONE Amethyste wants "YellowDress", "YellowLatexThongs","YellowBoots",gives Amethyst
+            DONE FishNette wants "Fish", "TropicalFish" gives EmptyPainting
 
         Items:
         GoldCoin
@@ -91,13 +93,13 @@ const DEBUG = {
             DONE Painting ---> PainterElle (63)
             DONE JeweledCrown --> MissMuscleSmith(69)
             DONE GoldenGoblet --> Hacker(68)
-        EmptyPainting, 
+            DONE EmptyPainting, --> FishNetter (72)
         RedThighHighBoots
         Palette, 
         PaintBrush
             DONE Ruby, ---> RubySilka (67)
             DONE Emerald ---> Emeraldine (70)
-        Amethyst
+            DONE Amethyst ---> Amethyste (71)
         SilverBar
         GoldBar
         "GreenPanties", 
@@ -107,11 +109,16 @@ const DEBUG = {
         "WhitePanties",
         "WhiteDress",
         "WhiteBoots",
+        "YellowDress", 
+        "YellowLatexThongs",
+        "YellowBoots"
         "SkeletonCat", 
         "SkeletonBird",
         "Floppy"
         "Floppy"
         "Floppy"
+        "Fish", 
+        "TropicalFish"
 
 
 
@@ -126,7 +133,8 @@ const DEBUG = {
         Trainers
     
 
-        CoinTrainers, not assigned coins, not placed coins 5x:
+        CoinTrainers:
+            DaggerElle - attack
   
 
         Missing keys:
@@ -146,7 +154,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 70; //63
+        GAME.level = 72; //63
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -200,6 +208,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
+            "Fish", "TropicalFish",
             "GoldCoin",
         ];
 
@@ -324,7 +333,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.25.13",
+    VERSION: "0.25.14",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

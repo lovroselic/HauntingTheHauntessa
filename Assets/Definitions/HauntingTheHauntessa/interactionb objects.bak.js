@@ -251,17 +251,7 @@ const INTERACTION_OBJECT = {
         text: "Oh, it's an apple. A green one."
     },
     
-    TropicalFish: {
-        name: "TropicalFish",
-        category: "interaction_item",
-        element: "FISH",
-        scale: 1.5 / 2 ** 4,
-        glueToFloor: true,
-        texture: "FishTexture",
-        material: MATERIAL.standard,
-        inventorySprite: "TropicalFish",
-        text: "Also smelly, but more colors."
-    },
+   
     Bone: {
         name: "Bone",
         category: "interaction_item",
