@@ -2873,6 +2873,17 @@ const INTERACTION_OBJECT = {
         inventorySprite: "TropicalFish",
         text: "Also smelly, but more colors."
     },
+    Shield: {
+        name: "Shield",
+        category: "interaction_item",
+        element: "SHIELD",
+        scale: 1 / 2 ** 5,
+        glueToFloor: true,
+        texture: "ScrapedMetal",
+        inventorySprite: "Shield",
+        material: MATERIAL.silver,
+        text: "I'll put that shield in the bag."
+    },
 
     //metals
     GoldSphere: {
@@ -3904,6 +3915,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    Tridenta: {
+        name: "Tridenta",
+        sprite: "Tridenta",
+        category: 'crest',
+        voice: "FemaleLow5",
+        wants: ["BattleAxe", "Shield"],
+        gives: "Trident",
+        text: {
+            intro: "This trident's old, I've changed my taste. Bring axe and shield with warrior haste.",
+            progress: "One's delivered, but that won't do. I need the full set before we're through.",
+            conclusion: "You've got the gear, so here's my spear. A trident sharp, go bring some fear. Or catch some fish. Whatever."
+        }
+    },    
     FishNetty: {
         name: "FishNetty",
         sprite: "FishNetty",

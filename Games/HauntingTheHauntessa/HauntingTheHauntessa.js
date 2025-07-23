@@ -67,7 +67,7 @@ const DEBUG = {
 
         Entities:
             DONE BlondeSkulla wants Skull, Skull,Skull, Bone, Bone ---> SkeletonDoll
-        Tridenta wants .......... ---> Trident
+            DONE Tridenta wants "BattleAxe", "Shield" ---> Trident
             DONE PainterElle wants EmptyPainting, Palette, PaintBrush ----->  Painting
             DONE RubySilka wants  "GreenPanties", "GreenDress", "GreenBoots" ------> Ruby
             DONE UnderworldDarkQueen wants Painting, JeweledCrown, GoldenGoblet, RedThighHighBoots ------------> GoldKey
@@ -77,6 +77,9 @@ const DEBUG = {
             DOEN Emeraldine wants "WhitePanties", "WhiteDress", "WhiteBoots" gives Emerald
             DONE Amethyste wants "YellowDress", "YellowLatexThongs","YellowBoots",gives Amethyst
             DONE FishNette wants "Fish", "TropicalFish" gives EmptyPainting
+        "Vampyra" wants "Blood", "Blood", "Blood" gives RedThighHighBoots
+        Fisherine wants Trident, gives --> Fish
+        ExpelledApparitia wants ---> "WhiteBoots"
 
         Items:
         GoldCoin
@@ -94,7 +97,7 @@ const DEBUG = {
             DONE JeweledCrown --> MissMuscleSmith(69)
             DONE GoldenGoblet --> Hacker(68)
             DONE EmptyPainting, --> FishNetter (72)
-        RedThighHighBoots
+        RedThighHighBoots --> Vampyra
         Palette, 
         PaintBrush
             DONE Ruby, ---> RubySilka (67)
@@ -108,7 +111,7 @@ const DEBUG = {
         "SkeletonCat",
         "WhitePanties",
         "WhiteDress",
-        "WhiteBoots",
+        "WhiteBoots", ---> ExpelledApparitia ()
         "YellowDress", 
         "YellowLatexThongs",
         "YellowBoots"
@@ -117,8 +120,11 @@ const DEBUG = {
         "Floppy"
         "Floppy"
         "Floppy"
-        "Fish", 
-        "TropicalFish"
+        "Fish", --> Fisherine
+            DONE "TropicalFish" --> (74)
+        "BattleAxe", 
+        "Shield"
+            DONE Trident --> Tridenta (75)
 
 
 
@@ -154,7 +160,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 72; //63
+        GAME.level = 75; //63
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -208,7 +214,8 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            "Fish", "TropicalFish",
+            "Blood", "Blood", "Blood",
+            "BattleAxe", "Shield",
             "GoldCoin",
         ];
 
@@ -333,7 +340,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.25.14",
+    VERSION: "0.25.15",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

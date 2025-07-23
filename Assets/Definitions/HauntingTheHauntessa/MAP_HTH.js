@@ -1568,7 +1568,7 @@ const MAP = {
         ceil: "RoughCave20",
         start: '[185,7]',
         lights: '[[493,7,"DuaLLantern_029","standardDimmed"],[1627,1,"Candelabra11","standardMuted"],[2950,7,"FluxLight101","standardYellow"],[857,1,"Lights113","standardYellowFaint"]]',
-        gates: '[[10,7,"60.1","59.2","Closed"],[1333,7,"60.2","59.3","Down"],[2207,7,"60.3","59.6","Closed"],[2222,7,"60.4","59.7","Closed"],[430,1,"60.5","62.1","Closed"],[210,5,"60.6","69.1","Green"],[230,3,"60.7","70.1","Up"],[1553,3,"60.8","71.1","Closed"],[1533,5,"60.9","72.1","Closed"]]',
+        gates: '[[10,7,"60.1","59.2","Closed"],[1333,7,"60.2","59.3","Down"],[2207,7,"60.3","59.6","Closed"],[2222,7,"60.4","59.7","Closed"],[430,1,"60.5","62.1","Closed"],[210,5,"60.6","69.1","Green"],[230,3,"60.7","70.1","Up"],[1553,3,"60.8","71.1","Closed"],[1533,5,"60.9","72.1","Closed"],[1753,1,"60.10","73.1","Closed"],[2627,1,"60.11","74.1","Closed"],[2643,1,"60.12","75.1","Closed"]]',
         keys: '[[352,3]]',
         doors: '[311]',
     }
@@ -1764,7 +1764,7 @@ const MAP = {
         trainers: '[[8,7,"DaggerElle"]]',
     }
     ,
-    72 : {
+    72: {
         name: "FishNette",
         sg: 0,
         maxSpawned: -1,
@@ -1779,5 +1779,58 @@ const MAP = {
         lights: '[[2677,7,"FluxLight107","standardYellow"],[2857,5,"FluxLight106","standardYellow"],[2875,3,"Lights114","standardYellow"],[3076,1,"Lamp53","standardYellow"]]',
         gates: '[[2435,3,"72.1","60.9","Closed"]]',
         entities: '[[2415,5,"FishNetty"]]',
+    }
+    ,
+    73: {
+        name: "Vampyra",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"19","height":"19","depth":2,"map":"BB4AA3BAA2BABAA3BB2AA3BAA2BB3AA13BAA4BAA2BAA3BB2AA2BABAA3BAA11BB3AA4BABABB2AA3BAA2BABB3ABB3ABABB5ABABB4ABAEABB5ABB2AA2BABAA2BB2AA2BB7ABB2ABB8ABABAA3BABABB2AA2BB4AA4BAA2BB2AA3BABB6AA4BB2ABB2AA2BAA2BB2AA2BB3ABB5AA2BB4AA3BABAA3BB2ABB4AA5BB2ABAA2BB3ABB3AA2BB2ABAA3BABB2ABABB2AA2BB3ABABB2AA2BAA3BABAA2BB5AA4BAA2BB2ABB2ABB5ABB3ABB29$BB218ÁABB44ÁÁ2BÁÁ2BB60ÁÁ2BB5AÁÁ4BB3ÁÁ12BB4"}',
+        wall: "DarkWAll43234",
+        floor: "RedMArbleFloor5",
+        ceil: "BloodMarbleFloorWall_SDXL_027",
+        start: '[22,7]',
+        lights: '[[420,7,"Candle56","standardYellowFaint"],[422,7,"Candle56","standardYellowFaint"]]',
+        gates: '[[3,7,"73.1","60.10","Closed"]]',
+        doors: '[83]',
+    }
+    ,
+    74: {
+        name: "Pool",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"17","height":"17","depth":4,"map":"BB5AA15BB7ABAA39ŁAA22ÁAA13BÁAÁAA2ÁÁ6AA12BB8AA12BB2AA10BAA9BB63ABB7ABB5AA3BB8AA7BABB2ABB33AA8BB7ABB86ÁBB43AÁBB18$BB21ABB163ÁÁ10BB27ÁÁ12BB77ÁÁ264AA9ÁÁ48BÁBB10ÁÁ25BB13ɁсࡁB"}',
+        wall: "BigGreyBricks1",
+        floor: "BloodMarbleFloorWall_SDXL_016",
+        ceil: "ShinyCeiling",
+        start: '[319,7]',
+        decals: '[[76,4,"Water32","texture"],[77,4,"Water32","texture"],[78,4,"Water32","texture"],[79,4,"Water32","texture"],[80,4,"Water32","texture"],[89,4,"Water32","texture"],[90,4,"Water32","texture"],[91,4,"Water32","texture"],[92,4,"Water32","texture"],[93,4,"Water32","texture"],[94,4,"Water32","texture"],[95,4,"Water32","texture"],[96,4,"Water32","texture"],[97,4,"Water32","texture"],[106,4,"Water32","texture"],[107,4,"Water32","texture"],[108,4,"Water32","texture"],[109,4,"Water32","texture"],[110,4,"Water32","texture"],[111,4,"Water32","texture"],[112,4,"Water32","texture"],[113,4,"Water32","texture"],[114,4,"Water32","texture"],[131,4,"Water32","texture"],[130,4,"Water32","texture"],[129,4,"Water32","texture"],[128,4,"Water32","texture"],[127,4,"Water32","texture"],[126,4,"Water32","texture"],[125,4,"Water32","texture"],[124,4,"Water32","texture"],[123,4,"Water32","texture"],[140,4,"Water32","texture"],[141,4,"Water32","texture"],[142,4,"Water32","texture"],[143,4,"Water32","texture"],[144,4,"Water32","texture"],[145,4,"Water32","texture"],[146,4,"Water32","texture"],[147,4,"Water32","texture"],[148,4,"Water32","texture"],[165,4,"Water32","texture"],[164,4,"Water32","texture"],[163,4,"Water32","texture"],[162,4,"Water32","texture"],[161,4,"Water32","texture"],[160,4,"Water32","texture"],[159,4,"Water32","texture"],[158,4,"Water32","texture"],[157,4,"Water32","texture"],[174,4,"Water32","texture"],[175,4,"Water32","texture"],[191,4,"Water32","texture"],[192,4,"Water32","texture"],[209,4,"Water32","texture"],[208,4,"Water32","texture"],[210,4,"Water32","texture"],[193,4,"Water32","texture"],[176,4,"Water32","texture"],[177,4,"Water32","texture"],[194,4,"Water32","texture"],[211,4,"Water32","texture"],[212,4,"Water32","texture"],[195,4,"Water32","texture"],[178,4,"Water32","texture"],[179,4,"Water32","texture"],[196,4,"Water32","texture"],[213,4,"Water32","texture"],[214,4,"Water32","texture"],[197,4,"Water32","texture"],[180,4,"Water32","texture"],[181,4,"Water32","texture"],[198,4,"Water32","texture"],[215,4,"Water32","texture"],[216,4,"Water32","texture"],[199,4,"Water32","texture"],[182,4,"Water32","texture"]]',
+        lights: '[[729,3,"Lights108","standard2"],[715,5,"Candelabra08","standardDimmed"]]',
+        gates: '[[302,7,"74.1","60.11","Closed"]]',
+        objects: '[[144,"TropicalFish"]]',
+    }
+    ,
+    75 : {
+        name: "Tridenta",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"19","height":"19","depth":2,"map":"BB3AA3BB2ABABB4AA4EAA3EBB2AA3BB2AA2EBB4ABABB3ABB3AA2BB3AA11EAA14BB2AA4BAA5BB2ABAA4BAA6BB2ABB2EBB2ABB3ABB2AA2BAA5BABAA2BB7AA3BAA2BB6ABABB3AA2BABB2AA5BB3ABABABB3ABAA2BB3EBB3AA4BABB2AA2BB2AA2BABB6AA2BB2AA2BB2ABB2ABABB2ABABB3AA2BAA2BAA5EBB2ABB5ABB2AA2BB4ABB4AA3BB2ABB2ABB2AA6BABB9ABABB2AA2BABB3ABB2ABB13ABB17ÁB$ÁBB64ABB13ÁBB91ÁÁ2BB23ÁBB4ÁÁ4BB61ABB11ABB13ÁBB3ÁÁ4BB23AA5BB2ÁÁ30BB15"}',
+        wall: "DarkBricks1202",
+        floor: "MarbleTiles1001",
+        ceil: "Cracked07",
+        start: '[199,7]',
+        lights: '[[161,7,"FireplaceFLuxU412","fireplaceDim"]]',
+        gates: '[[2,7,"75.1","60.12","Closed"]]',
+        doors: '[62,116,51,336,249,177,183]',
+        entities: '[[275,1,"Tridenta"]]',
         }
 };

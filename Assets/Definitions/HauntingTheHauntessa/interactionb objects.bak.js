@@ -137,17 +137,7 @@ const INTERACTION_OBJECT = {
         inventorySprite: "CrystallBall",
         text: "Oh, crystall ball? I can see the future. Bad for Ghostface."
     },
-    Shield: {
-        name: "Shield",
-        category: "interaction_item",
-        element: "SHIELD",
-        scale: 1 / 2 ** 5,
-        glueToFloor: true,
-        texture: "ScrapedMetal",
-        inventorySprite: "Shield",
-        material: MATERIAL.silver,
-        text: "I'll put that shield in the bag."
-    },
+    
 
     
     IceCube: {
