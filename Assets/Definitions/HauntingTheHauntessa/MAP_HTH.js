@@ -1521,7 +1521,7 @@ const MAP = {
         oracles: '[[113,3,"StaircaseTransa"]]',
     }
     ,
-    58: {
+    58 : {
         name: "Scroll Market",
         sg: 0,
         maxSpawned: -1,
@@ -1535,7 +1535,8 @@ const MAP = {
         start: '[718,3]',
         lights: '[[440,3,"Candle63","standardYellowDim"],[1009,3,"Lamp43","standardYellowSoft"],[962,1,"Candle72","standardYellowSoft"],[1064,7,"FluxLight124","standardYellowSoft"]]',
         gates: '[[152,3,"58.1","56.3","Closed"]]',
-    }
+        shrines: '[[714,5,"BoostWeaponScrollSeller"],[721,3,"BlackWeaponScrollSeller"],[586,7,"InvisibilityScrollSeller2"],[858,1,"InvisibilityScrollSeller1"],[582,7,"ArmorScrollSeller2"],[854,1,"ArmorScrollSeller1"]]',
+        }
     ,
     59: {
         name: "Light Tower",
@@ -1550,7 +1551,8 @@ const MAP = {
         ceil: "GoldBlackSDXL348",
         start: '[31,7]',
         lights: '[[2425,3,"Candelabra03","standardSoft"],[1102,1,"DuaLLantern_020","standardSoft"],[1102,7,"DuaLLantern_015","standardSoft"],[124,3,"Fireplace207","fireplace"],[334,3,"Fireplace206","fireplace"],[106,5,"FireplaceFLuxU417","fireplace"],[316,5,"Fireplace202","fireplace"]]',
-        gates: '[[10,7,"59.1","56.4","Closed"],[430,1,"59.2","60.1","Closed"],[1312,1,"59.3","60.2","Up"],[892,7,"59.4","61.1","Closed"],[2207,7,"59.5","61.2","Closed"],[2628,1,"59.6","60.3","Closed"],[2643,1,"59.7","60.4","Closed"],[210,5,"59.8","63.1","Closed"],[230,3,"59.9","68.1","Closed"]]',
+        gates: '[[10,7,"59.1","56.4","Closed"],[430,1,"59.2","60.1","Closed"],[1312,1,"59.3","60.2","Up"],[892,7,"59.4","61.1","Closed"],[2207,7,"59.5","61.2","Closed"],[2628,1,"59.6","60.3","Closed"],[2643,1,"59.7","60.4","Closed"],[210,5,"59.8","63.1","Closed"],[230,3,"59.9","68.1","Closed"],[1092,5,"59.10","76.1","Purple"]]',
+        keys: '[[1081,6]]',
         doors: '[157]',
         triggers: '[[2543,7,"SmoothWallButton",0,2420],[2374,5,"SmoothWallButton",0,2419],[2458,5,"SmoothWallButton",0,2421]]',
     }
@@ -1796,9 +1798,10 @@ const MAP = {
         lights: '[[420,7,"Candle56","standardYellowFaint"],[422,7,"Candle56","standardYellowFaint"]]',
         gates: '[[3,7,"73.1","60.10","Closed"]]',
         doors: '[83]',
+        entities: '[[174,1,"Vampyra"]]',
     }
     ,
-    74: {
+    74 : {
         name: "Pool",
         sg: 0,
         maxSpawned: -1,
@@ -1810,13 +1813,15 @@ const MAP = {
         floor: "BloodMarbleFloorWall_SDXL_016",
         ceil: "ShinyCeiling",
         start: '[319,7]',
-        decals: '[[76,4,"Water32","texture"],[77,4,"Water32","texture"],[78,4,"Water32","texture"],[79,4,"Water32","texture"],[80,4,"Water32","texture"],[89,4,"Water32","texture"],[90,4,"Water32","texture"],[91,4,"Water32","texture"],[92,4,"Water32","texture"],[93,4,"Water32","texture"],[94,4,"Water32","texture"],[95,4,"Water32","texture"],[96,4,"Water32","texture"],[97,4,"Water32","texture"],[106,4,"Water32","texture"],[107,4,"Water32","texture"],[108,4,"Water32","texture"],[109,4,"Water32","texture"],[110,4,"Water32","texture"],[111,4,"Water32","texture"],[112,4,"Water32","texture"],[113,4,"Water32","texture"],[114,4,"Water32","texture"],[131,4,"Water32","texture"],[130,4,"Water32","texture"],[129,4,"Water32","texture"],[128,4,"Water32","texture"],[127,4,"Water32","texture"],[126,4,"Water32","texture"],[125,4,"Water32","texture"],[124,4,"Water32","texture"],[123,4,"Water32","texture"],[140,4,"Water32","texture"],[141,4,"Water32","texture"],[142,4,"Water32","texture"],[143,4,"Water32","texture"],[144,4,"Water32","texture"],[145,4,"Water32","texture"],[146,4,"Water32","texture"],[147,4,"Water32","texture"],[148,4,"Water32","texture"],[165,4,"Water32","texture"],[164,4,"Water32","texture"],[163,4,"Water32","texture"],[162,4,"Water32","texture"],[161,4,"Water32","texture"],[160,4,"Water32","texture"],[159,4,"Water32","texture"],[158,4,"Water32","texture"],[157,4,"Water32","texture"],[174,4,"Water32","texture"],[175,4,"Water32","texture"],[191,4,"Water32","texture"],[192,4,"Water32","texture"],[209,4,"Water32","texture"],[208,4,"Water32","texture"],[210,4,"Water32","texture"],[193,4,"Water32","texture"],[176,4,"Water32","texture"],[177,4,"Water32","texture"],[194,4,"Water32","texture"],[211,4,"Water32","texture"],[212,4,"Water32","texture"],[195,4,"Water32","texture"],[178,4,"Water32","texture"],[179,4,"Water32","texture"],[196,4,"Water32","texture"],[213,4,"Water32","texture"],[214,4,"Water32","texture"],[197,4,"Water32","texture"],[180,4,"Water32","texture"],[181,4,"Water32","texture"],[198,4,"Water32","texture"],[215,4,"Water32","texture"],[216,4,"Water32","texture"],[199,4,"Water32","texture"],[182,4,"Water32","texture"]]',
+        decals: '[[76,4,"Water32","texture"],[77,4,"Water32","texture"],[78,4,"Water32","texture"],[79,4,"Water32","texture"],[80,4,"Water32","texture"],[89,4,"Water32","texture"],[90,4,"Water32","texture"],[91,4,"Water32","texture"],[92,4,"Water32","texture"],[93,4,"Water32","texture"],[94,4,"Water32","texture"],[95,4,"Water32","texture"],[96,4,"Water32","texture"],[97,4,"Water32","texture"],[106,4,"Water32","texture"],[107,4,"Water32","texture"],[108,4,"Water32","texture"],[109,4,"Water32","texture"],[110,4,"Water32","texture"],[111,4,"Water32","texture"],[112,4,"Water32","texture"],[113,4,"Water32","texture"],[114,4,"Water32","texture"],[131,4,"Water32","texture"],[130,4,"Water32","texture"],[129,4,"Water32","texture"],[128,4,"Water32","texture"],[127,4,"Water32","texture"],[126,4,"Water32","texture"],[125,4,"Water32","texture"],[124,4,"Water32","texture"],[123,4,"Water32","texture"],[140,4,"Water32","texture"],[141,4,"Water32","texture"],[142,4,"Water32","texture"],[143,4,"Water32","texture"],[144,4,"Water32","texture"],[145,4,"Water32","texture"],[146,4,"Water32","texture"],[147,4,"Water32","texture"],[148,4,"Water32","texture"],[165,4,"Water32","texture"],[164,4,"Water32","texture"],[163,4,"Water32","texture"],[162,4,"Water32","texture"],[161,4,"Water32","texture"],[160,4,"Water32","texture"],[159,4,"Water32","texture"],[158,4,"Water32","texture"],[157,4,"Water32","texture"],[174,4,"Water32","texture"],[175,4,"Water32","texture"],[191,4,"Water32","texture"],[192,4,"Water32","texture"],[209,4,"Water32","texture"],[208,4,"Water32","texture"],[210,4,"Water32","texture"],[193,4,"Water32","texture"],[176,4,"Water32","texture"],[177,4,"Water32","texture"],[194,4,"Water32","texture"],[211,4,"Water32","texture"],[212,4,"Water32","texture"],[195,4,"Water32","texture"],[178,4,"Water32","texture"],[179,4,"Water32","texture"],[196,4,"Water32","texture"],[213,4,"Water32","texture"],[214,4,"Water32","texture"],[197,4,"Water32","texture"],[180,4,"Water32","texture"],[181,4,"Water32","texture"],[198,4,"Water32","texture"],[215,4,"Water32","texture"],[216,4,"Water32","texture"],[199,4,"Water32","texture"],[182,4,"Water32","texture"],[314,4,"MarbleTiles1001","texture"]]',
         lights: '[[729,3,"Lights108","standard2"],[715,5,"Candelabra08","standardDimmed"]]',
         gates: '[[302,7,"74.1","60.11","Closed"]]',
+        entities: '[[569,1,"Fisherinne"]]',
         objects: '[[144,"TropicalFish"]]',
-    }
+        oracles: '[[297,7,"BlackBikiniPool"]]',
+        }
     ,
-    75 : {
+    75: {
         name: "Tridenta",
         sg: 0,
         maxSpawned: -1,
@@ -1832,5 +1837,24 @@ const MAP = {
         gates: '[[2,7,"75.1","60.12","Closed"]]',
         doors: '[62,116,51,336,249,177,183]',
         entities: '[[275,1,"Tridenta"]]',
+    }
+    ,
+    76 : {
+        name: "Apparitian Refugees",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"17","height":"17","depth":2,"map":"BB3AA2BABB2AA4BAA8BABAA3BAA2BAA10BB3ABAA4BAA4BB3AA18BB4AA10BB2AA32BB2AA4BB2ABB3ABB2AA5BB2AA11BB8AA2BB9AA4BB11AA2BB4ABAA2BABB4ABB3ABABABB9AA3BAA2BB4ABB2AA2BB2ABB2ABB3AA3BB2ABB4ABAA3BB24$BB36ÁABB65ÁÁ2BÁBÁÁ2BB4ÁÁ5BB30ÁÁ3BB33ÁÁ2BB6ÁÁ54BÁBB2ÁBB5ÁÁ3BÁÁ2BÁÁ13BB2ÁÁ4BÁBÁBB2"}',
+        wall: "LightWallSDXL306",
+        floor: "OrnateFloor101",
+        ceil: "RoughCave16",
+        start: '[151,3]',
+        lights: '[[101,3,"Fireplace01","fireplace"],[203,3,"Fireplace02","fireplace"]]',
+        gates: '[[152,3,"76.1","59.10","Closed"]]',
+        containers: '[[69,"Wardrobe","INTERACTION_ITEM.WhiteDress",1]]',
+        entities: '[[136,5,"ApparitiaHide"],[280,1,"ApparitiaPanties"]]',
+        oracles: '[[8,7,"ApparitiaLessEvil"]]',
         }
 };

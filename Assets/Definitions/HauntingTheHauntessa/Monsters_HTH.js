@@ -29,6 +29,72 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    ArmorScrollSeller2: {
+        name: "ArmorScrollSeller2",
+        sprite: "ArmorScrollSeller2",
+        which: "BoostArmor",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 666,
+        voice: "Female6",
+        text: "Penetration protection. Boost Armor scroll - 666 gold"
+    },
+    ArmorScrollSeller1: {
+        name: "ArmorScrollSeller1",
+        sprite: "ArmorScrollSeller1",
+        which: "BoostArmor",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 666,
+        voice: "Female4",
+        text: "Make yourself hard to penetrate. Boost Armor scroll - 666 gold"
+    },
+    InvisibilityScrollSeller2: {
+        name: "InvisibilityScrollSeller2",
+        sprite: "InvisibilityScrollSeller2",
+        which: "Invisibility",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 999,
+        voice: "FemaleLow3",
+        text: "Do you see how nobody notices me? Invisibility scroll - 999 gold"
+    },
+    InvisibilityScrollSeller1: {
+        name: "InvisibilityScrollSeller1",
+        sprite: "InvisibilityScrollSeller1",
+        which: "Invisibility",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 999,
+        voice: "FemaleVeryLow3",
+        text: "Want to be as invisible as me? Invisibility scroll - 999 gold"
+    },
+    BlackWeaponScrollSeller: {
+        name: "BlackWeaponScrollSeller",
+        sprite: "BlackWeaponScrollSeller",
+        which: "BoostWeapon",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 666,
+        voice: "FemaleHigh4",
+        text: "Boost weapon scroll - 666 gold"
+    },
+    BoostWeaponScrollSeller: {
+        name: "BoostWeaponScrollSeller",
+        sprite: "BoostWeaponScrollSeller",
+        which: "BoostWeapon",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 666,
+        voice: "FemaleHigh3",
+        text: "Boost weapon scroll - 666 gold"
+    },
     LatexHeart: {
         name: "LatexHeart",
         sprite: "LatexHeart",
@@ -484,6 +550,22 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    BlackBikiniPool: {
+        name: "BlackBikiniPool",
+        sprite: "BlackBikiniPool",
+        category: 'crest',
+        voice: "FemaleHigh",
+        text: "I was deceived. There is no sun here. Where are the beaches? I want my money back.",
+        interactionCategory: "oracle",
+    },
+    ApparitiaLessEvil: {
+        name: "ApparitiaLessEvil",
+        sprite: "ApparitiaLessEvil",
+        category: 'crest',
+        voice: "Apparitia",
+        text: "Hauntessa exiled us from the Hauntosphere, because we were not evil enough. Help us, Princess.",
+        interactionCategory: "oracle",
+    },
     StaircaseTransa: {
         name: "StaircaseTransa",
         sprite: "StaircaseTransa",
@@ -3883,6 +3965,19 @@ const INTERACTION_ITEM = {
         text: "Wow, that's hot."
     },
 
+    SunGlasses: {
+        name: "SunGlasses",
+        category: "interaction_item",
+        inventorySprite: "SunGlasses",
+        text: "Fashionable sun glasses."
+    },
+    Cap: {
+        name: "Cap",
+        category: "interaction_item",
+        inventorySprite: "Cap",
+        text: "Baseball cap. I'll go undercover."
+    },
+
 
     //metals
     GoldBar: {
@@ -3915,6 +4010,58 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    Fisherinne: {
+        name: "Fisherinne",
+        sprite: "Fisherinne",
+        category: 'crest',
+        voice: "StrangeFemale",
+        wants: ["Trident"],
+        gives: "Fish",
+        text: {
+            intro: "Get a girl a trident, so she can catch some fish.",
+            progress: null,
+            conclusion: "See? Told you. Here you go, have one."
+        }
+    },
+    ApparitiaPanties: {
+        name: "ApparitiaPanties",
+        sprite: "ApparitiaPanties",
+        category: 'crest',
+        voice: "Apparitia",
+        wants: ["Banknote10", "Banknote10", "Banknote10"],
+        gives: "WhitePanties",
+        text: {
+            intro: "Exiled and broke in the mortal zone, I'll part with my panties, latex and alone.",
+            progress: "Some bank notes has come, but not enough. I need the full sum, times are tough.",
+            conclusion: "Thirty Queensmarks for spectral lace. Take these panties, vanishing with grace."
+        }
+    },
+    ApparitiaHide: {
+        name: "ApparitiaHide",
+        sprite: "ApparitiaHide",
+        category: 'crest',
+        voice: "Apparitia",
+        wants: ["SunGlasses", "Cap"],
+        gives: "WhiteBoots",
+        text: {
+            intro: "The light betrays, my eyes too red. I need a cap to shield my head, and shades to fade into the crowd instead. And the hide from Hauntessa ...",
+            progress: "Part of the look, but not quite complete. I need the full disguise before I retreat.",
+            conclusion: "With cap and glasses, I'm safely unseen. Take these white boots, they're ghostly clean."
+        }
+    },
+    Vampyra: {
+        name: "Vampyra",
+        sprite: "Vampyra",
+        category: 'crest',
+        voice: "FemaleLow6",
+        wants: ["Blood", "Blood", "Blood"],
+        gives: "RedThighHighBoots",
+        text: {
+            intro: "Thirsty again, what a fright. Bring me blood to sip tonight.",
+            progress: "Mmm, a taste... but I need more. I'm not quite ready to part with couture.",
+            conclusion: "Your offering pleased my crimson soul. These boots are yours, now strut and stroll."
+        }
+    },
     Tridenta: {
         name: "Tridenta",
         sprite: "Tridenta",
@@ -3927,7 +4074,7 @@ const INTERACTION_ENTITY = {
             progress: "One's delivered, but that won't do. I need the full set before we're through.",
             conclusion: "You've got the gear, so here's my spear. A trident sharp, go bring some fear. Or catch some fish. Whatever."
         }
-    },    
+    },
     FishNetty: {
         name: "FishNetty",
         sprite: "FishNetty",

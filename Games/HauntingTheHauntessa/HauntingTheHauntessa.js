@@ -77,9 +77,13 @@ const DEBUG = {
             DOEN Emeraldine wants "WhitePanties", "WhiteDress", "WhiteBoots" gives Emerald
             DONE Amethyste wants "YellowDress", "YellowLatexThongs","YellowBoots",gives Amethyst
             DONE FishNette wants "Fish", "TropicalFish" gives EmptyPainting
-        "Vampyra" wants "Blood", "Blood", "Blood" gives RedThighHighBoots
-        Fisherine wants Trident, gives --> Fish
-        ExpelledApparitia wants ---> "WhiteBoots"
+            DONE "Vampyra" wants "Blood", "Blood", "Blood" gives RedThighHighBoots
+            DONE Fisherine wants Trident, gives --> Fish
+            DONE ApparitiaHide wants "SunGlasses", "Cap" ---> "WhiteBoots"
+            DONE ApparitiaPanties wants "Banknote10", "Banknote10","Banknote10"  ---> WhitePanties
+        Ghosthessa wants Candle, Candle, Candle gives SkeletonCat
+        Ghoulinne wants Posion, Poison gives  SkeletonBird
+        YellowaWitness wants .... gives YellowDress
 
         Items:
         GoldCoin
@@ -97,7 +101,7 @@ const DEBUG = {
             DONE JeweledCrown --> MissMuscleSmith(69)
             DONE GoldenGoblet --> Hacker(68)
             DONE EmptyPainting, --> FishNetter (72)
-        RedThighHighBoots --> Vampyra
+            DONE RedThighHighBoots --> Vampyra (73)
         Palette, 
         PaintBrush
             DONE Ruby, ---> RubySilka (67)
@@ -108,23 +112,32 @@ const DEBUG = {
         "GreenPanties", 
         "GreenDress", 
         "GreenBoots"
-        "SkeletonCat",
-        "WhitePanties",
-        "WhiteDress",
-        "WhiteBoots", ---> ExpelledApparitia ()
-        "YellowDress", 
+            DONE "WhitePanties", ---> ApparitiaPanties (76)
+            DONE "WhiteDress", --> (76)
+            DONE "WhiteBoots", ---> ApparitiaHide (76)
+        "YellowDress", ---> YellowaWitness()
         "YellowLatexThongs",
         "YellowBoots"
-        "SkeletonCat", 
-        "SkeletonBird",
+        "SkeletonCat", ---> Ghosthessa()
+        "SkeletonBird", ---> Ghoulinne()
         "Floppy"
         "Floppy"
         "Floppy"
-        "Fish", --> Fisherine
+            DONE "Fish", --> Fisherine(74)
             DONE "TropicalFish" --> (74)
         "BattleAxe", 
         "Shield"
             DONE Trident --> Tridenta (75)
+        "SunGlasses", 
+        "Cap" 
+        Banknote10, 
+        Banknote10,
+        Banknote10
+        Candle, 
+        Candle, 
+        Candle
+        Posion, 
+        Poison
 
 
 
@@ -160,7 +173,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 75; //63
+        GAME.level = 58; //63
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -214,8 +227,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            "Blood", "Blood", "Blood",
-            "BattleAxe", "Shield",
+          
             "GoldCoin",
         ];
 
@@ -340,7 +352,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.25.15",
+    VERSION: "0.25.16",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -2362,7 +2374,7 @@ const TITLE = {
 };
 
 // -- main --
-$(function () {
+$(() => {
     SPEECH.init();
     PRG.INIT();
     PRG.setup();

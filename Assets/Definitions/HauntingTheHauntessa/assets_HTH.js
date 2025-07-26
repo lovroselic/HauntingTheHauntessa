@@ -1214,6 +1214,17 @@ LoadSprites = [
     { srcName: "EntityPictures/FishNetty.jpg", name: "FishNetty" },
     { srcName: "EntityPictures/Tridenta.jpg", name: "Tridenta" },
     { srcName: "EntityPictures/Vampyra.jpg", name: "Vampyra" },
+    { srcName: "EntityPictures/BoostWeaponScrollSeller.jpg", name: "BoostWeaponScrollSeller" },
+    { srcName: "EntityPictures/ApparitiaHide.jpg", name: "ApparitiaHide" },
+    { srcName: "EntityPictures/ApparitiaLessEvil.jpg", name: "ApparitiaLessEvil" },
+    { srcName: "EntityPictures/ApparitiaPanties.jpg", name: "ApparitiaPanties" },
+    { srcName: "EntityPictures/BlackWeaponScrollSeller.jpg", name: "BlackWeaponScrollSeller" },
+    { srcName: "EntityPictures/Fisherinne.jpg", name: "Fisherinne" },
+    { srcName: "EntityPictures/BlackBikiniPool.jpg", name: "BlackBikiniPool" },
+    { srcName: "EntityPictures/InvisibilityScrollSeller2.jpg", name: "InvisibilityScrollSeller2" },
+    { srcName: "EntityPictures/InvisibilityScrollSeller1.jpg", name: "InvisibilityScrollSeller1" },
+    { srcName: "EntityPictures/ArmorScrollSeller1.jpg", name: "ArmorScrollSeller1" },
+    { srcName: "EntityPictures/ArmorScrollSeller2.jpg", name: "ArmorScrollSeller2" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
@@ -1506,6 +1517,8 @@ LoadSprites = [
     { srcName: "Items/TropicalFish.png", name: "TropicalFish" },
     { srcName: "Items/Fish.png", name: "Fish" },
     { srcName: "Items/Shield.png", name: "Shield" },
+    { srcName: "Items/Cap.png", name: "Cap" },
+    { srcName: "Items/SunGlasses.png", name: "SunGlasses" },
 
     //books
     { srcName: "Items/YoniBook.png", name: "YoniBook" },
