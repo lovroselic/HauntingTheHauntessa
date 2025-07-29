@@ -81,9 +81,10 @@ const DEBUG = {
             DONE Fisherine wants Trident, gives --> Fish
             DONE ApparitiaHide wants "SunGlasses", "Cap" ---> "WhiteBoots"
             DONE ApparitiaPanties wants "Banknote10", "Banknote10","Banknote10"  ---> WhitePanties
-        Ghosthessa wants Candle, Candle, Candle gives SkeletonCat
+            DONE Ghosthessa wants Candle, Candle, Candle gives "SkeletonCat"
         Ghoulinne wants Posion, Poison gives  SkeletonBird
         YellowaWitness wants .... gives YellowDress
+        GothProgrammer wants .... gives Floppy
 
         Items:
         GoldCoin
@@ -118,7 +119,7 @@ const DEBUG = {
         "YellowDress", ---> YellowaWitness()
         "YellowLatexThongs",
         "YellowBoots"
-        "SkeletonCat", ---> Ghosthessa()
+            DONE "SkeletonCat", ---> Ghosthessa(77)
         "SkeletonBird", ---> Ghoulinne()
         "Floppy"
         "Floppy"
@@ -173,7 +174,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 58; //63
+        GAME.level = 77; //63
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -227,7 +228,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-          
+            "Candle", "Candle", "Candle",
             "GoldCoin",
         ];
 
@@ -352,7 +353,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.25.16",
+    VERSION: "0.25.17",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

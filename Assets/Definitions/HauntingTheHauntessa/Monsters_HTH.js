@@ -29,6 +29,50 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    HalfLifeScrollSeller: {
+        name: "HalfLifeScrollSeller",
+        sprite: "HalfLifeScrollSeller",
+        which: "HalfLife",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 1999,
+        voice: "FemaleLow3",
+        text: "Siphon their health away? HalfLife scroll - 1999 gold"
+    },
+    VeryLuckyScrollSeller2: {
+        name: "VeryLuckyScrollSeller2",
+        sprite: "VeryLuckyScrollSeller2",
+        which: "VeryLucky",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 777,
+        voice: "FemaleHigh3",
+        text: "Do you want to get lucky? Very Lucky scroll - 777 gold"
+    },
+    VeryLuckyScrollSeller1: {
+        name: "VeryLuckyScrollSeller1",
+        sprite: "VeryLuckyScrollSeller1",
+        which: "VeryLucky",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 777,
+        voice: "FemaleHigh4",
+        text: "Do you want to get lucky? Very Lucky scroll - 777 gold"
+    },
+    DeathScrollSeller: {
+        name: "DeathScrollSeller",
+        sprite: "DeathScrollSeller",
+        which: "Death",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 2999,
+        voice: "FemaleVeryLow6",
+        text: "The art of mass destruction. Death scroll - 2999 gold"
+    },
     ArmorScrollSeller2: {
         name: "ArmorScrollSeller2",
         sprite: "ArmorScrollSeller2",
@@ -550,6 +594,38 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    OldEnoughToUseScrolls: {
+        name: "OldEnoughToUseScrolls",
+        sprite: "OldEnoughToUseScrolls",
+        category: 'crest',
+        voice: "Female6",
+        text: "Are you old enough to use scrolls?",
+        interactionCategory: "oracle",
+    },
+    StackedScroll: {
+        name: "StackedScroll",
+        sprite: "StackedScroll",
+        category: 'crest',
+        voice: "Female4",
+        text: "Some scrolls stack nicely to make you extremelly powerfull.",
+        interactionCategory: "oracle",
+    },
+    ScrollCombo: {
+        name: "ScrollCombo",
+        sprite: "ScrollCombo",
+        category: 'crest',
+        voice: "Female3",
+        text: "Some scrolls are more powerful in combination with other scrolls.",
+        interactionCategory: "oracle",
+    },
+    NotAllScrollsBlackCatsuitDarka: {
+        name: "NotAllScrollsBlackCatsuitDarka",
+        sprite: "NotAllScrollsBlackCatsuitDarka",
+        category: 'crest',
+        voice: "Female5",
+        text: "You can't afford to buy all scrolls. Plan carefully. Play to your strengths. Patch your weaknesses. Hide.",
+        interactionCategory: "oracle",
+    },
     BlackBikiniPool: {
         name: "BlackBikiniPool",
         sprite: "BlackBikiniPool",
@@ -4010,6 +4086,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    Ghostessa: {
+        name: "Ghostessa",
+        sprite: "Ghostessa",
+        category: 'crest',
+        voice: "GhostFace",
+        wants: ["Candle", "Candle", "Candle"],
+        gives: "SkeletonCat",
+        text: {
+            intro: "This crypt's too dark, it's such a strain. More candles please, to light this domain.",
+            progress: "A flicker helps, but I need the glow. Keep them coming to banish shadow.",
+            conclusion: "Now I can see, how quaint is that. Take my dear pet, the Skeleton Cat."
+        }
+    },
     Fisherinne: {
         name: "Fisherinne",
         sprite: "Fisherinne",

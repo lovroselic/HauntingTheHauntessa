@@ -1521,7 +1521,7 @@ const MAP = {
         oracles: '[[113,3,"StaircaseTransa"]]',
     }
     ,
-    58 : {
+    58: {
         name: "Scroll Market",
         sg: 0,
         maxSpawned: -1,
@@ -1533,10 +1533,12 @@ const MAP = {
         floor: "BloodMarbleFloorWall_SDXL_002",
         ceil: "LightWallSDXL306",
         start: '[718,3]',
+        decals: '[[597,7,"BookShelf16","picture"],[601,7,"BookShelf24","picture"],[605,7,"BookShelf25","picture"],[607,7,"BookShelf26","picture"],[609,7,"BookShelf23","picture"],[771,7,"BookShelf16","picture"],[773,7,"BookShelf20","picture"],[776,7,"BookShelf22","picture"],[778,7,"BookShelf18","picture"],[835,1,"BookShelf20","picture"],[838,1,"BookShelf18","picture"],[840,1,"BookShelf19","picture"],[843,1,"BookShelf17","picture"],[845,1,"BookShelf24","picture"],[847,1,"BookShelf17","picture"],[669,1,"BookShelf20","picture"],[671,1,"BookShelf16","picture"],[674,1,"BookShelf16","picture"],[676,1,"BookShelf23","picture"],[630,5,"BookShelf26","picture"],[681,5,"BookShelf18","picture"],[749,5,"BookShelf21","picture"],[800,5,"BookShelf24","picture"],[669,3,"BookShelf22","picture"],[703,3,"BookShelf25","picture"],[737,3,"BookShelf20","picture"],[771,3,"BookShelf26","picture"],[627,3,"BookShelf25","picture"],[661,3,"BookShelf24","picture"],[797,3,"BookShelf25","picture"],[831,3,"BookShelf16","picture"],[712,3,"UnusedEntities5001","picture"],[746,3,"FemDommes_10104","picture"],[729,3,"SeaWolf60","picture"],[704,5,"GemDommes_029","picture"],[738,5,"FemDommes_9039","picture"],[415,5,"FemDommes_18816","picture"],[449,5,"AtariFalcon","picture"],[133,7,"FemDommes_17480","picture"],[167,1,"RetroGames_2017","picture"]]',
         lights: '[[440,3,"Candle63","standardYellowDim"],[1009,3,"Lamp43","standardYellowSoft"],[962,1,"Candle72","standardYellowSoft"],[1064,7,"FluxLight124","standardYellowSoft"]]',
         gates: '[[152,3,"58.1","56.3","Closed"]]',
-        shrines: '[[714,5,"BoostWeaponScrollSeller"],[721,3,"BlackWeaponScrollSeller"],[586,7,"InvisibilityScrollSeller2"],[858,1,"InvisibilityScrollSeller1"],[582,7,"ArmorScrollSeller2"],[854,1,"ArmorScrollSeller1"]]',
-        }
+        shrines: '[[714,5,"BoostWeaponScrollSeller"],[721,3,"BlackWeaponScrollSeller"],[586,7,"InvisibilityScrollSeller2"],[858,1,"InvisibilityScrollSeller1"],[582,7,"ArmorScrollSeller2"],[854,1,"ArmorScrollSeller1"],[646,5,"DeathScrollSeller"],[591,7,"VeryLuckyScrollSeller2"],[863,1,"VeryLuckyScrollSeller1"],[782,5,"HalfLifeScrollSeller"]]',
+        oracles: '[[689,1,"NotAllScrollsBlackCatsuitDarka"],[757,7,"ScrollCombo"],[692,1,"StackedScroll"],[760,7,"OldEnoughToUseScrolls"]]',
+    }
     ,
     59: {
         name: "Light Tower",
@@ -1551,7 +1553,7 @@ const MAP = {
         ceil: "GoldBlackSDXL348",
         start: '[31,7]',
         lights: '[[2425,3,"Candelabra03","standardSoft"],[1102,1,"DuaLLantern_020","standardSoft"],[1102,7,"DuaLLantern_015","standardSoft"],[124,3,"Fireplace207","fireplace"],[334,3,"Fireplace206","fireplace"],[106,5,"FireplaceFLuxU417","fireplace"],[316,5,"Fireplace202","fireplace"]]',
-        gates: '[[10,7,"59.1","56.4","Closed"],[430,1,"59.2","60.1","Closed"],[1312,1,"59.3","60.2","Up"],[892,7,"59.4","61.1","Closed"],[2207,7,"59.5","61.2","Closed"],[2628,1,"59.6","60.3","Closed"],[2643,1,"59.7","60.4","Closed"],[210,5,"59.8","63.1","Closed"],[230,3,"59.9","68.1","Closed"],[1092,5,"59.10","76.1","Purple"]]',
+        gates: '[[10,7,"59.1","56.4","Closed"],[430,1,"59.2","60.1","Closed"],[1312,1,"59.3","60.2","Up"],[892,7,"59.4","61.1","Closed"],[2207,7,"59.5","61.2","Closed"],[2628,1,"59.6","60.3","Closed"],[2643,1,"59.7","60.4","Closed"],[210,5,"59.8","63.1","Closed"],[230,3,"59.9","68.1","Closed"],[1092,5,"59.10","76.1","Purple"],[1112,3,"59.11","77.1","Closed"]]',
         keys: '[[1081,6]]',
         doors: '[157]',
         triggers: '[[2543,7,"SmoothWallButton",0,2420],[2374,5,"SmoothWallButton",0,2419],[2458,5,"SmoothWallButton",0,2421]]',
@@ -1801,7 +1803,7 @@ const MAP = {
         entities: '[[174,1,"Vampyra"]]',
     }
     ,
-    74 : {
+    74: {
         name: "Pool",
         sg: 0,
         maxSpawned: -1,
@@ -1819,7 +1821,7 @@ const MAP = {
         entities: '[[569,1,"Fisherinne"]]',
         objects: '[[144,"TropicalFish"]]',
         oracles: '[[297,7,"BlackBikiniPool"]]',
-        }
+    }
     ,
     75: {
         name: "Tridenta",
@@ -1839,7 +1841,7 @@ const MAP = {
         entities: '[[275,1,"Tridenta"]]',
     }
     ,
-    76 : {
+    76: {
         name: "Apparitian Refugees",
         sg: 0,
         maxSpawned: -1,
@@ -1856,5 +1858,22 @@ const MAP = {
         containers: '[[69,"Wardrobe","INTERACTION_ITEM.WhiteDress",1]]',
         entities: '[[136,5,"ApparitiaHide"],[280,1,"ApparitiaPanties"]]',
         oracles: '[[8,7,"ApparitiaLessEvil"]]',
+    }
+    ,
+    77 : {
+        name: "Old Crypt",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"17","height":"17","depth":4,"map":"BB3AA3BB2AA7BB3ABAA5BB2AA24BAA21ÁABB2AA2BAA3BAA6ÁÁ2AA15BÁÁ2AA6ÁÁ11AÁÁ2AA11ÁÁ6ABB4AA5BB8ABB14AA2BB54ABB14ABB11AA4BB2AA6BB18ABB9AA2BB16AA3BࡁABB6ABB6AA2BB172ÁBB56$BB34ABB36AA2BB83ÁÁ10BAA4ÁAA2BB18ࡁBB18сс2BB19ɁɁ2BB21ÁÁ2BB2ÁÁ4BB21AA5ÁÁ87BÁÁ3BÁÁ13BB2AA2ÁÁ4BÁÁ7BÁÁ15BB2ÁÁ32AÁÁ9BÁBÁÁ9BB3AÁÁ2AÁÁ42AŁAŁÁÁ24AA6BB11ABB2ŁBB2ɁсB"}',
+        wall: "JuggernautDarkwalls_0920",
+        floor: "MarbleFloor1005",
+        ceil: "DarkMossy232",
+        start: '[715,5]',
+        lights: '[[689,3,"Candelabra17","standardYellowDim"],[757,3,"Candelabra17","standardYellowDim"]]',
+        gates: '[[714,5,"77.1","59.11","Closed"]]',
+        entities: '[[139,5,"Ghostessa"]]',
         }
 };

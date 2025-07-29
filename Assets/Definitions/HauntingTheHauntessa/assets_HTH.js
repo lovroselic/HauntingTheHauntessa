@@ -1225,6 +1225,15 @@ LoadSprites = [
     { srcName: "EntityPictures/InvisibilityScrollSeller1.jpg", name: "InvisibilityScrollSeller1" },
     { srcName: "EntityPictures/ArmorScrollSeller1.jpg", name: "ArmorScrollSeller1" },
     { srcName: "EntityPictures/ArmorScrollSeller2.jpg", name: "ArmorScrollSeller2" },
+    { srcName: "EntityPictures/NotAllScrollsBlackCatsuitDarka1.jpg", name: "NotAllScrollsBlackCatsuitDarka" },
+    { srcName: "EntityPictures/DeathScrollSeller.jpg", name: "DeathScrollSeller" },
+    { srcName: "EntityPictures/ScrollCombo.jpg", name: "ScrollCombo" },
+    { srcName: "EntityPictures/StackedScroll.jpg", name: "StackedScroll" },
+    { srcName: "EntityPictures/OldEnoughToUseScrolls.jpg", name: "OldEnoughToUseScrolls" },
+    { srcName: "EntityPictures/VeryLuckyScrollSeller1.jpg", name: "VeryLuckyScrollSeller1" },
+    { srcName: "EntityPictures/VeryLuckyScrollSeller2.jpg", name: "VeryLuckyScrollSeller2" },
+    { srcName: "EntityPictures/HalfLifeScrollSeller.jpg", name: "HalfLifeScrollSeller" },
+    { srcName: "EntityPictures/Ghostessa.jpg", name: "Ghostessa" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
