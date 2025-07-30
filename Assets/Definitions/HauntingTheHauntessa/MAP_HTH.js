@@ -1553,8 +1553,8 @@ const MAP = {
         ceil: "GoldBlackSDXL348",
         start: '[31,7]',
         lights: '[[2425,3,"Candelabra03","standardSoft"],[1102,1,"DuaLLantern_020","standardSoft"],[1102,7,"DuaLLantern_015","standardSoft"],[124,3,"Fireplace207","fireplace"],[334,3,"Fireplace206","fireplace"],[106,5,"FireplaceFLuxU417","fireplace"],[316,5,"Fireplace202","fireplace"]]',
-        gates: '[[10,7,"59.1","56.4","Closed"],[430,1,"59.2","60.1","Closed"],[1312,1,"59.3","60.2","Up"],[892,7,"59.4","61.1","Closed"],[2207,7,"59.5","61.2","Closed"],[2628,1,"59.6","60.3","Closed"],[2643,1,"59.7","60.4","Closed"],[210,5,"59.8","63.1","Closed"],[230,3,"59.9","68.1","Closed"],[1092,5,"59.10","76.1","Purple"],[1112,3,"59.11","77.1","Closed"]]',
-        keys: '[[1081,6]]',
+        gates: '[[10,7,"59.1","56.4","Closed"],[430,1,"59.2","60.1","Closed"],[1312,1,"59.3","60.2","Up"],[892,7,"59.4","61.1","Closed"],[2207,7,"59.5","61.2","Closed"],[2628,1,"59.6","60.3","Closed"],[2643,1,"59.7","60.4","Closed"],[210,5,"59.8","63.1","Closed"],[230,3,"59.9","68.1","Closed"],[1092,5,"59.10","76.1","Purple"],[1112,3,"59.11","77.1","Closed"],[2415,5,"59.12","78.1","Pearl"]]',
+        keys: '[[1081,6],[2426,7]]',
         doors: '[157]',
         triggers: '[[2543,7,"SmoothWallButton",0,2420],[2374,5,"SmoothWallButton",0,2419],[2458,5,"SmoothWallButton",0,2421]]',
     }
@@ -1860,7 +1860,7 @@ const MAP = {
         oracles: '[[8,7,"ApparitiaLessEvil"]]',
     }
     ,
-    77 : {
+    77: {
         name: "Old Crypt",
         sg: 0,
         maxSpawned: -1,
@@ -1875,5 +1875,23 @@ const MAP = {
         lights: '[[689,3,"Candelabra17","standardYellowDim"],[757,3,"Candelabra17","standardYellowDim"]]',
         gates: '[[714,5,"77.1","59.11","Closed"]]',
         entities: '[[139,5,"Ghostessa"]]',
+    }
+    ,
+    78 : {
+        name: "Jumping Is Fun",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"21","height":"21","depth":5,"map":"BB3AA24ÁÁ7AA2ÁÁ3AA5ÁÁ2AA2ÁÁ2AA5BB5AA7ÁAA2BAA3ÁABÁAA15BB2AA2ÁÁ2AA24BB6AA2BB23ABB14AA2ÁBABB8ABB2AÁBB3ÁBAA4BB3ÁÁ2BB41ABB48ÁBB62ÁÁ2BB22ÁBB41ABB70$BB140ÁÁ3BB4ÁÁ3BB3ÁBB4ÁBB2ÁBB6ÁÁ3BB8ÁÁ6BÁBB6ÁÁ3BB4ÁÁ6BB12ÁBÁÁ4BB6ABB2ÁÁ2BÁÁ3BÁÁ18BÁÁ2BB2ÁÁ12BB76ÁÁ3BB101ÁÁ4BB4ÁÁ6BB51ÁÁ14AÁÁ2AA2ÁÁ12BB3ÁÁ77AA5ÁÁ2AA5ÁÁ4AÁAÁÁ10BÁÁ2BÁBB5ÁÁ6BB5ÁÁ45AA2BB2ÁÁ77BB6ÁÁ501BB2ÁÁ10BÁÁ2BÁÁ118AA4ÁÁ4BÁÁ2BB3ÁÁ14BÁÁ18BB3ÁÁ12BB2ÁÁ3AÁÁ9AÁÁ47BÁÁ15BÁÁ29BB2ÁÁ5BB4ÁÁ38BB19ÁBB20ÁÁ2BB4"}',
+        wall: "GoldBlackSDXL347",
+        floor: "FloorTiles_SDXL_001",
+        ceil: "MossyWall111",
+        start: '[1403,5]',
+        lights: '[[1974,5,"DuaLLantern_016","standardRedish"],[1799,7,"Candle67","standardSoft"],[2179,1,"DuaLLantern_011","standardSoft"]]',
+        gates: '[[1553,3,"78.1","59.12","Closed"]]',
+        triggers: '[[1547,4,"SmoothWallButton",0,1545],[1541,4,"SmoothWallButton",0,1538]]',
+        entities: '[[1406,3,"PoisonDrinker"]]',
         }
 };

@@ -185,17 +185,7 @@ const INTERACTION_OBJECT = {
         text: "It's empty? I should write a poem."
     },
 
-    Poison: {
-        name: "Poison",
-        category: "interaction_item",
-        element: "FLASK",
-        scale: 1.1 / 2 ** 5,
-        glueToFloor: true,
-        texture: "GreenMetal",
-        inventorySprite: "Poison",
-        material: MATERIAL.greenFluence,
-        text: "Yikes. Don't drink this. It's deadly."
-    },
+    
     GoldCoin: {
         name: "GoldCoin",
         category: "interaction_item",

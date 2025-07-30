@@ -3042,6 +3042,17 @@ const INTERACTION_OBJECT = {
         material: MATERIAL.silver,
         text: "I'll put that shield in the bag."
     },
+    Poison: {
+        name: "Poison",
+        category: "interaction_item",
+        element: "FLASK",
+        scale: 1.1 / 2 ** 5,
+        glueToFloor: true,
+        texture: "GreenMetal",
+        inventorySprite: "Poison",
+        material: MATERIAL.greenFluence,
+        text: "Yikes. Don't drink this. It's deadly."
+    },
 
     //metals
     GoldSphere: {
@@ -4086,6 +4097,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    PoisonDrinker: {
+        name: "PoisonDrinker",
+        sprite: "PoisonDrinker",
+        category: 'crest',
+        voice: "FemaleLow4",
+        wants: ["Poison","Poison","Poison"],
+        gives: "SkeletonBird",
+        text: {
+            intro: "Poison's my drink, I sip with glee. Skeletons pop out, as you will see.",
+            progress: "A dose delivered, but I crave the thrill. More poison, darling, to get my fill.",
+            conclusion: "You've brought the batch, how very absurd. Here's your reward, a bony bird."
+        }
+    },
     Ghostessa: {
         name: "Ghostessa",
         sprite: "Ghostessa",
