@@ -3648,6 +3648,30 @@ const INTERACTION_ITEM = {
         inventorySprite: "Banknote10",
         text: "That is a lot of money. 10 Castle Marks."
     },
+    Banknote20: {
+        name: "Banknote20",
+        category: "interaction_item",
+        inventorySprite: "Banknote20",
+        text: "That is a lot of money. 20 Castle Marks."
+    },
+    Banknote50: {
+        name: "Banknote50",
+        category: "interaction_item",
+        inventorySprite: "Banknote50",
+        text: "That is a lot of money. 50 Castle Marks."
+    },
+    Banknote100: {
+        name: "Banknote100",
+        category: "interaction_item",
+        inventorySprite: "Banknote100",
+        text: "That is a lot of money. 100 Castle Marks."
+    },
+    Banknote200: {
+        name: "Banknote200",
+        category: "interaction_item",
+        inventorySprite: "Banknote200",
+        text: "That is a lot of money. 200 Castle Marks."
+    },
     Emerald: {
         name: "Emerald",
         category: "interaction_item",
@@ -4146,7 +4170,7 @@ const INTERACTION_ENTITY = {
         text: {
             intro: "Exiled and broke in the mortal zone, I'll part with my panties, latex and alone.",
             progress: "Some bank notes has come, but not enough. I need the full sum, times are tough.",
-            conclusion: "Thirty Queensmarks for spectral lace. Take these panties, vanishing with grace."
+            conclusion: "Thirty castle marks for spectral lace. Take these panties, vanishing with grace."
         }
     },
     ApparitiaHide: {
