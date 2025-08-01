@@ -83,8 +83,9 @@ const DEBUG = {
             DONE ApparitiaPanties wants "Banknote10", "Banknote10","Banknote10"  ---> WhitePanties
             DONE Ghosthessa wants Candle, Candle, Candle gives "SkeletonCat"
             DONE PoisonDrinker wants "Poison","Poison","Poison"  gives  "SkeletonBird"
-        YellowaWitness wants .... gives YellowDress
+        DONE YellowaWitness wants "YellowUmbrella", "YellowWellies" gives YellowDress
         GothProgrammer wants .... gives Floppy
+        PythonProgrammer wants "Computer", "MicroProcessor" gives Floppy
 
         Items:
         GoldCoin
@@ -116,7 +117,7 @@ const DEBUG = {
             DONE "WhitePanties", ---> ApparitiaPanties (76)
             DONE "WhiteDress", --> (76)
             DONE "WhiteBoots", ---> ApparitiaHide (76)
-        "YellowDress", ---> YellowaWitness()
+            DONE "YellowDress", ---> YellowaWitness(79)
         "YellowLatexThongs",
         "YellowBoots"
             DONE "SkeletonCat", ---> Ghosthessa(77)
@@ -137,9 +138,13 @@ const DEBUG = {
         Candle, 
         Candle, 
         Candle
-        Posion, 
+        Poison, 
         Poison
         "Poison"
+        "YellowUmbrella", 
+        "YellowWellies"
+        "Computer", 
+        "MicroProcessor"
 
 
 
@@ -156,11 +161,6 @@ const DEBUG = {
 
         CoinTrainers:
             DaggerElle - attack
-  
-
-        Missing keys:
-            
-         
 
         KEy yet unused:
             Gold
@@ -168,7 +168,6 @@ const DEBUG = {
          
         Missing scrolls:
 
-        Scroll sellers:
             
 
         */
@@ -229,6 +228,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
+            "YellowUmbrella", "YellowWellies",
             "GoldCoin",
         ];
 
@@ -353,7 +353,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.25.20",
+    VERSION: "0.25.21",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

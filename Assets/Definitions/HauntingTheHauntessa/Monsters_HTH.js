@@ -3917,6 +3917,33 @@ const INTERACTION_ITEM = {
         inventorySprite: "Fish",
         text: "Smelly little swimmer."
     },
+    YellowWellies: {
+        name: "YellowWellies",
+        category: "interaction_item",
+        inventorySprite: "YellowWellies",
+        text: "Shiny yellow wellies. I can jump in the puddles. Yeah!"
+    },
+    YellowUmbrella: {
+        name: "YellowUmbrella",
+        category: "interaction_item",
+        inventorySprite: "YellowUmbrella",
+        text: "Nice umbrella. But it doesn rain in this game."
+    },
+
+    Computer: {
+        name: "Computer",
+        category: "interaction_item",
+        inventorySprite: "Computer",
+        text: "Wow, 8 bit computer. Thats so much more than 4."
+    },
+
+    MicroProcessor: {
+        name: "MicroProcessor",
+        category: "interaction_item",
+        inventorySprite: "MicroProcessor",
+        text: "8 bit processor. But does it run Castle Haunt?"
+    },
+
 
     //books
     YoniBook: {
@@ -4075,7 +4102,6 @@ const INTERACTION_ITEM = {
         inventorySprite: "YellowBoots",
         text: "Wow, that's hot."
     },
-
     SunGlasses: {
         name: "SunGlasses",
         category: "interaction_item",
@@ -4121,12 +4147,25 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    YellowasWitness: {
+        name: "YellowasWitness",
+        sprite: "YellowasWitness",
+        category: 'crest',
+        voice: "Female5",
+        wants: ["YellowUmbrella", "YellowWellies"],
+        gives: "YellowDress",
+        text: {
+            intro: "The rain is sin, a wicked mess, no steps outside without my dress! Bring boots and brolly, head to toe, or to the storm I will not go.",
+            progress: "Dry up, dear. I still feel exposed. My look needs more to stay composed.",
+            conclusion: "Now I can preach in style and grace. Take this dress, but mind your pace."
+        }
+    },
     PoisonDrinker: {
         name: "PoisonDrinker",
         sprite: "PoisonDrinker",
         category: 'crest',
         voice: "FemaleLow4",
-        wants: ["Poison","Poison","Poison"],
+        wants: ["Poison", "Poison", "Poison"],
         gives: "SkeletonBird",
         text: {
             intro: "Poison's my drink, I sip with glee. Skeletons pop out, as you will see.",

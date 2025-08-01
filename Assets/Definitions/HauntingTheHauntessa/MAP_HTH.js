@@ -1895,7 +1895,7 @@ const MAP = {
         entities: '[[1406,3,"PoisonDrinker"]]',
     }
     ,
-    79 : {
+    79: {
         name: "Supplies",
         sg: 0,
         maxSpawned: -1,
@@ -1907,7 +1907,9 @@ const MAP = {
         floor: "GoldBlackSDXL346",
         ceil: "IrregularTiledFloorCeil06",
         start: '[137,5]',
+        decals: '[[141,4,"FloorGrille104","crest"],[143,4,"RustyFloorGrille_01","crest"],[145,4,"FloorGrille113","crest"],[147,4,"RustyFloorGrille_03","crest"],[139,4,"RustyFloorGrille_10","crest"]]',
         lights: '[[463,5,"SkullLantern58","standardSoft"],[395,5,"SkullLantern57","standardSoft"],[727,3,"SkullLantern51","standardDim"]]',
         gates: '[[136,5,"79.1","59.13","Closed"]]',
-        }
+        entities: '[[152,3,"YellowasWitness"]]',
+    }
 };
