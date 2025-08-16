@@ -83,9 +83,10 @@ const DEBUG = {
             DONE ApparitiaPanties wants "Banknote10", "Banknote10","Banknote10"  ---> WhitePanties
             DONE Ghosthessa wants Candle, Candle, Candle gives "SkeletonCat"
             DONE PoisonDrinker wants "Poison","Poison","Poison"  gives  "SkeletonBird"
-        DONE YellowaWitness wants "YellowUmbrella", "YellowWellies" gives YellowDress
-        GothProgrammer wants .... gives Floppy
-        PythonProgrammer wants "Computer", "MicroProcessor" gives Floppy
+            DONE YellowaWitness wants "YellowUmbrella", "YellowWellies" gives YellowDress
+            DONE GothicProgrammer wants "OldFloppy", "Joystick", gives Floppy
+            DONE PythonProgrammer wants "Computer", "MicroProcessor" gives Floppy
+    --GoldBikini wants GoldBar, GoldBar, GoldBar gives ....
 
         Items:
         GoldCoin
@@ -122,8 +123,8 @@ const DEBUG = {
         "YellowBoots"
             DONE "SkeletonCat", ---> Ghosthessa(77)
             DONE "SkeletonBird", ---> PoisonDrinker(78)
-        "Floppy"
-        "Floppy"
+            DONE "Floppy" ----> PythonProgrammer (60)
+            DONE "Floppy" ---> GothicProgrammer (60)
         "Floppy"
             DONE "Fish", --> Fisherine(74)
             DONE "TropicalFish" --> (74)
@@ -145,6 +146,8 @@ const DEBUG = {
         "YellowWellies"
         "Computer", 
         "MicroProcessor"
+        "OldFloppy", 
+        "Joystick",
 
 
 
@@ -174,7 +177,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 79; //63
+        GAME.level = 60; //63
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -228,7 +231,8 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            "YellowUmbrella", "YellowWellies",
+            "Computer", "MicroProcessor",
+            "OldFloppy", "Joystick",
             "GoldCoin",
         ];
 
@@ -353,7 +357,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.25.21",
+    VERSION: "0.25.22",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

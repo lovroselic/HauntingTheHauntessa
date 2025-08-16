@@ -3929,19 +3929,29 @@ const INTERACTION_ITEM = {
         inventorySprite: "YellowUmbrella",
         text: "Nice umbrella. But it doesn rain in this game."
     },
-
     Computer: {
         name: "Computer",
         category: "interaction_item",
         inventorySprite: "Computer",
         text: "Wow, 8 bit computer. Thats so much more than 4."
     },
-
     MicroProcessor: {
         name: "MicroProcessor",
         category: "interaction_item",
         inventorySprite: "MicroProcessor",
         text: "8 bit processor. But does it run Castle Haunt?"
+    },
+    OldFloppy: {
+        name: "OldFloppy",
+        category: "interaction_item",
+        inventorySprite: "OldFloppy",
+        text: "Very old 5 and 25 inch floppy, containing Princess Wants Everything game. So rare."
+    },
+    Joystick: {
+        name: "Joystick",
+        category: "interaction_item",
+        inventorySprite: "Joystick",
+        text: "With this joystick I can probably play Galactix."
     },
 
 
@@ -4147,6 +4157,32 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    GothicProgrammer: {
+        name: "GothicProgrammer",
+        sprite: "GothicProgrammer",
+        category: 'crest',
+        voice: "FemaleVeryLow6",
+        wants: ["OldFloppy", "Joystick"],
+        gives: "Floppy",
+        text: {
+            intro: "I dwell in shadows, coding in gloom. Yet I long to play old LaughingSkull tunes. Bring me a creaky joystick and a five and a quarter inch disk, so I may summon pixels from the crypt.",
+            progress: "Half the past is here, but I need the full rite. Without both relics, the game stays in night.",
+            conclusion: "Ah  the old game breathes again. Take this floppy, within lies a fragment of Castle Haunt's reign."
+        }
+    },
+    PythonProgrammer: {
+        name: "PythonProgrammer",
+        sprite: "PythonProgrammer",
+        category: 'crest',
+        voice: "Female6",
+        wants: ["Computer", "MicroProcessor"],
+        gives: "Floppy",
+        text: {
+            intro: "I code in Python, not just the snake. This skin is fashion, make no mistake. I need a retro box, eight bit and sleek, plus a chip upgrade to fix the leak.",
+            progress: "Hmm... part's arrived but still won't boot. Bring the rest to run the loot.",
+            conclusion: "System ready! Here's a floppy from my stash. It's got Castle Haunt, well, part of the flash."
+        }
+    },
     YellowasWitness: {
         name: "YellowasWitness",
         sprite: "YellowasWitness",
