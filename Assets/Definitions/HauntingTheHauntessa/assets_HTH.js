@@ -1238,6 +1238,11 @@ LoadSprites = [
     { srcName: "EntityPictures/YellowasWitness.jpg", name: "YellowasWitness" },
     { srcName: "EntityPictures/PythonProgrammer.jpg", name: "PythonProgrammer" },
     { srcName: "EntityPictures/GothicProgrammer.jpg", name: "GothicProgrammer" },
+    { srcName: "EntityPictures/Goldini.jpg", name: "Goldini" },
+    { srcName: "EntityPictures/Wanda.jpg", name: "Wanda" },
+    { srcName: "EntityPictures/RedHeartelle.jpg", name: "RedHeartelle" },
+    { srcName: "EntityPictures/BlackHeartelle.jpg", name: "BlackHeartelle" },
+    { srcName: "EntityPictures/ArmoredBikini.jpg", name: "ArmoredBikini" },
 
 
     //action movables

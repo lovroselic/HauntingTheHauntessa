@@ -86,7 +86,9 @@ const DEBUG = {
             DONE YellowaWitness wants "YellowUmbrella", "YellowWellies" gives YellowDress
             DONE GothicProgrammer wants "OldFloppy", "Joystick", gives Floppy
             DONE PythonProgrammer wants "Computer", "MicroProcessor" gives Floppy
-    --GoldBikini wants GoldBar, GoldBar, GoldBar gives ....
+            DONE Goldini wants GoldBar, GoldBar, GoldBar gives "GreenBoots"
+    --PaintBrusheress wants ...... gives PaintBrush
+    --MessyClubber wants Comb, Brush, PinkRibbon gives  ....
 
         Items:
         GoldCoin
@@ -94,6 +96,7 @@ const DEBUG = {
         GoldCoin
         GoldCoin
         GoldCoin
+         GoldCoin
             DONE Skull, --> (64)
             DONE Skull, --> (64)
             DONE Skull, --> (64)
@@ -106,15 +109,18 @@ const DEBUG = {
             DONE EmptyPainting, --> FishNetter (72)
             DONE RedThighHighBoots --> Vampyra (73)
         Palette, 
-        PaintBrush
+        $$PaintBrush PaintBrusheress -->()
             DONE Ruby, ---> RubySilka (67)
             DONE Emerald ---> Emeraldine (70)
             DONE Amethyst ---> Amethyste (71)
         SilverBar
         GoldBar
+        "GoldBar", 
+        "GoldBar", 
+        "GoldBar"
         "GreenPanties", 
         "GreenDress", 
-        "GreenBoots"
+            DONE "GreenBoots"--> Goldini(59)
             DONE "WhitePanties", ---> ApparitiaPanties (76)
             DONE "WhiteDress", --> (76)
             DONE "WhiteBoots", ---> ApparitiaHide (76)
@@ -164,6 +170,12 @@ const DEBUG = {
 
         CoinTrainers:
             DaggerElle - attack
+            ArmoredBikini - defense
+            BlackHeartelle - health
+            RedHeartellle - health
+            Wanda - magic
+            
+    -- ManaDrinkDomme
 
         KEy yet unused:
             Gold
@@ -177,7 +189,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 60; //63
+        GAME.level = 63; //63
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -231,8 +243,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            "Computer", "MicroProcessor",
-            "OldFloppy", "Joystick",
+            
             "GoldCoin",
         ];
 
@@ -357,7 +368,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.25.22",
+    VERSION: "0.25.23",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

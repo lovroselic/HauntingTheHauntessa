@@ -4157,6 +4157,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    Goldini: {
+        name: "Goldini",
+        sprite: "Goldini",
+        category: 'crest',
+        voice: "FemaleLow5",
+        wants: ["GoldBar", "GoldBar", "GoldBar"],
+        gives: "GreenBoots",
+        text: {
+            intro: "Gold is my pleasure, gold is my flame. Bars of it feed my lingerie game.",
+            progress: "A shimmer of wealth, but not enough shine. I need more bars to make it divine.",
+            conclusion: "My golden passion is satisfied at last. These green boots? Too drab for my class. Take them and pass."
+        }
+    },
     GothicProgrammer: {
         name: "GothicProgrammer",
         sprite: "GothicProgrammer",
@@ -5122,6 +5135,58 @@ const INTERACTION_ENTITY = {
 };
 
 const INTERACTION_SHRINE = {
+ArmoredBikini: {
+    name: "ArmoredBikini",
+    sprite: "ArmoredBikini",
+    category: 'crest',
+    voice: "Female4",
+    wants: ["GoldCoin"],
+    gives: "Defense",
+    text: {
+        intro: "Steel or silk, it makes no odds, defense is vital, even for the bods in bikinis.",
+        progress: null,
+        conclusion: "For your coin, I've shared my guard. Now you can stand firm, even scantily clad."
+    }
+},
+    BlackHeartelle: {
+    name: "BlackHeartelle",
+    sprite: "BlackHeartelle",
+    category: 'crest',
+    voice: "Female4",
+    wants: ["GoldCoin"],
+    gives: "HeartSkill",
+    text: {
+        intro: "A coin for me, and I'll mend what's torn. Black hearts healed, no longer forlorn.",
+        progress: null,
+        conclusion: "The ache is gone, the pulse made whole. You've gained the strength of a steady soul."
+    }
+},
+RedHeartelle: {
+    name: "RedHeartelle",
+    sprite: "RedHeartelle",
+    category: 'crest',
+    voice: "FemaleVeryLow4",
+    wants: ["GoldCoin"],
+    gives: "HeartSkill",
+    text: {
+        intro: "A single coin, and I'll ease your pain. Red hearts burning, yet whole again.",
+        progress: null,
+        conclusion: "The fire's soothed, your heart beats true. This gift of warmth I've passed to you."
+    }
+},
+    Wanda: {
+        name: "Wanda",
+        sprite: "Wanda",
+        category: 'crest',
+        voice: "FemaleHigh3",
+        wants: ["GoldCoin"],
+        gives: "Magic",
+        text: {
+            intro: "With wand in hand, I spark delight. Bring me a coin, I'll teach you to fight with light.",
+            progress: null,
+            conclusion: "Your coin well spent, now feel the jolt. You've learned the art of the magic bolt."
+        }
+    },
     DaggerElle: {
         name: "DaggerElle",
         sprite: "DaggerElle",

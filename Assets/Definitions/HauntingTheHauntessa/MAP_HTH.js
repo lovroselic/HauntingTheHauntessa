@@ -1557,6 +1557,7 @@ const MAP = {
         keys: '[[1081,6],[2426,7]]',
         doors: '[157]',
         triggers: '[[2543,7,"SmoothWallButton",0,2420],[2374,5,"SmoothWallButton",0,2419],[2458,5,"SmoothWallButton",0,2421]]',
+        entities: '[[283,1,"Goldini"]]',
     }
     ,
     60: {
@@ -1566,16 +1567,17 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"21","height":"21","depth":7,"map":"BB4AA2BB3ABAA2BAA4BB13AA105BABAA2BAA68BAA8ɁABAA15BB2AA2EBB3AA2BAA5ŁAÁAA13сAA5BB2ABB2AA16ÁAA16ÁAÁÁ2AA7BABB4ABB2AA30BAA13BAA9BAA17BB2AA21BABAA21ÁAA3BAA36BAA38ÁAA12BAA8BÁÁ9AA15BB11AA27BAA34BB2ABB2ABB5AA5ÁAA7сAA10ÁBB26ABB2AA2BB2ABB10ABB2AA4BB2AÁBB23AA2BB22ABABB14ABB22ABB2AA2BB15ABB2ABB2AA2BB2ABB2AA2BB20ABB4AA3BABAA10BAA8EAA13BB15ABB3ABB11ABB24ABB25AA2BB8ABB5ABB8ABB61$BB104ÁBB175ÁBB32ÁÁ2BB107ABB32ABB23ABB285ÁBB4ÁÁ2BÁBB4ÁÁ2BB55ÁBB8ÁBB2ÁBB14ÁÁ9BB33ÁBÁBB11ÁÁ13BB2ÁÁ8BB5ÁBB46ÁÁ2BB42ABB60ÁBB37AA2BB2ÁÁ2BB2ÁÁ3BB6ÁÁ2BB3ÁÁ5BB39AA2BÁAÁÁ15BÁÁ6сÁɁࡁBÁÁ13BÁÁ125AÁÁ45BÁÁ30BB2ÁÁ36BB2ÁÁ7BÁBB3AA5ÁÁ13BB2ÁÁ43BÁÁ11BÁÁ35BÁÁ4ABÁÁ12BB2ÁÁ16BÁÁ13ŁAÁÁ2BB4ÁÁ21ࡁÁÁ141BÁÁ10AÁBÁÁ28AA9ÁBB9ÁÁ18BÁÁ19BB22ÁÁ8BB2ÁÁ11BɁABŁÁࡁÁÁ4B"}',
+        data: '{"width":"21","height":"21","depth":7,"map":"BB4AA2BB3ABB2AA2BABAA3BB5ABABAA17BAA14BAA50BAA8BAA3BAA2BAA18BAA49BAA9ɁABAA14BB2AA2EBB3AA2BAA6ŁAÁAA9сAA8BB2ABB2AA17ÁAA12ÁAÁÁ2AA10BABB4ABB2AA27BAA16BAA9BAA14BAA4BB2AA17BAA3BAA13BAA9ÁAA3BAA37BAA41ÁAA8BAA8BÁÁ9AA18BB11AA30BAA32BABB2ABB2ABB5AA5ÁAA7сAA10ÁBB20ABB5ABB2AA2BB2ABB10ABB3AA4BB3AÁBB24AA2BB21ABABB16ABB23ABB2AA3BB12ABABABB2AA2BB2ABB2AA2BB23ABB4AA4BAA6BB3AA8EABB2AA12BB12ABB3ABB2ABB4ABB4ABB8ABB19ABB5ABB18ABB7ABB8ABB5ABB8ABB25$BB131ÁBB175ÁBB32ÁÁ2BB107ABB30ABB26ABB285ÁBB3ÁÁ2BB2ÁBB3ÁÁ2BB56ÁBB8ÁBB2ÁBB14ÁÁ9BB23ÁBB10ÁBÁBB11ÁBÁÁ16BÁÁ3BB6ÁBB46ÁÁ2BB41ABB61ÁBB36AA2BB2ÁÁ2BB3ÁÁ3BB6ÁÁ2BB3ÁÁ5BÁBB37AA2BÁAÁÁ15BÁÁ6сÁɁࡁBÁÁ14BÁÁ126AÁÁ45BÁÁ11BÁÁ19BB2ÁÁ36BB2ÁÁ7BÁBB3AA5ÁÁ13BB2ÁÁ43BÁÁ11BÁÁ35BÁÁ4ABÁÁ12BB2ÁÁ19BÁÁ10ŁAÁÁ2BB4ÁÁ22ࡁÁÁ132BÁÁ7BÁÁ10AÁBÁÁ27AA9ÁBB9ÁÁ17BÁÁ17BB21ÁÁ8BB2ÁÁ11BɁABŁÁࡁÁÁ4B"}',
         wall: "DARKBricks107",
         floor: "MarbleFloor105",
         ceil: "RoughCave20",
-        start: '[1654,7]',
+        start: '[109,3]',
         lights: '[[493,7,"DuaLLantern_029","standardDimmed"],[1627,1,"Candelabra11","standardMuted"],[2950,7,"FluxLight101","standardYellow"],[857,1,"Lights113","standardYellowFaint"]]',
         gates: '[[10,7,"60.1","59.2","Closed"],[1333,7,"60.2","59.3","Down"],[2207,7,"60.3","59.6","Closed"],[2222,7,"60.4","59.7","Closed"],[430,1,"60.5","62.1","Closed"],[210,5,"60.6","69.1","Green"],[230,3,"60.7","70.1","Up"],[1553,3,"60.8","71.1","Closed"],[1533,5,"60.9","72.1","Closed"],[1753,1,"60.10","73.1","Closed"],[2627,1,"60.11","74.1","Closed"],[2643,1,"60.12","75.1","Closed"]]',
         keys: '[[352,3]]',
         doors: '[311,321]',
         entities: '[[423,1,"GothicProgrammer"],[1759,1,"PythonProgrammer"]]',
+        trainers: '[[105,5,"Wanda"]]',
     }
     ,
     61: {
@@ -1601,14 +1603,15 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"19","height":"21","depth":5,"map":"BB2ABAA8BB7AA18BAA20BAA12ŁAɁAA9BABB2AA2ŁAA7сAA4ࡁABAA2BB2AA2ÁBAA15BAA7ÁAÁÁ4AA14ŁAA3BB5AA2BAA3BB9AA8BAA3BB2AA9BABB7AA3BAA13BB48ABB33ABABAA7BB13ABB5ABB3ABB15ABB15AA3BB48ÁBB10ABB4ABB19ABABB3ABB7ABB4AA5BB3AA2BABB11ÁBB28ABB25AA2BB23AA7BB5ABB35$BB32ÁBB246AA2BB50ABB61ABB195ÁBB8ÁBB3ÁBB2ÁÁ11BB35ÁÁ12BB117ÁÁ6BB71ÁBB35ÁÁ138BÁÁ28BÁÁ8BÁÁ78BÁÁ76BB12ÁÁ44AA6ÁBB13ÁÁ27BB7ɁŁɁŁAA3Ɂсс2ɁAŁŁ2сࡁࡁ2сAɁɁ2ࡁсс2ࡁA"}',
+        data: '{"width":"19","height":"21","depth":5,"map":"BB2ABAA8BB7AA18BAA20BAA12ŁAɁAA9BABB2AA2ŁAA7сAA4ࡁABAA2BB2ÁAA2ÁÁ2BAA15BB3AA8ÁAA2ÁÁ2AA14ŁAA5BB3AA2BAA3BABB8AA2BAA5BAA3BB2AA9BABB8AA3BAA13BB50ABB18ABB15ABABB2AA7BB13ABB5AA3BABB16ABB15ABB50ÁBB10ABB3ABB21ABABB2ABB8ABB5AA5BB3AA3BB13ÁBB30ABB27AA2BB7ABB15AA7BB6ABB34$BB33ÁBB227AA2BB50ABB61ABB195ÁBB8ÁBB3ÁBB2ÁÁ11BB35ÁÁ12BB117ÁÁ6BB71ÁBB35ÁÁ138BÁÁ28BÁÁ8BÁÁ78BÁÁ76BB12ÁÁ44AA6ÁBB13ÁÁ27BB7ɁŁɁŁAA3Ɂсс2ɁAŁŁ2сࡁࡁ2сAɁɁ2ࡁсс2ࡁA"}',
         wall: "BrownidhMossy102",
         floor: "WebbedFloor4",
         ceil: "GoldBlackSDXL343",
-        start: '[1529,7]',
-        lights: '[[845,7,"DuaLLantern_009","standard2"],[512,3,"Fireplace103","fireplaceDim"],[494,5,"Fireplace212","fireplaceDim"],[1890,7,"FluxLight106","standardYellow"],[1061,3,"Fireplace208","fireplace"],[1047,5,"FireplaceFLuxU415","fireplace"]]',
+        start: '[472,1]',
+        lights: '[[845,7,"DuaLLantern_009","standard2"],[512,3,"Fireplace103","fireplaceDim"],[494,5,"Fireplace212","fireplaceDim"],[1890,7,"FluxLight106","standardYellow"],[1061,3,"Fireplace208","fireplace"],[1047,5,"FireplaceFLuxU415","fireplace"],[592,1,"FluxLight102","standardFaint"],[604,1,"Lights108","standardFaint"]]',
         gates: '[[9,7,"62.1","60.5","Closed"]]',
         entities: '[[1586,1,"UnderworldDarkQueen"]]',
+        trainers: '[[401,7,"BlackHeartelle"],[415,7,"RedHeartelle"]]',
     }
     ,
     63: {
@@ -1618,7 +1621,7 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"17","height":"17","depth":3,"map":"BB6ABB4AA9BB8AA13BAA2BB3ABB2ABAA16ŁAA33ɁAA49BABAA15BB55ÁBB26ÁÁ9BÁÁ2BB57ÁBB45AA3BB3ABB7AA6BB2ABB90$BB21ÁBB4AA2BB70AA2BB15ÁÁ10BB68ÁÁ96AA4ÁAA4ÁAÁÁ13AA4ÁÁ55BB11ࡁсBB2"}',
+        data: '{"width":"17","height":"17","depth":3,"map":"BB6ABB4AA9BB8AA13BAA2BB3ABB2ABAA16ŁAA33ɁAA49BB2ABB2AA15BB59ÁBB28ÁÁ9BÁÁ2BB65ÁBB51AA3BB3ABB9AA6BB4AA2BB6ABB44$BB27ABB10ÁABB70AA2BB15ÁÁ10BB68ÁÁ96AA4ÁAA4ÁAÁÁ13AA4ÁÁ55BB11ࡁсBB2"}',
         wall: "GreyWall101",
         floor: "MossyPattern1",
         ceil: "SmallBlackBricks48",
@@ -1626,6 +1629,7 @@ const MAP = {
         lights: '[[440,3,"Candle62","standard2"],[566,1,"Fireplace202","fireplace"],[294,7,"Fireplace208","fireplace"]]',
         gates: '[[152,3,"63.1","59.8","Closed"]]',
         entities: '[[425,5,"PainterElle"]]',
+        trainers: '[[12,7,"ArmoredBikini"]]',
     }
     ,
     64: {
