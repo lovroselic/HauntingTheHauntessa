@@ -3821,6 +3821,12 @@ const INTERACTION_ITEM = {
         inventorySprite: "RedLeatherHat",
         text: "Too big for my cute small head."
     },
+    RedFin: {
+        name: "RedFin",
+        category: "interaction_item",
+        inventorySprite: "RedFin",
+        text: "A red fin. For scuba diving. But noth without the pair."
+    },
     Fins: {
         name: "Fins",
         category: "interaction_item",
@@ -3953,6 +3959,19 @@ const INTERACTION_ITEM = {
         inventorySprite: "Joystick",
         text: "With this joystick I can probably play Galactix."
     },
+    PurpleLatexBra: {
+        name: "PurpleLatexBra",
+        category: "interaction_item",
+        inventorySprite: "PurpleLatexBra",
+        text: "Sexy stuff. I should wear these. Maybe in the next game?"
+    },
+    PinkPanties: {
+        name: "PinkPanties",
+        category: "interaction_item",
+        inventorySprite: "PinkPanties",
+        text: "Sexy stuff. I should wear these. Maybe in the next game?"
+    },
+
 
 
     //books
@@ -4124,7 +4143,24 @@ const INTERACTION_ITEM = {
         inventorySprite: "Cap",
         text: "Baseball cap. I'll go undercover."
     },
-
+    Comb: {
+        name: "Comb",
+        category: "interaction_item",
+        inventorySprite: "Comb",
+        text: "A comb for my messy hair."
+    },
+    HairBrush: {
+        name: "HairBrush",
+        category: "interaction_item",
+        inventorySprite: "Cap",
+        text: "A hair brush for my messy hair."
+    },
+    PinkRibbon: {
+        name: "PinkRibbon",
+        category: "interaction_item",
+        inventorySprite: "PinkRibbon",
+        text: "A pink bow ribbon. I could have pigtails. No. Absolutely not."
+    },
 
     //metals
     GoldBar: {
@@ -4157,6 +4193,45 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    MessyHair: {
+    name: "MessyHair",
+    sprite: "MessyHair",
+    category: 'crest',
+    voice: "FemaleLow2",
+    wants: ["Comb", "HairBrush", "PinkRibbon"],
+    gives: "Banknote10",
+    text: {
+        intro: "You're my hairdresser now, so don't you slip. Fetch the tools and start the trip.",
+        progress: "Better, but not quite there. Keep working those hands through my hair.",
+        conclusion: "Styled to perfection, ribbons in place. Here's your pay, now give me some space."
+    }
+},
+    ScubaDiveress: {
+        name: "ScubaDiveress",
+        sprite: "ScubaDiveress",
+        category: 'crest',
+        voice: "FemaleHigh3",
+        wants: ["RedFin", "RedFin"],
+        gives: "SunGlasses",
+        text: {
+            intro: "Only Fins. You know the deal. Bring me two, let's make it real.",
+            progress: "One fin is cute, but I won't dive yet. Keep swimming, darling, I'm not wet.",
+            conclusion: "Two fins in place, my show is done. Take these shades, I've no need for sun."
+        }
+    },
+    Brushelle: {
+        name: "Brushelle",
+        sprite: "Brushelle",
+        category: 'crest',
+        voice: "FemaleHigh3",
+        wants: ["RedLeatherBoots", "PurpleLatexBra", "PinkPanties"],
+        gives: "PaintBrush",
+        text: {
+            intro: "I'm done with canvas, bored of the hue. Fashion is brighter, I want something new!",
+            progress: "One shade's nice, but I need the spree. Bring more colors to dazzle me!",
+            conclusion: "Now I'm dressed in a rainbow's crush. Take my old tool, this paintbrush."
+        }
+    },
     Goldini: {
         name: "Goldini",
         sprite: "Goldini",
@@ -5135,45 +5210,58 @@ const INTERACTION_ENTITY = {
 };
 
 const INTERACTION_SHRINE = {
-ArmoredBikini: {
-    name: "ArmoredBikini",
-    sprite: "ArmoredBikini",
-    category: 'crest',
-    voice: "Female4",
-    wants: ["GoldCoin"],
-    gives: "Defense",
-    text: {
-        intro: "Steel or silk, it makes no odds, defense is vital, even for the bods in bikinis.",
-        progress: null,
-        conclusion: "For your coin, I've shared my guard. Now you can stand firm, even scantily clad."
-    }
-},
+    ManaDrinker: {
+        name: "ManaDrinker",
+        sprite: "ManaDrinker",
+        category: 'crest',
+        voice: "FemaleLow2",
+        wants: ["GoldCoin"],
+        gives: "ManaSkill",
+        text: {
+            intro: "Blue fumes swirl within my flask. Pay me a coin, and power will unmask.",
+            progress: null,
+            conclusion: "You’ve sipped the brew, your veins now glow. The deeper magic you now know."
+        }
+    },
+    ArmoredBikini: {
+        name: "ArmoredBikini",
+        sprite: "ArmoredBikini",
+        category: 'crest',
+        voice: "Female4",
+        wants: ["GoldCoin"],
+        gives: "Defense",
+        text: {
+            intro: "Steel or silk, it makes no odds, defense is vital, even for the bods in bikinis.",
+            progress: null,
+            conclusion: "For your coin, I've shared my guard. Now you can stand firm, even scantily clad."
+        }
+    },
     BlackHeartelle: {
-    name: "BlackHeartelle",
-    sprite: "BlackHeartelle",
-    category: 'crest',
-    voice: "Female4",
-    wants: ["GoldCoin"],
-    gives: "HeartSkill",
-    text: {
-        intro: "A coin for me, and I'll mend what's torn. Black hearts healed, no longer forlorn.",
-        progress: null,
-        conclusion: "The ache is gone, the pulse made whole. You've gained the strength of a steady soul."
-    }
-},
-RedHeartelle: {
-    name: "RedHeartelle",
-    sprite: "RedHeartelle",
-    category: 'crest',
-    voice: "FemaleVeryLow4",
-    wants: ["GoldCoin"],
-    gives: "HeartSkill",
-    text: {
-        intro: "A single coin, and I'll ease your pain. Red hearts burning, yet whole again.",
-        progress: null,
-        conclusion: "The fire's soothed, your heart beats true. This gift of warmth I've passed to you."
-    }
-},
+        name: "BlackHeartelle",
+        sprite: "BlackHeartelle",
+        category: 'crest',
+        voice: "Female4",
+        wants: ["GoldCoin"],
+        gives: "HeartSkill",
+        text: {
+            intro: "A coin for me, and I'll mend what's torn. Black hearts healed, no longer forlorn.",
+            progress: null,
+            conclusion: "The ache is gone, the pulse made whole. You've gained the strength of a steady soul."
+        }
+    },
+    RedHeartelle: {
+        name: "RedHeartelle",
+        sprite: "RedHeartelle",
+        category: 'crest',
+        voice: "FemaleVeryLow4",
+        wants: ["GoldCoin"],
+        gives: "HeartSkill",
+        text: {
+            intro: "A single coin, and I'll ease your pain. Red hearts burning, yet whole again.",
+            progress: null,
+            conclusion: "The fire's soothed, your heart beats true. This gift of warmth I've passed to you."
+        }
+    },
     Wanda: {
         name: "Wanda",
         sprite: "Wanda",

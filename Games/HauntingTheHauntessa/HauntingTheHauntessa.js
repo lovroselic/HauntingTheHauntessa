@@ -87,8 +87,9 @@ const DEBUG = {
             DONE GothicProgrammer wants "OldFloppy", "Joystick", gives Floppy
             DONE PythonProgrammer wants "Computer", "MicroProcessor" gives Floppy
             DONE Goldini wants GoldBar, GoldBar, GoldBar gives "GreenBoots"
-    --PaintBrusheress wants ...... gives PaintBrush
-    --MessyClubber wants Comb, Brush, PinkRibbon gives  ....
+            DONE Brushelle wants "RedLeatherBoots", "PurpleLatexBra", "PinkPanties" gives PaintBrush
+            DONE MessyHair wants "Comb", "HairBrush", "PinkRibbon" gives  Banknote10
+            DONE ScubaDiveress wants "RedFin", "RedFin" gives "SunGlasses"
 
         Items:
         GoldCoin
@@ -96,7 +97,7 @@ const DEBUG = {
         GoldCoin
         GoldCoin
         GoldCoin
-         GoldCoin
+        GoldCoin
             DONE Skull, --> (64)
             DONE Skull, --> (64)
             DONE Skull, --> (64)
@@ -109,7 +110,7 @@ const DEBUG = {
             DONE EmptyPainting, --> FishNetter (72)
             DONE RedThighHighBoots --> Vampyra (73)
         Palette, 
-        $$PaintBrush PaintBrusheress -->()
+            DONE PaintBrush Brushelle -->(77)
             DONE Ruby, ---> RubySilka (67)
             DONE Emerald ---> Emeraldine (70)
             DONE Amethyst ---> Amethyste (71)
@@ -137,9 +138,9 @@ const DEBUG = {
         "BattleAxe", 
         "Shield"
             DONE Trident --> Tridenta (75)
-        "SunGlasses", 
+            DONE "SunGlasses", --> ScubaDiveress (74)
         "Cap" 
-        Banknote10, 
+            DONE Banknote10, --> MessyHair(57)
         Banknote10,
         Banknote10
         Candle, 
@@ -154,7 +155,14 @@ const DEBUG = {
         "MicroProcessor"
         "OldFloppy", 
         "Joystick",
-
+        "RedLeatherBoots", 
+        "PurpleLatexBra", 
+        "PinkPanties"
+        "RedFin", 
+        "RedFin"
+        "Comb", 
+        "HairBrush", 
+        "PinkRibbon"
 
 
         Shrines:
@@ -174,8 +182,7 @@ const DEBUG = {
             BlackHeartelle - health
             RedHeartellle - health
             Wanda - magic
-            
-    -- ManaDrinkDomme
+            ManaDrinkDomme - mana
 
         KEy yet unused:
             Gold
@@ -189,7 +196,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 63; //63
+        GAME.level = 57; //63
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -243,8 +250,8 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            
             "GoldCoin",
+   
         ];
 
         for (let itm of invItems) {
@@ -368,7 +375,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.25.23",
+    VERSION: "0.25.24",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
