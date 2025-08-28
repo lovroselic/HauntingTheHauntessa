@@ -3053,6 +3053,17 @@ const INTERACTION_OBJECT = {
         material: MATERIAL.greenFluence,
         text: "Yikes. Don't drink this. It's deadly."
     },
+    IceCube: {
+        name: "IceCube",
+        category: "interaction_item",
+        element: "CUBE_CENTERED",
+        scale: 1.99 / 2 ** 5,
+        glueToFloor: true,
+        texture: "IceTexture",
+        inventorySprite: "IceCube",
+        material: MATERIAL.standardShine,
+        text: "Ice cube. Cold?"
+    },
 
     //metals
     GoldSphere: {
@@ -4059,6 +4070,8 @@ const INTERACTION_ITEM = {
         inventorySprite: "RavenBook",
         text: "It seems like an interesting book, full of ancient knowledge."
     },
+
+    //other
     GreenPanties: {
         name: "GreenPanties",
         category: "interaction_item",
@@ -4193,19 +4206,71 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
-    MessyHair: {
-    name: "MessyHair",
-    sprite: "MessyHair",
+    RedDommeGuard: {
+    name: "RedDommeGuard",
+    sprite: "RedDommeGuard",
     category: 'crest',
-    voice: "FemaleLow2",
-    wants: ["Comb", "HairBrush", "PinkRibbon"],
-    gives: "Banknote10",
+    voice: "Female3",
+    wants: ["Sword", "Shield"],
+    gives: "PinkPanties",
     text: {
-        intro: "You're my hairdresser now, so don't you slip. Fetch the tools and start the trip.",
-        progress: "Better, but not quite there. Keep working those hands through my hair.",
-        conclusion: "Styled to perfection, ribbons in place. Here's your pay, now give me some space."
+        intro: "Standing guard without sword or shield? I need some steel before I yield.",
+        progress: "Half armed now, but still not right. Bring the rest to guard the night.",
+        conclusion: "With sword in hand and shield held tight, take these pink panties, my tribute tonight."
     }
 },
+    BlackDommeGuard: {
+    name: "BlackDommeGuard",
+    sprite: "BlackDommeGuard",
+    category: 'crest',
+    voice: "FemaleLow4",
+    wants: ["Mace", "Shield"],
+    gives: "YellowLatexThongs",
+    text: {
+        intro: "A guard without weapons? What a disgrace. Bring me protection, a shield and a mace.",
+        progress: "One piece helps, but I'm still not set. Bring the rest, I'm not safe yet.",
+        conclusion: "Armed at last, I stand so strong. Take these hot yellow thongs, where they belong."
+    }
+},
+    Libranelle: {
+        name: "Libranelle",
+        sprite: "Libranelle",
+        category: 'crest',
+        voice: "FemaleHigh6",
+        wants: ["RavenBook", "TreeOfLifeBook", "PrincessBook", "OwlBook", "AnkhBook"],
+        gives: "GreenPanties",
+        text: {
+            intro: "Shhh... the library's a holy ground. Return my books that can't be found.",
+            progress: "One tome is back, but shelves still lack. Keep searching, I want the stack.",
+            conclusion: "All my books are safe, you are done . Take my green panties, I never wore one."
+        }
+    },
+    IceWhiskyPrincess: {
+        name: "IceWhiskyPrincess",
+        sprite: "IceWhiskyPrincess",
+        category: 'crest',
+        voice: "FemaleHigh2",
+        wants: ["IceCube", "IceCube", "IceCube"],
+        gives: "YellowUmbrella",
+        text: {
+            intro: "My whisky burns, it's far too hot. Fetch me some ice to cool the shot.",
+            progress: "A cube or two brings slight relief, but I need more to chill my grief.",
+            conclusion: "Finally chilled, my drink's just right. Take this umbrella, I won't need it tonight ... It's too cold to rain."
+        }
+    },
+    MessyHair: {
+        name: "MessyHair",
+        sprite: "MessyHair",
+        category: 'crest',
+        voice: "FemaleLow2",
+        wants: ["Comb", "HairBrush", "PinkRibbon"],
+        gives: "Banknote10",
+        text: {
+            intro: "You're my hairdresser now, so don't you slip. Fetch the tools and start the trip.",
+            progress: "Better, but not quite there. Keep working those hands through my hair.",
+            conclusion: "Styled to perfection, ribbons in place. Here's your pay, now give me some space."
+        }
+    },
     ScubaDiveress: {
         name: "ScubaDiveress",
         sprite: "ScubaDiveress",

@@ -1247,6 +1247,10 @@ LoadSprites = [
     { srcName: "EntityPictures/Brushelle.jpg", name: "Brushelle" },
     { srcName: "EntityPictures/ScubaDiveress.jpg", name: "ScubaDiveress" },
     { srcName: "EntityPictures/MessyHair.jpg", name: "MessyHair" },
+    { srcName: "EntityPictures/IceWhiskyPrincess.jpg", name: "IceWhiskyPrincess" },
+    { srcName: "EntityPictures/Libranelle1.jpg", name: "Libranelle" },
+    { srcName: "EntityPictures/BlackDommeGuard.jpg", name: "BlackDommeGuard" },
+    { srcName: "EntityPictures/RedDommeGuard.jpg", name: "RedDommeGuard" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
@@ -1558,6 +1562,7 @@ LoadSprites = [
     { srcName: "Items/Comb.png", name: "Comb" },
     { srcName: "Items/HairBrush.png", name: "HairBrush" },
     { srcName: "Items/PinkRibbon.png", name: "PinkRibbon" },
+     { srcName: "Items/IceCube2.png", name: "IceCube" },
 
     //books
     { srcName: "Items/YoniBook.png", name: "YoniBook" },

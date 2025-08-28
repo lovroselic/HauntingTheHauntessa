@@ -90,6 +90,11 @@ const DEBUG = {
             DONE Brushelle wants "RedLeatherBoots", "PurpleLatexBra", "PinkPanties" gives PaintBrush
             DONE MessyHair wants "Comb", "HairBrush", "PinkRibbon" gives  Banknote10
             DONE ScubaDiveress wants "RedFin", "RedFin" gives "SunGlasses"
+            DONE IcePrincess wats "IceCube", "IceCube", "IceCube" gives "YellowUmbrella", 
+            DONE Libranelle wants "RavenBook", "TreeOfLifeBook", "PrincessBook", "OwlBook", "AnkhBook" gives "GreenPanties"
+            DONE BlackDommeGuard (56) wants "Mace", "Shield" gives "YellowLatexThongs"
+            DONE RedDommeGuard () wants "Sword", "Shield" give PinkPanties
+        --GreenDommeGuard () wants "Revolver", "Ammo" gives  PurpleLatexBra
 
         Items:
         GoldCoin
@@ -119,14 +124,14 @@ const DEBUG = {
         "GoldBar", 
         "GoldBar", 
         "GoldBar"
-        "GreenPanties", 
+            DONE "GreenPanties", --> Libranelle (56)
         "GreenDress", 
             DONE "GreenBoots"--> Goldini(59)
             DONE "WhitePanties", ---> ApparitiaPanties (76)
             DONE "WhiteDress", --> (76)
             DONE "WhiteBoots", ---> ApparitiaHide (76)
             DONE "YellowDress", ---> YellowaWitness(79)
-        "YellowLatexThongs",
+            DONE "YellowLatexThongs", --> BlackDommeGuard (56)
         "YellowBoots"
             DONE "SkeletonCat", ---> Ghosthessa(77)
             DONE "SkeletonBird", ---> PoisonDrinker(78)
@@ -136,6 +141,10 @@ const DEBUG = {
             DONE "Fish", --> Fisherine(74)
             DONE "TropicalFish" --> (74)
         "BattleAxe", 
+        "Mace"
+        "Sword"
+        "Shield"
+        "Shield"
         "Shield"
             DONE Trident --> Tridenta (75)
             DONE "SunGlasses", --> ScubaDiveress (74)
@@ -149,7 +158,7 @@ const DEBUG = {
         Poison, 
         Poison
         "Poison"
-        "YellowUmbrella", 
+            DONE "YellowUmbrella", ---> IcePrincess (80)
         "YellowWellies"
         "Computer", 
         "MicroProcessor"
@@ -157,12 +166,22 @@ const DEBUG = {
         "Joystick",
         "RedLeatherBoots", 
         "PurpleLatexBra", 
-        "PinkPanties"
+        DONE "PinkPanties" ---> RedDommeGuard(57)
         "RedFin", 
         "RedFin"
         "Comb", 
         "HairBrush", 
         "PinkRibbon"
+        "IceCube", 
+        "IceCube", 
+        "IceCube"
+        "RavenBook", 
+        "TreeOfLifeBook", 
+        "PrincessBook", 
+        "OwlBook", 
+        "AnkhBook"
+        "Revolver", 
+        "Ammo"
 
 
         Shrines:
@@ -196,7 +215,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 57; //63
+        GAME.level = 57; //
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -251,7 +270,9 @@ const DEBUG = {
 
         let invItems = [
             "GoldCoin",
-   
+            "Revolver",
+            "Ammo",
+
         ];
 
         for (let itm of invItems) {
@@ -375,7 +396,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.25.25",
+    VERSION: "0.26.00",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
