@@ -4206,32 +4206,45 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    GreenDommeGuard: {
+    name: "GreenDommeGuard",
+    sprite: "GreenDommeGuard",
+    category: 'crest',
+    voice: "Female5",
+    wants: ["Revolver", "Ammo"],
+    gives: "PurpleLatexBra",
+    text: {
+        intro: "A guard with no gun? That won't do. Fetch me a revolver and bullets too.",
+        progress: "One piece alone won't make me hot. I need the full set to take my shot.",
+        conclusion: "Locked and loaded, I'm ready to spar. Take this bra, it offered less support than you are."
+    }
+},
     RedDommeGuard: {
-    name: "RedDommeGuard",
-    sprite: "RedDommeGuard",
-    category: 'crest',
-    voice: "Female3",
-    wants: ["Sword", "Shield"],
-    gives: "PinkPanties",
-    text: {
-        intro: "Standing guard without sword or shield? I need some steel before I yield.",
-        progress: "Half armed now, but still not right. Bring the rest to guard the night.",
-        conclusion: "With sword in hand and shield held tight, take these pink panties, my tribute tonight."
-    }
-},
+        name: "RedDommeGuard",
+        sprite: "RedDommeGuard",
+        category: 'crest',
+        voice: "Female3",
+        wants: ["Sword", "Shield"],
+        gives: "PinkPanties",
+        text: {
+            intro: "Standing guard without sword or shield? I need some steel before I yield.",
+            progress: "Half armed now, but still not right. Bring the rest to guard the night.",
+            conclusion: "With sword in hand and shield held tight, take these pink panties, my tribute tonight."
+        }
+    },
     BlackDommeGuard: {
-    name: "BlackDommeGuard",
-    sprite: "BlackDommeGuard",
-    category: 'crest',
-    voice: "FemaleLow4",
-    wants: ["Mace", "Shield"],
-    gives: "YellowLatexThongs",
-    text: {
-        intro: "A guard without weapons? What a disgrace. Bring me protection, a shield and a mace.",
-        progress: "One piece helps, but I'm still not set. Bring the rest, I'm not safe yet.",
-        conclusion: "Armed at last, I stand so strong. Take these hot yellow thongs, where they belong."
-    }
-},
+        name: "BlackDommeGuard",
+        sprite: "BlackDommeGuard",
+        category: 'crest',
+        voice: "FemaleLow4",
+        wants: ["Mace", "Shield"],
+        gives: "YellowLatexThongs",
+        text: {
+            intro: "A guard without weapons? What a disgrace. Bring me protection, a shield and a mace.",
+            progress: "One piece helps, but I'm still not set. Bring the rest, I'm not safe yet.",
+            conclusion: "Armed at last, I stand so strong. Take these hot yellow thongs, where they belong."
+        }
+    },
     Libranelle: {
         name: "Libranelle",
         sprite: "Libranelle",

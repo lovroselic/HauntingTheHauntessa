@@ -93,8 +93,8 @@ const DEBUG = {
             DONE IcePrincess wats "IceCube", "IceCube", "IceCube" gives "YellowUmbrella", 
             DONE Libranelle wants "RavenBook", "TreeOfLifeBook", "PrincessBook", "OwlBook", "AnkhBook" gives "GreenPanties"
             DONE BlackDommeGuard (56) wants "Mace", "Shield" gives "YellowLatexThongs"
-            DONE RedDommeGuard () wants "Sword", "Shield" give PinkPanties
-        --GreenDommeGuard () wants "Revolver", "Ammo" gives  PurpleLatexBra
+            DONE RedDommeGuard (57) wants "Sword", "Shield" give PinkPanties
+            DONE GreenDommeGuard (60) wants "Revolver", "Ammo" gives  PurpleLatexBra
 
         Items:
         GoldCoin
@@ -165,8 +165,8 @@ const DEBUG = {
         "OldFloppy", 
         "Joystick",
         "RedLeatherBoots", 
-        "PurpleLatexBra", 
-        DONE "PinkPanties" ---> RedDommeGuard(57)
+            DONE "PurpleLatexBra", ---> GreenDommeGuard (60)
+            DONE "PinkPanties" ---> RedDommeGuard(57)
         "RedFin", 
         "RedFin"
         "Comb", 
@@ -215,7 +215,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 57; //
+        GAME.level = 60; //
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -396,7 +396,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.26.00",
+    VERSION: "0.26.1",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
