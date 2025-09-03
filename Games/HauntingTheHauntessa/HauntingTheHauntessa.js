@@ -294,7 +294,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            "GreenFeather", "BlueFeather", "WhiteFeather", "RedFeather"
+            
         ];
 
         for (let itm of invItems) {
@@ -418,7 +418,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.26.3",
+    VERSION: "0.27.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

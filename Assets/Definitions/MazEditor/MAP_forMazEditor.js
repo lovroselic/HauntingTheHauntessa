@@ -1182,7 +1182,15 @@ const DECAL_PAINTINGS = [
     "FemDommes_22168", "FemDommes_22169", "FemDommes_22170", "FemDommes_22171", "FemDommes_22172", "FemDommes_22173", "FemDommes_22174", "FemDommes_22175", "FemDommes_22176", "FemDommes_22177", "FemDommes_22178", "FemDommes_22179",
     "FemDommes_22180", "FemDommes_22181", "FemDommes_22182", "FemDommes_22183", "FemDommes_22184", "FemDommes_22185", "FemDommes_22186", "FemDommes_22187", "FemDommes_22188", "FemDommes_22189", "FemDommes_22190", "FemDommes_22191",
     "FemDommes_22192", "FemDommes_22193", "FemDommes_22194", "FemDommes_22195", "FemDommes_22196", "FemDommes_22197", "FemDommes_22198", "FemDommes_22199", "FemDommes_22200", "FemDommes_22201", "FemDommes_22202", "FemDommes_22203",
-    "FemDommes_22204", "FemDommes_22205"
+    "FemDommes_22204", "FemDommes_22205",
+    "FemDommes_22300", "FemDommes_22301", "FemDommes_22302", "FemDommes_22303", "FemDommes_22304", "FemDommes_22305", "FemDommes_22306", "FemDommes_22307", "FemDommes_22308", "FemDommes_22309", "FemDommes_22310", "FemDommes_22311",
+    "FemDommes_22312", "FemDommes_22313", "FemDommes_22314", "FemDommes_22315", "FemDommes_22316", "FemDommes_22317", "FemDommes_22318", "FemDommes_22319", "FemDommes_22320", "FemDommes_22321", "FemDommes_22322", "FemDommes_22323",
+    "FemDommes_22324", "FemDommes_22325", "FemDommes_22326", "FemDommes_22327", "FemDommes_22328", "FemDommes_22329", "FemDommes_22330", "FemDommes_22331", "FemDommes_22332", "FemDommes_22333", "FemDommes_22334", "FemDommes_22335",
+    "FemDommes_22336", "FemDommes_22337", "FemDommes_22338", "FemDommes_22339", "FemDommes_22340", "FemDommes_22341", "FemDommes_22342", "FemDommes_22343", "FemDommes_22344", "FemDommes_22345", "FemDommes_22346", "FemDommes_22347",
+    "FemDommes_22348", "FemDommes_22349", "FemDommes_22350", "FemDommes_22351", "FemDommes_22352", "FemDommes_22353", "FemDommes_22354", "FemDommes_22355", "FemDommes_22356", "FemDommes_22357", "FemDommes_22358", "FemDommes_22359",
+    "FemDommes_22360", "FemDommes_22361", "FemDommes_22362", "FemDommes_22363", "FemDommes_22364", "FemDommes_22365", "FemDommes_22366", "FemDommes_22367", "FemDommes_22368", "FemDommes_22369", "FemDommes_22370", "FemDommes_22371",
+    "FemDommes_22372", "FemDommes_22373", "FemDommes_22374", "FemDommes_22375", "FemDommes_22376", "FemDommes_22377", "FemDommes_22378", "FemDommes_22379", "FemDommes_22380", "FemDommes_22381", "FemDommes_22382", "FemDommes_22383",
+    "FemDommes_22384", "FemDommes_22385", "FemDommes_22386", "FemDommes_22387", "FemDommes_22388", "FemDommes_22389", "FemDommes_22390"
 ].sort();
 
 /** Crests */
