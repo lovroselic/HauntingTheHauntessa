@@ -772,6 +772,9 @@ LoadTextures = [
 
     /** decals that are textures */
 
+    /** textures that are walls */
+    { srcName: "Wall/IceTexture.jpg", name: "IceTexture" },
+
     //decal-gates
     { srcName: "Gates/WoodenGate2.jpg", name: "WoodenGate1" },
 
@@ -927,6 +930,9 @@ LoadTextures = [
     { srcName: "ObjectTextures/BloodTexture.jpg", name: "BloodTexture" },
     { srcName: "ObjectTextures/IronTexture.jpg", name: "IronTexture" },
     { srcName: "ObjectTextures/Marble.jpg", name: "Marble" },
+    { srcName: "ObjectTextures/GreenLiquid.jpg", name: "GreenLiquid" },
+    { srcName: "ObjectTextures/BlueLiquid2.jpg", name: "BlueLiquid2" },
+    { srcName: "ObjectTextures/RedLiquid2.jpg", name: "RedLiquid2" },
 
     /** other monster textures */
     { srcName: "ObjectTextures/RedGoldBat.jpg", name: "RedGoldBat" },
@@ -1031,7 +1037,7 @@ LoadObjects = [
     "cake.obj", "steak.obj", "can.obj", "wine.obj",
     "Amanita.obj", "Snail.obj", "Frog.obj",
     "apple.obj", "crown.obj", "dagger.obj", "mushroom.obj", "skull.obj", "Candle.obj",
-    "HornedHelmet.obj", "flask.obj", "pear.obj", "fish.obj",
+    "HornedHelmet.obj", "flask.obj", "pear.obj", "fish.obj", "ErlenFlask.obj",
 ];
 
 LoadModels = [
@@ -1252,6 +1258,11 @@ LoadSprites = [
     { srcName: "EntityPictures/BlackDommeGuard.jpg", name: "BlackDommeGuard" },
     { srcName: "EntityPictures/RedDommeGuard.jpg", name: "RedDommeGuard" },
     { srcName: "EntityPictures/GreenDommeGuard.jpg", name: "GreenDommeGuard" },
+    { srcName: "EntityPictures/BikiniWarrior.jpg", name: "BikiniWarrior" },
+    { srcName: "EntityPictures/RedGyma.jpg", name: "RedGyma" },
+    { srcName: "EntityPictures/MechGirl.jpg", name: "MechGirl" },
+    { srcName: "EntityPictures/RedWellmana.jpg", name: "RedWellmana" },
+    { srcName: "EntityPictures/Apachessa.jpg", name: "Apachessa" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
@@ -1564,6 +1575,15 @@ LoadSprites = [
     { srcName: "Items/HairBrush.png", name: "HairBrush" },
     { srcName: "Items/PinkRibbon.png", name: "PinkRibbon" },
     { srcName: "Items/IceCube2.png", name: "IceCube" },
+    { srcName: "Items/Spear.png", name: "Spear" },
+    { srcName: "Items/RedSneaker.png", name: "RedSneaker" },
+    { srcName: "Items/GreenLiquid.png", name: "GreenLiquid" },
+    { srcName: "Items/RedLiquid.png", name: "RedLiquid" },
+    { srcName: "Items/BlueLiquid.png", name: "BlueLiquid" },
+    { srcName: "Items/GreenFeather.png", name: "GreenFeather" },
+    { srcName: "Items/BlueFeather.png", name: "BlueFeather" },
+    { srcName: "Items/WhiteFeather.png", name: "WhiteFeather" },
+    { srcName: "Items/RedFeather.png", name: "RedFeather" },
 
     //books
     { srcName: "Items/YoniBook.png", name: "YoniBook" },

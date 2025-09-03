@@ -506,42 +506,8 @@ const INTERACTION_ITEM = {
         inventorySprite: "Hazelnuts",
         text: "Hazelnuts. Are there squirrels nearby?"
     },
-    WhiteFeather: {
-        name: "WhiteFeather",
-        category: "interaction_item",
-        inventorySprite: "WhiteFeather",
-        text: "A feather. White."
-    },
-    RedFeather: {
-        name: "RedFeather",
-        category: "interaction_item",
-        inventorySprite: "RedFeather",
-        text: "A feather. Red."
-    },
-    GreenFeather: {
-        name: "GreenFeather",
-        category: "interaction_item",
-        inventorySprite: "GreenFeather",
-        text: "A feather. Green."
-    },
-    BlueFeather: {
-        name: "BlueFeather",
-        category: "interaction_item",
-        inventorySprite: "BlueFeather",
-        text: "A feather. Blue."
-    },
-    Spear: {
-        name: "Spear",
-        category: "interaction_item",
-        inventorySprite: "Spear",
-        text: "Pointy spear. Let's poke someone."
-    },
     
-   
-   
-
-
-
+    
 
     Kiss: {
         name: "Kiss",

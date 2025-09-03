@@ -77,7 +77,7 @@ const LIGHT_COLORS = {
 /** Materials */
 
 const MATERIAL = {
-    VERSION: "1.03",
+    VERSION: "1.04",
     wall: new Material(LIGHT_COLORS.gray, LIGHT_COLORS.lightgray, LIGHT_COLORS.darkgray, 0.8),
     marble: new Material(LIGHT_COLORS.gray, LIGHT_COLORS.lightgray, LIGHT_COLORS.darkgray, 0.85),
     standard: new Material(LIGHT_COLORS.standard, LIGHT_COLORS.standard, LIGHT_COLORS.standard, 0.125),
@@ -91,7 +91,9 @@ const MATERIAL = {
     greenShine: new Material(LIGHT_COLORS.green, LIGHT_COLORS.green, LIGHT_COLORS.green, 0.90),
     greenFluence: new Material(LIGHT_COLORS.green, LIGHT_COLORS.lightGreen, LIGHT_COLORS.green, 0.05),
     blueFluence: new Material(LIGHT_COLORS.lightBlue, LIGHT_COLORS.lightBlue, LIGHT_COLORS.lightBlue, 0.05),
+    blueShine: new Material(LIGHT_COLORS.lightBlue, LIGHT_COLORS.lightBlue, LIGHT_COLORS.lightBlue, 0.90),
     redFluence: new Material(LIGHT_COLORS.fullRed, LIGHT_COLORS.lightRed, LIGHT_COLORS.fullRed, 0.05),
+    redShine: new Material(LIGHT_COLORS.fullRed, LIGHT_COLORS.lightRed, LIGHT_COLORS.fullRed, 0.90),
     emeraldShine: new Material(LIGHT_COLORS.emerald, LIGHT_COLORS.emerald, LIGHT_COLORS.emerald, 0.5),
     whiteShine: new Material(LIGHT_COLORS.white, LIGHT_COLORS.white, LIGHT_COLORS.white, 0.99),
     cyanShine: new Material(LIGHT_COLORS.cyan, LIGHT_COLORS.cyan, LIGHT_COLORS.cyan, 0.99),

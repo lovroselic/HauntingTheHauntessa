@@ -3121,6 +3121,39 @@ const INTERACTION_OBJECT = {
         material: MATERIAL.standard,
         text: "Wow. Infernal red metal.."
     },
+    GreenLiquid: {
+        name: "GreenLiquid",
+        category: "interaction_item",
+        element: "ErlenFlask",
+        scale: 1 / 2 ** 6,
+        glueToFloor: true,
+        texture: "GreenLiquid",
+        inventorySprite: "GreenLiquid",
+        material: MATERIAL.greenShine,
+        text: "A flask of vile looking green liquid."
+    },
+    RedLiquid: {
+        name: "RedLiquid",
+        category: "interaction_item",
+        element: "ErlenFlask",
+        scale: 1 / 2 ** 6,
+        glueToFloor: true,
+        texture: "RedLiquid2",
+        inventorySprite: "RedLiquid",
+        material: MATERIAL.redShine,
+        text: "A flask of vile looking red liquid."
+    },
+    BlueLiquid: {
+        name: "BlueLiquid",
+        category: "BlueLiquid",
+        element: "ErlenFlask",
+        scale: 1 / 2 ** 6,
+        glueToFloor: true,
+        texture: "BlueLiquid",
+        inventorySprite: "BlueLiquid",
+        material: MATERIAL.blueShine,
+        text: "A flask of vile looking blue liquid."
+    },
 };
 
 const MOVABLE_INTERACTION_OBJECT = {
@@ -3982,7 +4015,43 @@ const INTERACTION_ITEM = {
         inventorySprite: "PinkPanties",
         text: "Sexy stuff. I should wear these. Maybe in the next game?"
     },
+    Spear: {
+        name: "Spear",
+        category: "interaction_item",
+        inventorySprite: "Spear",
+        text: "Pointy spear. Let's poke someone."
+    },
+    Dagger: {
+        name: "Dagger",
+        category: "interaction_item",
+        inventorySprite: "Dagger",
+        text: "Sharp dagger."
+    },
+    RedSneaker: {
+        name: "RedSneaker",
+        category: "interaction_item",
+        inventorySprite: "RedSneaker",
+        text: "Red sneaker without pair."
+    },
 
+    GreenLiquid: {
+        name: "GreenLiquid",
+        category: "interaction_item",
+        inventorySprite: "GreenLiquid",
+        text: "A flask of vile looking green liquid."
+    },
+    RedLiquid: {
+        name: "RedLiquid",
+        category: "interaction_item",
+        inventorySprite: "RedLiquid",
+        text: "A flask of vile looking red liquid."
+    },
+    BlueLiquid: {
+        name: "BlueLiquid",
+        category: "interaction_item",
+        inventorySprite: "BlueLiquid",
+        text: "A flask of vile looking blue liquid."
+    },
 
 
     //books
@@ -4174,6 +4243,30 @@ const INTERACTION_ITEM = {
         inventorySprite: "PinkRibbon",
         text: "A pink bow ribbon. I could have pigtails. No. Absolutely not."
     },
+    WhiteFeather: {
+        name: "WhiteFeather",
+        category: "interaction_item",
+        inventorySprite: "WhiteFeather",
+        text: "A feather. White."
+    },
+    RedFeather: {
+        name: "RedFeather",
+        category: "interaction_item",
+        inventorySprite: "RedFeather",
+        text: "A feather. Red."
+    },
+    GreenFeather: {
+        name: "GreenFeather",
+        category: "interaction_item",
+        inventorySprite: "GreenFeather",
+        text: "A feather. Green."
+    },
+    BlueFeather: {
+        name: "BlueFeather",
+        category: "interaction_item",
+        inventorySprite: "BlueFeather",
+        text: "A feather. Blue."
+    },
 
     //metals
     GoldBar: {
@@ -4207,18 +4300,18 @@ const INTERACTION_ITEM = {
 
 const INTERACTION_ENTITY = {
     GreenDommeGuard: {
-    name: "GreenDommeGuard",
-    sprite: "GreenDommeGuard",
-    category: 'crest',
-    voice: "Female5",
-    wants: ["Revolver", "Ammo"],
-    gives: "PurpleLatexBra",
-    text: {
-        intro: "A guard with no gun? That won't do. Fetch me a revolver and bullets too.",
-        progress: "One piece alone won't make me hot. I need the full set to take my shot.",
-        conclusion: "Locked and loaded, I'm ready to spar. Take this bra, it offered less support than you are."
-    }
-},
+        name: "GreenDommeGuard",
+        sprite: "GreenDommeGuard",
+        category: 'crest',
+        voice: "Female5",
+        wants: ["Revolver", "Ammo"],
+        gives: "PurpleLatexBra",
+        text: {
+            intro: "A guard with no gun? That won't do. Fetch me a revolver and bullets too.",
+            progress: "One piece alone won't make me hot. I need the full set to take my shot.",
+            conclusion: "Locked and loaded, I'm ready to spar. Take this bra, it offered less support than you are."
+        }
+    },
     RedDommeGuard: {
         name: "RedDommeGuard",
         sprite: "RedDommeGuard",
@@ -5288,6 +5381,76 @@ const INTERACTION_ENTITY = {
 };
 
 const INTERACTION_SHRINE = {
+    Apachessa: {
+    name: "Apachessa",
+    sprite: "Apachessa",
+    category: 'crest',
+    voice: "Female4",
+    wants: ["GreenFeather", "BlueFeather", "WhiteFeather", "RedFeather"],
+    gives: "Defense",
+    level: 3,
+    text: {
+        intro: "A war bonnet needs colors bold. Bring me feathers green, blue, white, and red untold.",
+        progress: "My bonnet grows, but still not complete. More colors must crown my warrior feat.",
+        conclusion: "The feathers shine, my headdress grand. I'll teach you defense, swift and planned."
+    }
+},
+    RedWellmana: {
+        name: "RedWellmana",
+        sprite: "RedWellmana",
+        category: 'crest',
+        voice: "Female3",
+        wants: ["GreenLiquid", "RedLiquid", "BlueLiquid"],
+        gives: "ManaSkill",
+        level: 3,
+        text: {
+            intro: "Bubble and boil, my cauldron's cue. Bring me green, red, and a vial of blue.",
+            progress: "The brew is stirring, colors collide. But something is missing to turn the tide.",
+            conclusion: "The cauldron sings, the magic flows. Your mana grows as my mixture glows."
+        }
+    },
+    MechGirl: {
+        name: "MechGirl",
+        sprite: "MechGirl",
+        category: 'crest',
+        voice: "GlaDOSHigh",
+        wants: ["MicroProcessor", "MicroProcessor"],
+        gives: "Magic",
+        level: 2,
+        text: {
+            intro: "System lag detected. Insert processors, and my magic will be perfected.",
+            progress: "Installation at fifty percent. More hardware required for full enchantment.",
+            conclusion: "Upgrade complete. Power online. You are now programmed with magic divine."
+        }
+    },
+    RedGyma: {
+        name: "RedGyma",
+        sprite: "RedGyma",
+        category: 'crest',
+        voice: "Female5",
+        wants: ["RedSneaker", "RedSneaker"],
+        gives: "HeartSkill",
+        level: 2,
+        text: {
+            intro: "Trainer chic means red on red. White shoes? No way. Bring me red kicks instead.",
+            progress: "One sneaker's cute, but balance is key. I need the pair to look fit as me.",
+            conclusion: "Now I'm dressed from head to tread. Your health is stronger, just like I said."
+        }
+    },
+    BikiniWarrior: {
+        name: "BikiniWarrior",
+        sprite: "BikiniWarrior",
+        category: 'crest',
+        voice: "Female6",
+        wants: ["Spear", "Dagger"],
+        gives: "Attack",
+        level: 2,
+        text: {
+            intro: "A bikini's fine, but blades are better. Bring me steel, and I'll make you deadlier than ever.",
+            progress: "One weapon's good, but not enough flair. Bring me the rest, if you dare.",
+            conclusion: "Your weapons please me, sharp and true. Now your attack is stronger too."
+        }
+    },
     ManaDrinker: {
         name: "ManaDrinker",
         sprite: "ManaDrinker",

@@ -528,7 +528,15 @@ const WebGL = {
     setDecalTextures() {
         for (const iam of [...WebGL.staticDecalList, ...WebGL.dynamicDecalList, ...WebGL.interactiveDecalList]) {
             for (const decal of iam.POOL) {
-                if (decal) decal.texture = this.createTexture(decal.texture);
+                if (decal) {
+                    try {
+                        decal.texture = this.createTexture(decal.texture);
+                    } catch (error) {
+                        console.error("Decal issues->", decal);
+                        throw error;
+                    }
+                }
+
             }
         }
 

@@ -97,12 +97,12 @@ const DEBUG = {
             DONE GreenDommeGuard (60) wants "Revolver", "Ammo" gives  PurpleLatexBra
 
         Items:
-        GoldCoin
-        GoldCoin
-        GoldCoin
-        GoldCoin
-        GoldCoin
-        GoldCoin
+            DONE GoldCoin --> (56)
+            DONE GoldCoin  --> (59)
+            DONE GoldCoin --> (60)
+            DONE GoldCoin --> (65)
+            DONE GoldCoin ---> (66)
+            DONE GoldCoin --> (67)
             DONE Skull, --> (64)
             DONE Skull, --> (64)
             DONE Skull, --> (64)
@@ -114,74 +114,94 @@ const DEBUG = {
             DONE GoldenGoblet --> Hacker(68)
             DONE EmptyPainting, --> FishNetter (72)
             DONE RedThighHighBoots --> Vampyra (73)
-        Palette, 
+            DONE Palette, --> (56)
             DONE PaintBrush Brushelle -->(77)
             DONE Ruby, ---> RubySilka (67)
             DONE Emerald ---> Emeraldine (70)
             DONE Amethyst ---> Amethyste (71)
-        SilverBar
-        GoldBar
-        "GoldBar", 
-        "GoldBar", 
-        "GoldBar"
+            DONE SilverBar ---> (63)
+            DONE GoldBar ---> (61)
+            DONE "GoldBar", ---> (63)
+            DONE "GoldBar", --> (67)
+            DONE "GoldBar" --> (67)
             DONE "GreenPanties", --> Libranelle (56)
-        "GreenDress", 
+            DONE GreenDress", --> (59)
             DONE "GreenBoots"--> Goldini(59)
             DONE "WhitePanties", ---> ApparitiaPanties (76)
             DONE "WhiteDress", --> (76)
             DONE "WhiteBoots", ---> ApparitiaHide (76)
             DONE "YellowDress", ---> YellowaWitness(79)
             DONE "YellowLatexThongs", --> BlackDommeGuard (56)
-        "YellowBoots"
+            DONE "YellowBoots" --> (60)
             DONE "SkeletonCat", ---> Ghosthessa(77)
             DONE "SkeletonBird", ---> PoisonDrinker(78)
             DONE "Floppy" ----> PythonProgrammer (60)
             DONE "Floppy" ---> GothicProgrammer (60)
-        "Floppy"
+            DONE "Floppy" -->  (61)
             DONE "Fish", --> Fisherine(74)
             DONE "TropicalFish" --> (74)
-        "BattleAxe", 
-        "Mace"
-        "Sword"
-        "Shield"
-        "Shield"
-        "Shield"
+            DONE "BattleAxe", --> (70)
+            DONE "Mace" ---> (71)
+            DONE Sword" -->  (62)
+            DONE "Shield" -->  (62)
+            DONE "Shield" --> (66)
+            DONE "Shield" --> (69)
             DONE Trident --> Tridenta (75)
             DONE "SunGlasses", --> ScubaDiveress (74)
-        "Cap" 
+            DONE "Cap"  ---> (75)
             DONE Banknote10, --> MessyHair(57)
-        Banknote10,
-        Banknote10
-        Candle, 
-        Candle, 
-        Candle
-        Poison, 
-        Poison
-        "Poison"
+            DONE Banknote10, --> (75)
+            DONE Banknote10 ---> (80)
+            DONE Candle, ---> (68)
+            DONE Candle,  --> (72)
+            DONE Candle --> (76)
+            DONE Poison,  --> (80)
+            DONE Poison --> (59)
+            DONE "Poison" ---> (68)
             DONE "YellowUmbrella", ---> IcePrincess (80)
-        "YellowWellies"
-        "Computer", 
-        "MicroProcessor"
-        "OldFloppy", 
-        "Joystick",
-        "RedLeatherBoots", 
+            DONE "YellowWellies"  --> (77)
+            DONE "Computer", --> (67)
+            DONE "MicroProcessor" ---> (69)
+            DONE "OldFloppy", ---> (70)
+            DONE "Joystick", --> (71)
+            DONE "RedLeatherBoots", --> (78)
             DONE "PurpleLatexBra", ---> GreenDommeGuard (60)
             DONE "PinkPanties" ---> RedDommeGuard(57)
-        "RedFin", 
-        "RedFin"
-        "Comb", 
-        "HairBrush", 
-        "PinkRibbon"
-        "IceCube", 
-        "IceCube", 
-        "IceCube"
-        "RavenBook", 
-        "TreeOfLifeBook", 
-        "PrincessBook", 
-        "OwlBook", 
-        "AnkhBook"
-        "Revolver", 
-        "Ammo"
+            DONE "RedFin", --> (73)
+            DONE "RedFin" ---> (68)
+            DONE "Comb", --> (78)
+            DONE "HairBrush", --> (77)
+            DONE "PinkRibbon" --> (73)
+            DONE "IceCube", ---> (60)
+            DONE" IceCube", ---> (60)
+            DONE  "IceCube" ---> (62)
+            DONE "RavenBook",  --> (69)
+            DONE TreeOfLifeBook", --> (70)
+            DONE "PrincessBook", ---> (71)
+            DONE "OwlBook",  ---> (72)
+            DONE "AnkhBook" --> (73)
+            DONE "Revolver", ---> (75)
+            DONE "Ammo" ---> (60)
+            "Spear", 
+            "Dagger",
+            "RedSneaker"
+            "RedSneaker"
+            "MicroProcessor", 
+            "MicroProcessor"
+                DONE "GreenLiquid", ---> (70)
+            "RedLiquid",
+            "BlueLiquid"
+            "GreenFeather", 
+            "BlueFeather", 
+            "WhiteFeather", 
+            "RedFeather"
+
+        Rooms that can have more entities, trainers:
+            56
+            61
+            63
+            71
+            75
 
 
         Shrines:
@@ -192,7 +212,12 @@ const DEBUG = {
             LatexHeart
     
     
-        Trainers
+        Trainers:
+            DONE RedGyma (72) --> health, wants  "RedSneaker",  "RedSneaker"
+            DONE BikiniWarrior (78) --> attack, wants: Spear, Dagger
+            DONE Apachessa (61) --> defense, wants: "GreenFeather", "BlueFeather", "WhiteFeather", "RedFeather"
+            DONE RedWellmana (67)  ---> mana, wants: "GreenLiquid", "RedLiquid", "BlueLiquid"
+            DONE MechGirl magic, wants: "MicroProcessor", "MicroProcessor"
     
 
         CoinTrainers:
@@ -215,7 +240,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 60; //
+        GAME.level = 61; //
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -269,10 +294,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            "GoldCoin",
-            "Revolver",
-            "Ammo",
-
+            "GreenFeather", "BlueFeather", "WhiteFeather", "RedFeather"
         ];
 
         for (let itm of invItems) {
@@ -396,7 +418,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.26.1",
+    VERSION: "0.26.2",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

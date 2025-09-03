@@ -1500,7 +1500,9 @@ const MAP = {
         decals: '[[887,7,"BookShelf16","picture"],[888,7,"BookShelf17","picture"],[889,7,"BookShelf18","picture"],[885,7,"BookShelf19","picture"],[901,5,"BookShelf20","picture"],[919,5,"BookShelf21","picture"],[936,5,"BookShelf22","picture"],[919,1,"BookShelf23","picture"]]',
         lights: '[[620,7,"DuaLLantern_021","standardSoft"],[1113,1,"Candle70","standard"],[494,5,"DuaLLantern_012","standardFaint"],[508,3,"SkullLantern52","standardFaint"]]',
         gates: '[[297,7,"56.1","55.2","Up"],[441,3,"56.2","57.1","Closed"],[425,5,"56.3","58.1","Closed"],[858,1,"56.4","59.1","Pink"],[290,7,"56.5","64.1","Closed"],[304,7,"56.6","65.1","Silver"],[220,3,"56.7","66.1","Closed"],[204,5,"56.8","67.1","Closed"],[1436,1,"56.9","80.1","Up"]]',
+        containers: '[[1045,"TreasureChest","INTERACTION_ITEM.Palette",1]]',
         entities: '[[416,1,"BlondeSkulla"],[869,7,"Libranelle"],[881,7,"BlackDommeGuard"]]',
+        objects: '[[892,"GoldCoin"]]',
     }
     ,
     57: {
@@ -1560,6 +1562,7 @@ const MAP = {
         doors: '[157]',
         triggers: '[[2543,7,"SmoothWallButton",0,2420],[2374,5,"SmoothWallButton",0,2419],[2458,5,"SmoothWallButton",0,2421]]',
         entities: '[[283,1,"Goldini"]]',
+        objects: '[[218,"GoldCoin"],[2426,"GoldCoin"],[1123,"Poison"]]',
     }
     ,
     60: {
@@ -1569,7 +1572,7 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"21","height":"21","depth":7,"map":"BB4AA2BB3ABB3AA2BABAA4BB2ABABAA15BAA12BAA46BAA5BAA4BAA2BAA16BAA7BAA3BAA37BAA10ɁAA2BAA12BB2AA2EBB3AA2BAA7ŁAÁAA8сAA8BB2ABB2AA18ÁAA11ÁÁ3AA11BABB4ABB2AA27BAA16BAA9BAA15BAA4BB2AA16BAA3BAA12BAA10ÁBAA2BABAA37BAA29BAA16ÁAA6BAA8BÁÁ9AA14BAA3BB11AA6BAA12BAA18BAA27BAA3BABB2ABB2ABB5AA5ÁAA7сAA10ÁBB18ABB4ABB2ABB2AA2BB2ABB7ABB2ABB3AA4BB6AÁABB27AA2BB18ABABABB15ABABB15ABB11ABB2AA4BB9ABABABB2AA2BABB2AA2BB18ABB8ABB4AA8BB3AA7EABB2AA2BAA11BB6ABB5ABB3ABB4ABB3ABB3ABB9ABB20ABB3ABB18ABABB15ABB5ABB7ABB26$BB130ÁBB175ÁBB23ÁÁ2BB107ABB30ABB26ABB285ÁBB3ÁÁ2BB2ÁBB3ÁÁ2BB56ÁBB8ÁBB2ÁBB14ÁÁ9BB23ÁBB10ÁBÁBB11ÁBÁÁ16BÁÁ3BB6ÁBB46ÁÁ2BB41ABB61ÁBB36AA2BB2ÁÁ2BB3ÁÁ3BB6ÁÁ2BB3ÁÁ5BÁBB37AA2BÁAÁÁ15BÁÁ6сÁɁࡁBÁÁ14BÁÁ126AÁÁ45BÁÁ11BÁÁ19BB2ÁÁ36BB2ÁÁ7BÁBB3AA5ÁÁ13BB2ÁÁ43BÁÁ11BÁÁ35BÁÁ4ABÁÁ12BB2ÁÁ19BÁÁ10ŁAÁÁ2BB4ÁÁ22ࡁÁÁ132BÁÁ7BÁÁ10AÁBÁÁ27AA9ÁBB9ÁÁ17BÁÁ17BB21ÁÁ8BB2ÁÁ11BɁABŁÁࡁÁÁ4B"}',
+        data: '{"width":"21","height":"21","depth":7,"map":"BB4AA2BB3ABB2AA2BAA5BB3AA13BAA10BAA31BAA11BAA3BABAA2BAA13BAA6BAA35BAA7BAA4ɁABAA8BABAA4EBB3AA3BAA6ŁAÁAA5сAA6BABABB2AA2BAA18ÁAA8ÁÁ3AA10BABB4ABB2AA4BAA13BAA10BB2AA8BB2AA7BAA9BAA24BB3AA14BAA3BAA18BAA9ÁBAA3BABAA29BAA5BAA36BABAA14ÁAA5BAA9BÁÁ9AA15BAA3BB11AA6BAA17BABAA17BAA27BAA3BAA2BB3ABB6AA6ÁAA7сAA10ÁBB19ABB4ABB2AA2BB2ABB3ABB4ABB3AA5BB2AA2BAA2BB8AÁABB28AA2BB3ABB14AA2BABB16ABABB14AA3BABB11ABB2AA2BB6ABB2ABB3ABB2AA2BABB2AA3BB27ABB4AA6BB3AA2BAA6EABB2AA3BB2AA11BB3ABB10ABABB4ABB3ABB4ABB5ABB3ABB2EBB2ABB12ABB3ABB14ABB19ABB7ABB26$BB130ÁBB175ÁBB23ÁÁ2BB107ABB30ABB26ABB285ÁBB3ÁÁ2BB2ÁBB3ÁÁ2BB47ÁBB9ÁBB9ÁBB2ÁBB15ÁÁ9BB24ÁBB11ÁBÁÁ4BB11ÁBÁBÁÁ11BÁÁ3BB6ÁBB46ÁÁ2BB41AA2BB62ÁBB36AA2BB3ÁÁ2BB3ÁÁ6BB6ÁÁ2BÁBB2ÁÁ5BB38AA2BB2ÁAÁÁ15BÁÁ6сÁɁࡁBÁÁ15BÁÁ131AÁÁ45BÁÁ9BÁÁ24BB2ÁÁ16BB3ÁÁ17BB2ÁÁ10BÁBB3AA5ÁÁ13BB2ÁÁ43BÁÁ11BÁÁ32BÁÁ4BÁÁ2ABÁÁ13BB2ÁÁ17BÁÁ8ŁAÁÁ2BÁÁ2BB3ÁÁ23ࡁÁÁ68BÁÁ26BB2ÁÁ35BÁÁ10AÁBÁÁ24AA9ÁBB9ÁÁ14BÁÁ14BB18ÁÁ8BB2ÁÁ11BɁABŁÁࡁÁÁ4B"}',
         wall: "DARKBricks107",
         floor: "MarbleFloor105",
         ceil: "RoughCave20",
@@ -1577,8 +1580,10 @@ const MAP = {
         lights: '[[493,7,"DuaLLantern_029","standardDimmed"],[1627,1,"Candelabra11","standardMuted"],[2950,7,"FluxLight101","standardYellow"],[857,1,"Lights113","standardYellowFaint"],[1496,1,"Candelabra16","standardYellowSoft"],[1612,7,"FluxLight103","standardYellowSoft"]]',
         gates: '[[10,7,"60.1","59.2","Closed"],[1333,7,"60.2","59.3","Down"],[2207,7,"60.3","59.6","Closed"],[2222,7,"60.4","59.7","Closed"],[430,1,"60.5","62.1","Closed"],[210,5,"60.6","69.1","Green"],[230,3,"60.7","70.1","Up"],[1553,3,"60.8","71.1","Closed"],[1533,5,"60.9","72.1","Closed"],[1753,1,"60.10","73.1","Closed"],[2627,1,"60.11","74.1","Closed"],[2643,1,"60.12","75.1","Closed"]]',
         keys: '[[352,3]]',
-        doors: '[311,321]',
+        containers: '[[1346,"WoodenCrate55","INTERACTION_ITEM.YellowBoots",3],[1362,"BarrelX","INTERACTION_ITEM.Ammo",5]]',
+        doors: '[311,321,142]',
         entities: '[[423,1,"GothicProgrammer"],[1759,1,"PythonProgrammer"],[1328,7,"GreenDommeGuard"]]',
+        objects: '[[79,"GoldCoin"],[22,"IceCube"],[1723,"IceCube"]]',
         trainers: '[[105,5,"Wanda"]]',
     }
     ,
@@ -1589,13 +1594,17 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"15","height":"15","depth":5,"map":"BB2ABABB8AA2BAA62BAA12BB3AA41ŁAA3BAA2BB3ŁBB41ABABB17AA8BB18ÁBB37ABB3ABB4AA2BB5ABAA2BB3ÁBB33ÁÁ2BB65ABB21ÁBB88ABB68$BB16ÁÁ3BÁBB3ÁBB46ÁÁ8BB20ÁÁ2BB36ÁÁ7BÁÁ3BB31ÁBÁBB33ÁBB8ÁBB8AŁBB61ɁBB8ࡁBB14ࡁсBB7ÁÁ5BB4ÁÁ24BÁÁ5BÁÁ24BÁÁ65ABÁÁ13BB3ÁBB7ÁÁ11BB2ÁÁ27BB13ɁBB3сBB2ࡁɁсBB2"}',
+        data: '{"width":"15","height":"15","depth":5,"map":"BB4ABB2AA2BAA2BB2ABAA5BAA2BAA57BAA12BB3AA30BAA6BAA5BŁAA3BABB3ŁBB10ABB16AA2BB17ABB5ABB5ABABB2ABB2AA5BB5ABB11ÁBB33ABB3ABB3AA2BB4ABABB3ÁBB33ÁÁ2BB65ABB21ÁBB88ABB68$BB16ÁÁ3BÁBB3ÁBB46ÁÁ8BB20ÁÁ2BB36ÁÁ7BÁÁ3BB31ÁBÁBB33ÁBB8ÁBB8AŁBB61ɁBB8ࡁBB14ࡁсBB7ÁÁ5BB4ÁÁ24BÁÁ5BÁÁ24BÁÁ65ABÁÁ13BB3ÁBB7ÁÁ11BB2ÁÁ27BB13ɁBB3сBB2ࡁɁсBB2"}',
         wall: "DarkBricks101",
         floor: "Cracked01",
         ceil: "XCeiling1",
         start: '[97,1]',
+        decals: '[[118,4,"Grass14","texture"],[103,7,"GrasslandJuggernaut_0927","texture"],[133,1,"GrasslandJuggernaut_0927","texture"]]',
         lights: '[[412,1,"Candelabra09","standardSoft"],[74,3,"FireplaceFLuxU414","fireplace"],[60,5,"FireplaceFLuxU417","fireplace"],[240,5,"Lights112","standardYellowFaint"],[768,7,"FluxLight104","standardYellowFaint"],[840,5,"DuaLLantern_005","standardYellowFaint"]]',
         gates: '[[220,1,"61.1","59.4","Closed"],[887,1,"61.2","59.5","Closed"]]',
+        containers: '[[845,"WoodenCrate53","INTERACTION_ITEM.Floppy",3]]',
+        objects: '[[196,"GoldBar"]]',
+        trainers: '[[119,3,"Apachessa"]]',
     }
     ,
     62: {
@@ -1605,14 +1614,15 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"19","height":"21","depth":5,"map":"BB2ABAA8BB7AA18BAA20BAA12ŁAɁAA9BABB2AA2ŁAA7сAA4ࡁABAA2BB2ÁAA2ÁÁ2BAA15BB3AA8ÁAA2ÁÁ2AA14ŁAA5BB3AA2BAA3BABB8AA2BAA5BAA3BB2AA9BABB8AA3BAA13BB50ABB18ABB15ABABB2AA7BB13ABB5AA3BABB16ABB15ABB50ÁBB10ABB3ABB21ABABB2ABB8ABB5AA5BB3AA3BB13ÁBB30ABB27AA2BB7ABB15AA7BB6ABB34$BB33ÁBB227AA2BB50ABB61ABB195ÁBB8ÁBB3ÁBB2ÁÁ11BB35ÁÁ12BB117ÁÁ6BB71ÁBB35ÁÁ138BÁÁ28BÁÁ8BÁÁ78BÁÁ76BB12ÁÁ44AA6ÁBB13ÁÁ27BB7ɁŁɁŁAA3Ɂсс2ɁAŁŁ2сࡁࡁ2сAɁɁ2ࡁсс2ࡁA"}',
+        data: '{"width":"19","height":"21","depth":5,"map":"BB2ABAA8BB7AA18BAA20BAA12ŁAɁAA9BABB2AA2ŁAA7сAA4ࡁABAA2BB2ÁAA2ÁÁ2BAA15BB3AA8ÁAA2ÁÁ2AA14ŁAA5BB3AA2BAA3BABB8AA2BAA5BB3AA3BB3AA10BB8AA3BAA13BB52ABB18ABB17ABABB2AA7BB13ABB5AA3BABB18ABB15ABB12ABABB37ÁBB10ABB3ABB21ABABB2ABB9ABB3AA6BB3AA3BB12ÁBB28ABB26ABB7ABB15AA7BB6ABB19$BB43ÁBB227AA2BB50ABB61ABB195ÁBB8ÁBB3ÁBB2ÁÁ11BB35ÁÁ12BB117ÁÁ6BB71ÁBB35ÁÁ138BÁÁ28BÁÁ8BÁÁ78BÁÁ76BB12ÁÁ44AA6ÁBB13ÁÁ27BB7ɁŁɁŁAA3Ɂсс2ɁAŁŁ2сࡁࡁ2сAɁɁ2ࡁсс2ࡁA"}',
         wall: "BrownidhMossy102",
         floor: "WebbedFloor4",
         ceil: "GoldBlackSDXL343",
         start: '[472,1]',
-        lights: '[[845,7,"DuaLLantern_009","standard2"],[512,3,"Fireplace103","fireplaceDim"],[494,5,"Fireplace212","fireplaceDim"],[1890,7,"FluxLight106","standardYellow"],[1061,3,"Fireplace208","fireplace"],[1047,5,"FireplaceFLuxU415","fireplace"],[592,1,"FluxLight102","standardFaint"],[604,1,"Lights108","standardFaint"]]',
+        lights: '[[845,7,"DuaLLantern_009","standard2"],[512,3,"Fireplace103","fireplaceDim"],[494,5,"Fireplace212","fireplaceDim"],[1890,7,"FluxLight106","standardYellow"],[1061,3,"Fireplace208","fireplace"],[1047,5,"FireplaceFLuxU415","fireplace"],[592,1,"FluxLight102","standardFaint"],[604,1,"Lights108","standardFaint"],[712,7,"Candle71","standardYellowFaint"]]',
         gates: '[[9,7,"62.1","60.5","Closed"]]',
         entities: '[[1586,1,"UnderworldDarkQueen"]]',
+        objects: '[[730,"Sword"],[732,"Shield"],[33,"IceCube"]]',
         trainers: '[[401,7,"BlackHeartelle"],[415,7,"RedHeartelle"]]',
     }
     ,
@@ -1623,7 +1633,7 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"17","height":"17","depth":3,"map":"BB6ABB4AA9BB8AA13BAA2BB3ABB2ABAA16ŁAA33ɁAA49BB2ABB2AA15BB59ÁBB28ÁÁ9BÁÁ2BB65ÁBB51AA3BB3ABB9AA6BB4AA2BB6ABB44$BB27ABB10ÁABB70AA2BB15ÁÁ10BB68ÁÁ96AA4ÁAA4ÁAÁÁ13AA4ÁÁ55BB11ࡁсBB2"}',
+        data: '{"width":"17","height":"17","depth":3,"map":"BB10ABB2AA11BB4AA9BABABAA2BB3ABB2ABAA16ŁAA33ɁAA39BB4AA10BB2ABB2AA15BB16AA2BB47ÁBB8ÁÁ2BB12ÁBÁABB2ABÁÁ8BB113AA3BB3ABB9AA7BB4ABB6ABB44$BB19ABB14ÁABB70AA2BB15ÁÁ10BB68ÁÁ96AA2ÁÁ3AA6ÁAÁÁ11AA4ÁÁ55BB11ࡁсBB2"}',
         wall: "GreyWall101",
         floor: "MossyPattern1",
         ceil: "SmallBlackBricks48",
@@ -1631,6 +1641,7 @@ const MAP = {
         lights: '[[440,3,"Candle62","standard2"],[566,1,"Fireplace202","fireplace"],[294,7,"Fireplace208","fireplace"]]',
         gates: '[[152,3,"63.1","59.8","Closed"]]',
         entities: '[[425,5,"PainterElle"]]',
+        objects: '[[307,"GoldBar"],[545,"SilverBar"]]',
         trainers: '[[12,7,"ArmoredBikini"]]',
     }
     ,
@@ -1664,6 +1675,7 @@ const MAP = {
         ceil: "DarkWallSDXL315",
         start: '[325,1]',
         gates: '[[430,1,"65.1","56.6","Closed"]]',
+        objects: '[[108,"GoldCoin"]]',
     }
     ,
     66: {
@@ -1682,6 +1694,7 @@ const MAP = {
         gates: '[[651,5,"66.1","56.7","Closed"]]',
         triggers: '[[919,7,"SmoothWallButton",0,664],[1293,1,"SmoothWallButton",0,659],[1215,7,"SmoothWallButton",0,701],[744,1,"SmoothWallButton",0,725],[562,7,"SmoothWallButton",0,661],[772,1,"SmoothWallButton",0,663],[997,1,"SmoothWallButton",0,727],[911,7,"SmoothWallButton",0,617]]',
         entities: '[[671,3,"SkullTattoo"]]',
+        objects: '[[938,"GoldCoin"],[731,"Shield"]]',
         traps: '[[576,7,"SmoothWallButton",0,"Bounceball",606],[915,7,"SmoothWallButton",1,"Goblin",951],[1205,7,"SmoothWallButton",1,"Goblin",1245],[1001,1,"SmoothWallButton",1,"Goblin",950],[1297,1,"SmoothWallButton",1,"Goblin",1245]]',
     }
     ,
@@ -1692,7 +1705,7 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"19","height":"19","depth":5,"map":"BB2ABAA2BAA5BAA8BABAA3BAA4BABB2AA6BAA4BB3AA2BAA11BAA2BAA3BABAA17BABAA2BABAA8BAA5BAA4BB3AA2BAA2BB2AA5BAA3BAA2BAA42BB2ABAA3BAA15BAA2BB7ABAA2BABB3ABB2AA3BB3ABABB3ABB8ABB4ABB8AA2BB2ABABB5ABB2ABABB4AA2BAA2BAA2BB2ABAA2BB3ABB3AA3BB9ABB3ABAA2BAA2BB4ABB25$BB79ÁÁ2BB42ÁBB77ÁBB110ABB202ÁBB2ÁBB4ÁBB11ÁÁ7BB15ÁBB8ÁÁ2BÁBB3ÁÁ2BB3ÁBB2ÁBB2ÁBÁBÁBB2ÁBB7ÁBB23ÁBB3ÁÁ2BÁBB2ÁÁ3BB9ÁBB2ÁÁ2BB3ÁÁ3BB15ÁBB24ÁBB26ÁÁ2BB9ÁBÁBB7ÁÁ3BÁBB4ÁÁ3BB9ÁBB5ÁBB4ÁBB6ÁBB3ÁÁ2BB75ÁÁ2BB2ÁÁ2BB5ÁBÁÁ2BÁÁ2BB10ÁBÁÁ2BB5ÁÁ3BÁÁ4BB4ÁÁ2BB7ÁÁ2BB4ÁÁ3BB2ÁÁ2BB16ÁÁ11BÁBÁÁ8BÁÁ51BÁÁ28BÁÁ2BÁÁ13BÁÁ16BÁÁ3BÁÁ16BÁÁ6BÁÁ6BB2ÁÁ23BÁBB3ÁÁ3BÁÁ3BÁÁ4BÁÁ2BÁÁ2BÁÁ12BB5ÁÁ4BÁÁ10BÁBÁÁ19BÁBÁÁ6BB2ÁÁ12BB2ÁÁ2BÁÁ2BÁÁ5BB2ÁÁ4BÁÁ22BÁBÁÁ2BÁÁ4BB3ÁÁ4BÁBÁÁ3BÁÁ2BÁÁ7BÁÁ12BÁÁ3BÁBB2ÁBÁÁ2BÁÁ8BÁÁ2BÁBÁÁ2BÁBÁBÁÁ6BÁÁ4BÁBB3ÁÁ2BÁBB2ÁBÁBB2ÁÁ10BB2ÁÁ10BB2ÁBÁBÁÁ6BÁÁ3BÁBB2ÁÁ3BB2"}',
+        data: '{"width":"19","height":"19","depth":5,"map":"BB2ABAA2BAA5BAA8BABAA3BAA4BABB2AA6BAA4BB3AA2BAA11BAA2BAA3BABAA17BABAA2BABAA8BAA5BAA4BB3AA2BAA2BB2AA5BAA3BAA2BAA42BB2ABAA3BAA15BAA2BB7ABAA2BABB3ABB2AA3BB3ABABB3ABB8ABB4ABB8AA2BB2ABABB5ABB2ABABB4AA2BAA2BAA2BB2ABAA2BB3ABB3AA3BB9ABB3ABAA2BAA2BB4ABB25$BB79ÁÁ2BB42ÁBB77ÁBB109ABB204ÁBÁBB5ÁBB10ÁÁ3BÁÁ4BB15ÁBB7ÁÁ2BÁBB4ÁÁ2BB3ÁBB2ÁBÁBÁBÁBB2ÁBB8ÁBB22ÁBB4ÁÁ2BÁBB2ÁÁ3BB8ÁBB2ÁÁ2BB3ÁÁ3BB16ÁBB23ÁBB27ÁÁ2BB8ÁBÁBB7ÁÁ3BÁBB4ÁÁ3BB10ÁBB5ÁBB4ÁBB6ÁBB2ÁÁ2BB75ÁÁ2BB2ÁÁ2BB5ÁBÁÁ2BÁÁ2BB2ÁBB9ÁBÁÁ2BB5ÁÁ3BÁÁ4BB4ÁÁ2BB7ÁÁ2BB3ÁÁ3BB2ÁÁ2BB16ÁÁ11BÁBÁÁ8BÁÁ52BÁÁ28BÁÁ2BÁÁ13BÁÁ16BÁÁ3BÁÁ17BÁÁ6BÁÁ6BB2ÁÁ23BÁBB3ÁÁ3BÁÁ3BÁÁ4BB2ÁBÁÁ2BÁÁ9BÁÁ3BB5ÁÁ4BÁÁ10BÁBÁÁ19BÁBÁÁ5BB2ÁÁ12BB2ÁÁ2BÁÁ2BÁÁ5BB2ÁÁ4BÁÁ21BÁBÁÁ2BÁÁ4BB3ÁÁ4BÁBÁÁ3BÁÁ2BÁÁ7BÁÁ11BÁÁ3BÁBB2ÁBÁÁ2BÁÁ8BÁÁ2BÁBÁÁ2BÁÁ2BÁÁ6BÁÁ4BÁBB3ÁÁ2BÁBB2ÁBÁBB2ÁÁ10BB2ÁÁ10BB2ÁBÁBÁÁ6BÁÁ3BÁBB2ÁÁ3BB2"}',
         wall: "RoughCave01",
         floor: "MarbleFloor1005",
         ceil: "RoughCave02",
@@ -1700,7 +1713,10 @@ const MAP = {
         decals: '[[183,5,"OilDommes_1090","picture"]]',
         lights: '[[246,3,"Fireplace103","fireplace"],[95,5,"Fireplace210","fireplace"],[351,1,"Fireplace212","fireplace"],[69,7,"Torch11","fireNew"]]',
         gates: '[[189,3,"67.1","56.8","Closed"]]',
+        containers: '[[302,"Barrel_479","INTERACTION_ITEM.Computer",3]]',
         entities: '[[171,5,"RubySilka"]]',
+        objects: '[[93,"GoldCoin"],[329,"GoldBar"],[40,"GoldBar"]]',
+        trainers: '[[9,7,"RedWellmana"]]',
     }
     ,
     68: {
@@ -1717,9 +1733,11 @@ const MAP = {
         start: '[182,3]',
         lights: '[[546,3,"Candle60","standardDimmed"],[378,7,"Candelabra11","standardYellowDim"],[362,7,"WallLamp31","standardYellowDim"],[661,1,"FluxLight120","standardYellowDim"],[710,1,"Lights111","standardYellowDim"],[556,7,"FluxLight124","standardYellowDim"],[659,3,"WallLamp11","standardYellowDim"],[494,5,"WallLamp13","standardYellowDim"]]',
         gates: '[[171,5,"68.1","59.9","Closed"]]',
+        containers: '[[286,"Barrel_481","INTERACTION_ITEM.RedFin",5]]',
         doors: '[185]',
         triggers: '[[123,7,"SmoothWallButton",1,141]]',
         entities: '[[178,5,"Hacker"]]',
+        objects: '[[61,"Candle"],[340,"Poison"]]',
     }
     ,
     69: {
@@ -1737,8 +1755,10 @@ const MAP = {
         decals: '[[220,4,"FloorGrille111","crest"],[157,4,"FloorGrille111","crest"],[284,4,"FloorGrille111","crest"],[236,4,"FloorGrille111","crest"],[184,4,"FloorGrille111","crest"],[109,4,"FloorGrille111","crest"],[361,4,"FloorGrille111","crest"],[352,4,"FloorGrille111","crest"],[344,4,"FloorGrille111","crest"]]',
         lights: '[[1993,3,"Candle61","standardDimmed"],[2035,3,"DuaLLantern_003","standardDimmed"],[946,5,"Lamp45","standardYellow"],[1801,7,"Lights115","standardSoft"],[336,5,"Fireplace101","fireplace"],[356,3,"Fireplace209","fireplace"],[167,3,"FireplaceFLuxU418","fireplace"]]',
         gates: '[[2015,3,"69.1","60.6","Closed"]]',
+        containers: '[[82,"WoodenCrate54","INTERACTION_ITEM.RavenBook",3],[403,"Barrel_462","INTERACTION_ITEM.MicroProcessor",1]]',
         triggers: '[[191,7,"SmoothWallButton",0,509],[897,7,"SmoothWallButton",1,941]]',
         entities: '[[430,1,"MissMuscleSmith"]]',
+        objects: '[[333,"Shield"]]',
         trainers: '[[251,3,"ManaDrinker"]]',
     }
     ,
@@ -1753,10 +1773,13 @@ const MAP = {
         wall: "RoughCave22",
         floor: "Cracked03",
         ceil: "RoughCave20",
-        start: '[533,5]',
+        start: '[86,1]',
         lights: '[[265,3,"Fireplace104","fireplace"],[6,7,"Fireplace_1046","fireplace"],[348,1,"Fireplace_1045","fireplace"],[228,5,"FireplaceFLuxU418","fireplace"]]',
         gates: '[[532,5,"70.1","60.7","Up"]]',
+        containers: '[[305,"Barrel_480","INTERACTION_ITEM.TreeOfLifeBook",7],[36,"MetalCrate54","INTERACTION_ITEM.BattleAxe",7],[321,"Barrel_463","INTERACTION_ITEM.OldFloppy",7]]',
         entities: '[[353,1,"Emeraldine"]]',
+        objects: '[[20,"GreenLiquid"]]',
+        trainers: '[[10,7,"MechGirl"]]',
     }
     ,
     71: {
@@ -1773,6 +1796,7 @@ const MAP = {
         start: '[256,5]',
         lights: '[[279,1,"Fireplace_1040","fire"],[4,7,"Fireplace201","fire"],[102,5,"FireplaceFLuxU415","fire"]]',
         gates: '[[255,5,"71.1","60.8","Closed"]]',
+        containers: '[[219,"WoodenCrate439","INTERACTION_ITEM.PrincessBook",3],[35,"Barrel_484","INTERACTION_ITEM.Mace",7],[29,"PlainCloset","INTERACTION_ITEM.Joystick",5]]',
         entities: '[[152,3,"Amethyste"]]',
         trainers: '[[8,7,"DaggerElle"]]',
     }
@@ -1788,10 +1812,14 @@ const MAP = {
         wall: "DARKBricks107",
         floor: "MarbleFloor105",
         ceil: "RoughCave20",
-        start: '[2434,3]',
+        start: '[2572,7]',
+        decals: '[[2615,3,"Forest8","texture"],[2613,5,"Forest8","texture"],[2614,4,"Grass17","texture"]]',
         lights: '[[2677,7,"FluxLight107","standardYellow"],[2857,5,"FluxLight106","standardYellow"],[2875,3,"Lights114","standardYellow"],[3076,1,"Lamp53","standardYellow"]]',
         gates: '[[2435,3,"72.1","60.9","Closed"]]',
+        containers: '[[2253,"WoodenCrate58","INTERACTION_ITEM.OwlBook",7]]',
         entities: '[[2415,5,"FishNetty"]]',
+        objects: '[[2574,"Candle"]]',
+        trainers: '[[2635,1,"RedGyma"]]',
     }
     ,
     73: {
@@ -1808,6 +1836,7 @@ const MAP = {
         start: '[22,7]',
         lights: '[[420,7,"Candle56","standardYellowFaint"],[422,7,"Candle56","standardYellowFaint"]]',
         gates: '[[3,7,"73.1","60.10","Closed"]]',
+        containers: '[[340,"WoodenCrate437","INTERACTION_ITEM.AnkhBook",3],[45,"Barrel_462","INTERACTION_ITEM.RedFin",1],[324,"Barrel_475","INTERACTION_ITEM.PinkRibbon",1]]',
         doors: '[83]',
         entities: '[[174,1,"Vampyra"]]',
     }
@@ -1846,6 +1875,7 @@ const MAP = {
         start: '[199,7]',
         lights: '[[161,7,"FireplaceFLuxU412","fireplaceDim"]]',
         gates: '[[2,7,"75.1","60.12","Closed"]]',
+        containers: '[[302,"WoodenCrate435","INTERACTION_ITEM.Cap",7],[150,"WoodenCrate58","INTERACTION_ITEM.Banknote10",3],[325,"Chest10","INTERACTION_ITEM.Revolver",1]]',
         doors: '[62,116,51,336,249,177,183]',
         entities: '[[275,1,"Tridenta"]]',
     }
@@ -1866,6 +1896,7 @@ const MAP = {
         gates: '[[152,3,"76.1","59.10","Closed"]]',
         containers: '[[69,"Wardrobe","INTERACTION_ITEM.WhiteDress",1]]',
         entities: '[[136,5,"ApparitiaHide"],[280,1,"ApparitiaPanties"]]',
+        objects: '[[253,"Candle"]]',
         oracles: '[[8,7,"ApparitiaLessEvil"]]',
     }
     ,
@@ -1883,6 +1914,7 @@ const MAP = {
         start: '[728,5]',
         lights: '[[689,3,"Candelabra17","standardYellowDim"],[757,3,"Candelabra17","standardYellowDim"]]',
         gates: '[[714,5,"77.1","59.11","Closed"]]',
+        containers: '[[721,"MetalCrate423","INTERACTION_ITEM.HairBrush",3],[72,"WoodenCrate440","INTERACTION_ITEM.YellowWellies",7]]',
         entities: '[[139,5,"Ghostessa"],[730,3,"Brushelle"]]',
     }
     ,
@@ -1897,11 +1929,13 @@ const MAP = {
         wall: "GoldBlackSDXL347",
         floor: "FloorTiles_SDXL_001",
         ceil: "MossyWall111",
-        start: '[1403,5]',
+        start: '[1696,5]',
         lights: '[[1974,5,"DuaLLantern_016","standardRedish"],[1799,7,"Candle67","standardSoft"],[2179,1,"DuaLLantern_011","standardSoft"]]',
         gates: '[[1553,3,"78.1","59.12","Closed"]]',
+        containers: '[[1739,"TreasureChest","INTERACTION_ITEM.RedLeatherBoots",1],[1506,"WoodenCrate52","INTERACTION_ITEM.Comb",4]]',
         triggers: '[[1547,4,"SmoothWallButton",0,1545],[1541,4,"SmoothWallButton",0,1538]]',
         entities: '[[1406,3,"PoisonDrinker"]]',
+        trainers: '[[1700,3,"BikiniWarrior"]]',
     }
     ,
     79: {
@@ -1929,7 +1963,7 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"15","height":"15","depth":4,"map":"BB5ABABAA2BABAA23BAA2BAA26BABB3AA11BAA10BB3AA3BB2AA5BB2AA12BB2ABB5AA2BB3ABB2AA2BB2AA2BB14ABB2ABB3ABB3ABB2ABB2ABB2ABB7ABABB2ABB3AA4BB2ABB7ABB16$BB64ÁÁ2BB33ÁBB96ABB156ÁBÁBB2ÁBB2ÁBB10ÁÁ2BB3ÁBB2ÁÁ2BÁBB17ÁÁ2BB3ÁBB6ÁÁ5BB85ÁÁ2BB2ÁÁ3BB5ÁÁ5BÁBB13ÁÁ10BÁBÁÁ14BB2ÁÁ9BÁÁ10BB2ÁÁ2BÁÁ3BB2ÁBÁÁ3BÁÁ4BÁÁ6BB5ÁÁ13BB2ÁÁ2BB2ÁÁ18BÁBB3ÁÁ11BB6"}',
+        data: '{"width":"15","height":"15","depth":4,"map":"BB6AA5BABABAA21BAA3BAA25BABB3AA11BAA10BB3AA3BB2AA7BB4AA10BB2ABB2ABB4ABB2ABB2AA2BB2AA2BB4ABB4ABB6ABB2AA3BABB6ABB2ABB9ABABABB4AA6BB22$BB64ÁÁ2BB33ÁBB96ABB156ÁBÁBB2ÁBB2ÁBB10ÁÁ2BB3ÁBB2ÁÁ2BÁBB17ÁÁ2BB3ÁBB6ÁÁ5BB85ÁÁ2BB2ÁÁ3BB5ÁÁ5BÁBB13ÁÁ10BÁBÁÁ14BB2ÁÁ9BÁÁ10BB2ÁÁ2BÁÁ3BB2ÁBÁÁ3BÁÁ4BÁÁ6BB5ÁÁ13BB2ÁÁ2BB2ÁÁ18BÁBB3ÁÁ11BB6"}',
         wall: "IceWall21",
         floor: "IceFloor22",
         ceil: "IceFloor24",
@@ -1937,6 +1971,8 @@ const MAP = {
         decals: '[[76,1,"FemDommes_18031","picture"],[80,1,"RetroGames_2327","picture"],[84,1,"Domme349","picture"],[112,1,"UnusedEntities2050","picture"],[140,1,"FluxDommes2088","picture"],[144,1,"DefenderOfTheCrown110","picture"],[212,1,"FemDommes_18612","picture"],[199,1,"FemDommes_16722","picture"],[201,1,"ShortBlackSkirt_002","picture"],[204,1,"FemDommes_15102","picture"],[220,1,"FemDommes_10056","picture"],[191,1,"FemDommes_18366","picture"],[87,1,"GameScreens008","picture"],[147,1,"FemDommes_6016","picture"]]',
         lights: '[[337,5,"SkullLantern50","standardYellowSoft"],[530,1,"Lights110","standardYellowSoft"],[590,7,"Candle53","standardYellowSoft"],[105,5,"Fireplace207","fireplaceDim"]]',
         gates: '[[1,7,"80.1","56.9","Down"]]',
+        containers: '[[28,"Barrel_486","INTERACTION_ITEM.Banknote10",7]]',
         entities: '[[119,3,"IceWhiskyPrincess"]]',
+        objects: '[[193,"Poison"]]',
     }
 };
