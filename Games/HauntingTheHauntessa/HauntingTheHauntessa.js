@@ -182,19 +182,19 @@ const DEBUG = {
             DONE "AnkhBook" --> (73)
             DONE "Revolver", ---> (75)
             DONE "Ammo" ---> (60)
-            "Spear", 
-            "Dagger",
-            "RedSneaker"
-            "RedSneaker"
-            "MicroProcessor", 
-            "MicroProcessor"
-                DONE "GreenLiquid", ---> (70)
-            "RedLiquid",
-            "BlueLiquid"
-            "GreenFeather", 
-            "BlueFeather", 
-            "WhiteFeather", 
-            "RedFeather"
+            DONE "Spear",  ---> (74)
+            DONE "Dagger", --->(57)
+            DONE "RedSneaker" ---> (75)
+            "DONE RedSneaker" --->(57)
+            DONE "MicroProcessor",  --> (57)
+            DONE "MicroProcessor" ---> (60)
+            DONE "GreenLiquid", ---> (70)
+            DONE "RedLiquid", ---> (65)
+            DONE "BlueLiquid" ---> (65)
+            DONE "GreenFeather", ---> (74)
+            DONE "BlueFeather",  --->(77)
+            DONE "WhiteFeather",  -->(76)
+            DONE "RedFeather" ---> (80)
 
         Rooms that can have more entities, trainers:
             56
@@ -418,7 +418,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.26.2",
+    VERSION: "0.26.3",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
