@@ -1033,7 +1033,7 @@ LoadObjects = [
     "pentagram.obj", "sting.obj", "heart.obj", "shield.obj", "magicFlask.obj",
     "treasure_chest.obj", "wardrobe.obj", "barrel.obj", "Barell2.obj", "Barell3.obj", "crate.obj", "crateFragile.obj", "closet.obj", "bookshelf.obj",
     "pirate_chest.obj", "closet4.obj", "iron_chest.obj", "Chest10.obj", "BarrelX.obj", "BarrelMedieval.obj",
-    "scroll.obj", "coin.obj",
+    "scroll.obj", "coin.obj", "bone.obj",
     "cake.obj", "steak.obj", "can.obj", "wine.obj",
     "Amanita.obj", "Snail.obj", "Frog.obj",
     "apple.obj", "crown.obj", "dagger.obj", "mushroom.obj", "skull.obj", "Candle.obj",

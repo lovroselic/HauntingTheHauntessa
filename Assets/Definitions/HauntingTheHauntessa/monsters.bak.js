@@ -508,33 +508,7 @@ const MONSTER_TYPE = {
 
     
 
-    NeverBlink: {
-        name: "NeverBlink",
-        model: "NeverBlink",
-        scale: 1.25 / 2 ** 8,
-        rotateToNorth: Math.PI,
-        midHeight: 0.55,
-        deathType: "BloodExplosion",
-        inventory: null,
-        //
-        mana: 1,
-        health: 10,
-        attack: 1,
-        magic: 5,
-        defense: 0,
-        xp: 99,
-        //
-        caster: true,
-        shootDistance: 15,
-        stalkDistance: 17,
-        attackSound: "HumanAttack1",
-        hurtSound: "Ow",
-        behaviourArguments: [17, ["wanderer"], 15, ["shoot"]],
-        moveSpeed: 1.0,
-        material: MATERIAL.standardShine,
-        missile: BouncingMissile,
-        missileType: COMMON_ITEM_TYPE.Bounceball,
-    },
+   
 
     EvilNun: {
         name: "EvilNun",

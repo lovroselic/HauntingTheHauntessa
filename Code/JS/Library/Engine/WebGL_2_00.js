@@ -2635,7 +2635,13 @@ class Drawable_object {
     }
     setElementAndIndices() {
         this.element = ELEMENT[this.element];
-        this.initBuffers();
+        try {
+            this.initBuffers();
+        } catch (error) {
+            console.error("Buffers not initialied for", this.element);
+            throw error;
+        }
+
         this.texture = TEXTURE[this.texture];
         if (typeof (this.scale) === "number") {
             this.scale = new Float32Array([this.scale, this.scale, this.scale]);
@@ -2921,9 +2927,14 @@ class FloorItem3D extends Drawable_object {
             this[prop] = type[prop];
         }
 
-        this.setElementAndIndices();
-        this.setInitialTranslationMatrix();
-        this.set_TRS_matrices();
+        try {
+            this.setElementAndIndices();
+            this.setInitialTranslationMatrix();
+            this.set_TRS_matrices();
+        } catch (error) {
+            console.error("FloorItem3D not properly defined", this.name);
+            throw error;
+        }
 
         if (this.category === "gold") {
             this.value = RND(this.minVal, this.maxVal);

@@ -2663,7 +2663,7 @@ const MONSTER_TYPE = {
         scale: 1.0 / 2 ** 2,
         rotateToNorth: Math.PI,
         midHeight: 0.15,
-        fly: 0.40,
+        fly: 0.50,
         deathType: "BloodExplosion",
         inventory: GOLD_ITEM_TYPE.GoldBar,
         mana: 12,
@@ -2710,7 +2710,7 @@ const MONSTER_TYPE = {
         scale: 1.0 / 2 ** 2,
         rotateToNorth: Math.PI,
         midHeight: 0.15,
-        fly: 0.40,
+        fly: 0.50,
         deathType: "BloodExplosion",
         boss: true,
         inventory: KEY_TYPE.Pearl,
@@ -2731,6 +2731,31 @@ const MONSTER_TYPE = {
         material: MATERIAL.gold,
         missile: Blue3D_Bouncer,
         missileType: COMMON_ITEM_TYPE.BlueBounceball,
+    },
+    NeverBlink: {
+        name: "NeverBlink",
+        model: "NeverBlink",
+        scale: 1.25 / 2 ** 8,
+        rotateToNorth: Math.PI,
+        midHeight: 0.55,
+        deathType: "BloodExplosion",
+        inventory: GOLD_ITEM_TYPE.SilverBar,
+        mana: 12,
+        health: 48,
+        attack: 61,
+        magic: 25,
+        defense: 10,
+        xp: 120,
+        caster: true,
+        shootDistance: 8,
+        stalkDistance: 6,
+        attackSound: "HumanAttack1",
+        hurtSound: "Ow",
+        behaviourArguments: [10, ["wanderer"], 8, ["shoot"]],
+        moveSpeed: 1.0,
+        material: MATERIAL.standardShine,
+        missile: BouncingMissile,
+        missileType: COMMON_ITEM_TYPE.Bounceball,
     },
 };
 
@@ -5382,19 +5407,19 @@ const INTERACTION_ENTITY = {
 
 const INTERACTION_SHRINE = {
     Apachessa: {
-    name: "Apachessa",
-    sprite: "Apachessa",
-    category: 'crest',
-    voice: "Female4",
-    wants: ["GreenFeather", "BlueFeather", "WhiteFeather", "RedFeather"],
-    gives: "Defense",
-    level: 3,
-    text: {
-        intro: "A war bonnet needs colors bold. Bring me feathers green, blue, white, and red untold.",
-        progress: "My bonnet grows, but still not complete. More colors must crown my warrior feat.",
-        conclusion: "The feathers shine, my headdress grand. I'll teach you defense, swift and planned."
-    }
-},
+        name: "Apachessa",
+        sprite: "Apachessa",
+        category: 'crest',
+        voice: "Female4",
+        wants: ["GreenFeather", "BlueFeather", "WhiteFeather", "RedFeather"],
+        gives: "Defense",
+        level: 3,
+        text: {
+            intro: "A war bonnet needs colors bold. Bring me feathers green, blue, white, and red untold.",
+            progress: "My bonnet grows, but still not complete. More colors must crown my warrior feat.",
+            conclusion: "The feathers shine, my headdress grand. I'll teach you defense, swift and planned."
+        }
+    },
     RedWellmana: {
         name: "RedWellmana",
         sprite: "RedWellmana",
