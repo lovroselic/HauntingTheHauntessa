@@ -4655,7 +4655,7 @@ const INTERACTION_ENTITY = {
         category: 'crest',
         voice: "FemaleLow2",
         wants: ["SkeletonCat", "SkeletonDoll", "SkeletonBird"],
-        gives: "PinkKey",
+        gives: "EmeraldKey",
         text: {
             intro: "Bones and toys, my favorite blend. Bring them all, and reach the end.",
             progress: "Nice additions to my stash. One or two more to make it flash.",
