@@ -3170,11 +3170,11 @@ const INTERACTION_OBJECT = {
     },
     BlueLiquid: {
         name: "BlueLiquid",
-        category: "BlueLiquid",
+        category: "interaction_item",
         element: "ErlenFlask",
         scale: 1 / 2 ** 6,
         glueToFloor: true,
-        texture: "BlueLiquid",
+        texture: "BlueLiquid2",
         inventorySprite: "BlueLiquid",
         material: MATERIAL.blueShine,
         text: "A flask of vile looking blue liquid."
