@@ -385,25 +385,7 @@ const MONSTER_TYPE = {
         moveSpeed: 1.0,
         material: MATERIAL.greenShine,
     },
-    Basilisk: {
-        name: "Basilisk",
-        model: "Basilisk",
-        scale: 1.8 / 2 ** 9,
-        rotateToNorth: Math.PI,
-        midHeight: 0.5,
-        deathType: "BloodExplosion",
-        mana: 0,
-        health: 200,
-        attack: 250,
-        magic: 0,
-        defense: 0,
-        directMagicDamage: true,
-        attackSound: "MonsterAttack2",
-        hurtSound: "MonsterHurt2",
-        behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
-        moveSpeed: 0.9,
-        material: MATERIAL.standardShine,
-    },
+    
     GreenBasilisk: {
         name: "GreenBasilisk",
         texture: "GreenBasilisk",
@@ -510,33 +492,7 @@ const MONSTER_TYPE = {
 
    
 
-    EvilNun: {
-        name: "EvilNun",
-        model: "EvilNun",
-        scale: 1.0 / 2 ** 1,
-        rotateToNorth: Math.PI,
-        midHeight: 0.55,
-        deathType: "BloodExplosion",
-        inventory: null,
-        //
-        mana: 1,
-        health: 10,
-        attack: 1,
-        magic: 5,
-        defense: 0,
-        xp: 99,
-        //
-        caster: true,
-        shootDistance: 15,
-        stalkDistance: 17,
-        attackSound: "HumanAttack1",
-        hurtSound: "Ow",
-        behaviourArguments: [17, ["wanderer"], 15, ["shoot"]],
-        moveSpeed: 1.0,
-        material: MATERIAL.standardShine,
-        missile: BouncingMissile,
-        missileType: COMMON_ITEM_TYPE.Bounceball,
-    },
+   
     LizardMan: {
         name: "LizardMan",
         model: "LizardMan",

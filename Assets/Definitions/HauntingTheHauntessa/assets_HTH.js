@@ -917,6 +917,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/SnailColor.jpg", name: "SnailColor" },
     { srcName: "ObjectTextures/FrogColor.jpg", name: "FrogColor" },
     { srcName: "ObjectTextures/WolfSpiderRed.jpg", name: "WolfSpiderRed" },
+    { srcName: "ObjectTextures/RedButterFly_BaseColor.jpg", name: "RedButterFly_BaseColor" },
 
 
     /** other object textures */
@@ -1444,6 +1445,7 @@ LoadSprites = [
     { srcName: "Items/Amanita.png", name: "Amanita" },
     { srcName: "Items/Snail.png", name: "Snail" },
     { srcName: "Items/ManaFrog.png", name: "ManaFrog" },
+    { srcName: "Items/RedButterfly.png", name: "RedButterfly" },
 
     // items
     { srcName: "Items/Apple.png", name: "Apple" },

@@ -24,7 +24,6 @@ monsters = re.search(firstPattern, data).group(0)
 monsterExtractionPattern = re.compile(
     r'(\w+\:\s{[\s\w\:\"\,\.\(\)\[\]\-\/\'\*]*})')
 
-# attributePattern = re.compile(r'((?<!\/)\b\w+\:\s*\"?[\-\w\.\s\*\/]*\"?),?')
 attributePattern = re.compile(r'(\w+):\s*([^,\n]+)')
 
 MonsterList = defaultdict(dict)
