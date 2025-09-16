@@ -241,19 +241,19 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 63; //56
+        GAME.level = 68; //56
         GAME.gold = 50035;
         GAME.lives = 3;
 
-        HERO.magic = 29;
-        HERO.attack = 29;
-        HERO.defense = 29;
-        HERO.reference_magic = 29;
-        HERO.reference_attack = 29;
-        HERO.reference_defense = 29;
+        HERO.magic = 33;
+        HERO.attack = 33;
+        HERO.defense = 33;
+        HERO.reference_magic = 33;
+        HERO.reference_attack = 33;
+        HERO.reference_defense = 33;
 
-        HERO.mana = 325;
-        HERO.maxMana = 325;
+        HERO.mana = 400;
+        HERO.maxMana = 400;
         HERO.health = 368;
         HERO.maxHealth = 368;
 
@@ -420,7 +420,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.27.5",
+    VERSION: "0.27.6",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

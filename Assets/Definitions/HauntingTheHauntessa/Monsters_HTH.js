@@ -2704,6 +2704,31 @@ const MONSTER_TYPE = {
         moveSpeed: 1.2,
         material: MATERIAL.standardShine,
     },
+    Astro: {
+        name: "Astro",
+        model: "Astro",
+        scale: 1.5 / 2 ** 4,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "BloodExplosion",
+        mana: 5,
+        health: 50,
+        attack: 50,
+        magic: 30,
+        defense: 0,
+        xp: 100,
+        directMagicDamage: false,
+        caster: true,
+        attackSound: "HumanAttack1",
+        hurtSound: "MonsterHurt2",
+        behaviourArguments: [7, ["wanderer"], 5, ["shoot"]],
+        moveSpeed: 1.0,
+        shootDistance: 5,
+        stalkDistance: 6,
+        material: MATERIAL.standard,
+        missile: BouncingMissile,
+        missileType: COMMON_ITEM_TYPE.Bounceball,
+    },
     BigDragonBoss: {
         name: "BigDragon",
         model: "Dragon2",
@@ -2802,6 +2827,7 @@ const MONSTER_TYPE = {
         moveSpeed: 0.9,
         material: MATERIAL.standardShine,
     },
+     
 };
 
 const HERO_TYPE = {
@@ -3365,8 +3391,7 @@ const MOVABLE_INTERACTION_OBJECT = {
     Butterfly: {
         /** mana */
         name: "Butterfly",
-        category: "action_item",
-        which: "mana",
+        category: "interaction_item",
         model: "Butterfly",
         scale: 1.4 / 2 ** 6,
         fly: 0.5,
@@ -3381,7 +3406,8 @@ const MOVABLE_INTERACTION_OBJECT = {
     },
     RedButterfly: {
         name: "RedButterfly",
-        category: "interaction_item",
+        category: "action_item",
+        which: "mana",
         model: "Butterfly",
         scale: 1.4 / 2 ** 6,
         fly: 0.52,

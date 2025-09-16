@@ -317,30 +317,7 @@ const MONSTER_TYPE = {
    
 
     
-    Astro: {
-        name: "Astro",
-        model: "Astro",
-        scale: 1.5 / 2 ** 4,
-        rotateToNorth: Math.PI,
-        midHeight: 0.5,
-        deathType: "BloodExplosion",
-        mana: 25,
-        health: 120,
-        attack: 125,
-        magic: 19,
-        defense: 0,
-        caster: true,
-        directMagicDamage: true,
-        attackSound: "HumanAttack1",
-        hurtSound: "MonsterHurt2",
-        behaviourArguments: [7, ["wanderer"], 5, ["shoot"]],
-        moveSpeed: 1.0,
-        shootDistance: 5,
-        stalkDistance: 6,
-        material: MATERIAL.standard,
-        missile: BouncingMissile,
-        missileType: COMMON_ITEM_TYPE.Bounceball,
-    },
+   
     AstroRed: {
         name: "AstroRed",
         texture: "AstroRed",
