@@ -241,7 +241,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 68; //56
+        GAME.level = 60; //56
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -295,7 +295,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            
+
         ];
 
         for (let itm of invItems) {
@@ -420,7 +420,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.27.6",
+    VERSION: "0.27.8",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -593,6 +593,7 @@ class Scroll {
                     if (enemy === null) continue;
                     if (enemy.final_boss || enemy.boss) continue;
                     if (enemy.distance === null) continue;
+                    if (enemy.fly && enemy.fly > 0.0) continue;
                     if (enemy.distance <= INI.SCROLL_RANGE) {
                         enemy.moveSpeed = INI.CRIPPLE_SPEED;
                         console.warn("crippled", enemy);
@@ -876,10 +877,17 @@ const HERO = {
         this.unlucky();
         this.flightOff();
         this.featherFallOff();
+        this.manaDiscountOff();
 
         this.reference_defense = this.defense;
         this.reference_attack = this.attack;
         this.reference_magic = this.magic;
+    },
+    manaDiscountOff() {
+        this.manaDiscount = 1.0;
+    },
+    setManaDiscount(factor) {
+        this.manaDiscount *= factor;
     },
     requestJump() {
         this.player.requestJump(this.jumpPower);
@@ -910,7 +918,8 @@ const HERO = {
         if (!HERO.canShoot) return;
 
         let cost = BouncingMissile.calcMana(HERO.reference_magic);
-        //console.log("cost", cost, "HERO.reference_magic", HERO.reference_magic);
+        cost *= this.manaDiscount;
+   
         if (DEBUG.FREE_MAGIC) cost = 0;
         if (cost > HERO.mana) return AUDIO.MagicFail.play();
 
