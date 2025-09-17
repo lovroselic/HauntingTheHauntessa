@@ -1408,6 +1408,8 @@ LoadSprites = [
     { srcName: "Scrolls/SCR_FeatherFall.png", name: "SCR_FeatherFall" },
     { srcName: "Scrolls/SCR_Radar2.png", name: "SCR_Radar" },
     { srcName: "Scrolls/SCR_VeryLucky.png", name: "SCR_VeryLucky" },
+    { srcName: "Scrolls/SCR_ReduceMana.png", name: "SCR_ReduceMana" },
+    { srcName: "Scrolls/SCR_ReduceManaMore.png", name: "SCR_ReduceManaMore" },
 
     //gold, valuables
     { srcName: "Items/BlueGem.png", name: "BlueGem" },

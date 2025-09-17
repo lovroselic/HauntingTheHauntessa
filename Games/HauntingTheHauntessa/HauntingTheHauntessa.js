@@ -197,7 +197,7 @@ const DEBUG = {
             DONE "RedFeather" ---> (80)
 
         Rooms that can have more entities, trainers:
-            56
+
             61
             63
             71
@@ -241,7 +241,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 60; //56
+        GAME.level = 56; //56
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -417,10 +417,12 @@ const INI = {
     BOOST_TIME: 59,
     MINIMAP_W: 80,
     MINIMAP_H: 80,
+    MANA_TIME: 10, //59
+    MANA_DISCOUNT_FACTOR: 0.7,
 };
 
 const PRG = {
-    VERSION: "0.27.8",
+    VERSION: "0.27.9",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -813,6 +815,19 @@ class Scroll {
                     TITLE.keys();
                 }
                 break;
+            case "ReduceManaMore":
+                HERO.setManaDiscount(INI.MANA_DISCOUNT_FACTOR);
+            case "ReduceMana":
+                HERO.setManaDiscount(INI.MANA_DISCOUNT_FACTOR);
+                const manaTimerId = "manaDiscountTimer";
+                 if (ENGINE.TIMERS.exists(manaTimerId)) {
+                    T = ENGINE.TIMERS.access(manaTimerId);
+                    T.extend(INI.MANA_TIME);
+                } else {
+                    T = new CountDown(manaTimerId, INI.MANA_TIME, HERO.manaDiscountOff);
+                }
+                TITLE.skills();
+                break;
             default:
                 console.error("ERROR scroll action", this);
                 break;
@@ -854,6 +869,7 @@ const HERO = {
         this.revive();
         this.visible();
         this.clearRadar();
+        this.manaDiscountOff();
 
         const propsToSave = [
             "health", "maxHealth", "attack", "magic", "defense", "mana", "maxMana",
@@ -884,10 +900,11 @@ const HERO = {
         this.reference_magic = this.magic;
     },
     manaDiscountOff() {
-        this.manaDiscount = 1.0;
+        HERO.manaDiscount = 1.0;
+        TITLE.skills();
     },
     setManaDiscount(factor) {
-        this.manaDiscount *= factor;
+        HERO.manaDiscount *= factor;
     },
     requestJump() {
         this.player.requestJump(this.jumpPower);
@@ -918,7 +935,7 @@ const HERO = {
         if (!HERO.canShoot) return;
 
         let cost = BouncingMissile.calcMana(HERO.reference_magic);
-        cost *= this.manaDiscount;
+        cost = Math.round(cost * this.manaDiscount);
    
         if (DEBUG.FREE_MAGIC) cost = 0;
         if (cost > HERO.mana) return AUDIO.MagicFail.play();
@@ -2227,7 +2244,7 @@ const TITLE = {
         CTX.fillText(`${HERO.attack.toString().padStart(2, "0")}`, x + dx, TITLE.stack.skills);
         HERO.defense > HERO.reference_defense ? CTX.fillStyle = "#0E0" : CTX.fillStyle = "#DDD";
         CTX.fillText(`${HERO.defense.toString().padStart(2, "0")}`, 3 * x, TITLE.stack.skills);
-        CTX.fillStyle = "#DDD";
+        HERO.manaDiscount < 1.0 ? CTX.fillStyle = "#0E0" : CTX.fillStyle = "#DDD";
         CTX.fillText(`${HERO.mana} / ${HERO.maxMana}`, 3 * x, TITLE.stack.magic);
     },
     time() {
