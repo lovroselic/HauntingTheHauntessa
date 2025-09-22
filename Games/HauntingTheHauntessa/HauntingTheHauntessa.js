@@ -241,7 +241,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 56; //56
+        GAME.level = 71; //56
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -401,6 +401,7 @@ const INI = {
         ManaFrog: 80,
         RedSpider: 100,
         RedButterfly: 150,
+        ManaGoat: 200,
     },
     HEALTH_INC: 8,
     MANA_INC: 7,
@@ -417,12 +418,12 @@ const INI = {
     BOOST_TIME: 59,
     MINIMAP_W: 80,
     MINIMAP_H: 80,
-    MANA_TIME: 10, //59
+    MANA_TIME: 59, //59
     MANA_DISCOUNT_FACTOR: 0.7,
 };
 
 const PRG = {
-    VERSION: "0.27.9",
+    VERSION: "0.27.10",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

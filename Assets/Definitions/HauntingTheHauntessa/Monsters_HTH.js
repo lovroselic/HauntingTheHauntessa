@@ -2896,6 +2896,18 @@ const INTERACTION_OBJECT = {
         inventorySprite: "ManaFrog",
         text: "Ribbit."
     },
+    ManaGoat: {
+        name: "ManaGoat",
+        category: "action_item",
+        which: "mana",
+        element: "Goat",
+        scale: 1.0 / 2 ** 2,
+        glueToFloor: true,
+        texture: "Goat_baseColor",
+        material: MATERIAL.standard,
+        inventorySprite: "ManaGoat",
+        text: "Let's sacrifice it for magic."
+    },
 
 
     //health

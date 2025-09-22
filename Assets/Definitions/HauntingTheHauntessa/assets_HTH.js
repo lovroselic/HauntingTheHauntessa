@@ -918,7 +918,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/FrogColor.jpg", name: "FrogColor" },
     { srcName: "ObjectTextures/WolfSpiderRed.jpg", name: "WolfSpiderRed" },
     { srcName: "ObjectTextures/RedButterFly_BaseColor.jpg", name: "RedButterFly_BaseColor" },
-
+    { srcName: "ObjectTextures/Goat_baseColor.jpg", name: "Goat_baseColor" },
 
     /** other object textures */
     { srcName: "ObjectTextures/Apple_BaseColor.jpg", name: "Apple_BaseColor" },
@@ -1039,6 +1039,7 @@ LoadObjects = [
     "Amanita.obj", "Snail.obj", "Frog.obj",
     "apple.obj", "crown.obj", "dagger.obj", "mushroom.obj", "skull.obj", "Candle.obj",
     "HornedHelmet.obj", "flask.obj", "pear.obj", "fish.obj", "ErlenFlask.obj",
+    "Goat.obj",
 ];
 
 LoadModels = [
@@ -1449,6 +1450,7 @@ LoadSprites = [
     { srcName: "Items/Snail.png", name: "Snail" },
     { srcName: "Items/ManaFrog.png", name: "ManaFrog" },
     { srcName: "Items/RedButterfly.png", name: "RedButterfly" },
+    { srcName: "Items/ManaGoat.png", name: "ManaGoat" },
 
     // items
     { srcName: "Items/Apple.png", name: "Apple" },
