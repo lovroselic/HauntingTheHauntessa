@@ -2841,6 +2841,26 @@ const MONSTER_TYPE = {
         moveSpeed: 0.9,
         material: MATERIAL.standardShine,
     },
+    Raptor: {
+        name: "Raptor",
+        model: "RAPTOR",
+        scale: 1.9 / 2 ** 2,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "BloodExplosion",
+        mana: 0,
+        health: 65,
+        attack: 75,
+        magic: 0,
+        defense: 22,
+        xp: 175,
+        caster: true,
+        attackSound: "MonsterAttack2",
+        hurtSound: "MonsterHurt2",
+        behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
+        moveSpeed: 1.1,
+        material: MATERIAL.standardShine,
+    },
      
 };
 
