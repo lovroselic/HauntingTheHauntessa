@@ -241,16 +241,17 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 71; //56
+        GAME.level = 61; //56
         GAME.gold = 50035;
         GAME.lives = 3;
+
+        HERO.reference_magic = 33;
+        HERO.reference_attack = 33;
+        HERO.reference_defense = 33;
 
         HERO.magic = 33;
         HERO.attack = 33;
         HERO.defense = 33;
-        HERO.reference_magic = 33;
-        HERO.reference_attack = 33;
-        HERO.reference_defense = 33;
 
         HERO.mana = 400;
         HERO.maxMana = 400;
@@ -423,7 +424,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.27.10",
+    VERSION: "0.27.11",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -821,7 +822,7 @@ class Scroll {
             case "ReduceMana":
                 HERO.setManaDiscount(INI.MANA_DISCOUNT_FACTOR);
                 const manaTimerId = "manaDiscountTimer";
-                 if (ENGINE.TIMERS.exists(manaTimerId)) {
+                if (ENGINE.TIMERS.exists(manaTimerId)) {
                     T = ENGINE.TIMERS.access(manaTimerId);
                     T.extend(INI.MANA_TIME);
                 } else {
@@ -855,9 +856,9 @@ const HERO = {
         this.canComplain = true;
         this.maxHealth = INI.MAX_HERO_HEALTH;
         this.maxMana = INI.MAX_HERO_MANA;
-        this.magic = 5;
-        this.attack = 5;
-        this.defense = 0;
+        this.reference_magic = 5;
+        this.reference_attack = 5;
+        this.reference_defense = 0;
         this.ressurection = false;
         this.attackExp = 0;
         this.defenseExp = 0;
@@ -891,14 +892,15 @@ const HERO = {
         HERO.radar = true;
     },
     reset() {
-        this.unlucky();
-        this.flightOff();
-        this.featherFallOff();
-        this.manaDiscountOff();
+        console.log("reset", HERO.reference_defense, HERO.reference_attack, HERO.reference_magic);
+        HERO.defense = HERO.reference_defense;
+        HERO.attack = HERO.reference_attack;
+        HERO.magic = HERO.reference_magic;
 
-        this.reference_defense = this.defense;
-        this.reference_attack = this.attack;
-        this.reference_magic = this.magic;
+        HERO.unlucky();
+        HERO.flightOff();
+        HERO.featherFallOff();
+        HERO.manaDiscountOff();
     },
     manaDiscountOff() {
         HERO.manaDiscount = 1.0;
@@ -937,7 +939,7 @@ const HERO = {
 
         let cost = BouncingMissile.calcMana(HERO.reference_magic);
         cost = Math.round(cost * this.manaDiscount);
-   
+
         if (DEBUG.FREE_MAGIC) cost = 0;
         if (cost > HERO.mana) return AUDIO.MagicFail.play();
 

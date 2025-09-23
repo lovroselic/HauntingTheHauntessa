@@ -30,6 +30,19 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    MountainGreenHeart: {
+        name: "MountainGreenHeart",
+        sprite: "MountainGreenHeart",
+        which: "health",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "HeartSkill",
+        price: 4000,
+        level: 1,
+        text: "Better to have a green heart, than no heart, 4000 gold.",
+        introduce: true,
+        voice: "Female3",
+    },
     HalfLifeScrollSeller: {
         name: "HalfLifeScrollSeller",
         sprite: "HalfLifeScrollSeller",
@@ -4355,7 +4368,7 @@ const INTERACTION_ITEM = {
     HairBrush: {
         name: "HairBrush",
         category: "interaction_item",
-        inventorySprite: "Cap",
+        inventorySprite: "HairBrush",
         text: "A hair brush for my messy hair."
     },
     PinkRibbon: {
