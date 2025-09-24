@@ -30,6 +30,19 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+     BlueHeartMountainHealer: {
+        name: "BlueHeartMountainHealer",
+        sprite: "BlueHeartMountainHealer",
+        which: "health",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "HeartSkill",
+        price: 4500,
+        level: 1,
+        text: "I hold a blue heart but you can have a true heart, for 4500 gold.",
+        introduce: true,
+        voice: "Female3",
+    },
     MountainGreenHeart: {
         name: "MountainGreenHeart",
         sprite: "MountainGreenHeart",
@@ -608,6 +621,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    EquestrienneOracle: {
+        name: "EquestrienneOracle",
+        sprite: "EquestrienneOracle",
+        category: 'crest',
+        voice: "Female6",
+        text: "Magic users are mor susceptible to brute force, and violent creatures more vulnerable to magic. Good to know, right?",
+        interactionCategory: "oracle",
+    },
     OldEnoughToUseScrolls: {
         name: "OldEnoughToUseScrolls",
         sprite: "OldEnoughToUseScrolls",
@@ -2844,7 +2865,7 @@ const MONSTER_TYPE = {
     Raptor: {
         name: "Raptor",
         model: "RAPTOR",
-        scale: 1.9 / 2 ** 2,
+        scale: 1.8 / 2 ** 2,
         rotateToNorth: Math.PI,
         midHeight: 0.5,
         deathType: "BloodExplosion",
@@ -2854,14 +2875,41 @@ const MONSTER_TYPE = {
         magic: 0,
         defense: 22,
         xp: 175,
-        caster: true,
+        caster: false,
         attackSound: "MonsterAttack2",
         hurtSound: "MonsterHurt2",
         behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
         moveSpeed: 1.1,
         material: MATERIAL.standardShine,
     },
-     
+    DinoAir: {
+        name: "DinoAir",
+        model: "DinoAir",
+        scale: 1.15 / 2 ** 2,
+        rotateToNorth: 0,
+        midHeight: 0.15,
+        fly: 0.50,
+        deathType: "BloodExplosion",
+        inventory: GOLD_ITEM_TYPE.GoldSphere,
+        mana: 13,
+        health: 65,
+        attack: 70,
+        magic: 32,
+        defense: 20,
+        xp: 200,
+        caster: true,
+        directMagicDamage: false,
+        attackSound: "BirdScreech",
+        hurtSound: "MonsterHurt",
+        behaviourArguments: [12, ["wanderer"], 10, ["shoot"]],
+        moveSpeed: 1.0,
+        shootDistance: 10,
+        stalkDistance: 8,
+        material: MATERIAL.standardShine,
+        missile: Blue3D_Bouncer,
+        missileType: COMMON_ITEM_TYPE.BlueBounceball,
+    },
+
 };
 
 const HERO_TYPE = {

@@ -241,7 +241,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 61; //56
+        GAME.level = 74; //56
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -424,7 +424,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.27.12",
+    VERSION: "0.27.13",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -638,8 +638,8 @@ class Scroll {
                 for (let enemy of ENTITY3D.POOL) {
                     if (enemy === null) continue;
                     if (enemy.final_boss || enemy.boss) continue;
-                    if (enemy.distance === null) continue;
-                    if (enemy.distance <= INI.SCROLL_RANGE) {
+                    if (enemy.airDistance === null && enemy.distance === null) continue;
+                    if ((enemy.airDistance || enemy.distance) <= INI.SCROLL_RANGE) {
                         enemy.die();
                         count++;
                     }
