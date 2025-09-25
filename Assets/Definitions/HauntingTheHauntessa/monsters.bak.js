@@ -363,26 +363,7 @@ const MONSTER_TYPE = {
         material: MATERIAL.greenShine,
     },
     
-    GreenBasilisk: {
-        name: "GreenBasilisk",
-        texture: "GreenBasilisk",
-        model: "Basilisk",
-        scale: 1.7 / 2 ** 9,
-        rotateToNorth: Math.PI,
-        midHeight: 0.5,
-        deathType: "BloodExplosion",
-        mana: 0,
-        health: 250,
-        attack: 275,
-        magic: 0,
-        defense: 0,
-        directMagicDamage: true,
-        attackSound: "MonsterAttack2",
-        hurtSound: "MonsterHurt2",
-        behaviourArguments: [8, ["wanderer"], 6, ["advancer"]],
-        moveSpeed: 0.99,
-        material: MATERIAL.greenFluence,
-    },
+   
     Rex: {
         name: "Rex",
         model: "Rex",
