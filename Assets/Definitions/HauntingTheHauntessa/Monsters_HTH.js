@@ -634,6 +634,22 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    Pigtails: {
+        name: "Pigtails",
+        sprite: "Pigtails",
+        category: 'crest',
+        voice: "Female4",
+        text: "Thanks for being my hairdresser. Good job.",
+        interactionCategory: "oracle",
+    },
+    FashionDomme: {
+        name: "FashionDomme",
+        sprite: "FashionDomme",
+        category: 'crest',
+        voice: "Female3",
+        text: "Did you internalize the skill of hiding behind the pillar yet? A lifesaver, really. You should try it.",
+        interactionCategory: "oracle",
+    },
     EquestrienneOracle: {
         name: "EquestrienneOracle",
         sprite: "EquestrienneOracle",
@@ -2943,7 +2959,31 @@ const MONSTER_TYPE = {
         missile: Blue3D_Bouncer,
         missileType: COMMON_ITEM_TYPE.BlueBounceball,
     },
-
+    NecroMorph: {
+        name: "NecroMorph",
+        model: "NecroMorph",
+        scale: 0.85 / 2 ** 1,
+        rotateToNorth: Math.PI,
+        midHeight: 0.55,
+        deathType: "BloodExplosion",
+        inventory: GOLD_ITEM_TYPE.GoldSphere,
+        mana: 13,
+        health: 70,
+        attack: 100,
+        magic: 35,
+        defense: 0,
+        xp: 250,
+        caster: true,
+        shootDistance: 15,
+        stalkDistance: 17,
+        attackSound: "HumanAttack1",
+        hurtSound: "Ow",
+        behaviourArguments: [17, ["wanderer"], 15, ["shoot"]],
+        moveSpeed: 0.8,
+        material: MATERIAL.standardShine,
+        missile: BouncingMissile,
+        missileType: COMMON_ITEM_TYPE.Bounceball,
+    },
 };
 
 const HERO_TYPE = {
