@@ -1274,6 +1274,14 @@ LoadSprites = [
     { srcName: "EntityPictures/HeartPendantCorset.jpg", name: "HeartPendantCorset" },
     { srcName: "EntityPictures/FashionDomme.jpg", name: "FashionDomme" },
     { srcName: "EntityPictures/Pigtails.jpg", name: "Pigtails" },
+    { srcName: "EntityPictures/KnowledgeIsPower.jpg", name: "KnowledgeIsPower" },
+    { srcName: "EntityPictures/RedWitchMana.jpg", name: "RedWitchMana" },
+    { srcName: "EntityPictures/SpyedHerAttack.jpg", name: "SpyedHerAttack" },
+    { srcName: "EntityPictures/RedScubaDefenseless.jpg", name: "RedScubaDefenseless" },
+    { srcName: "EntityPictures/BlackCatsuitDarkaSanctuary.jpg", name: "BlackCatsuitDarkaSanctuary" },
+    { srcName: "EntityPictures/CrouchingHeart.jpg", name: "CrouchingHeart" },
+    { srcName: "EntityPictures/DarthSkulla.jpg", name: "DarthSkulla" },
+
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
