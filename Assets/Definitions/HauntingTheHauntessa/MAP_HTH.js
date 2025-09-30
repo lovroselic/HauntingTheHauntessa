@@ -92,6 +92,9 @@ const MAP_TEXT = {
     80: "",
     81: "I am just under surface. I more push and I am in Hauntosphere.",
     82: "",
+    83: "",
+    84: "",
+    85: "",
 
 };
 
@@ -2226,4 +2229,74 @@ const MAP = {
         containers: '[[281,"WoodenCrate426","GOLD_ITEM_TYPE.GoldBar",5],[177,"MetalCrate53","GOLD_ITEM_TYPE.GoldBar",5],[73,"Barrel_479","GOLD_ITEM_TYPE.GoldBar",5],[97,"WoodenCrate428","GOLD_ITEM_TYPE.GoldBar",7],[99,"PlainCloset","GOLD_ITEM_TYPE.GoldBar",7],[163,"Barrel_485","GOLD_ITEM_TYPE.GoldBar",7],[267,"WoodenCrate431","GOLD_ITEM_TYPE.GoldBar",3],[285,"Barrel_483","GOLD_ITEM_TYPE.GoldBar",3],[225,"WoodenCrate54","GOLD_ITEM_TYPE.GoldBar",3]]',
         oracles: '[[1911,5,"DarthSkulla"]]',
     }
+    ,
+    83: {
+        name: "Hauntosphere, Population 0",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"17","height":"17","depth":1,"map":"BB3AA3BABB5AA40BB2AA8BB2AA5BB4AA53BB2AA4BAA6BB2AA6BB3AA21BB2AA3BB9AA2BB4AA2BB3AA2BB7ABB14ABB4ABB5ABAA3BB8AA8BB6ABAA3BB24A$"}',
+        wall: "CreepyForest_1150",
+        floor: "FloorTiles_SDXL_005",
+        ceil: "DarkSky01",
+        start: '[137,5]',
+        decals: '[[137,4,"Cobblestone_0821","texture"],[138,4,"Cobblestone_0821","texture"],[139,4,"Cobblestone_0821","texture"],[140,4,"Cobblestone_0821","texture"],[123,4,"Cobblestone_0821","texture"],[106,4,"Cobblestone_0821","texture"],[107,4,"Cobblestone_0821","texture"],[108,4,"Cobblestone_0821","texture"],[91,4,"Cobblestone_0821","texture"],[92,4,"Cobblestone_0821","texture"],[93,4,"Cobblestone_0821","texture"],[94,4,"Cobblestone_0821","texture"],[95,4,"Cobblestone_0821","texture"],[112,4,"Cobblestone_0821","texture"],[113,4,"Cobblestone_0821","texture"],[130,4,"Cobblestone_0821","texture"],[131,4,"Cobblestone_0821","texture"],[148,4,"Cobblestone_0821","texture"],[149,4,"Cobblestone_0821","texture"],[150,4,"Cobblestone_0821","texture"],[151,4,"Cobblestone_0821","texture"]]',
+        lights: '[[143,3,"Moon51","moonlightFaint"],[127,1,"Moon63","moonlightFaint"],[145,5,"Moon58","moonlightFaint"],[161,7,"Moon52","moonlightFaint"]]',
+        gates: '[[136,5,"83.1","82.2","Down"],[152,3,"83.2","84.1","Closed"],[8,7,"83.3","87.1","Closed"]]',
+    }
+    ,
+    84: {
+        name: "Desolate Forest",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"21","height":"21","depth":1,"map":"BB2AA3BABAA8BABAA9BB5AA4BABB3AA14BABB3ABB3ABABB4ABABB2AA2BAA3BAA2BAA37BB2AA4BB2ABABB3AA2BB3ABB10ABB3AA3BB2ABB2AA2BB6ABB3ABABB2ABB2AA2BB3ABB3ABABB8ABB7ABB4ABB2AA6BABAA5BAA2BAA5BB4AA4BABB4ABABABAA2BABB2AA4BAA4BABB3AA6BABB2ABB7AA2BABABABB2AA2BABAA2BB3AA2BB2AA3BABB2AA4BB3ABB2ABB2ABB4AA5BB4ABABB6ABB2AA4BAA11BB4ABABB6ABB3AA2BB4ABB27A$"}',
+        wall: "CreepyForest_1154",
+        floor: "DetailedFloor1",
+        ceil: "DarkSky02",
+        start: '[211,5]',
+        decals: '[[211,4,"Cobblestone_0826","texture"],[212,4,"Cobblestone_0826","texture"],[213,4,"Cobblestone_0826","texture"],[214,4,"Cobblestone_0826","texture"],[215,4,"Cobblestone_0826","texture"],[236,4,"Cobblestone_0826","texture"],[237,4,"Cobblestone_0826","texture"],[238,4,"Cobblestone_0826","texture"],[239,4,"Cobblestone_0826","texture"],[240,4,"Cobblestone_0826","texture"],[241,4,"Cobblestone_0826","texture"],[242,4,"Cobblestone_0826","texture"],[243,4,"Cobblestone_0826","texture"],[244,4,"Cobblestone_0826","texture"],[245,4,"Cobblestone_0826","texture"],[246,4,"Cobblestone_0826","texture"],[247,4,"Cobblestone_0826","texture"],[248,4,"Cobblestone_0826","texture"],[227,4,"Cobblestone_0826","texture"],[206,4,"Cobblestone_0826","texture"],[207,4,"Cobblestone_0826","texture"],[208,4,"Cobblestone_0826","texture"]]',
+        gates: '[[210,5,"84.1","83.2","Closed"],[209,3,"84.2","85.1","Closed"]]',
+    }
+    ,
+    85: {
+        name: "Creepy Forest",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"21","height":"21","depth":1,"map":"BB2AA3BAA3BAA6BB3AA3BAA2BAA8BB2AA4BAA3BAA2BAA2BAA16BAA8BB4AA2BB3AA2BABABB3AA20BAA6BB2ABB2AA2BB2ABABAA2BAA2BB2ABB4ABABB2AA2BB11ABB2AA3BABB5ABB7ABAA2BB8ABABB8ABB6AA2BB2AA2BAA4BABAA3BB2ABB2ABB2ABABAA3BAA2BB4AA3BB2AA3BB6AA3BB2AA2BAA2BAA2BABABB3ABB3ABB2AA4BB2ABABAA3BB3ABAA2BB4AA2BAA2BAA3BB7AA2BB2AA2BB2ABAA2BB2ABB2AA2BABAA3BB3ABB2ABABB3AA2BB2AA2BB6ABB2AA2BB3ABB4AA6BB2ABB2AA2BB30A$"}',
+        wall: "CreepyForest_1156",
+        floor: "DetailedFloor2",
+        ceil: "DarkSky03",
+        start: '[127,5]',
+        decals: '[[127,4,"Cobblestone_0824","texture"],[128,4,"Cobblestone_0824","texture"],[129,4,"Cobblestone_0824","texture"],[130,4,"Cobblestone_0824","texture"],[131,4,"Cobblestone_0824","texture"],[152,4,"Cobblestone_0824","texture"],[173,4,"Cobblestone_0824","texture"],[194,4,"Cobblestone_0824","texture"],[195,4,"Cobblestone_0824","texture"],[196,4,"Cobblestone_0824","texture"],[197,4,"Cobblestone_0824","texture"],[198,4,"Cobblestone_0824","texture"],[199,4,"Cobblestone_0824","texture"],[200,4,"Cobblestone_0824","texture"],[201,4,"Cobblestone_0824","texture"],[202,4,"Cobblestone_0824","texture"],[203,4,"Cobblestone_0824","texture"],[204,4,"Cobblestone_0824","texture"],[205,4,"Cobblestone_0824","texture"],[206,4,"Cobblestone_0824","texture"],[185,4,"Cobblestone_0824","texture"],[186,4,"Cobblestone_0824","texture"],[187,4,"Cobblestone_0824","texture"]]',
+        gates: '[[126,5,"85.1","84.2","Closed"],[188,3,"85.2","86.1","Orange"],[10,7,"85.3","88.1","Closed"]]',
+    }
+    ,
+    86: {}
+    ,
+    87: {
+        name: "Cemetary",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"19","height":"19","depth":3,"map":"BB3AA3BABAA7BABAA18BB2ABB2AA17BB6AA14BAA2BAA14BB2ABB2AA5BB2AA12BB3AA5BB2AA5BB3AA2BAA4BAA13BB2AA5BB2ABAA17BB14AA2BB2AA4BAA5BB7AA5BB2ABABB15ABB8AA2BB3ABB4ABB5AA6BB2AA2BB20ABABB2ABABB16AA6BAA2BB25$BB80ÁÁ2BB81ABB136ÁÁ2BB2ÁÁ2BB4ÁBÁÁ3BB22ÁBB9ÁÁ3BÁÁ2BB3ÁBB3ÁÁ2BB6ÁÁ3BB45ÁBÁBB46ÁÁ3BÁBB4ÁÁ6BB2ÁÁ2BB2ÁÁ2BB2ÁÁ4BB12ÁÁ46BÁÁ7BÁÁ5BÁÁ2BB3ÁBÁBÁÁ6BB2ÁÁ6BB2ÁÁ2BÁÁ12BB4ÁBÁBB2ÁÁ2BB2ÁÁ2BÁÁ4BÁÁ10BB2ÁÁ14BB2ÁÁ9BÁÁ3BB3ÁÁ20BB4ÁÁ12BÁBÁÁ7BB4"}',
+        wall: "BloodMarbleFloorWall_SDXL_012",
+        floor: "BloodMarbleFloorWall_SDXL_025",
+        ceil: "marbleFloor106",
+        start: '[332,1]',
+        lights: '[[901,1,"Candelabra02","standardFaint"],[903,1,"Candelabra02","standardFaint"],[921,3,"Candelabra18","standardFaint"],[921,5,"Candelabra10","standardFaint"]]',
+        gates: '[[351,1,"87.1","83.3","Closed"]]',
+        entities: '[[171,5,"BlackCemeteria"],[189,3,"RedCemeteria"]]',
+    }
+    ,
+    88: {}
 };

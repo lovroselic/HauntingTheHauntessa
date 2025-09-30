@@ -72,7 +72,9 @@ const TEXTURE_LIST = [
     "JuggernautDarkwalls_0920", "JuggernautDarkwalls_0921", "JuggernautDarkwalls_0922", "JuggernautDarkwalls_0923", "JuggernautDarkwalls_0924", "JuggernautDarkwalls_0925", "JuggernautDarkwalls_0926", "RockAndWoodWall1", "RockWall441", "RockWall442", "RoughRockCeiling1", "XCeiling1",
     "XCeiling2", "XCeiling3", "XCeiling6",
     "Dune_0933", "Dune_0934", "Dune_0935", "Dune_0936", "Dune_0937", "Dune_0938", "Dune_0939", "Dune_0940", "Dune_0941", "Dune_0942", "Dune_0943", "Dune_0944",
-    "Dune_0945", "Dune_0946", "Dune_0947", "Dune_0948", "Dune_0949"
+    "Dune_0945", "Dune_0946", "Dune_0947", "Dune_0948", "Dune_0949",
+    "CreepyForest_1150", "CreepyForest_1151", "CreepyForest_1152", "CreepyForest_1153", "CreepyForest_1154", "CreepyForest_1155", "CreepyForest_1156", "CreepyForest_1157", "CreepyForest_1158", "CreepyForest_1159", "CreepyForest_1160", "CreepyForest_1161",
+    "CreepyForest_1162", "CreepyForest_1163", "CreepyForest_1164", "CreepyForest_1165", "CreepyForest_1166", "CreepyForest_1167", "CreepyForest_1168", "CreepyForest_1169", "CreepyForest_1170", "CreepyForest_1171", "CreepyForest_1172"
 ].sort();
 
 /** Decals */

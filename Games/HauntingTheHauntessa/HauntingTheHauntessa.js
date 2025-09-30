@@ -62,174 +62,38 @@ const DEBUG = {
         HERO.player.pos = Vector3.from_Grid(Grid.toCenter(grid), 0.5);
     },
     checkPoint() {
-        // area-3 - underworld
+        // area-4 - hauntosphere
         /*
 
         Entities:
-            DONE BlondeSkulla wants Skull, Skull,Skull, Bone, Bone ---> SkeletonDoll
-            DONE Tridenta wants "BattleAxe", "Shield" ---> Trident
-            DONE PainterElle wants EmptyPainting, Palette, PaintBrush ----->  Painting
-            DONE RubySilka wants  "GreenPanties", "GreenDress", "GreenBoots" ------> Ruby
-            DONE UnderworldDarkQueen wants Painting, JeweledCrown, GoldenGoblet, RedThighHighBoots ------------> GoldKey
-            DONE MissMuscleSmith wants "Ruby", "Emerald", "Amethyst", "SilverBar", "GoldBar" gives ---> JeweledCrown
-            DONE SkullTattoo wants  SkeletonCat", "SkeletonDoll", "SkeletonBird",  --> PinkKey
-            DONE HAcker want "Floppy","Floppy","Floppy" gives --> GoldenGoblet
-            DOEN Emeraldine wants "WhitePanties", "WhiteDress", "WhiteBoots" gives Emerald
-            DONE Amethyste wants "YellowDress", "YellowLatexThongs","YellowBoots",gives Amethyst
-            DONE FishNette wants "Fish", "TropicalFish" gives EmptyPainting
-            DONE "Vampyra" wants "Blood", "Blood", "Blood" gives RedThighHighBoots
-            DONE Fisherine wants Trident, gives --> Fish
-            DONE ApparitiaHide wants "SunGlasses", "Cap" ---> "WhiteBoots"
-            DONE ApparitiaPanties wants "Banknote10", "Banknote10","Banknote10"  ---> WhitePanties
-            DONE Ghosthessa wants Candle, Candle, Candle gives "SkeletonCat"
-            DONE PoisonDrinker wants "Poison","Poison","Poison"  gives  "SkeletonBird"
-            DONE YellowaWitness wants "YellowUmbrella", "YellowWellies" gives YellowDress
-            DONE GothicProgrammer wants "OldFloppy", "Joystick", gives Floppy
-            DONE PythonProgrammer wants "Computer", "MicroProcessor" gives Floppy
-            DONE Goldini wants GoldBar, GoldBar, GoldBar gives "GreenBoots"
-            DONE Brushelle wants "RedLeatherBoots", "PurpleLatexBra", "PinkPanties" gives PaintBrush
-            DONE MessyHair wants "Comb", "HairBrush", "PinkRibbon" gives  Banknote10
-            DONE ScubaDiveress wants "RedFin", "RedFin" gives "SunGlasses"
-            DONE IcePrincess wats "IceCube", "IceCube", "IceCube" gives "YellowUmbrella", 
-            DONE Libranelle wants "RavenBook", "TreeOfLifeBook", "PrincessBook", "OwlBook", "AnkhBook" gives "GreenPanties"
-            DONE BlackDommeGuard (56) wants "Mace", "Shield" gives "YellowLatexThongs"
-            DONE RedDommeGuard (57) wants "Sword", "Shield" give PinkPanties
-            DONE GreenDommeGuard (60) wants "Revolver", "Ammo" gives  PurpleLatexBra
-
+        - OrangeTop gives OrangeKey wants: "OrangeBoots", "OrangeLeggings", "OrangeBra", "OrangeThongs"
+            DONE RedCemeteria gives "OrangeBoots" wants "Candle", "RedCandle", "BlueCandle"
+            DONE BlackCemeteria gives "OrangeThongs" wants "RedRose","BlueRose","PurpleRose"  
+            
         Items:
-            DONE GoldCoin --> (56)
-            DONE GoldCoin  --> (59)
-            DONE GoldCoin --> (60)
-            DONE GoldCoin --> (65)
-            DONE GoldCoin ---> (66)
-            DONE GoldCoin --> (67)
-            DONE Skull, --> (64)
-            DONE Skull, --> (64)
-            DONE Skull, --> (64)
-            DONE Bone, --> (64)
-            DONE Bone--> (64)
-            DONE SkeletonDoll ---> BlondeSkulla (56)
-            DONE Painting ---> PainterElle (63)
-            DONE JeweledCrown --> MissMuscleSmith(69)
-            DONE GoldenGoblet --> Hacker(68)
-            DONE EmptyPainting, --> FishNetter (72)
-            DONE RedThighHighBoots --> Vampyra (73)
-            DONE Palette, --> (56)
-            DONE PaintBrush Brushelle -->(77)
-            DONE Ruby, ---> RubySilka (67)
-            DONE Emerald ---> Emeraldine (70)
-            DONE Amethyst ---> Amethyste (71)
-            DONE SilverBar ---> (63)
-            DONE GoldBar ---> (61)
-            DONE "GoldBar", ---> (63)
-            DONE "GoldBar", --> (67)
-            DONE "GoldBar" --> (67)
-            DONE "GreenPanties", --> Libranelle (56)
-            DONE GreenDress", --> (59)
-            DONE "GreenBoots"--> Goldini(59)
-            DONE "WhitePanties", ---> ApparitiaPanties (76)
-            DONE "WhiteDress", --> (76)
-            DONE "WhiteBoots", ---> ApparitiaHide (76)
-            DONE "YellowDress", ---> YellowaWitness(79)
-            DONE "YellowLatexThongs", --> BlackDommeGuard (56)
-            DONE "YellowBoots" --> (60)
-            DONE "SkeletonCat", ---> Ghosthessa(77)
-            DONE "SkeletonBird", ---> PoisonDrinker(78)
-            DONE "Floppy" ----> PythonProgrammer (60)
-            DONE "Floppy" ---> GothicProgrammer (60)
-            DONE "Floppy" -->  (61)
-            DONE "Fish", --> Fisherine(74)
-            DONE "TropicalFish" --> (74)
-            DONE "BattleAxe", --> (70)
-            DONE "Mace" ---> (71)
-            DONE Sword" -->  (62)
-            DONE "Shield" -->  (62)
-            DONE "Shield" --> (66)
-            DONE "Shield" --> (69)
-            DONE Trident --> Tridenta (75)
-            DONE "SunGlasses", --> ScubaDiveress (74)
-            DONE "Cap"  ---> (75)
-            DONE Banknote10, --> MessyHair(57)
-            DONE Banknote10, --> (75)
-            DONE Banknote10 ---> (80)
-            DONE Candle, ---> (68)
-            DONE Candle,  --> (72)
-            DONE Candle --> (76)
-            DONE Poison,  --> (80)
-            DONE Poison --> (59)
-            DONE "Poison" ---> (68)
-            DONE "YellowUmbrella", ---> IcePrincess (80)
-            DONE "YellowWellies"  --> (77)
-            DONE "Computer", --> (67)
-            DONE "MicroProcessor" ---> (69)
-            DONE "OldFloppy", ---> (70)
-            DONE "Joystick", --> (71)
-            DONE "RedLeatherBoots", --> (78)
-            DONE "PurpleLatexBra", ---> GreenDommeGuard (60)
-            DONE "PinkPanties" ---> RedDommeGuard(57)
-            DONE "RedFin", --> (73)
-            DONE "RedFin" ---> (68)
-            DONE "Comb", --> (78)
-            DONE "HairBrush", --> (77)
-            DONE "PinkRibbon" --> (73)
-            DONE "IceCube", ---> (60)
-            DONE" IceCube", ---> (60)
-            DONE  "IceCube" ---> (62)
-            DONE "RavenBook",  --> (69)
-            DONE TreeOfLifeBook", --> (70)
-            DONE "PrincessBook", ---> (71)
-            DONE "OwlBook",  ---> (72)
-            DONE "AnkhBook" --> (73)
-            DONE "Revolver", ---> (75)
-            DONE "Ammo" ---> (60)
-            DONE "Spear",  ---> (74)
-            DONE "Dagger", --->(57)
-            DONE "RedSneaker" ---> (75)
-            "DONE RedSneaker" --->(57)
-            DONE "MicroProcessor",  --> (57)
-            DONE "MicroProcessor" ---> (60)
-            DONE "GreenLiquid", ---> (70)
-            DONE "RedLiquid", ---> (65)
-            DONE "BlueLiquid" ---> (65)
-            DONE "GreenFeather", ---> (74)
-            DONE "BlueFeather",  --->(77)
-            DONE "WhiteFeather",  -->(76)
-            DONE "RedFeather" ---> (80)
-            DONE "Blood",         "Blood",         "Blood" ---> (73)
-
+            DONE "OrangeBoots", ---> RedCemeteria (87)
+        "OrangeLeggings", 
+        "OrangeBra", 
+            DONE "OrangeThongs" ---> BlackCemeteria (87)
+        "RedRose",
+        "BlueRose",
+        "PurpleRose"
+        Candle", 
+        "RedCandle", 
+        "BlueCandle"
+            
         Rooms that can have more entities, trainers:
-            75
-
 
         Shrines:
-            DeathWarder
-            ThornMana
-            MaskedDefense
-            ThornPriestess
-            LatexHeart
-    
     
         Trainers:
-            DONE RedGyma (72) --> health, wants  "RedSneaker",  "RedSneaker"
-            DONE BikiniWarrior (78) --> attack, wants: Spear, Dagger
-            DONE Apachessa (61) --> defense, wants: "GreenFeather", "BlueFeather", "WhiteFeather", "RedFeather"
-            DONE RedWellmana (67)  ---> mana, wants: "GreenLiquid", "RedLiquid", "BlueLiquid"
-            DONE MechGirl magic, wants: "MicroProcessor", "MicroProcessor"
-    
+
 
         CoinTrainers:
-            DaggerElle - attack
-            ArmoredBikini - defense
-            BlackHeartelle - health
-            RedHeartellle - health
-            Wanda - magic
-            ManaDrinkDomme - mana
+
 
         KEy yet unused:
-            Gold
-            Emerald
-            
-         
+
         Missing scrolls:
 
             
@@ -238,7 +102,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 82; //56
+        GAME.level = 87; //56
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -293,7 +157,8 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-
+            "OrangeBoots", "OrangeLeggings", "OrangeBra", "OrangeThongs",
+           
         ];
 
         for (let itm of invItems) {
@@ -421,7 +286,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.28.0",
+    VERSION: "0.28.1",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

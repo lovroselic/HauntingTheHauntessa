@@ -36,22 +36,7 @@ const INTERACTION_ITEM = {
         inventorySprite: "Book",
         text: "Such a great story. About a princess."
     },
-    PurpleRose: {
-        name: "PurpleRose",
-        category: "interaction_item",
-        inventorySprite: "PurpleRose",
-    },
-    RedRose: {
-        name: "RedRose",
-        category: "interaction_item",
-        inventorySprite: "RedRose",
-        text: "Beautiful red rose. Very helpful."
-    },
-    BlueRose: {
-        name: "BlueRose",
-        category: "interaction_item",
-        inventorySprite: "BlueRose",
-    },
+   
 
 
     GoldKey: {
@@ -516,24 +501,7 @@ const INTERACTION_ITEM = {
         text: "This looks like a portable kiss voucher. What a fascinating concept."
     },
 
-    OrangeLeggings: {
-        name: "OrangeLeggings",
-        category: "interaction_item",
-        inventorySprite: "OrangeLeggings",
-        text: "Cute stuff. Befitting a princess. But not my style."
-    },
-    OrangeBra: {
-        name: "OrangeBra",
-        category: "interaction_item",
-        inventorySprite: "OrangeBra",
-        text: "Cute stuff. Befitting a princess. But not my style."
-    },
-    OrangeBoots: {
-        name: "OrangeBoots",
-        category: "interaction_item",
-        inventorySprite: "OrangeBoots",
-        text: "Cute stuff. Befitting a princess. But not my style."
-    },
+    
     SkullNecklace: {
         name: "SkullNecklace",
         category: "interaction_item",

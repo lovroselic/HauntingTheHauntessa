@@ -699,7 +699,7 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
-     DarthSkulla: {
+    DarthSkulla: {
         name: "DarthSkulla",
         sprite: "DarthSkulla",
         category: 'crest',
@@ -3310,6 +3310,28 @@ const INTERACTION_OBJECT = {
         inventorySprite: "Candle",
         text: "Simple wax candle. I can light it. Or not."
     },
+    RedCandle: {
+        name: "RedCandle",
+        category: "interaction_item",
+        element: "CANDLE",
+        scale: 1.0 / 2 ** 2,
+        glueToFloor: true,
+        texture: "RedCandleWax",
+        material: MATERIAL.standard,
+        inventorySprite: "RedCandle",
+        text: "Simple red wax candle. I can light it. Or not."
+    },
+    BlueCandle: {
+        name: "BlueCandle",
+        category: "interaction_item",
+        element: "CANDLE",
+        scale: 1.0 / 2 ** 2,
+        glueToFloor: true,
+        texture: "BlueCandleWax",
+        material: MATERIAL.standard,
+        inventorySprite: "BlueCandle",
+        text: "Simple blue wax candle. I can light it. Or not."
+    },
     HornedHelmet: {
         name: "HornedHelmet",
         category: "interaction_item",
@@ -4390,7 +4412,6 @@ const INTERACTION_ITEM = {
         inventorySprite: "RedSneaker",
         text: "Red sneaker without pair."
     },
-
     GreenLiquid: {
         name: "GreenLiquid",
         category: "interaction_item",
@@ -4409,7 +4430,49 @@ const INTERACTION_ITEM = {
         inventorySprite: "BlueLiquid",
         text: "A flask of vile looking blue liquid."
     },
+    OrangeLeggings: {
+        name: "OrangeLeggings",
+        category: "interaction_item",
+        inventorySprite: "OrangeLeggings",
+        text: "Cute stuff. Befitting a princess. But not my style."
+    },
+    OrangeBra: {
+        name: "OrangeBra",
+        category: "interaction_item",
+        inventorySprite: "OrangeBra",
+        text: "Cute stuff. Befitting a princess. But not my style."
+    },
+    OrangeBoots: {
+        name: "OrangeBoots",
+        category: "interaction_item",
+        inventorySprite: "OrangeBoots",
+        text: "Cute stuff. Befitting a princess. But not my style."
+    },
 
+    OrangeThongs: {
+        name: "OrangeThongs",
+        category: "interaction_item",
+        inventorySprite: "OrangeThongs",
+        text: "Cute stuff. Befitting a princess. But not my style."
+    },
+    PurpleRose: {
+        name: "PurpleRose",
+        category: "interaction_item",
+        inventorySprite: "PurpleRose",
+        text: "Beautiful purple rose."
+    },
+    RedRose: {
+        name: "RedRose",
+        category: "interaction_item",
+        inventorySprite: "RedRose",
+        text: "Beautiful red rose. "
+    },
+    BlueRose: {
+        name: "BlueRose",
+        category: "interaction_item",
+        inventorySprite: "BlueRose",
+        text: "Beautiful blue rose."
+    },
 
     //books
     YoniBook: {
@@ -4656,6 +4719,33 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    RedCemeteria: {
+        name: "RedCemeteria",
+        sprite: "RedCemeteria",
+        category: 'crest',
+        voice: "FemaleLow6",
+        wants: ["Candle", "RedCandle", "BlueCandle"],
+        gives: "OrangeBoots",
+        text: {
+            intro: "Light my crypt with three true flames. White for vigil, red for passion, blue for dreams.",
+            progress: "The glow begins, but darkness lingers. Bring the rest and hush these shivers.",
+            conclusion: "Now the crypt sighs in candlelight. Take these orange boots. They never fit my midnight."
+        }
+    },
+    BlackCemeteria: {
+        name: "BlackCemeteria",
+        sprite: "BlackCemeteria",
+        category: 'crest',
+        voice: "Female6",
+        wants: ["RedRose", "BlueRose", "PurpleRose"],
+        gives: "OrangeThongs",
+        text: {
+            intro: "Bring me roses, dark and deep, red for lust, blue for sleep, purple for secrets I still keep.",
+            progress: "A flower or two, but my bouquet is bare. I crave more petals to perfume the air.",
+            conclusion: "The roses are mine, their scent divine. Take these orange thongs, too sinful to rest with the shrine."
+        }
+    },
+
     GreenDommeGuard: {
         name: "GreenDommeGuard",
         sprite: "GreenDommeGuard",
