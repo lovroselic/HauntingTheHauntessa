@@ -1308,6 +1308,8 @@ LoadSprites = [
     { srcName: "EntityPictures/DarthSkulla.jpg", name: "DarthSkulla" },
     { srcName: "EntityPictures/BlackCemeteria.jpg", name: "BlackCemeteria" },
     { srcName: "EntityPictures/RedCemeteria.jpg", name: "RedCemeteria" },
+    { srcName: "EntityPictures/TangerineLingerie.jpg", name: "TangerineLingerie" },
+    { srcName: "EntityPictures/MetallicaDress.jpg", name: "MetallicaDress" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
@@ -1917,6 +1919,19 @@ LoadSprites = [
     { srcName: "Lights/Fireplace_1044.jpg", name: "Fireplace_1044" },
     { srcName: "Lights/Fireplace_1045.jpg", name: "Fireplace_1045" },
     { srcName: "Lights/Fireplace_1046.jpg", name: "Fireplace_1046" },
+    { srcName: "Lights/CampFire_1173.jpg", name: "CampFire_1173" },
+    { srcName: "Lights/CampFire_1174.jpg", name: "CampFire_1174" },
+    { srcName: "Lights/CampFire_1175.jpg", name: "CampFire_1175" },
+    { srcName: "Lights/CampFire_1176.jpg", name: "CampFire_1176" },
+    { srcName: "Lights/CampFire_1177.jpg", name: "CampFire_1177" },
+    { srcName: "Lights/CampFire_1178.jpg", name: "CampFire_1178" },
+    { srcName: "Lights/CampFire_1179.jpg", name: "CampFire_1179" },
+    { srcName: "Lights/CampFire_1180.jpg", name: "CampFire_1180" },
+    { srcName: "Lights/CampFire_1181.jpg", name: "CampFire_1181" },
+    { srcName: "Lights/CampFire_1182.jpg", name: "CampFire_1182" },
+    { srcName: "Lights/CampFire_1183.jpg", name: "CampFire_1183" },
+    { srcName: "Lights/CampFire_1184.jpg", name: "CampFire_1184" },
+    { srcName: "Lights/CampFire_1185.jpg", name: "CampFire_1185" },
 
     //keys
     { srcName: "Keys/BlueKey2.png", name: "BlueKey" },

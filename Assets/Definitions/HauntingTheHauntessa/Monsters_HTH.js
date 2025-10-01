@@ -3786,6 +3786,12 @@ const INTERACTION_ITEM = {
         inventorySprite: "PinkKey",
         color: "Pink"
     },
+    OrangeKey: {
+        name: "OrangeKey",
+        category: "key",
+        inventorySprite: "OrangeKey",
+        color: "Orange"
+    },
 
     //items
     GoldCoin: {
@@ -4719,6 +4725,32 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+ MetallicaDress: {
+    name: "MetallicaDress",
+    sprite: "MetallicaDress",
+    category: 'crest',
+    voice: "StrangeFemale",
+    wants: ["IronBar", "IronBar", "IronBar"],
+    gives: "OrangeLeggings",
+    text: {
+        intro: "A true metal queen must shimmer and shine. Bring me iron bars to make this dress mine.",
+        progress: "A bar or two gives shimmer slight, but still it lacks that heavy bite.",
+        conclusion: "Forged in fashion, I shine no less. Take these orange leggings, they don't match this dress."
+    }
+},
+    TangerineLingerie: {
+        name: "TangerineLingerie",
+        sprite: "TangerineLingerie",
+        category: 'crest',
+        voice: "FemaleVeryLow4",
+        wants: ["OrangeBoots", "OrangeLeggings", "OrangeBra", "OrangeThongs"],
+        gives: "OrangeKey",
+        text: {
+            intro: "Orange is passion, orange is fire. Dress me in it, fulfill my desire.",
+            progress: "One piece glows, but not the set. Bring me more, I'm not done yet.",
+            conclusion: "Now I'm clad in tangerine tight delight. Take this key, go face Hauntessa's might."
+        }
+    },
     RedCemeteria: {
         name: "RedCemeteria",
         sprite: "RedCemeteria",

@@ -1257,7 +1257,9 @@ const LIGHT_DECALS = [
     "WallLamp18", "WallLamp19", "WallLamp20", "WallLamp31", "WallLamp32", "WallLamp33", "WallLamp34", "WallLamp35", "WallLamp9",
     "CandleL1", "CandleR1", "FireplaceFLuxU411", "FireplaceFLuxU412", "FireplaceFLuxU413", "FireplaceFLuxU414", "FireplaceFLuxU415", "FireplaceFLuxU416", "FireplaceFLuxU417", "FireplaceFLuxU418", "FireplaceFLuxU419", "FireplaceFLuxU420",
     "Lantern301", "Lantern302", "Lantern304", "SingleLantern1", "Torch11", "lantern201", "lantern303", "SettingSun1", "SettingSun2",
-    "Fireplace_1037", "Fireplace_1038", "Fireplace_1039", "Fireplace_1040", "Fireplace_1041", "Fireplace_1042", "Fireplace_1043", "Fireplace_1044", "Fireplace_1045", "Fireplace_1046"
+    "Fireplace_1037", "Fireplace_1038", "Fireplace_1039", "Fireplace_1040", "Fireplace_1041", "Fireplace_1042", "Fireplace_1043", "Fireplace_1044", "Fireplace_1045", "Fireplace_1046",
+    "CampFire_1173", "CampFire_1174", "CampFire_1175", "CampFire_1176", "CampFire_1177", "CampFire_1178", "CampFire_1179", "CampFire_1180", "CampFire_1181", "CampFire_1182", "CampFire_1183", "CampFire_1184",
+    "CampFire_1185"
 ].sort();
 
 const TRIGGER_DECALS = ["SmoothWallButton", "RockTriggerButton", "MarbleTriggerButton", "PurpleTriggerButton"];

@@ -66,13 +66,15 @@ const DEBUG = {
         /*
 
         Entities:
-        - OrangeTop gives OrangeKey wants: "OrangeBoots", "OrangeLeggings", "OrangeBra", "OrangeThongs"
+            DONETangerineLingerie gives OrangeKey wants: "OrangeBoots", "OrangeLeggings", "OrangeBra", "OrangeThongs"
             DONE RedCemeteria gives "OrangeBoots" wants "Candle", "RedCandle", "BlueCandle"
             DONE BlackCemeteria gives "OrangeThongs" wants "RedRose","BlueRose","PurpleRose"  
+            DONE MetallicaDress gives OrangeLeggings wants "IronBar", "IronBar","IronBar"
+        -SpringyBath gives "OrangeBra" wants
             
         Items:
             DONE "OrangeBoots", ---> RedCemeteria (87)
-        "OrangeLeggings", 
+            "OrangeLeggings", ---> MetallicaDress(89)
         "OrangeBra", 
             DONE "OrangeThongs" ---> BlackCemeteria (87)
         "RedRose",
@@ -81,6 +83,9 @@ const DEBUG = {
         Candle", 
         "RedCandle", 
         "BlueCandle"
+        "IronBar", 
+        "IronBar",
+        "IronBar"
             
         Rooms that can have more entities, trainers:
 
@@ -102,7 +107,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 87; //56
+        GAME.level = 90; //56
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -157,8 +162,8 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            "OrangeBoots", "OrangeLeggings", "OrangeBra", "OrangeThongs",
-           
+            "IronBar", "IronBar", "IronBar"
+
         ];
 
         for (let itm of invItems) {
@@ -286,7 +291,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.28.1",
+    VERSION: "0.28.2",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

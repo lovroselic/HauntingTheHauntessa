@@ -2244,7 +2244,7 @@ const MAP = {
         start: '[137,5]',
         decals: '[[137,4,"Cobblestone_0821","texture"],[138,4,"Cobblestone_0821","texture"],[139,4,"Cobblestone_0821","texture"],[140,4,"Cobblestone_0821","texture"],[123,4,"Cobblestone_0821","texture"],[106,4,"Cobblestone_0821","texture"],[107,4,"Cobblestone_0821","texture"],[108,4,"Cobblestone_0821","texture"],[91,4,"Cobblestone_0821","texture"],[92,4,"Cobblestone_0821","texture"],[93,4,"Cobblestone_0821","texture"],[94,4,"Cobblestone_0821","texture"],[95,4,"Cobblestone_0821","texture"],[112,4,"Cobblestone_0821","texture"],[113,4,"Cobblestone_0821","texture"],[130,4,"Cobblestone_0821","texture"],[131,4,"Cobblestone_0821","texture"],[148,4,"Cobblestone_0821","texture"],[149,4,"Cobblestone_0821","texture"],[150,4,"Cobblestone_0821","texture"],[151,4,"Cobblestone_0821","texture"]]',
         lights: '[[143,3,"Moon51","moonlightFaint"],[127,1,"Moon63","moonlightFaint"],[145,5,"Moon58","moonlightFaint"],[161,7,"Moon52","moonlightFaint"]]',
-        gates: '[[136,5,"83.1","82.2","Down"],[152,3,"83.2","84.1","Closed"],[8,7,"83.3","87.1","Closed"]]',
+        gates: '[[136,5,"83.1","82.2","Down"],[152,3,"83.2","84.1","Closed"],[8,7,"83.3","87.1","Closed"],[280,1,"83.4","89.1","Closed"]]',
     }
     ,
     84: {
@@ -2260,7 +2260,7 @@ const MAP = {
         ceil: "DarkSky02",
         start: '[211,5]',
         decals: '[[211,4,"Cobblestone_0826","texture"],[212,4,"Cobblestone_0826","texture"],[213,4,"Cobblestone_0826","texture"],[214,4,"Cobblestone_0826","texture"],[215,4,"Cobblestone_0826","texture"],[236,4,"Cobblestone_0826","texture"],[237,4,"Cobblestone_0826","texture"],[238,4,"Cobblestone_0826","texture"],[239,4,"Cobblestone_0826","texture"],[240,4,"Cobblestone_0826","texture"],[241,4,"Cobblestone_0826","texture"],[242,4,"Cobblestone_0826","texture"],[243,4,"Cobblestone_0826","texture"],[244,4,"Cobblestone_0826","texture"],[245,4,"Cobblestone_0826","texture"],[246,4,"Cobblestone_0826","texture"],[247,4,"Cobblestone_0826","texture"],[248,4,"Cobblestone_0826","texture"],[227,4,"Cobblestone_0826","texture"],[206,4,"Cobblestone_0826","texture"],[207,4,"Cobblestone_0826","texture"],[208,4,"Cobblestone_0826","texture"]]',
-        gates: '[[210,5,"84.1","83.2","Closed"],[209,3,"84.2","85.1","Closed"]]',
+        gates: '[[210,5,"84.1","83.2","Closed"],[209,3,"84.2","85.1","Closed"],[15,7,"84.3","90.1","Closed"]]',
     }
     ,
     85: {
@@ -2298,5 +2298,54 @@ const MAP = {
         entities: '[[171,5,"BlackCemeteria"],[189,3,"RedCemeteria"]]',
     }
     ,
-    88: {}
+    88: {
+        name: "Tangerine Lingerie",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"17","height":"17","depth":5,"map":"BB2AA3BB3ABAA19BAA12BB5AŁAA3ÁAÁAA7BB2AA4ÁBB2AA3ÁAA9BB2AA7ÁAA5BAA5BAA4BAA2BB3ÁBAA5ÁBB6AA2BB3ABB2AA11BAŁAA4BB2AA2BB3AA3BB10AA2BB8ABB2AA2BABB5AA2BB2ABB11ABAA7BB2AA2BB13ABB2AA2BB4ABB6AA2ÁBB27ࡁBB40ABB4ABB4AA4BB9ABB65ABB73ÁBB73A$BB28ÁBB68ÁBB196ÁBB3ÁBÁÁ7BB5ÁBB10ÁBÁBB10ÁÁ9BB4ABB12ÁBB11ÁBB24AÁÁ4BB33ࡁBB33ÁBÁBÁBB2ÁBB2ÁÁ2BB27ÁÁ23BÁÁ18BÁÁ32BÁÁ9BÁÁ59BÁÁ18BÁAA3ÁAA2BÁÁ21BÁÁ5AÁÁ2BÁÁ29AÁBÁÁ24BB2ÁÁ27BB9ÁÁ31BB11ÁÁ9BB5ɁɁ2AA2сс2ŁŁ2ࡁࡁ2ɁɁ2сс2BB2"}',
+        wall: "DarkWallSDXL300",
+        floor: "DarkWallSDXL317",
+        ceil: "SpiderWeb6",
+        start: '[671,1]',
+        lights: '[[1198,7,"lantern303","standard"],[583,7,"Fireplace_1046","fireplace"],[589,7,"Fireplace102","fireplace"],[705,1,"FluxLight101","standardYellow"],[786,1,"DuaLLantern_011","standardYellow"],[794,1,"DuaLLantern_025","standardYellow"],[1283,7,"DuaLLantern_003","standardYellow"]]',
+        gates: '[[280,1,"88.1","85.3","Closed"]]',
+        entities: '[[586,7,"TangerineLingerie"]]',
+    }
+    ,
+    89: {
+        name: "Metal Rulz",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"19","height":"19","depth":5,"map":"BB7AA4ࡁࡁ2ABAŁŁ2ɁɁ2сс2AA15ÁÁ6BB3ÁÁ2AA15ÁÁ4AA77BAA13BAA43ÁAA4BAA12BAA14BB9ÁÁ3BB3AA2BB30ABB53ÁAA4ÁBB4ABB52$BB26ÁBB20ࡁABB95ABB206ABB192ABB18ÁÁ13BAA2BAA6BB50ABB28ÁÁ3BB13ÁÁ7BÁÁ3BB54AA4BB34ABB9AA6BB40AA3BB4ABB40ÁÁ3BB53ÁÁ156BÁÁ29BB3ÁÁ142BÁÁ17BÁÁ4BÁÁ10BB19ÁBB11ÁÁ43BB16ŁBB2ɁBB2с"}',
+        wall: "LightWallSDXL305",
+        floor: "GoldBlackSDXL342",
+        ceil: "JuggernautDarkwalls_0920",
+        start: '[1267,3]',
+        lights: '[[1559,5,"Candle55","standardYellowDim"],[1597,5,"DuaLLantern_025","standardYellowDim"],[1635,5,"WallLamp13","standardYellowDim"],[1673,5,"FluxLight127","standardYellowDim"],[1549,5,"WallLamp33","standardYellowDim"],[1625,5,"Candle60","standardYellowDim"],[1701,5,"DuaLLantern_019","standardYellowDim"]]',
+        gates: '[[9,7,"89.1","83.4","Closed"]]',
+        entities: '[[1272,3,"MetallicaDress"]]',
+    }
+    ,
+ 90 : {
+name: "Cold Spring",
+sg: 0,
+maxSpawned: -1,
+killCountdown: -1,
+killsRequiredToStopSpawning: 99,
+spawnDelay: -1,
+data: '{"width":"17","height":"21","depth":3,"map":"BB2AA2BB5AA4BB4AA3BABB2AA2BÁBB2ABAA54BB2AA5BAA5BB2AA4BB2AA10BAA19BB2AA2BB2ABAA3BB3ABB2ABAA2BB6AA4BB2ABB3AA5BB2AA2BB2AA2BAA2BB3ABB3ABABB3AA2BB3ABB3ABB7ABB13ABAA2BB11ABB8ABÁAA2BABB2ABABB6ABAA2BB2ABB2ABB3ABB3AA3BB10AA3BB3ABB12ABB2AA3BB3ABABABB49ABB12AA2BB13ABB4ࡁBB7ABAA3BB5ABB6ABB19$BB115ÁBB31ÁBB5ÁÁ20AÁÁ4ABB75ABB26ABB52ABB55ABB29ÁBB2ÁÁ77BÁÁ75BB26ŁɁс"}',
+wall: "LightWallSDXL307",
+floor: "ForestFloor01",
+ceil: "MossFloor100",
+start: '[465,3]',
+decals: '[[741,4,"Water32","texture"],[401,4,"Water32","texture"],[418,4,"Water32","texture"],[435,4,"Water32","texture"],[452,4,"Water32","texture"],[469,4,"Water32","texture"],[486,4,"Water32","texture"],[146,4,"Water32","texture"],[163,4,"Water32","texture"],[180,4,"Water32","texture"],[197,4,"Water32","texture"],[214,4,"Water32","texture"],[231,4,"Water32","texture"],[248,4,"Water32","texture"],[265,4,"Water32","texture"],[266,4,"Water32","texture"],[267,4,"Water32","texture"],[268,4,"Water32","texture"],[269,4,"Water32","texture"],[270,4,"Water32","texture"],[287,4,"Water32","texture"],[304,4,"Water32","texture"],[129,7,"Water32","texture"],[384,7,"Water32","texture"],[724,7,"Water32","texture"]]',
+lights: '[[722,7,"SettingSun1","sunlightBright"],[234,3,"CampFire_1173","fireplace"],[156,5,"CampFire_1174","fireplace"],[411,5,"CampFire_1175","fireplace"]]',
+gates: '[[348,1,"90.1","84.3","Closed"]]',
+}
 };
