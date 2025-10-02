@@ -70,12 +70,12 @@ const DEBUG = {
             DONE RedCemeteria gives "OrangeBoots" wants "Candle", "RedCandle", "BlueCandle"
             DONE BlackCemeteria gives "OrangeThongs" wants "RedRose","BlueRose","PurpleRose"  
             DONE MetallicaDress gives OrangeLeggings wants "IronBar", "IronBar","IronBar"
-        -SpringyBath gives "OrangeBra" wants
+            DONE SpringyBather gives "OrangeBra" wants "Sponge", "Towel"
             
         Items:
             DONE "OrangeBoots", ---> RedCemeteria (87)
-            "OrangeLeggings", ---> MetallicaDress(89)
-        "OrangeBra", 
+            DONE "OrangeLeggings", ---> MetallicaDress(89)
+            DONE "OrangeBra", --> SpringyBather (90)
             DONE "OrangeThongs" ---> BlackCemeteria (87)
         "RedRose",
         "BlueRose",
@@ -86,6 +86,8 @@ const DEBUG = {
         "IronBar", 
         "IronBar",
         "IronBar"
+        "Sponge", 
+        "Towel"
             
         Rooms that can have more entities, trainers:
 
@@ -162,7 +164,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            "IronBar", "IronBar", "IronBar"
+
 
         ];
 
@@ -291,7 +293,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.28.2",
+    VERSION: "0.28.3",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

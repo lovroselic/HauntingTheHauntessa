@@ -139,12 +139,7 @@ const INTERACTION_ITEM = {
         inventorySprite: "LeoPumps",
         text: "Looks like something Purrscilla would wear."
     },
-    Sponge: {
-        name: "Sponge",
-        category: "interaction_item",
-        inventorySprite: "Sponge",
-        text: "Maybe I should take a bath?"
-    },
+
     RubberDuck: {
         name: "RubberDuck",
         category: "interaction_item",

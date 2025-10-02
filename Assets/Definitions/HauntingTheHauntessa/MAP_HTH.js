@@ -2332,20 +2332,21 @@ const MAP = {
         entities: '[[1272,3,"MetallicaDress"]]',
     }
     ,
- 90 : {
-name: "Cold Spring",
-sg: 0,
-maxSpawned: -1,
-killCountdown: -1,
-killsRequiredToStopSpawning: 99,
-spawnDelay: -1,
-data: '{"width":"17","height":"21","depth":3,"map":"BB2AA2BB5AA4BB4AA3BABB2AA2BÁBB2ABAA54BB2AA5BAA5BB2AA4BB2AA10BAA19BB2AA2BB2ABAA3BB3ABB2ABAA2BB6AA4BB2ABB3AA5BB2AA2BB2AA2BAA2BB3ABB3ABABB3AA2BB3ABB3ABB7ABB13ABAA2BB11ABB8ABÁAA2BABB2ABABB6ABAA2BB2ABB2ABB3ABB3AA3BB10AA3BB3ABB12ABB2AA3BB3ABABABB49ABB12AA2BB13ABB4ࡁBB7ABAA3BB5ABB6ABB19$BB115ÁBB31ÁBB5ÁÁ20AÁÁ4ABB75ABB26ABB52ABB55ABB29ÁBB2ÁÁ77BÁÁ75BB26ŁɁс"}',
-wall: "LightWallSDXL307",
-floor: "ForestFloor01",
-ceil: "MossFloor100",
-start: '[465,3]',
-decals: '[[741,4,"Water32","texture"],[401,4,"Water32","texture"],[418,4,"Water32","texture"],[435,4,"Water32","texture"],[452,4,"Water32","texture"],[469,4,"Water32","texture"],[486,4,"Water32","texture"],[146,4,"Water32","texture"],[163,4,"Water32","texture"],[180,4,"Water32","texture"],[197,4,"Water32","texture"],[214,4,"Water32","texture"],[231,4,"Water32","texture"],[248,4,"Water32","texture"],[265,4,"Water32","texture"],[266,4,"Water32","texture"],[267,4,"Water32","texture"],[268,4,"Water32","texture"],[269,4,"Water32","texture"],[270,4,"Water32","texture"],[287,4,"Water32","texture"],[304,4,"Water32","texture"],[129,7,"Water32","texture"],[384,7,"Water32","texture"],[724,7,"Water32","texture"]]',
-lights: '[[722,7,"SettingSun1","sunlightBright"],[234,3,"CampFire_1173","fireplace"],[156,5,"CampFire_1174","fireplace"],[411,5,"CampFire_1175","fireplace"]]',
-gates: '[[348,1,"90.1","84.3","Closed"]]',
-}
+    90: {
+        name: "Cold Spring",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"17","height":"21","depth":3,"map":"BB2AA2BB5AA4BB4AA3BABB2AA2BÁBB2ABAA54BB2AA5BAA5BB2AA4BB2AA10BAA19BB2AA2BB2ABAA3BB3ABB2ABAA2BB6AA4BB2ABB3AA5BB2AA2BB2AA2BAA2BB3ABB3ABABB3AA2BB3ABB3ABB7ABB13ABAA2BB11ABB8ABÁAA2BABB2ABABB6ABAA2BB2ABB2ABB3ABB3AA3BB10AA3BB3ABB12ABB2AA3BB3ABABABB49ABB12AA2BB13ABB4ࡁBB7ABAA3BB5ABB6ABB19$BB115ÁBB31ÁBB5ÁÁ20AÁÁ4ABB75ABB26ABB52ABB55ABB29ÁBB2ÁÁ77BÁÁ75BB26ŁɁс"}',
+        wall: "LightWallSDXL307",
+        floor: "ForestFloor01",
+        ceil: "MossFloor100",
+        start: '[465,3]',
+        decals: '[[741,4,"Water32","texture"],[401,4,"Water32","texture"],[418,4,"Water32","texture"],[435,4,"Water32","texture"],[452,4,"Water32","texture"],[469,4,"Water32","texture"],[486,4,"Water32","texture"],[146,4,"Water32","texture"],[163,4,"Water32","texture"],[180,4,"Water32","texture"],[197,4,"Water32","texture"],[214,4,"Water32","texture"],[231,4,"Water32","texture"],[248,4,"Water32","texture"],[265,4,"Water32","texture"],[266,4,"Water32","texture"],[267,4,"Water32","texture"],[268,4,"Water32","texture"],[269,4,"Water32","texture"],[270,4,"Water32","texture"],[287,4,"Water32","texture"],[304,4,"Water32","texture"],[129,7,"Water32","texture"],[384,7,"Water32","texture"],[724,7,"Water32","texture"],[419,4,"Water32","texture"],[402,4,"Water32","texture"],[436,4,"Water32","texture"],[420,4,"Water32","texture"],[437,4,"Water32","texture"],[438,4,"Water32","texture"],[454,4,"Water32","texture"],[453,4,"Water32","texture"],[470,4,"Water32","texture"],[487,4,"Water32","texture"]]',
+        lights: '[[722,7,"SettingSun1","sunlightBright"],[234,3,"CampFire_1173","fireplace"],[156,5,"CampFire_1174","fireplace"],[411,5,"CampFire_1175","fireplace"]]',
+        gates: '[[348,1,"90.1","84.3","Closed"]]',
+        entities: '[[439,3,"SpringyBather"]]',
+    }
 };

@@ -4694,6 +4694,13 @@ const INTERACTION_ITEM = {
         text: "A feather. Blue."
     },
 
+    Sponge: {
+        name: "Sponge",
+        category: "interaction_item",
+        inventorySprite: "Sponge",
+        text: "Maybe I should take a bath?"
+    },
+
     //metals
     GoldBar: {
         name: "GoldBar",
@@ -4725,19 +4732,32 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
- MetallicaDress: {
-    name: "MetallicaDress",
-    sprite: "MetallicaDress",
-    category: 'crest',
-    voice: "StrangeFemale",
-    wants: ["IronBar", "IronBar", "IronBar"],
-    gives: "OrangeLeggings",
-    text: {
-        intro: "A true metal queen must shimmer and shine. Bring me iron bars to make this dress mine.",
-        progress: "A bar or two gives shimmer slight, but still it lacks that heavy bite.",
-        conclusion: "Forged in fashion, I shine no less. Take these orange leggings, they don't match this dress."
-    }
-},
+    SpringyBather: {
+        name: "SpringyBather",
+        sprite: "SpringyBather",
+        category: 'crest',
+        voice: "Female2",
+        wants: ["Sponge", "Towel"],
+        gives: "OrangeBra",
+        text: {
+            intro: "Och, the spring is cold and I'm in a plight. Bring me a sponge and a towel tae make it right.",
+            progress: "A wee bit warmer, but still I freeze. Fetch the rest, laddie, if ye please.",
+            conclusion: "All fresh and clean, nae shame, nae flaw. Take this bra, I dinnae need it for a thaw."
+        }
+    },
+    MetallicaDress: {
+        name: "MetallicaDress",
+        sprite: "MetallicaDress",
+        category: 'crest',
+        voice: "StrangeFemale",
+        wants: ["IronBar", "IronBar", "IronBar"],
+        gives: "OrangeLeggings",
+        text: {
+            intro: "A true metal queen must shimmer and shine. Bring me iron bars to make this dress mine.",
+            progress: "A bar or two gives shimmer slight, but still it lacks that heavy bite.",
+            conclusion: "Forged in fashion, I shine no less. Take these orange leggings, they don't match this dress."
+        }
+    },
     TangerineLingerie: {
         name: "TangerineLingerie",
         sprite: "TangerineLingerie",
