@@ -699,6 +699,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+     ClosedCastleGate: {
+        name: "ClosedCastleGate",
+        sprite: "ClosedCastleGate",
+        category: 'crest',
+        voice: "Princess",
+        text: "Main gate is shut. I need to find another entrance to the Hauntessa's castle. Let's explore.",
+        interactionCategory: "oracle",
+    },
     DarthSkulla: {
         name: "DarthSkulla",
         sprite: "DarthSkulla",

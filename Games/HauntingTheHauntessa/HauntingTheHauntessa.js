@@ -71,12 +71,15 @@ const DEBUG = {
             DONE BlackCemeteria gives "OrangeThongs" wants "RedRose","BlueRose","PurpleRose"  
             DONE MetallicaDress gives OrangeLeggings wants "IronBar", "IronBar","IronBar"
             DONE SpringyBather gives "OrangeBra" wants "Sponge", "Towel"
+        -BootShina wants Brush gives GoldCoin
+        -FluteShepardess wants "Sheep", "Sheep", "Sheep" gives
             
         Items:
             DONE "OrangeBoots", ---> RedCemeteria (87)
             DONE "OrangeLeggings", ---> MetallicaDress(89)
             DONE "OrangeBra", --> SpringyBather (90)
             DONE "OrangeThongs" ---> BlackCemeteria (87)
+
         "RedRose",
         "BlueRose",
         "PurpleRose"
@@ -98,10 +101,17 @@ const DEBUG = {
 
         CoinTrainers:
 
+        Coins place:
+
 
         KEy yet unused:
 
+        Missing keys:
+        Red
+        Green
+
         Missing scrolls:
+            Fly
 
             
 
@@ -109,7 +119,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 90; //56
+        GAME.level = 86; //56
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -293,7 +303,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.28.3",
+    VERSION: "0.28.4",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

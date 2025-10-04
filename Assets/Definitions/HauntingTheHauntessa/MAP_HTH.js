@@ -2247,20 +2247,20 @@ const MAP = {
         gates: '[[136,5,"83.1","82.2","Down"],[152,3,"83.2","84.1","Closed"],[8,7,"83.3","87.1","Closed"],[280,1,"83.4","89.1","Closed"]]',
     }
     ,
-    84: {
-        name: "Desolate Forest",
+    85: {
+        name: "Creepy Forest",
         sg: 0,
         maxSpawned: -1,
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"21","height":"21","depth":1,"map":"BB2AA3BABAA8BABAA9BB5AA4BABB3AA14BABB3ABB3ABABB4ABABB2AA2BAA3BAA2BAA37BB2AA4BB2ABABB3AA2BB3ABB10ABB3AA3BB2ABB2AA2BB6ABB3ABABB2ABB2AA2BB3ABB3ABABB8ABB7ABB4ABB2AA6BABAA5BAA2BAA5BB4AA4BABB4ABABABAA2BABB2AA4BAA4BABB3AA6BABB2ABB7AA2BABABABB2AA2BABAA2BB3AA2BB2AA3BABB2AA4BB3ABB2ABB2ABB4AA5BB4ABABB6ABB2AA4BAA11BB4ABABB6ABB3AA2BB4ABB27A$"}',
-        wall: "CreepyForest_1154",
-        floor: "DetailedFloor1",
-        ceil: "DarkSky02",
-        start: '[211,5]',
-        decals: '[[211,4,"Cobblestone_0826","texture"],[212,4,"Cobblestone_0826","texture"],[213,4,"Cobblestone_0826","texture"],[214,4,"Cobblestone_0826","texture"],[215,4,"Cobblestone_0826","texture"],[236,4,"Cobblestone_0826","texture"],[237,4,"Cobblestone_0826","texture"],[238,4,"Cobblestone_0826","texture"],[239,4,"Cobblestone_0826","texture"],[240,4,"Cobblestone_0826","texture"],[241,4,"Cobblestone_0826","texture"],[242,4,"Cobblestone_0826","texture"],[243,4,"Cobblestone_0826","texture"],[244,4,"Cobblestone_0826","texture"],[245,4,"Cobblestone_0826","texture"],[246,4,"Cobblestone_0826","texture"],[247,4,"Cobblestone_0826","texture"],[248,4,"Cobblestone_0826","texture"],[227,4,"Cobblestone_0826","texture"],[206,4,"Cobblestone_0826","texture"],[207,4,"Cobblestone_0826","texture"],[208,4,"Cobblestone_0826","texture"]]',
-        gates: '[[210,5,"84.1","83.2","Closed"],[209,3,"84.2","85.1","Closed"],[15,7,"84.3","90.1","Closed"]]',
+        data: '{"width":"21","height":"21","depth":1,"map":"BB2AA3BAA3BAA6BB3AA3BAA2BAA8BB2AA4BAA3BAA2BAA2BAA16BAA8BB4AA2BB3AA2BABABB3AA20BAA6BB2ABB2AA2BB2ABABAA2BAA2BB2ABB4ABABB2AA2BB11ABB2AA3BABB5ABB7ABAA2BB8ABABB8ABB6AA2BB2AA2BAA4BABAA3BB2ABB2ABB2ABABAA3BAA2BB4AA3BB2AA3BB6AA3BB2AA2BAA2BAA2BABABB3ABB3ABB2AA4BB2ABABAA3BB3ABAA2BB4AA2BAA2BAA3BB7AA2BB2AA2BB2ABAA2BB2ABB2AA2BABAA3BB3ABB2ABABB3AA2BB2AA2BB6ABB2AA2BB3ABB4AA6BB2ABB2AA2BB30A$"}',
+        wall: "CreepyForest_1156",
+        floor: "DetailedFloor2",
+        ceil: "DarkSky03",
+        start: '[127,5]',
+        decals: '[[127,4,"Cobblestone_0824","texture"],[128,4,"Cobblestone_0824","texture"],[129,4,"Cobblestone_0824","texture"],[130,4,"Cobblestone_0824","texture"],[131,4,"Cobblestone_0824","texture"],[152,4,"Cobblestone_0824","texture"],[173,4,"Cobblestone_0824","texture"],[194,4,"Cobblestone_0824","texture"],[195,4,"Cobblestone_0824","texture"],[196,4,"Cobblestone_0824","texture"],[197,4,"Cobblestone_0824","texture"],[198,4,"Cobblestone_0824","texture"],[199,4,"Cobblestone_0824","texture"],[200,4,"Cobblestone_0824","texture"],[201,4,"Cobblestone_0824","texture"],[202,4,"Cobblestone_0824","texture"],[203,4,"Cobblestone_0824","texture"],[204,4,"Cobblestone_0824","texture"],[205,4,"Cobblestone_0824","texture"],[206,4,"Cobblestone_0824","texture"],[185,4,"Cobblestone_0824","texture"],[186,4,"Cobblestone_0824","texture"],[187,4,"Cobblestone_0824","texture"]]',
+        gates: '[[126,5,"85.1","84.2","Closed"],[188,3,"85.2","86.1","Orange"],[10,7,"85.3","88.1","Closed"],[430,1,"85.4","02.1","Green"]]',
     }
     ,
     85: {
@@ -2279,7 +2279,23 @@ const MAP = {
         gates: '[[126,5,"85.1","84.2","Closed"],[188,3,"85.2","86.1","Orange"],[10,7,"85.3","88.1","Closed"]]',
     }
     ,
-    86: {}
+86 : {
+name: "Draw Bridge",
+sg: 0,
+maxSpawned: -1,
+killCountdown: -1,
+killsRequiredToStopSpawning: 99,
+spawnDelay: -1,
+data: '{"width":"19","height":"19","depth":3,"map":"BB2AA10BB14AA45ÁAÁÁ13AA58BB2AA14BB37ABB7ABB9AA6BAA6BB13ABB22ABB18$BB15ÁÁ2BB9ABB132ÁÁ14BB17ÁÁ14BB121ÁÁ176AA14ÁÁ240BÁBB14ÁÁ14BB15"}',
+wall: "IvyWall_521",
+floor: "OrnateFloor106",
+ceil: "DarkSky05",
+start: '[172,5]',
+decals: '[[172,4,"Cobblestone_0822","texture"],[173,4,"Cobblestone_0822","texture"],[174,4,"Cobblestone_0822","texture"],[175,4,"Cobblestone_0822","texture"],[176,4,"Cobblestone_0822","texture"],[177,4,"Cobblestone_0822","texture"],[178,4,"Cobblestone_0822","texture"],[179,4,"Cobblestone_0822","texture"],[185,4,"Cobblestone_0822","texture"],[186,4,"Cobblestone_0822","texture"],[187,4,"Cobblestone_0822","texture"],[188,4,"Cobblestone_0822","texture"],[180,4,"Wood21","texture"],[181,4,"Wood21","texture"],[182,4,"Wood21","texture"],[183,4,"Wood21","texture"],[184,4,"Wood21","texture"],[55,3,"OuterCastleWall_0842","texture"],[74,3,"OuterCastleWall_0842","texture"],[93,3,"OuterCastleWall_0842","texture"],[112,3,"OuterCastleWall_0842","texture"],[131,3,"OuterCastleWall_0842","texture"],[150,3,"OuterCastleWall_0842","texture"],[169,3,"OuterCastleWall_0842","texture"],[207,3,"OuterCastleWall_0842","texture"],[226,3,"OuterCastleWall_0842","texture"],[245,3,"OuterCastleWall_0842","texture"],[264,3,"OuterCastleWall_0842","texture"],[283,3,"OuterCastleWall_0842","texture"],[302,3,"OuterCastleWall_0842","texture"],[321,3,"OuterCastleWall_0842","texture"],[416,3,"OuterCastleWall_0842","texture"],[435,3,"OuterCastleWall_0842","texture"],[454,3,"OuterCastleWall_0842","texture"],[473,3,"OuterCastleWall_0842","texture"],[492,3,"OuterCastleWall_0842","texture"],[511,3,"OuterCastleWall_0842","texture"],[530,3,"OuterCastleWall_0842","texture"],[549,3,"OuterCastleWall_0842","texture"],[568,3,"OuterCastleWall_0842","texture"],[587,3,"OuterCastleWall_0842","texture"],[606,3,"OuterCastleWall_0842","texture"],[625,3,"OuterCastleWall_0842","texture"],[644,3,"OuterCastleWall_0842","texture"],[663,3,"OuterCastleWall_0842","texture"],[682,3,"OuterCastleWall_0842","texture"],[777,3,"OuterCastleWall_0842","texture"],[796,3,"OuterCastleWall_0842","texture"],[815,3,"OuterCastleWall_0842","texture"],[834,3,"OuterCastleWall_0842","texture"],[853,3,"OuterCastleWall_0842","texture"],[891,3,"OuterCastleWall_0842","texture"],[872,3,"OuterCastleWall_0842","texture"],[910,3,"OuterCastleWall_0842","texture"],[929,3,"OuterCastleWall_0842","texture"],[948,3,"OuterCastleWall_0842","texture"],[967,3,"OuterCastleWall_0842","texture"],[986,3,"OuterCastleWall_0842","texture"],[1005,3,"OuterCastleWall_0842","texture"],[1024,3,"OuterCastleWall_0842","texture"],[1043,3,"OuterCastleWall_0842","texture"]]',
+lights: '[[896,5,"Moon58","moonlightBright"],[910,3,"Moon54","moonlightBright"],[530,3,"Candle67","standardYellowDim"],[568,3,"Candle67","standardYellowDim"]]',
+gates: '[[171,5,"86.1","85.2","Closed"]]',
+oracles: '[[189,3,"ClosedCastleGate"]]',
+}
     ,
     87: {
         name: "Cemetary",
@@ -2348,5 +2364,41 @@ const MAP = {
         lights: '[[722,7,"SettingSun1","sunlightBright"],[234,3,"CampFire_1173","fireplace"],[156,5,"CampFire_1174","fireplace"],[411,5,"CampFire_1175","fireplace"]]',
         gates: '[[348,1,"90.1","84.3","Closed"]]',
         entities: '[[439,3,"SpringyBather"]]',
+    }
+    ,
+    91: {
+        name: "Cosy Lodge",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"21","height":"21","depth":3,"map":"BB3AA10EAA4BB2AA5BB2AA5BAA6BB3ABAA7BAA4BAA5BB2AA2BB2AA2BB5AA3BAA4BB2ABB4ABABAA3BAA18BAA5BAA6BAA2BAA3BB2AA3BABB2ABB2ABB2AA3BB3AA3BAA2BAA4BB2ABB2AA2BB2AA3BB4ABB8ABB2ABABB3AA3BB2ABABB7AA2BABB4EBB4ABB3ABABAA2BB3ABB2AA3BB3AA2BABB3AA2BB4ABB2ABB2ABAA3BB5ABB3ABB2AA2BAA2BB2ABAA7BB2ABABABB6ABB2ABB5ABABAA3BB7ABABABB2AA2BABB4ABB2AA2BAA4BB4ABB2ABB5ABB3AA3BB10AA2BB9ABB9ABB20$BB153ÁÁ2BB155ABB400ÁÁ2BB9ÁÁ4BB97ABB26ABÁÁ16BÁBB2ÁÁ9BB5"}',
+        wall: "Wood8",
+        floor: "FloorPebbles1",
+        ceil: "BoulderWall103",
+        start: '[199,7]',
+        lights: '[[679,5,"Lights110","standardYellowSoft"]]',
+        gates: '[[2,7,"91.1","84.4","Closed"]]',
+        doors: '[236,128]',
+    }
+    ,
+    92: {
+        name: "Cryptyx",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"19","height":"19","depth":7,"map":"BB4AA2BB2AA3BAA26BAA6BB3ABÁAA18BAA5BB2AA5BABABABÁAA18BABAA15BB2AA5BAA2ÁAÁAA5BAA19BABAA2BAA8BAA17BB3ABB5AA2ÁAÁÁ3AÁÁ2AÁBB12ABB2AA3BABB5ABB9ÁBB29ÁBB15ABB3AA2BB6AÁBB3ABB5ABB8ÁBB7ABB2ABAA2BB4ABB4ABB2ÁBAA2BABABB8AA2BABB8ABB4ABB8ÁBB25ABB8ÁBB9$BB23ÁࡁBB5ࡁBB4ŁÁBB20ÁBB189ÁBB23ÁÁ4BB30ÁBB43ÁBB2ABB5ÁBB6ÁÁ7BB3сBB5ࡁBB4ÁBB6ÁÁ8ɁÁÁ7BB3ÁÁ2BB3ÁBAÁBB5ÁBÁÁ4BB19ÁÁ3BÁBB10ÁÁ4BB20AÁBB5ÁBB18ÁBB11ÁBB10ÁÁ3BB7ÁÁ4BB9ÁBB6ÁÁ3BAÁÁ4BB5ŁBB7AÁࡁBB2AÁBB4ÁBB11ÁÁ9ɁсࡁBŁBB6ÁÁ10ɁсÁBB4ÁÁ4BÁÁ2BB2ÁÁ8BB104ÁÁ5BÁÁ3BB2ÁÁ5BÁÁ3BÁBB3ÁBÁBB10ÁÁ7BB18ÁÁ4BB5ÁBÁÁ7BB6ÁÁ4BB4ÁÁ4BB74ÁÁ2BÁÁ2BB2ÁBB2ÁÁ14BB4ÁÁ2BB2ÁÁ4BÁÁ18BÁÁ9BB2ÁÁ6BB2ÁÁ4BB4ÁÁ11BB26ÁÁ115ABÁÁ83BB2ÁÁ11AÁÁ2BB4ÁÁ2BB4ÁÁ21BB2ÁÁ14AÁBÁÁ79BÁBB3ÁÁ25AÁÁ7BÁÁ21AÁBB2ÁÁ36BÁÁ3BB2ÁÁ8BÁÁ2BÁÁ3BB2ÁBB3ÁÁ6BB2ÁÁ9BB6ÁAA2BÁÁ7ABÁÁ4BB2ÁBÁABÁÁ35BÁÁ7BÁÁ3BÁÁ30BÁÁ2ABÁÁ32BB6ÁÁ2BÁÁ43BB20ÁÁ14BÁÁ126BÁÁ17BÁÁ44BÁÁ12BÁÁ14BB10ÁÁ6BB13ÁÁ12BB19ABB2AA2BB3ŁŁ2BB3ɁɁ2сс2BB3"}',
+        wall: "DarkWallSDXL321",
+        floor: "MarbleFloor104",
+        ceil: "DarkWallSDXL328",
+        start: '[1833,7]',
+        decals: '[[81,4,"FloorGrille106","crest"],[176,4,"RustyFloorGrille_08","crest"],[271,4,"RustyFloorGrille_05","crest"],[239,4,"FloorGrille113","crest"],[183,4,"FloorGrille107","crest"],[125,4,"RustyFloorGrille_03","crest"]]',
+        lights: '[[2498,1,"Lantern301","standardYellowDim"],[2338,5,"Candle67","standardYellowDim"],[2194,7,"Lights114","standardYellowDim"],[2183,7,"FluxLight111","standardYellow"],[1785,3,"DuaLLantern_010","standardYellow"],[171,5,"Fireplace212","fireplace"],[149,3,"Fireplace207","fireplace"]]',
+        gates: '[[1814,7,"92.1","85.4","Closed"]]',
+        scrolls: '[[2116,12]]',
+        triggers: '[[1821,7,"SmoothWallButton",1,1839]]',
     }
 };
