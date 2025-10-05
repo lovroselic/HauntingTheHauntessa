@@ -303,7 +303,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.28.4",
+    VERSION: "0.28.5",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -914,11 +914,14 @@ const HERO = {
         WebGL.GAME.positionUpdate();
         if (GAME.lives <= 0) return HERO.finalDeath();
 
-        const grid = Vector3.to_Grid3D(HERO.player.pos);
-        const face = DirectionToFace(NOWAY);
-        const decal = SPRITE.DeathPlace;
-        const deathPlace = new StaticDecal(grid, face, decal, "crest", "DeathPlace", true);
-        GAME.deathPlaceDecals.push(deathPlace);
+        if (gridValue !== "HOLE") {
+            const grid = Vector3.to_Grid3D(HERO.player.pos);
+            const face = DirectionToFace(NOWAY);
+            const decal = SPRITE.DeathPlace;
+            const deathPlace = new StaticDecal(grid, face, decal, "crest", "DeathPlace", true);
+            GAME.deathPlaceDecals.push(deathPlace);
+        }
+
         HERO.ressurection = true;
         GAME.STORE.storeIAM(MAP[GAME.level].map);
         ENGINE.TEXT.centeredText("Press ENTER to resurect The Princess", ENGINE.gameWIDTH, ENGINE.gameHEIGHT / 2);
