@@ -386,12 +386,7 @@ const INTERACTION_ITEM = {
         inventorySprite: "PickAxe",
         text: "Pickaxe. Let's go mining."
     },
-    Brush: {
-        name: "Brush",
-        category: "interaction_item",
-        inventorySprite: "Brush",
-        text: "A brush for polishing boots."
-    },
+
     RedLeatherBoots: {
         name: "RedLeatherBoots",
         category: "interaction_item",

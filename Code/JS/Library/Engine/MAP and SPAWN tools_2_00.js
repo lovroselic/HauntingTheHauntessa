@@ -163,6 +163,8 @@ const SPAWN_TOOLS = {
         const methods = ['decals', 'lights', 'shrines', 'oracles', 'externalGates', 'keys', 'monsters', 'scrolls', 'gold', 'skills',
             'containers', 'doors', 'triggers', 'entities', 'trainers', 'objects', 'movables', 'traps', 'interactors', 'lairs'];
 
+        map.TextureExclusion = {};                              // used to exclude world textures, where they are superseeded with custom texture, reset
+
         methods.forEach(method => {
             this[method](map, GA);
         });
@@ -178,12 +180,17 @@ const SPAWN_TOOLS = {
             let type = D[3];
             let decal;
             let expand = false;
+
             if (type === "texture") {
                 decal = TEXTURE[picture];
+                //map.TextureExclusion.push({ grid: grid, face: Vector.fromInt(D[1]) });
+                //map.TextureExclusion.push({ grid, face });
+                map.TextureExclusion[D[0]] = face;
             } else decal = SPRITE[picture];
             if (type === "picture" && (decal.width >= MAP_TOOLS.INI.TEXTURE_WIDTH || decal.height >= MAP_TOOLS.INI.TEXTURE_WIDTH)) {
                 type = "texture";
             } else if (type === "crest" && (decal.width >= MAP_TOOLS.INI.LEGACY_WIDTH || decal.height >= MAP_TOOLS.INI.LEGACY_WIDTH)) type = "texture";
+
             DECAL3D.add(new StaticDecal(grid, face, decal, type, picture, expand));
         }
     },

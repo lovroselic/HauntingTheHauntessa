@@ -48,6 +48,7 @@ const WebGL = {
         PIC_HEIGHT: 0.7,
         PIC_TOP: 0.2,
         PIC_OUT: 0.001, //0.001
+        TEXTURE_OUT: 0.000,
         LIGHT_OUT: 0.001, //0.001, 
         ITEM_UP: 0.01,
         LIGHT_WIDTH: 0.4,
@@ -1405,6 +1406,9 @@ const WORLD = {
         let textureCoordinates = E.textureCoordinates.slice();
         let vertexNormals = E.vertexNormals.slice();
 
+        let OUT = WebGL.INI.PIC_OUT;
+        if (decal.category === "texture") OUT = WebGL.INI.TEXTURE_OUT;
+
         //scale
         switch (decal.face) {
             case "FRONT":
@@ -1417,7 +1421,7 @@ const WORLD = {
                 positions[9] = leftX;
                 positions[10] = topY;
                 for (let z of [2, 5, 8, 11]) {
-                    positions[z] += WebGL.INI.PIC_OUT;
+                    positions[z] += OUT;
                 }
                 break;
             case "BACK":
@@ -1430,7 +1434,7 @@ const WORLD = {
                 positions[9] = rightX;
                 positions[10] = bottomY;
                 for (let z of [2, 5, 8, 11]) {
-                    positions[z] -= WebGL.INI.PIC_OUT;
+                    positions[z] -= OUT;
                 }
                 break;
             case "RIGHT":
@@ -1443,7 +1447,7 @@ const WORLD = {
                 positions[10] = bottomY;
                 positions[11] = rightX;
                 for (let x of [0, 3, 6, 9]) {
-                    positions[x] += WebGL.INI.PIC_OUT;
+                    positions[x] += OUT;
                 }
                 break;
             case "LEFT":
@@ -1456,7 +1460,7 @@ const WORLD = {
                 positions[10] = topY;
                 positions[11] = leftX;
                 for (let x of [0, 3, 6, 9]) {
-                    positions[x] -= WebGL.INI.PIC_OUT;
+                    positions[x] -= OUT;
                 }
                 break;
             case "TOP":
@@ -1469,7 +1473,7 @@ const WORLD = {
                 positions[9] = leftX;
                 positions[11] = topY;
                 for (let y of [1, 4, 7, 10]) {
-                    positions[y] += WebGL.INI.PIC_OUT - 1.0;
+                    positions[y] += OUT - 1.0;
                 }
                 break;
             case "BOTTOM":
@@ -1482,7 +1486,7 @@ const WORLD = {
                 positions[9] = leftX;
                 positions[11] = topY;
                 for (let y of [1, 4, 7, 10]) {
-                    positions[y] -= WebGL.INI.PIC_OUT - 1.0;
+                    positions[y] -= OUT - 1.0;
                 }
                 break;
             default:
@@ -1506,24 +1510,27 @@ const WORLD = {
         this[type].vertexNormals.push(...vertexNormals);
 
     },
-    addCube(Y, grid, type, scale = null) {
+    addCube(Y, grid, type, prune = null, scale = null) {
         if (!WebGL.PRUNE) return this.addElement(ELEMENT.CUBE, Y, grid, type);                                          //draws complete cube
 
-        const initialGrid = Grid3D.toClass(grid);                                                                        //cloned, for solving floor supports
+        const initialGrid = Grid3D.toClass(grid);                                                                       //cloned, for solving floor supports
         const GA = WORLD.GA;
+
         const rememberZ = grid.z;                                                                                       //this is pointer, don't screw it!
         grid.z = Y;                                                                                                     //face pruning
 
         for (let [index, dir] of ENGINE.directions3D.entries()) {
+            const face = Direction3DToFace(dir);
+            if (face === prune) continue;                                                                               //has texture decal, so let's prune it
+
             const checkGrid = grid.add(dir);
             const above = initialGrid.add(dir);
-            /*if (GRID.same3D(new Grid3D(16, 3, 0), initialGrid)) {
-                console.warn("---DEBUG, initialGrid", initialGrid, "checkGrid", checkGrid, "above", above, "dir", dir, "Y", Y, "hole above",  GA.isHole(above));
-            }*/
+
             if (GA.isDoor(checkGrid)) this.addElement(ELEMENT[this.cubeFaces[index]], Y, grid, WORLD.faceTypes[index], scale);                                                  //doors
-            else if (Y == -1 && dir.z === 0 && GA.isHole(above)) this.addElement(ELEMENT[this.cubeFaces[index]], Y, grid, WORLD.faceTypes[index], scale);                 //visible sub floor supports
+            else if (Y == -1 && dir.z === 0 && GA.isHole(above)) this.addElement(ELEMENT[this.cubeFaces[index]], Y, grid, WORLD.faceTypes[index], scale);                       //visible sub floor supports
             else if (!(GA.isOutOfBounds(checkGrid) || GA.isWall(checkGrid))) this.addElement(ELEMENT[this.cubeFaces[index]], Y, grid, WORLD.faceTypes[index], scale);           //visible quads
         }
+
         grid.z = rememberZ;                                                                                             //revert to initil z value
     },
     addBlockWall(Y, grid, type) {
@@ -1571,6 +1578,7 @@ const WORLD = {
     },
     build(map) {
         const GA = map.GA;
+        const TE = map.TextureExclusion;
         WORLD.GA = GA;
         console.time("WorldBuilding");
         this.init();
@@ -1578,25 +1586,27 @@ const WORLD = {
         const maxDepth = map.GA?.depth - 1 || 0;
         console.log("--------------------------------");
         console.log("World.build->maxDepth", maxDepth);
+        console.log("TextureExclusion", TE);
 
         for (let [index, value] of GA.map.entries()) {
             let grid = GA.indexToGrid(index);
-            if (!grid.z) grid.z = 0;                                                                                    //2D Grid legacy support
+            const prune = TE[index] || null;
+            if (!grid.z) grid.z = 0;                                                                                            //2D Grid legacy support
             let initial = value;
             value &= (2 ** GA.gridSizeBit - 1 - (MAPDICT.FOG + MAPDICT.RESERVED + MAPDICT.ROOM));
             //console.info("->", index, "initial", initial, "->", value, grid);
             switch (value) {
                 case MAPDICT.EMPTY:
                 case MAPDICT.DOOR:
-                case MAPDICT.WALL + MAPDICT.DOOR:                                                                       //adding grids for floor and ceiling
+                case MAPDICT.WALL + MAPDICT.DOOR:                                                                               //adding grids for floor and ceiling
                     if (grid.z === 0) this.addCube(- 1, grid, "floor");
                     if (grid.z === maxDepth) this.addCube(grid.z + 1, grid, "ceil");
                     break;
                 case MAPDICT.WALL:
                 case MAPDICT.WALL + MAPDICT.STAIR:
                 case MAPDICT.WALL + MAPDICT.SHRINE:
-                    if (WebGL.PRUNE || GA.blockVisible(grid)) this.addCube(grid.z, grid, "wall");                       //plain old wall - show only visible block
-                    if (WebGL.CONFIG.holesSupported && grid.z === 0) this.addCube(- 1, grid, "wall");                   //support for holes so that they have 3d look if in the floor
+                    if (WebGL.PRUNE || GA.blockVisible(grid)) this.addCube(grid.z, grid, "wall", prune);                        //plain old wall - show only visible block
+                    if (WebGL.CONFIG.holesSupported && grid.z === 0) this.addCube(- 1, grid, "wall");                           //support for holes so that they have 3d look if in the floor
                     break;
                 case MAPDICT.HOLE:
                     if (grid.z === maxDepth) this.addCube(grid.z + 1, grid, "ceil");
@@ -4493,6 +4503,10 @@ const FaceToDirection = function (face) {
         case "RIGHT": return RIGHT;
         default: console.error("FaceToDirection, invalid face", face);
     }
+};
+
+const Direction3DToFace = function (dir) {
+    return DirectionToFace(Vector3.toVector(dir));
 };
 
 const DirectionToFace = function (dir) {

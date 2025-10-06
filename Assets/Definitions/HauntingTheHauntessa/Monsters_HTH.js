@@ -699,7 +699,7 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
-     ClosedCastleGate: {
+    ClosedCastleGate: {
         name: "ClosedCastleGate",
         sprite: "ClosedCastleGate",
         category: 'crest',
@@ -4701,12 +4701,23 @@ const INTERACTION_ITEM = {
         inventorySprite: "BlueFeather",
         text: "A feather. Blue."
     },
-
     Sponge: {
         name: "Sponge",
         category: "interaction_item",
         inventorySprite: "Sponge",
         text: "Maybe I should take a bath?"
+    },
+    Skeleton: {
+        name: "Skeleton",
+        category: "interaction_item",
+        inventorySprite: "Skeleton",
+        text: "A full human skeleton. Why am I picking that?"
+    },
+    Brush: {
+        name: "Brush",
+        category: "interaction_item",
+        inventorySprite: "Brush",
+        text: "A brush for polishing boots."
     },
 
     //metals
@@ -4740,6 +4751,46 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    GhostBride: {
+        name: "GhostBride",
+        sprite: "GhostBride",
+        category: 'crest',
+        voice: "Female6",
+        wants: ["Skeleton"],
+        gives: "Candle",
+        text: {
+            intro: "I search and sigh through endless night, my groom has vanished out of sight.",
+            progress: null,
+            conclusion: "So kind of you to share my pain, take this candle to light his name."
+        }
+    },
+
+    SheparDess3: {
+        name: "SheparDess3",
+        sprite: "SheparDess3",
+        category: 'crest',
+        voice: "Female4",
+        wants: ["Sheep", "Sheep", "Sheep"],
+        gives: "PurpleRose",
+        text: {
+            intro: "My flock has strayed, those naughty sheep. Help me find them, the hills are steep.",
+            progress: "One or two, but not the herd. Keep lookin', love, don't be deterred.",
+            conclusion: "All my darlings safe and close, take this rare and purple rose."
+        }
+    },
+    BootShina: {
+        name: "BootShina",
+        sprite: "BootShina",
+        category: 'crest',
+        voice: "Female3",
+        wants: ["Brush"],
+        gives: "GoldCoin",
+        text: {
+            intro: "Whether you brush or lick, make my boot shiny to earn the gold coin.",
+            progress: null,
+            conclusion: "My boots are glossy, coin is earned. But think wisely where you will spend it."
+        }
+    },
     SpringyBather: {
         name: "SpringyBather",
         sprite: "SpringyBather",

@@ -18,7 +18,7 @@
  */
 
 const LS_matrix = {
-    VERSION: "1.2",
+    VERSION: "1.3",
     CSS: "color: red",
 };
 
@@ -47,6 +47,9 @@ class Vector3 {
     }
     static toGrid(v) {
         return new Grid(v.x, v.z);
+    }
+    static toVector(v) {
+        return new Vector(v.x, v.z);
     }
     static to_FP_Vector(v) {
         return new FP_Vector(v.x, v.z);

@@ -71,8 +71,9 @@ const DEBUG = {
             DONE BlackCemeteria gives "OrangeThongs" wants "RedRose","BlueRose","PurpleRose"  
             DONE MetallicaDress gives OrangeLeggings wants "IronBar", "IronBar","IronBar"
             DONE SpringyBather gives "OrangeBra" wants "Sponge", "Towel"
-        -BootShina wants Brush gives GoldCoin
-        -FluteShepardess wants "Sheep", "Sheep", "Sheep" gives
+        +BootShina wants Brush gives GoldCoin
+        +PurpleRose wants "Sheep", "Sheep", "Sheep" gives PurpleRose
+        +GhostBride wants "Skeleton" gives "Candle"
             
         Items:
             DONE "OrangeBoots", ---> RedCemeteria (87)
@@ -83,14 +84,19 @@ const DEBUG = {
         "RedRose",
         "BlueRose",
         "PurpleRose"
-        Candle", 
+        Candle", ---> GhostBride()
         "RedCandle", 
-        "BlueCandle"
+        "BlueCandle" --> PurpleRose ()
         "IronBar", 
         "IronBar",
         "IronBar"
         "Sponge", 
         "Towel"
+        "Sheep", 
+        "Sheep", 
+        "Sheep"
+        "Skeleton"
+        Brush
             
         Rooms that can have more entities, trainers:
 
@@ -102,6 +108,7 @@ const DEBUG = {
         CoinTrainers:
 
         Coins place:
+        +BootShina--->()
 
 
         KEy yet unused:
@@ -112,6 +119,9 @@ const DEBUG = {
 
         Missing scrolls:
             Fly
+            Bomb
+            Bomb
+            Bomb
 
             
 
@@ -119,7 +129,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 86; //56
+        GAME.level = 99; //56
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -303,7 +313,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.28.5",
+    VERSION: "0.29.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -1248,8 +1258,6 @@ const GAME = {
         //this is still 2D, to be corrected
         if (GAME.fromCheckpoint) {
             start_dir = MAP[level].map[GAME.loadWayPoint].vector;
-            //start_grid = Grid.toClass(MAP[level].map[GAME.loadWayPoint].grid).add(start_dir);
-            //start_grid.z = MAP[level].map[GAME.loadWayPoint].grid.z;
             start_grid = MAP[level].map[GAME.loadWayPoint].grid.add(start_dir); //3d +2d vector -> 3D
             GAME.fromCheckpoint = false;
         } else {
