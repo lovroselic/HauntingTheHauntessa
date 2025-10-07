@@ -30,6 +30,32 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    ManaHeels: {
+        name: "ManaHeels",
+        sprite: "ManaHeels",
+        which: "mana",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "ManaSkill",
+        price: 5000,
+        level: 3,
+        text: "Do you want to taste my juice? 5000 gold only.",
+        introduce: true,
+        voice: "FemaleVeryLow6",
+    },
+    HealingHeels: {
+        name: "HealingHeels",
+        sprite: "HealingHeels",
+        which: "health",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "HeartSkill",
+        price: 5000,
+        level: 3,
+        text: "Just looking at my heels wil heal you, 5000 gold.",
+        introduce: true,
+        voice: "Female4",
+    },
     CrouchingHeart: {
         name: "CrouchingHeart",
         sprite: "CrouchingHeart",
@@ -4719,6 +4745,12 @@ const INTERACTION_ITEM = {
         inventorySprite: "Brush",
         text: "A brush for polishing boots."
     },
+    Candle: {
+        name: "Candle",
+        category: "interaction_item",
+        inventorySprite: "Candle",
+        text: "Simple wax candle. I can light it. Or not."
+    },
 
     //metals
     GoldBar: {
@@ -4761,7 +4793,7 @@ const INTERACTION_ENTITY = {
         text: {
             intro: "I search and sigh through endless night, my groom has vanished out of sight.",
             progress: null,
-            conclusion: "So kind of you to share my pain, take this candle to light his name."
+            conclusion: "So kind of you to share my pain, take this candle to light in his name."
         }
     },
 
@@ -4770,7 +4802,7 @@ const INTERACTION_ENTITY = {
         sprite: "SheparDess3",
         category: 'crest',
         voice: "Female4",
-        wants: ["Sheep", "Sheep", "Sheep"],
+        wants: ["BabySheep", "BabySheep", "BabySheep"],
         gives: "PurpleRose",
         text: {
             intro: "My flock has strayed, those naughty sheep. Help me find them, the hills are steep.",
@@ -4786,9 +4818,9 @@ const INTERACTION_ENTITY = {
         wants: ["Brush"],
         gives: "GoldCoin",
         text: {
-            intro: "Whether you brush or lick, make my boot shiny to earn the gold coin.",
+            intro: "Whether you brush or lick, make my boots shiny to earn the gold coin.",
             progress: null,
-            conclusion: "My boots are glossy, coin is earned. But think wisely where you will spend it."
+            conclusion: "My boots are glossy, coin is earned. But think wisely where you will spend it. They are getting scarce."
         }
     },
     SpringyBather: {

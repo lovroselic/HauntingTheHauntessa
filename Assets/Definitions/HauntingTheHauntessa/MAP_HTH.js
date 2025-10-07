@@ -2355,15 +2355,15 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"17","height":"21","depth":3,"map":"BB2AA2BB5AA4BB4AA3BABB2AA2BÁBB2ABAA54BB2AA5BAA5BB2AA4BB2AA10BAA19BB2AA2BB2ABAA3BB3ABB2ABAA2BB6AA4BB2ABB3AA5BB2AA2BB2AA2BAA2BB3ABB3ABABB3AA2BB3ABB3ABB7ABB13ABAA2BB11ABB8ABÁAA2BABB2ABABB6ABAA2BB2ABB2ABB3ABB3AA3BB10AA3BB3ABB12ABB2AA3BB3ABABABB49ABB12AA2BB13ABB4ࡁBB7ABAA3BB5ABB6ABB19$BB115ÁBB31ÁBB5ÁÁ20AÁÁ4ABB75ABB26ABB52ABB55ABB29ÁBB2ÁÁ77BÁÁ75BB26ŁɁс"}',
+        data: '{"width":"17","height":"21","depth":3,"map":"BB2AA2BB4ABAA3BB3AA2BABABB2AA2BÁBB2ABAA54BB2AA2BABAA3BAA4BB2AA4BB2AA31BB2AA2BB2AA2BB5AA2BAA5BB5AA3BABAA6BB3ABAA3BAA2BB3ABB2ABB3ABB2AA2BB3ABB2ABB2ABB6ABB23ABB8ABB2ÁBB2ABB2AA3BB3AA2BAA3BABB6ABB3AA3BB3ABB6AA5BB16AA2BB3ABB49ABB4ࡁBB7AA2BB12ABB11ABB14ABB11ABABB11AA2BB8$BB115ÁBB31ÁBB5ÁÁ20AÁÁ4ABB75ABB26ABB52ABB27ABB58ÁBB2ÁÁ77BÁÁ75BB26ŁɁс"}',
         wall: "LightWallSDXL307",
         floor: "ForestFloor01",
         ceil: "MossFloor100",
-        start: '[465,3]',
+        start: '[133,1]',
         decals: '[[741,4,"Water32","texture"],[401,4,"Water32","texture"],[418,4,"Water32","texture"],[435,4,"Water32","texture"],[452,4,"Water32","texture"],[469,4,"Water32","texture"],[486,4,"Water32","texture"],[146,4,"Water32","texture"],[163,4,"Water32","texture"],[180,4,"Water32","texture"],[197,4,"Water32","texture"],[214,4,"Water32","texture"],[231,4,"Water32","texture"],[248,4,"Water32","texture"],[265,4,"Water32","texture"],[266,4,"Water32","texture"],[267,4,"Water32","texture"],[268,4,"Water32","texture"],[269,4,"Water32","texture"],[270,4,"Water32","texture"],[287,4,"Water32","texture"],[304,4,"Water32","texture"],[129,7,"Water32","texture"],[384,7,"Water32","texture"],[724,7,"Water32","texture"],[419,4,"Water32","texture"],[402,4,"Water32","texture"],[436,4,"Water32","texture"],[420,4,"Water32","texture"],[437,4,"Water32","texture"],[438,4,"Water32","texture"],[454,4,"Water32","texture"],[453,4,"Water32","texture"],[470,4,"Water32","texture"],[487,4,"Water32","texture"]]',
         lights: '[[722,7,"SettingSun1","sunlightBright"],[234,3,"CampFire_1173","fireplace"],[156,5,"CampFire_1174","fireplace"],[411,5,"CampFire_1175","fireplace"]]',
         gates: '[[348,1,"90.1","84.3","Closed"]]',
-        entities: '[[439,3,"SpringyBather"]]',
+        entities: '[[439,3,"SpringyBather"],[82,7,"SheparDess3"]]',
     }
     ,
     91: {
@@ -2400,6 +2400,7 @@ const MAP = {
         gates: '[[1814,7,"92.1","85.4","Closed"]]',
         scrolls: '[[2116,12]]',
         triggers: '[[1821,7,"SmoothWallButton",1,1839]]',
+        entities: '[[31,7,"GhostBride"],[264,3,"BootShina"]]',
     }
     ,
     93: {
@@ -2436,7 +2437,23 @@ const MAP = {
         gates: '[[95,5,"94.1","93.2","Closed"],[9,7,"94.2","95.1","Closed"],[113,3,"94.3","96.1","Closed"]]',
     }
     ,
-    95: {}
+    95: {
+        name: "The Church of the Lost Gold",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"17","height":"17","depth":3,"map":"BB3AA2BB2AA2BB2AA10BB2AA2BAA40BB2AA16BAA6BAA4BABABAA5BAA2BAA25BABB2AA6BABB2ABABAA7BABB13AEBB4ABB2ABB2ABB19ABB6AA2BB2AA2BB4ABB3ABABABABB3AA2BABB2ABB2ABAA3BABB3ABB4ABB21$BB53ÁÁ2BB51ABB132ÁÁ8BB15ÁÁ3BB6ÁÁ7BB41ÁÁ3BB3ÁÁ3BB43ABB27ÁÁ55BB2ÁÁ4BÁÁ10BB3ÁÁ11BB2ÁÁ6BB4ÁÁ56BÁBB5ÁÁ15BB8"}',
+        wall: "LightWallSDXL312",
+        floor: "BloodMarbleFloorWall_SDXL_028",
+        ceil: "FloorTiles_SDXL_010",
+        start: '[263,1]',
+        lights: '[[705,1,"Candelabra18","dimRed"],[721,3,"Candle70","standardYellowDim"],[723,5,"DuaLLantern_029","standardYellowDim"],[739,7,"Candle53","gold"]]',
+        gates: '[[280,1,"95.1","94.2","Closed"]]',
+        shrines: '[[8,7,"HealingHeels"],[220,3,"ManaHeels"]]',
+        doors: '[127]',
+    }
     ,
     96: {
         name: "North East Corner",
@@ -2508,11 +2525,13 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"19","height":"19","depth":3,"map":"BB2ABB10AA44BB4AA146BAA4BB43ÁABÁÁ4BB2AA9BB38$BB16ÁÁ2ABB142ABB12ÁÁ28BB95ÁÁ140AA4BÁÁ300BB30"}',
+        data: '{"width":"19","height":"19","depth":3,"map":"BB2ABB10AA44BB4AA146BAA4BB43ÁABÁÁ4BB2AA9BB38$BB16ÁÁ2ABB126ABB14ÁÁ20BB23ÁÁ10BB66ÁÁ148AA4BÁÁ30BB2ÁÁ270BB22ÁÁ8BB8"}',
         wall: "RockWall40",
         floor: "RedMarbleFloor1",
         ceil: "DarkBricks102",
         start: '[283,3]',
+        decals: '[[13,7,"OuterCastleWall_0828","texture"],[14,7,"OuterCastleWall_0828","texture"],[15,7,"OuterCastleWall_0828","texture"],[16,7,"OuterCastleWall_0828","texture"],[17,7,"OuterCastleWall_0828","texture"],[374,7,"OuterCastleWall_0828","texture"],[375,7,"OuterCastleWall_0828","texture"],[376,7,"OuterCastleWall_0828","texture"],[377,7,"OuterCastleWall_0828","texture"],[378,7,"OuterCastleWall_0828","texture"],[735,7,"OuterCastleWall_0828","texture"],[736,7,"OuterCastleWall_0828","texture"],[737,7,"OuterCastleWall_0828","texture"],[738,7,"OuterCastleWall_0828","texture"],[739,7,"OuterCastleWall_0828","texture"],[759,3,"OuterCastleWall_0828","texture"],[778,3,"OuterCastleWall_0828","texture"],[797,3,"OuterCastleWall_0828","texture"],[816,3,"OuterCastleWall_0828","texture"],[835,3,"OuterCastleWall_0828","texture"],[398,3,"OuterCastleWall_0828","texture"],[417,3,"OuterCastleWall_0828","texture"],[436,3,"OuterCastleWall_0828","texture"],[455,3,"OuterCastleWall_0828","texture"],[474,3,"OuterCastleWall_0828","texture"],[37,3,"OuterCastleWall_0828","texture"],[56,3,"OuterCastleWall_0828","texture"],[75,3,"OuterCastleWall_0828","texture"],[94,3,"OuterCastleWall_0828","texture"],[113,3,"OuterCastleWall_0828","texture"]]',
+        lights: '[[745,7,"SkullLantern56","standard"],[1005,3,"SkullLantern57","standard"]]',
         gates: '[[284,3,"100.1","99.2","Closed"],[4,7,"100.2","86.3","Closed"]]',
     }
     ,

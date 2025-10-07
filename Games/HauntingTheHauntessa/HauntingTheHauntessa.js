@@ -71,36 +71,37 @@ const DEBUG = {
             DONE BlackCemeteria gives "OrangeThongs" wants "RedRose","BlueRose","PurpleRose"  
             DONE MetallicaDress gives OrangeLeggings wants "IronBar", "IronBar","IronBar"
             DONE SpringyBather gives "OrangeBra" wants "Sponge", "Towel"
-        +BootShina wants Brush gives GoldCoin
-        +PurpleRose wants "Sheep", "Sheep", "Sheep" gives PurpleRose
-        +GhostBride wants "Skeleton" gives "Candle"
+            DONE BootShina wants Brush gives GoldCoin
+            DONE SheparDess3 wants "BabySheep", "BabySheep", "BabySheep" gives PurpleRose
+            DONE GhostBride wants "Skeleton" gives "Candle"
             
         Items:
             DONE "OrangeBoots", ---> RedCemeteria (87)
             DONE "OrangeLeggings", ---> MetallicaDress(89)
             DONE "OrangeBra", --> SpringyBather (90)
             DONE "OrangeThongs" ---> BlackCemeteria (87)
-
         "RedRose",
         "BlueRose",
-        "PurpleRose"
-        Candle", ---> GhostBride()
+            DONE"PurpleRose" ---> SheparDess3(90)
+            DONE Candle", ---> GhostBride(92)
         "RedCandle", 
-        "BlueCandle" --> PurpleRose ()
+        "BlueCandle" 
         "IronBar", 
         "IronBar",
         "IronBar"
         "Sponge", 
         "Towel"
-        "Sheep", 
-        "Sheep", 
-        "Sheep"
+        "BabySheep", 
+        "BabySheep", 
+        "BabySheep"
         "Skeleton"
         Brush
             
         Rooms that can have more entities, trainers:
 
         Shrines:
+        +HealingHeels
+        +HealingMana
     
         Trainers:
 
@@ -108,7 +109,7 @@ const DEBUG = {
         CoinTrainers:
 
         Coins place:
-        +BootShina--->()
+            DONE BootShina--->(92)
 
 
         KEy yet unused:
@@ -129,7 +130,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 99; //56
+        GAME.level = 95; //56
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -155,15 +156,6 @@ const DEBUG = {
 
 
         let actItems = [
-            MOVABLE_INTERACTION_OBJECT.GreenBat,
-            MOVABLE_INTERACTION_OBJECT.GreenBat,
-            MOVABLE_INTERACTION_OBJECT.GreenBat,
-            MOVABLE_INTERACTION_OBJECT.GreenBat,
-
-            INTERACTION_OBJECT.Cake,
-
-            INTERACTION_OBJECT.Orb,
-            INTERACTION_OBJECT.Orb
         ];
 
         for (let obj of actItems) {
@@ -184,8 +176,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-
-
+          
         ];
 
         for (let itm of invItems) {
@@ -313,7 +304,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.29.0",
+    VERSION: "0.29.1",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
