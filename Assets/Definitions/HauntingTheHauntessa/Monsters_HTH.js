@@ -30,6 +30,19 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    SnakeDagger: {
+        name: "SnakeDagger",
+        sprite: "SnakeDagger",
+        which: "attack",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "SkillKick",
+        price: 5000,
+        level: 3,
+        text: "Learn to use fangs. 5000 gold.",
+        introduce: true,
+        voice: "FemaleVeryLow4",
+    },
     ManaHeels: {
         name: "ManaHeels",
         sprite: "ManaHeels",
@@ -4751,6 +4764,12 @@ const INTERACTION_ITEM = {
         inventorySprite: "Candle",
         text: "Simple wax candle. I can light it. Or not."
     },
+    RubberDuck: {
+        name: "RubberDuck",
+        category: "interaction_item",
+        inventorySprite: "RubberDuck",
+        text: "One should never bath alone."
+    },
 
     //metals
     GoldBar: {
@@ -4783,6 +4802,32 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    FuturaUranus: {
+        name: "FuturaUranus",
+        sprite: "FuturaUranus",
+        category: 'crest',
+        voice: "FemaleHigh5",
+        wants: ["UraniumBar", "UraniumBar", "UraniumBar"],
+        gives: "IronBar",
+        text: {
+            intro: "From centuries ahead I stride, my suit runs hot, needs nuclear fuel inside.",
+            progress: "You've brought some glow, but not enough. I need more juice to power my stuff.",
+            conclusion: "Perfect charge, I'm radiant again. Take this iron; so passé, so plain."
+        }
+    },
+    OrangeBathy: {
+        name: "OrangeBathy",
+        sprite: "OrangeBathy",
+        category: 'crest',
+        voice: "Female5",
+        wants: ["RubberDuck"],
+        gives: "Sponge",
+        text: {
+            intro: "Bath time's lonely, need a toy. Bring me something or just join the joy.",
+            progress: null,
+            conclusion: "My tub's complete, you're such a dear. Take this sponge, go scrub your rear."
+        }
+    },
     GhostBride: {
         name: "GhostBride",
         sprite: "GhostBride",
@@ -4796,7 +4841,6 @@ const INTERACTION_ENTITY = {
             conclusion: "So kind of you to share my pain, take this candle to light in his name."
         }
     },
-
     SheparDess3: {
         name: "SheparDess3",
         sprite: "SheparDess3",
@@ -4888,7 +4932,6 @@ const INTERACTION_ENTITY = {
             conclusion: "The roses are mine, their scent divine. Take these orange thongs, too sinful to rest with the shrine."
         }
     },
-
     GreenDommeGuard: {
         name: "GreenDommeGuard",
         sprite: "GreenDommeGuard",

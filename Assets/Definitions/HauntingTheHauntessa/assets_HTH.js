@@ -1317,6 +1317,9 @@ LoadSprites = [
     { srcName: "EntityPictures/GhostBride.jpg", name: "GhostBride" },
     { srcName: "EntityPictures/HealingHeels.jpg", name: "HealingHeels" },
     { srcName: "EntityPictures/ManaHeels.jpg", name: "ManaHeels" },
+    { srcName: "EntityPictures/SnakeDagger.jpg", name: "SnakeDagger" },
+    { srcName: "EntityPictures/OrangeBathy.jpg", name: "OrangeBathy" },
+    { srcName: "EntityPictures/FuturaUranus.jpg", name: "FuturaUranus" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
@@ -1654,6 +1657,7 @@ LoadSprites = [
     { srcName: "Items/Sponge.png", name: "Sponge" },
     { srcName: "Items/Skeleton.png", name: "Skeleton" },
     { srcName: "Items/Brush.png", name: "Brush" },
+    { srcName: "Items/RubberDuck.png", name: "RubberDuck" },
 
     //books
     { srcName: "Items/YoniBook.png", name: "YoniBook" },

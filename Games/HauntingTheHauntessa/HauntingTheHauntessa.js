@@ -74,6 +74,8 @@ const DEBUG = {
             DONE BootShina wants Brush gives GoldCoin
             DONE SheparDess3 wants "BabySheep", "BabySheep", "BabySheep" gives PurpleRose
             DONE GhostBride wants "Skeleton" gives "Candle"
+            DONE WhiteFutura wants "UraniumBar", "UraniumBar", "UraniumBar" gives   IronBar
+            DONE OrangeBathy wants RubberDuck gives Sponge
             
         Items:
             DONE "OrangeBoots", ---> RedCemeteria (87)
@@ -88,20 +90,25 @@ const DEBUG = {
         "BlueCandle" 
         "IronBar", 
         "IronBar",
-        "IronBar"
-        "Sponge", 
+        DONE "IronBar" ---> WhiteFutura(89)
+            DONE "Sponge", --> OrangeBathy(88)
         "Towel"
         "BabySheep", 
         "BabySheep", 
         "BabySheep"
         "Skeleton"
         Brush
+        "UraniumBar", 
+        "UraniumBar", 
+        "UraniumBar"
+        RubberDuck
             
         Rooms that can have more entities, trainers:
 
         Shrines:
-        +HealingHeels
-        +HealingMana
+            DONE HealingHeels
+            DONE HealingMana
+            DONE SnakeDagger
     
         Trainers:
 
@@ -130,7 +137,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 95; //56
+        GAME.level = 89; //56
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -176,7 +183,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-          
+
         ];
 
         for (let itm of invItems) {
@@ -304,7 +311,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.29.1",
+    VERSION: "0.29.2",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

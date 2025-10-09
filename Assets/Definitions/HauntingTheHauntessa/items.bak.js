@@ -140,12 +140,7 @@ const INTERACTION_ITEM = {
         text: "Looks like something Purrscilla would wear."
     },
 
-    RubberDuck: {
-        name: "RubberDuck",
-        category: "interaction_item",
-        inventorySprite: "RubberDuck",
-        text: "One should never bath alone."
-    },
+
     Candle: {
         name: "Candle",
         category: "interaction_item",

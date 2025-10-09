@@ -2321,14 +2321,14 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"17","height":"17","depth":5,"map":"BB2AA3BB3ABAA19BAA12BB5AŁAA3ÁAÁAA7BB2AA4ÁBB2AA3ÁAA9BB2AA7ÁAA5BAA5BAA4BAA2BB3ÁBAA5ÁBB6AA2BB3ABB2AA11BAŁAA4BB2AA2BB3AA3BB10AA2BB8ABB2AA2BABB5AA2BB2ABB11ABAA7BB2AA2BB13ABB2AA2BB4ABB6AA2ÁBB27ࡁBB40ABB4ABB4AA4BB9ABB65ABB73ÁBB73A$BB28ÁBB68ÁBB196ÁBB3ÁBÁÁ7BB5ÁBB10ÁBÁBB10ÁÁ9BB4ABB12ÁBB11ÁBB24AÁÁ4BB33ࡁBB33ÁBÁBÁBB2ÁBB2ÁÁ2BB27ÁÁ23BÁÁ18BÁÁ32BÁÁ9BÁÁ59BÁÁ18BÁAA3ÁAA2BÁÁ21BÁÁ5AÁÁ2BÁÁ29AÁBÁÁ24BB2ÁÁ27BB9ÁÁ31BB11ÁÁ9BB5ɁɁ2AA2сс2ŁŁ2ࡁࡁ2ɁɁ2сс2BB2"}',
+        data: '{"width":"17","height":"17","depth":5,"map":"BB2AA3BB3ABAA19BAA12BB5ABŁAA3ÁAÁBAA7BAA5ÁAA2ÁBAA11BB2AA5BÁAA12BAA4BAA2BB3ÁAA5ÁBB6ABB3ABB2AA12BAŁAA4BB2AA2BB3AA3BB10ABB8ABB2AA2BABB5AA2BB2ABB8ABB5AA6BB2AA2BB11ABB5AA2BB4ABB6AA2ÁABB27ࡁBB25ABB13ABB8AA4BB9ABB65ABB73ÁBB73A$BB28ÁBB68ÁBB196ÁBB3ÁBÁÁ7BB5ÁBB10ÁBÁBB10ÁÁ9BB4ABB12ÁBB11ÁBB24AÁÁ4BB33ࡁBB33ÁBÁBÁBB2ÁBB2ÁÁ2BB27ÁÁ23BÁÁ18BÁÁ32BÁÁ9BÁÁ59BÁÁ18BÁAA3ÁAA2BÁÁ21BÁÁ5AÁÁ2BÁÁ29AÁBÁÁ24BB2ÁÁ27BB9ÁÁ31BB11ÁÁ9BB5ɁɁ2AA2сс2ŁŁ2ࡁࡁ2ɁɁ2сс2BB2"}',
         wall: "DarkWallSDXL300",
         floor: "DarkWallSDXL317",
         ceil: "SpiderWeb6",
         start: '[671,1]',
         lights: '[[1198,7,"lantern303","standard"],[583,7,"Fireplace_1046","fireplace"],[589,7,"Fireplace102","fireplace"],[705,1,"FluxLight101","standardYellow"],[786,1,"DuaLLantern_011","standardYellow"],[794,1,"DuaLLantern_025","standardYellow"],[1283,7,"DuaLLantern_003","standardYellow"]]',
         gates: '[[280,1,"88.1","85.3","Closed"]]',
-        entities: '[[586,7,"TangerineLingerie"]]',
+        entities: '[[586,7,"TangerineLingerie"],[476,5,"OrangeBathy"]]',
     }
     ,
     89: {
@@ -2338,14 +2338,14 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"19","height":"19","depth":5,"map":"BB7AA4ࡁࡁ2ABAŁŁ2ɁɁ2сс2AA15ÁÁ6BB3ÁÁ2AA15ÁÁ4AA77BAA13BAA43ÁAA4BAA12BAA14BB9ÁÁ3BB3AA2BB30ABB53ÁAA4ÁBB4ABB52$BB26ÁBB20ࡁABB95ABB206ABB192ABB18ÁÁ13BAA2BAA6BB50ABB28ÁÁ3BB13ÁÁ7BÁÁ3BB54AA4BB34ABB9AA6BB40AA3BB4ABB40ÁÁ3BB53ÁÁ156BÁÁ29BB3ÁÁ142BÁÁ17BÁÁ4BÁÁ10BB19ÁBB11ÁÁ43BB16ŁBB2ɁBB2с"}',
+        data: '{"width":"19","height":"19","depth":5,"map":"BɁBB6ŁсAA5ࡁࡁ2AA2BŁɁсAA18ÁÁ6BB3ÁÁ2AA15ÁÁ4AA77BAA13BAA43ÁAA4BAA12BAA14BB9ÁÁ3BB3AA2BB30ABB53ÁAA4ÁBB4ABB52$BB26ÁBB20ࡁABB95ABB206ABB192ABB18ÁÁ13BAA2BAA3BB19ABB3ABB21ABB3ABB28ÁÁ3BB13ÁÁ7BÁÁ3BB54AA4BB34ABB9AA6BB40AA3BB4ABB40ÁÁ3BB53ÁÁ156BÁÁ29BB3ÁÁ142BÁÁ17BÁÁ4BÁÁ10BB19ÁBB11ÁÁ43BB16ŁBB2ɁBB2с"}',
         wall: "LightWallSDXL305",
         floor: "GoldBlackSDXL342",
         ceil: "JuggernautDarkwalls_0920",
         start: '[1267,3]',
         lights: '[[1559,5,"Candle55","standardYellowDim"],[1597,5,"DuaLLantern_025","standardYellowDim"],[1635,5,"WallLamp13","standardYellowDim"],[1673,5,"FluxLight127","standardYellowDim"],[1549,5,"WallLamp33","standardYellowDim"],[1625,5,"Candle60","standardYellowDim"],[1701,5,"DuaLLantern_019","standardYellowDim"]]',
         gates: '[[9,7,"89.1","83.4","Closed"]]',
-        entities: '[[1272,3,"MetallicaDress"]]',
+        entities: '[[1272,3,"MetallicaDress"],[544,3,"FuturaUranus"]]',
     }
     ,
     90: {
@@ -2451,7 +2451,7 @@ const MAP = {
         start: '[263,1]',
         lights: '[[705,1,"Candelabra18","dimRed"],[721,3,"Candle70","standardYellowDim"],[723,5,"DuaLLantern_029","standardYellowDim"],[739,7,"Candle53","gold"]]',
         gates: '[[280,1,"95.1","94.2","Closed"]]',
-        shrines: '[[8,7,"HealingHeels"],[220,3,"ManaHeels"]]',
+        shrines: '[[8,7,"HealingHeels"],[220,3,"ManaHeels"],[204,5,"SnakeDagger"]]',
         doors: '[127]',
     }
     ,
