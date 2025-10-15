@@ -47,7 +47,7 @@ const WebGL = {
         PIC_WIDTH: 0.5,
         PIC_HEIGHT: 0.7,
         PIC_TOP: 0.2,
-        PIC_OUT: 0.001, //0.001
+        PIC_OUT: 0.005, //0.001
         TEXTURE_OUT: 0.000,
         LIGHT_OUT: 0.001, //0.001, 
         ITEM_UP: 0.01,

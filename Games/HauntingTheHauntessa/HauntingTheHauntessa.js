@@ -86,34 +86,36 @@ const DEBUG = {
             DONE "OrangeBra", --> SpringyBather (90)
             DONE "OrangeThongs" ---> BlackCemeteria (87)
             DONE "RedRose",---> PinkyBinky(91)
-        "BlueRose",
+            DONE "BlueRose", ---> (88)
             DONE"PurpleRose" ---> SheparDess3(90)
             DONE Candle", ---> GhostBride(92)
-        "RedCandle", 
-        "BlueCandle" 
-        "IronBar", 
+            DONE "RedCandle",  ---> (89)
+            DONE "BlueCandle" ---> (91)
+            DONE "IronBar",  ---> (83)
             DONE "IronBar", ---> AnvillaDeHammer(92)
             DONE "IronBar" ---> WhiteFutura(89)
             DONE "Sponge", --> OrangeBathy(88)
             DONE "Towel" ---> BithcLiar(85)
-        "BabySheep", 
-        "BabySheep", 
-        "BabySheep"
-        "Skeleton"
-        Brush
-        "UraniumBar", 
-        "UraniumBar", 
-        "UraniumBar"
-        RubberDuck
-        "Anvil", 
-        "Hammer"
-        "Banknote20", 
-        "Banknote50"
-        "PinkPanties", 
-        "PinkBra", 
-        "PinkHighBoots"
+            DONE "BabySheep", ---> (84)
+            DONE "BabySheep",  ---> (85)
+            "DONE BabySheep" --> (85)
+            DONE "Skeleton" --> (87)
+            DONE Brush ---> (87)
+            DONE "UraniumBar", --->(90)
+            DONE "UraniumBar",  ---> (91)
+            DONE "UraniumBar" ---> (92)
+            DONE RubberDuck ---> (84)
+            DONE "Anvil", --->(91)
+            DONE "Hammer" ---> (84)
+            DONE "Banknote20", 
+            DONE "Banknote50" --> (90)
+            DONE "PinkPanties", ---> (88)
+            DONE "PinkBra", ---> (85)
+            DONE "PinkHighBoots" ---> (92)
             
         Rooms that can have more entities, trainers:
+            87
+            92
 
         Shrines:
             DONE HealingHeels
@@ -126,18 +128,21 @@ const DEBUG = {
             
 
 
-        CoinTrainers:
+        CoinTrainers (missing 4):
             DONE Swordy
 
         Coins place:
             DONE BootShina--->(92)
-
+            DONE GoldCoin ---> (92)
+            DONE GoldCoin ---> (85)
+        -GoldCoin
+        -GoldCoin
 
         KEy yet unused:
 
         Missing keys:
-        Red
-        Green
+            DONE Red ---> (84)
+            DONE Green ---> (85)
 
         Missing scrolls:
             Fly
@@ -151,7 +156,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 95; //56
+        GAME.level = 83; //56
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -326,7 +331,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.29.4",
+    VERSION: "0.29.5",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

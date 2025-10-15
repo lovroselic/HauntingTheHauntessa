@@ -481,33 +481,7 @@ const MONSTER_TYPE = {
    
 
    
-    Hunter: {
-        name: "Hunter",
-        model: "Hunter",
-        scale: 0.8 / 2 ** 1,
-        rotateToNorth: Math.PI,
-        midHeight: 0.55,
-        deathType: "BloodExplosion",
-        inventory: null,
-        //
-        mana: 1,
-        health: 10,
-        attack: 1,
-        magic: 5,
-        defense: 0,
-        xp: 99,
-        //
-        caster: true,
-        shootDistance: 15,
-        stalkDistance: 17,
-        attackSound: "HumanAttack1",
-        hurtSound: "Ow",
-        behaviourArguments: [17, ["wanderer"], 15, ["shoot"]],
-        moveSpeed: 0.8,
-        material: MATERIAL.standardShine,
-        missile: BouncingMissile,
-        missileType: COMMON_ITEM_TYPE.Bounceball,
-    },
+   
     
 
 };
