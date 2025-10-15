@@ -1320,6 +1320,12 @@ LoadSprites = [
     { srcName: "EntityPictures/SnakeDagger.jpg", name: "SnakeDagger" },
     { srcName: "EntityPictures/OrangeBathy.jpg", name: "OrangeBathy" },
     { srcName: "EntityPictures/FuturaUranus.jpg", name: "FuturaUranus" },
+    { srcName: "EntityPictures/TankaDaFensa.jpg", name: "TankaDaFensa" },
+    { srcName: "EntityPictures/AnvillaDeHammer.jpg", name: "AnvillaDeHammer" },
+    { srcName: "EntityPictures/PinkyBinky.jpg", name: "PinkyBinky" },
+    { srcName: "EntityPictures/BithcLiar.jpg", name: "BitchLiar" },
+    { srcName: "EntityPictures/Swordy.jpg", name: "Swordy" },
+    { srcName: "EntityPictures/WhichWitch.jpg", name: "WhichWitch" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
@@ -1658,6 +1664,10 @@ LoadSprites = [
     { srcName: "Items/Skeleton.png", name: "Skeleton" },
     { srcName: "Items/Brush.png", name: "Brush" },
     { srcName: "Items/RubberDuck.png", name: "RubberDuck" },
+    { srcName: "Items/Anvil.png", name: "Anvil" },
+    { srcName: "Items/Hammer.png", name: "Hammer" },
+    { srcName: "Items/PinkBra.png", name: "PinkBra" },
+    { srcName: "Items/PinkHighBoots.png", name: "PinkHighBoots" },
 
     //books
     { srcName: "Items/YoniBook.png", name: "YoniBook" },
@@ -1961,6 +1971,17 @@ LoadSprites = [
     { srcName: "Keys/CyanKey.png", name: "CyanKey" },
 
     //ObjDecals - all
+    { srcName: "ObjDecals/SkeleFloors_1186.png", name: "SkeleFloors_1186" },
+    { srcName: "ObjDecals/SkeleFloors_1187.png", name: "SkeleFloors_1187" },
+    { srcName: "ObjDecals/SkeleFloors_1188.png", name: "SkeleFloors_1188" },
+    { srcName: "ObjDecals/SkeleFloors_1189.png", name: "SkeleFloors_1189" },
+    { srcName: "ObjDecals/SkeleFloors_1190.png", name: "SkeleFloors_1190" },
+    { srcName: "ObjDecals/SkeleFloors_1191.png", name: "SkeleFloors_1191" },
+    { srcName: "ObjDecals/SkeleFloors_1192.png", name: "SkeleFloors_1192" },
+    { srcName: "ObjDecals/SkeleFloors_1193.png", name: "SkeleFloors_1193" },
+    { srcName: "ObjDecals/SkeleFloors_1194.png", name: "SkeleFloors_1194" },
+    { srcName: "ObjDecals/SkeleFloors_1195.png", name: "SkeleFloors_1195" },
+    { srcName: "ObjDecals/SkeleFloors_1196.png", name: "SkeleFloors_1196" },
     { srcName: "ObjDecals/BearRug02.jpg", name: "BearRug02" },
     { srcName: "ObjDecals/BearRug03.jpg", name: "BearRug03" },
     { srcName: "ObjDecals/BearRug04.jpg", name: "BearRug04" },

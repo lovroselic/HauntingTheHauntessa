@@ -2247,20 +2247,20 @@ const MAP = {
         gates: '[[136,5,"83.1","82.2","Down"],[152,3,"83.2","84.1","Closed"],[8,7,"83.3","87.1","Closed"],[280,1,"83.4","89.1","Closed"]]',
     }
     ,
-    85: {
-        name: "Creepy Forest",
+    84: {
+        name: "Desolate Forest",
         sg: 0,
         maxSpawned: -1,
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"21","height":"21","depth":1,"map":"BB2AA3BAA3BAA6BB3AA3BAA2BAA8BB2AA4BAA3BAA2BAA2BAA16BAA8BB4AA2BB3AA2BABABB3AA20BAA6BB2ABB2AA2BB2ABABAA2BAA2BB2ABB4ABABB2AA2BB11ABB2AA3BABB5ABB7ABAA2BB8ABABB8ABB6AA2BB2AA2BAA4BABAA3BB2ABB2ABB2ABABAA3BAA2BB4AA3BB2AA3BB6AA3BB2AA2BAA2BAA2BABABB3ABB3ABB2AA4BB2ABABAA3BB3ABAA2BB4AA2BAA2BAA3BB7AA2BB2AA2BB2ABAA2BB2ABB2AA2BABAA3BB3ABB2ABABB3AA2BB2AA2BB6ABB2AA2BB3ABB4AA6BB2ABB2AA2BB30A$"}',
-        wall: "CreepyForest_1156",
-        floor: "DetailedFloor2",
-        ceil: "DarkSky03",
-        start: '[127,5]',
-        decals: '[[127,4,"Cobblestone_0824","texture"],[128,4,"Cobblestone_0824","texture"],[129,4,"Cobblestone_0824","texture"],[130,4,"Cobblestone_0824","texture"],[131,4,"Cobblestone_0824","texture"],[152,4,"Cobblestone_0824","texture"],[173,4,"Cobblestone_0824","texture"],[194,4,"Cobblestone_0824","texture"],[195,4,"Cobblestone_0824","texture"],[196,4,"Cobblestone_0824","texture"],[197,4,"Cobblestone_0824","texture"],[198,4,"Cobblestone_0824","texture"],[199,4,"Cobblestone_0824","texture"],[200,4,"Cobblestone_0824","texture"],[201,4,"Cobblestone_0824","texture"],[202,4,"Cobblestone_0824","texture"],[203,4,"Cobblestone_0824","texture"],[204,4,"Cobblestone_0824","texture"],[205,4,"Cobblestone_0824","texture"],[206,4,"Cobblestone_0824","texture"],[185,4,"Cobblestone_0824","texture"],[186,4,"Cobblestone_0824","texture"],[187,4,"Cobblestone_0824","texture"]]',
-        gates: '[[126,5,"85.1","84.2","Closed"],[188,3,"85.2","86.1","Orange"],[10,7,"85.3","88.1","Closed"],[430,1,"85.4","02.1","Green"]]',
+        data: '{"width":"21","height":"21","depth":1,"map":"BB2AA3BABAA8BABAA9BB5AA4BABB3AA14BABB3ABB3ABABB4ABABB2AA2BAA3BAA2BAA37BB2AA4BB2ABABB3AA2BB3ABB10ABB3AA3BB2ABB2AA2BB6ABB3ABABB2ABB2AA2BB3ABB3ABABB8ABB7ABB4ABB2AA6BABAA5BAA2BAA5BB4AA4BABB4ABABABAA2BABB2AA4BAA4BABB3AA6BABB2ABB7AA2BABABABB2AA2BABAA2BB3AA2BB2AA3BABB2AA4BB3ABB2ABB2ABB4AA5BB4ABABB6ABB2AA4BAA11BB4ABABB6ABB3AA2BB4ABB27A$"}',
+        wall: "CreepyForest_1154",
+        floor: "DetailedFloor1",
+        ceil: "DarkSky02",
+        start: '[211,5]',
+        decals: '[[211,4,"Cobblestone_0826","texture"],[212,4,"Cobblestone_0826","texture"],[213,4,"Cobblestone_0826","texture"],[214,4,"Cobblestone_0826","texture"],[215,4,"Cobblestone_0826","texture"],[236,4,"Cobblestone_0826","texture"],[237,4,"Cobblestone_0826","texture"],[238,4,"Cobblestone_0826","texture"],[239,4,"Cobblestone_0826","texture"],[240,4,"Cobblestone_0826","texture"],[241,4,"Cobblestone_0826","texture"],[242,4,"Cobblestone_0826","texture"],[243,4,"Cobblestone_0826","texture"],[244,4,"Cobblestone_0826","texture"],[245,4,"Cobblestone_0826","texture"],[246,4,"Cobblestone_0826","texture"],[247,4,"Cobblestone_0826","texture"],[248,4,"Cobblestone_0826","texture"],[227,4,"Cobblestone_0826","texture"],[206,4,"Cobblestone_0826","texture"],[207,4,"Cobblestone_0826","texture"],[208,4,"Cobblestone_0826","texture"]]',
+        gates: '[[210,5,"84.1","83.2","Closed"],[209,3,"84.2","85.1","Closed"],[15,7,"84.3","90.1","Closed"]]',
     }
     ,
     85: {
@@ -2270,13 +2270,15 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"21","height":"21","depth":1,"map":"BB2AA3BAA3BAA6BB3AA3BAA2BAA8BB2AA4BAA3BAA2BAA2BAA16BAA8BB4AA2BB3AA2BABABB3AA20BAA6BB2ABB2AA2BB2ABABAA2BAA2BB2ABB4ABABB2AA2BB11ABB2AA3BABB5ABB7ABAA2BB8ABABB8ABB6AA2BB2AA2BAA4BABAA3BB2ABB2ABB2ABABAA3BAA2BB4AA3BB2AA3BB6AA3BB2AA2BAA2BAA2BABABB3ABB3ABB2AA4BB2ABABAA3BB3ABAA2BB4AA2BAA2BAA3BB7AA2BB2AA2BB2ABAA2BB2ABB2AA2BABAA3BB3ABB2ABABB3AA2BB2AA2BB6ABB2AA2BB3ABB4AA6BB2ABB2AA2BB30A$"}',
+        data: '{"width":"21","height":"21","depth":1,"map":"BB2AA3BAA3BAA6BB3AA3BAA2BAA8BB2AA4BAA3BAA2BAA2BAA16BAA8BB3AA2BB3AA2BABABB3AA10BAA9BAA6BB2ABB2AA2BABABAA2BAA2BB2ABB4AA2BB3ABB9ABABB3AA2BABABB4ABB7ABAA2BB7ABABB8ABB7AA2BB2AA2BAA4BABABABABB2ABB2ABB2ABAA5BB4AA3BB2AA3BB6AA3BB3AA2BABAA2BABABB2ABB3ABB2AA3BB2AA2BAA2BAA3BB3AA4BB4AA2BB2ABAA3BB7AA2BB3AA2BB2AA3BB2ABB2AA2BABAA2BB4ABB2ABABB4AA2BAA2BB7ABB2AA2BB8AA8BB2ABB2AA2BB30A$"}',
         wall: "CreepyForest_1156",
         floor: "DetailedFloor2",
         ceil: "DarkSky03",
-        start: '[127,5]',
-        decals: '[[127,4,"Cobblestone_0824","texture"],[128,4,"Cobblestone_0824","texture"],[129,4,"Cobblestone_0824","texture"],[130,4,"Cobblestone_0824","texture"],[131,4,"Cobblestone_0824","texture"],[152,4,"Cobblestone_0824","texture"],[173,4,"Cobblestone_0824","texture"],[194,4,"Cobblestone_0824","texture"],[195,4,"Cobblestone_0824","texture"],[196,4,"Cobblestone_0824","texture"],[197,4,"Cobblestone_0824","texture"],[198,4,"Cobblestone_0824","texture"],[199,4,"Cobblestone_0824","texture"],[200,4,"Cobblestone_0824","texture"],[201,4,"Cobblestone_0824","texture"],[202,4,"Cobblestone_0824","texture"],[203,4,"Cobblestone_0824","texture"],[204,4,"Cobblestone_0824","texture"],[205,4,"Cobblestone_0824","texture"],[206,4,"Cobblestone_0824","texture"],[185,4,"Cobblestone_0824","texture"],[186,4,"Cobblestone_0824","texture"],[187,4,"Cobblestone_0824","texture"]]',
-        gates: '[[126,5,"85.1","84.2","Closed"],[188,3,"85.2","86.1","Orange"],[10,7,"85.3","88.1","Closed"]]',
+        start: '[24,7]',
+        decals: '[[127,4,"Cobblestone_0824","texture"],[128,4,"Cobblestone_0824","texture"],[129,4,"Cobblestone_0824","texture"],[130,4,"Cobblestone_0824","texture"],[131,4,"Cobblestone_0824","texture"],[152,4,"Cobblestone_0824","texture"],[173,4,"Cobblestone_0824","texture"],[194,4,"Cobblestone_0824","texture"],[195,4,"Cobblestone_0824","texture"],[196,4,"Cobblestone_0824","texture"],[197,4,"Cobblestone_0824","texture"],[198,4,"Cobblestone_0824","texture"],[199,4,"Cobblestone_0824","texture"],[200,4,"Cobblestone_0824","texture"],[201,4,"Cobblestone_0824","texture"],[202,4,"Cobblestone_0824","texture"],[203,4,"Cobblestone_0824","texture"],[204,4,"Cobblestone_0824","texture"],[205,4,"Cobblestone_0824","texture"],[206,4,"Cobblestone_0824","texture"],[185,4,"Cobblestone_0824","texture"],[186,4,"Cobblestone_0824","texture"],[187,4,"Cobblestone_0824","texture"],[269,4,"Sand8","texture"],[270,3,"Beach1","texture"],[268,5,"Beach1","texture"],[45,4,"RedMarbleFloor7","texture"],[46,3,"GlossyBrownBrickedWall56","texture"],[44,5,"GlossyBrownBrickedWall56","texture"]]',
+        gates: '[[126,5,"85.1","84.2","Closed"],[188,3,"85.2","86.1","Orange"],[10,7,"85.3","88.1","Closed"],[430,1,"85.4","02.1","Green"]]',
+        entities: '[[248,7,"BitchLiar"]]',
+        trainers: '[[66,1,"Swordy"]]',
     }
     ,
     86: {
@@ -2381,6 +2383,7 @@ const MAP = {
         lights: '[[679,5,"Lights110","standardYellowSoft"]]',
         gates: '[[2,7,"91.1","84.4","Closed"]]',
         doors: '[236,128]',
+        entities: '[[136,7,"PinkyBinky"]]',
     }
     ,
     92: {
@@ -2400,7 +2403,7 @@ const MAP = {
         gates: '[[1814,7,"92.1","85.4","Closed"]]',
         scrolls: '[[2116,12]]',
         triggers: '[[1821,7,"SmoothWallButton",1,1839]]',
-        entities: '[[31,7,"GhostBride"],[264,3,"BootShina"]]',
+        entities: '[[31,7,"GhostBride"],[264,3,"BootShina"],[5,7,"AnvillaDeHammer"]]',
     }
     ,
     93: {
@@ -2451,7 +2454,7 @@ const MAP = {
         start: '[263,1]',
         lights: '[[705,1,"Candelabra18","dimRed"],[721,3,"Candle70","standardYellowDim"],[723,5,"DuaLLantern_029","standardYellowDim"],[739,7,"Candle53","gold"]]',
         gates: '[[280,1,"95.1","94.2","Closed"]]',
-        shrines: '[[8,7,"HealingHeels"],[220,3,"ManaHeels"],[204,5,"SnakeDagger"]]',
+        shrines: '[[8,7,"HealingHeels"],[220,3,"ManaHeels"],[204,5,"SnakeDagger"],[101,3,"TankaDaFensa"],[85,5,"WhichWitch"]]',
         doors: '[127]',
     }
     ,

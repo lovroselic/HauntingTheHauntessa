@@ -30,6 +30,32 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    WhichWitch: {
+        name: "WhichWitch",
+        sprite: "WhichWitch",
+        which: "magic",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "SkillFireball",
+        price: 5000,
+        level: 3,
+        text: "Kneel at the circle and count true. Pay 5000 gold, and I will teach you magic, starting with Fireball. No refunds, sizzling is normal.",
+        introduce: true,
+        voice: "Female4",
+    },
+    TankaDaFensa: {
+        name: "TankaDaFensa",
+        sprite: "TankaDaFensa",
+        which: "defense",
+        category: 'crest',
+        interactionCategory: 'shrine',
+        inventorySprite: "SkillShield",
+        price: 5000,
+        level: 3,
+        text: "Best defense is offense. And being armored as a tank. For 5000 gold I will show you details.",
+        introduce: true,
+        voice: "Female",
+    },
     SnakeDagger: {
         name: "SnakeDagger",
         sprite: "SnakeDagger",
@@ -4447,6 +4473,18 @@ const INTERACTION_ITEM = {
         inventorySprite: "PinkPanties",
         text: "Sexy stuff. I should wear these. Maybe in the next game?"
     },
+    PinkBra: {
+        name: "PinkBra",
+        category: "interaction_item",
+        inventorySprite: "PinkBra",
+        text: "Sexy stuff. I should wear these. Maybe in the next game?"
+    },
+    PinkHighBoots: {
+        name: "PinkPinkHighBootsBra",
+        category: "interaction_item",
+        inventorySprite: "PinkHighBoots",
+        text: "Sexy stuff. I should wear these. Maybe in the next game?"
+    },
     Spear: {
         name: "Spear",
         category: "interaction_item",
@@ -4770,6 +4808,18 @@ const INTERACTION_ITEM = {
         inventorySprite: "RubberDuck",
         text: "One should never bath alone."
     },
+    Hammer: {
+        name: "Hammer",
+        category: "interaction_item",
+        inventorySprite: "Hammer",
+        text: "Hammer. I could hammer someone."
+    },
+    Anvil: {
+        name: "Anvil",
+        category: "interaction_item",
+        inventorySprite: "Anvil",
+        text: "Anvil. Blacksmistress might want it."
+    },
 
     //metals
     GoldBar: {
@@ -4802,6 +4852,45 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    BitchLiar: {
+        name: "BitchLiar",
+        sprite: "BitchLiar",
+        category: 'crest',
+        voice: "FemaleHigh3",
+        wants: ["Banknote20", "Banknote50"],
+        gives: "Towel",
+        text: {
+            intro: "Yes, this white towel, pure and rare, can be yours, for the right affair of cash and care. 70 Castle Marks. Bring exact change.",
+            progress: "Not quite enough, you're short, I fear. Come back when the sum is clear.",
+            conclusion: "Well, look at you with perfect pay! Take the towel, don't sniff it, okay?",
+        }
+    },
+    PinkyBinky: {
+        name: "PinkyBinky",
+        sprite: "PinkyBinky",
+        category: 'crest',
+        voice: "FemaleVeryLow4",
+        wants: ["PinkPanties", "PinkBra", "PinkHighBoots"],
+        gives: "RedRose",
+        text: {
+            intro: "Pink is life, pink is divine, bring me lace and leather fine.",
+            progress: "Mmm, getting closer, but not quite yet. I need more pink to complete my set.",
+            conclusion: "Perfect shade, my closet's blessed. Take this red rose, it matches best."
+        }
+    },
+    AnvillaDeHammer: {
+        name: "AnvillaDeHammer",
+        sprite: "AnvillaDeHammer",
+        category: 'crest',
+        voice: "Female6",
+        wants: ["Anvil", "Hammer"],
+        gives: "IronBar",
+        text: {
+            intro: "No forge, no flame, no swing, no spark. Bring my tools to light the dark.",
+            progress: "Half my gear won't heat the steel. I need it all to make the deal.",
+            conclusion: "Now my forge sings, the metal's aglow. Take this iron bar, mind your toe."
+        }
+    },
     FuturaUranus: {
         name: "FuturaUranus",
         sprite: "FuturaUranus",
@@ -6014,6 +6103,19 @@ const INTERACTION_ENTITY = {
 };
 
 const INTERACTION_SHRINE = {
+    Swordy: {
+        name: "Swordy",
+        sprite: "Swordy",
+        category: 'crest',
+        voice: "Female6",
+        wants: ["GoldCoin"],
+        gives: "Attack",
+        text: {
+            intro: "Fancy a sharper swing? Slip me a single gold coin and I'll teach your strikes to sing.",
+            progress: null,
+            conclusion: "Clink accepted! Steel for zeal, take the blade and feel your attack reveal.",
+        }
+    },
     Apachessa: {
         name: "Apachessa",
         sprite: "Apachessa",

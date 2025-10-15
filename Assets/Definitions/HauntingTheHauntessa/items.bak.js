@@ -333,18 +333,7 @@ const INTERACTION_ITEM = {
         inventorySprite: "GreenColor",
         text: "I can paint something green."
     },
-    Hammer: {
-        name: "Hammer",
-        category: "interaction_item",
-        inventorySprite: "Hammer",
-        text: "Hammer. I could hammer someone."
-    },
-    Anvil: {
-        name: "Anvil",
-        category: "interaction_item",
-        inventorySprite: "Anvil",
-        text: "Anvil. Blacksmistress might want it."
-    },
+
 
     LeatherHide: {
         name: "LeatherHide",

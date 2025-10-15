@@ -76,23 +76,26 @@ const DEBUG = {
             DONE GhostBride wants "Skeleton" gives "Candle"
             DONE WhiteFutura wants "UraniumBar", "UraniumBar", "UraniumBar" gives   IronBar
             DONE OrangeBathy wants RubberDuck gives Sponge
+            DONE AnvillaDeHammer wants "Anvil", "Hammer" gives IronBar
+            DONE PinkyBinky wants "PinkPanties", "PinkBra", "PinkHighBoots" gives "RedRose",
+            DONE BithcLiar wants "Banknote20", "Banknote50" gives "Towel"
             
         Items:
             DONE "OrangeBoots", ---> RedCemeteria (87)
             DONE "OrangeLeggings", ---> MetallicaDress(89)
             DONE "OrangeBra", --> SpringyBather (90)
             DONE "OrangeThongs" ---> BlackCemeteria (87)
-        "RedRose",
+            DONE "RedRose",---> PinkyBinky(91)
         "BlueRose",
             DONE"PurpleRose" ---> SheparDess3(90)
             DONE Candle", ---> GhostBride(92)
         "RedCandle", 
         "BlueCandle" 
         "IronBar", 
-        "IronBar",
-        DONE "IronBar" ---> WhiteFutura(89)
+            DONE "IronBar", ---> AnvillaDeHammer(92)
+            DONE "IronBar" ---> WhiteFutura(89)
             DONE "Sponge", --> OrangeBathy(88)
-        "Towel"
+            DONE "Towel" ---> BithcLiar(85)
         "BabySheep", 
         "BabySheep", 
         "BabySheep"
@@ -102,6 +105,13 @@ const DEBUG = {
         "UraniumBar", 
         "UraniumBar"
         RubberDuck
+        "Anvil", 
+        "Hammer"
+        "Banknote20", 
+        "Banknote50"
+        "PinkPanties", 
+        "PinkBra", 
+        "PinkHighBoots"
             
         Rooms that can have more entities, trainers:
 
@@ -109,11 +119,15 @@ const DEBUG = {
             DONE HealingHeels
             DONE HealingMana
             DONE SnakeDagger
+            DONE AnvillaDeHammer
+            DONE WhichWitch
     
         Trainers:
+            
 
 
         CoinTrainers:
+            DONE Swordy
 
         Coins place:
             DONE BootShina--->(92)
@@ -137,7 +151,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 89; //56
+        GAME.level = 95; //56
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -183,6 +197,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
+            "GoldCoin"
 
         ];
 
@@ -311,7 +326,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.29.3",
+    VERSION: "0.29.4",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
