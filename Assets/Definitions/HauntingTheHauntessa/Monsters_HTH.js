@@ -6130,6 +6130,19 @@ const INTERACTION_ENTITY = {
 };
 
 const INTERACTION_SHRINE = {
+    NeverLookBack: {
+        name: "NeverLookBack",
+        sprite: "NeverLookBack",
+        category: 'crest',
+        voice: "Female6",
+        wants: ["GoldCoin"],
+        gives: "Defense",
+        text: {
+            intro: "Eyes front, feet quick, no looking back. Bring one GoldCoin with the queen's face, and I'll teach defense that keeps you on track.",
+            progress: null,
+            conclusion: "Clink accepted, lesson injected. Defense up, now sprint forward and never get intercepted.",
+        },
+    },
     Swordy: {
         name: "Swordy",
         sprite: "Swordy",
