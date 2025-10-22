@@ -128,9 +128,9 @@ const DEBUG = {
             
 
 
-        CoinTrainers (missing 4):
+        CoinTrainers (missing 3):
             DONE Swordy (Attack)
-        -NeverLookBack (defense)
+            DONE NeverLookBack (defense)
 
         Coins place:
             DONE BootShina--->(92)
@@ -157,7 +157,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 84; //56
+        GAME.level = 91; //56
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -332,7 +332,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.29.8",
+    VERSION: "0.29.9",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

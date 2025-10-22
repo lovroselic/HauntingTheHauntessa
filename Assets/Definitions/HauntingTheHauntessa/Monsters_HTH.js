@@ -4868,7 +4868,7 @@ const INTERACTION_ITEM = {
         name: "UraniumBar",
         category: "interaction_item",
         inventorySprite: "UraniumBar",
-        text: "Uranium. Active radio, or something."
+        text: "Uranium. Active radio, or something like that. Right?."
     },
     IronBar: {
         name: "IronBar",
