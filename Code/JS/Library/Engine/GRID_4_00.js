@@ -154,7 +154,6 @@ const GRID = {
                     let point = GRID.gridToCoord(grid);
                     let text = `${x},${y}`;
                     GRID.paintText(point, text, layer, "#BBB");
-                    //return grid.x + grid.y * this.width + grid.z * this.width * this.height;
                     let index = x + dungeon.width * y + floor * dungeon.width * dungeon.height;
                     point = point.add(DOWN, 12);
                     GRID.paintText(point, index, layer, "#BBB");
@@ -790,6 +789,7 @@ const MAPDICT = {
     WARP: 2 ** 5,                           //32 - STAIR alias -> route to another part of the dungeon
 
     //16 bit extension
+    PILLAR: 2 ** 3,            //8
     WALL2: 2 ** 8,
     WALL4: 2 ** 9,
     WALL6: 2 ** 10,
@@ -819,12 +819,12 @@ const reverseDictionary = (dict) => {
 
 const REVERSED_MAPDICT = reverseDictionary(MAPDICT);
 const STAIRCASE_GRIDS = [MAPDICT.WALL2, MAPDICT.WALL4, MAPDICT.WALL6, MAPDICT.WALL8];
-const GROUND_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.HOLE, MAPDICT.BLOCKWALL, ...STAIRCASE_GRIDS];
-const HERO_GROUND_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.HOLE, MAPDICT.BLOCKWALL];
+const GROUND_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.HOLE, MAPDICT.BLOCKWALL, ...STAIRCASE_GRIDS, MAPDICT.PILLAR];
+const HERO_GROUND_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.HOLE, MAPDICT.BLOCKWALL, MAPDICT.PILLAR];
 const NO_FLY = [MAPDICT.WALL8, MAPDICT.WALL6];
-const AIR_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.BLOCKWALL, ...NO_FLY];
+const AIR_MOVE_GRID_EXCLUSION = [MAPDICT.WALL, MAPDICT.BLOCKWALL, ...NO_FLY, MAPDICT.PILLAR];
 const EXPLOADABLES = [MAPDICT.BLOCKWALL, MAPDICT.DOOR];
-const ITEM_DROP_EXCLUSION = [MAPDICT.WALL, MAPDICT.BLOCKWALL];
+const ITEM_DROP_EXCLUSION = [MAPDICT.WALL, MAPDICT.BLOCKWALL, MAPDICT.PILLAR];
 const JUMP_MOVE = [MAPDICT.EMPTY, MAPDICT.HOLE, ...STAIRCASE_GRIDS];
 const PATH_GRIDS = [MAPDICT.EMPTY, ...STAIRCASE_GRIDS];
 
@@ -1024,11 +1024,20 @@ class GA_Dimension_Agnostic_Methods {
     toBlockWall(grid) {
         this.setValue(grid, MAPDICT.BLOCKWALL);
     }
+    toPillar(grid) {
+        this.setValue(grid, MAPDICT.PILLAR);
+    }
     addBlockWall(grid) {
         this.set(grid, MAPDICT.BLOCKWALL);
     }
     isBlockWall(grid) {
         return this.check(grid, MAPDICT.BLOCKWALL) === MAPDICT.BLOCKWALL;
+    }
+    isPillar(grid) {
+        return this.check(grid, MAPDICT.PILLAR) === MAPDICT.PILLAR;
+    }
+    notPillar(grid) {
+        return !this.isPillar(grid)
     }
     notBlockWall(grid) {
         return !this.isBlockWall(grid);
@@ -1572,7 +1581,7 @@ class GridArray extends Classes([ArrayBasedDataStructure, GA_Dimension_Agnostic_
             for (let x = 0; x < this.width; x++) {
                 const grid = new Grid(x, y);
                 const index = y * paddedWidth + x;
-                pixelData[index] = this.notWall(grid) ? 0 : 255;
+                pixelData[index] = (this.notWall(grid) && this.notBlockWall(grid) && this.notPillar(grid)) ? 0 : 255;
             }
         }
         return pixelData;
@@ -1843,7 +1852,7 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
                 for (let x = 0; x < this.width; x++) {
                     const grid = new Grid3D(x, y, z);
                     const index = z * W * H + y * W + x;
-                    pixelData[index] = this.notWall(grid) ? 0 : 255;
+                    pixelData[index] = (this.notWall(grid) && this.notBlockWall(grid) && this.notPillar(grid)) ? 0 : 255;
                 }
             }
         }

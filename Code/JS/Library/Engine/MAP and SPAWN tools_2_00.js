@@ -183,8 +183,6 @@ const SPAWN_TOOLS = {
 
             if (type === "texture") {
                 decal = TEXTURE[picture];
-                //map.TextureExclusion.push({ grid: grid, face: Vector.fromInt(D[1]) });
-                //map.TextureExclusion.push({ grid, face });
                 map.TextureExclusion[D[0]] = face;
             } else decal = SPRITE[picture];
             if (type === "picture" && (decal.width >= MAP_TOOLS.INI.TEXTURE_WIDTH || decal.height >= MAP_TOOLS.INI.TEXTURE_WIDTH)) {

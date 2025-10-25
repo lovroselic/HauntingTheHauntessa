@@ -1136,10 +1136,10 @@ const ENGINE = {
             for (const code in this.keymap) {
                 const keyCode = Number(code);
                 if (this.keymap[keyCode]) {
-                        pressed.push(ENGINE.KEY.keycodes[keyCode]);
-                    }
+                    pressed.push(ENGINE.KEY.keycodes[keyCode]);
                 }
-            
+            }
+
             return pressed;
         },
         run(func, nextFunct) {
@@ -2819,17 +2819,14 @@ const ENGINE = {
                     let grid = new Grid(x, y);
                     let value = maze.GA.getValue(grid);
                     value &= 2 ** maze.GA.gridSizeBit - 1 - MAPDICT.FOG - MAPDICT.RESERVED;
-                    if (maze.GA.isBlockWall(grid)) {
+                    if (maze.GA.isBlockWall(grid) || maze.GA.isPillar(grid)) {
                         ENGINE.BLOCKGRID.wall(x, y, CTX, value);
                     } else if (maze.GA.isMazeWall(grid)) {
                         value &= 2 ** maze.GA.gridSizeBit - 1 - MAPDICT.WALL;
 
-                        if (value & MAPDICT.STAIR) {
-                            value = MAPDICT.STAIR;
-                        }
-                        if (value & MAPDICT.SHRINE) {
-                            value = MAPDICT.SHRINE;
-                        }
+                        if (value & MAPDICT.STAIR) value = MAPDICT.STAIR;
+                        if (value & MAPDICT.SHRINE) value = MAPDICT.SHRINE;
+
 
                         ENGINE.BLOCKGRID.wall(x, y, CTX, value);
                     } else {
@@ -2853,6 +2850,9 @@ const ENGINE = {
             switch (value) {
                 case MAPDICT.BLOCKWALL:
                     FS = "#BBB";
+                    break;
+                 case MAPDICT.PILLAR:
+                    FS = "#ab9292ff";
                     break;
                 case MAPDICT.DOOR:
                     FS = "brown";
@@ -2950,7 +2950,7 @@ const ENGINE = {
                     let value = maze.GA.getValue(grid);
                     value &= 2 ** maze.GA.gridSizeBit - 1 - MAPDICT.FOG - MAPDICT.RESERVED;
 
-                    if (maze.GA.isBlockWall(grid) || maze.GA.isMazeWall(grid)) {
+                    if (maze.GA.isBlockWall(grid) || maze.GA.isMazeWall(grid) || maze.GA.isPillar(grid)) {
                         ENGINE.BLOCKGRID.wall(x, y, CTX, MAPDICT.WALL, offset);
                     } else if (STAIRCASE_GRIDS.includes(value)) {
                         ENGINE.BLOCKGRID.staircase(x, y, CTX, WallSizeToHeight(value), offset);
@@ -2972,7 +2972,7 @@ const ENGINE = {
                     let grid = new Grid3D(x, y, z);
                     let value = maze.GA.getValue(grid);
                     value &= 2 ** maze.GA.gridSizeBit - 1 - MAPDICT.FOG - MAPDICT.RESERVED;
-                    if (maze.GA.isBlockWall(grid)) {
+                    if (maze.GA.isBlockWall(grid) || maze.GA.isPillar(grid)) {
                         ENGINE.BLOCKGRID.wall(x, y, CTX, value);
                     } else if (maze.GA.isMazeWall(grid)) {
                         value &= 2 ** maze.GA.gridSizeBit - 1 - MAPDICT.WALL;

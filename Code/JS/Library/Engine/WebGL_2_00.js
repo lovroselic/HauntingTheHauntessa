@@ -1536,6 +1536,9 @@ const WORLD = {
     addBlockWall(Y, grid, type) {
         return this.addElement(ELEMENT.BLOCKWALL, Y, grid, type);
     },
+    addPillar(Y, grid, type) {
+        return this.addElement(ELEMENT.PILLAR, Y, grid, type);
+    },
     addElement(E, Y, grid, type, scale = null) {
         let positions = E.positions.slice();
         let indices = E.indices.slice();
@@ -1613,6 +1616,11 @@ const WORLD = {
                     break;
                 case MAPDICT.BLOCKWALL:
                     this.addBlockWall(grid.z, grid, "wall");
+                    if (grid.z === 0) this.addCube(- 1, grid, "floor");
+                    if (grid.z === maxDepth) this.addCube(grid.z + 1, grid, "ceil");
+                    break;
+                case MAPDICT.PILLAR:
+                    this.addPillar(grid.z, grid, "wall");
                     if (grid.z === 0) this.addCube(- 1, grid, "floor");
                     if (grid.z === maxDepth) this.addCube(grid.z + 1, grid, "ceil");
                     break;

@@ -31,6 +31,7 @@ const MINIMAP = {
         DOOR: "#333",
         STAIR: "#008000",
         WALL: "#8b4513",            //brown
+        PILLAR: "#8b4513",            
         LOCKED_DOOR: "#826644",
         HERO: "#FFF",
         SHRINE: "#FF00FF",
@@ -117,6 +118,9 @@ const MINIMAP = {
                         break;
                     case MAPDICT.BLOCKWALL:
                         CTX.fillStyle = MINIMAP.LEGEND.BLOCKWALL;
+                        break;
+                    case MAPDICT.PILLAR:
+                        CTX.fillStyle = MINIMAP.LEGEND.PILLAR;
                         break;
                     case MAPDICT.WALL2:
                     case MAPDICT.WALL4:

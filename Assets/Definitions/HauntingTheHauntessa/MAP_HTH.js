@@ -2318,7 +2318,7 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"19","height":"19","depth":3,"map":"BB2AA9BB4ABB9AA4BAA45ÁÁ5AÁÁ9AA57BABB3AA14BB41AA5BB7ABB7AA2BAA6BB5ABB12ABB6ABABB29$BB15ÁÁ2BB19ABB112ÁÁ14BB17ÁÁ14BB121ÁÁ176AA14ÁÁ240BÁBB14ÁÁ14BB15"}',
+        data: '{"width":"19","height":"19","depth":3,"map":"BB2AA9BB4ABB6AA3BABAA27BB2AA12ÁÁ5AÁÁ9AA32IAA4IAA21BABB3AA16BB41AA5BB5ABB9ABAA7BB5ABB12ABB6ABABB29$BB15ÁÁ2BB19ABB112ÁÁ10BÁÁ4BB3ÁÁ2BB13ÁÁ8BÁÁ4BB120AA2ÁÁ96BB2ÁÁ46BB2ÁÁ44AA14ÁÁ160IÁÁ4IÁÁ8IÁÁ4IÁÁ52BÁBB12ÁÁ12BB13"}',
         wall: "IvyWall_524",
         floor: "OrnateFloor106",
         ceil: "Relief15",

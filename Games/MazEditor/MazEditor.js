@@ -315,6 +315,11 @@ const GAME = {
         $("#error_message").html("All is fine");
         break;
 
+      case "pillar":
+        GA.toPillar(grid);
+        $("#error_message").html("All is fine");
+        break;
+
       case "gate":
         switch (currentValue) {
           case MAPDICT.WALL:

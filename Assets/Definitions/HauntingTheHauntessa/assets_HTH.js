@@ -1066,7 +1066,7 @@ LoadObjects = [
     "Amanita.obj", "Snail.obj", "Frog.obj",
     "apple.obj", "crown.obj", "dagger.obj", "mushroom.obj", "skull.obj", "Candle.obj",
     "HornedHelmet.obj", "flask.obj", "pear.obj", "fish.obj", "ErlenFlask.obj",
-    "Goat.obj",
+    "Goat.obj", "Pillar.obj",
 ];
 
 LoadModels = [
