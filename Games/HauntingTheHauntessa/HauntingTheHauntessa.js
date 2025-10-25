@@ -157,7 +157,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 91; //56
+        GAME.level = 86; //56
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -277,6 +277,22 @@ const DEBUG = {
         console.info("***** Automatic level testing END *****");
         console.timeEnd("automaticTests");
     },
+    dropItem(name) {
+        for (const [index, item] of HERO.inventory.item.entries()) {
+            if (item.name === name) {
+                HERO.inventory.item.splice(index, 1);
+                console.warn("..removed", index, item);
+                break;
+            }
+        }
+        TITLE.keys();
+    },
+    getItem(name) {
+        const item = new NamedInventoryItem(name, name);
+        HERO.inventory.item.push(item);
+        console.warn("..added", item);
+        TITLE.keys();
+    },
 };
 
 const INI = {
@@ -332,7 +348,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.29.9",
+    VERSION: "0.30.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

@@ -764,6 +764,22 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    MetalDressWalking: {
+        name: "MetalDressWalking",
+        sprite: "MetalDressWalking",
+        category: 'crest',
+        voice: "FemaleLow5",
+        text: "I am walking, but you should maybe be jumping.",
+        interactionCategory: "oracle",
+    },
+    BoredGame: {
+        name: "BoredGame",
+        sprite: "BoredGame",
+        category: 'crest',
+        voice: "FemaleLow3",
+        text: "Are you bored of this game yet? No? Good. Because it's not over.",
+        interactionCategory: "oracle",
+    },
     ClosedCastleGate: {
         name: "ClosedCastleGate",
         sprite: "ClosedCastleGate",
@@ -2349,7 +2365,7 @@ const MONSTER_TYPE = {
         directMagicDamage: false,
         attackSound: "MonsterAttack1",
         hurtSound: "MonsterHurt",
-        behaviourArguments: [15, ["wanderer"], 11, ["follower"]],
+        behaviourArguments: [10, ["wanderer"], 8, ["follower"]],
         moveSpeed: 1.0,
         material: MATERIAL.standard,
     },
@@ -2371,7 +2387,7 @@ const MONSTER_TYPE = {
         directMagicDamage: false,
         attackSound: "MonsterAttack1",
         hurtSound: "MonsterHurt",
-        behaviourArguments: [15, ["wanderer"], 11, ["advancer"]],
+        behaviourArguments: [10, ["wanderer"], 8, ["advancer"]],
         moveSpeed: 1.1,
         material: MATERIAL.standard,
     },
@@ -2393,7 +2409,7 @@ const MONSTER_TYPE = {
         directMagicDamage: false,
         attackSound: "MonsterAttack1",
         hurtSound: "MonsterHurt",
-        behaviourArguments: [15, ["wanderer"], 11, ["advancer"]],
+        behaviourArguments: [10, ["wanderer"], 8, ["advancer"]],
         moveSpeed: 1.15,
         material: MATERIAL.standard,
     },
@@ -2594,7 +2610,7 @@ const MONSTER_TYPE = {
         directMagicDamage: false,
         attackSound: "MonsterAttack1",
         hurtSound: "MonsterHurt",
-        behaviourArguments: [15, ["wanderer"], 11, ["advancer"]],
+        behaviourArguments: [10, ["wanderer"], 8, ["advancer"]],
         moveSpeed: 1.15,
         material: MATERIAL.standard,
     },
@@ -2616,7 +2632,7 @@ const MONSTER_TYPE = {
         directMagicDamage: false,
         attackSound: "MonsterAttack1",
         hurtSound: "MonsterHurt",
-        behaviourArguments: [15, ["wanderer"], 11, ["advancer"]],
+        behaviourArguments: [10, ["wanderer"], 8, ["advancer"]],
         moveSpeed: 1.1,
         material: MATERIAL.standard,
     },
@@ -2708,7 +2724,7 @@ const MONSTER_TYPE = {
         directMagicDamage: false,
         attackSound: "MonsterAttack1",
         hurtSound: "MonsterHurt3",
-        behaviourArguments: [9, ["wanderer"], 5, ["advancer"]],
+        behaviourArguments: [8, ["wanderer"], 5, ["advancer"]],
         moveSpeed: 1.3,
         material: MATERIAL.greenFluence,
     },
@@ -4506,7 +4522,7 @@ const INTERACTION_ITEM = {
         text: "Sexy stuff. I should wear these. Maybe in the next game?"
     },
     PinkHighBoots: {
-        name: "PinkPinkHighBootsBra",
+        name: "PinkHighBoots",
         category: "interaction_item",
         inventorySprite: "PinkHighBoots",
         text: "Sexy stuff. I should wear these. Maybe in the next game?"

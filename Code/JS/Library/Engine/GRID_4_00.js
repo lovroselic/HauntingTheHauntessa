@@ -154,7 +154,8 @@ const GRID = {
                     let point = GRID.gridToCoord(grid);
                     let text = `${x},${y}`;
                     GRID.paintText(point, text, layer, "#BBB");
-                    let index = x + dungeon.width * y + floor * (x + dungeon.width * y);
+                    //return grid.x + grid.y * this.width + grid.z * this.width * this.height;
+                    let index = x + dungeon.width * y + floor * dungeon.width * dungeon.height;
                     point = point.add(DOWN, 12);
                     GRID.paintText(point, index, layer, "#BBB");
                 }

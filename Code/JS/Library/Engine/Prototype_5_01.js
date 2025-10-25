@@ -529,9 +529,7 @@ Array.prototype.addUnique = function (arr) {
 };
 Array.prototype.removeValueOnce = function (value) {
     let idx = this.indexOf(value);
-    if (idx !== -1) {
-        this.splice(idx, 1);
-    }
+    if (idx !== -1) this.splice(idx, 1);
 };
 Array.prototype.count = function (value) {
     let filtered = this.filter(item => item === value);
