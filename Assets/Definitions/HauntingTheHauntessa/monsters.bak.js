@@ -38,30 +38,7 @@ const MONSTER_TYPE = {
 
    
    
-    GhostMinion: {
-        name: "GhostMinion",
-        model: "GhostFace",
-        scale: 1.82 / 2 ** 2,
-        rotateToNorth: Math.PI,
-        midHeight: 0.5,
-        deathType: "BloodExplosion",
-        mana: 10,
-        health: 30,
-        attack: 25,
-        magic: 4,
-        defense: 0,
-        shootDistance: 12,
-        stalkDistance: 5,
-        directMagicDamage: true,
-        caster: true,
-        attackSound: "MonsterAttack1",
-        hurtSound: "MonsterHurt",
-        behaviourArguments: [15, ["wanderer"], 12, ["shoot"]],
-        moveSpeed: 1.0,
-        material: MATERIAL.standard,
-        missile: BouncingMissile,
-        missileType: COMMON_ITEM_TYPE.Bounceball,
-    },
+    
     GhostMinionGreen: {
         name: "GhostMinionGreen",
         texture: "GhostFaceGreen",
@@ -343,25 +320,7 @@ const MONSTER_TYPE = {
         missile: BouncingMissile,
         missileType: COMMON_ITEM_TYPE.Bounceball,
     },
-    Hulk: {
-        name: "Hulk",
-        model: "Hulk",
-        scale: 1.5 / 2 ** 6,
-        rotateToNorth: Math.PI,
-        midHeight: 0.5,
-        deathType: "BloodExplosion",
-        mana: 0,
-        health: 100,
-        attack: 200,
-        magic: 0,
-        defense: 0,
-        directMagicDamage: true,
-        attackSound: "HumanAttack1",
-        hurtSound: "MonsterHurt2",
-        behaviourArguments: [10, ["wanderer"], 4, ["advancer"]],
-        moveSpeed: 1.0,
-        material: MATERIAL.greenShine,
-    },
+ 
     
    
     Rex: {

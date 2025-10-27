@@ -79,8 +79,31 @@ const DEBUG = {
             DONE AnvillaDeHammer wants "Anvil", "Hammer" gives IronBar
             DONE PinkyBinky wants "PinkPanties", "PinkBra", "PinkHighBoots" gives "RedRose",
             DONE BithcLiar wants "Banknote20", "Banknote50" gives "Towel"
-            
+            DONE DemolitionBlonde want "Banknote20", "Banknote50", "Banknote200" gives "SCROLL_Explode"
+            DONE DemolitionRed wants "Banknote20", "Banknote10", "Banknote100" gives  "SCROLL_Explode"
+        DemolitionBlack    "Banknote200", "Banknote50", "Banknote100" gives  "SCROLL_Explode"
+        GhostFaceJR  wants "Kiss","Kiss","Kiss" gives ....
+
+
         Items:
+
+            DONE "SCROLL_Explode" --> DemolitionBlonde(86)
+            DONE "SCROLL_Explode" --> DemolitionRed(86)
+        "SCROLL_Explode" ---> DemolitionBlack()
+        "Banknote20", 
+        "Banknote50", 
+        "Banknote200".
+        "Banknote20", 
+        "Banknote10", 
+        "Banknote100"
+        "Banknote200", 
+        "Banknote50", 
+        "Banknote100"
+        "Kiss",
+        "Kiss",
+        "Kiss"
+
+        ------------------------------------
             DONE "OrangeBoots", ---> RedCemeteria (87)
             DONE "OrangeLeggings", ---> MetallicaDress(89)
             DONE "OrangeBra", --> SpringyBather (90)
@@ -112,6 +135,9 @@ const DEBUG = {
             DONE "PinkPanties", ---> (88)
             DONE "PinkBra", ---> (85)
             DONE "PinkHighBoots" ---> (92)
+
+            ----------
+       
             
         Rooms that can have more entities, trainers:
             87
@@ -146,10 +172,7 @@ const DEBUG = {
             DONE Green ---> (85)
 
         Missing scrolls:
-            Fly
-            Bomb
-            Bomb
-            Bomb
+       
 
             
 
@@ -203,7 +226,11 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            "GoldCoin"
+            "GoldCoin",
+            "Banknote20", "Banknote50", "Banknote200",
+            "Banknote20", "Banknote10", "Banknote100",
+            "Banknote200", "Banknote50", "Banknote100",
+            "Kiss","Kiss","Kiss"
 
         ];
 
@@ -348,7 +375,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.30.1",
+    VERSION: "0.30.2",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

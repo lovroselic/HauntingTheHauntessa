@@ -20,6 +20,7 @@ as used by LS
 changelog:
 5.00: new fresh version, 3D grids vectors
 5.01: typed array, extend
+    : Math.trunc instead of parseInt
 
 */
 
@@ -646,8 +647,8 @@ class MasterGridClass {
 class Grid extends MasterGridClass {
     constructor(x = 0, y = 0) {
         super();
-        this.x = parseInt(x, 10);
-        this.y = parseInt(y, 10);
+        this.x = Math.trunc(x);
+        this.y = Math.trunc(y);
     }
     static toClass(grid) {
         return new Grid(grid.x, grid.y);
@@ -859,8 +860,8 @@ class Vector extends MasterVectorClass {
     static W = 3;
     constructor(x = 0, y = 0) {
         super();
-        this.x = parseInt(x, 10);
-        this.y = parseInt(y, 10);
+        this.x = Math.trunc(x);
+        this.y = Math.trunc(y);
     }
     static toClass(vector) {
         return new Vector(vector.x, vector.y);
@@ -1110,9 +1111,9 @@ class MasterGridClass3D {
 class Grid3D extends MasterGridClass3D {
     constructor(x = 0, y = 0, z = 0) {
         super();
-        this.x = parseInt(x, 10);
-        this.y = parseInt(y, 10);
-        this.z = parseInt(z, 10);
+        this.x = Math.trunc(x);
+        this.y = Math.trunc(y);
+        this.z = Math.trunc(z);
     }
     static toGrid(grid) {
         return new Grid(grid.x, grid.y);
@@ -1235,9 +1236,9 @@ class Vector3D extends MasterVectorClass3D {
     static W2 = 3 * 3;
     constructor(x = 0, y = 0, z = 0) {
         super();
-        this.x = parseInt(x, 10);
-        this.y = parseInt(y, 10);
-        this.z = parseInt(z, 10);
+        this.x = Math.trunc(x);
+        this.y = Math.trunc(y);
+        this.z = Math.trunc(z);
     }
     static toVector2D(vector) {
         return new Vector(vector.x, vector.y);

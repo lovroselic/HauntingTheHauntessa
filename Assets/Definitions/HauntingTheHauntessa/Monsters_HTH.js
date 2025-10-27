@@ -3171,7 +3171,6 @@ const MONSTER_TYPE = {
         caster: true,
         shootDistance: 15,
         stalkDistance: 17,
-        caster: true,
         attackSound: "FemaleAttack1",
         hurtSound: "Ow",
         behaviourArguments: [17, ["wanderer"], 15, ["shoot"]],
@@ -3179,6 +3178,52 @@ const MONSTER_TYPE = {
         material: MATERIAL.standardShine,
         missile: BouncingMissile,
         missileType: COMMON_ITEM_TYPE.Bounceball,
+    },
+    GhostMinion: {
+        name: "GhostMinion",
+        model: "GhostFace",
+        scale: 1.82 / 2 ** 2,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "BloodExplosion",
+        inventory: GOLD_ITEM_TYPE.SilverBar,
+        mana: 10,
+        health: 75,
+        attack: 100,
+        magic: 35,
+        defense: 20,
+        xp: 250,
+        shootDistance: 7,
+        stalkDistance: 8,
+        caster: true,
+        attackSound: "MonsterAttack1",
+        hurtSound: "MonsterHurt",
+        behaviourArguments: [10, ["wanderer"], 7, ["shoot"]],
+        moveSpeed: 1.0,
+        material: MATERIAL.standard,
+        missile: BouncingMissile,
+        missileType: COMMON_ITEM_TYPE.Bounceball,
+    },
+    Hulk: {
+        name: "Hulk",
+        model: "Hulk",
+        scale: 1.5 / 2 ** 6,
+        rotateToNorth: Math.PI,
+        midHeight: 0.5,
+        deathType: "BloodExplosion",
+        inventory: GOLD_ITEM_TYPE.GoldSphere,
+        mana: 0,
+        health: 80,
+        attack: 120,
+        magic: 0,
+        defense: 25,
+        xp: 250,
+        caster: false,
+        attackSound: "HumanAttack1",
+        hurtSound: "MonsterHurt2",
+        behaviourArguments: [10, ["wanderer"], 4, ["advancer"]],
+        moveSpeed: 1.0,
+        material: MATERIAL.greenShine,
     },
 };
 
@@ -4862,6 +4907,12 @@ const INTERACTION_ITEM = {
         inventorySprite: "Anvil",
         text: "Anvil. Blacksmistress might want it."
     },
+    Kiss: {
+        name: "Kiss",
+        category: "interaction_item",
+        inventorySprite: "Kiss",
+        text: "This looks like a portable kiss voucher. What a fascinating concept."
+    },
 
     //metals
     GoldBar: {
@@ -4892,9 +4943,56 @@ const INTERACTION_ITEM = {
         inventorySprite: "IronBar",
         text: "Iron? I can make something from it."
     },
+
+    //scrolls
+    SCROLL_Explode: {
+        name: "SCROLL_Explode",
+        category: "scrollshop",
+        which: "Explode"
+    }
 };
 
 const INTERACTION_ENTITY = {
+    DemolitionBlack: {
+        name: "DemolitionBlack",
+        sprite: "BitchLiar",
+        category: 'crest',
+        voice: "FemaleHigh6",
+        wants: ["Banknote200", "Banknote50", "Banknote100"],
+        gives: "SCROLL_Explode",
+        text: {
+            intro: "Black powder manners and elegant booms. Explode scroll training, 350 Castle marks exact. Pay up and I teach you to whisper boom.",
+            progress: "Closer, but not to explosion. Your purse is light, bring the rest and we will send these stones in flight.",
+            conclusion: "Payment cleared, 350 Castle marks. Here is your Explode scroll, light the fuse and blame the physics.",
+        },
+    },
+
+    DemolitionRed: {
+        name: "DemolitionRed",
+        sprite: "DemolitionRed",
+        category: 'crest',
+        voice: "FemaleHigh4",
+        wants: ["Banknote20", "Banknote10", "Banknote100"],
+        gives: "SCROLL_Explode",
+        text: {
+            intro: "Red wire, blue wire, I teach both. Explode scroll training, 130 Castle marks exact. Pay up and we paint the air with fireworks.",
+            progress: "Close but not kaboom close. Your purse is shy, bring the rest and we will redecorate the walls.",
+            conclusion: "Payment cleared, 130 Castle marks. Here is your Explode scroll, point at obstacles and let fate handle customer service.",
+        },
+    },
+    DemolitionBlonde: {
+        name: "DemolitionBlonde",
+        sprite: "DemolitionBlonde",
+        category: 'crest',
+        voice: "FemaleHigh4",
+        wants: ["Banknote20", "Banknote50", "Banknote200"],
+        gives: "SCROLL_Explode",
+        text: {
+            intro: "Booms for the bold, darling. Heavy ordnance coaching, 270 Castle marks exact. Pay up and I hand you the Explode scroll, safety not included.",
+            progress: "Close, sugar, but my blastometer says nope. Jingle back with more and we will turn walls into confetti.",
+            conclusion: "Transaction confirmed, 270 Castle marks. Here is your Explode scroll, now go make stonework rethink its life choices.",
+        },
+    },
     BitchLiar: {
         name: "BitchLiar",
         sprite: "BitchLiar",

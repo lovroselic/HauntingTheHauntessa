@@ -1076,7 +1076,7 @@ LoadModels = [
     "mandy.gltf", "NeverBlink.gltf", "EvilNun.gltf", "LizardMan.gltf", "NecroMorph.gltf", "CyGirl.gltf",
     "Hunteress.gltf", "Dragon2.gltf", "BigBat.gltf", "WolfSpider.gltf", "Viking.gltf", "MissGhostFace.gltf",
     "Wolf.gltf", "ButterFly.gltf", "Cat.gltf", "Goblin.gltf", "SkeleDwarf.gltf",
-    "Astro.gltf", "Basilisk.gltf", "Raptor.gltf", "DinoAir.gltf",
+    "Astro.gltf", "Basilisk.gltf", "Raptor.gltf", "DinoAir.gltf", "Hulk.gltf", "GhostFace.gltf",
 ];
 
 LoadSprites = [
@@ -1329,6 +1329,8 @@ LoadSprites = [
     { srcName: "EntityPictures/NeverLookBack.jpg", name: "NeverLookBack" },
     { srcName: "EntityPictures/BoredGame.jpg", name: "BoredGame" },
     { srcName: "EntityPictures/MetalDressWalking.jpg", name: "MetalDressWalking" },
+    { srcName: "EntityPictures/DemolitionBlonde.jpg", name: "DemolitionBlonde" },
+    { srcName: "EntityPictures/DemolitionRed.jpg", name: "DemolitionRed" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
@@ -1671,6 +1673,7 @@ LoadSprites = [
     { srcName: "Items/Hammer.png", name: "Hammer" },
     { srcName: "Items/PinkBra.png", name: "PinkBra" },
     { srcName: "Items/PinkHighBoots.png", name: "PinkHighBoots" },
+    { srcName: "Items/Kiss.png", name: "Kiss" },
 
     //books
     { srcName: "Items/YoniBook.png", name: "YoniBook" },
