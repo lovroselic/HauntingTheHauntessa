@@ -3978,28 +3978,31 @@ class StaticParticleBomb extends ParticleEmmiter {
     }
     blast() {
         const GA = this.IAM.map.GA;
-        const position = Vector3.to_FP_Grid(this.pos);
-        const playerHit = GRID.circleCollision2D(Vector3.to_FP_Grid(this.IAM.hero.player.pos), position, this.IAM.hero.player.r + WebGL.INI.BLAST_RADIUS);
+        const position3D = Vector3.to_FP_Grid3D(this.pos);
+        const playerHit = GRID.circleCollision3D(Vector3.to_FP_Grid3D(this.IAM.hero.player.pos), position3D, this.IAM.hero.player.r + WebGL.INI.BLAST_RADIUS);
         if (playerHit) this.IAM.hero.applyDamage(WebGL.INI.BLAST_DAMAGE);
-
-        const blastVector = new FP_Vector(WebGL.INI.BLAST_RADIUS, WebGL.INI.BLAST_RADIUS);
-        const TL = Grid.toClass(position.sub(blastVector));
-        const BR = Grid.toClass(position.add(blastVector));
-        //console.info("TL BR", TL, BR);
+        
+        const blastVector = new FP_Vector3D(WebGL.INI.BLAST_RADIUS, WebGL.INI.BLAST_RADIUS, WebGL.INI.BLAST_RADIUS);
+        const TL = Grid3D.toClass(position3D.sub(blastVector));
+        const BR = Grid3D.toClass(position3D.add(blastVector));
+        console.info("TL BR", TL, BR);
 
         let modified_grid = false;
         let monsters_than_can_be_affected = [];
         let IA = this.IAM.map.enemyIA;
+
         for (let x = TL.x; x <= BR.x; x++) {
             for (let y = TL.y; y <= BR.y; y++) {
-                const grid = new Grid(x, y);
-                const check = GA.check(grid, EXPLOADABLES.sum());
-                if (check) {
-                    modified_grid = true;
-                    GA.toEmpty(grid);
-                    EXPLOSION3D.add(new FloorDust(Vector3.from_Grid(Grid.toCenter(grid))));
+                for (let z = TL.z; z <= BR.z; z++) {
+                    const grid = new Grid3D(x, y, z);
+                    const check = GA.check(grid, EXPLOADABLES.sum());
+                    if (check) {
+                        modified_grid = true;
+                        GA.toEmpty(grid);
+                        EXPLOSION3D.add(new FloorDust(Vector3.from_Grid(Grid3D.toCenter2D(grid))));
+                    }
+                    if (IA && !IA.empty(grid)) monsters_than_can_be_affected.push(...IA.unroll(grid));
                 }
-                if (IA && !IA.empty(grid)) monsters_than_can_be_affected.push(...IA.unroll(grid));
             }
         }
         monsters_than_can_be_affected = monsters_than_can_be_affected.unique();

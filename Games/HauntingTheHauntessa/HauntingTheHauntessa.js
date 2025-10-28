@@ -81,7 +81,7 @@ const DEBUG = {
             DONE BithcLiar wants "Banknote20", "Banknote50" gives "Towel"
             DONE DemolitionBlonde want "Banknote20", "Banknote50", "Banknote200" gives "SCROLL_Explode"
             DONE DemolitionRed wants "Banknote20", "Banknote10", "Banknote100" gives  "SCROLL_Explode"
-        DemolitionBlack    "Banknote200", "Banknote50", "Banknote100" gives  "SCROLL_Explode"
+            DONE DemolitionBlack    "Banknote200", "Banknote50", "Banknote100" gives  "SCROLL_Explode"
         GhostFaceJR  wants "Kiss","Kiss","Kiss" gives ....
 
 
@@ -89,7 +89,7 @@ const DEBUG = {
 
             DONE "SCROLL_Explode" --> DemolitionBlonde(86)
             DONE "SCROLL_Explode" --> DemolitionRed(86)
-        "SCROLL_Explode" ---> DemolitionBlack()
+            DONE "SCROLL_Explode" --> DemolitionBlack(97)
         "Banknote20", 
         "Banknote50", 
         "Banknote200".
@@ -180,22 +180,22 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 86; //56
+        GAME.level = 99; //56
         GAME.gold = 50035;
         GAME.lives = 3;
 
-        HERO.reference_magic = 33;
-        HERO.reference_attack = 33;
-        HERO.reference_defense = 33;
+        HERO.reference_magic = 55;
+        HERO.reference_attack = 55;
+        HERO.reference_defense = 55;
 
-        HERO.magic = 33;
-        HERO.attack = 33;
-        HERO.defense = 33;
+        HERO.magic = 55;
+        HERO.attack = 55;
+        HERO.defense = 55;
 
-        HERO.mana = 400;
-        HERO.maxMana = 400;
-        HERO.health = 368;
-        HERO.maxHealth = 368;
+        HERO.mana = 500;
+        HERO.maxMana = 500;
+        HERO.health = 500;
+        HERO.maxHealth = 500;
 
         HERO.attackExp = 18;
         HERO.attackExpGoal = 100;
@@ -214,7 +214,7 @@ const DEBUG = {
         }
 
         let scrollTypes = [
-            "FeatherFall", "Flight", "Flight", "Flight",
+            "FeatherFall", "Flight", "Flight", "Flight", "Explode"
         ];
 
         for (let scrType of scrollTypes) {
@@ -375,7 +375,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.30.2",
+    VERSION: "0.30.3",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

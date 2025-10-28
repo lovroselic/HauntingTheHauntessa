@@ -2158,6 +2158,7 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
                 posGrid.z = grid.z + heightOffset;
                 break;
             case "HOLE": return null;
+            case "PILLAR": return null;
             default:
                 throw new Error(`grid type not supported ${gridValue}`);
 

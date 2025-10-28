@@ -764,6 +764,22 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    HiddenEntrance: {
+        name: "HiddenEntrance",
+        sprite: "HiddenEntrance",
+        category: 'crest',
+        voice: "FemaleLow4",
+        text: "If you can't fin the hidden entrance, then you are hopeless. You will die here.",
+        interactionCategory: "oracle",
+    },
+    DemolitionWhite: {
+        name: "DemolitionWhite",
+        sprite: "DemolitionWhite",
+        category: 'crest',
+        voice: "FemaleLow6",
+        text: "Be careful with bombs. They are in limited supply. There are no spares.",
+        interactionCategory: "oracle",
+    },
     MetalDressWalking: {
         name: "MetalDressWalking",
         sprite: "MetalDressWalking",
@@ -4955,7 +4971,7 @@ const INTERACTION_ITEM = {
 const INTERACTION_ENTITY = {
     DemolitionBlack: {
         name: "DemolitionBlack",
-        sprite: "BitchLiar",
+        sprite: "DemolitionBlack",
         category: 'crest',
         voice: "FemaleHigh6",
         wants: ["Banknote200", "Banknote50", "Banknote100"],
