@@ -82,7 +82,7 @@ const DEBUG = {
             DONE DemolitionBlonde want "Banknote20", "Banknote50", "Banknote200" gives "SCROLL_Explode"
             DONE DemolitionRed wants "Banknote20", "Banknote10", "Banknote100" gives  "SCROLL_Explode"
             DONE DemolitionBlack    "Banknote200", "Banknote50", "Banknote100" gives  "SCROLL_Explode"
-        GhostFaceJR  wants "Kiss","Kiss","Kiss" gives ....
+            DONE GhostFaceJR  wants "Kiss","Kiss","Kiss" gives SilverKey
 
 
         Items:
@@ -170,6 +170,7 @@ const DEBUG = {
         Missing keys:
             DONE Red ---> (84)
             DONE Green ---> (85)
+            DONE Silver --->(99)
 
         Missing scrolls:
        
@@ -180,7 +181,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 99; //56
+        GAME.level = 101; //56
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -227,10 +228,7 @@ const DEBUG = {
 
         let invItems = [
             "GoldCoin",
-            "Banknote20", "Banknote50", "Banknote200",
-            "Banknote20", "Banknote10", "Banknote100",
-            "Banknote200", "Banknote50", "Banknote100",
-            "Kiss","Kiss","Kiss"
+            "SilverKey",
 
         ];
 
@@ -375,7 +373,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.30.3",
+    VERSION: "0.30.4",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

@@ -2607,13 +2607,16 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":19,"height":19,"depth":3,"map":"BB2ABABB8AA140BB23ABB7ABB2AÁBAA5BB70Á$ÁABB150ÁÁ12AÁÁ20BB107ÁÁ490BB35"}',
+        data: '{"width":"19","height":"19","depth":3,"map":"BB4AA3BAA8BAA30IAA3IBAA5ÁAA3BB4AA5BAA2BB2AA2ÁABAA11ÁÁ2BAA6BB4ABAA4BB4AA8ÁAA2BB2AÁBAA5ÁAA2BB6ABB3AA2BB2ABB2ABB3AA2BABB11AA2BB2EBB4AA3BB3EBB3ABB2ABAA3BB7AA2BABB3ÁABB11AA3BB26$BB19ÁÁ2ABB108ÁÁ3BB20ÁBB2ÁÁ2BB12ÁÁ2BB5ÁÁ3BB2ÁBB7ÁÁ3AÁÁ18BB7ÁBÁBB28AA2BB44ÁBB5ÁBB31AA2ÁÁ63BÁBB4ÁÁ4BÁÁ2BÁÁ24BÁÁ4AA2ÁÁ6BÁÁ27BB3ÁÁ35II2ÁÁ2BB2ÁAÁÁ2AÁÁ26II2ÁÁ145AÁÁ3BB2ÁÁ49AA2ÁBB2ÁÁ43BB22"}',
         wall: "BigStoneWall1",
         floor: "LightWallSDXL315",
         ceil: "Relief02",
         start: '[302,3]',
-        lights: '[[1024,3,"SkullLantern50","standard"],[1008,5,"SkullLantern56","standard"]]',
-        gates: '[[303,3,"99.1","98.2","Closed"],[285,5,"99.2","100.1","Closed"]]',
+        lights: '[[1024,3,"SkullLantern50","standard"],[1008,5,"SkullLantern56","standard"],[1016,1,"Lamp45","standardYellow"],[387,7,"FluxLight114","standardYellowFaint"],[391,7,"FluxLight114","standardYellowFaint"]]',
+        gates: '[[303,3,"99.1","98.2","Closed"],[285,5,"99.2","100.1","Closed"],[9,7,"99.3","101.1","Silver"]]',
+        doors: '[291,297]',
+        triggers: '[[348,1,"SmoothWallButton",0,218],[354,1,"SmoothWallButton",0,180]]',
+        entities: '[[351,1,"GhostFaceJR"]]',
     }
     ,
     100: {
@@ -2633,7 +2636,21 @@ const MAP = {
         gates: '[[284,3,"100.1","99.2","Closed"],[4,7,"100.2","86.3","Closed"]]',
     }
     ,
-    101: {}
-
+    101: {
+        name: "The Vault",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"19","height":"19","depth":6,"map":"BB4AA5BB2ABAA10BB2AA2BAA15BB2AA3BAA20BAA26BAA28BAA34BB54AA2BB15ÁBB14AA2BB12ÁBB11AA2BB9ÁBB8AA2BB6ÁBB10ABB8ABB6ABB45$BB23ÁABB56ABB112ABB168ABB288ABB270ÁBB12ÁBB7ÁÁ4BB11ÁÁ2BB13ÁÁ6BB19ÁÁ3BB22ÁÁ8BB30ÁÁ4BB34ÁÁ10BB137ÁÁ180BÁÁ86BÁÁ83BB6ÁÁ71BB9ÁÁ53BB12ÁÁ29BB15"}',
+        wall: "GlossyBrownBrickedWall67",
+        floor: "Relief08",
+        ceil: "BloodMarbleFloorWall_SDXL_018",
+        start: '[1776,1]',
+        gates: '[[1795,1,"101.1","99.3","Closed"]]',
+    }
+    ,
+    102: {}
 
 };

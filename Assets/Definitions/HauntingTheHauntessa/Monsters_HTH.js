@@ -4969,6 +4969,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    GhostFaceJR: {
+        name: "GhostFaceJR",
+        sprite: "GhostFaceJR",
+        category: 'crest',
+        voice: "FemaleVeryHigh5",
+        wants: ["Kiss", "Kiss", "Kiss"],
+        gives: "SilverKey",
+        text: {
+            intro: "I love to love, and locks love me. Bring me kisses, sweet and free, and maybe the SilverKey will agree.",
+            progress: "Mmm, tasty, but the vault stays shy. A few more pecks and it might sigh.",
+            conclusion: "Smooch quota met, my heart says whee. Take this SilverKey, mind the lipstick, it's on me.",
+        },
+    },
     DemolitionBlack: {
         name: "DemolitionBlack",
         sprite: "DemolitionBlack",
@@ -4982,7 +4995,19 @@ const INTERACTION_ENTITY = {
             conclusion: "Payment cleared, 350 Castle marks. Here is your Explode scroll, light the fuse and blame the physics.",
         },
     },
-
+    DemolitionBlack: {
+        name: "DemolitionBlack",
+        sprite: "DemolitionBlack",
+        category: 'crest',
+        voice: "FemaleHigh6",
+        wants: ["Banknote200", "Banknote50", "Banknote100"],
+        gives: "SCROLL_Explode",
+        text: {
+            intro: "Black powder manners and elegant booms. Explode scroll training, 350 Castle marks exact. Pay up and I teach you to whisper boom.",
+            progress: "Closer, but not to explosion. Your purse is light, bring the rest and we will send these stones in flight.",
+            conclusion: "Payment cleared, 350 Castle marks. Here is your Explode scroll, light the fuse and blame the physics.",
+        },
+    },
     DemolitionRed: {
         name: "DemolitionRed",
         sprite: "DemolitionRed",
