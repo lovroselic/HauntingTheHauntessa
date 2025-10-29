@@ -157,6 +157,9 @@ const DEBUG = {
         CoinTrainers (missing 3):
             DONE Swordy (Attack)
             DONE NeverLookBack (defense)
+        + (magic)
+        + (mana)
+        + (health)
 
         Coins place:
             DONE BootShina--->(92)
@@ -373,7 +376,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.30.4",
+    VERSION: "0.30.5",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
