@@ -2505,14 +2505,17 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":"19","height":"19","depth":3,"map":"BB2ABB7AA64BB7AA22ÁÁ3AÁAA76BAA7BB37ABB14ABAA5ÁAA3ÁÁ2ABB3ABB68Á$ÁBB6ABB138ÁÁ28BB92ÁÁ74AA4ÁÁ165AA3ÁÁ210BB30"}',
+        data: '{"width":"19","height":"19","depth":3,"map":"BB2ABB5ABAA43BAA7BB4ABAA7BAA10BAÁÁ3AA2ÁAA26BAA4BAA15BAA21BB3AA2BAA12BABB2AA7BB4AA3BB9AA2BB11ABB12ABB5ABB2ÁBB8AA3BABB2ABAA4ÁBB6AÁBABABB8ABB27$BB17ÁÁ2BB6ABB146ÁÁ2BB4ÁÁ10BB14ÁÁ16BB62ÁÁ4BB28ÁÁ80BB2AA4ÁÁ5BB2ÁÁ26BB2ÁÁ124AA3ÁÁ142BB2ÁÁ26BB4ÁÁ14BB22"}',
         wall: "IvyWall_517",
         floor: "OrnateFloor100",
         ceil: "Relief01",
         start: '[326,1]',
         decals: '[[335,1,"OuterCastleWall_0827","texture"],[336,1,"OuterCastleWall_0827","texture"],[337,1,"OuterCastleWall_0827","texture"],[338,1,"OuterCastleWall_0827","texture"],[339,1,"OuterCastleWall_0827","texture"],[696,1,"OuterCastleWall_0827","texture"],[697,1,"OuterCastleWall_0827","texture"],[698,1,"OuterCastleWall_0827","texture"],[699,1,"OuterCastleWall_0827","texture"],[700,1,"OuterCastleWall_0827","texture"],[1061,1,"OuterCastleWall_0827","texture"],[1060,1,"OuterCastleWall_0827","texture"],[1059,1,"OuterCastleWall_0827","texture"],[1058,1,"OuterCastleWall_0827","texture"],[1057,1,"OuterCastleWall_0827","texture"],[264,3,"OuterCastleWall_0827","texture"],[283,3,"OuterCastleWall_0827","texture"],[302,3,"OuterCastleWall_0827","texture"],[321,3,"OuterCastleWall_0827","texture"],[682,3,"OuterCastleWall_0827","texture"],[663,3,"OuterCastleWall_0827","texture"],[644,3,"OuterCastleWall_0827","texture"],[625,3,"OuterCastleWall_0827","texture"],[1043,3,"OuterCastleWall_0827","texture"],[1024,3,"OuterCastleWall_0827","texture"],[1005,3,"OuterCastleWall_0827","texture"],[986,3,"OuterCastleWall_0827","texture"]]',
-        lights: '[[750,7,"Moon59","standardYellow"],[913,5,"Moon63","standardYellow"]]',
+        lights: '[[769,7,"Moon59","standardYellow"],[895,5,"Moon63","standardYellow"]]',
         gates: '[[345,1,"93.1","86.2","Closed"],[75,3,"93.2","94.1","Closed"]]',
+        scrolls: '[[39,5],[320,5]]',
+        skills: '[[297,"Mana"]]',
+        trainers: '[[11,7,"CastleDungeonWallMana"]]',
     }
     ,
     94: {
@@ -2564,7 +2567,8 @@ const MAP = {
         start: '[58,5]',
         decals: '[[325,1,"OuterCastleWall_0844","texture"],[326,1,"OuterCastleWall_0844","texture"],[327,1,"OuterCastleWall_0844","texture"],[328,1,"OuterCastleWall_0844","texture"],[329,1,"OuterCastleWall_0844","texture"],[330,1,"OuterCastleWall_0844","texture"],[331,1,"OuterCastleWall_0844","texture"],[332,1,"OuterCastleWall_0844","texture"],[693,1,"OuterCastleWall_0844","texture"],[692,1,"OuterCastleWall_0844","texture"],[691,1,"OuterCastleWall_0844","texture"],[690,1,"OuterCastleWall_0844","texture"],[689,1,"OuterCastleWall_0844","texture"],[688,1,"OuterCastleWall_0844","texture"],[687,1,"OuterCastleWall_0844","texture"],[686,1,"OuterCastleWall_0844","texture"],[1054,1,"OuterCastleWall_0844","texture"],[1047,1,"OuterCastleWall_0844","texture"],[1048,1,"OuterCastleWall_0844","texture"],[1049,1,"OuterCastleWall_0844","texture"],[1050,1,"OuterCastleWall_0844","texture"],[1051,1,"OuterCastleWall_0844","texture"],[1052,1,"OuterCastleWall_0844","texture"],[1053,1,"OuterCastleWall_0844","texture"],[172,5,"OuterCastleWall_0844","texture"],[191,5,"OuterCastleWall_0844","texture"],[210,5,"OuterCastleWall_0844","texture"],[229,5,"OuterCastleWall_0844","texture"],[248,5,"OuterCastleWall_0844","texture"],[267,5,"OuterCastleWall_0844","texture"],[286,5,"OuterCastleWall_0844","texture"],[305,5,"OuterCastleWall_0844","texture"],[533,5,"OuterCastleWall_0844","texture"],[552,5,"OuterCastleWall_0844","texture"],[571,5,"OuterCastleWall_0844","texture"],[590,5,"OuterCastleWall_0844","texture"],[609,5,"OuterCastleWall_0844","texture"],[628,5,"OuterCastleWall_0844","texture"],[647,5,"OuterCastleWall_0844","texture"],[666,5,"OuterCastleWall_0844","texture"],[894,5,"OuterCastleWall_0844","texture"],[913,5,"OuterCastleWall_0844","texture"],[932,5,"OuterCastleWall_0844","texture"],[951,5,"OuterCastleWall_0844","texture"],[970,5,"OuterCastleWall_0844","texture"],[989,5,"OuterCastleWall_0844","texture"],[1008,5,"OuterCastleWall_0844","texture"],[1027,5,"OuterCastleWall_0844","texture"]]',
         gates: '[[57,5,"96.1","94.3","Closed"],[357,1,"96.2","97.1","Closed"]]',
-    },
+    }
+    ,
     97: {
         name: "Where Is The Hidden Entrance?",
         sg: 0,

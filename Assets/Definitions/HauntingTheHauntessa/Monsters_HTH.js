@@ -6285,6 +6285,19 @@ const INTERACTION_ENTITY = {
 };
 
 const INTERACTION_SHRINE = {
+        CastleDungeonWallMana: {
+        name: "CastleDungeonWallMana",
+        sprite: "CastleDungeonWallMana",
+        category: 'crest',
+        voice: "FemaleLow2",
+        wants: ["GoldCoin"],
+        gives: "ManaSkill",
+        text: {
+            intro: "Green fumes swirl within my flask. Pay me a coin, and power will unmask.",
+            progress: null,
+            conclusion: "You've sipped the brew, your veins now glow. The deeper magic you now know."
+        }
+    },
     NeverLookBack: {
         name: "NeverLookBack",
         sprite: "NeverLookBack",

@@ -158,7 +158,7 @@ const DEBUG = {
             DONE Swordy (Attack)
             DONE NeverLookBack (defense)
         + (magic)
-        + (mana)
+            DONE CastleDungeonWallMana (mana)
         + (health)
 
         Coins place:
@@ -184,7 +184,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 101; //56
+        GAME.level = 96; 
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -376,7 +376,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.30.5",
+    VERSION: "0.30.6",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
