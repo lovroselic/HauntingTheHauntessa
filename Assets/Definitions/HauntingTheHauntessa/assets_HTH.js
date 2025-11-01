@@ -1336,6 +1336,8 @@ LoadSprites = [
     { srcName: "EntityPictures/HiddenEntrance.jpg", name: "HiddenEntrance" },
     { srcName: "EntityPictures/GhostFaceJR1.jpg", name: "GhostFaceJR" },
     { srcName: "EntityPictures/CastleDungeonWallMana.jpg", name: "CastleDungeonWallMana" },
+    { srcName: "EntityPictures/SluttyNurse.jpg", name: "SluttyNurse" },
+    { srcName: "EntityPictures/SorceryTraineress.jpg", name: "SorceryTraineress" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
@@ -1679,6 +1681,9 @@ LoadSprites = [
     { srcName: "Items/PinkBra.png", name: "PinkBra" },
     { srcName: "Items/PinkHighBoots.png", name: "PinkHighBoots" },
     { srcName: "Items/Kiss.png", name: "Kiss" },
+    { srcName: "Items/Ankh.png", name: "Ankh" },
+    { srcName: "Items/Pentagram.png", name: "Pentagram" },
+    { srcName: "Items/Cross.png", name: "Cross" },
 
     //books
     { srcName: "Items/YoniBook.png", name: "YoniBook" },

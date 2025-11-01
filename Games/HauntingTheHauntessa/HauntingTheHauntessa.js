@@ -83,6 +83,9 @@ const DEBUG = {
             DONE DemolitionRed wants "Banknote20", "Banknote10", "Banknote100" gives  "SCROLL_Explode"
             DONE DemolitionBlack    "Banknote200", "Banknote50", "Banknote100" gives  "SCROLL_Explode"
             DONE GhostFaceJR  wants "Kiss","Kiss","Kiss" gives SilverKey
+        MidngightDomme wants ... gives ...
+        #####  wants "Ankh","Pentagram","Cross" gives  "Banknote200"
+        DuneDeserta wans 
 
 
         Items:
@@ -92,7 +95,7 @@ const DEBUG = {
             DONE "SCROLL_Explode" --> DemolitionBlack(97)
         "Banknote20", 
         "Banknote50", 
-        "Banknote200".
+        +"Banknote200" ---> MidngightDomme()
         "Banknote20", 
         "Banknote10", 
         "Banknote100"
@@ -102,6 +105,10 @@ const DEBUG = {
         "Kiss",
         "Kiss",
         "Kiss"
+        "Ankh",
+        "Pentagram",
+        "Cross"
+
 
         ------------------------------------
             DONE "OrangeBoots", ---> RedCemeteria (87)
@@ -157,9 +164,9 @@ const DEBUG = {
         CoinTrainers (missing 3):
             DONE Swordy (Attack)
             DONE NeverLookBack (defense)
-        + (magic)
+            DONE SorceryTraineress (magic)
             DONE CastleDungeonWallMana (mana)
-        + (health)
+            DONE SluttyNurse (health) 
 
         Coins place:
             DONE BootShina--->(92)
@@ -184,7 +191,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 96; 
+        GAME.level = 100;
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -232,6 +239,7 @@ const DEBUG = {
         let invItems = [
             "GoldCoin",
             "SilverKey",
+            "Ankh", "Pentagram", "Cross"
 
         ];
 
@@ -376,7 +384,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.30.6",
+    VERSION: "0.30.7",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

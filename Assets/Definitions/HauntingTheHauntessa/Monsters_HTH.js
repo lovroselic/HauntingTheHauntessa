@@ -4929,6 +4929,24 @@ const INTERACTION_ITEM = {
         inventorySprite: "Kiss",
         text: "This looks like a portable kiss voucher. What a fascinating concept."
     },
+    Ankh: {
+        name: "Ankh",
+        category: "interaction_item",
+        inventorySprite: "Ankh",
+        text: "A powerful magical object."
+    },
+    Pentagram: {
+        name: "Pentagram",
+        category: "interaction_item",
+        inventorySprite: "Pentagram",
+        text: "A powerful magical object."
+    },
+    Cross: {
+        name: "Cross",
+        category: "interaction_item",
+        inventorySprite: "Cross",
+        text: "A powerful magical object."
+    },
 
     //metals
     GoldBar: {
@@ -6285,7 +6303,33 @@ const INTERACTION_ENTITY = {
 };
 
 const INTERACTION_SHRINE = {
-        CastleDungeonWallMana: {
+    SorceryTraineress: {
+        name: "SorceryTraineress",
+        sprite: "SorceryTraineress",
+        category: 'crest',
+        voice: "FemaleHigh3",
+        wants: ["GoldCoin"],
+        gives: "Magic",
+        text: {
+            intro: "Got nimble hands? For one GoldCoin I will teach you to juggle balls, fireballs, that is.",
+            progress: null,
+            conclusion: "Clink heard, lesson served. Magic up, now juggle fireballs like you own the sparks.",
+        }
+    },
+    SluttyNurse: {
+        name: "SluttyNurse",
+        sprite: "SluttyNurse",
+        category: 'crest',
+        voice: "Female5",
+        wants: ["GoldCoin"],
+        gives: "HeartSkill",
+        text: {
+            intro: "Feeling a little undead? Slide me one GoldCoin and I will pep your pulse, you will feel more alive in no time.",
+            progress: null,
+            conclusion: "Clink confirmed, bedside magic performed. Health unlocked, vitals up, now go make trouble.",
+        }
+    },
+    CastleDungeonWallMana: {
         name: "CastleDungeonWallMana",
         sprite: "CastleDungeonWallMana",
         category: 'crest',
