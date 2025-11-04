@@ -66,7 +66,7 @@ const DEBUG = {
         /*
 
         Entities:
-            DONETangerineLingerie gives OrangeKey wants: "OrangeBoots", "OrangeLeggings", "OrangeBra", "OrangeThongs"
+            DONE TangerineLingerie gives OrangeKey wants: "OrangeBoots", "OrangeLeggings", "OrangeBra", "OrangeThongs"
             DONE RedCemeteria gives "OrangeBoots" wants "Candle", "RedCandle", "BlueCandle"
             DONE BlackCemeteria gives "OrangeThongs" wants "RedRose","BlueRose","PurpleRose"  
             DONE MetallicaDress gives OrangeLeggings wants "IronBar", "IronBar","IronBar"
@@ -86,6 +86,8 @@ const DEBUG = {
             DONE MidngightDomme wants "Lantern", "Lantern" gives  "Banknote20"
             DONE ONE HellsHeels  wants "Ankh","Pentagram","Cross" gives  "Banknote200"
             DONE DuneDeserta wants "GlassOfBeer", "GlassOfBeer" gives  "Banknote10",
+         ZaraGraft wants "Revolver", "Revolver" gives "Pentagram"
+         LeekMeah wants "RedPump", "RedPump" gives 
 
 
         Items:
@@ -98,20 +100,24 @@ const DEBUG = {
             DONE "Banknote200" ---> HellsHeels(100)
             DONE "Banknote20",  ---> MidnightDomme (94)
             DONE "Banknote10",  ---> DuneDeserta (94)
-        "Banknote100"
-        "Banknote200", 
+            DONE "Banknote100" ---> (101)
+            DONE "Banknote200", ---> (101)
         "Banknote50", 
-        "Banknote100"
+            DONE "Banknote100" ---> (101)
         "Kiss",
         "Kiss",
         "Kiss"
         "Ankh",
-        "Pentagram",
+        "Pentagram", --->ZaraGraft()
         "Cross"
         "Lantern"
         "Lantern"
         "GlassOfBeer"
         "GlassOfBeer"
+        "Revolver", 
+        "Revolver"
+        "RedPump", 
+        "RedPump"
 
 
         ------------------------------------
@@ -195,7 +201,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 94;
+        GAME.level = 100;
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -243,6 +249,7 @@ const DEBUG = {
         let invItems = [
             "GoldCoin",
             "SilverKey",
+            "RedPump", "RedPump",
 
         ];
 
@@ -387,7 +394,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.30.8",
+    VERSION: "0.30.9",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -1678,6 +1685,10 @@ const GAME = {
             ENGINE.GAME.keymap[ENGINE.KEY.map.F8] = false;
         }
         if (map[ENGINE.KEY.map.F9]) {
+            console.info(" -------------------- Getting help --------------------");
+            
+            console.info(" --------------------  ***** --------------------");
+
             if (!DEBUG.keys) return;
             console.log("\nDEBUG:");
             console.log("#######################################################");

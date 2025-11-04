@@ -4953,6 +4953,12 @@ const INTERACTION_ITEM = {
         inventorySprite: "Lantern",
         text: "A source of light in a dark times. Or forest."
     },
+    RedPump: {
+        name: "RedPump",
+        category: "interaction_item",
+        inventorySprite: "RedPump",
+        text: "Just one of the pair. But with this heel I can stab someone."
+    },
 
     //metals
     GoldBar: {
@@ -4993,6 +4999,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    ZaraGraft: {
+        name: "ZaraGraft",
+        sprite: "ZaraGraft",
+        category: 'crest',
+        voice: "Female2",
+        wants: ["Revolver", "Revolver"],
+        gives: "Pentagram",
+        text: {
+            intro: "Two tits, two guns. One gun is cute, two is style. Bring me a matching pair of revolvers and this famous archaeologist might share a shiny find.",
+            progress: "Nice piece, but I deal in pairs. Fetch the twin and we talk treasure.",
+            conclusion: "Double holsters, double joy. Here is a Pentagram from my travels, try not to summon customer support.",
+        },
+    },
     MidnightDomme: {
         name: "MidnightDomme",
         sprite: "MidnightDomme",
