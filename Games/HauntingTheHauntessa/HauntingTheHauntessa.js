@@ -83,9 +83,9 @@ const DEBUG = {
             DONE DemolitionRed wants "Banknote20", "Banknote10", "Banknote100" gives  "SCROLL_Explode"
             DONE DemolitionBlack    "Banknote200", "Banknote50", "Banknote100" gives  "SCROLL_Explode"
             DONE GhostFaceJR  wants "Kiss","Kiss","Kiss" gives SilverKey
-        MidngightDomme wants ... gives ...
-        #####  wants "Ankh","Pentagram","Cross" gives  "Banknote200"
-        DuneDeserta wans 
+            DONE MidngightDomme wants "Lantern", "Lantern" gives  "Banknote20"
+            DONE ONE HellsHeels  wants "Ankh","Pentagram","Cross" gives  "Banknote200"
+            DONE DuneDeserta wants "GlassOfBeer", "GlassOfBeer" gives  "Banknote10",
 
 
         Items:
@@ -95,9 +95,9 @@ const DEBUG = {
             DONE "SCROLL_Explode" --> DemolitionBlack(97)
         "Banknote20", 
         "Banknote50", 
-        +"Banknote200" ---> MidngightDomme()
-        "Banknote20", 
-        "Banknote10", 
+            DONE "Banknote200" ---> HellsHeels(100)
+            DONE "Banknote20",  ---> MidnightDomme (94)
+            DONE "Banknote10",  ---> DuneDeserta (94)
         "Banknote100"
         "Banknote200", 
         "Banknote50", 
@@ -108,6 +108,10 @@ const DEBUG = {
         "Ankh",
         "Pentagram",
         "Cross"
+        "Lantern"
+        "Lantern"
+        "GlassOfBeer"
+        "GlassOfBeer"
 
 
         ------------------------------------
@@ -191,7 +195,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 100;
+        GAME.level = 94;
         GAME.gold = 50035;
         GAME.lives = 3;
 
@@ -239,7 +243,6 @@ const DEBUG = {
         let invItems = [
             "GoldCoin",
             "SilverKey",
-            "Ankh", "Pentagram", "Cross"
 
         ];
 
@@ -384,7 +387,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.30.7",
+    VERSION: "0.30.8",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

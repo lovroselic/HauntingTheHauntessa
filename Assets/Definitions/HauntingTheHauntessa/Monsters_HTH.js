@@ -4947,6 +4947,12 @@ const INTERACTION_ITEM = {
         inventorySprite: "Cross",
         text: "A powerful magical object."
     },
+    Lantern: {
+        name: "Lantern",
+        category: "interaction_item",
+        inventorySprite: "Lantern",
+        text: "A source of light in a dark times. Or forest."
+    },
 
     //metals
     GoldBar: {
@@ -4987,6 +4993,45 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    MidnightDomme: {
+        name: "MidnightDomme",
+        sprite: "MidnightDomme",
+        category: 'crest',
+        voice: "Female3",
+        wants: ["Lantern", "Lantern"],
+        gives: "Banknote20",
+        text: {
+            intro: "Dark woods, darker moods, I'm prowling the midnight routes. Bring me two Lanterns to light my path, and I pay nicely, do the math.",
+            progress: "One glow is cute, but I want two. Fetch the twin flame and we are through.",
+            conclusion: "Lovely, two lights for my nights. Here is your 20 Castle marks, now watch me tame the bites of the night.",
+        },
+    },
+    DuneDeserta: {
+        name: "DuneDeserta",
+        sprite: "DuneDeserta",
+        category: 'crest',
+        voice: "Female6",
+        wants: ["GlassOfBeer", "GlassOfBeer"],
+        gives: "Banknote10",
+        text: {
+            intro: "Black latex, burning dunes, I am hot in more ways than one. Be a good girl and fetch me some cold ones, tip might happen if you make me grin.",
+            progress: "Chilled, but not chilled enough. The sun still wins, keep the frost coming and we will talk tips.",
+            conclusion: "Ah, that hits the desert spot. Here is a shiny 10 Catle marks  for service rendered, now watch me sizzle and not spill a drop.",
+        },
+    },
+    HellsHeels: {
+        name: "HellsHeels",
+        sprite: "HellsHeels",
+        category: 'crest',
+        voice: "Female5",
+        wants: ["Ankh", "Pentagram", "Cross"],
+        gives: "Banknote200",
+        text: {
+            intro: "I am packing for hell and I crave holy flair. Bring me blessed trinkets and I will pay fair.",
+            progress: "Nice, spicy relic, but the pit wants more. Keep raiding the altar drawer.",
+            conclusion: "Halos confiscated, contract celebrated. Here is your 200 Castle marks, now watch me click these heels to hells.",
+        },
+    },
     GhostFaceJR: {
         name: "GhostFaceJR",
         sprite: "GhostFaceJR",
@@ -4996,7 +5041,7 @@ const INTERACTION_ENTITY = {
         gives: "SilverKey",
         text: {
             intro: "I love to love, and locks love me. Bring me kisses, sweet and free, and maybe the SilverKey will agree.",
-            progress: "Mmm, tasty, but the vault stays shy. A few more pecks and it might sigh.",
+            progress: "Nice, tasty, but the vault stays shy. A few more pecks and it might sigh.",
             conclusion: "Smooch quota met, my heart says whee. Take this SilverKey, mind the lipstick, it's on me.",
         },
     },
@@ -5074,7 +5119,7 @@ const INTERACTION_ENTITY = {
         gives: "RedRose",
         text: {
             intro: "Pink is life, pink is divine, bring me lace and leather fine.",
-            progress: "Mmm, getting closer, but not quite yet. I need more pink to complete my set.",
+            progress: "Nice, getting closer, but not quite yet. I need more pink to complete my set.",
             conclusion: "Perfect shade, my closet's blessed. Take this red rose, it matches best."
         }
     },
@@ -5451,7 +5496,7 @@ const INTERACTION_ENTITY = {
         gives: "RedThighHighBoots",
         text: {
             intro: "Thirsty again, what a fright. Bring me blood to sip tonight.",
-            progress: "Mmm, a taste... but I need more. I'm not quite ready to part with couture.",
+            progress: "Nice, a taste... but I need more. I'm not quite ready to part with couture.",
             conclusion: "Your offering pleased my crimson soul. These boots are yours, now strut and stroll."
         }
     },
@@ -5672,7 +5717,7 @@ const INTERACTION_ENTITY = {
         gives: "Shell",
         text: {
             intro: "Sun, sass, and sand are swell. Fetch me some bitch wear, you'll get a shell!",
-            progress: "Mmm, we're halfway to fab. One more piece, then it's a grab!",
+            progress: "Nice, we're halfway to fab. One more piece, then it's a grab!",
             conclusion: "Red hot look, you brought the flair. Here's your shell, now strut with care."
         }
     },
@@ -5763,7 +5808,7 @@ const INTERACTION_ENTITY = {
         gives: "RedLeatherBoots",
         text: {
             intro: "Chicks are my weakness, soft and sweet. Bring me three, a tasty treat!",
-            progress: "Mmm, feathers in the air. Keep 'em coming, we're almost there!",
+            progress: "Nice, feathers in the air. Keep 'em coming, we're almost there!",
             conclusion: "Three fine birds, what a catch. Here's my friend's boots, she had great taste..."
         }
     },
@@ -5828,7 +5873,7 @@ const INTERACTION_ENTITY = {
         gives: "Pie",
         text: {
             intro: "Looking for something firm and round? I've got pears all over the ground.",
-            progress: "Mmm, juicy start, but not quite there. Bring me more, if you dare!",
+            progress: "Nice, juicy start, but not quite there. Bring me more, if you dare!",
             conclusion: "That basket's full and so am I. Here's your pear pie perfectly sly."
         }
     },
