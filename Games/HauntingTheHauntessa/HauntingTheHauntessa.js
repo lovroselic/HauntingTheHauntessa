@@ -86,7 +86,7 @@ const DEBUG = {
             DONE MidngightDomme wants "Lantern", "Lantern" gives  "Banknote20"
             DONE ONE HellsHeels  wants "Ankh","Pentagram","Cross" gives  "Banknote200"
             DONE DuneDeserta wants "GlassOfBeer", "GlassOfBeer" gives  "Banknote10",
-         ZaraGraft wants "Revolver", "Revolver" gives "Pentagram"
+            DONE ZaraGraft wants "Revolver", "Revolver" gives "Pentagram"
          LeekMeah wants "RedPump", "RedPump" gives 
 
 
@@ -108,7 +108,7 @@ const DEBUG = {
         "Kiss",
         "Kiss"
         "Ankh",
-        "Pentagram", --->ZaraGraft()
+            DONE "Pentagram", --->ZaraGraft(100)
         "Cross"
         "Lantern"
         "Lantern"
@@ -201,8 +201,9 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 100;
+        GAME.level = 98;
         GAME.gold = 50035;
+        //GAME.gold = 5;
         GAME.lives = 3;
 
         HERO.reference_magic = 55;
@@ -391,10 +392,12 @@ const INI = {
     MINIMAP_H: 80,
     MANA_TIME: 59, //59
     MANA_DISCOUNT_FACTOR: 0.7,
+    WINDOW_SCALE: 0.90,
+    HELP_PRICE: 10,
 };
 
 const PRG = {
-    VERSION: "0.30.9",
+    VERSION: "0.30.10",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -1666,6 +1669,120 @@ const GAME = {
         ENGINE.clearLayer(ENGINE.VECTOR2D.layerString);
         ENGINE.VECTOR2D.draw(HERO.player);
     },
+    help() {
+        if (GAME.gold < INI.HELP_PRICE) {
+            const texts = [
+                "I am too poor to get help.",
+                "I need gold to pay for help.",
+                "My purse is empty.",
+                "The royal purse squeaks when I open it.",
+                "My coin pouch echoes, that is how empty it is.",
+                "I would buy a hint, but my wallet says plot twist.",
+                "I spent my last coin on shoe polish.",
+                "The treasury took a nap, the funds did too.",
+                "I tried to pay with charm, they wanted coins.",
+                "The hint fairy takes gold, not compliments.",
+                "All my funds are in another castle.",
+                "Wallet status, low battery.",
+                "My purse has more lint than loot.",
+                "I can offer exposure, does that buy hints.",
+                "I am between fortunes.",
+                "Even ghosts would not haunt this wallet.",
+                "If wisdom were free, I would be brilliant.",
+                "My budget is in stealth mode.",
+                "The bank said no, the piggy bank said oink, also no.",
+                "I brought sass, the shop wants cash.",
+                "I would tip for guidance, if I had a tip.",
+                "Coins refused to spawn.",
+                "Treasury update, 404 coins not found.",
+                "I am royalty with a reality budget.",
+                "I could sell a tiara, if I had one.",
+                "Help costs money, I cost drama.",
+                "My savings plan is prayer and patience.",
+                "I tried paying in gratitude, the till did not register it.",
+                "The purse is a desert, hints are an oasis.",
+                "Price is fair, my funds are not.",
+                "Guidance sounds lovely, my gold sounds missing.",
+                "I brought a purse to a paywall, it arrived empty.",
+                "I am rich in problems, poor in coins.",
+                "My accountant is a raccoon, it just shrugged.",
+                "I would invest in hints, the market says no.",
+                "Princess brain needs DLC, wallet says not today."
+            ];
+
+            HERO.speak(texts.chooseRandom());
+            return;
+
+        }
+        console.warn("HELP");
+
+        GAME.gold -= INI.HELP_PRICE;
+        TITLE.gold();
+
+        const W = ENGINE.gameWIDTH * INI.WINDOW_SCALE >>> 0;
+        const H = ENGINE.gameHEIGHT * INI.WINDOW_SCALE >>> 0;
+        const X = (ENGINE.gameWIDTH - W >>> 1) + ENGINE.sideWIDTH;
+        const Y = (ENGINE.gameHEIGHT - H >>> 1) + ENGINE.titleHEIGHT;
+        ENGINE.GAME.pause(false);
+
+        const Shrines = {};
+        const Entities = {};
+        const Items = [];
+
+        //interactive
+        const int_decals = INTERACTIVE_DECAL3D.POOL.filter(el => el.interactive);
+        if (int_decals.length > 0) {
+            for (const ent of int_decals) {
+                if (ent.wants) {
+                    Entities[ent.name] = ent.wants;
+                } else if (ent.interactionCategory === "shrine") {
+                    Shrines[ent.name] = `${ent.which.capitalize()} - ${ent.price} gold.`;
+                }
+            }
+        }
+
+        //items
+        const remains = ITEM3D.POOL.filter(el => el.active);
+        if (remains.length > 0) {
+            for (const item of remains) {
+                if (item.category === "gold") continue;
+                console.log(item.id, item.name, item.grid, item.instanceIdentification, "category", item.category);
+                if (item.category === "chest") {
+                    const identification = item.instanceIdentification.split(".");
+                    if (identification[0] === "GOLD_ITEM_TYPE") continue;
+                    Items.push(`Chest: ${identification[1]}`);
+                } else {
+                    Items.push(item.name);
+                }
+            }
+        }
+
+
+        // creating html wedge
+        let WEDGE = "";
+        if (Object.keys(Entities).length) {
+            WEDGE += "<h2>Entities:</h2>";
+            for (const [ent, wants] of Object.entries(Entities)) {
+                console.log("..ent", ent, wants);
+                WEDGE += `<p>${ent} wants: ${wants.join(", ")}.</p>`;
+            }
+        }
+
+        if (Object.keys(Entities).length) {
+            WEDGE += "<h2>Shrines:</h2>";
+            for (const [ent, teach] of Object.entries(Shrines)) {
+                WEDGE += `<p>${ent} teaches: ${teach}</p>`;
+            }
+        }
+
+        if (Items.length) {
+            WEDGE += "<h2>Items:</h2>";
+            WEDGE += `<p>${Items.join(", ")}.</p>`;
+        }
+
+
+        const _form = new Form("Guidance", X, Y, W, H, WEDGE);                      //don't be fooled, this IS used!
+    },
     respond(lapsedTime) {
         if (HERO.dead) return;
 
@@ -1686,7 +1803,7 @@ const GAME = {
         }
         if (map[ENGINE.KEY.map.F9]) {
             console.info(" -------------------- Getting help --------------------");
-            
+            GAME.help();
             console.info(" --------------------  ***** --------------------");
 
             if (!DEBUG.keys) return;

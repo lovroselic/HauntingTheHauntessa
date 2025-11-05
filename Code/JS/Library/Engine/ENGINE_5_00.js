@@ -1234,7 +1234,7 @@ const ENGINE = {
             $(ENGINE.GAME.pauseID).trigger("click");
             ENGINE.GAME.keymap[ENGINE.KEY.map.F4] = false;
         },
-        pause() {
+        pause(display = true) {
             /**
              * F4 key used to pause - hardcoded
              * text RD should be set before calling this function by the GAME, else defaults are used
@@ -1246,7 +1246,7 @@ const ENGINE = {
             $(ENGINE.GAME.pauseID).off("click", ENGINE.GAME.pause);
             $(ENGINE.GAME.pauseID).on("click", ENGINE.GAME.resume);
             ENGINE.GAME.ANIMATION.next(ENGINE.KEY.waitFor.bind(null, ENGINE.GAME.clickPause, "F4"));
-            ENGINE.TEXT.centeredText("Game Paused", ENGINE.gameWIDTH, ENGINE.gameHEIGHT / 2);
+            if (display) ENGINE.TEXT.centeredText("Game Paused", ENGINE.gameWIDTH, ENGINE.gameHEIGHT / 2);
             ENGINE.GAME.paused = true;
             ENGINE.TIMERS.stop();
         },
@@ -1255,6 +1255,7 @@ const ENGINE = {
              * default layer text needs to exist before calling this function, or new one needs to be set, else function with throw uncaught exception
              * F4 key used to pause - hardcoded
              */
+            if (!ENGINE.GAME.paused) return;
             console.log("%cGAME resumed.", ENGINE.CSS);
             $(ENGINE.GAME.pauseID).prop("disabled", false);
             $(ENGINE.GAME.pauseID).prop("value", "Pause Game [F4]");
@@ -2851,7 +2852,7 @@ const ENGINE = {
                 case MAPDICT.BLOCKWALL:
                     FS = "#BBB";
                     break;
-                 case MAPDICT.PILLAR:
+                case MAPDICT.PILLAR:
                     FS = "#ab9292ff";
                     break;
                 case MAPDICT.DOOR:
@@ -3843,6 +3844,13 @@ const FORM = {
     setLayer(layer) {
         this.INI.layer = layer;
     },
+    setFont(font) {
+        this.INI.FONT = font;
+    },
+    exit() {
+        $("#FORM").remove();
+        ENGINE.GAME.resume();
+    },
     BUTTON: {
         POOL: [],
         draw() {
@@ -3880,9 +3888,22 @@ class Form {
         this.y = y;
         this.w = w;
         this.h = h;
-        $(FORM.INI.DIV).append(`<div id = 'FORM' class = 'form'><h1>${this.name}</h1><hr></div>`);
+        $(FORM.INI.DIV).append(`<div id = 'FORM' class = 'form layer'><h1>${this.name}</h1></div>`);
         $("#FORM").css({ top: this.y, left: this.x, width: this.w, height: this.h });
-        $("#FORM").append(wedge);
+        $("#FORM").css({ "font-family": FORM.INI.FONT });
+
+        /** magic numbers */
+        const hr_top = 630;
+        const done_top = 645;
+        const done_left = 440;
+        /* -----------------*/
+
+        $("#FORM").append(`<hr>`);
+        if (wedge) $("#FORM").append(wedge);
+        $("#FORM").append(`<hr style='position: absolute; top:${hr_top}px;'>`);
+        $("#FORM").append(`<input type = 'button' value = 'Done' id = 'form_done' class = 'form' style='position: absolute; top:${done_top}px; left:${done_left}px'/>`);
+        $("#form_done").on("click", FORM.exit);
+
         ENGINE.showMouse();
     }
 }
