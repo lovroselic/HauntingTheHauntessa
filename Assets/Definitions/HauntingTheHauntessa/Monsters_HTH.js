@@ -4959,6 +4959,42 @@ const INTERACTION_ITEM = {
         inventorySprite: "RedPump",
         text: "Just one of the pair. But with this heel I can stab someone."
     },
+    BluePump: {
+        name: "BluePump",
+        category: "interaction_item",
+        inventorySprite: "BluePump",
+        text: "Just one of the pair. But with this heel I can stab someone."
+    },
+    SilverPump: {
+        name: "SilverPump",
+        category: "interaction_item",
+        inventorySprite: "SilverPump",
+        text: "Just one of the pair. But with this heel I can stab someone."
+    },
+    GreenPump: {
+        name: "GreenPump",
+        category: "interaction_item",
+        inventorySprite: "GreenPump",
+        text: "Just one of the pair. But with this heel I can stab someone."
+    },
+    BlackPump: {
+        name: "BlackPump",
+        category: "interaction_item",
+        inventorySprite: "BlackPump",
+        text: "Just one of the pair. But with this heel I can stab someone."
+    },
+    PurplePump: {
+        name: "PurplePump",
+        category: "interaction_item",
+        inventorySprite: "PurplePump",
+        text: "Just one of the pair. But with this heel I can stab someone."
+    },
+    GoldPump: {
+        name: "GoldPump",
+        category: "interaction_item",
+        inventorySprite: "RedPuGoldPumpmp",
+        text: "Just one of the pair. But with this heel I can stab someone."
+    },
 
     //metals
     GoldBar: {
@@ -4999,6 +5035,32 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    Sheera: {
+        name: "Sheera",
+        sprite: "Sheera",
+        category: 'crest',
+        voice: "FemaleLow3",
+        wants: ["BlackPump", "BlackPump"],
+        gives: "Kiss",
+        text: {
+            intro: "Black lace and nylon, mood set to midnight. My pumps not perfect, bring proper black and earn a Kiss, alright.",
+            progress: "One heel in the right direction, but I walk on two. Fetch the matching twin and we are through.",
+            conclusion: "Perfect pair, perfect glare. Step closer for your Kiss, and do not smudge the eyeliner, dear.",
+        },
+    },
+    LeekMee: {
+        name: "LeekMee",
+        sprite: "LeekMee",
+        category: 'crest',
+        voice: "Female6",
+        wants: ["RedPump", "RedPump"],
+        gives: "Kiss",
+        text: {
+            intro: "Red latex dress, black pumps are a mess. Bring me red pumps to match, and you will earn a Kiss, no less.",
+            progress: "Getting warmer, but I am still mismatched. Keep it crimson and come back snatched.",
+            conclusion: "Color locked, outfit rocked. Perfect match delivered, come claim your Kiss, shockingly warranted.",
+        },
+    },
     ZaraGraft: {
         name: "ZaraGraft",
         sprite: "ZaraGraft",

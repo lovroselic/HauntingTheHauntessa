@@ -1342,6 +1342,8 @@ LoadSprites = [
     { srcName: "EntityPictures/MidnightDomme.jpg", name: "MidnightDomme" },
     { srcName: "EntityPictures/DuneDeserta.jpg", name: "DuneDeserta" },
     { srcName: "EntityPictures/ZaraGraft.jpg", name: "ZaraGraft" },
+    { srcName: "EntityPictures/LeekMee.jpg", name: "LeekMee" },
+    { srcName: "EntityPictures/Sheera.jpg", name: "Sheera" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
@@ -1690,6 +1692,12 @@ LoadSprites = [
     { srcName: "Items/Cross.png", name: "Cross" },
     { srcName: "Items/Lantern.png", name: "Lantern" },
     { srcName: "Items/RedPump.png", name: "RedPump" },
+    { srcName: "Items/BluePump.png", name: "BluePump" },
+    { srcName: "Items/SilverPump.png", name: "SilverPump" },
+    { srcName: "Items/GreenPump.png", name: "GreenPump" },
+    { srcName: "Items/BlackPump.png", name: "BlackPump" },
+    { srcName: "Items/PurplePump.png", name: "PurplePump" },
+    { srcName: "Items/GoldPump.png", name: "GoldPump" },
 
     //books
     { srcName: "Items/YoniBook.png", name: "YoniBook" },

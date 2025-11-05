@@ -95,7 +95,7 @@ const MAP_TEXT = {
     83: "",
     84: "",
     85: "",
-        86: "",
+    86: "",
     87: "",
     88: "",
     89: "",
@@ -2579,6 +2579,7 @@ const MAP = {
         gates: '[[345,1,"93.1","86.2","Closed"],[75,3,"93.2","94.1","Closed"]]',
         scrolls: '[[39,5],[320,5]]',
         skills: '[[297,"Mana"]]',
+        entities: '[[209,5,"Sheera"]]',
         trainers: '[[11,7,"CastleDungeonWallMana"]]',
     }
     ,
@@ -2672,6 +2673,7 @@ const MAP = {
         lights: '[[754,7,"SkullLantern55","standard"],[1008,5,"SkullLantern52","standard"]]',
         gates: '[[13,7,"98.1","97.2","Closed"],[285,5,"98.2","99.1","Closed"]]',
         scrolls: '[[340,5],[60,5]]',
+        entities: '[[170,3,"LeekMee"]]',
         trainers: '[[351,1,"SorceryTraineress"]]',
     }
     ,

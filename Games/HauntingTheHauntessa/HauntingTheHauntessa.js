@@ -87,8 +87,8 @@ const DEBUG = {
             DONE ONE HellsHeels  wants "Ankh","Pentagram","Cross" gives  "Banknote200"
             DONE DuneDeserta wants "GlassOfBeer", "GlassOfBeer" gives  "Banknote10",
             DONE ZaraGraft wants "Revolver", "Revolver" gives "Pentagram"
-         LeekMeah wants "RedPump", "RedPump" gives 
-
+            DONE LeekMee wants "RedPump", "RedPump" gives Kiss
+            DONE Sheera wants "BlackPump", "BlackPump" gives "Kiss""
 
         Items:
 
@@ -104,8 +104,8 @@ const DEBUG = {
             DONE "Banknote200", ---> (101)
         "Banknote50", 
             DONE "Banknote100" ---> (101)
-        "Kiss",
-        "Kiss",
+            DONE "Kiss", ---> LeekMee (98)
+            DONE "Kiss", ---> Sheera(93)
         "Kiss"
         "Ankh",
             DONE "Pentagram", --->ZaraGraft(100)
@@ -118,7 +118,8 @@ const DEBUG = {
         "Revolver"
         "RedPump", 
         "RedPump"
-
+        "BlackPump", 
+        "BlackPump"
 
         ------------------------------------
             DONE "OrangeBoots", ---> RedCemeteria (87)
@@ -201,7 +202,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 98;
+        GAME.level = 96;
         GAME.gold = 50035;
         //GAME.gold = 5;
         GAME.lives = 3;
@@ -250,7 +251,7 @@ const DEBUG = {
         let invItems = [
             "GoldCoin",
             "SilverKey",
-            "RedPump", "RedPump",
+            "BlackPump", "BlackPump"
 
         ];
 
@@ -397,7 +398,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.30.10",
+    VERSION: "0.30.11",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -1768,7 +1769,7 @@ const GAME = {
             }
         }
 
-        if (Object.keys(Entities).length) {
+        if (Object.keys(Shrines).length) {
             WEDGE += "<h2>Shrines:</h2>";
             for (const [ent, teach] of Object.entries(Shrines)) {
                 WEDGE += `<p>${ent} teaches: ${teach}</p>`;
