@@ -984,6 +984,20 @@ class ParticleEmmission3D extends IAM {
     }
 }
 
+class FireEmmission3D extends IAM {
+    constructor() {
+        super();
+        this.IA = null;
+        this.POOL = [];
+        this.reIndexRequired = false; //lives forever!
+    }
+    manage(date) {
+        for (const item of this.POOL) {
+            item.update(date);
+        }
+    }
+}
+
 class Animated_3d_entity extends IAM {
     constructor(usingReIndex = false) {
         super();
@@ -1290,6 +1304,7 @@ const INTERFACE3D = new Decal3D();
 const GATE3D = new Decal3D(256);
 const ITEM3D = new Decal3D(1024);
 const EXPLOSION3D = new ParticleEmmission3D();
+const FIRE3D = new FireEmmission3D();
 const INTERACTIVE_DECAL3D = new Decal3D(1024);
 const INTERACTIVE_BUMP3D = new Decal3D(256, "interactive_bump3d");
 //const BUMP3D = new Decal_IA_3D();                                           //obsolete, waiting for deprecation; use INTERACTIVE_BUMP3D

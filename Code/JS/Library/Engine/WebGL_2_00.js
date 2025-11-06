@@ -41,7 +41,7 @@ const WebGL = {
     VERSION: "2.00",
     CSS: "color: gold",
     CTX: null,
-    VERBOSE: false,             //default: false
+    VERBOSE: true,             //default: false
     PRUNE: true,                //if true, only visible blocks and faces are considered - looks bad in 3td person, but the amount of vertices are significantlly reduced
     INI: {
         PIC_WIDTH: 0.5,
@@ -61,11 +61,13 @@ const WebGL = {
         INTERACT_DISTANCE: 1.3,
         DYNAMIC_LIGHTS_RESERVATION: 32,
         EXPLOSION_N_PARTICLES: 25000,
+        FIRE_N_PARTICLES: 10000,
         EXPLOSION_DURATION_MS: 2000,
         BOMB_DURATION_MS: 4000,
         POISON_DURATION_MS: 3000,
         BLOOD_DURATION_MS: 2500,
         SMUDGE_DURATION_MS: 500,
+        FIRE_LIFE_MAX_MS: 1000,
         MIN_R: 0.25,
         MAX_R: 0.44999, //0.5001
         INTERACTION_TIMEOUT: 4000,
@@ -149,6 +151,20 @@ const WebGL = {
     explosion_program: {
         transform: {
             vSource: "particle_transform_vShader",
+            fSource: "particle_transform_fShader",
+            transformFeedback: ["o_offset", "o_velocity", "o_age", "o_ageNorm"],
+            program: null,
+        },
+        render: {
+            vSource: "particle_render_vShader",
+            fSource: "particle_render_fShader",
+            transformFeedback: null,
+            program: null,
+        }
+    },
+    fire_program: {
+        transform: {
+            vSource: "fire_transform_vShader",
             fSource: "particle_transform_fShader",
             transformFeedback: ["o_offset", "o_velocity", "o_age", "o_ageNorm"],
             program: null,
@@ -668,7 +684,7 @@ const WebGL = {
         }
     },
     initParticlePrograms(gl) {
-        const particleType = ["explosion"];
+        const particleType = ["explosion", "fire"];
         const shaderType = ["transform", "render"];
         for (let PT of particleType) {
             let prog = `${PT}_program`;
@@ -3579,11 +3595,18 @@ class ParticleEmmiter {
         this.currentIndex = 0;
         this.texture = WebGL.createTexture(texture);
         this.callback = null;
+        this.program_type = "explosion";
+
+        //
+        this.spawnRadius = null;
+        this.turbulence = null;
+        this.damping = null;
     }
     update(date) {
-        this.normalized_age = (date - this.birth) / this.duration;
+        this.age = date - this.birth;
+        this.normalized_age = this.age / this.duration;
     }
-    build(number) {
+    build(number, locations = UNIFORM.spherical_locations, directions = UNIFORM.spherical_directions) {
         const gl = this.gl;
         let start_index = RND(0, UNIFORM.INI.MAX_N_PARTICLES - number);
 
@@ -3591,12 +3614,12 @@ class ParticleEmmiter {
         this.writeFeedback = [gl.createTransformFeedback(), gl.createTransformFeedback()];
 
         //location
-        let location_data = UNIFORM.spherical_locations.slice(start_index * 3, (start_index + number) * 3);
+        let location_data = locations.subarray(start_index * 3, (start_index + number) * 3);
         this.bOffset = [gl.createBuffer(), gl.createBuffer()];
         let locOffset = 0;
 
         //velocity
-        let velocity_data = UNIFORM.spherical_directions.slice(start_index * 3, (start_index + number) * 3);
+        let velocity_data = directions.subarray(start_index * 3, (start_index + number) * 3);
         this.bVelocity = [gl.createBuffer(), gl.createBuffer()];
         const locVelocity = 1;
 
@@ -3615,8 +3638,10 @@ class ParticleEmmiter {
 
         //life
         let life_data = [];
+        let minLife = 0.85;
+        if (this.program_type === "fire") minLife = 0.1;
         for (let c = 0; c < number; c++) {
-            life_data.push(RND(Math.floor(this.duration * 0.85), this.duration));
+            life_data.push(RND(Math.floor(this.duration * minLife), this.duration));
         }
         this.bLife = [gl.createBuffer(), gl.createBuffer()];
         const locLife = 4;
@@ -3740,17 +3765,16 @@ class ParticleEmmiter {
         }
     }
     draw(gl) {
-        const transform_program = WebGL.explosion_program.transform.program;
+        const transform_program = WebGL[`${this.program_type}_program`].transform.program;
         gl.useProgram(transform_program);
 
         //uniforms
-        let u_time = gl.getUniformLocation(transform_program, "u_time");
-        let time_now = Date.now() - this.birth;
-        gl.uniform1f(u_time, time_now);
-        const u_velocity_factor = gl.getUniformLocation(transform_program, "uVelocityFactor");
-        gl.uniform1f(u_velocity_factor, this.velocity);
-        const u_gravity = gl.getUniformLocation(transform_program, "uGravity");
-        gl.uniform3fv(u_gravity, this.gravity);
+        gl.uniform1f(gl.getUniformLocation(transform_program, "u_time"), Date.now() - this.birth);
+        gl.uniform1f(gl.getUniformLocation(transform_program, "uVelocityFactor"), this.velocity);
+        gl.uniform3fv(gl.getUniformLocation(transform_program, "uGravity"), this.gravity);
+        gl.uniform1f(gl.getUniformLocation(transform_program, "uSpawnRadius"), this.spawnRadius);
+        gl.uniform1f(gl.getUniformLocation(transform_program, "uTurbulence"), this.turbulence);
+        gl.uniform1f(gl.getUniformLocation(transform_program, "uDamping"), this.damping);
         //
 
         const nextIndex = (this.currentIndex + 1) % 2;
@@ -3769,22 +3793,22 @@ class ParticleEmmiter {
         gl.bindTransformFeedback(gl.TRANSFORM_FEEDBACK, null);			            //Clear out which feedback is bound
 
         //render
-        const render_program = WebGL.explosion_program.render.program;
+        const render_program = WebGL[`${this.program_type}_program`].render.program;
         gl.useProgram(render_program);
         gl.disable(gl.CULL_FACE);
-        gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+
+        if (this.program_type === "fire") {
+            gl.blendFunc(gl.SRC_ALPHA, gl.ONE);                                     // hotter, emissive flames
+        } else {
+            gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);                     // default
+        }
 
         //render uniforms
-        const projection_matrix = gl.getUniformLocation(render_program, "uProjectionMatrix");
-        gl.uniformMatrix4fv(projection_matrix, false, WebGL.projectionMatrix);
-        const modelViewMatrix = gl.getUniformLocation(render_program, "uModelViewMatrix");
-        gl.uniformMatrix4fv(modelViewMatrix, false, WebGL.viewMatrix);
-        const expCenter = gl.getUniformLocation(render_program, "uExpCenter");
-        gl.uniform3fv(expCenter, this.pos.array);
-        const u_scale = gl.getUniformLocation(render_program, "uScale");
-        gl.uniform1f(u_scale, this.scale);
-        const u_rounded = gl.getUniformLocation(render_program, "uRounded");
-        gl.uniform1i(u_rounded, this.rounded);
+        gl.uniformMatrix4fv(gl.getUniformLocation(render_program, "uProjectionMatrix"), false, WebGL.projectionMatrix);
+        gl.uniformMatrix4fv(gl.getUniformLocation(render_program, "uModelViewMatrix"), false, WebGL.viewMatrix);
+        gl.uniform3fv(gl.getUniformLocation(render_program, "uExpCenter"), this.pos.array);
+        gl.uniform1f(gl.getUniformLocation(render_program, "uScale"), this.scale);
+        gl.uniform1i(gl.getUniformLocation(render_program, "uRounded"), this.rounded);
         // uniform end
 
         gl.bindVertexArray(this.vaoRender[nextIndex]);
@@ -3802,6 +3826,24 @@ class ParticleEmmiter {
     }
 }
 
+class FireEmmiter extends ParticleEmmiter {
+    constructor(position, texture = TEXTURE.Explosion, number = WebGL.INI.FIRE_N_PARTICLES) {
+        super(position, texture);
+        this.duration = WebGL.INI.FIRE_LIFE_MAX_MS;
+        this.number = number;
+        this.build(number, UNIFORM.fire_locations, UNIFORM.fire_directions);
+        this.lightColor = colorStringToVector("#FF3300");
+        this.scale = 0.1;
+        this.gravity = new Float32Array([0, +0.002, 0]);
+        this.velocity = 0.003;
+        this.rounded = 1;
+        this.spawnRadius = 0.15;
+        this.turbulence = 0.009;
+        this.damping = 0.985;
+        this.program_type = "fire";
+    }
+}
+
 class ParticleExplosion extends ParticleEmmiter {
     constructor(position, duration = WebGL.INI.EXPLOSION_DURATION_MS, texture = TEXTURE.Explosion, number = WebGL.INI.EXPLOSION_N_PARTICLES) {
         super(position, texture);
@@ -3813,6 +3855,7 @@ class ParticleExplosion extends ParticleEmmiter {
         this.gravity = new Float32Array([0, 0.0075, 0]);
         this.velocity = 0.03;
         this.rounded = 1;
+
     }
 }
 
@@ -3981,7 +4024,7 @@ class StaticParticleBomb extends ParticleEmmiter {
         const position3D = Vector3.to_FP_Grid3D(this.pos);
         const playerHit = GRID.circleCollision3D(Vector3.to_FP_Grid3D(this.IAM.hero.player.pos), position3D, this.IAM.hero.player.r + WebGL.INI.BLAST_RADIUS);
         if (playerHit) this.IAM.hero.applyDamage(WebGL.INI.BLAST_DAMAGE);
-        
+
         const blastVector = new FP_Vector3D(WebGL.INI.BLAST_RADIUS, WebGL.INI.BLAST_RADIUS, WebGL.INI.BLAST_RADIUS);
         const TL = Grid3D.toClass(position3D.sub(blastVector));
         const BR = Grid3D.toClass(position3D.add(blastVector));
@@ -5071,16 +5114,26 @@ const ELEMENT = {
 const UNIFORM = {
     spherical_locations: null,
     spherical_directions: null,
+    fire_locations: null,
+    fire_directions: null,
     i_jointMat: null,
     INI: {
         MAX_N_PARTICLES: 50000,
         SPHERE_R: 0.20,
         MIN_VELOCITY_FACTOR: 0.01,
         MAX_VELOCITY_FACTOR: 0.6,
+        // === FIRE defaults ===
+        FIRE_R: 0.14,                // spawn disk radius (XZ)
+        FIRE_BASE_THICKNESS: 0.02,   // vertical jitter of the base (Y)
+        FIRE_CONE_DEG: 32,           // cone half-angle for upward directions
+        FIRE_MIN_SPEED: 0.02,        // initial speed range (magnitude of velocity)
+        FIRE_MAX_SPEED: 0.10
     },
     setup() {
         this.spherical_distributed(this.INI.MAX_N_PARTICLES, this.INI.SPHERE_R);
         if (WebGL.VERBOSE) console.log(`%cUNIFORM created ${this.INI.MAX_N_PARTICLES} spherical particles.`, WebGL.CSS);
+        this.fire_distributed(this.INI.MAX_N_PARTICLES, this.INI.FIRE_R, this.INI.FIRE_CONE_DEG, this.INI.FIRE_MIN_SPEED, this.INI.FIRE_MAX_SPEED, this.INI.FIRE_BASE_THICKNESS);
+        if (WebGL.VERBOSE) console.log(`%cUNIFORM created ${this.INI.MAX_N_PARTICLES} fire particles.`, WebGL.CSS);
     },
     spherical_distributed(N, R) {
         console.time("particles");
@@ -5107,6 +5160,47 @@ const UNIFORM = {
             this.spherical_locations[idx + 2] = location[2];
         }
         console.timeEnd("particles");
+    },
+    fire_distributed(N, R) {
+        console.time("particles:fire");
+        this.fire_directions = new Float32Array(N * 3);
+        this.fire_locations = new Float32Array(N * 3);
+
+        const cosMax = Math.cos(Math.radians(UNIFORM.INI.FIRE_CONE_DEG));
+        const dir = glMatrix.vec3.create();
+
+        for (let c = 0; c < N; c++) {
+            // --- Location on disk (XZ), slightly jittered in Y ---
+            // r = sqrt(u) * R gives uniform density over the disk area
+            const u = Math.random();
+            const r = Math.sqrt(u) * R;
+            const ang = RNDF(0, Math.PI * 2);
+            const x = r * Math.cos(ang);
+            const z = r * Math.sin(ang);
+            const y = RNDF(0, UNIFORM.INI.FIRE_BASE_THICKNESS);   // small thickness so base isn't perfectly flat
+
+            // --- Direction inside an upward cone (axis = +Y) ---
+            const cosTheta = RNDF(cosMax, 1.0);
+            const sinTheta = Math.sqrt(Math.max(0, 1.0 - cosTheta * cosTheta));
+            const phi = RNDF(0, Math.PI * 2);
+
+            dir[0] = sinTheta * Math.cos(phi);
+            dir[1] = cosTheta;            // upwards
+            dir[2] = sinTheta * Math.sin(phi);
+
+            // scale by speed
+            const sp = RNDF(UNIFORM.INI.FIRE_MIN_SPEED, UNIFORM.INI.FIRE_MAX_SPEED);
+            const i = c * 3;
+
+            this.fire_directions[i] = dir[0] * sp;
+            this.fire_directions[i + 1] = dir[1] * sp;
+            this.fire_directions[i + 2] = dir[2] * sp;
+
+            this.fire_locations[i] = x;
+            this.fire_locations[i + 1] = y;
+            this.fire_locations[i + 2] = z;
+        }
+        console.timeEnd("particles:fire");
     },
 };
 

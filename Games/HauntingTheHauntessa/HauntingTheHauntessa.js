@@ -89,6 +89,7 @@ const DEBUG = {
             DONE ZaraGraft wants "Revolver", "Revolver" gives "Pentagram"
             DONE LeekMee wants "RedPump", "RedPump" gives Kiss
             DONE Sheera wants "BlackPump", "BlackPump" gives "Kiss""
+        BraidRunner wanst "Dagger", "Dagger" gives _
 
         Items:
 
@@ -120,6 +121,8 @@ const DEBUG = {
         "RedPump"
         "BlackPump", 
         "BlackPump"
+        "Dagger", 
+        "Dagger"
 
         ------------------------------------
             DONE "OrangeBoots", ---> RedCemeteria (87)
@@ -251,7 +254,7 @@ const DEBUG = {
         let invItems = [
             "GoldCoin",
             "SilverKey",
-            "BlackPump", "BlackPump"
+            "Dagger", "Dagger"
 
         ];
 
@@ -398,7 +401,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.30.11",
+    VERSION: "0.30.12",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

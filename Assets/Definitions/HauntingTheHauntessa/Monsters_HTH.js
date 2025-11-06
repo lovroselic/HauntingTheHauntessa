@@ -5043,7 +5043,7 @@ const INTERACTION_ENTITY = {
         wants: ["BlackPump", "BlackPump"],
         gives: "Kiss",
         text: {
-            intro: "Black lace and nylon, mood set to midnight. My pumps not perfect, bring proper black and earn a Kiss, alright.",
+            intro: "Black lace and nylon, mood set to midnight. My pumps not perfectly shiny, bring proper glossy black and earn a Kiss, alright.",
             progress: "One heel in the right direction, but I walk on two. Fetch the matching twin and we are through.",
             conclusion: "Perfect pair, perfect glare. Step closer for your Kiss, and do not smudge the eyeliner, dear.",
         },

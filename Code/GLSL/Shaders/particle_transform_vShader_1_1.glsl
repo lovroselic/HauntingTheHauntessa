@@ -1,7 +1,7 @@
 #version 300 es
 ///particle_transform_vShader///
 /*
-* v1.0
+* v1.1
 */
 
 #ifdef GL_FRAGMENT_PRECISION_HIGH
@@ -13,6 +13,9 @@ precision mediump float;
 uniform float u_time;
 uniform float uVelocityFactor;
 uniform vec3 uGravity;
+uniform float uSpawnRadius;             //unused, fire compatibility
+uniform float uTurbulence;              //unused, fire compatibility
+uniform float uDamping;                 //unused, fire compatibility
 
 layout(location = 0) in vec3 a_offset;
 layout(location = 1) in vec3 a_velocity;
