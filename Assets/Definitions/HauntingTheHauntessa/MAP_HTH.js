@@ -2636,7 +2636,7 @@ const MAP = {
         lights: '[[788,7,"SkullLantern53","standard"],[1005,3,"SkullLantern54","standard"]]',
         gates: '[[57,5,"96.1","94.3","Closed"],[357,1,"96.2","97.1","Closed"]]',
         trainers: '[[3,7,"SluttyNurse"]]',
-        fires: '[[121,4,"Fire"],[144,4,"Campfire"],[203,4,"Bonfire"]]',
+        fires: '[[121,4,"Fire"]]',
     }
     ,
     97: {

@@ -29,6 +29,14 @@ const LIGHT_COLORS = {
     fireDim: new Float32Array([0.68, 0.34, 0.10]),              // muted, dim flame for subtle ambiance
     fireplace: new Float32Array([0.80, 0.40, 0.12]),
     fireplaceDim: new Float32Array([0.68, 0.34, 0.10]),
+
+    fireSubtle: new Float32Array([0.235, 0.125, 0.018]),
+    fireNewSubtle: new Float32Array([0.225, 0.113, 0.025]),
+    fireSoftSubtle: new Float32Array([0.200, 0.100, 0.030]),
+    fireDimSubtle: new Float32Array([0.170, 0.085, 0.025]),
+    fireplaceSubtle: new Float32Array([0.200, 0.100, 0.030]),
+    fireplaceDimSubtle: new Float32Array([0.170, 0.085, 0.025]),
+
     red: new Float32Array([0.95, 0.70, 0.70]),
     lightRed: new Float32Array([0.5, 0.1, 0.1]),
     yellowgreen: new Float32Array([0.90, 0.90, 0.50]),

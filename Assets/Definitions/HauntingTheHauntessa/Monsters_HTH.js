@@ -6864,7 +6864,7 @@ const TRAP_ACTION_LIST = listObjectKeys(TRAP_ACTIONS);
 
 const FIRE_TYPES = {
   Fire: {
-    lightColor: colorStringToVector("#FF3300"),
+    lightColor: LIGHT_COLORS.fireSoft,
     scale: 0.16,
     gravity: new Float32Array([0, 0.50, 0]), 
     velocity: 0.0015,
@@ -6874,7 +6874,7 @@ const FIRE_TYPES = {
   },
 
   Campfire: {
-    lightColor: colorStringToVector("#FF5A1A"),
+    lightColor: LIGHT_COLORS.fireDim,
     scale: 0.12,
     gravity: new Float32Array([0, 0.25, 0]),
     velocity: 0.0015,
@@ -6884,7 +6884,7 @@ const FIRE_TYPES = {
   },
 
   Bonfire: {
-    lightColor: colorStringToVector("#FF2B00"),
+    lightColor: LIGHT_COLORS.fireSoft,
     scale: 0.22,
     gravity: new Float32Array([0, 0.75, 0]),
     velocity: 0.0015,

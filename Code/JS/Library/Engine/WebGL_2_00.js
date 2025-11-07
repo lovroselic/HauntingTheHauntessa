@@ -131,7 +131,7 @@ const WebGL = {
     staticDecalList: [DECAL3D, LIGHTS3D, LAIR],
     interactiveDecalList: [INTERACTIVE_DECAL3D, INTERACTIVE_BUMP3D],
     dynamicDecalList: [GATE3D, ITEM3D, ITEM_DROPPER3D],
-    dynamicLightSources: [MISSILE3D, EXPLOSION3D],
+    dynamicLightSources: [MISSILE3D, EXPLOSION3D, FIRE3D],
     enemySources: [ENTITY3D],
     models: [$3D_MODEL],
     modelTextureSet: false,
@@ -321,7 +321,6 @@ const WebGL = {
         FIRE3D.init(map, hero);
         INTERACTIVE_DECAL3D.init(map);
         INTERACTIVE_BUMP3D.init(map);
-        //BUMP3D.init(map);
         ENTITY3D.init(map, hero);
         INTERFACE3D.init(map);
         EXPLOSION3D.init(map, hero);

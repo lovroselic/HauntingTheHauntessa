@@ -400,13 +400,8 @@ const SPAWN_TOOLS = {
             const face = DirectionToFace(Vector.fromInt(fire[1]));
             const type = FIRE_TYPES[fire[2]];
             if (face !== "TOP") grid = LightDecal.setPosition(GA.indexToGrid(fire[0]), face);   //side fires - untested!
-
             const position = Vector3.from_grid3D(grid);
-            console.error("spawn fire", fire, grid, face, type, "position", position);
-            const F = new FireEmmiter(position, type);
-
-            FIRE3D.add(F);
-            console.log("F", F, "FIRE3D", FIRE3D);
+            FIRE3D.add(new FireEmmiter(position, type));
         }
     }
 };
