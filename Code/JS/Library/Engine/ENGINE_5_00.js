@@ -2555,6 +2555,11 @@ const ENGINE = {
                     this.trap(trigger, z);
                 }
             }
+            if (maze.fires) {
+                for (const fire of maze.fires) {
+                    this.fire(fire, z);
+                }
+            }
         },
         start(start, z) {
             let grid = this.GA.indexTo2DGridSlice(start[0], z);
@@ -2807,6 +2812,14 @@ const ENGINE = {
                 this.CTX.restore();
                 ENGINE.drawCircle(this.CTX, mid, this.decalWidth * 1.5, "#EE0033");
             }
+        },
+        fire(fire, z) {
+            let grid = this.GA.indexTo2DGridSlice(fire[0], z);
+            if (!grid) return;
+            let dir = Vector.fromInt(fire[1]);
+            this.dotOrLine(grid, dir, "#FF8800");
+            let mid = GRID.gridToCenterPX(grid);
+            this.write(mid, fire[2]);
         }
     },
     BLOCKGRID: {

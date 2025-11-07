@@ -6861,3 +6861,37 @@ const TRAP_ACTIONS = {
     Spawn: listObjectKeys(MONSTER_TYPE)
 };
 const TRAP_ACTION_LIST = listObjectKeys(TRAP_ACTIONS);
+
+const FIRE_TYPES = {
+  Fire: {
+    lightColor: colorStringToVector("#FF3300"),
+    scale: 0.16,
+    gravity: new Float32Array([0, 0.50, 0]), 
+    velocity: 0.0015,
+    spawnRadius: 0.15,
+    turbulence: 0.0075,
+    damping: 0.982,
+  },
+
+  Campfire: {
+    lightColor: colorStringToVector("#FF5A1A"),
+    scale: 0.12,
+    gravity: new Float32Array([0, 0.25, 0]),
+    velocity: 0.0015,
+    spawnRadius: 0.125,
+    turbulence: 0.009,
+    damping: 0.985,
+  },
+
+  Bonfire: {
+    lightColor: colorStringToVector("#FF2B00"),
+    scale: 0.22,
+    gravity: new Float32Array([0, 0.75, 0]),
+    velocity: 0.0015,
+    spawnRadius: 0.20,
+    turbulence: 0.012,
+    damping: 0.990,
+  },
+
+};
+

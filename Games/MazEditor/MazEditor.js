@@ -68,7 +68,7 @@ const INI = {
 };
 
 const PRG = {
-  VERSION: "0.16.03",
+  VERSION: "0.17.0",
   NAME: "MazEditor",
   YEAR: "2022, 2023, 2024, 2025",
   CSS: "color: #239AFF;",
@@ -786,6 +786,19 @@ const GAME = {
         }
 
         break;
+
+      case "fire":
+        switch (currentValue) {
+          case MAPDICT.EMPTY:
+            break;
+          default:
+            $("#error_message").html(`Fire placement not supported on value: ${currentValue}`);
+            return;
+        }
+        dir = GAME.getSelectedDir();
+        $MAP.map.fires.push(Array(gridIndex, dir.toInt(), $("#fire_type")[0].value));
+        console.info("FIRE", Array(gridIndex, dir.toInt(), $("#fire_type")[0].value));
+        break;
     }
 
     GAME.stack.previousRadio = radio;
@@ -1269,6 +1282,10 @@ const GAME = {
       $("#oracle_type").trigger("change");
     }
 
+    //fires
+    for (const fire in FIRE_TYPES) {
+      $("#fire_type").append(`<option value="${fire}">${fire}</option>`);
+    }
     //triggers
     for (const triggerDecal of TRIGGER_DECALS) {
       $("#trigger_decal").append(`<option value="${triggerDecal}">${triggerDecal}</option>`);

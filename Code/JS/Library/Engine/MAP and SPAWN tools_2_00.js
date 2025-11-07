@@ -10,7 +10,8 @@ const MAP_TOOLS = {
     VERSION: "2.00",
     CSS: "color: #F9A",
     properties: ['start', 'decals', 'lights', 'gates', 'keys', 'monsters', 'scrolls', 'potions', 'gold', 'skills', 'containers',
-        'shrines', 'doors', 'triggers', 'entities', 'objects', 'traps', 'oracles', 'movables', 'trainers', 'interactors', 'lairs'],
+        'shrines', 'doors', 'triggers', 'entities', 'objects', 'traps', 'oracles', 'movables', 'trainers', 'interactors', 'lairs',
+        'fires'],
     lists: ['monsterList'],
     INI: {
         FOG: true, //true
@@ -161,7 +162,7 @@ const SPAWN_TOOLS = {
         const map = MAP_TOOLS.MAP[level].map;
         const GA = map.GA;
         const methods = ['decals', 'lights', 'shrines', 'oracles', 'externalGates', 'keys', 'monsters', 'scrolls', 'gold', 'skills',
-            'containers', 'doors', 'triggers', 'entities', 'trainers', 'objects', 'movables', 'traps', 'interactors', 'lairs'];
+            'containers', 'doors', 'triggers', 'entities', 'trainers', 'objects', 'movables', 'traps', 'interactors', 'lairs', 'fires'];
 
         map.TextureExclusion = {};                              // used to exclude world textures, where they are superseeded with custom texture, reset
 
@@ -391,6 +392,21 @@ const SPAWN_TOOLS = {
             const targetGrid = GA.indexToGrid(T[5]);
             const trap = new Trap(grid, face, picture, action, prototype, targetGrid);
             INTERACTIVE_DECAL3D.add(trap);
+        }
+    },
+    fires(map, GA) {
+        for (const fire of map.fires) {
+            let grid = Grid3D.toCenter2D(GA.indexToGrid(fire[0]));
+            const face = DirectionToFace(Vector.fromInt(fire[1]));
+            const type = FIRE_TYPES[fire[2]];
+            if (face !== "TOP") grid = LightDecal.setPosition(GA.indexToGrid(fire[0]), face);   //side fires - untested!
+
+            const position = Vector3.from_grid3D(grid);
+            console.error("spawn fire", fire, grid, face, type, "position", position);
+            const F = new FireEmmiter(position, type);
+
+            FIRE3D.add(F);
+            console.log("F", F, "FIRE3D", FIRE3D);
         }
     }
 };

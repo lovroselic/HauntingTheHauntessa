@@ -41,7 +41,7 @@ const WebGL = {
     VERSION: "2.00",
     CSS: "color: gold",
     CTX: null,
-    VERBOSE: true,             //default: false
+    VERBOSE: false,             //default: false
     PRUNE: true,                //if true, only visible blocks and faces are considered - looks bad in 3td person, but the amount of vertices are significantlly reduced
     INI: {
         PIC_WIDTH: 0.5,
@@ -61,7 +61,7 @@ const WebGL = {
         INTERACT_DISTANCE: 1.3,
         DYNAMIC_LIGHTS_RESERVATION: 32,
         EXPLOSION_N_PARTICLES: 25000,
-        FIRE_N_PARTICLES: 10000,
+        FIRE_N_PARTICLES: 20000,
         EXPLOSION_DURATION_MS: 2000,
         BOMB_DURATION_MS: 4000,
         POISON_DURATION_MS: 3000,
@@ -318,6 +318,7 @@ const WebGL = {
         ITEM3D.init(map);
         DYNAMIC_ITEM3D.init(map, hero);
         MISSILE3D.init(map, hero);
+        FIRE3D.init(map, hero);
         INTERACTIVE_DECAL3D.init(map);
         INTERACTIVE_BUMP3D.init(map);
         //BUMP3D.init(map);
@@ -1142,6 +1143,13 @@ const WebGL = {
             }
         }
 
+
+        //fire
+        for (const fire of FIRE3D.POOL) {
+            if (fire) {
+                fire.draw(gl);
+            }
+        }
         //explosion
         for (const explosion of EXPLOSION3D.POOL) {
             if (explosion) {
@@ -2455,14 +2463,14 @@ class LightDecal extends Decal {
         this.type = "LightDecal";
         this.interactive = false;
         this.expand = expand;
-        this.setPosition(grid, face);
+        this.position = LightDecal.setPosition(grid, face);
     }
-    setPosition(grid, face) {
+    static setPosition(grid, face) {
         const gridType = grid.constructor.name;
         let off = FaceToOffset(face, WebGL.INI.LIGHT_OUT);
         let pos = FP_Grid.toClass(grid).add(off);
         if (gridType === "Grid") grid.z = 0;                                            //2D Grid legacy
-        this.position = new Vector3(pos.x, grid.z + 1.0 - WebGL.INI.LIGHT_TOP, pos.y);
+        return new Vector3(pos.x, grid.z + 1.0 - WebGL.INI.LIGHT_TOP, pos.y);
     }
 }
 
@@ -3827,20 +3835,28 @@ class ParticleEmmiter {
 }
 
 class FireEmmiter extends ParticleEmmiter {
-    constructor(position, texture = TEXTURE.Explosion, number = WebGL.INI.FIRE_N_PARTICLES) {
+    constructor(position, type, texture = TEXTURE.FireTexture, number = WebGL.INI.FIRE_N_PARTICLES) {
         super(position, texture);
+        this.program_type = "fire";
         this.duration = WebGL.INI.FIRE_LIFE_MAX_MS;
         this.number = number;
-        this.build(number, UNIFORM.fire_locations, UNIFORM.fire_directions);
-        this.lightColor = colorStringToVector("#FF3300");
-        this.scale = 0.1;
-        this.gravity = new Float32Array([0, +0.002, 0]);
-        this.velocity = 0.003;
         this.rounded = 1;
+        this.scale = 0.15;
+
+        //defaults
+        this.lightColor = colorStringToVector("#FF3300");
+        this.gravity = new Float32Array([0, 0.50, 0]);
+        this.velocity = 0.003;
         this.spawnRadius = 0.15;
         this.turbulence = 0.009;
         this.damping = 0.985;
-        this.program_type = "fire";
+
+        //overwriting defaults from type
+        for (const prop in type) {
+            this[prop] = type[prop];
+        }
+
+        this.build(number, UNIFORM.fire_locations, UNIFORM.fire_directions);
     }
 }
 
@@ -3855,7 +3871,6 @@ class ParticleExplosion extends ParticleEmmiter {
         this.gravity = new Float32Array([0, 0.0075, 0]);
         this.velocity = 0.03;
         this.rounded = 1;
-
     }
 }
 
@@ -4000,13 +4015,13 @@ class BigFireExplosion extends ParticleEmmiter {
 }
 
 class StaticParticleBomb extends ParticleEmmiter {
-    constructor(position, duration = WebGL.INI.BOMB_DURATION_MS, texture = TEXTURE.Explosion2, number = UNIFORM.INI.MAX_N_PARTICLES) {
+    constructor(position, duration = WebGL.INI.BOMB_DURATION_MS, texture = TEXTURE.FireTexture, number = UNIFORM.INI.MAX_N_PARTICLES) {
         super(position, texture);
         this.number = number;
         this.duration = duration;
         this.build(number);
         this.lightColor = colorStringToVector("#000000");
-        this.scale = 0.6;
+        this.scale = 0.50;
         this.gravity = new Float32Array([0, 0.005, 0]);
         this.velocity = 0.01;
         this.rounded = 1;
