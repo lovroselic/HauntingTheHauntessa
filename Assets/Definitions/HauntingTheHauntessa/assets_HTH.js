@@ -809,6 +809,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/WoodTexture.jpg", name: "WoodTexture" },
     { srcName: "ObjectTextures/RedLiquid.jpg", name: "RedLiquid" },
     { srcName: "ObjectTextures/FireTexture.png", name: "FireTexture" },
+    { srcName: "ObjectTextures/FireTexture2.png", name: "FireTexture2" },
 
     //key textures
     { srcName: "ObjectTextures/BlueMetal.jpg", name: "BlueMetal" },

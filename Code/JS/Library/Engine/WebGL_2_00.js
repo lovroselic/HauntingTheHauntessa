@@ -3834,7 +3834,7 @@ class ParticleEmmiter {
 }
 
 class FireEmmiter extends ParticleEmmiter {
-    constructor(position, type, texture = TEXTURE.FireTexture, number = WebGL.INI.FIRE_N_PARTICLES) {
+    constructor(position, type, texture = TEXTURE.FireTexture2, number = WebGL.INI.FIRE_N_PARTICLES) {
         super(position, texture);
         this.program_type = "fire";
         this.duration = WebGL.INI.FIRE_LIFE_MAX_MS;

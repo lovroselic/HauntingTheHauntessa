@@ -36,6 +36,9 @@ out vec3 o_velocity;
 out float o_age;
 out float o_ageNorm;
 
+const float CONE = 0.05f;
+const float UPBIAS = 0.25f; //0.08
+
 // --- Small hash helpers (deterministic per-vertex, varying slowly over time) ---
 float hash(float n) {
     return fract(sin(n) * 43758.5453123f);
@@ -64,9 +67,11 @@ void main() {
         // --- Respawn near center on a small XZ disk, y=0 is the base of the flame ---
         vec2 d = disk2(seed, uSpawnRadius);
         o_offset = vec3(d.x, 0.0f, d.y);
+        float len = max(length(d), 1e-6f);
+        vec2 dn = d / len;
 
         // Upward-biased initial direction with a touch of lateral randomness
-        vec3 dir = normalize(vec3(d.x * 0.4f, 1.0f, d.y * 0.4f) + (hash3(seed + 7.7f) - 0.5f) * 0.25f);
+        vec3 dir = normalize(vec3(dn.x * CONE, 1.0f, dn.y * CONE) + (hash3(seed + 7.7f) - 0.5f) * (uTurbulence * 4.0f));
 
         // Base speed; actual step size still scaled by uVelocityFactor
         float sp = mix(0.02f, 0.10f, hash(seed + 8.9f));
@@ -81,10 +86,15 @@ void main() {
         vec3 v = a_velocity + uGravity + jitter;
         v *= uDamping;
 
+        // Gently bias toward +Y while preserving speed
+        float m = max(length(v), 1e-6f);
+        vec3 vdir = v / m;
+        vdir = normalize(mix(vdir, vec3(0.0f, 1.0f, 0.0f), UPBIAS)); 
+        v = vdir * m;
+
         o_velocity = v;
         o_offset = a_offset + v * uVelocityFactor;
 
-        // Keep original birth time; update normalized age
         o_age = a_age;
         o_ageNorm = clamp(lived / a_life, 0.0f, 1.0f);
     }

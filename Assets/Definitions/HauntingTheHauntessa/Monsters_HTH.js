@@ -6864,12 +6864,13 @@ const TRAP_ACTION_LIST = listObjectKeys(TRAP_ACTIONS);
 
 const FIRE_TYPES = {
   Fire: {
-    lightColor: LIGHT_COLORS.fireSoft,
-    scale: 0.16,
+    lightColor: LIGHT_COLORS.fireSubtle,
+    scale: 0.15,
     gravity: new Float32Array([0, 0.50, 0]), 
-    velocity: 0.0015,
+    velocity: 0.0014,
     spawnRadius: 0.15,
-    turbulence: 0.0075,
+    turbulence: 0.005,
+    //turbulence: 0.00,
     damping: 0.982,
   },
 
