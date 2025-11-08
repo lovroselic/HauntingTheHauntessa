@@ -37,9 +37,10 @@ out float o_age;
 out float o_ageNorm;
 
 const float CONE = 0.05f;
-const float UPBIAS = 0.25f; //0.08
+const float UPBIAS = 0.08f; //0.25
+const float BASE_THICKNESS = 0.05f; //0.03
 
-// --- Small hash helpers (deterministic per-vertex, varying slowly over time) ---
+// glorified rnds
 float hash(float n) {
     return fract(sin(n) * 43758.5453123f);
 }
@@ -64,14 +65,15 @@ void main() {
     float seed = float(gl_VertexID) * 0.123f + tstep;
 
     if (dead) {
-        // --- Respawn near center on a small XZ disk, y=0 is the base of the flame ---
+        //Respawn near center on a small XZ disk, y=0 is the base of the flame ---
         vec2 d = disk2(seed, uSpawnRadius);
-        o_offset = vec3(d.x, 0.0f, d.y);
+        float y0 = hash(seed + 11.3f) * BASE_THICKNESS;
+        o_offset = vec3(d.x, y0, d.y);
         float len = max(length(d), 1e-6f);
         vec2 dn = d / len;
 
         // Upward-biased initial direction with a touch of lateral randomness
-        vec3 dir = normalize(vec3(dn.x * CONE, 1.0f, dn.y * CONE) + (hash3(seed + 7.7f) - 0.5f) * (uTurbulence * 4.0f));
+        vec3 dir = normalize(vec3(dn.x * CONE, 1.0f, dn.y * CONE) + (hash3(seed + 7.7f) - 0.5f) * (uTurbulence * 1.0f));
 
         // Base speed; actual step size still scaled by uVelocityFactor
         float sp = mix(0.02f, 0.10f, hash(seed + 8.9f));
