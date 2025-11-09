@@ -89,7 +89,7 @@ const DEBUG = {
             DONE ZaraGraft wants "Revolver", "Revolver" gives "Pentagram"
             DONE LeekMee wants "RedPump", "RedPump" gives Kiss
             DONE Sheera wants "BlackPump", "BlackPump" gives "Kiss""
-        BraidRunner wanst "Dagger", "Dagger" gives Kiss
+            DONE BraidRunner wanst "Dagger", "Dagger" gives Kiss
 
         Items:
 
@@ -107,7 +107,7 @@ const DEBUG = {
             DONE "Banknote100" ---> (101)
             DONE "Kiss", ---> LeekMee (98)
             DONE "Kiss", ---> Sheera(93)
-        "Kiss" --->BraidRunner ()
+            "DONE Kiss" --->BraidRunner (96)
         "Ankh",
             DONE "Pentagram", --->ZaraGraft(100)
         "Cross"
@@ -401,7 +401,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.31.2",
+    VERSION: "0.32.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
