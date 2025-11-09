@@ -30,15 +30,15 @@ Directory = 'C:/Users/Uporabnik/Downloads/Converted_AI_pic'
 #Prefix = 'Wall/'
 #Prefix = "Lights/"
 # Prefix = "Lairs/"
-Prefix = "PicDecals/"
+#Prefix = "PicDecals/"
 # Prefix = "Scrolls/"
-# Prefix = "ObjDecals/"
+Prefix = "ObjDecals/"
 # Prefix = "ObjectTextures/"
 # Prefix = 'Lairs/'
 # Prefix = ''
 
 files = []
-ext = ['*.png', '*.jpg']
+ext = ['*.png', '*.jpg', '*.webp']
 # rotate = "count: 1, rotate: { first: 0, last: 350, step: 10 } "
 # template = '{ srcName: {}, name: {} },\n'
 

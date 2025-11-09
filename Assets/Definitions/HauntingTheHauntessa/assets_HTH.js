@@ -1346,6 +1346,7 @@ LoadSprites = [
     { srcName: "EntityPictures/ZaraGraft.jpg", name: "ZaraGraft" },
     { srcName: "EntityPictures/LeekMee.jpg", name: "LeekMee" },
     { srcName: "EntityPictures/Sheera.jpg", name: "Sheera" },
+    { srcName: "EntityPictures/BraidRunner.jpg", name: "BraidRunner" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.png", name: "BabyGreenSpider" },
@@ -2001,6 +2002,15 @@ LoadSprites = [
     { srcName: "Keys/OrangeKey.png", name: "OrangeKey" },
     { srcName: "Keys/PinkKey.png", name: "PinkKey" },
     { srcName: "Keys/CyanKey.png", name: "CyanKey" },
+
+    //firepits
+    { srcName: "ObjDecals/Firepit1.webp", name: "Firepit1" },
+    { srcName: "ObjDecals/Firepit2.webp", name: "Firepit2" },
+    { srcName: "ObjDecals/Firepit3.webp", name: "Firepit3" },
+    { srcName: "ObjDecals/Firepit4.webp", name: "Firepit4" },
+    { srcName: "ObjDecals/Firepit5.webp", name: "Firepit5" },
+    { srcName: "ObjDecals/Firepit6.webp", name: "Firepit6" },
+    { srcName: "ObjDecals/Firepit7.webp", name: "Firepit7" },
 
     //ObjDecals - all
     { srcName: "ObjDecals/SkeleFloors_1186.png", name: "SkeleFloors_1186" },

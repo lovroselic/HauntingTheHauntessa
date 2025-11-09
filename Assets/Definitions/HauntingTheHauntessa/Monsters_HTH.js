@@ -5035,6 +5035,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    BraidRunner: {
+        name: "BraidRunner",
+        sprite: "BraidRunner",
+        category: 'crest',
+        voice: "FemaleLow4",
+        wants: ["Dagger", "Dagger"],
+        gives: "Kiss",
+        text: {
+            intro: "Forest tracks and silent hacks. I need two slim daggers for my thigh high stash, bring the pair and maybe a Kiss will flash.",
+            progress: "Sharp start, but I fight in twos. Fetch the twin blade and we can talk about dues.",
+            conclusion: "Steel secured, deal procured. Daggers tucked, now step in close and claim your Kiss, brave and assured.",
+        },
+    },
     Sheera: {
         name: "Sheera",
         sprite: "Sheera",
@@ -6863,25 +6876,25 @@ const TRAP_ACTIONS = {
 const TRAP_ACTION_LIST = listObjectKeys(TRAP_ACTIONS);
 
 const FIRE_TYPES = {
-  Fire: {
-    lightColor: LIGHT_COLORS.fireSoftSubtle,
-    scale: 0.15,
-    gravity: new Float32Array([0, 0.50, 0]), 
-    velocity: 0.0012,
-    spawnRadius: 0.15,
-    turbulence: 0.0075,
-    damping: 0.975,
-  },
+    Fire: {
+        lightColor: LIGHT_COLORS.fireSoftSubtle,
+        scale: 0.15,
+        gravity: new Float32Array([0, 0.50, 0]),
+        velocity: 0.0012,
+        spawnRadius: 0.15,
+        turbulence: 0.0075,
+        damping: 0.975,
+    },
 
-  Bonfire: {
-    lightColor: LIGHT_COLORS.fireSubtle,
-    scale: 0.22,
-    gravity: new Float32Array([0, 0.75, 0]),
-    velocity: 0.00075,
-    spawnRadius: 0.20,
-    turbulence: 0.012,
-    damping: 0.990,
-  },
+    Bonfire: {
+        lightColor: LIGHT_COLORS.fireSubtle,
+        scale: 0.22,
+        gravity: new Float32Array([0, 0.75, 0]),
+        velocity: 0.00075,
+        spawnRadius: 0.20,
+        turbulence: 0.012,
+        damping: 0.990,
+    },
 
 };
 
