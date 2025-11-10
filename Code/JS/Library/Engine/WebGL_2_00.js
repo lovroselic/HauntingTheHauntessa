@@ -61,7 +61,7 @@ const WebGL = {
         INTERACT_DISTANCE: 1.3,
         DYNAMIC_LIGHTS_RESERVATION: 32,
         EXPLOSION_N_PARTICLES: 25000,
-        FIRE_N_PARTICLES: 25000,
+        FIRE_N_PARTICLES: 35000,
         EXPLOSION_DURATION_MS: 2000,
         BOMB_DURATION_MS: 4000,
         POISON_DURATION_MS: 3000,
@@ -171,13 +171,16 @@ const WebGL = {
         },
         render: {
             vSource: "particle_render_vShader",
-            fSource: "particle_render_fShader",
+            fSource: "fire_render_fShader",
             transformFeedback: null,
             program: null,
         }
     },
     update_shaders_forLightSources: ['fShader'],
     hero: null,
+    sys_textures: {
+        fire: ["Fire_color_map", "Fire_noise"]
+    },
     cleanupResources() {
         const gl = this.CTX;
 
@@ -536,8 +539,16 @@ const WebGL = {
         gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);                   //changed, keep
         this.texture = {};
 
+        // wall, ceil, floor
         for (let T in textureData) {
             this.texture[T] = this.createTexture(textureData[T]);
+        }
+
+        //sys_textures
+        for (let ST in this.sys_textures) {
+            for (let T of this.sys_textures[ST]) {
+                this.texture[T] = this.createTexture(TEXTURE[T]);
+            }
         }
 
         //gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
@@ -884,6 +895,7 @@ const WebGL = {
         const gl = this.CTX;
         gl.clearColor(0.0, 0.0, 0.0, 1.0);
         gl.clearDepth(1.0);
+        gl.disable(gl.BLEND);
         gl.enable(gl.DEPTH_TEST);
         gl.depthFunc(gl.LEQUAL);
         if (!WebGL.PRUNE) {
@@ -1142,13 +1154,14 @@ const WebGL = {
             }
         }
 
-
+        //blending on
         //fire
         for (const fire of FIRE3D.POOL) {
             if (fire) {
                 fire.draw(gl);
             }
         }
+
         //explosion
         for (const explosion of EXPLOSION3D.POOL) {
             if (explosion) {
@@ -1612,7 +1625,7 @@ const WORLD = {
         const maxDepth = map.GA?.depth - 1 || 0;
         console.log("--------------------------------");
         console.log("World.build->maxDepth", maxDepth);
-        console.log("TextureExclusion", TE);
+        //console.log("TextureExclusion", TE);
 
         for (let [index, value] of GA.map.entries()) {
             let grid = GA.indexToGrid(index);
@@ -3604,10 +3617,16 @@ class ParticleEmmiter {
         this.callback = null;
         this.program_type = "explosion";
 
-        //
+        //nulls ... unused for exlosions
         this.spawnRadius = null;
         this.turbulence = null;
         this.damping = null;
+        this.gravity = new Float32Array([0, 0, 0]);
+        this.velocity = null;
+        this.noiseScale = new Float32Array([0, 0, 0]);
+        this.scrolling = new Float32Array([0, 0, 0]);;
+        this.warp = null;
+        this.gate = null;
     }
     update(date) {
         this.age = date - this.birth;
@@ -3803,10 +3822,13 @@ class ParticleEmmiter {
         const render_program = WebGL[`${this.program_type}_program`].render.program;
         gl.useProgram(render_program);
         gl.disable(gl.CULL_FACE);
+        gl.enable(gl.BLEND);
 
         if (this.program_type === "fire") {
+            //gl.enable(gl.BLEND);
             gl.blendFunc(gl.SRC_ALPHA, gl.ONE);                                     // hotter, emissive flames
         } else {
+            //gl.disablw(gl.BLEND);
             gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);                     // default
         }
 
@@ -3816,12 +3838,31 @@ class ParticleEmmiter {
         gl.uniform3fv(gl.getUniformLocation(render_program, "uExpCenter"), this.pos.array);
         gl.uniform1f(gl.getUniformLocation(render_program, "uScale"), this.scale);
         gl.uniform1i(gl.getUniformLocation(render_program, "uRounded"), this.rounded);
+        gl.uniform1f(gl.getUniformLocation(render_program, "uTime"), (Date.now() - this.birth) * 0.001);
+        gl.uniform3fv(gl.getUniformLocation(render_program, "uNoiseScale"), this.noiseScale);
+        gl.uniform3fv(gl.getUniformLocation(render_program, "uScroll"), this.scrolling);
+        gl.uniform1f(gl.getUniformLocation(render_program, "uWarp"), this.warp);
+        gl.uniform1f(gl.getUniformLocation(render_program, "uGate"), this.gate);
         // uniform end
 
-        gl.bindVertexArray(this.vaoRender[nextIndex]);
+        //texture
         gl.activeTexture(gl.TEXTURE0);
         gl.uniform1i(gl.getUniformLocation(render_program, "uSampler"), 0);
         gl.bindTexture(gl.TEXTURE_2D, this.texture);
+
+        //noise samplers
+        gl.activeTexture(gl.TEXTURE1);
+        gl.bindTexture(gl.TEXTURE_2D, WebGL.texture.Fire_noise);
+        gl.uniform1i(gl.getUniformLocation(render_program, "uNoise1"), 1);
+        gl.activeTexture(gl.TEXTURE2);
+        gl.bindTexture(gl.TEXTURE_2D, WebGL.texture.Fire_color_map);
+        //gl.bindTexture(gl.TEXTURE_2D,  WebGL.texture.Fire_noise2);
+        gl.uniform1i(gl.getUniformLocation(render_program, "uNoise2"), 2);
+        gl.activeTexture(gl.TEXTURE3);
+        gl.bindTexture(gl.TEXTURE_2D, WebGL.texture.Fire_noise);
+        gl.uniform1i(gl.getUniformLocation(render_program, "uNoise3"), 3);
+
+        gl.bindVertexArray(this.vaoRender[nextIndex]);
         gl.drawElementsInstanced(gl.TRIANGLES, this.vaoCount, gl.UNSIGNED_SHORT, 0, this.number);
 
         //cleanup
@@ -3840,15 +3881,21 @@ class FireEmmiter extends ParticleEmmiter {
         this.duration = WebGL.INI.FIRE_LIFE_MAX_MS;
         this.number = number;
         this.rounded = 1;
-        this.scale = 0.15;
+        this.spawnRadius = 0.25;
+        this.scale = 0.30;
 
         //defaults
         this.lightColor = colorStringToVector("#FF3300");
         this.gravity = new Float32Array([0, 0.50, 0]);
-        this.velocity = 0.003;
-        this.spawnRadius = 0.15;
+        this.velocity = 0.001;
         this.turbulence = 0.009;
         this.damping = 0.985;
+
+        //draw defaults
+        this.noiseScale = new Float32Array([1.4, 2.6, 4.2]);
+        this.scrolling = new Float32Array([0.14, 0.24, 0.40]);
+        this.warp = 0.042;
+        this.gate = 1.0;
 
         //overwriting defaults from type
         for (const prop in type) {
@@ -5139,7 +5186,7 @@ const UNIFORM = {
         // === FIRE defaults ===
         FIRE_R: 0.14,                // spawn disk radius (XZ)
         FIRE_BASE_THICKNESS: 0.02,   // vertical jitter of the base (Y)
-        FIRE_CONE_DEG: 32,           // cone half-angle for upward directions
+        FIRE_CONE_DEG: 25,           // cone half-angle for upward directions, 30
         FIRE_MIN_SPEED: 0.02,        // initial speed range (magnitude of velocity)
         FIRE_MAX_SPEED: 0.10
     },

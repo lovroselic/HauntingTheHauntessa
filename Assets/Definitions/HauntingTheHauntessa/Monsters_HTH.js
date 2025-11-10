@@ -6878,22 +6878,26 @@ const TRAP_ACTION_LIST = listObjectKeys(TRAP_ACTIONS);
 const FIRE_TYPES = {
     Fire: {
         lightColor: LIGHT_COLORS.fireSoftSubtle,
-        scale: 0.15,
-        gravity: new Float32Array([0, 0.50, 0]),
+        scale: 0.50, 
+        gravity: new Float32Array([0, 0.60, 0]), 
         velocity: 0.0012,
-        spawnRadius: 0.15,
+        spawnRadius: 0.25,
         turbulence: 0.0075,
         damping: 0.975,
+        warp: 0.072,
+        gate: 1.0, 
     },
 
     Bonfire: {
         lightColor: LIGHT_COLORS.fireSubtle,
-        scale: 0.22,
+        scale: 0.75,
         gravity: new Float32Array([0, 0.75, 0]),
-        velocity: 0.00075,
-        spawnRadius: 0.20,
+        velocity: 0.00155, //0.0005
+        spawnRadius: 0.25,
         turbulence: 0.012,
         damping: 0.990,
+        warp: 0.042,
+        gate: 0.8, 
     },
 
 };

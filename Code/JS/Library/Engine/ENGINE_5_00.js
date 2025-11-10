@@ -1255,7 +1255,7 @@ const ENGINE = {
              * default layer text needs to exist before calling this function, or new one needs to be set, else function with throw uncaught exception
              * F4 key used to pause - hardcoded
              */
-            if (!ENGINE.GAME.paused) return;
+
             console.log("%cGAME resumed.", ENGINE.CSS);
             $(ENGINE.GAME.pauseID).prop("disabled", false);
             $(ENGINE.GAME.pauseID).prop("value", "Pause Game [F4]");

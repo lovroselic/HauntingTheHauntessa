@@ -401,7 +401,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.32.0",
+    VERSION: "0.32.1",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -1251,7 +1251,7 @@ const GAME = {
         GAME.level = 1;                 //1           
         GAME.gold = 13;               //13
 
-        const storeList = ["DECAL3D", "LIGHTS3D", "GATE3D", "VANISHING3D", "ITEM3D", "MISSILE3D", "INTERACTIVE_DECAL3D", "INTERACTIVE_BUMP3D", "ENTITY3D", "EXPLOSION3D", "DYNAMIC_ITEM3D", "LAIR"];
+        const storeList = ["DECAL3D", "LIGHTS3D", "GATE3D", "VANISHING3D", "ITEM3D", "MISSILE3D", "INTERACTIVE_DECAL3D", "INTERACTIVE_BUMP3D", "ENTITY3D", "EXPLOSION3D", "DYNAMIC_ITEM3D", "LAIR", "FIRE3D"];
         GAME.STORE = new Store(storeList);
 
         HERO.construct();
@@ -2016,6 +2016,7 @@ const GAME = {
         }
         const date = Date.now();
         //WebGL.GAME.setFirstPerson();
+        FIRE3D.manage(date);
         EXPLOSION3D.manage(date);
         ENTITY3D.manage(lapsedTime, date, [HERO.invisible, HERO.dead]);
         GAME.lifeLostFrameDraw(lapsedTime);
