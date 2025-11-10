@@ -814,6 +814,8 @@ LoadTextures = [
     { srcName: "ObjectTextures/RedLiquid.webp", name: "RedLiquid" },
     { srcName: "ObjectTextures/FireTexture.webp", name: "FireTexture" },
     { srcName: "ObjectTextures/FireTexture2.webp", name: "FireTexture2" },
+    { srcName: "ObjectTextures/FireTexture2_Blue.webp", name: "FireTexture2_Blue" },
+    { srcName: "ObjectTextures/FireTexture2_Green.webp", name: "FireTexture2_Green" },
 
     //key textures
     { srcName: "ObjectTextures/BlueMetal.webp", name: "BlueMetal" },

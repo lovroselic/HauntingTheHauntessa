@@ -1625,7 +1625,6 @@ const WORLD = {
         const maxDepth = map.GA?.depth - 1 || 0;
         console.log("--------------------------------");
         console.log("World.build->maxDepth", maxDepth);
-        //console.log("TextureExclusion", TE);
 
         for (let [index, value] of GA.map.entries()) {
             let grid = GA.indexToGrid(index);
@@ -3875,7 +3874,8 @@ class ParticleEmmiter {
 }
 
 class FireEmmiter extends ParticleEmmiter {
-    constructor(position, type, texture = TEXTURE.FireTexture2, number = WebGL.INI.FIRE_N_PARTICLES) {
+    constructor(position, type, texture = TEXTURE[type.texture_name], number = WebGL.INI.FIRE_N_PARTICLES) {
+        console.warn("texture", texture);
         super(position, texture);
         this.program_type = "fire";
         this.duration = WebGL.INI.FIRE_LIFE_MAX_MS;
