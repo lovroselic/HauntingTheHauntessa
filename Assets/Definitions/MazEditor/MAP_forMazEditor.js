@@ -1353,7 +1353,21 @@ const DECAL_PAINTINGS = [
     "Retro_Games_9006", "Retro_Games_9007", "Retro_Games_9008", "Retro_Games_9009", "Retro_Games_9010", "Retro_Games_9011", "Retro_Games_9012", "Retro_Games_9013", "Retro_Games_9014", "Retro_Games_9015", "Retro_Games_9016", "Retro_Games_9017",
     "Retro_Games_9018", "Retro_Games_9019", "Retro_Games_9020", "Retro_Games_9021", "Retro_Games_9022", "Retro_Games_9023", "Retro_Games_9024", "Retro_Games_9025", "Retro_Games_9026", "Retro_Games_9027", "Retro_Games_9028", "Retro_Games_9029",
     "Retro_Games_9030", "Retro_Games_9031", "Retro_Games_9032", "Retro_Games_9033", "Retro_Games_9034", "Retro_Games_9035", "Retro_Games_9036", "Retro_Games_9037", "Retro_Games_9038", "Retro_Games_9039", "Retro_Games_9040", "Retro_Games_9041",
-    "Retro_Games_9042", "Retro_Games_9043", "Retro_Games_9044", "Retro_Games_9045", "Retro_Games_9046", "Retro_Games_9047", "Retro_Games_9048", "Retro_Games_9049"
+    "Retro_Games_9042", "Retro_Games_9043", "Retro_Games_9044", "Retro_Games_9045", "Retro_Games_9046", "Retro_Games_9047", "Retro_Games_9048", "Retro_Games_9049",
+    "FemDommes_25000", "FemDommes_25001", "FemDommes_25002", "FemDommes_25003", "FemDommes_25004", "FemDommes_25005", "FemDommes_25006", "FemDommes_25007", "FemDommes_25008", "FemDommes_25009", "FemDommes_25010", "FemDommes_25011",
+    "FemDommes_25012", "FemDommes_25013", "FemDommes_25014", "FemDommes_25015", "FemDommes_25016", "FemDommes_25017", "FemDommes_25018", "FemDommes_25019", "FemDommes_25020", "FemDommes_25021", "FemDommes_25022", "FemDommes_25023",
+    "FemDommes_25024", "FemDommes_25025", "FemDommes_25026", "FemDommes_25027", "FemDommes_25028", "FemDommes_25029", "FemDommes_25030", "FemDommes_25031", "FemDommes_25032", "FemDommes_25033", "FemDommes_25034", "FemDommes_25035",
+    "FemDommes_25036", "FemDommes_25037", "FemDommes_25038", "FemDommes_25039", "FemDommes_25040", "FemDommes_25041", "FemDommes_25042", "FemDommes_25043", "FemDommes_25044", "FemDommes_25045", "FemDommes_25046", "FemDommes_25047",
+    "FemDommes_25048", "FemDommes_25049", "FemDommes_25050", "FemDommes_25051", "FemDommes_25052", "FemDommes_25053", "FemDommes_25054", "FemDommes_25055", "FemDommes_25056", "FemDommes_25057", "FemDommes_25058", "FemDommes_25059",
+    "FemDommes_25060", "FemDommes_25061", "FemDommes_25062", "FemDommes_25063", "FemDommes_25064", "FemDommes_25065", "FemDommes_25066", "FemDommes_25067", "FemDommes_25068", "FemDommes_25069", "FemDommes_25070", "FemDommes_25071",
+    "FemDommes_25072", "FemDommes_25073", "FemDommes_25074", "FemDommes_25075", "FemDommes_25076", "FemDommes_25077", "FemDommes_25078", "FemDommes_25079", "FemDommes_25080", "FemDommes_25081", "FemDommes_25082", "FemDommes_25083",
+    "FemDommes_25084", "FemDommes_25085", "FemDommes_25086", "FemDommes_25087", "FemDommes_25088", "FemDommes_25089", "FemDommes_25090", "FemDommes_25091", "FemDommes_25092", "FemDommes_25093", "FemDommes_25094", "FemDommes_25095",
+    "FemDommes_25096", "FemDommes_25097", "FemDommes_25098", "FemDommes_25099", "FemDommes_25100", "FemDommes_25101", "FemDommes_25102", "FemDommes_25103", "FemDommes_25104", "FemDommes_25105", "FemDommes_25106", "FemDommes_25107",
+    "FemDommes_25108", "FemDommes_25109", "FemDommes_25110", "FemDommes_25111", "FemDommes_25112", "FemDommes_25113", "FemDommes_25114", "FemDommes_25115", "FemDommes_25116", "FemDommes_25117", "FemDommes_25118", "FemDommes_25119",
+    "FemDommes_25120", "FemDommes_25121", "FemDommes_25122", "FemDommes_25123", "FemDommes_25124", "FemDommes_25125", "FemDommes_25126", "FemDommes_25127", "FemDommes_25128", "FemDommes_25129", "FemDommes_25130", "FemDommes_25131",
+    "FemDommes_25132", "FemDommes_25133", "FemDommes_25134", "FemDommes_25135", "FemDommes_25136", "FemDommes_25137", "FemDommes_25138", "FemDommes_25139", "FemDommes_25140", "FemDommes_25141", "FemDommes_25142", "FemDommes_25143",
+    "FemDommes_25144", "FemDommes_25145", "FemDommes_25146", "FemDommes_25147", "FemDommes_25148", "FemDommes_25149", "FemDommes_25150", "FemDommes_25151", "FemDommes_25152", "FemDommes_25153", "FemDommes_25154", "FemDommes_25155",
+    "FemDommes_25156", "FemDommes_25157", "FemDommes_25158", "FemDommes_25159"
 ].sort();
 
 /** Crests */

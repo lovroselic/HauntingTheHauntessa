@@ -96,33 +96,33 @@ const DEBUG = {
             DONE "SCROLL_Explode" --> DemolitionBlonde(86)
             DONE "SCROLL_Explode" --> DemolitionRed(86)
             DONE "SCROLL_Explode" --> DemolitionBlack(97)
-        "Banknote20", 
-        "Banknote50", 
+            DONE "Banknote20", --> (86)
+            DONE "Banknote50", ---> (93)
             DONE "Banknote200" ---> HellsHeels(100)
             DONE "Banknote20",  ---> MidnightDomme (94)
             DONE "Banknote10",  ---> DuneDeserta (94)
             DONE "Banknote100" ---> (101)
             DONE "Banknote200", ---> (101)
-        "Banknote50", 
+            "DONE Banknote50", ---> (96)
             DONE "Banknote100" ---> (101)
             DONE "Kiss", ---> LeekMee (98)
             DONE "Kiss", ---> Sheera(93)
             "DONE Kiss" --->BraidRunner (96)
-        "Ankh",
+            DONE "Ankh", --> (97)
             DONE "Pentagram", --->ZaraGraft(100)
-        "Cross"
-        "Lantern"
-        "Lantern"
-        "GlassOfBeer"
-        "GlassOfBeer"
-        "Revolver", 
-        "Revolver"
-        "RedPump", 
-        "RedPump"
-        "BlackPump", 
-        "BlackPump"
-        "Dagger", 
-        "Dagger"
+            DONE "Cross" ---> (99)
+            DONE "Lantern" ---> (98)
+            DONE "Lantern" ---> (101)
+            DONE "GlassOfBeer" ---> (86)
+            DONE "GlassOfBeer" --> (93)
+            DONE "Revolver", --> (94)
+            DONE "Revolver" --> (96)
+            DONE "RedPump",  --> (94)
+            DONE "RedPump" ---> (95)
+            DONE "BlackPump", ---> (95)
+            DONE "BlackPump" --> (98)
+            DONE "Dagger",  --> (96)
+            DONE "Dagger" --> (98)
 
         ------------------------------------
             DONE "OrangeBoots", ---> RedCemeteria (87)
@@ -186,8 +186,8 @@ const DEBUG = {
             DONE BootShina--->(92)
             DONE GoldCoin ---> (92)
             DONE GoldCoin ---> (85)
-        -GoldCoin
-        -GoldCoin
+            DONE GoldCoin --> (99)
+            DONE GoldCoin --> (101)
 
         KEy yet unused:
 
@@ -398,10 +398,11 @@ const INI = {
     MANA_DISCOUNT_FACTOR: 0.7,
     WINDOW_SCALE: 0.90,
     HELP_PRICE: 10,
+    BURNING_TIME: 1500,
 };
 
 const PRG = {
-    VERSION: "0.32.2",
+    VERSION: "0.33.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -506,6 +507,10 @@ const PRG = {
         TITLE.startTitle();
     }
 };
+
+/**
+ * *******************************************************************************************
+ */
 
 class Key {
     constructor(color, spriteClass) {
@@ -824,6 +829,10 @@ class Scroll {
     }
 }
 
+/**
+ * *******************************************************************************************
+ */
+
 const HERO = {
     construct() {
         this.player = null;
@@ -878,6 +887,7 @@ const HERO = {
         HERO.flightOff();
         HERO.featherFallOff();
         HERO.manaDiscountOff();
+        HERO.burnOff();
     },
     manaDiscountOff() {
         HERO.manaDiscount = 1.0;
@@ -1218,7 +1228,53 @@ const HERO = {
         HERO[which] = HERO[`reference_${which}`];
         TITLE.skills();
     },
+    burn(damage) {
+        if (HERO.burning) return;
+        HERO.burning = true;
+        HERO.applyDamage(damage);
+        const _T = new CountDownMS("BurnTimer", INI.BOOST_TIME, HERO.burnOff);
+        const texts = [
+            "My ass is on fire.",
+            "Burning my ass might not be such a great idea.",
+            "I feel hot. Too hot.",
+            "Note to self, fire is hot.",
+            "I am being BBQ'd royalty.",
+            "Hot tip, leave the fire.",
+            "This pit is not a throne.",
+            "I did not order extra spicy.",
+            "I am a candle now.",
+            "Armor vs barbecue, barbecue wins.",
+            "Health doing a melt speedrun.",
+            "Ow ow ow, science confirms.",
+            "I smell smoke, it is me.",
+            "Fire walk, zero achievements.",
+            "My boots are simmering.",
+            "Bacon noises, suspiciously mine.",
+            "Fire resistance was a rumor.",
+            "This hurts in real time.",
+            "Healer, bring a bucket.",
+            "I am preheating.",
+            "Toast status, confirmed.",
+            "Heat seeking princess acquired.",
+            "Lava cosplay complete.",
+            "I am not a phoenix.",
+            "Sizzle sizzle, subtle hint.",
+            "Pixels are starting to crisp.",
+            "I came for treasure, stayed for third degree.",
+            "The firepit does not accept hugs.",
+            "I am learning why ovens have doors.",
+            "Yup, HP is flambe."
+        ];
+        this.speak(texts.chooseRandom());
+    },
+    burnOff() {
+        HERO.burning = false;
+    },
 };
+
+/**
+ * *******************************************************************************************
+ */
 
 const GAME = {
     gold: 0,                                // WebGl relies on this as default gold source, keep! 

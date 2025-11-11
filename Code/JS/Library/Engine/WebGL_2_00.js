@@ -2287,8 +2287,6 @@ class $3D_player {
             distance = entity.moveState.referencePos.EuclidianDistance(this.pos);
         }
         let touchDistance = entity.r + this.r;
-        //console.error("E", entity.moveState.pos, "H", this.pos, "r", entity.r + this.r, entity.r, this.r, "distance", distance);
-        //console.error("E", entity.name, entity.id, entity.moveState.referencePos, "H", this.pos, "r", entity.r + this.r, entity.r, this.r, "distance", distance, "HIT", distance < touchDistance);
         return distance < touchDistance;
     }
     respond(lapsedTime) {
@@ -3875,7 +3873,6 @@ class ParticleEmmiter {
 
 class FireEmmiter extends ParticleEmmiter {
     constructor(position, type, texture = TEXTURE[type.texture_name], number = WebGL.INI.FIRE_N_PARTICLES) {
-        console.warn("texture", texture);
         super(position, texture);
         this.program_type = "fire";
         this.duration = WebGL.INI.FIRE_LIFE_MAX_MS;
@@ -3903,6 +3900,9 @@ class FireEmmiter extends ParticleEmmiter {
         }
 
         this.build(number, UNIFORM.fire_locations, UNIFORM.fire_directions);
+
+        this.r =  this.spawnRadius;
+        this.burnDamage = 1;                            //default damage
     }
 }
 

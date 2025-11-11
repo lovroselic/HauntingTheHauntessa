@@ -31,7 +31,6 @@ const SPEECH = {
       Promise.all([SPEECH.getVoices()]).then(function () {
         SPEECH.ready = true;
         console.log(`%cSPEECH ${SPEECH.VERSION}: ready`, SPEECH.CSS);
-        //SPEECH.voice = SPEECH.voices[1];
 
         let def = new VoiceSetting(rate, pitch, volume);
         SPEECH.settings = def;
@@ -66,6 +65,10 @@ const SPEECH = {
     if (SPEECH.VERBOSE) console.table(VOICE);
   },
   use(voiceName) {
+    if (speechSynthesis.speaking || speechSynthesis.pending) {
+      if (SPEECH.VERBOSE) console.log(`%cSPEECH in progress. ignoring use ${voiceName}`, "color: #A00");
+      return;
+    }
     const voice = VOICE[voiceName];
     SPEECH.voice = SPEECH.voices[voice.voice];
     if (SPEECH.VERBOSE) console.info(`%cSPEECH voice used: ${voiceName} --> ${JSON.stringify(SPEECH.voice)}, voice: ${JSON.stringify(voice)}`, SPEECH.CSS);
@@ -83,8 +86,8 @@ const SPEECH = {
     }
 
     if (speechSynthesis.speaking || speechSynthesis.pending) {
-      if (SPEECH.VERBOSE) console.log(`%cSPEECH interrupted. Starting new text.`, "color: #A00");
-      this.silence();
+      if (SPEECH.VERBOSE) console.log(`%cSPEECH in progress. Ignoring new text: ${txt}.`, "color: #A00");
+      return;
     }
 
     let msg = new SpeechSynthesisUtterance();
@@ -103,8 +106,8 @@ const SPEECH = {
     }
 
     if (speechSynthesis.speaking || speechSynthesis.pending) {
-      if (SPEECH.VERBOSE) console.log(`%cSPEECH interrupted. Starting new text.`, "color: #A00");
-      this.silence();
+      if (SPEECH.VERBOSE) console.log(`%cSPEECH in progress. Ignoring new text: ${txt}.`, "color: #A00");
+      return;
     }
 
     const articulations = ".!?<>+-";
@@ -248,7 +251,7 @@ const VOICE = {
     setting: new VoiceSetting(0.8, 1.7, 1.0)
   },
   'FemaleHigh2': {
-    source: ["Zira","Hazel"],
+    source: ["Zira", "Hazel"],
     voice: 0,
     setting: new VoiceSetting(0.4, 1.2, 1.0)
   },

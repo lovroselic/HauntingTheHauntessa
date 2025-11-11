@@ -919,7 +919,6 @@ class Missile3D extends IAM {
     missile_missile_collision(obj, GA) {
         const mIA = this.map[this.IA];
         const grid = Vector3.to_Grid3D(obj.pos);
-        //console.warn("obj.pos", obj.pos);
         const possibleMissiles = mIA.unroll(grid);
         possibleMissiles.remove(obj.id);
         if (possibleMissiles.length > 0) {
@@ -946,13 +945,10 @@ class Missile3D extends IAM {
 
         if (!IA.empty(grid)) {
             const possibleEnemies = IA.unroll(grid);
-            //console.warn("possibleEnemies", possibleEnemies, "grid", grid);
             for (let P of possibleEnemies) {
                 const monster = this.entity_IAM.POOL[P - 1];
                 if (monster === null) return true;
                 const monsterHit = GRID.circleCollision3D(monster.moveState.referencePos, obj.pos, monster.r + obj.r);
-                //console.error("missile_entity_collision", monster.name, monster.id, "y", monster.moveState.referencePos.y, "obj", obj.pos.y, "monster.h", monster.heigth, "monster.fly", monster.fly, "monster.midHeight", monster.midHeight, "monster.r", monster.r);
-                //console.error("....missile_entity_collision", monster.moveState.referencePos, "obj", obj.pos);
                 if (monsterHit) {
                     monster.hitByMissile(obj, GA);
                     return true;
@@ -992,9 +988,18 @@ class FireEmmission3D extends IAM {
         this.reIndexRequired = false; //lives forever!
     }
     manage(date) {
+        const hPos = Vector3.to_FP_Grid(this.hero.player.pos);
+        let burn = false;
+        let damage = 0;
         for (const item of this.POOL) {
             item.update(date);
+            if (!burn) {
+                const iPos = Vector3.to_FP_Grid(item.pos);
+                burn = GRID.circleCollision2D(hPos, iPos, item.r + this.hero.player.r);
+                if (burn) damage = item.burnDamage;
+            }
         }
+        if (burn) return this.hero.burn(damage);
     }
 }
 
