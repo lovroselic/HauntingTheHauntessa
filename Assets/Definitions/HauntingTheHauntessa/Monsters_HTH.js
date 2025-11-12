@@ -3320,6 +3320,18 @@ const INTERACTION_OBJECT = {
         inventorySprite: "ManaGoat",
         text: "Let's sacrifice it for magic."
     },
+    Owl: {
+        name: "Owl",
+        category: "action_item",
+        which: "mana",
+        element: "OWL",
+        scale: 1.0 / 2 ** 2,
+        glueToFloor: true,
+        texture: "Owl_color",
+        material: MATERIAL.standard,
+        inventorySprite: "Owl",
+        text: "Absorbing owl's wisdom.",
+    },
 
 
     //health
@@ -3867,6 +3879,23 @@ const MOVABLE_INTERACTION_OBJECT = {
         inventorySprite: "RedButterfly",
         text: "The flutter of its tiny wings feels magical. Let's taste it.",
     },
+    GreenManaDragon: {
+        name: "GreenManaDragon",
+        category: "action_item",
+        which: "mana",
+        model: "Dragon",
+        scale: 1.2 / 2 ** 5,
+        fly: 0.5,
+        midHeight: 0.0,
+        rotateToNorth: Math.PI,
+        moveSpeed: 1.70,
+        texture: "GreenManaDragon",
+        material: MATERIAL.standard,
+        behaviourArguments: [Infinity, ["wanderer"], -1],
+        inventorySprite: "GreenManaDragon",
+        text: "The power of the dragon for my fireballs.",
+    },
+
 };
 
 const INTERACTION_ITEM = {

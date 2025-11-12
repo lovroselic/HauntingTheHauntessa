@@ -378,6 +378,8 @@ const INI = {
         RedSpider: 100,
         RedButterfly: 150,
         ManaGoat: 200,
+        Owl: 300,
+        GreenManaDragon: 500,
     },
     HEALTH_INC: 8,
     MANA_INC: 7,
@@ -402,7 +404,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.33.0",
+    VERSION: "0.33.1",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
