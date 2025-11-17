@@ -1177,7 +1177,8 @@ class FP_Grid3D extends MasterGridClass3D {
         let dy = grid.y - this.y;
         let dz = grid.z - this.z;
         let D = this.EuclidianDistance(grid);
-        return new FP_Vector3D(dx / D, dy / D, dz / D);
+        console.info(D, dx, dy, dz);
+        return new FP_Vector3D(dx / D || 0, dy / D || 0, dz / D || 0);
     }
     add(vector, factor = 1.0) {
         return new FP_Grid3D(this.x + vector.x * factor, this.y + vector.y * factor, this.z + vector.z * factor);

@@ -3901,7 +3901,7 @@ class FireEmmiter extends ParticleEmmiter {
 
         this.build(number, UNIFORM.fire_locations, UNIFORM.fire_directions);
 
-        this.r =  this.spawnRadius;
+        this.r = this.spawnRadius;
         this.burnDamage = 1;                            //default damage
     }
 }
@@ -4216,6 +4216,10 @@ class $3D_Entity {
     }
     setDistanceFromNodeMap(nodemap, prop = "distance") {
         let gridPosition = Grid3D.toClass(this.moveState.grid);
+        /*console.warn("this", this);
+        console.warn("gridPosition,", gridPosition,);
+        console.warn("this.moveState.grid,", this.moveState.grid,);
+        console.warn("this.moveState", this.moveState);*/
 
         if (!nodemap[gridPosition.x][gridPosition.y][gridPosition.z]) {
             if (this.fly) {

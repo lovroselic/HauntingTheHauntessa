@@ -205,7 +205,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 86;
+        GAME.level = 95;
         GAME.gold = 50035;
         //GAME.gold = 5;
         GAME.lives = 3;
@@ -404,7 +404,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.33.1",
+    VERSION: "0.33.2",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -1105,6 +1105,7 @@ const HERO = {
     },
     restore() {
         this.health = this.maxHealth;
+        this.mana = this.maxMana;
         TITLE.health();
     },
     incStatus(type, level = 1) {
@@ -1622,12 +1623,6 @@ const GAME = {
                 delete MAP[GAME.level].map.keys[interaction.color];
                 if (interaction.text) TURN.subtitle(interaction.text);
                 break;
-            case 'potion':
-                HERO.inventory.potion[interaction.color]++;
-                display(interaction.inventorySprite);
-                TITLE.potion();
-                AUDIO.Potion.play();
-                break;
             case 'action_item':
                 if (DEBUG.VERBOSE) console.warn("action_item", interaction.which, interaction.inventorySprite);
                 let aItem = new ActionItem(interaction.which, interaction.inventorySprite);
@@ -1791,6 +1786,7 @@ const GAME = {
         const Shrines = {};
         const Entities = {};
         const Items = [];
+        const Movables = [];
 
         //interactive
         const int_decals = INTERACTIVE_DECAL3D.POOL.filter(el => el.interactive);
@@ -1809,7 +1805,6 @@ const GAME = {
         if (remains.length > 0) {
             for (const item of remains) {
                 if (item.category === "gold") continue;
-                console.log(item.id, item.name, item.grid, item.instanceIdentification, "category", item.category);
                 if (item.category === "chest") {
                     const identification = item.instanceIdentification.split(".");
                     if (identification[0] === "GOLD_ITEM_TYPE") continue;
@@ -1819,6 +1814,15 @@ const GAME = {
                 }
             }
         }
+
+        //movable
+        const movables = DYNAMIC_ITEM3D.POOL.filter(el => el);
+        if (movables.length > 0) {
+            for (const mov of movables) {
+                Movables.push(mov.name);
+            }
+        }
+
 
 
         // creating html wedge
@@ -1841,6 +1845,11 @@ const GAME = {
         if (Items.length) {
             WEDGE += "<h2>Items:</h2>";
             WEDGE += `<p>${Items.join(", ")}.</p>`;
+        }
+
+        if (Movables.length) {
+            WEDGE += "<h2>Little critters running around:</h2>";
+            WEDGE += `<p>${Movables.join(", ")}.</p>`;
         }
 
 

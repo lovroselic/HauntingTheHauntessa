@@ -63,19 +63,23 @@ const AI = {
     wanderer(enemy) {
         let gridValue = this.getGridValue(enemy);
         gridValue = gridValue.sum();
-        const directions = enemy.parent.map.GA.getDirectionsIfNot(this.getPosition(enemy), gridValue, enemy.fly, enemy.moveState.dir.mirror());
+        const enemyGrid = this.getPosition(enemy);
+        const directions = enemy.parent.map.GA.getDirectionsIfNot(enemyGrid, gridValue, enemy.fly, enemy.moveState.dir.mirror());
         if (AI.VERBOSE) console.info(enemy.name, enemy.id, "WANDERER", enemy.moveState.pos, "gridValue", gridValue, "dirs", directions, "this.getPosition(enemy)", this.getPosition(enemy));
         if (directions.length) {
             const randomDir = directions.chooseRandom();
             if (randomDir.constructor.name !== "Vector3D") throw "WTF!";  //debug, remove later //////////////////////////////////////////////////////////
             return [randomDir];
         } else {
-            return [enemy.moveState.dir.mirror()];
+            const fallBackDir = enemy.moveState.dir.mirror();
+            const newGrid = enemyGrid.add(fallBackDir);
+            if (enemy.parent.map.GA.check(newGrid, gridValue)) return this.immobile(enemy);
+            return [fallBackDir];
         }
     },
     immobile(enemy) {
         if (this.VERBOSE) console.warn(`${enemy.name}-${enemy.id} IMMOBILE`);
-        if (AI.immobileWander) return this.wanderer(enemy);
+        //if (AI.immobileWander) return this.wanderer(enemy);
         return [NOWAY3];
     },
     hunt(enemy, exactPosition) {

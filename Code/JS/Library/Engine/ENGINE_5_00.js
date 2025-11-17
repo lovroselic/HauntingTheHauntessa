@@ -3623,12 +3623,13 @@ class $3D_MoveState {
     }
     next(dir) {
         if (!dir) throw new Error(`Direction ${dir} not defined error. Stopping execution!`);
+        if (GRID.same3D(dir, NOWAY3)) return;
         this.startPos = this.endPos;
         this.dir = dir;                                         //3D dir
         this.endPos = this.startPos.add(this.dir);
         this.realDir = Vector3.to_FP_Grid3D(this.pos).direction(this.endPos);
         this.moving = true;
-        //console.info("\n$$$$$ startPos set for", this.parent.name, this.parent.id, "to", this.startPos, "endpos", this.endPos );
+        //console.info("\n$$$$$ startPos set for", this.parent.name, this.parent.id, "to", this.startPos, "endpos", this.endPos);
     }
     update() {
         this.setRotation();

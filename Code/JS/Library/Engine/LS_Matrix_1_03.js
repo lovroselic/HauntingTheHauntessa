@@ -128,6 +128,7 @@ class Vector3 {
         let x = vector.x - this.x;
         let y = vector.y - this.y;
         let z = vector.z - this.z;
+        if ([x * x, y * y, z * z].sum() < 1e-6) return new Vector3(0, 0, 0);
         let out = glMatrix.vec3.create();
         glMatrix.vec3.normalize(out, [x, y, z]);
         return Vector3.from_array(out);
