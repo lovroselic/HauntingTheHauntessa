@@ -323,32 +323,7 @@ const MONSTER_TYPE = {
  
     
    
-    Rex: {
-        name: "Rex",
-        model: "Rex",
-        scale: 1.25 / 2 ** 9,
-        rotateToNorth: Math.PI,
-        midHeight: 0.5,
-        deathType: "BloodExplosion",
-        inventory: GOLD_ITEM_TYPE.Coins,
-        gold: 100,
-        mana: 25,
-        health: 150,
-        attack: 150,
-        magic: 25,
-        defense: 0,
-        caster: true,
-        directMagicDamage: true,
-        attackSound: "MonsterAttack1",
-        hurtSound: "MonsterHurt",
-        behaviourArguments: [20, ["wanderer"], 15, ["shoot"]],
-        moveSpeed: 1.0,
-        shootDistance: 15,
-        stalkDistance: 8,
-        material: MATERIAL.standard,
-        missile: BouncingMissile,
-        missileType: COMMON_ITEM_TYPE.Bounceball,
-    },
+    
     GreenRex: {
         name: "GreenRex",
         texture: "GreenRex",
@@ -376,32 +351,7 @@ const MONSTER_TYPE = {
         missile: BouncingMissile,
         missileType: COMMON_ITEM_TYPE.Bounceball,
     },
-    Drax: {
-        name: "Drax",
-        model: "Drax",
-        scale: 1.25 / 2 ** 1,
-        rotateToNorth: Math.PI,
-        midHeight: 0.5,
-        deathType: "BloodExplosion",
-        inventory: GOLD_ITEM_TYPE.Coins,
-        gold: 150,
-        mana: 25,
-        health: 200,
-        attack: 200,
-        magic: 30,
-        defense: 0,
-        caster: true,
-        directMagicDamage: true,
-        attackSound: "HumanAttack1",
-        hurtSound: "Ow",
-        behaviourArguments: [20, ["wanderer"], 16, ["shoot"]],
-        moveSpeed: 1.1,
-        shootDistance: 16,
-        stalkDistance: 10,
-        material: MATERIAL.standard,
-        missile: BouncingMissile,
-        missileType: COMMON_ITEM_TYPE.Bounceball,
-    },
+    
 
     
 

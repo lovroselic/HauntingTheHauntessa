@@ -1087,6 +1087,7 @@ LoadModels = [
     "Hunteress.gltf", "Dragon2.gltf", "BigBat.gltf", "WolfSpider.gltf", "Viking.gltf", "MissGhostFace.gltf",
     "Wolf.gltf", "ButterFly.gltf", "Cat.gltf", "Goblin.gltf", "SkeleDwarf.gltf",
     "Astro.gltf", "Basilisk.gltf", "Raptor.gltf", "DinoAir.gltf", "Hulk.gltf", "GhostFace.gltf",
+    "Rex.gltf", "Drax.gltf"
 ];
 
 LoadSprites = [
@@ -1355,6 +1356,7 @@ LoadSprites = [
     { srcName: "EntityPictures/LeekMee.webp", name: "LeekMee" },
     { srcName: "EntityPictures/Sheera.webp", name: "Sheera" },
     { srcName: "EntityPictures/BraidRunner.webp", name: "BraidRunner" },
+    { srcName: "EntityPictures/HealingHeels2.webp", name: "HealingHeels2" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.webp", name: "BabyGreenSpider" },
