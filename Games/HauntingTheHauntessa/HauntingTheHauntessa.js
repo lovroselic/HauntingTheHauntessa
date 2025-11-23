@@ -205,7 +205,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 100;
+        GAME.level = 97;
         GAME.gold = 50035;
         //GAME.gold = 5;
         GAME.lives = 3;
@@ -254,7 +254,8 @@ const DEBUG = {
         let invItems = [
             "GoldCoin",
             "SilverKey",
-            "Dagger", "Dagger"
+            "Dagger", "Dagger",
+            "Banknote200", "Banknote50", "Banknote100",
 
         ];
 
@@ -380,6 +381,8 @@ const INI = {
         ManaGoat: 200,
         Owl: 300,
         GreenManaDragon: 500,
+        BluePrincesssMana: 750,
+        GoldPrincessMana: 999,
     },
     HEALTH_INC: 8,
     MANA_INC: 7,
@@ -404,7 +407,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.33.4",
+    VERSION: "0.33.5",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -1616,7 +1619,6 @@ const GAME = {
             case 'key':
                 let key = new Key(interaction.color, interaction.inventorySprite);
                 HERO.inventory.key.push(key);
-                TITLE.keys();
                 AUDIO.Keys.play();
                 display(interaction.inventorySprite);
                 delete MAP[GAME.level].map.keys[interaction.color];
@@ -1668,7 +1670,6 @@ const GAME = {
                 HERO.raiseStat(interaction.which, interaction.level);
                 display(interaction.inventorySprite);
                 AUDIO.LevelUp.play();
-                TITLE.keys();
                 break;
             case "life":
                 if (DEBUG.VERBOSE) console.info("LIFE", interaction);
@@ -1681,7 +1682,6 @@ const GAME = {
                 HERO.incStatus(interaction.which, interaction.level);
                 display(interaction.inventorySprite);
                 AUDIO.PowerUp.play();
-                TITLE.keys();
                 break;
             case 'chest':
                 AUDIO.OpenChest.play();
@@ -1695,12 +1695,10 @@ const GAME = {
                 if (DEBUG.VERBOSE) console.warn("interaction_item", interaction);
                 const item = new NamedInventoryItem(interaction.name, interaction.inventorySprite);
                 HERO.inventory.item.push(item);
-                TITLE.keys();
                 display(interaction.inventorySprite);
                 break;
             case "entity_interaction":
                 if (DEBUG.VERBOSE) console.log("entity_interaction", interaction);
-                TITLE.keys()
                 break;
             case "munition":
                 HERO.pickOrb(interaction.dropped);
@@ -1710,11 +1708,11 @@ const GAME = {
                 GAME.completed = true;
                 HERO.player.setPos(Vector3.from_Grid(new FP_Grid(10.5, 18.0), HERO.height));
                 HERO.player.setDir(Vector3.from_2D_dir(DOWN));
-                TITLE.keys()
                 break;
             default:
                 console.error("interaction category error", interaction);
         }
+        TITLE.keys();
 
         function display(inventorySprite) {
             ENGINE.clearLayer("info");

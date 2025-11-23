@@ -1968,7 +1968,6 @@ class $3D_player {
         this.depth = Math.floor(this.getFloorPosition());
     }
     initTextureMap(texture = null, normal = "normal") {
-        console.warn("txture", texture, "default", this.model.textures[0]);
         if (!this.model) return;
         this.textureMap = {};
         if (texture){

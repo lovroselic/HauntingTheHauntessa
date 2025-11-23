@@ -68,18 +68,18 @@ const AI = {
         if (AI.VERBOSE) console.info(enemy.name, enemy.id, "WANDERER", enemy.moveState.pos, "gridValue", gridValue, "dirs", directions, "this.getPosition(enemy)", this.getPosition(enemy));
         if (directions.length) {
             const randomDir = directions.chooseRandom();
-            if (randomDir.constructor.name !== "Vector3D") throw "WTF!";  //debug, remove later //////////////////////////////////////////////////////////
+            if (randomDir.constructor.name !== "Vector3D") throw "WTF!";  
             return [randomDir];
         } else {
             const fallBackDir = enemy.moveState.dir.mirror();
             const newGrid = enemyGrid.add(fallBackDir);
-            if (enemy.parent.map.GA.check(newGrid, gridValue)) return this.immobile(enemy);
+            if (enemy.parent.map.GA.check(newGrid, gridValue)) return this.immobile(enemy, true);
             return [fallBackDir];
         }
     },
-    immobile(enemy) {
+    immobile(enemy, wasWandering = false) {
         if (this.VERBOSE) console.warn(`${enemy.name}-${enemy.id} IMMOBILE`);
-        //if (AI.immobileWander) return this.wanderer(enemy);
+        if (!wasWandering && AI.immobileWander) return this.wanderer(enemy);  // preventing endless recursion
         return [NOWAY3];
     },
     hunt(enemy, exactPosition) {

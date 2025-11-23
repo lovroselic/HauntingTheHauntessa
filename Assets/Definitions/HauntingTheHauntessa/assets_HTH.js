@@ -799,7 +799,8 @@ LoadTextures = [
 
     /** princess */
     { srcName: "ObjectTextures/BluePrincess.webp", name: "BluePrincess" },
-    
+    { srcName: "ObjectTextures/GoldPrincess.webp", name: "GoldPrincess" },
+
     /** decals that are textures */
 
     /** textures that are walls */
@@ -955,6 +956,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/Goat_baseColor.webp", name: "Goat_baseColor" },
     { srcName: "ObjectTextures/Owl_color.webp", name: "Owl_color" },
     { srcName: "ObjectTextures/dragon_greenColor.webp", name: "GreenManaDragon" },
+
 
     /** other object textures */
     { srcName: "ObjectTextures/Apple_BaseColor.webp", name: "Apple_BaseColor" },
@@ -1548,6 +1550,8 @@ LoadSprites = [
     { srcName: "Items/ManaGoat.webp", name: "ManaGoat" },
     { srcName: "Items/Owl.webp", name: "Owl" },
     { srcName: "Items/GreenManaDragon.webp", name: "GreenManaDragon" },
+    { srcName: "Items/BluePrincesssMana.webp", name: "BluePrincesssMana" },
+    { srcName: "Items/GoldPrincessMana.webp", name: "GoldPrincessMana" },
 
     // items
     { srcName: "Items/Apple.webp", name: "Apple" },
