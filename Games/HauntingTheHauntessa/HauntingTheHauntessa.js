@@ -205,7 +205,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 98;
+        GAME.level = 100;
         GAME.gold = 50035;
         //GAME.gold = 5;
         GAME.lives = 3;
@@ -404,7 +404,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.33.3",
+    VERSION: "0.33.4",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -880,7 +880,6 @@ const HERO = {
         HERO.radar = true;
     },
     reset() {
-        console.log("reset", HERO.reference_defense, HERO.reference_attack, HERO.reference_magic);
         HERO.defense = HERO.reference_defense;
         HERO.attack = HERO.reference_attack;
         HERO.magic = HERO.reference_magic;

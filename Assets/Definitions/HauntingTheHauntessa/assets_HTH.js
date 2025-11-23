@@ -797,6 +797,9 @@ LoadTextures = [
     { srcName: "Wall/CreepyForest_1171.webp", name: "CreepyForest_1171" },
     { srcName: "Wall/CreepyForest_1172.webp", name: "CreepyForest_1172" },
 
+    /** princess */
+    { srcName: "ObjectTextures/BluePrincess.webp", name: "BluePrincess" },
+    
     /** decals that are textures */
 
     /** textures that are walls */
@@ -1357,6 +1360,7 @@ LoadSprites = [
     { srcName: "EntityPictures/Sheera.webp", name: "Sheera" },
     { srcName: "EntityPictures/BraidRunner.webp", name: "BraidRunner" },
     { srcName: "EntityPictures/HealingHeels2.webp", name: "HealingHeels2" },
+    { srcName: "EntityPictures/JustPretty.webp", name: "JustPretty" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.webp", name: "BabyGreenSpider" },

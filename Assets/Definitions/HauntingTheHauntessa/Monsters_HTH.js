@@ -764,6 +764,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    JustPretty: {
+        name: "JustPretty",
+        sprite: "JustPretty",
+        category: 'crest',
+        voice: "FemaleLow6",
+        text: "Did you notice that chasing the dragon got completely new meaning in this game?",
+        interactionCategory: "oracle",
+    },
     HealingHeels2: {
         name: "HealingHeels2",
         sprite: "HealingHeels2",
@@ -3305,6 +3313,7 @@ const HERO_TYPE = {
     ThePrincess: {
         name: "ThePrincess",
         model: "Princess",
+        texture: "BluePrincess",
         scale: 1.82 / 2 ** 2,
         rotateToNorth: Math.PI,
         material: MATERIAL.standard,
@@ -6986,6 +6995,21 @@ const FIRE_TYPES = {
         damping: 0.990,
         warp: 0.042,
         gate: 0.8,
+        texture_name: "FireTexture2",
+    },
+
+    Fireplace: {
+        lightColor: LIGHT_COLORS.fireSubtle,
+        scale: 0.62,
+        gravity: new Float32Array([0, 0.65, 0]),
+        velocity: 0.00145,
+        spawnRadius: 0.25,
+        turbulence: 0.0105,
+        damping: 0.96,
+        noiseScale: new Float32Array([1.1, 2.0, 3.2]),
+        scrolling:  new Float32Array([0.10, 0.20, 0.32]),
+        warp: 0.045,
+        gate: 0.92,
         texture_name: "FireTexture2",
     },
 };

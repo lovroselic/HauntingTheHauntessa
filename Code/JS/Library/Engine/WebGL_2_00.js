@@ -1789,6 +1789,7 @@ class $3D_player {
         this.setSpeed(4.0);
         this.parent = parent;
         this.type = type;
+        this.texture = null;
         if (this.type) {
             for (const prop in type) {
                 this[prop] = type[prop];
@@ -1802,10 +1803,16 @@ class $3D_player {
         this.setMode("idle");
         this.actionModes = ["attacking"];
         this.actionCallback = null;
-        this.initTextureMap();
+        this.initTextureMap(TEXTURE[this.texture]);
         this.velocity_Z = 0.0;
         this.concludeJump();
         this.lookingAround = false;
+    }
+      changeTexture(texture) {
+        const gl = WebGL.CTX;
+        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+        this.texture = texture;
+        this.texture = WebGL.createTexture(this.texture);
     }
     concludeJump() {
         this.onGround = true;
@@ -1960,10 +1967,16 @@ class $3D_player {
     setDepth() {
         this.depth = Math.floor(this.getFloorPosition());
     }
-    initTextureMap(normal = "normal") {
+    initTextureMap(texture = null, normal = "normal") {
+        console.warn("txture", texture, "default", this.model.textures[0]);
         if (!this.model) return;
         this.textureMap = {};
-        this.textureMap[normal] = WebGL.createTexture(this.model.textures[0]);
+        if (texture){
+            this.textureMap[normal] = WebGL.createTexture(texture);
+        }
+        else {
+            this.textureMap[normal] = WebGL.createTexture(this.model.textures[0]);
+        }
         this.texture = this.textureMap[normal];
     }
     addToTextureMap(label, image) {
