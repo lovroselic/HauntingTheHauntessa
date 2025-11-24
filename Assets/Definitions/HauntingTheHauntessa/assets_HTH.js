@@ -1363,6 +1363,7 @@ LoadSprites = [
     { srcName: "EntityPictures/BraidRunner.webp", name: "BraidRunner" },
     { srcName: "EntityPictures/HealingHeels2.webp", name: "HealingHeels2" },
     { srcName: "EntityPictures/JustPretty.webp", name: "JustPretty" },
+    { srcName: "EntityPictures/GhostFaceContinue.webp", name: "GhostFaceContinue" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.webp", name: "BabyGreenSpider" },

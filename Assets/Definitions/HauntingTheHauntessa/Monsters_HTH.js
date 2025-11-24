@@ -764,6 +764,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    GhostFaceContinue: {
+        name: "GhostFaceContinue",
+        sprite: "GhostFaceContinue",
+        category: 'crest',
+        voice: "FemaleLow5",
+        text: "You found the secret entrance to Hauntessa's castle. Now keep going. And try to survive.",
+        interactionCategory: "oracle",
+    },
     JustPretty: {
         name: "JustPretty",
         sprite: "JustPretty",
