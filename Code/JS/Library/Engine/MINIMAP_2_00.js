@@ -74,8 +74,6 @@ const MINIMAP = {
         this.DATA.drawX = this.DATA.x + ((W - this.DATA.w) / 2) | 0;
         this.DATA.drawY = this.DATA.y + ((H - this.DATA.h) / 2) | 0;
         this.DATA.surface = this.DATA.dungeon.width * this.DATA.dungeon.height;
-        //console.info("this.DATA.dungeon.width", this.DATA.dungeon.width, "this.DATA.dungeon.height", this.DATA.dungeon.height);
-        //console.info("calcSize", "widthRatio", widthRatio, "heightRatio", heightRatio, "this.DATA.PIX_SIZE", this.DATA.PIX_SIZE, "this.DATA.wh", this.DATA.w, this.DATA.h, "this.DATA.drawXY", this.DATA.drawX, this.DATA.drawY, "surf", this.DATA.surface);
     },
     draw(radar, player = null, viewport = false) {
         ENGINE.clearLayer(this.DATA.layer);
@@ -189,6 +187,7 @@ const MINIMAP = {
                 if (!IAM.POOL) continue;
                 for (const entity of IAM.POOL) {
                     if (!entity) continue;
+                    if (this.player.depth !== entity.depth) continue;
                     let position;
                     if (entity.moveState.grid) {
                         position = Grid.toClass(entity.moveState.grid)

@@ -1808,7 +1808,7 @@ class $3D_player {
         this.concludeJump();
         this.lookingAround = false;
     }
-      changeTexture(texture) {
+    changeTexture(texture) {
         const gl = WebGL.CTX;
         gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
         this.texture = texture;
@@ -1970,7 +1970,7 @@ class $3D_player {
     initTextureMap(texture = null, normal = "normal") {
         if (!this.model) return;
         this.textureMap = {};
-        if (texture){
+        if (texture) {
             this.textureMap[normal] = WebGL.createTexture(texture);
         }
         else {
@@ -3636,6 +3636,7 @@ class ParticleEmmiter {
         this.scrolling = new Float32Array([0, 0, 0]);;
         this.warp = null;
         this.gate = null;
+        this.depth = Math.floor(this.pos.y + 0.001);
     }
     update(date) {
         this.age = date - this.birth;
@@ -4194,6 +4195,10 @@ class $3D_Entity {
         if (!this.static) this.behaviour = new Behaviour(...this.behaviourArguments);
         this.guardPosition = null;
         this.actionModes = [];
+        this.setDepth();
+    }
+    setDepth() {
+        this.depth = Math.floor(0.1 + this.moveState.pos.y);
     }
     setView(lookAt) {
         this.moveState.setView(lookAt);
@@ -4228,26 +4233,11 @@ class $3D_Entity {
     }
     setDistanceFromNodeMap(nodemap, prop = "distance") {
         let gridPosition = Grid3D.toClass(this.moveState.grid);
-        /*console.warn("this", this);
-        console.warn("gridPosition,", gridPosition,);
-        console.warn("this.moveState.grid,", this.moveState.grid,);
-        console.warn("this.moveState", this.moveState);*/
 
         if (!nodemap[gridPosition.x][gridPosition.y][gridPosition.z]) {
-            if (this.fly) {
-                this.distance = null;
-                return;
-            }
-            /** this is major fuckup, can happen only if monster is moving through a wall */
-            if (ENGINE.verbose) {
-                console.info("...setDistanceFromNodeMap", this.name, this.id, "this.moveState.pos", this.moveState.pos, "gridPosition", gridPosition);
-                console.info(".......this", this);
-                console.info(".......nodemap", nodemap);
-                console.error(this.name, this.id, "has issue with gridPosition", gridPosition);
-                console.warn("details:", this);
-                console.info("MS", this.moveState);
-                console.info("HERO pos", HERO.player.pos);
-            }
+            this.distance = null;
+            if (this.fly) return;
+            return this.die("magic", 0);
         }
 
         let distance = nodemap[gridPosition.x][gridPosition.y][gridPosition.z].distance;

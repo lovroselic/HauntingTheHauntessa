@@ -196,16 +196,13 @@ const GRID = {
         return;
     },
     translatePosition3D(entity, lapsedTime) {
-        //console.warn("translatePosition3D", entity);
         const length = (lapsedTime / 1000) * entity.moveSpeed;
         const realDir = Vector3.from_3D_dir(entity.moveState.realDir); //3D to 3D , swap yz
         entity.moveState.pos = entity.moveState.pos.translate(realDir, length);
 
         const overallDistance = Vector3.to_FP_Grid3D(entity.moveState.pos).EuclidianDistance(entity.moveState.startPos);
-        //console.warn(`${entity.name} ${entity.id} overallDistance: ${overallDistance}`);
         if (overallDistance > 1.0) {
             entity.moveState.moving = false;
-            //console.info(`${entity.name} ${entity.id} lapsed time: ${lapsedTime} went too far.`);
         }
     },
     translatePosition(entity, lapsedTime) {
@@ -2159,8 +2156,7 @@ class GridArray3D extends Classes([ArrayBasedDataStructure3D, GA_Dimension_Agnos
                 break;
             case "HOLE": return null;
             case "PILLAR": return null;
-            default:
-                throw new Error(`grid type not supported ${gridValue}`);
+            default: return null;
 
         }
         return posGrid;

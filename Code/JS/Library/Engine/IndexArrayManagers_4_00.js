@@ -167,6 +167,11 @@ class IAM {
         if (this.POOL[id - 1]) return true;
         return false;
     }
+    drawVector2D() {
+        for (let obj of this.POOL) {
+            if (obj && obj.depth === this.hero.player.depth) obj.drawVector2D(this.map);
+        }
+    }
 }
 
 /** Profile IA Managers */
@@ -865,11 +870,6 @@ class Decal3D extends IAM {
         console.table(this.POOL, ['name', 'id', 'global_id', 'grid']);
         console.log("------------------------------------------");
     }
-    drawVector2D() {
-        for (let obj of this.POOL) {
-            if (obj) obj.drawVector2D(this.map);
-        }
-    }
 }
 
 class Missile3D extends IAM {
@@ -994,6 +994,7 @@ class FireEmmission3D extends IAM {
         for (const item of this.POOL) {
             item.update(date);
             if (!burn) {
+                if (this.hero.player.depth !== item.depth) continue;
                 const iPos = Vector3.to_FP_Grid(item.pos);
                 burn = GRID.circleCollision2D(hPos, iPos, item.r + this.hero.player.r);
                 if (burn) damage = item.burnDamage;
@@ -1044,11 +1045,6 @@ class Animated_3d_entity extends IAM {
             for (let grid of uniqueGrids) {
                 IA.next(grid, enemy.id);
             }
-        }
-    }
-    drawVector2D() {
-        for (let obj of this.POOL) {
-            if (obj) obj.drawVector2D(this.map);
         }
     }
     setup() {
@@ -1132,7 +1128,7 @@ class Animated_3d_entity extends IAM {
                     };
 
                     entity.dirStack = AI[entity.behaviour.strategy](entity, ARG);
-                    if (IndexArrayManagers.VERBOSE) console.info(`${entity.name} ${entity.id} dirStack`, entity.dirStack, "dir",  entity.moveState.dir, "strategy", entity.behaviour.strategy);
+                    if (IndexArrayManagers.VERBOSE) console.info(`${entity.name} ${entity.id} dirStack`, entity.dirStack, "dir", entity.moveState.dir, "strategy", entity.behaviour.strategy);
                 }
                 entity.makeMove();
             }

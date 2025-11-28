@@ -205,7 +205,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 104;
+        GAME.level = 103;
         GAME.gold = 50035;
         //GAME.gold = 5;
         GAME.lives = 3;
@@ -240,7 +240,7 @@ const DEBUG = {
         }
 
         let scrollTypes = [
-            "FeatherFall", "Flight", "Flight", "Flight", "Explode"
+            "FeatherFall", "Flight", "Radar", "Flight", "Explode"
         ];
 
         for (let scrType of scrollTypes) {
@@ -407,7 +407,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.33.7",
+    VERSION: "0.34.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
