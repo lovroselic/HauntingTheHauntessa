@@ -62,144 +62,37 @@ const DEBUG = {
         HERO.player.pos = Vector3.from_Grid(Grid.toCenter(grid), 0.5);
     },
     checkPoint() {
-        // area-4 - hauntosphere
+        // area-5 - Hauntessa's castle
         /*
 
         Entities:
-            DONE TangerineLingerie gives OrangeKey wants: "OrangeBoots", "OrangeLeggings", "OrangeBra", "OrangeThongs"
-            DONE RedCemeteria gives "OrangeBoots" wants "Candle", "RedCandle", "BlueCandle"
-            DONE BlackCemeteria gives "OrangeThongs" wants "RedRose","BlueRose","PurpleRose"  
-            DONE MetallicaDress gives OrangeLeggings wants "IronBar", "IronBar","IronBar"
-            DONE SpringyBather gives "OrangeBra" wants "Sponge", "Towel"
-            DONE BootShina wants Brush gives GoldCoin
-            DONE SheparDess3 wants "BabySheep", "BabySheep", "BabySheep" gives PurpleRose
-            DONE GhostBride wants "Skeleton" gives "Candle"
-            DONE WhiteFutura wants "UraniumBar", "UraniumBar", "UraniumBar" gives   IronBar
-            DONE OrangeBathy wants RubberDuck gives Sponge
-            DONE AnvillaDeHammer wants "Anvil", "Hammer" gives IronBar
-            DONE PinkyBinky wants "PinkPanties", "PinkBra", "PinkHighBoots" gives "RedRose",
-            DONE BithcLiar wants "Banknote20", "Banknote50" gives "Towel"
-            DONE DemolitionBlonde want "Banknote20", "Banknote50", "Banknote200" gives "SCROLL_Explode"
-            DONE DemolitionRed wants "Banknote20", "Banknote10", "Banknote100" gives  "SCROLL_Explode"
-            DONE DemolitionBlack    "Banknote200", "Banknote50", "Banknote100" gives  "SCROLL_Explode"
-            DONE GhostFaceJR  wants "Kiss","Kiss","Kiss" gives SilverKey
-            DONE MidngightDomme wants "Lantern", "Lantern" gives  "Banknote20"
-            DONE ONE HellsHeels  wants "Ankh","Pentagram","Cross" gives  "Banknote200"
-            DONE DuneDeserta wants "GlassOfBeer", "GlassOfBeer" gives  "Banknote10",
-            DONE ZaraGraft wants "Revolver", "Revolver" gives "Pentagram"
-            DONE LeekMee wants "RedPump", "RedPump" gives Kiss
-            DONE Sheera wants "BlackPump", "BlackPump" gives "Kiss""
-            DONE BraidRunner wanst "Dagger", "Dagger" gives Kiss
+
 
         Items:
 
-            DONE "SCROLL_Explode" --> DemolitionBlonde(86)
-            DONE "SCROLL_Explode" --> DemolitionRed(86)
-            DONE "SCROLL_Explode" --> DemolitionBlack(97)
-            DONE "Banknote20", --> (86)
-            DONE "Banknote50", ---> (93)
-            DONE "Banknote200" ---> HellsHeels(100)
-            DONE "Banknote20",  ---> MidnightDomme (94)
-            DONE "Banknote10",  ---> DuneDeserta (94)
-            DONE "Banknote100" ---> (101)
-            DONE "Banknote200", ---> (101)
-            "DONE Banknote50", ---> (96)
-            DONE "Banknote100" ---> (101)
-            DONE "Kiss", ---> LeekMee (98)
-            DONE "Kiss", ---> Sheera(93)
-            "DONE Kiss" --->BraidRunner (96)
-            DONE "Ankh", --> (97)
-            DONE "Pentagram", --->ZaraGraft(100)
-            DONE "Cross" ---> (99)
-            DONE "Lantern" ---> (98)
-            DONE "Lantern" ---> (101)
-            DONE "GlassOfBeer" ---> (86)
-            DONE "GlassOfBeer" --> (93)
-            DONE "Revolver", --> (94)
-            DONE "Revolver" --> (96)
-            DONE "RedPump",  --> (94)
-            DONE "RedPump" ---> (95)
-            DONE "BlackPump", ---> (95)
-            DONE "BlackPump" --> (98)
-            DONE "Dagger",  --> (96)
-            DONE "Dagger" --> (98)
-
-        ------------------------------------
-            DONE "OrangeBoots", ---> RedCemeteria (87)
-            DONE "OrangeLeggings", ---> MetallicaDress(89)
-            DONE "OrangeBra", --> SpringyBather (90)
-            DONE "OrangeThongs" ---> BlackCemeteria (87)
-            DONE "RedRose",---> PinkyBinky(91)
-            DONE "BlueRose", ---> (88)
-            DONE"PurpleRose" ---> SheparDess3(90)
-            DONE Candle", ---> GhostBride(92)
-            DONE "RedCandle",  ---> (89)
-            DONE "BlueCandle" ---> (91)
-            DONE "IronBar",  ---> (83)
-            DONE "IronBar", ---> AnvillaDeHammer(92)
-            DONE "IronBar" ---> WhiteFutura(89)
-            DONE "Sponge", --> OrangeBathy(88)
-            DONE "Towel" ---> BithcLiar(85)
-            DONE "BabySheep", ---> (84)
-            DONE "BabySheep",  ---> (85)
-            "DONE BabySheep" --> (85)
-            DONE "Skeleton" --> (87)
-            DONE Brush ---> (87)
-            DONE "UraniumBar", --->(90)
-            DONE "UraniumBar",  ---> (91)
-            DONE "UraniumBar" ---> (92)
-            DONE RubberDuck ---> (84)
-            DONE "Anvil", --->(91)
-            DONE "Hammer" ---> (84)
-            DONE "Banknote20", 
-            DONE "Banknote50" --> (90)
-            DONE "PinkPanties", ---> (88)
-            DONE "PinkBra", ---> (85)
-            DONE "PinkHighBoots" ---> (92)
-
-            ----------
-       
-            
         Rooms that can have more entities, trainers:
-            87
-            92
+
 
         Shrines:
-            DONE HealingHeels
-            DONE HealingMana
-            DONE SnakeDagger
-            DONE AnvillaDeHammer
-            DONE WhichWitch
+
     
         Trainers:
             
 
 
         CoinTrainers (missing 3):
-            DONE Swordy (Attack)
-            DONE NeverLookBack (defense)
-            DONE SorceryTraineress (magic)
-            DONE CastleDungeonWallMana (mana)
-            DONE SluttyNurse (health) 
+
 
         Coins place:
-            DONE BootShina--->(92)
-            DONE GoldCoin ---> (92)
-            DONE GoldCoin ---> (85)
-            DONE GoldCoin --> (99)
-            DONE GoldCoin --> (101)
+
 
         KEy yet unused:
 
         Missing keys:
-            DONE Red ---> (84)
-            DONE Green ---> (85)
-            DONE Silver --->(99)
+
 
         Missing scrolls:
        
-
-            
 
         */
 
@@ -253,9 +146,6 @@ const DEBUG = {
 
         let invItems = [
             "GoldCoin",
-            "SilverKey",
-            "Dagger", "Dagger",
-            "Banknote200", "Banknote50", "Banknote100",
 
         ];
 
@@ -407,7 +297,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.34.0",
+    VERSION: "0.34.1",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
