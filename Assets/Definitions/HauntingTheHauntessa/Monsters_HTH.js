@@ -881,6 +881,14 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    InternalClosedCastleGate: {
+        name: "InternalClosedCastleGate",
+        sprite: "InternalClosedCastleGate",
+        category: 'crest',
+        voice: "Princess",
+        text: "After everything we did to get in, I surely don't want to go out now.",
+        interactionCategory: "oracle",
+    },
     BoneSitterRed: {
         name: "BoneSitterRed",
         sprite: "BoneSitterRed",
@@ -889,7 +897,7 @@ const ORACLE_TYPE = {
         text: "So you jumped as well? Do you regret it yet?",
         interactionCategory: "oracle",
     },
-     BoneThroneSitter: {
+    BoneThroneSitter: {
         name: "BoneThroneSitter",
         sprite: "BoneThroneSitter",
         category: 'crest',
@@ -4849,6 +4857,18 @@ const INTERACTION_ITEM = {
         inventorySprite: "PinkPanties",
         text: "Sexy stuff. I should wear these. Maybe in the next game?"
     },
+    GoldPanties: {
+        name: "GoldPanties",
+        category: "interaction_item",
+        inventorySprite: "GoldPanties",
+        text: "Sexy stuff. I should wear these. Maybe in the next game?"
+    },
+    SilverPanties: {
+        name: "SilverPanties",
+        category: "interaction_item",
+        inventorySprite: "SilverPanties",
+        text: "Sexy stuff. I should wear these. Maybe in the next game?"
+    },
     PinkBra: {
         name: "PinkBra",
         category: "interaction_item",
@@ -5265,8 +5285,32 @@ const INTERACTION_ITEM = {
     GoldPump: {
         name: "GoldPump",
         category: "interaction_item",
-        inventorySprite: "RedPuGoldPumpmp",
+        inventorySprite: "GoldPump",
         text: "Just one of the pair. But with this heel I can stab someone."
+    },
+    WhiskeyShot: {
+        name: "WhiskeyShot",
+        category: "interaction_item",
+        inventorySprite: "WhiskeyShot",
+        text: "Single malt?"
+    },
+    KeyMould: {
+        name: "KeyMould",
+        category: "interaction_item",
+        inventorySprite: "KeyMould",
+        text: "Mould for making keys. This will come handy."
+    },
+    GoldIngots: {
+        name: "GoldIngots",
+        category: "interaction_item",
+        inventorySprite: "GoldIngots",
+        text: "Ingots made from gold."
+    },
+    Bow: {
+        name: "Bow",
+        category: "interaction_item",
+        inventorySprite: "GoldIBowngots",
+        text: "Bow.Silent and deadly weapon."
     },
 
     //metals
@@ -5308,6 +5352,32 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    GoldSitter: {
+        name: "GoldSitter",
+        sprite: "GoldSitter",
+        category: 'crest',
+        voice: "Female6",
+        wants: ["GoldPump", "GoldPump", "GoldPanties"],
+        gives: "GoldBar",
+        text: {
+            intro: "Only gold on this body. Bring me a matching pair of pumps and panties, and I will be properly styled. Do that and I pay in a gold.",
+            progress: "Shiny, but not dressed. Pieces are missing, keep hunting till the whole look screams gold.",
+            conclusion: "Now we match, now we shine. Outfit complete, take your gold bar and try not to drop it on your toes.",
+        },
+    },
+    GoldKeyMaker: {
+        name: "GoldKeyMaker",
+        sprite: "GoldKeyMaker",
+        category: 'crest',
+        voice: "Female3",
+        wants: ["KeyMould", "GoldIngots"],
+        gives: "GoldKey",
+        text: {
+            intro: "I cast keys, not promises. Bring a mould and gold ingots, and I mint you a GoldKey. Keys, yes, kiss, no.",
+            progress: "Good shine, but the crucible still hungers. Bring the rest and we will pour perfection.",
+            conclusion: "Mould set, gold wet, pour clean. Your GoldKey, crisp and keen. Keys, yes, kiss, still no.",
+        },
+    },
     BraidRunner: {
         name: "BraidRunner",
         sprite: "BraidRunner",
@@ -7173,6 +7243,19 @@ const FIRE_TYPES = {
         warp: 0.042,
         gate: 0.8,
         texture_name: "FireTexture2",
+    },
+
+    RedBonfire: {
+        lightColor: LIGHT_COLORS.fireSubtleRed,
+        scale: 0.80,
+        gravity: new Float32Array([0, 0.75, 0]),
+        velocity: 0.00175,
+        spawnRadius: 0.25,
+        turbulence: 0.013,
+        damping: 0.995,
+        warp: 0.045,
+        gate: 0.825,
+        texture_name: "RedFireTexture",
     },
 
     Fireplace: {

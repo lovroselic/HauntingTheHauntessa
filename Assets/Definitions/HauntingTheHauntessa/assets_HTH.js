@@ -820,6 +820,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/FireTexture2.webp", name: "FireTexture2" },
     { srcName: "ObjectTextures/FireTexture2_Blue.webp", name: "FireTexture2_Blue" },
     { srcName: "ObjectTextures/FireTexture2_Green.webp", name: "FireTexture2_Green" },
+    { srcName: "ObjectTextures/RedFireTexture.webp", name: "RedFireTexture" },
 
     //key textures
     { srcName: "ObjectTextures/BlueMetal.webp", name: "BlueMetal" },
@@ -1377,6 +1378,10 @@ LoadSprites = [
     { srcName: "EntityPictures/ApparitiaDefense2.webp", name: "ApparitiaDefense2" },
     { srcName: "EntityPictures/BoneThroneSitter.webp", name: "BoneThroneSitter" },
     { srcName: "EntityPictures/BoneSitterRed.webp", name: "BoneSitterRed" },
+    { srcName: "EntityPictures/InternalClosedCastleGate.webp", name: "InternalClosedCastleGate" },
+    { srcName: "EntityPictures/GoldKeyMaker.webp", name: "GoldKeyMaker" },
+    { srcName: "EntityPictures/GoldSitter.webp", name: "GoldSitter" },
+
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.webp", name: "BabyGreenSpider" },
@@ -1735,6 +1740,12 @@ LoadSprites = [
     { srcName: "Items/BlackPump.webp", name: "BlackPump" },
     { srcName: "Items/PurplePump.webp", name: "PurplePump" },
     { srcName: "Items/GoldPump.webp", name: "GoldPump" },
+    { srcName: "Items/WhiskeyShot.webp", name: "WhiskeyShot" },
+    { srcName: "Items/KeyMould.webp", name: "KeyMould" },
+    { srcName: "Items/GoldIngots.webp", name: "GoldIngots" },
+    { srcName: "Items/GoldPanties.webp", name: "GoldPanties" },
+    { srcName: "Items/SilverPanties.webp", name: "SilverPanties" },
+    { srcName: "Items/Bow.webp", name: "Bow" },
 
     //books
     { srcName: "Items/YoniBook.webp", name: "YoniBook" },

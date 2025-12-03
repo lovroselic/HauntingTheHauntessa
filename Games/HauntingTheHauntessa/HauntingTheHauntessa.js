@@ -65,10 +65,36 @@ const DEBUG = {
         // area-5 - Hauntessa's castle
         /*
 
+        Create:
+        
+
         Entities:
+            DONE GoldKeyMaker wants KeyMould, GoldIngots gives GoldKey
+        ++ ### wants GoldBar, GoldBar, GoldBar gives GoldIngots
+            DONE GoldSitter wants "GoldPump", "GoldPump", "GoldPanties" gives GoldBar
+        +BarFly wants "WhiskeyShot", "WhiskeyShot", "WhiskeyShot" gives ...
+        +NinDzza wants "Shuriken", "Dagger", "Bow" gives ....
+        +Beera wants "GlassOfBeer","GlassOfBeer","GlassOfBeer" gives ....
 
 
         Items:
+        "WhiskeyShot", 
+        "WhiskeyShot", 
+        "WhiskeyShot"
+        "KeyMould"
+        "GoldIngots"
+            DONE GoldBar, GoldSitter-->(105)
+        GoldBar, 
+        GoldBar
+        "GoldPump", 
+        "GoldPump"
+        Shuriken", 
+        "Dagger"
+        "Bow"
+        "GoldPanties"
+        "GlassOfBeer",
+        "GlassOfBeer",
+        "GlassOfBeer"
 
         Rooms that can have more entities, trainers:
 
@@ -80,15 +106,17 @@ const DEBUG = {
             
 
 
-        CoinTrainers (missing 3):
+        CoinTrainers (missing 5):
 
 
         Coins place:
+            106
 
 
         KEy yet unused:
 
         Missing keys:
+            Silver
 
 
         Missing scrolls:
@@ -98,7 +126,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 103;
+        GAME.level = 105;
         GAME.gold = 50035;
         //GAME.gold = 5;
         GAME.lives = 3;
@@ -146,6 +174,10 @@ const DEBUG = {
 
         let invItems = [
             "GoldCoin",
+            "WhiskeyShot", "WhiskeyShot", "WhiskeyShot",
+            "GoldBar", "GoldBar", "GoldBar",
+            "Shuriken", "Dagger", "Bow",
+            "GlassOfBeer", "GlassOfBeer", "GlassOfBeer",
 
         ];
 
@@ -297,7 +329,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.34.1",
+    VERSION: "0.34.2",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

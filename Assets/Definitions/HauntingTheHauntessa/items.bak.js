@@ -415,12 +415,7 @@ const INTERACTION_ITEM = {
         inventorySprite: "GuitarPick",
         text: "Guitar pick. Let's rock."
     },
-    KeyMould: {
-        name: "KeyMould",
-        category: "interaction_item",
-        inventorySprite: "KeyMould",
-        text: "Mould for making keys. This will come handy."
-    },
+   
 
     Sapphire: {
         name: "Sapphire",

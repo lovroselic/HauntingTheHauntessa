@@ -803,7 +803,9 @@ const GAME = {
 
     GAME.stack.previousRadio = radio;
     GAME.render();
+
     if ($("input[name='keepHints']")[0].checked) GAME.hintDown();
+    if ($("input[name='keepHintsAbove']")[0].checked) GAME.hintUp();
   },
   stack: {
     previousRadio: null,
@@ -1374,6 +1376,11 @@ const GAME = {
     $("#randlight").click(GAME.randomLight);
     $("#randcontainer").click(GAME.randomContainer);
     $("#randlair").click(GAME.random_lair);
+
+    $('#keepHints, #keepHintsAbove').on('click', function () {
+      if (this.checked) $('#keepHints, #keepHintsAbove').not(this).prop('checked', false);
+    });
+
 
     /** search inputs */
     const filterOptions = (selectId, searchId) => {

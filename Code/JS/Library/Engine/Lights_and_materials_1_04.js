@@ -30,6 +30,7 @@ const LIGHT_COLORS = {
     fireplace: new Float32Array([0.80, 0.40, 0.12]),
     fireplaceDim: new Float32Array([0.68, 0.34, 0.10]),
     fireSubtle: new Float32Array([0.235, 0.125, 0.018]),
+    fireSubtleRed: new Float32Array([0.275, 0.120, 0.015]),
     fireNewSubtle: new Float32Array([0.225, 0.113, 0.025]),
     fireSoftSubtle: new Float32Array([0.200, 0.100, 0.030]),
     fireDimSubtle: new Float32Array([0.170, 0.085, 0.025]),
