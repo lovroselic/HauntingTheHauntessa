@@ -66,18 +66,35 @@ const DEBUG = {
         /*
 
         Create:
-        
 
         Entities:
             DONE GoldKeyMaker wants KeyMould, GoldIngots gives GoldKey
-        ++ ### wants GoldBar, GoldBar, GoldBar gives GoldIngots
+        ++ PackaG wants GoldBar, GoldBar, GoldBar gives GoldIngots
             DONE GoldSitter wants "GoldPump", "GoldPump", "GoldPanties" gives GoldBar
         +BarFly wants "WhiskeyShot", "WhiskeyShot", "WhiskeyShot" gives ...
         +NinDzza wants "Shuriken", "Dagger", "Bow" gives ....
-        +Beera wants "GlassOfBeer","GlassOfBeer","GlassOfBeer" gives ....
+        +BeeraKruegl wants "GlassOfBeer","GlassOfBeer","GlassOfBeer" gives ....
+        +SkullRider wants BlackLeatherBoots, BlackLatexpanties, BlackLatexBra  gives Skull
+        ++RedSkullRider  "WhiteBoots", "WhitePanties,"WhiteLatexBra" gives Skull
+        ++Mysteria wants "Candle", "Candle", "Candle" gives Skull
+        ++ #### want Skull, Skull, Skull, Skull, Skull gives ...
 
 
         Items:
+        Skull, 
+        Skull, 
+        Skull, 
+        Skull, 
+        Skull
+        "Candle", 
+        "Candle", 
+        "Candle"
+        BlackLeatherBoots
+        BlackLatexpanties
+        BlackLatexBra
+        "WhiteBoots", 
+        "WhitePanties", 
+        "WhiteLatexBra"
         "WhiskeyShot", 
         "WhiskeyShot", 
         "WhiskeyShot"
@@ -174,10 +191,14 @@ const DEBUG = {
 
         let invItems = [
             "GoldCoin",
-            "WhiskeyShot", "WhiskeyShot", "WhiskeyShot",
-            "GoldBar", "GoldBar", "GoldBar",
-            "Shuriken", "Dagger", "Bow",
-            "GlassOfBeer", "GlassOfBeer", "GlassOfBeer",
+            //"WhiskeyShot", "WhiskeyShot", "WhiskeyShot",
+           // "GoldBar", "GoldBar", "GoldBar",
+            //"Shuriken", "Dagger", "Bow",
+            //"GlassOfBeer", "GlassOfBeer", "GlassOfBeer",
+            "BlackLeatherBoots", "BlackLatexpanties", "BlackLatexBra",
+            "WhiteBoots", "WhitePanties", "WhiteLatexBra",
+            //"Candle", "Candle", "Candle",
+            //"Skull", "Skull", "Skull", "Skull", "Skull"
 
         ];
 
@@ -329,7 +350,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.34.2",
+    VERSION: "0.34.3",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

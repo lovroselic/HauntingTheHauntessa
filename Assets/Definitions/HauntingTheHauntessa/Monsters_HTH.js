@@ -4425,6 +4425,12 @@ const INTERACTION_ITEM = {
         inventorySprite: "BlackLatexBra",
         text: "Smouldering hot. Maybe he'll let me wear it in the next game."
     },
+    WhiteLatexBra: {
+        name: "WhiteLatexBra",
+        category: "interaction_item",
+        inventorySprite: "WhiteLatexBra",
+        text: "Smouldering hot. Maybe he'll let me wear it in the next game."
+    },
     YellowLatexPanties: {
         name: "YellowLatexPanties",
         category: "interaction_item",
