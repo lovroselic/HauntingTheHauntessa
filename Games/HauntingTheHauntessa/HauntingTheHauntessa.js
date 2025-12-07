@@ -69,19 +69,24 @@ const DEBUG = {
 
         Entities:
             DONE GoldKeyMaker wants KeyMould, GoldIngots gives GoldKey
-        ++ PackaG wants GoldBar, GoldBar, GoldBar gives GoldIngots
+            DONE PackaG wants GoldBar, GoldBar, GoldBar gives GoldIngots
             DONE GoldSitter wants "GoldPump", "GoldPump", "GoldPanties" gives GoldBar
         +BarFly wants "WhiskeyShot", "WhiskeyShot", "WhiskeyShot" gives ...
         +NinDzza wants "Shuriken", "Dagger", "Bow" gives ....
         +BeeraKruegl wants "GlassOfBeer","GlassOfBeer","GlassOfBeer" gives ....
-        +SkullRider wants BlackLeatherBoots, BlackLatexpanties, BlackLatexBra  gives Skull
+            DONE SkullRider wants BlackLeatherBoots, BlackLatexpanties, BlackLatexBra  gives Skull
         ++RedSkullRider  "WhiteBoots", "WhitePanties,"WhiteLatexBra" gives Skull
         ++Mysteria wants "Candle", "Candle", "Candle" gives Skull
-        ++ #### want Skull, Skull, Skull, Skull, Skull gives ...
+        ++ SkullGuardian want Skull, Skull, Skull, Skull, Skull gives ...
+        ++LeoParda wants "Leotard", "LeoHat", "LeoPumps", "LeoPumps" gives ....
 
 
         Items:
-        Skull, 
+        "Leotard", 
+        "LeoHat", 
+        "LeoPumps", 
+        "LeoPumps"
+            DONE Skull, SkullRider --> (105)
         Skull, 
         Skull, 
         Skull, 
@@ -99,7 +104,7 @@ const DEBUG = {
         "WhiskeyShot", 
         "WhiskeyShot"
         "KeyMould"
-        "GoldIngots"
+            DONE "GoldIngots" ---> PackaG (109)
             DONE GoldBar, GoldSitter-->(105)
         GoldBar, 
         GoldBar
@@ -133,7 +138,7 @@ const DEBUG = {
         KEy yet unused:
 
         Missing keys:
-            Silver
+        DONE Silver --> (108)
 
 
         Missing scrolls:
@@ -143,7 +148,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 105;
+        GAME.level = 109;
         GAME.gold = 50035;
         //GAME.gold = 5;
         GAME.lives = 3;
@@ -192,13 +197,12 @@ const DEBUG = {
         let invItems = [
             "GoldCoin",
             //"WhiskeyShot", "WhiskeyShot", "WhiskeyShot",
-           // "GoldBar", "GoldBar", "GoldBar",
             //"Shuriken", "Dagger", "Bow",
             //"GlassOfBeer", "GlassOfBeer", "GlassOfBeer",
-            "BlackLeatherBoots", "BlackLatexpanties", "BlackLatexBra",
-            "WhiteBoots", "WhitePanties", "WhiteLatexBra",
+            //"WhiteBoots", "WhitePanties", "WhiteLatexBra",
             //"Candle", "Candle", "Candle",
-            //"Skull", "Skull", "Skull", "Skull", "Skull"
+            //"Skull", "Skull", "Skull", "Skull", "Skull",
+            //"Leotard", "LeoHat", "LeoPumps", "LeoPumps",
 
         ];
 
@@ -350,7 +354,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.34.3",
+    VERSION: "0.34.4",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -1749,6 +1753,8 @@ const GAME = {
                     const identification = item.instanceIdentification.split(".");
                     if (identification[0] === "GOLD_ITEM_TYPE") continue;
                     Items.push(`Chest: ${identification[1]}`);
+                } else if (item.category === "key") {
+                    Items.push(`Key: ${item.name}`);
                 } else {
                     Items.push(item.name);
                 }

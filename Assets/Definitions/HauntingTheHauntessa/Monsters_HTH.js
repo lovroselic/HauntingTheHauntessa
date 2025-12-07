@@ -5054,6 +5054,24 @@ const INTERACTION_ITEM = {
     },
 
     //other
+    Leotard: {
+        name: "Leotard",
+        category: "interaction_item",
+        inventorySprite: "Leotard",
+        text: "Leotard for leopard."
+    },
+    LeoHat: {
+        name: "LeoHat",
+        category: "interaction_item",
+        inventorySprite: "LeoHat",
+        text: "Cool hat. Leopard spots. I could hide in the jungle."
+    },
+    LeoPumps: {
+        name: "LeoPumps",
+        category: "interaction_item",
+        inventorySprite: "LeoPumps",
+        text: "Looks like something some wild kitty would wear."
+    },
     GreenPanties: {
         name: "GreenPanties",
         category: "interaction_item",
@@ -5318,6 +5336,12 @@ const INTERACTION_ITEM = {
         inventorySprite: "GoldIBowngots",
         text: "Bow.Silent and deadly weapon."
     },
+    Skull: {
+        name: "Skull",
+        category: "interaction_item",
+        inventorySprite: "Skull",
+        text: "Creeepy?"
+    },
 
     //metals
     GoldBar: {
@@ -5358,6 +5382,32 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    PackaG: {
+        name: "PackaG",
+        sprite: "PackaG",
+        category: "crest",
+        voice: "Apparitia",
+        wants: ["GoldBar", "GoldBar", "GoldBar"],
+        gives: "GoldIngots",
+        text: {
+            intro: "Redundant, sure, but castle rules are horny for paperwork. Bring me three gold bars and I will pack them into proper gold ingots package. Smile all you want, the counter only likes threes.",
+            progress: "Cute haul, but the pile is shy. I count bars, not promises, keep dragging till we hit three.",
+            conclusion: "Thunk, thunk, thunk, quota met. Bars cracked, poured, stamped. Take your GoldIngots and go break more rules somewhere else.",
+        },
+    },
+    SkullRider: {
+        name: "SkullRider",
+        sprite: "SkullRider",
+        category: 'crest',
+        voice: "Apparitia",
+        wants: ["BlackLeatherBoots", "BlackLatexpanties", "BlackLatexBra"],
+        gives: "Skull",
+        text: {
+            intro: "White makes me a target, Princess. Bring me black latex outfit, I need to melt into the dark. Do it right and I pay in bone, a Skull.",
+            progress: "Closer, but I still glow like a lantern. Bring the missing black and make me vanish.",
+            conclusion: "Good, the white is buried, the night is mine. Take your Skull, try not to name it, it gets attached.",
+        },
+    },
     GoldSitter: {
         name: "GoldSitter",
         sprite: "GoldSitter",

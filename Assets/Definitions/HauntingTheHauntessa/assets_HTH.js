@@ -1381,6 +1381,8 @@ LoadSprites = [
     { srcName: "EntityPictures/InternalClosedCastleGate.webp", name: "InternalClosedCastleGate" },
     { srcName: "EntityPictures/GoldKeyMaker.webp", name: "GoldKeyMaker" },
     { srcName: "EntityPictures/GoldSitter.webp", name: "GoldSitter" },
+    { srcName: "EntityPictures/SkullRider.webp", name: "SkullRider" },
+    { srcName: "EntityPictures/PackaG.webp", name: "PackaG" },
 
 
     //action movables
@@ -1747,6 +1749,9 @@ LoadSprites = [
     { srcName: "Items/GoldPanties.webp", name: "GoldPanties" },
     { srcName: "Items/SilverPanties.webp", name: "SilverPanties" },
     { srcName: "Items/Bow.webp", name: "Bow" },
+    { srcName: "Items/LeoHat.png", name: "LeoHat" },
+    { srcName: "Items/Leotard2.png", name: "Leotard" },
+    { srcName: "Items/LeoPumps.png", name: "LeoPumps" },
 
     //books
     { srcName: "Items/YoniBook.webp", name: "YoniBook" },

@@ -121,24 +121,7 @@ const INTERACTION_ITEM = {
         inventorySprite: "GoldCoin",
         text: "Face on the coin looks like my mother."
     },
-    Leotard: {
-        name: "Leotard",
-        category: "interaction_item",
-        inventorySprite: "Leotard",
-        text: "Leotard for leopard."
-    },
-    LeoHat: {
-        name: "LeoHat",
-        category: "interaction_item",
-        inventorySprite: "LeoHat",
-        text: "Cool hat. Leopard spots. I could hide in the jungle."
-    },
-    LeoPumps: {
-        name: "LeoPumps",
-        category: "interaction_item",
-        inventorySprite: "LeoPumps",
-        text: "Looks like something Purrscilla would wear."
-    },
+
 
 
     Candle: {
