@@ -82,6 +82,7 @@ const DEBUG = {
         **Tigress wants .... gives ....
         **DarkaWithoutParka
         **YoungLea
+        ++StingyWasp wants "Wasp", "Wasp", "Wasp" gives ...
 
 
         Items:
@@ -120,6 +121,9 @@ const DEBUG = {
         "GlassOfBeer",
         "GlassOfBeer",
         "GlassOfBeer"
+        "Wasp"
+        "Wasp"
+        "Wasp"
 
         Rooms that can have more entities, trainers:
         - 109
@@ -201,6 +205,7 @@ const DEBUG = {
 
         let invItems = [
             "GoldCoin",
+            "Wasp", "Wasp", "Wasp",
 
         ];
 
@@ -352,7 +357,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.34.5",
+    VERSION: "0.34.6",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

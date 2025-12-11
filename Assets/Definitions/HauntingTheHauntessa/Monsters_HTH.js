@@ -5342,6 +5342,12 @@ const INTERACTION_ITEM = {
         inventorySprite: "Skull",
         text: "Creeepy?"
     },
+    Wasp: {
+        name: "Wasp",
+        category: "interaction_item",
+        inventorySprite: "Wasp",
+        text: "Stingy?"
+    },
 
     //metals
     GoldBar: {
