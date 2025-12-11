@@ -1383,6 +1383,13 @@ LoadSprites = [
     { srcName: "EntityPictures/GoldSitter.webp", name: "GoldSitter" },
     { srcName: "EntityPictures/SkullRider.webp", name: "SkullRider" },
     { srcName: "EntityPictures/PackaG.webp", name: "PackaG" },
+    { srcName: "EntityPictures/MysteRya.webp", name: "MysteRya" },
+    { srcName: "EntityPictures/RedRidingApparitia.webp", name: "RedRidingApparitia" },
+    { srcName: "EntityPictures/BarFly.webp", name: "BarFly" },
+    { srcName: "EntityPictures/BeeraKruegl.webp", name: "BeeraKruegl" },
+    { srcName: "EntityPictures/SkullGuard.webp", name: "SkullGuard" },
+    { srcName: "EntityPictures/NinDzza.webp", name: "NinDzza" },
+    { srcName: "EntityPictures/PardaDeLeo.webp", name: "PardaDeLeo" },
 
 
     //action movables

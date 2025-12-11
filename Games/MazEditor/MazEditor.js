@@ -1076,6 +1076,11 @@ const GAME = {
     $("#floors").off("change");
     $("#floors").change(GAME.changeFloor);
   },
+  swapGates() {
+    const temp = $("#sgateID")[0].value;
+    $("#sgateID").val($("#tgateID")[0].value);
+    $("#tgateID").val(temp);
+  },
   setup() {
     console.log("GAME SETUP started");
     GAME.updateWH();
@@ -1122,6 +1127,8 @@ const GAME = {
     $("#floortexture").change(GAME.repaintTextures);
     $("#ceiltexture").change(GAME.repaintTextures);
     $("#texture_decal").change(GAME.repaintTextures);
+
+    $("#swap").on("click", GAME.swapGates);
 
     /** pictures */
     for (const pic of DECAL_PAINTINGS) {

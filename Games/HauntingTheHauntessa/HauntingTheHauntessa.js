@@ -71,39 +71,42 @@ const DEBUG = {
             DONE GoldKeyMaker wants KeyMould, GoldIngots gives GoldKey
             DONE PackaG wants GoldBar, GoldBar, GoldBar gives GoldIngots
             DONE GoldSitter wants "GoldPump", "GoldPump", "GoldPanties" gives GoldBar
-        +BarFly wants "WhiskeyShot", "WhiskeyShot", "WhiskeyShot" gives ...
-        +NinDzza wants "Shuriken", "Dagger", "Bow" gives ....
-        +BeeraKruegl wants "GlassOfBeer","GlassOfBeer","GlassOfBeer" gives ....
+            DONE BarFly wants "WhiskeyShot", "WhiskeyShot", "WhiskeyShot" gives LeoHat
+            DONE NinDzza wants "Shuriken", "Dagger", "Bow" gives BlackLatexpanties
+            DONE BeeraKruegl wants "GlassOfBeer","GlassOfBeer","GlassOfBeer" gives WhiteLatexBra
             DONE SkullRider wants BlackLeatherBoots, BlackLatexpanties, BlackLatexBra  gives Skull
-        ++RedSkullRider  "WhiteBoots", "WhitePanties,"WhiteLatexBra" gives Skull
-        ++Mysteria wants "Candle", "Candle", "Candle" gives Skull
-        ++ SkullGuardian want Skull, Skull, Skull, Skull, Skull gives ...
-        ++LeoParda wants "Leotard", "LeoHat", "LeoPumps", "LeoPumps" gives ....
+            DONE RedSkullRider  "WhiteBoots", "WhitePanties,"WhiteLatexBra" gives Skull
+            DONE Mysteria wants "Candle", "Candle", "Candle" gives Skull
+            DONE SkullGuardian want Skull, Skull, Skull, Skull, Skull gives KeyMould
+            DONE PardaDeLeo wants "Leotard", "LeoHat", "LeoPumps", "LeoPumps" gives WhiteBoots
+        **Tigress wants .... gives ....
+        **DarkaWithoutParka
+        **YoungLea
 
 
         Items:
         "Leotard", 
-        "LeoHat", 
+            DONE "LeoHat", BarFly --> (111)
         "LeoPumps", 
         "LeoPumps"
             DONE Skull, SkullRider --> (105)
-        Skull, 
-        Skull, 
+            DONE Skull, Mysteria --> (110)
+            DONE Skull, RedSkullRider --> (110)
         Skull, 
         Skull
         "Candle", 
         "Candle", 
         "Candle"
         BlackLeatherBoots
-        BlackLatexpanties
+            DONE BlackLatexpanties ---> NinDzza (113)
         BlackLatexBra
-        "WhiteBoots", 
+            DONE "WhiteBoots", ---> PardaDeLeo (113)
         "WhitePanties", 
-        "WhiteLatexBra"
+            DONE "WhiteLatexBra" BeeraKruegl ---> (111)
         "WhiskeyShot", 
         "WhiskeyShot", 
         "WhiskeyShot"
-        "KeyMould"
+            DONE "KeyMould" SkullGuardian --> (112)
             DONE "GoldIngots" ---> PackaG (109)
             DONE GoldBar, GoldSitter-->(105)
         GoldBar, 
@@ -119,6 +122,8 @@ const DEBUG = {
         "GlassOfBeer"
 
         Rooms that can have more entities, trainers:
+        - 109
+        - 110
 
 
         Shrines:
@@ -148,7 +153,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 109;
+        GAME.level = 113;
         GAME.gold = 50035;
         //GAME.gold = 5;
         GAME.lives = 3;
@@ -196,13 +201,6 @@ const DEBUG = {
 
         let invItems = [
             "GoldCoin",
-            //"WhiskeyShot", "WhiskeyShot", "WhiskeyShot",
-            //"Shuriken", "Dagger", "Bow",
-            //"GlassOfBeer", "GlassOfBeer", "GlassOfBeer",
-            //"WhiteBoots", "WhitePanties", "WhiteLatexBra",
-            //"Candle", "Candle", "Candle",
-            //"Skull", "Skull", "Skull", "Skull", "Skull",
-            //"Leotard", "LeoHat", "LeoPumps", "LeoPumps",
 
         ];
 
@@ -354,7 +352,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.34.4",
+    VERSION: "0.34.5",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

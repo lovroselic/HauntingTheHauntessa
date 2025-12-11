@@ -5382,11 +5382,103 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    PardaDeLeo: {
+        name: 'PardaDeLeo',
+        sprite: 'PardaDeLeo',
+        category: 'crest',
+        voice: 'FemaleVeryLow3',
+        wants: ['Leotard', 'LeoHat', 'LeoPumps', 'LeoPumps'],
+        gives: 'WhiteBoots',
+        text: {
+            intro: 'Jungle parties have rules, spots or exile. Bring the full leopard look, leotard, hat, and pumps, and I will trade you White Boots, zebra origin classified.',
+            progress: 'Cute pattern, incomplete pack. Head, body, two paws, keep prowling till the prints all match.',
+            conclusion: 'Spots aligned, pride approved. Take these White Boots, a zebra will be filing a complaint later.',
+        },
+    },
+
+    NinDzza: {
+        name: 'NinDzza',
+        sprite: 'NinDzza',
+        category: 'crest',
+        voice: 'FemaleLow5',
+        wants: ['Shuriken', 'Dagger', 'Bow'],
+        gives: 'BlackLatexpanties',
+        text: {
+            intro: 'Soft steps, sharp intent. Bring me tools that are small, silent, and deadly, and I might trade something glossy and scandalous.',
+            progress: 'Hush is good, but I want a full hush kit. Three pieces, all discreet, keep hunting till the night smiles.',
+            conclusion: 'The dark is satisfied. Deal sealed, take my panties, try not to blush if they squeak.',
+        },
+    },
+    SkullGuard: {
+        name: 'SkullGuard',
+        sprite: 'SkullGuard',
+        category: 'crest',
+        voice: 'FemaleLow6',
+        wants: ['Skull', 'Skull', 'Skull', 'Skull', 'Skull'],
+        gives: 'KeyMould',
+        text: {
+            intro: 'I keep the ledger of the afterworld. Bring me lost skulls for their quiet shelf and I will help you craft your own skeleton key, starting with a mould.',
+            progress: 'Bones noted, balance not closed. The shelf still has gaps, keep hunting heads till the hush feels composed.',
+            conclusion: 'The choir is complete, all teeth politely clacking. Here is your mould, now go press secrets into gold and keep doors cracking.',
+        },
+    },
+    BeeraKruegl: {
+        name: 'BeeraKruegl',
+        sprite: 'BeeraKruegl',
+        category: 'crest',
+        voice: 'FemaleLow3',
+        wants: ['GlassOfBeer', 'GlassOfBeer', 'GlassOfBeer'],
+        gives: 'WhiteLatexBra',
+        text: {
+            intro: 'Bust science, beer funded. Bring me three cold beers and I will outgrow this white latex bra, you can have it.',
+            progress: 'Nice foam, but my cups say three. Keep pouring till the future looks fuller.',
+            conclusion: 'Gulped and upgraded. This WhiteLatexBra is officially too small, take it and toast my progress.',
+        },
+    },
+    BarFly: {
+        name: 'BarFly',
+        sprite: 'BarFly',
+        category: 'crest',
+        voice: 'FemaleLow4',
+        wants: ['WhiskeyShot', 'WhiskeyShot', 'WhiskeyShot'],
+        gives: 'LeoHat',
+        text: {
+            intro: 'Sorrows to drown, throat to crown. Send strong whiskey my way and maybe a leopard hat wanders yours.',
+            progress: 'Nice burn, but the blues still swim. Keep them coming, I do not see leopard spots yet.',
+            conclusion: 'Ah, spots at last. Take this hat, wear it loud, I will forget why I needed it.',
+        },
+    },
+    RedRidingApparitia: {
+        name: 'RedRidingApparitia',
+        sprite: 'RedRidingApparitia',
+        category: 'crest',
+        voice: 'Apparitia',
+        wants: ['WhiteBoots', 'WhitePanties', 'WhiteLatexBra'],
+        gives: 'Skull',
+        text: {
+            intro: 'Wrong dress code, Princess. I am the red smear in a white parade. Bring me white latex outfits, and I will trade you a talking Skull.',
+            progress: 'Close, but the wardrobe still screams red. Fetch the missing whites and the guards might stop staring.',
+            conclusion: 'Uniform corrected, target rejected. Take this talking Skull, it whispers too much, teach it manners.',
+        },
+    },
+    MysteRya: {
+        name: "MysteRya",
+        sprite: "MysteRya",
+        category: "crest",
+        voice: "Female5",
+        wants: ["Candle", "Candle", "Candle"],
+        gives: "Skull",
+        text: {
+            intro: "Keeper of whispers, warden of ends. Bring me candles to wake old friends, and I might trade a skull that remembers.",
+            progress: "A flicker is cute, but the dark still grins. More wicks, more whispers, fewer sins.",
+            conclusion: "Room aglow, secrets flow. Take this Skull, packed with echoes, mind the undertow.",
+        },
+    },
     PackaG: {
         name: "PackaG",
         sprite: "PackaG",
         category: "crest",
-        voice: "Apparitia",
+        voice: "Female3",
         wants: ["GoldBar", "GoldBar", "GoldBar"],
         gives: "GoldIngots",
         text: {
