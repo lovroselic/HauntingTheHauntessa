@@ -5348,6 +5348,85 @@ const INTERACTION_ITEM = {
         inventorySprite: "Wasp",
         text: "Stingy?"
     },
+    BlueSwimsuit: {
+        name: "BlueSwimsuit",
+        category: "interaction_item",
+        inventorySprite: "BlueSwimsuit",
+        text: "Hot swimsuit."
+    },
+    GoldShield: {
+        name: "GoldShield",
+        category: "interaction_item",
+        inventorySprite: "GoldShield",
+        text: "Amazing shield."
+    },
+    GoldSword: {
+        name: "GoldSword",
+        category: "interaction_item",
+        inventorySprite: "GoldSword",
+        text: "Amazing weapon."
+    },
+    GreenSwimsuit: {
+        name: "GreenSwimsuit",
+        category: "interaction_item",
+        inventorySprite: "GreenSwimsuit",
+         text: "Hot swimsuit."
+    },
+    MagentaSwimsuit: {
+        name: "MagentaSwimsuit",
+        category: "interaction_item",
+        inventorySprite: "MagentaSwimsuit",
+         text: "Hot swimsuit."
+    },
+    RedBootyShorts: {
+        name: "RedBootyShorts",
+        category: "interaction_item",
+        inventorySprite: "RedBootyShorts",
+        text: "Hot!"
+    },
+    RedShield: {
+        name: "RedShield",
+        category: "interaction_item",
+        inventorySprite: "RedShield",
+        text: "Amazing shield."
+    },
+    RedShorts: {
+        name: "RedShorts",
+        category: "interaction_item",
+        inventorySprite: "RedShorts",
+        text: "Hot!"
+    },
+    RedSwimsuit: {
+        name: "RedSwimsuit",
+        category: "interaction_item",
+        inventorySprite: "RedSwimsuit",
+         text: "Hot swimsuit."
+    },
+    RedSword: {
+        name: "RedSword",
+        category: "interaction_item",
+        inventorySprite: "RedSword",
+        text: "Amazing weapon."
+    },
+    SilverShield: {
+        name: "SilverShield",
+        category: "interaction_item",
+        inventorySprite: "SilverShield",
+        text: "Amazing shield."
+    },
+    SilverSword: {
+        name: "SilverSword",
+        category: "interaction_item",
+        inventorySprite: "SilverSword",
+       text: "Amazing weapon."
+    },
+    YellowSwimsuit: {
+        name: "YellowSwimsuit",
+        category: "interaction_item",
+        inventorySprite: "YellowSwimsuit",
+         text: "Hot swimsuit."
+    },
+
 
     //metals
     GoldBar: {
