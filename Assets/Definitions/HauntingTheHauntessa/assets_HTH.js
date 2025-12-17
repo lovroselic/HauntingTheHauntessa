@@ -1390,6 +1390,7 @@ LoadSprites = [
     { srcName: "EntityPictures/SkullGuard.webp", name: "SkullGuard" },
     { srcName: "EntityPictures/NinDzza.webp", name: "NinDzza" },
     { srcName: "EntityPictures/PardaDeLeo.webp", name: "PardaDeLeo" },
+    { srcName: "EntityPictures/Tigress.webp", name: "Tigress" },
 
 
     //action movables
@@ -1773,6 +1774,11 @@ LoadSprites = [
     { srcName: "Items/SilverShield.png", name: "SilverShield" },
     { srcName: "Items/SilverSword.png", name: "SilverSword" },
     { srcName: "Items/YellowSwimsuit.png", name: "YellowSwimsuit" },
+
+    { srcName: "Items/SilverCoin.png", name: "SilverCoin" },
+    { srcName: "Items/TigerHat.png", name: "TigerHat" },
+    { srcName: "Items/TigerPump.png", name: "TigerPump" },
+    { srcName: "Items/TigerTard.png", name: "TigerTard" },
 
     //books
     { srcName: "Items/YoniBook.webp", name: "YoniBook" },

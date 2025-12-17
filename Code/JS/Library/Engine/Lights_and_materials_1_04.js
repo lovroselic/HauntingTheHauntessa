@@ -34,6 +34,8 @@ const LIGHT_COLORS = {
     fireNewSubtle: new Float32Array([0.225, 0.113, 0.025]),
     fireSoftSubtle: new Float32Array([0.200, 0.100, 0.030]),
     fireDimSubtle: new Float32Array([0.170, 0.085, 0.025]),
+    fireSoftGreen: new Float32Array([0.02, 0.200, 0.02]),
+    fireSoftBlue: new Float32Array([0.02, 0.02, 0.20]),
     red: new Float32Array([0.95, 0.70, 0.70]),
     lightRed: new Float32Array([0.5, 0.1, 0.1]),
     yellowgreen: new Float32Array([0.90, 0.90, 0.50]),

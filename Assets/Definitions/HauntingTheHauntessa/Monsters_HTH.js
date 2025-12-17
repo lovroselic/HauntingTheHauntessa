@@ -3667,6 +3667,17 @@ const INTERACTION_OBJECT = {
         material: MATERIAL.gold,
         text: "Face on the coin looks like my mother."
     },
+    SilverCoin: {
+        name: "SilverCoin",
+        category: "interaction_item",
+        element: "COIN",
+        scale: 1.8 / 2 ** 8,
+        glueToFloor: true,
+        texture: "Silver",
+        inventorySprite: "SilverCoin",
+        material: MATERIAL.silver,
+        text: "Face on the coin looks like my mother."
+    },
     Sword: {
         name: "Sword",
         category: "interaction_item",
@@ -5370,13 +5381,13 @@ const INTERACTION_ITEM = {
         name: "GreenSwimsuit",
         category: "interaction_item",
         inventorySprite: "GreenSwimsuit",
-         text: "Hot swimsuit."
+        text: "Hot swimsuit."
     },
     MagentaSwimsuit: {
         name: "MagentaSwimsuit",
         category: "interaction_item",
         inventorySprite: "MagentaSwimsuit",
-         text: "Hot swimsuit."
+        text: "Hot swimsuit."
     },
     RedBootyShorts: {
         name: "RedBootyShorts",
@@ -5400,7 +5411,7 @@ const INTERACTION_ITEM = {
         name: "RedSwimsuit",
         category: "interaction_item",
         inventorySprite: "RedSwimsuit",
-         text: "Hot swimsuit."
+        text: "Hot swimsuit."
     },
     RedSword: {
         name: "RedSword",
@@ -5418,14 +5429,39 @@ const INTERACTION_ITEM = {
         name: "SilverSword",
         category: "interaction_item",
         inventorySprite: "SilverSword",
-       text: "Amazing weapon."
+        text: "Amazing weapon."
     },
     YellowSwimsuit: {
         name: "YellowSwimsuit",
         category: "interaction_item",
         inventorySprite: "YellowSwimsuit",
-         text: "Hot swimsuit."
+        text: "Hot swimsuit."
     },
+    SilverCoin: {
+        name: "SilverCoin",
+        category: "interaction_item",
+        inventorySprite: "SilverCoin",
+        text: "The face on the coin looks just like my mother."
+    },
+    TigerHat: {
+        name: "TigerHat",
+        category: "interaction_item",
+        inventorySprite: "TigerHat",
+        text: "Cool headwear."
+    },
+    TigerPump: {
+        name: "TigerPump",
+        category: "interaction_item",
+        inventorySprite: "TigerPump",
+        text: "Hot tiger sking heels."
+    },
+    TigerTard: {
+        name: "TigerTard",
+        category: "interaction_item",
+        inventorySprite: "TigerTard",
+        text: "Hot. Can I wear it?"
+    },
+
 
 
     //metals
@@ -5467,6 +5503,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    Tigress: {
+        name: 'Tigress',
+        sprite: 'Tigress',
+        category: 'crest',
+        voice: 'FemaleVeryLow4',
+        wants: ['TigerHat', 'TigerPump', 'TigerPump', 'TigerTard'],
+        gives: 'WhitePanties',
+        text: {
+            intro: 'I prowl where stripes win. Bring me a sleek set in tiger skin, from crown to claws, and I trade you something snowy.',
+            progress: 'Nice purr, but the pattern is patchy. Return when the stripes run smooth from top to toes.',
+            conclusion: 'Stripes perfected, hunt respected. Take these White Panties, try not to get them striped.',
+        },
+    },
     PardaDeLeo: {
         name: 'PardaDeLeo',
         sprite: 'PardaDeLeo',
@@ -5480,7 +5529,6 @@ const INTERACTION_ENTITY = {
             conclusion: 'Spots aligned, pride approved. Take these White Boots, a zebra will be filing a complaint later.',
         },
     },
-
     NinDzza: {
         name: 'NinDzza',
         sprite: 'NinDzza',
@@ -7504,6 +7552,30 @@ const FIRE_TYPES = {
         warp: 0.045,
         gate: 0.92,
         texture_name: "FireTexture2",
+    },
+    GreenBonfire: {
+        lightColor: LIGHT_COLORS.fireSoftGreen,
+        scale: 0.80,
+        gravity: new Float32Array([0, 0.75, 0]),
+        velocity: 0.00175,
+        spawnRadius: 0.25,
+        turbulence: 0.013,
+        damping: 0.995,
+        warp: 0.045,
+        gate: 0.825,
+        texture_name: "FireTexture2_Green",
+    },
+    BlueBonfire: {
+        lightColor: LIGHT_COLORS.fireSoftBlue,
+        scale: 0.80,
+        gravity: new Float32Array([0, 0.75, 0]),
+        velocity: 0.00175,
+        spawnRadius: 0.25,
+        turbulence: 0.013,
+        damping: 0.995,
+        warp: 0.045,
+        gate: 0.825,
+        texture_name: "FireTexture2_Blue",
     },
 };
 

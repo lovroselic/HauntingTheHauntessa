@@ -67,6 +67,7 @@ const DEBUG = {
 
         Create:
   
+  
 
 
         Entities:
@@ -81,7 +82,7 @@ const DEBUG = {
             DONE Mysteria wants "Candle", "Candle", "Candle" gives Skull
             DONE SkullGuardian want Skull, Skull, Skull, Skull, Skull gives KeyMould
             DONE PardaDeLeo wants "Leotard", "LeoHat", "LeoPumps", "LeoPumps" gives WhiteBoots
-        **Tigress wants .... gives ....
+            DONE Tigress wants "TigerHat", "TigerPump", "TigerPump", "TigerTard" gives "WhitePanties"
         **DarkaWithoutParka .... gives ....
         **YoungLea .... gives ....
         ++StingyWasp wants "Wasp", "Wasp", "Wasp" gives ...
@@ -89,6 +90,9 @@ const DEBUG = {
         ++Silverine wants SilverShield, SilverSword gives ...
         ++GoldArmAda wants GoldShield, GoldSword gives ...
         ++Elfinea .... gives ....
+        ++WishingWella SilverCoin, SilverCoin wants gives Pearl
+        ++NylonFatale
+        ++MerBitch "Pearl", "Pearl", "Pearl" gives .....
 
 
         Items:
@@ -108,7 +112,7 @@ const DEBUG = {
             DONE BlackLatexpanties ---> NinDzza (113)
         BlackLatexBra
             DONE "WhiteBoots", ---> PardaDeLeo (113)
-        "WhitePanties", 
+            DONE "WhitePanties", ---> Tigress (105)
             DONE "WhiteLatexBra" BeeraKruegl ---> (111)
         "WhiskeyShot", 
         "WhiskeyShot", 
@@ -130,6 +134,13 @@ const DEBUG = {
         "Wasp"
         "Wasp"
         "Wasp"
+        "TigerHat", 
+        "TigerPump", 
+        "TigerPump", 
+        "TigerTard"
+        Pearl ---> WishingWella()
+        "Pearl", 
+        "Pearl", 
 
         Rooms that can have more entities, trainers:
         - 109
@@ -163,7 +174,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 114;
+        GAME.level = 105;
         GAME.gold = 50035;
         //GAME.gold = 5;
         GAME.lives = 3;
@@ -212,6 +223,8 @@ const DEBUG = {
         let invItems = [
             "GoldCoin",
             "Wasp", "Wasp", "Wasp",
+            "TigerHat", "TigerPump", "TigerPump", "TigerTard",
+            "Pearl", "Pearl", "Pearl",
 
         ];
 
@@ -363,7 +376,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.34.7",
+    VERSION: "0.34.8",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
