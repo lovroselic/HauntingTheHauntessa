@@ -2905,7 +2905,7 @@ const MAP = {
         start: '[78,1]',
         decals: '[[2360,4,"Firepit2","crest"],[1527,4,"Firepit2","crest"],[705,4,"Firepit2","crest"],[213,4,"BloodPuddleDecal03","crest"],[214,4,"BloodPuddleDecal03","crest"],[212,4,"BloodPuddleDecal10","crest"],[211,4,"BloodPuddleDecal10","crest"],[338,4,"Firepit3","crest"]]',
         lights: '[[2698,7,"FluxLight109","standardYellowDim"],[2866,3,"Lights108","standardYellowDim"],[2866,5,"FluxLight129","standardYellowDim"],[104,3,"CampFire_1178","fireplaceDim"],[656,3,"Candle52","standardYellowFaint"]]',
-        gates: '[[2635,1,"105.1","103.3","Closed"],[210,5,"105.2","107.1","Gold"],[2540,3,"105.3","112.1","Green"],[1490,3,"105.4","112.2","Closed"],[1748,1,"105.5","113.1","Orange"],[435,1,"105.6","113.2","Closed"],[10,7,"105.7","118.1","Down"]]',
+        gates: '[[2635,1,"105.1","103.3","Closed"],[210,5,"105.2","107.1","Gold"],[2540,3,"105.3","112.1","Green"],[1490,3,"105.4","112.2","Closed"],[1748,1,"105.5","113.1","Orange"],[435,1,"105.6","113.2","Closed"],[10,7,"105.7","118.1","Down"],[425,1,"105.6","119.1","Down"]]',
         keys: '[[2248,3],[1456,9]]',
         gold: '[[2291,"GoldBar"],[2313,"GoldBar"],[2334,"GoldBar"],[2293,"GoldBar"]]',
         entities: '[[230,3,"GoldKeyMaker"],[2310,5,"GoldSitter"],[1341,7,"SkullRider"],[15,7,"Tigress"]]',
@@ -3130,5 +3130,23 @@ const MAP = {
         start: '[766,1]',
         lights: '[[3034,1,"DuaLLantern_007","standard"],[1186,1,"Candle50","standard2"]]',
         gates: '[[2635,1,"118.1","105.7","Up"]]',
+    }
+    ,
+    119: {
+        name: "Hypogaeum",
+        sg: 0,
+        maxSpawned: -1,
+        killCountdown: -1,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: -1,
+        data: '{"width":"21","height":"21","depth":7,"map":"BB6AA5BB2ABB2AA27BAA9BABAA24BAA9BAA2BAA11BB5ABAA10BABAA5BAA4BAA3BAA7BAA7BAA2BABB3AA4BAA17BÁBÁÁ6AA23BAA62ÁBÁÁ2AA3BAA30BAA2BAA31BAA71BAA7BAA9BAÁAA11BB8ŁɁBсࡁABB9ABB3ABB7ÁBÁABABB21ABB9ABAA2BB2ÁBB2AA3BABABB2ÁBB6ABB12AA2BABB4ABABB6ABB36ÁÁ2BB2ࡁBB11ÁBB13ÁBB12ࡁÁÁ4BB5ÁBB40ABB94$BB121ABB8ÁBB6ÁÁ2BB30ÁBB27ÁBB63ABB204ÁÁ2BB12ÁÁ2BB4ÁÁ2BB5ÁBB6ÁBB5ÁÁ2BB8ÁBB5ÁBÁÁ3BB22ÁBB2ÁBB3ÁBB3ÁBB5ÁBB3ÁÁ3BÁÁ3BB70ÁÁ2BB20ÁÁ10BB5ÁÁ3BB7ÁÁ3ABB6ÁÁ3BB3AA6BB11ABB10ÁÁ2BB2ÁBB26ÁÁ2BB14ABB6ÁAÁAA2BB13ÁÁ2BB3ÁÁ20BB2ÁBÁBB7ÁÁ2BÁBB8ÁÁ3BB2ÁBB51ÁÁ2AÁAÁAÁAÁÁ3BB14ÁBABB5ÁÁ4BB4ÁBB4ࡁBB4ÁÁ2BB6ÁÁ2BB2ŁBB4ÁÁ2BB5ÁBABB2ÁÁ2BB3сBB16ÁÁ2BB25ÁÁ2ɁBB6AÁÁ3BÁBB8ÁÁ14ࡁÁÁ33BÁÁ18AÁÁ4сŁÁÁ4ɁÁÁ10BÁÁ47BB8ÁÁ11BÁÁ10BÁÁ94BÁÁ3BB3ÁÁ12BÁÁ5BÁÁ3BÁÁ12BÁÁ11BÁÁ29BB2ÁÁ12ŁÁÁ47BÁÁ3AA5ÁAÁÁ6BÁÁ10BÁÁ28BÁÁ3BÁÁ7BÁÁ4BÁÁ14AÁÁ5BÁBÁÁ19AA2ÁÁ17BÁÁ3BÁÁ32BB4ÁÁ12ࡁÁÁ11BÁÁ16BB3ÁÁ19BB2ÁÁ10BB2ÁÁ21BÁÁ10BÁÁ8BB2ÁÁ18BÁÁ10BÁÁ30ɁÁÁ3BB4ÁÁ4BÁÁ2BÁÁ18BÁÁ22BB2ÁÁ2BB2ÁÁ7BB2ÁBÁÁ6BB2ÁÁ6BÁÁ13BB2ÁÁ20BB2ÁÁ12BB4ÁÁ4BB2ÁÁ13BB2ÁÁ4BÁÁ29BB6ÁÁ7BB4ÁÁ26BÁÁ31BÁÁ4BÁÁ3BB2ÁÁ2BB5ÁÁ17BB2ÁBB4ÁÁ38сÁBB10ÁÁ9BB2ÁÁ3BB2ÁBB4ÁBB2ÁÁ9BB2ÁÁ13BÁBÁBB5ÁÁ2AA2BB2ÁÁ2ŁŁ2BB2ÁÁ2ɁɁ2Bсс2BÁÁ2"}',
+        wall: "GreyBrickWall101",
+        floor: "SmallBlackBricks45",
+        ceil: "DarkBricks110",
+        start: '[332,7]',
+        lights: '[[2003,7,"WallLamp34","standard2"],[2448,5,"DuaLLantern_022","standard2"],[2804,3,"Candle63","standard2"],[2347,1,"SkullLantern57","standard2"],[377,3,"Fireplace206","fireplace"]]',
+        gates: '[[1782,7,"119.1","105.6","Up"]]',
+        triggers: '[[1135,1,"SmoothWallButton",1,1135]]',
+        entities: '[[437,1,"WishingWell"]]',
     }
 };

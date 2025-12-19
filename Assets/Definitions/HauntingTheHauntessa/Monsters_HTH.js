@@ -5503,6 +5503,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    WishingWell: {
+        name: 'WishingWell',
+        sprite: 'WishingWell',
+        category: 'crest',
+        voice: 'Female2',
+        wants: ['SilverCoin', 'SilverCoin'],
+        gives: 'Pearl',
+        text: {
+            intro: 'Make a wish, make it swell. Toss me two silver coins and I will grant it, as long as you wish for this Pearl I dragged from the mud.',
+            progress: 'One splash is just a tease. Another coin and the well might please.',
+            conclusion: 'Two splashes, wish allowed. Here is your Pearl, still damp and weirdly proud.',
+        },
+    },
     Tigress: {
         name: 'Tigress',
         sprite: 'Tigress',

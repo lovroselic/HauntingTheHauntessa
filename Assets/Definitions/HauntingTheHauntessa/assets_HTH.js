@@ -1391,6 +1391,7 @@ LoadSprites = [
     { srcName: "EntityPictures/NinDzza.webp", name: "NinDzza" },
     { srcName: "EntityPictures/PardaDeLeo.webp", name: "PardaDeLeo" },
     { srcName: "EntityPictures/Tigress.webp", name: "Tigress" },
+    { srcName: "EntityPictures/WishingWell.webp", name: "WishingWell" },
 
 
     //action movables

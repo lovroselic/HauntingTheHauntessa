@@ -66,6 +66,7 @@ const DEBUG = {
         /*
 
         Create:
+       - vampyre
   
   
 
@@ -90,7 +91,7 @@ const DEBUG = {
         ++Silverine wants SilverShield, SilverSword gives ...
         ++GoldArmAda wants GoldShield, GoldSword gives ...
         ++Elfinea .... gives ....
-        ++WishingWella SilverCoin, SilverCoin wants gives Pearl
+            DONE WishingWella "SilverCoin", "SilverCoin" wants gives Pearl
         ++NylonFatale
         ++MerBitch "Pearl", "Pearl", "Pearl" gives .....
 
@@ -138,9 +139,11 @@ const DEBUG = {
         "TigerPump", 
         "TigerPump", 
         "TigerTard"
-        Pearl ---> WishingWella()
+            DONE Pearl ---> WishingWella(119)
         "Pearl", 
         "Pearl", 
+        "SilverCoin", 
+        "SilverCoin"
 
         Rooms that can have more entities, trainers:
         - 109
@@ -174,7 +177,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 105;
+        GAME.level = 119;
         GAME.gold = 50035;
         //GAME.gold = 5;
         GAME.lives = 3;
@@ -223,7 +226,6 @@ const DEBUG = {
         let invItems = [
             "GoldCoin",
             "Wasp", "Wasp", "Wasp",
-            "TigerHat", "TigerPump", "TigerPump", "TigerTard",
             "Pearl", "Pearl", "Pearl",
 
         ];
@@ -376,7 +378,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.34.8",
+    VERSION: "0.34.9",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
