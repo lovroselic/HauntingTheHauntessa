@@ -5344,8 +5344,8 @@ const INTERACTION_ITEM = {
     Bow: {
         name: "Bow",
         category: "interaction_item",
-        inventorySprite: "GoldIBowngots",
-        text: "Bow.Silent and deadly weapon."
+        inventorySprite: "Bow",
+        text: "Bow. Silent and deadly weapon."
     },
     Skull: {
         name: "Skull",
@@ -5462,6 +5462,44 @@ const INTERACTION_ITEM = {
         text: "Hot. Can I wear it?"
     },
 
+    AssaultRifle: {
+        name: "AssaultRifle",
+        category: "interaction_item",
+        inventorySprite: "AssaultRifle",
+        text: "We don't need guns, we have fireballs!"
+    },
+    MilitaryHelmet: {
+        name: "MilitaryHelmet",
+        category: "interaction_item",
+        inventorySprite: "MilitaryHelmet",
+        text: "Very modern helmet. No knight would wear this."
+    },
+    BlackLacePanties: {
+        name: "BlackLacePanties",
+        category: "interaction_item",
+        inventorySprite: "BlackLacePanties",
+        text: "Hot. Can I wear it?"
+    },
+    RedLacePanties: {
+        name: "RedLacePanties",
+        category: "interaction_item",
+        inventorySprite: "RedLacePanties",
+        text: "Hot. Can I wear it?"
+    },
+    RedLeatherDress: {
+        name: "RedLeatherDress",
+        category: "interaction_item",
+        inventorySprite: "RedLeatherDress",
+        text: "Hot. Can I wear it?"
+    },
+    WhiteLacePanties: {
+        name: "WhiteLacePanties",
+        category: "interaction_item",
+        inventorySprite: "WhiteLacePanties",
+        text: "Hot. Can I wear it?"
+    },
+
+
 
 
     //metals
@@ -5503,6 +5541,97 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    VamPyressa: {
+        name: 'VamPyressa',
+        sprite: 'VamPyressa',
+        category: 'crest',
+        voice: 'FemaleLow3',
+        wants: ['Blood', 'Blood', 'Blood'],
+        gives: 'LeoPumps',
+        text: {
+            intro: 'I am parched, princess. Bring me something rich and red, and I will part with a leopard heel. Victim, not you, if you are quick.',
+            progress: 'A sip, not a feast. My thirst still prowls, bring more and hush the beast.',
+            conclusion: 'Craving quiet, bargain kept. Take your single leopard pump, mind the bite marks, they are decorative.',
+        },
+    },
+    Demonatoris: {
+        name: 'Demonatoris',
+        sprite: 'Demonatoris',
+        category: 'crest',
+        voice: 'FemaleLow4',
+        wants: ['RedSword', 'RedShield'],
+        gives: 'RedLacePanties',
+        text: {
+            intro: 'Demon chic demands matching heat. Bring me a Red Sword and a Red Shield, and I will part with my Red Lace Panties, try not to drool.',
+            progress: 'Hot start, but I arm in pairs. Blade and shield, both or nothing.',
+            conclusion: 'Set delivered, sparks approved. Take these Red Lace Panties, careful, they like trouble.',
+        },
+    },
+    AppaCave: {
+        name: 'AppaCave',
+        sprite: 'AppaCave',
+        category: 'crest',
+        voice: 'Apparitia',
+        wants: ['AssaultRifle', 'MilitaryHelmet'],
+        gives: 'WhiteLacePanties',
+        text: {
+            intro: 'War footing activated, Princess. Arm me with a rifle and a helmet and I will part with something lacey and very unregulation.',
+            progress: 'Half a loadout is a good way to get shot. I want both, rifle and helmet, then we talk panties.',
+            conclusion: 'Loadout complete, target acquired. Take these White Lace Panties and try not to salute.',
+        },
+    },
+    GoldArmAda: {
+        name: 'GoldArmAda',
+        sprite: 'GoldArmAda',
+        category: 'crest',
+        voice: 'Female2',
+        wants: ['GoldShield', 'GoldSword'],
+        gives: 'GoldPanties',
+        text: {
+            intro: 'Golden arms for golden charms. Bring me a Gold Shield and a Gold Sword, and I will part with my very own Gold Panties, mildly legendary.',
+            progress: 'Nice shine, but I trade for the full set. Both pieces, no excuses, and try not to smudge the polish.',
+            conclusion: 'Set delivered, deal fulfilled. Take these Gold Panties, display them proudly or quietly, I am not judging.',
+        },
+    },
+    MerBitch: {
+        name: 'MerBitch',
+        sprite: 'MerBitch',
+        category: 'crest',
+        voice: 'Female6',
+        wants: ['Pearl', 'Pearl', 'Pearl'],
+        gives: 'GreenSwimsuit',
+        text: {
+            intro: 'Necklace nearly worthy of a queen. Bring me more pearls to finish the shine, and maybe you get this Green Swimsuit, I swim fine without it.',
+            progress: 'Nice luster, but the strand still gapes. Keep fishing pearls till it lies smooth.',
+            conclusion: 'Clasp clicks, shimmer perfect. Take the Green Swimsuit, the ocean prefers me minimalist.',
+        },
+    },
+    StingyWasp: {
+        name: 'StingyWasp',
+        sprite: 'StingyWasp',
+        category: 'crest',
+        voice: 'Female4',
+        wants: ['Wasp', 'Wasp', 'Wasp'],
+        gives: 'YellowSwimsuit',
+        text: {
+            intro: "My babies buzzed off. Bring me a tidy little swarm and I will toss you last year's Yellow Swimsuit. Barely worn, unlike my patience.",
+            progress: 'Nice buzz, but a swarm has more chorus. Keep scooping stingers till the hive sings.',
+            conclusion: 'All wings accounted for. Take this Yellow Swimsuit, I am sticking to stripes, not swimsuits.',
+        },
+    },
+    Elfinea: {
+        name: 'Elfinea',
+        sprite: 'Elfinea',
+        category: 'crest',
+        voice: 'Female5',
+        wants: ['Moon', 'Moon', 'Moon'],
+        gives: 'Bow',
+        text: {
+            intro: 'Promise a girl the moon and I will collect. Not one, three. Bring them and my bow is yours to direct.',
+            progress: 'Pretty glow, but my ledger says more. I count to three, keep stealing from the sky store.',
+            conclusion: 'Trimoon pledge fulfilled, night thrilled. Take this bow and make the stars sit still.',
+        },
+    },
     WishingWell: {
         name: 'WishingWell',
         sprite: 'WishingWell',

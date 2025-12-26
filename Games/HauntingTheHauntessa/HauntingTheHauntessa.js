@@ -66,7 +66,11 @@ const DEBUG = {
         /*
 
         Create:
-       - vampyre
+        ---GreenHelmet
+        
+        --Silver needing girl
+        --SwimmerVenus
+        ---RedNeedingGilr
   
   
 
@@ -86,20 +90,29 @@ const DEBUG = {
             DONE Tigress wants "TigerHat", "TigerPump", "TigerPump", "TigerTard" gives "WhitePanties"
         **DarkaWithoutParka .... gives ....
         **YoungLea .... gives ....
-        ++StingyWasp wants "Wasp", "Wasp", "Wasp" gives ...
-        ++Demonatoris wants "RedSword", "RedShield" gives ...
-        ++Silverine wants SilverShield, SilverSword gives ...
-        ++GoldArmAda wants GoldShield, GoldSword gives ...
-        ++Elfinea .... gives ....
+            DONE StingyWasp wants "Wasp", "Wasp", "Wasp" gives "YellowSwimsuit" 
+            DONE Demonatoris wants "RedSword", "RedShield" gives "RedLacePanties"
+        ++Silverine wants SilverShield, SilverSword gives ... SilverPanties (who wants that, + silver pumps)
+            DONE GoldArmAda wants GoldShield, GoldSword gives GoldPanties
+            DONE Elfinea "Moon", "Moon", "Moon" gives "Bow"
             DONE WishingWella "SilverCoin", "SilverCoin" wants gives Pearl
-        ++NylonFatale
-        ++MerBitch "Pearl", "Pearl", "Pearl" gives .....
+        ++NylonFatale .... gives .... BlackLacePanties
+            DONE MerBitch "Pearl", "Pearl", "Pearl" gives GreenSwimsuit
+            DONE AppaCave  "AssaultRifle", "MilitaryHelmet" gives WhiteLacePanties
+        ++Swapmsstress .... gives ....
+        DONE VamPyressa "Blood","Blood", "Blood" gives "LeoPumps"
+        ++Voguessa .... gives ....
+        ++ %%%%% wants "BlueSwimsuit", "GreenSwimsuit", "MagentaSwimsuit",  "RedSwimsuit" , "YellowSwimsuit"  gives ....
+        ++ %%%% redwantlingerieshorts
+        ++ %%%% wants SilverPanties, SilverPump, SilverPump
+
+        ++ MerryFairy wants "BlackLacePanties", "RedLacePanties", "WhiteLacePanties" gives "WhiskeyShot"
 
 
         Items:
         "Leotard", 
             DONE "LeoHat", BarFly --> (111)
-        "LeoPumps", 
+            DONE "LeoPumps", VamPyressa ---> (121)
         "LeoPumps"
             DONE Skull, SkullRider --> (105)
             DONE Skull, Mysteria --> (110)
@@ -127,8 +140,8 @@ const DEBUG = {
         "GoldPump"
         Shuriken", 
         "Dagger"
-        "Bow"
-        "GoldPanties"
+            DONE "Bow" Elfinea --> (119)
+            DONE "GoldPanties" GoldArmAda --> (120)
         "GlassOfBeer",
         "GlassOfBeer",
         "GlassOfBeer"
@@ -144,6 +157,31 @@ const DEBUG = {
         "Pearl", 
         "SilverCoin", 
         "SilverCoin"
+        "RedSword", 
+        "RedShield"
+        SilverShield, 
+        SilverSword
+        GoldShield, 
+        GoldSword
+        "Moon", 
+        "Moon", 
+        "Moon",
+        "BlueSwimsuit", 
+            DONE "GreenSwimsuit", MerBitch --> (119)
+        "MagentaSwimsuit",  
+        "RedSwimsuit" , 
+            DONE "YellowSwimsuit" StingyWasp ---> (119)
+        "Blood"
+        "Blood"
+        "Blood"
+        "AssaultRifle", 
+        "MilitaryHelmet",
+        "BlackLacePanties", 
+            DONE "RedLacePanties", Demonatoris ---> (120)
+            DONE "WhiteLacePanties" AppaCave ---> (120)
+        SilverPanties,
+        SilverPump, 
+        SilverPump
 
         Rooms that can have more entities, trainers:
         - 109
@@ -177,7 +215,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 119;
+        GAME.level = 121;
         GAME.gold = 50035;
         //GAME.gold = 5;
         GAME.lives = 3;
@@ -225,9 +263,11 @@ const DEBUG = {
 
         let invItems = [
             "GoldCoin",
-            "Wasp", "Wasp", "Wasp",
-            "Pearl", "Pearl", "Pearl",
+            "SilverShield", "SilverSword",
+            "BlueSwimsuit", "GreenSwimsuit", "MagentaSwimsuit",  "RedSwimsuit" , "YellowSwimsuit" ,
+            "SilverPanties", "SilverPump", "SilverPump",
 
+            "BlackLacePanties", "RedLacePanties", "WhiteLacePanties"
         ];
 
         for (let itm of invItems) {
@@ -378,7 +418,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.34.9",
+    VERSION: "0.34.10",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

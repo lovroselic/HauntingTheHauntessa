@@ -1392,7 +1392,13 @@ LoadSprites = [
     { srcName: "EntityPictures/PardaDeLeo.webp", name: "PardaDeLeo" },
     { srcName: "EntityPictures/Tigress.webp", name: "Tigress" },
     { srcName: "EntityPictures/WishingWell.webp", name: "WishingWell" },
-
+    { srcName: "EntityPictures/Elfinea.webp", name: "Elfinea" },
+    { srcName: "EntityPictures/StingyWasp.webp", name: "StingyWasp" },
+    { srcName: "EntityPictures/MerBitch.webp", name: "MerBitch" },
+    { srcName: "EntityPictures/GoldArmAda.webp", name: "GoldArmAda" },
+    { srcName: "EntityPictures/AppaCave.webp", name: "AppaCave" },
+    { srcName: "EntityPictures/Demonatoris.webp", name: "Demonatoris" },
+    { srcName: "EntityPictures/VamPyressa.webp", name: "VamPyressa" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.webp", name: "BabyGreenSpider" },
@@ -1775,11 +1781,17 @@ LoadSprites = [
     { srcName: "Items/SilverShield.png", name: "SilverShield" },
     { srcName: "Items/SilverSword.png", name: "SilverSword" },
     { srcName: "Items/YellowSwimsuit.png", name: "YellowSwimsuit" },
-
     { srcName: "Items/SilverCoin.png", name: "SilverCoin" },
     { srcName: "Items/TigerHat.png", name: "TigerHat" },
     { srcName: "Items/TigerPump.png", name: "TigerPump" },
     { srcName: "Items/TigerTard.png", name: "TigerTard" },
+
+    { srcName: "Items/AssaultRifle.png", name: "AssaultRifle" },
+    { srcName: "Items/MilitaryHelmet.png", name: "MilitaryHelmet" },
+    { srcName: "Items/BlackLacePanties.png", name: "BlackLacePanties" },
+    { srcName: "Items/RedLacePanties.png", name: "RedLacePanties" },
+    { srcName: "Items/RedLeatherDress.png", name: "RedLeatherDress" },
+    { srcName: "Items/WhiteLacePanties.png", name: "WhiteLacePanties" },
 
     //books
     { srcName: "Items/YoniBook.webp", name: "YoniBook" },
