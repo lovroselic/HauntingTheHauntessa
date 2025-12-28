@@ -72,9 +72,6 @@ const DEBUG = {
         --SwimmerVenus
         ---RedNeedingGilr
   
-  
-
-
         Entities:
             DONE GoldKeyMaker wants KeyMould, GoldIngots gives GoldKey
             DONE PackaG wants GoldBar, GoldBar, GoldBar gives GoldIngots
@@ -92,7 +89,7 @@ const DEBUG = {
         **YoungLea .... gives ....
             DONE StingyWasp wants "Wasp", "Wasp", "Wasp" gives "YellowSwimsuit" 
             DONE Demonatoris wants "RedSword", "RedShield" gives "RedLacePanties"
-        ++Silverine wants SilverShield, SilverSword gives ... SilverPanties (who wants that, + silver pumps)
+            DONE Silverine wants SilverShield, SilverSword gives SilverPanties 
             DONE GoldArmAda wants GoldShield, GoldSword gives GoldPanties
             DONE Elfinea "Moon", "Moon", "Moon" gives "Bow"
             DONE WishingWella "SilverCoin", "SilverCoin" wants gives Pearl
@@ -100,13 +97,12 @@ const DEBUG = {
             DONE MerBitch "Pearl", "Pearl", "Pearl" gives GreenSwimsuit
             DONE AppaCave  "AssaultRifle", "MilitaryHelmet" gives WhiteLacePanties
         ++Swapmsstress .... gives ....
-        DONE VamPyressa "Blood","Blood", "Blood" gives "LeoPumps"
+            DONE VamPyressa "Blood","Blood", "Blood" gives "LeoPumps"
         ++Voguessa .... gives ....
-        ++ %%%%% wants "BlueSwimsuit", "GreenSwimsuit", "MagentaSwimsuit",  "RedSwimsuit" , "YellowSwimsuit"  gives ....
+            DONE SunsetVenus wants "BlueSwimsuit", "GreenSwimsuit", "MagentaSwimsuit",  "RedSwimsuit" , "YellowSwimsuit"  gives TigerTard
         ++ %%%% redwantlingerieshorts
-        ++ %%%% wants SilverPanties, SilverPump, SilverPump
-
-        ++ MerryFairy wants "BlackLacePanties", "RedLacePanties", "WhiteLacePanties" gives "WhiskeyShot"
+        ++ SilverIce wants SilverPanties, SilverPump, SilverPump gives ....
+            DONE MerryFairy wants "BlackLacePanties", "RedLacePanties", "WhiteLacePanties" gives "WhiskeyShot"
 
 
         Items:
@@ -128,7 +124,7 @@ const DEBUG = {
             DONE "WhiteBoots", ---> PardaDeLeo (113)
             DONE "WhitePanties", ---> Tigress (105)
             DONE "WhiteLatexBra" BeeraKruegl ---> (111)
-        "WhiskeyShot", 
+            DONE "WhiskeyShot", MerryFairy --> (109)
         "WhiskeyShot", 
         "WhiskeyShot"
             DONE "KeyMould" SkullGuardian --> (112)
@@ -148,10 +144,6 @@ const DEBUG = {
         "Wasp"
         "Wasp"
         "Wasp"
-        "TigerHat", 
-        "TigerPump", 
-        "TigerPump", 
-        "TigerTard"
             DONE Pearl ---> WishingWella(119)
         "Pearl", 
         "Pearl", 
@@ -179,9 +171,13 @@ const DEBUG = {
         "BlackLacePanties", 
             DONE "RedLacePanties", Demonatoris ---> (120)
             DONE "WhiteLacePanties" AppaCave ---> (120)
-        SilverPanties,
+        SilverPanties, Silverine --> (121)
         SilverPump, 
         SilverPump
+        "TigerHat", 
+        "TigerPump", 
+        "TigerPump", "
+            DONE TigerTard" --> SunsetVenus (105)
 
         Rooms that can have more entities, trainers:
         - 109
@@ -215,7 +211,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 121;
+        GAME.level = 112;
         GAME.gold = 50035;
         //GAME.gold = 5;
         GAME.lives = 3;
@@ -263,11 +259,7 @@ const DEBUG = {
 
         let invItems = [
             "GoldCoin",
-            "SilverShield", "SilverSword",
-            "BlueSwimsuit", "GreenSwimsuit", "MagentaSwimsuit",  "RedSwimsuit" , "YellowSwimsuit" ,
             "SilverPanties", "SilverPump", "SilverPump",
-
-            "BlackLacePanties", "RedLacePanties", "WhiteLacePanties"
         ];
 
         for (let itm of invItems) {
@@ -418,7 +410,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.34.10",
+    VERSION: "0.34.11",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -483,8 +475,6 @@ const PRG = {
         ENGINE.addBOX("ROOM", ENGINE.gameWIDTH, ENGINE.gameHEIGHT, ["background", "3d_webgl", "info", "text", "FPS", "button", "click"], "side");
         ENGINE.addBOX("SIDE", ENGINE.sideWIDTH, ENGINE.gameHEIGHT, ["sideback", "keys", "time", "scrolls", "orbs", "skills"], "fside");
         ENGINE.addBOX("DOWN", ENGINE.bottomWIDTH, ENGINE.bottomHEIGHT, ["bottom", "bottomText", "save", "subtitle"], null);
-
-        WebGL.HTML.addButtons();
 
         MINIMAP.setOffset((INI.SCREEN_BORDER - INI.MINIMAP_W) / 2, (ENGINE.titleHEIGHT - INI.MINIMAP_H) / 2);
 
@@ -1383,6 +1373,7 @@ const GAME = {
     setCameraView() {
         WebGL.hero.firstPersonCamera = new $3D_Camera(WebGL.hero.player, DIR_NOWAY, 0.0, new Vector3(0, 0, 0), 0);
         WebGL.hero.topCamera = new $3D_Camera(WebGL.hero.player, DIR_UP, 0.9, new Vector3(0, -0.5, 0), 1, 70);
+        WebGL.hero.topCameraLowAngle = new $3D_Camera(WebGL.hero.player, DIR_UP, 0.13, new Vector3(0, -0.35, 0), 0.70);
         WebGL.hero.overheadCamera = new $3D_Camera(WebGL.hero.player, DIR_UP, 2.5, new Vector3(0, -1, 0), 1, 80);
         WebGL.hero.orto_overheadCamera = new $3D_Camera(WebGL.hero.player, DIR_UP, 4, new Vector3(0, -1, 0), 0.4, 80);
 
@@ -1490,7 +1481,7 @@ const GAME = {
     async setup() {
         console.log("GAME SETUP started");
         $("#conv").remove();
-        WebGL.GAME.setViewButtons();
+        //WebGL.GAME.setViewButtons();   //allow different views
         await GAME.initializeImageData();
         const totalPixels = SPRITE.Avatar.width * SPRITE.Avatar.height;
         IMAGE_DATA.INDICES.set(3, "Avatar", totalPixels, IMAGE_DATA.Avatar.data);

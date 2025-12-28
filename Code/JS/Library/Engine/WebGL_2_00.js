@@ -93,6 +93,7 @@ const WebGL = {
             this.prevent_movement_in_exlusion_grids = prevent;
             switch (type) {
                 case "first_person":
+                case "third_person_low_angle":
                     this.firstperson = true;
                     break;
                 case "third_person":
@@ -1243,6 +1244,7 @@ const WebGL = {
         buttons: `
         <div>
             <input type='button' id='p1' value='First person view [1]' disabled="disabled">
+            <input type='button' id='p2' value='Third person, low angle view [2]' disabled="disabled">
             <input type='button' id='p3' value='Third person view [3]' disabled="disabled">
             <input type='button' id='pt5' value='Top down view [5]' disabled="disabled">
             <input type='button' id='pt7' value='Overhead view [7]' disabled="disabled">
@@ -1253,14 +1255,20 @@ const WebGL = {
         }
     },
     GAME: {
+        allowViews: false,
         setViewButtons() {
+            WebGL.HTML.addButtons();
+
             $("#p1").on("click", WebGL.GAME.setFirstPerson);
+            $("#p2").on("click", WebGL.GAME.setThirdPersonLowAngle);
             $("#p3").on("click", WebGL.GAME.setThirdPerson);
             $("#pt5").on("click", WebGL.GAME.setTopDownView);
             $("#pt7").on("click", WebGL.GAME.setOrtoTopDownView);
+            
+            this.allowViews = true;
         },
         disableViewButton(which) {
-            const button_ids = ["#p1", "#p3", "#pt5", "#pt7"];
+            const button_ids = ["#p1", "#p2", "#p3", "#pt5", "#pt7"];
             for (const btn of button_ids) {
                 if (btn !== which) {
                     $(btn).prop("disabled", false);
@@ -1286,6 +1294,15 @@ const WebGL = {
             WebGL.setCamera(WebGL.hero.topCamera);
             WebGL.GAME.positionUpdate();
         },
+        setThirdPersonLowAngle() {
+            WebGL.GAME.disableViewButton("#p2");
+            if (WebGL.CONFIG.cameraType === "third_person_low_angle") return;
+            WebGL.CONFIG.set("third_person_low_angle", true);
+            WebGL.hero.player.associateExternalCamera(WebGL.hero.topCameraLowAngle);
+            WebGL.hero.player.moveSpeed = 2.0;
+            WebGL.setCamera(WebGL.hero.topCameraLowAngle);
+            WebGL.GAME.positionUpdate();
+        },
         setTopDownView() {
             WebGL.GAME.disableViewButton("#pt5");
             if (WebGL.CONFIG.cameraType === "top_down") return;
@@ -1309,10 +1326,16 @@ const WebGL = {
             WebGL.hero.player.matrixUpdate();
         },
         respond(lapsedTime) {
+            if (!this.allowViews) return;
+
             const map = ENGINE.GAME.keymap;
 
             if (map[ENGINE.KEY.map["1"]]) {
                 WebGL.GAME.setFirstPerson();
+                return;
+            }
+            if (map[ENGINE.KEY.map["2"]]) {
+                WebGL.GAME.setThirdPersonLowAngle();
                 return;
             }
             if (map[ENGINE.KEY.map["3"]]) {
@@ -2347,6 +2370,7 @@ class $3D_player {
     }
     lookAbout(dir) {
         if (!WebGL.CONFIG.firstperson) return;                                      //only first person makes sense, the rest will not be supported
+        if (WebGL.CONFIG.cameraType !== "first_person") return;                     //i am abusing first person, so we need another guard
 
         let lookDirection = new Vector3(0, dir.y * WebGL.INI.LOOK_AROUND_QUANT, 0);
         this.camera.direction_offset = this.camera.direction_offset.add(lookDirection);
@@ -2356,6 +2380,7 @@ class $3D_player {
         this.lookingAround = true;
     }
     resetCamera() {
+        if (WebGL.CONFIG.cameraType !== "first_person") return;
         if (Math.abs(this.camera.direction_offset.y) - 0.0005 < WebGL.INI.LOOK_AROUND_QUANT) {
             this.camera.direction_offset.set_y(0.0);
         } else {

@@ -5541,6 +5541,45 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    MerryFairy: {
+        name: 'MerryFairy',
+        sprite: 'MerryFairy',
+        category: 'crest',
+        voice: 'FemaleLow5',
+        wants: ['BlackLacePanties', 'RedLacePanties', 'WhiteLacePanties'],
+        gives: 'WhiskeyShot',
+        text: {
+            intro: 'I collect lace like dragons hoard coins. Bring black, red, and white, and I will pour you a shot of legendary fairy whiskey. I am talking about panties of course. Could be worn.',
+            progress: 'Pretty frill, but the drawer wants all three. Keep hunting, collector.',
+            conclusion: 'Set complete, wings aflutter. Here is your Whiskey Shot, sip quick, it nips back.',
+        },
+    },
+    SunsetVenus: {
+        name: 'SunsetVenus',
+        sprite: 'SunsetVenus',
+        category: 'crest',
+        voice: 'FemaleLow2',
+        wants: ['BlueSwimsuit', 'GreenSwimsuit', 'MagentaSwimsuit', 'RedSwimsuit', 'YellowSwimsuit'],
+        gives: 'TigerTard',
+        text: {
+            intro: 'I collect clingy one piece dreams, tight and shiny. Bring me a rainbow of swimsuits and I will trade you a tiger skin leotard, stripes are not my scene.',
+            progress: 'Nice splash, but my beach bag still yawns. Keep the colors coming till it purrs.',
+            conclusion: 'Closet satisfied, waves pacified. Take this TigerTard and go make the jungle jealous.',
+        },
+    },
+    Silverine: {
+        name: 'Silverine',
+        sprite: 'Silverine',
+        category: 'crest',
+        voice: 'FemaleLow6',
+        wants: ['SilverShield', 'SilverSword'],
+        gives: 'SilverPanties',
+        text: {
+            intro: 'Silver sings in sets. Bring me a Silver Shield and a Silver Sword, and I will part with my Silver Panties, slightly battle worn and very shiny.',
+            progress: 'Good glint, but not the full duet. I want shield and sword, then we talk lingerie.',
+            conclusion: 'Polish perfect, bargain kept. Take these Silver Panties, treat them like armor you cannot show the guards.',
+        },
+    },
     VamPyressa: {
         name: 'VamPyressa',
         sprite: 'VamPyressa',
