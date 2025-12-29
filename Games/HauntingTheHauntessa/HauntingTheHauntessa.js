@@ -66,10 +66,7 @@ const DEBUG = {
         /*
 
         Create:
-        ---GreenHelmet
-        
-        --Silver needing girl
-        --SwimmerVenus
+
         ---RedNeedingGilr
   
         Entities:
@@ -85,28 +82,28 @@ const DEBUG = {
             DONE SkullGuardian want Skull, Skull, Skull, Skull, Skull gives KeyMould
             DONE PardaDeLeo wants "Leotard", "LeoHat", "LeoPumps", "LeoPumps" gives WhiteBoots
             DONE Tigress wants "TigerHat", "TigerPump", "TigerPump", "TigerTard" gives "WhitePanties"
-        **DarkaWithoutParka .... gives ....
-        **YoungLea .... gives ....
+            DONE DarkaWithoutParka RedLeatherDress, RedLatexPanties gives BlackLatexBra
+        **YoungLea .... gives Leotard
             DONE StingyWasp wants "Wasp", "Wasp", "Wasp" gives "YellowSwimsuit" 
             DONE Demonatoris wants "RedSword", "RedShield" gives "RedLacePanties"
             DONE Silverine wants SilverShield, SilverSword gives SilverPanties 
             DONE GoldArmAda wants GoldShield, GoldSword gives GoldPanties
             DONE Elfinea "Moon", "Moon", "Moon" gives "Bow"
             DONE WishingWella "SilverCoin", "SilverCoin" wants gives Pearl
-        ++NylonFatale .... gives .... BlackLacePanties
+            DONE NylonFatale "BlackLeatherBoots", "RedThighHighBoots", "OrangeBoots" gives .... BlackLacePanties
             DONE MerBitch "Pearl", "Pearl", "Pearl" gives GreenSwimsuit
             DONE AppaCave  "AssaultRifle", "MilitaryHelmet" gives WhiteLacePanties
-        ++Swapmsstress .... gives ....
+            DONE Swapmsstress "Poison", "Poison", "Poison" gives MagentaSwimsuit
             DONE VamPyressa "Blood","Blood", "Blood" gives "LeoPumps"
-        ++Voguessa .... gives ....
+            DONE Voguessa RedShorts, RedBootyShorts  gives BlackLeatherBoots
             DONE SunsetVenus wants "BlueSwimsuit", "GreenSwimsuit", "MagentaSwimsuit",  "RedSwimsuit" , "YellowSwimsuit"  gives TigerTard
-        ++ %%%% redwantlingerieshorts
-        ++ SilverIce wants SilverPanties, SilverPump, SilverPump gives ....
+        DONE SilverIce wants SilverPanties, SilverPump, SilverPump gives WhiskeyShot
             DONE MerryFairy wants "BlackLacePanties", "RedLacePanties", "WhiteLacePanties" gives "WhiskeyShot"
+            DONE PinkNordica wants PinkPanties, PinkBra, PinkHighBoots gives Pearl
 
 
         Items:
-        "Leotard", 
+        "Leotard", YoungLea --> ()
             DONE "LeoHat", BarFly --> (111)
             DONE "LeoPumps", VamPyressa ---> (121)
         "LeoPumps"
@@ -119,14 +116,17 @@ const DEBUG = {
         "Candle", 
         "Candle"
         BlackLeatherBoots
+            DONE "BlackLeatherBoots", )yes 2nd!) Voguessa --> (114)
+        "RedThighHighBoots", 
+        "OrangeBoots"
             DONE BlackLatexpanties ---> NinDzza (113)
-        BlackLatexBra
+            DONE BlackLatexBra DarkaWithoutParka ---> (114)
             DONE "WhiteBoots", ---> PardaDeLeo (113)
             DONE "WhitePanties", ---> Tigress (105)
             DONE "WhiteLatexBra" BeeraKruegl ---> (111)
             DONE "WhiskeyShot", MerryFairy --> (109)
         "WhiskeyShot", 
-        "WhiskeyShot"
+            DONE "WhiskeyShot" --> SilverIce (114)
             DONE "KeyMould" SkullGuardian --> (112)
             DONE "GoldIngots" ---> PackaG (109)
             DONE GoldBar, GoldSitter-->(105)
@@ -145,7 +145,7 @@ const DEBUG = {
         "Wasp"
         "Wasp"
             DONE Pearl ---> WishingWella(119)
-        "Pearl", 
+        "Pearl", ---> PinkNordica (120)
         "Pearl", 
         "SilverCoin", 
         "SilverCoin"
@@ -160,7 +160,7 @@ const DEBUG = {
         "Moon",
         "BlueSwimsuit", 
             DONE "GreenSwimsuit", MerBitch --> (119)
-        "MagentaSwimsuit",  
+            DONE "MagentaSwimsuit",  Swapmsstress --> (118)
         "RedSwimsuit" , 
             DONE "YellowSwimsuit" StingyWasp ---> (119)
         "Blood"
@@ -168,16 +168,22 @@ const DEBUG = {
         "Blood"
         "AssaultRifle", 
         "MilitaryHelmet",
-        "BlackLacePanties", 
+            DONE "BlackLacePanties", NylonFatale --> (118)
             DONE "RedLacePanties", Demonatoris ---> (120)
             DONE "WhiteLacePanties" AppaCave ---> (120)
-        SilverPanties, Silverine --> (121)
+            DONE SilverPanties, Silverine --> (121)
         SilverPump, 
         SilverPump
         "TigerHat", 
         "TigerPump", 
         "TigerPump", "
             DONE TigerTard" --> SunsetVenus (105)
+        PinkPanties, 
+        PinkBra, 
+        PinkHighBoots
+        RedShorts, 
+        RedBootyShorts
+        RedLatexPanties
 
         Rooms that can have more entities, trainers:
         - 109
@@ -211,7 +217,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 112;
+        GAME.level = 114;
         GAME.gold = 50035;
         //GAME.gold = 5;
         GAME.lives = 3;
@@ -260,6 +266,8 @@ const DEBUG = {
         let invItems = [
             "GoldCoin",
             "SilverPanties", "SilverPump", "SilverPump",
+            "RedShorts", "RedBootyShorts",
+            "RedLeatherDress", "RedLatexPanties"
         ];
 
         for (let itm of invItems) {
@@ -410,7 +418,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.34.11",
+    VERSION: "0.34.12",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

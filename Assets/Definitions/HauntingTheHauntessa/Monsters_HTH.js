@@ -5541,6 +5541,84 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    SilverIce: {
+        name: 'SilverIce',
+        sprite: 'SilverIce',
+        category: 'crest',
+        voice: 'FemaleVeryLow3',
+        wants: ['SilverPanties', 'SilverPump', 'SilverPump'],
+        gives: 'WhiskeyShot',
+        text: {
+            intro: 'Ice cavern rules, bring me silver or shiver. Deliver Silver Panties and two Silver Pumps, and I will pour you a whiskey shot carved cold from the cave.',
+            progress: 'Pretty glint, but the set is thin. I want the panties and both pumps, keep hunting till the chill bites.',
+            conclusion: 'All silver, all shiver. Take your WhiskeyShot, cave cold and mean, try not to gasp.',
+        },
+    },
+    Voguessa: {
+        name: 'Voguessa',
+        sprite: 'Voguessa',
+        category: 'crest',
+        voice: 'Female4',
+        wants: ['RedShorts', 'RedBootyShorts'],
+        gives: 'BlackLeatherBoots',
+        text: {
+            intro: 'I am curating a crimson fit. Bring me two red bottoms, shorts and booty shorts, tight enough to make mirrors blush, and I will step out of these Black Leather Boots for you.',
+            progress: 'Cute start, but the look needs both. I want the plain red and the booty kind, keep shopping.',
+            conclusion: 'Set secured, vibe assured. Boots off, take these Black Leather Boots and try not to scuff them while you strut.',
+        },
+    },
+    DarkaWithoutParka: {
+        name: 'DarkaWithoutParka',
+        sprite: 'DarkaWithoutParka',
+        category: 'crest',
+        voice: 'Female3',
+        wants: ['RedLeatherDress', 'RedLatexPanties'],
+        gives: 'BlackLatexBra',
+        text: {
+            intro: 'Black on black is funeral chic. I crave slick red, dress and panties. Deliver, and I slip off this bra.',
+            progress: 'Hot start, but that is half a promise. I want the full scarlet set, no teasing.',
+            conclusion: 'Scarlet secured, mood improved. As promised, here is my Black Latex Bra, handle gently, it squeaks when pleased.',
+        },
+    },
+    NylonFatale: {
+        name: 'NylonFatale',
+        sprite: 'NylonFatale',
+        category: 'crest',
+        voice: 'Female5',
+        wants: ['BlackLeatherBoots', 'RedThighHighBoots', 'OrangeBoots'],
+        gives: 'BlackLacePanties',
+        text: {
+            intro: 'I curate leather legends. Bring me black, bring me red, bring me something dangerously orange, and I might trade you my tiniest lace temptation.',
+            progress: 'Nice heel, but the runway is still hungry. More leather, more color, less hesitation.',
+            conclusion: 'Closet purrs, mission stirs. Take these Black Lace Panties and try to behave, or do not.',
+        },
+    },
+    Swapmsstress: {
+        name: 'Swapmsstress',
+        sprite: 'Swapmsstress',
+        category: 'crest',
+        voice: 'Female3',
+        wants: ['Poison', 'Poison', 'Poison'],
+        gives: 'MagentaSwimsuit',
+        text: {
+            intro: 'Green looks good on me, I keep the glow with daily poison. Bring three vials and this Magenta Swimsuit is yours, it yells too loud in my swamp.',
+            progress: 'Tingly, but not toxic enough. I count to three, keep the venom coming.',
+            conclusion: 'Perfectly poisoned, complexion preserved. Take the Magenta Swimsuit, the frogs prefer subtle.',
+        },
+    },
+    PinkNordica: {
+        name: 'PinkNordica',
+        sprite: 'PinkNordica',
+        category: 'crest',
+        voice: 'Female6',
+        wants: ['PinkPanties', 'PinkBra', 'PinkHighBoots'],
+        gives: 'Pearl',
+        text: {
+            intro: 'Fresh from ice water and still dripping. Bring me a dry pink set, panties, bra, and high boots, and the Pearl I found is yours.',
+            progress: 'Warmer, but not wrapped. I want the full pink trio, then we talk treasure.',
+            conclusion: 'Pink secured, chill cured. Take this Pearl from the frozen deep, try not to drop it back.',
+        },
+    },
     MerryFairy: {
         name: 'MerryFairy',
         sprite: 'MerryFairy',

@@ -1402,6 +1402,12 @@ LoadSprites = [
     { srcName: "EntityPictures/Silverine.webp", name: "Silverine" },
     { srcName: "EntityPictures/SunsetVenus.webp", name: "SunsetVenus" },
     { srcName: "EntityPictures/MerryFairy.webp", name: "MerryFairy" },
+    { srcName: "EntityPictures/PinkNordica.webp", name: "PinkNordica" },
+    { srcName: "EntityPictures/Swapmsstress.webp", name: "Swapmsstress" },
+    { srcName: "EntityPictures/NylonFatale.webp", name: "NylonFatale" },
+    { srcName: "EntityPictures/DarkaWithoutParka.webp", name: "DarkaWithoutParka" },
+    { srcName: "EntityPictures/Voguessa.webp", name: "Voguessa" },
+    { srcName: "EntityPictures/SilverIce.webp", name: "SilverIce" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.webp", name: "BabyGreenSpider" },
