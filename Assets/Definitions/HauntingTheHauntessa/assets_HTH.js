@@ -1408,6 +1408,7 @@ LoadSprites = [
     { srcName: "EntityPictures/DarkaWithoutParka.webp", name: "DarkaWithoutParka" },
     { srcName: "EntityPictures/Voguessa.webp", name: "Voguessa" },
     { srcName: "EntityPictures/SilverIce.webp", name: "SilverIce" },
+    { srcName: "EntityPictures/YoungLea.webp", name: "YoungLea" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.webp", name: "BabyGreenSpider" },
@@ -1794,13 +1795,14 @@ LoadSprites = [
     { srcName: "Items/TigerHat.png", name: "TigerHat" },
     { srcName: "Items/TigerPump.png", name: "TigerPump" },
     { srcName: "Items/TigerTard.png", name: "TigerTard" },
-
     { srcName: "Items/AssaultRifle.png", name: "AssaultRifle" },
     { srcName: "Items/MilitaryHelmet.png", name: "MilitaryHelmet" },
     { srcName: "Items/BlackLacePanties.png", name: "BlackLacePanties" },
     { srcName: "Items/RedLacePanties.png", name: "RedLacePanties" },
     { srcName: "Items/RedLeatherDress.png", name: "RedLeatherDress" },
     { srcName: "Items/WhiteLacePanties.png", name: "WhiteLacePanties" },
+    { srcName: "Items/CupOfCoffee.png", name: "CupOfCoffee" },
+    { srcName: "Items/PieceOfCake.png", name: "PieceOfCake" },
 
     //books
     { srcName: "Items/YoniBook.webp", name: "YoniBook" },

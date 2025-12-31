@@ -2861,8 +2861,10 @@ const MAP = {
         decals: '[[25,4,"Firepit4","crest"],[37,4,"Firepit4","crest"]]',
         lights: '[[1816,7,"SkullLantern53","standardYellowDim"],[1812,7,"SkullLantern58","standardYellowDim"],[1820,7,"SkullLantern51","standardYellowDim"],[3013,1,"SkullLantern50","standardYellowDim"]]',
         gates: '[[2635,1,"103.1","102.2","Up"],[2643,1,"103.2","106.1","Closed"],[10,7,"103.3","105.1","Silver"],[2627,1,"103.4","108.1","Closed"],[390,5,"103.5","109.1","Closed"],[386,3,"103.6","110.1","Closed"],[2036,3,"103.7","111.1","Closed"],[2016,5,"103.8","114.1","Closed"]]',
+        containers: '[[362,"Wardrobe","INTERACTION_ITEM.RedLatexPanties",7],[2560,"MetalCrate422","INTERACTION_ITEM.SilverPump",7]]',
         doors: '[2535,2525,338,354]',
         triggers: '[[2592,5,"SmoothWallButton",1,2572]]',
+        objects: '[[2045,"GoldCoin"]]',
         fires: '[[25,4,"Bonfire"],[37,4,"Bonfire"]]',
     }
     ,
@@ -2908,7 +2910,9 @@ const MAP = {
         gates: '[[2635,1,"105.1","103.3","Closed"],[210,5,"105.2","107.1","Gold"],[2540,3,"105.3","112.1","Green"],[1490,3,"105.4","112.2","Closed"],[1748,1,"105.5","113.1","Orange"],[435,1,"105.6","113.2","Closed"],[10,7,"105.7","118.1","Down"],[425,1,"105.6","119.1","Down"],[5,7,"105.7","120.1","Down"],[1533,5,"105.8","121.1","Cyan"]]',
         keys: '[[2248,3],[1456,9],[317,8]]',
         gold: '[[2291,"GoldBar"],[2313,"GoldBar"],[2334,"GoldBar"],[2293,"GoldBar"]]',
+        containers: '[[81,"MetalCrate50","INTERACTION_ITEM.RedBootyShorts",7],[2362,"Barrel_469","INTERACTION_ITEM.SilverShield",4],[282,"WoodenCrate433","INTERACTION_ITEM.RedShield",7],[1615,"WoodenCrate55","INTERACTION_ITEM.RedSwimsuit",3]]',
         entities: '[[230,3,"GoldKeyMaker"],[2310,5,"GoldSitter"],[1341,7,"SkullRider"],[15,7,"Tigress"],[430,1,"SunsetVenus"]]',
+        objects: '[[354,"GoldCoin"],[1396,"Blood"],[2399,"GoldBar"]]',
         oracles: '[[2215,7,"InternalClosedCastleGate"]]',
         lairs: '[[2435,3,"Lair68"],[2415,5,"Lair61"]]',
         fires: '[[705,4,"RedBonfire"],[1527,4,"RedBonfire"],[2360,4,"RedBonfire"],[338,4,"Fire"]]',
@@ -2921,7 +2925,7 @@ const MAP = {
         killCountdown: -1,
         killsRequiredToStopSpawning: 99,
         spawnDelay: -1,
-        data: '{"width":15,"height":15,"depth":2,"map":"BB4AA4BB2AA7BB2AA42BB6AA2BAA3BB3ABAA3BB2AA15BABAA6BAA2BABAA5BAA5BAA3BB10AA5BB2ABB2AA2BB3ABB13ABB3AA2BB3AA4BB4ABABB2AA2BB3AA2BAA2BABB3ABB20$BB31ÁABB57ÁÁ6BÁÁ2BB36ÁÁ2BB2ÁÁ2BB7ÁÁ20BB2ÁÁ2BB2ÁÁ7BB2ÁÁ35BB7"}',
+        data: '{"width":"15","height":"15","depth":2,"map":"BB4AA4BB2AA7BB2AA42BB6AA2BAA3BB3ABAA3BB2AA15BABAA6BAA2BABAA5BAA5BAA3BB10AA5BB2ABB2AA2BB3ABB13ABB3AA2BB3AA4BB4ABABB2AA2BB3AA2BAA2BABB3ABB20$BB31ÁABB57ÁÁ6BÁÁ2BB36ÁÁ2BB2ÁÁ2BB7ÁÁ20BB2ÁÁ2BB2ÁÁ7BB2ÁÁ35BB7"}',
         wall: "DarkBricks110",
         floor: "FloorTiles_SDXL_006",
         ceil: "DarkWallSDXL308",
@@ -2929,6 +2933,7 @@ const MAP = {
         decals: '[[112,4,"Firepit2","crest"]]',
         lights: '[[377,5,"FluxLight126","standardYellowFaint"],[297,3,"Candle65","standardYellowFaint"]]',
         gates: '[[7,7,"106.1","103.2","Closed"]]',
+        containers: '[[28,"WoodenCrate435","INTERACTION_ITEM.PinkHighBoots",3]]',
         objects: '[[16,"HealthBox"],[148,"Owl"],[196,"GoldCoin"]]',
         movables: '[[207,"Life"],[157,"GoldPrincessMana"]]',
         fires: '[[112,4,"RedBonfire"]]',
@@ -2981,7 +2986,9 @@ const MAP = {
         start: '[1396,1]',
         lights: '[[1907,3,"FluxLight103","standardRedish"],[2075,3,"Lights109","standardRedish"],[1729,1,"Fireplace211","fireplace"],[1349,7,"CampFire_1175","fireplace"],[1977,5,"Lamp53","standardYellow"]]',
         gates: '[[1553,3,"109.1","103.5","Closed"]]',
+        containers: '[[1657,"WoodenCrate440","INTERACTION_ITEM.CupOfCoffee",7],[1367,"IronChest","INTERACTION_ITEM.LeoPumps",3]]',
         entities: '[[1533,5,"PackaG"],[1333,7,"MerryFairy"]]',
+        objects: '[[1362,"Candle"]]',
     }
     ,
     110: {
@@ -2998,7 +3005,9 @@ const MAP = {
         start: '[1408,5]',
         lights: '[[1957,5,"DuaLLantern_016","standardSoft"],[2072,3,"Candelabra16","standardYellowDim"]]',
         gates: '[[1407,5,"110.1","103.6","Closed"]]',
+        containers: '[[1702,"WoodenCrate57","INTERACTION_ITEM.PieceOfCake",7],[1718,"Barrel_459","INTERACTION_ITEM.BlackLeatherBoots",7],[1359,"Crate","INTERACTION_ITEM.GoldSword",7]]',
         entities: '[[1532,3,"MysteRya"],[1596,5,"RedRidingApparitia"]]',
+        objects: '[[1652,"GoldCoin"]]',
     }
     ,
     111: {
@@ -3015,7 +3024,10 @@ const MAP = {
         start: '[288,3]',
         lights: '[[895,5,"SkullLantern58","standardYellowDim"],[909,3,"Candle71","standardYellowDim"],[769,7,"FluxLight128","standardYellowDim"],[1035,1,"Candle56","standardYellowDim"]]',
         gates: '[[171,5,"111.1","103.7","Closed"]]',
+        gold: '[[121,"GoldBar"],[125,"GoldBar"],[239,"GoldBar"]]',
+        containers: '[[77,"Barrel_484","INTERACTION_ITEM.RedThighHighBoots",1]]',
         entities: '[[285,5,"BarFly"],[9,7,"BeeraKruegl"]]',
+        objects: '[[321,"Candle"],[235,"GoldBar"],[260,"SilverCoin"]]',
     }
     ,
     112: {
@@ -3033,8 +3045,10 @@ const MAP = {
         decals: '[[1287,4,"Firepit4","crest"],[51,4,"IceFloor37","texture"],[52,4,"IceFloor37","texture"],[53,4,"IceFloor37","texture"],[71,4,"IceFloor37","texture"],[72,4,"IceFloor37","texture"],[73,4,"IceFloor37","texture"],[74,4,"IceFloor37","texture"],[75,4,"IceFloor37","texture"],[31,4,"Water32","texture"],[32,3,"Mountains2","texture"],[30,5,"Mountains2","texture"]]',
         lights: '[[1669,5,"Lamp49","standardYellowSoft"]]',
         gates: '[[1197,5,"112.1","105.3","Closed"],[127,5,"112.2","105.4","Closed"]]',
+        containers: '[[85,"MetalCrate424","INTERACTION_ITEM.GoldPump",1],[310,"WoodenCrate58","INTERACTION_ITEM.RedShorts",7],[358,"WoodenCrate442","INTERACTION_ITEM.WhiskeyShot",5],[57,"WoodenCrate432","INTERACTION_ITEM.TigerPump",1]]',
         triggers: '[[236,7,"SmoothWallButton",1,255],[1294,4,"SmoothWallButton",1,1158]]',
         entities: '[[1238,3,"SkullGuard"],[10,7,"PinkNordica"]]',
+        objects: '[[1193,"Orb"],[906,"GoldCoin"]]',
         fires: '[[1287,4,"Fireplace"]]',
     }
     ,
@@ -3053,6 +3067,7 @@ const MAP = {
         decals: '[[1360,3,"Forest102","texture"],[1358,5,"Forest102","texture"],[1359,4,"Grass17","texture"],[1685,4,"Grass_0859","texture"],[1686,3,"BrightForest_0851","texture"],[1684,5,"BrightForest_0851","texture"]]',
         lights: '[[1947,1,"Candle56","standardYellowDim"],[1979,7,"Candle54","standardYellowDim"]]',
         gates: '[[1328,7,"113.1","105.5","Closed"],[15,7,"113.2","105.6","Closed"]]',
+        containers: '[[1696,"WoodenCrate56","INTERACTION_ITEM.OrangeBoots",5],[1345,"Barrel_460","INTERACTION_ITEM.GoldPump",5],[22,"WoodenCrate51","INTERACTION_ITEM.GlassOfBeer",7],[40,"WoodenCrate55","INTERACTION_ITEM.Wasp",3],[213,"Barrel_478","INTERACTION_ITEM.Pearl",1]]',
         doors: '[1438,1527,1607,1496,1681]',
         triggers: '[[438,1,"SmoothWallButton",1,395]]',
         entities: '[[1338,7,"NinDzza"],[1706,1,"PardaDeLeo"]]',
@@ -3073,6 +3088,7 @@ const MAP = {
         decals: '[[1589,4,"Firepit1","crest"],[1582,4,"IceFloor33","texture"],[1565,7,"IceWall22","texture"],[1599,1,"IceWall22","texture"]]',
         lights: '[[1885,3,"WallLamp31","standardYellow"],[1854,5,"SkullLantern51","standardYellowDim"],[1888,5,"SkullLantern54","standardYellowDim"]]',
         gates: '[[1597,3,"114.1","103.8","Closed"]]',
+        containers: '[[1463,"BarrelMedieval","INTERACTION_ITEM.Shuriken",7],[1714,"WoodenCrate50","INTERACTION_ITEM.GlassOfBeer",1],[1701,"Barrel_475","INTERACTION_ITEM.Moon",1]]',
         entities: '[[1453,7,"DarkaWithoutParka"],[1725,1,"Voguessa"],[1581,5,"SilverIce"]]',
         fires: '[[1589,4,"RedBonfire"]]',
     }
@@ -3132,7 +3148,9 @@ const MAP = {
         decals: '[[472,4,"Grass_0861","texture"],[492,4,"Grass_0861","texture"],[493,4,"Grass_0861","texture"],[494,4,"Grass_0861","texture"],[491,5,"HauntedForest16","texture"],[471,5,"HauntedForest16","texture"],[495,3,"HauntedForest16","texture"],[473,3,"HauntedForest16","texture"],[471,7,"HauntedForest16","texture"],[473,7,"HauntedForest16","texture"]]',
         lights: '[[3034,1,"DuaLLantern_007","standard"],[1186,1,"Candle50","standard2"]]',
         gates: '[[2635,1,"118.1","105.7","Up"]]',
+        containers: '[[544,"Barrel_469","INTERACTION_ITEM.Wasp",1],[2623,"Barrel_483","INTERACTION_ITEM.RedSword",3],[2314,"WoodenCrate438","INTERACTION_ITEM.Moon",7],[2608,"MetalCrate421","INTERACTION_ITEM.TigerPump",3]]',
         entities: '[[451,7,"Swapmsstress"],[2278,7,"NylonFatale"]]',
+        objects: '[[825,"Dagger"]]',
     }
     ,
     119: {
@@ -3150,8 +3168,10 @@ const MAP = {
         decals: '[[1408,4,"SeaWater1","texture"],[1387,7,"Beach2","texture"],[1429,1,"Beach2","texture"]]',
         lights: '[[2003,7,"WallLamp34","standard2"],[2448,5,"DuaLLantern_022","standard2"],[2804,3,"Candle63","standard2"],[2347,1,"SkullLantern57","standard2"],[377,3,"Fireplace206","fireplace"]]',
         gates: '[[1782,7,"119.1","105.6","Up"]]',
+        containers: '[[317,"WoodenCrate441","INTERACTION_ITEM.AssaultRifle",4],[1369,"WoodenCrate60","INTERACTION_ITEM.PinkBra",7],[1635,"Crate","INTERACTION_ITEM.GlassOfBeer",3],[1825,"WoodenCrate436","INTERACTION_ITEM.Wasp",3]]',
         triggers: '[[1135,1,"SmoothWallButton",1,1135]]',
         entities: '[[437,1,"WishingWell"],[1759,1,"Elfinea"],[1306,1,"StingyWasp"],[1407,5,"MerBitch"]]',
+        objects: '[[200,"SilverCoin"],[1202,"Blood"]]',
     }
     ,
     120: {
@@ -3169,7 +3189,9 @@ const MAP = {
         decals: '[[155,4,"Firepit6","crest"],[159,4,"Firepit7","crest"]]',
         lights: '[[292,3,"Fireplace105","fireplace"],[274,5,"Fireplace103","fireplace"],[27,7,"FireplaceFLuxU416","fireplace"],[35,7,"Fireplace212","fireplace"],[1396,7,"FluxLight105","fireplace"]]',
         gates: '[[430,1,"120.1","105.7","Up"]]',
-        entities: '[[945,5,"GoldArmAda"],[892,7,"AppaCave"],[10,7,"Demonatoris"]]',
+        containers: '[[940,"WoodenCrate55","INTERACTION_ITEM.SilverSword",7],[1032,"WoodenCrate55","INTERACTION_ITEM.Moon",5],[38,"WoodenCrate433","INTERACTION_ITEM.BlueSwimsuit",5],[395,"BarrelX","INTERACTION_ITEM.TigerHat",1]]',
+        entities: '[[945,5,"GoldArmAda"],[892,7,"AppaCave"],[10,7,"Demonatoris"],[167,3,"YoungLea"]]',
+        objects: '[[308,"Blood"]]',
         fires: '[[155,4,"Bonfire"],[159,4,"Bonfire"]]',
     }
     ,
@@ -3188,6 +3210,7 @@ const MAP = {
         decals: '[[68,4,"Firepit3","crest"],[355,4,"Firepit6","crest"]]',
         lights: '[[1543,1,"Lights107","standardYellowDim"],[1543,7,"DuaLLantern_027","standardYellowDim"],[1543,3,"lantern201","standardYellowDim"],[1543,5,"FluxLight115","standardYellowDim"]]',
         gates: '[[209,3,"121.1","105.8","Closed"]]',
+        containers: '[[400,"Barrel_460","INTERACTION_ITEM.PinkPanties",5],[145,"WoodenCrate441","INTERACTION_ITEM.GoldShield",3],[31,"WoodenCrate55","INTERACTION_ITEM.MilitaryHelmet",7],[412,"Chest10","INTERACTION_ITEM.SilverPump",1]]',
         entities: '[[42,5,"VamPyressa"],[437,1,"Silverine"]]',
         fires: '[[68,4,"Fire"],[355,4,"Fire"]]',
     }

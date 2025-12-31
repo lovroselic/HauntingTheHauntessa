@@ -5498,6 +5498,18 @@ const INTERACTION_ITEM = {
         inventorySprite: "WhiteLacePanties",
         text: "Hot. Can I wear it?"
     },
+    CupOfCoffee: {
+        name: "CupOfCoffee",
+        category: "interaction_item",
+        inventorySprite: "CupOfCoffee",
+        text: "Coffee."
+    },
+    PieceOfCake: {
+        name: "PieceOfCake",
+        category: "interaction_item",
+        inventorySprite: "PieceOfCake",
+        text: "Delicious strawberry cake."
+    },
 
 
 
@@ -5541,6 +5553,19 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    YoungLea: {
+        name: 'YoungLea',
+        sprite: 'YoungLea',
+        category: 'crest',
+        voice: 'FemaleVeryLow6',
+        wants: ['CupOfCoffee', 'PieceOfCake'],
+        gives: 'Leotard',
+        text: {
+            intro: 'Forget heels and frills, I run on sugar and sips. Bring me cake and coffee, and this leopard leotard slips.',
+            progress: 'Sweet or bitter, I need both to consider. Fetch the missing treat and we might talk spots.',
+            conclusion: 'Mood fed and caffeine led. Take the Leotard, leopard and lovely, try not to purr.',
+        },
+    },
     SilverIce: {
         name: 'SilverIce',
         sprite: 'SilverIce',
