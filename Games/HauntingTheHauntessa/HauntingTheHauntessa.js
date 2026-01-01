@@ -203,6 +203,11 @@ const DEBUG = {
 
 
         CoinTrainers (missing 5):
+        + NordAxe (health)
+        + MagicLizzie (magic)
+        + LavaBlow (mana)
+        + HonoredKnighess (attack)
+        + BlackDagger (defense)
 
 
 
@@ -412,7 +417,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.34.12",
+    VERSION: "0.34.14",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",

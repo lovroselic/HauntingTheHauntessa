@@ -7350,6 +7350,71 @@ const INTERACTION_ENTITY = {
 };
 
 const INTERACTION_SHRINE = {
+    NordAxe: {
+        name: "NordAxe",
+        sprite: "NordAxe",
+        category: "crest",
+        voice: "Female2",
+        wants: ["GoldCoin"],
+        gives: "HeartSkill",
+        text: {
+            intro: "Health is carved in cold water and harder steel. Pay one GoldCoin and I will toughen your heart, cold plunges and axe work included.",
+            progress: null,
+            conclusion: "Coin taken, pulse awakened. HeartSkill up, now breathe frost, swing smart, and outlast your enemies.",
+        },
+    },
+    HonoredKnightess: {
+        name: "HonoredKnightess",
+        sprite: "HonoredKnightess",
+        category: "crest",
+        voice: "Female6",
+        wants: ["GoldCoin"],
+        gives: "Attack",
+        text: {
+            intro: "Stand tall, face forward, swing true. Pay one GoldCoin and I will teach the honorable charge, clean arc, clean cut, no sneaking, no stew.",
+            progress: null,
+            conclusion: "Oath paid, lesson made. Your attack now leads from the front, and when a head must roll, it rolls swiftly.",
+        },
+    },
+    BlackDagger: {
+        name: "BlackDagger",
+        sprite: "BlackDagger",
+        category: "crest",
+        voice: "Female6",
+        wants: ["GoldCoin"],
+        gives: "Defense",
+        text: {
+            intro: "Defense is as sharp as your dagger. Pay one GoldCoin and I will teach you to guard with an edge, not a whimper.",
+            progress: null,
+            conclusion: "Clink heard, edge learned. Your defense now bites before it blocks.",
+        },
+    },
+    LavaBlow: {
+        name: "LavaBlow",
+        sprite: "LavaBlow",
+        category: 'crest',
+        voice: "FemaleLow2",
+        wants: ["GoldCoin"],
+        gives: "ManaSkill",
+        text: {
+            intro: "I drink liquid fire for fun. Pay one GoldCoin and I will stoke your mana, bigger pool, longer burn.",
+            progress: null,
+            conclusion: "Coin clinked, heat linked. Mana surges, now go blaze trails, not curtains.",
+        },
+    },
+    MagicLizzie: {
+        name: "MagicLizzie",
+        sprite: "MagicLizzie",
+        category: 'crest',
+        voice: "FemaleHigh3",
+        wants: ["GoldCoin"],
+        gives: "Magic",
+        text: {
+            intro: "Half domme, half lizard, all business. Pay one GoldCoin and I teach your magic to bite, shapeshift drills included.",
+            progress: null,
+            conclusion: "Clink accepted, lesson injected. Magic sharpened, try not to molt on the carpets.",
+        },
+    },
     SorceryTraineress: {
         name: "SorceryTraineress",
         sprite: "SorceryTraineress",
