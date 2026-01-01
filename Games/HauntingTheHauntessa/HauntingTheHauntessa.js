@@ -194,8 +194,7 @@ const DEBUG = {
             DONE GoldCoin (112)
 
         Rooms that can have more entities, trainers:
-        - 109
-        - 110
+ 
 
     
         Trainers:
@@ -203,11 +202,11 @@ const DEBUG = {
 
 
         CoinTrainers (missing 5):
-        + NordAxe (health)
-        + MagicLizzie (magic)
-        + LavaBlow (mana)
-        + HonoredKnighess (attack)
-        + BlackDagger (defense)
+            DONE NordAxe (health) --> (118)
+            DONE MagicLizzie (magic) --> (109)
+            DONE LavaBlow (mana) --> (105)
+            DONE HonoredKnighess (attack) --> (120)
+            DONE BlackDagger (defense)--> (121)
 
 
 
@@ -218,7 +217,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 120;
+        GAME.level = 103;
         GAME.gold = 50035;
         //GAME.gold = 5;
         GAME.lives = 3;
@@ -417,7 +416,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.34.14",
+    VERSION: "0.35.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
