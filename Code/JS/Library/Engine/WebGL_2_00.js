@@ -1264,7 +1264,7 @@ const WebGL = {
             $("#p3").on("click", WebGL.GAME.setThirdPerson);
             $("#pt5").on("click", WebGL.GAME.setTopDownView);
             $("#pt7").on("click", WebGL.GAME.setOrtoTopDownView);
-            
+
             this.allowViews = true;
         },
         disableViewButton(which) {
@@ -3221,17 +3221,18 @@ class BouncingMissile extends Missile {
     calcPower(magic) {
         return Math.max(1, Math.round((0.9 * magic)) + RND(-3, 3));
     }
-    rebound(innerPoint, GA) {
+    rebound(innerPoint, GA, normal, IAM) {
         const pos2D = Vector3.to_FP_Grid(this.pos);
         const dir2D = Vector3.to_FP_Vector(this.dir);
         const reboundDir = GRID.getReboundDir(innerPoint, pos2D, dir2D, GA, this.depth);
+        if (!reboundDir) return this.explode(IAM);
         const new3D_dir = Vector3.from_2D_dir(reboundDir);
         this.dir = new3D_dir;
         this.bounceCount++;
     }
     hitWall(IAM, point, GA, normal) {
         if (this.power > this.minPower) {
-            this.rebound(point, GA, normal);
+            this.rebound(point, GA, normal, IAM);
             AUDIO.Buzz.volume = RAY.volume(this.distance);
             AUDIO.Buzz.play();
             this.power--;

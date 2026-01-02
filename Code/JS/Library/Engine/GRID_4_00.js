@@ -1663,8 +1663,9 @@ class IA_Dimension_Agnostic_Methods {
         return bank;
     }
     unroll(grid) {
-        const index = this.gridToIndex(grid);
         const items = [];
+        if (this.isOutOfBounds(grid)) return items;
+        const index = this.gridToIndex(grid);
         let layerValue = this.map[index];
         for (let i = 0; i < this.banks; i++) {
             const current = layerValue & this.layerSize;
@@ -1684,6 +1685,7 @@ class IA_Dimension_Agnostic_Methods {
         this.map[this.gridToIndex(grid)] = 0;
     }
     empty(grid) {
+        if (this.isOutOfBounds(grid)) return false;
         return this.map[this.gridToIndex(grid)] === 0;
     }
     set(grid, indexValue, bank) {
