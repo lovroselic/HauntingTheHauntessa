@@ -217,7 +217,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 114;
+        GAME.level = 105;
         GAME.gold = 50035;
         //GAME.gold = 5;
         GAME.lives = 3;
@@ -416,7 +416,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.35.3",
+    VERSION: "0.35.4",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
@@ -1976,8 +1976,10 @@ const GAME = {
         }
 
         for (const missile of MISSILE3D.POOL) {
-            if (missile.friendly) missile.drop();
-            MISSILE3D.remove(missile.id);
+            if (missile) {
+                if (missile.friendly) missile.drop();
+                MISSILE3D.remove(missile.id);
+            }
         }
 
         GAME.STORE.storeIAM(MAP[GAME.level].map);

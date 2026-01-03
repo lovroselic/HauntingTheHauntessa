@@ -1648,6 +1648,7 @@ class IA_Dimension_Agnostic_Methods {
         } else return -1;
     }
     nextFreeBank(grid) {
+        if (this.isOutOfBounds(grid)) return -1;
         const index = this.gridToIndex(grid);
         let layerValue = this.map[index];
         let bank = 0;
