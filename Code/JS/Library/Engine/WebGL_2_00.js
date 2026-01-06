@@ -4515,6 +4515,7 @@ class $Movable_Interactive_entity extends $3D_Entity {
             this.dirStack = AI.wanderer(this);
         }
         this.makeMove();
+        this.setDepth();
     }
     interact(GA, inventory, click, hero) {
         this.storageLog();
