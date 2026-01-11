@@ -186,6 +186,9 @@ const DEBUG = {
             DONE RedShorts, --> (112)
             DONE RedBootyShorts --> (105)
             DONE RedLatexPanties -> (103)
+        "Poison", 
+        "Poison", 
+        "Poison"
 
             DONE GoldCoin -> (103)
             DONE GoldCoin -> (105)
@@ -217,7 +220,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 113;
+        GAME.level = 118;
         GAME.gold = 50035;
         //GAME.gold = 5;
         GAME.lives = 3;
@@ -416,7 +419,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.35.6",
+    VERSION: "0.35.7",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
