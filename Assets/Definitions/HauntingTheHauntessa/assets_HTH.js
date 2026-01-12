@@ -992,6 +992,7 @@ LoadTextures = [
     { srcName: "ObjectTextures/Fish.webp", name: "FishTexture" },
     { srcName: "ObjectTextures/GreenBasilisk.webp", name: "GreenBasilisk" },
     { srcName: "ObjectTextures/GhostFaceGreen.jpg", name: "GhostFaceGreen" },
+    { srcName: "ObjectTextures/GreenishDinoAir.jpg", name: "GreenishDinoAir" },
 
     //title
     { srcName: "Title/HTH_title_768.webp", name: "Title" },

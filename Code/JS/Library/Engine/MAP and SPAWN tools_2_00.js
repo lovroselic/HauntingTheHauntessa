@@ -399,9 +399,18 @@ const SPAWN_TOOLS = {
             let grid = Grid3D.toCenter2D(GA.indexToGrid(fire[0]));
             const face = DirectionToFace(Vector.fromInt(fire[1]));
             const type = FIRE_TYPES[fire[2]];
-            if (face !== "TOP") grid = LightDecal.setPosition(GA.indexToGrid(fire[0]), face);   //side fires - untested!
+            if (face !== "TOP") {
+                if (face === "BOTTOM") return; //this is not supported
+                let dir = FaceToDirection(face);
+                dir = FP_Vector3D.toClass(new Vector3D(dir.x, dir.y, 0));
+                grid = grid.add(dir,  WebGL.INI.TORCH_OUT);
+                grid = grid.add(ABOVE3, WebGL.INI.TORCH_HEIGHT);
+            }
             const position = Vector3.from_grid3D(grid);
-            FIRE3D.add(new FireEmmiter(position, type));
+            const emmiter = new FireEmmiter(position, type);
+            //FIRE3D.add(new FireEmmiter(position, type));
+            FIRE3D.add(emmiter);
+            console.warn("grid", grid, "FireEmmiter", emmiter);
         }
     }
 };

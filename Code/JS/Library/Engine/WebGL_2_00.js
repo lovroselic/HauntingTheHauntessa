@@ -53,6 +53,8 @@ const WebGL = {
         ITEM_UP: 0.01,
         LIGHT_WIDTH: 0.4,
         LIGHT_HEIGHT: 0.5,
+        TORCH_HEIGHT: 0.75,
+        TORCH_OUT: 0.490,
         LIGHT_TOP: 0.1,
         LIGHT_SCALE_FACTOR: 0.5,
         LIGHT_ADJUSTMENT_LIMIT: 0.075,

@@ -3489,7 +3489,6 @@ const MONSTER_TYPE = {
         missile: BouncingMissile,
         missileType: COMMON_ITEM_TYPE.Bounceball,
     },
-
     Skeleton: {
         name: "WhiteSkeleton",
         model: "Skeleton",
@@ -3514,7 +3513,6 @@ const MONSTER_TYPE = {
         missileType: COMMON_ITEM_TYPE.Bounceball,
         material: MATERIAL.standardShine,
     },
-
     RedSkeleton: {
         name: "RedSkeleton",
         texture: "Red2",
@@ -3540,7 +3538,6 @@ const MONSTER_TYPE = {
         missileType: COMMON_ITEM_TYPE.Bounceball,
         material: MATERIAL.redShine,
     },
-
     SilverSkeleton: {
         name: "SilverSkeleton",
         texture: "Silver",
@@ -3566,7 +3563,6 @@ const MONSTER_TYPE = {
         missileType: COMMON_ITEM_TYPE.Bounceball,
         material: MATERIAL.silver,
     },
-
     BlueSkeleton: {
         name: "BlueSkeleton",
         texture: "BlueMetal",
@@ -3592,7 +3588,6 @@ const MONSTER_TYPE = {
         missileType: COMMON_ITEM_TYPE.Bounceball,
         material: MATERIAL.standard,
     },
-
     GreenSkeleton: {
         name: "GreenSkeleton",
         texture: "GreenMetal",
@@ -3618,7 +3613,6 @@ const MONSTER_TYPE = {
         missileType: COMMON_ITEM_TYPE.Bounceball,
         material: MATERIAL.standard,
     },
-
     GoldSkeleton: {
         name: "GoldSkeleton",
         texture: "Gold",
@@ -3693,6 +3687,34 @@ const MONSTER_TYPE = {
         material: MATERIAL.greenShine,
         missile: BouncingMissile,
         missileType: COMMON_ITEM_TYPE.Bounceball,
+    },
+    GreenDinoAir: {
+        name: "GreenDinoAir",
+        texture: "GreenishDinoAir",
+        model: "DinoAir",
+        scale: 1.2 / 2 ** 2,
+        rotateToNorth: 0,
+        midHeight: 0.15,
+        fly: 0.50,
+        deathType: "BloodExplosion",
+        inventory: GOLD_ITEM_TYPE.GoldSphere,
+        mana: 13,
+        health: 80,
+        attack: 80,
+        magic: 40,
+        defense: 30,
+        xp: 250,
+        caster: true,
+        directMagicDamage: false,
+        attackSound: "BirdScreech",
+        hurtSound: "MonsterHurt",
+        behaviourArguments: [12, ["wanderer"], 10, ["shoot"]],
+        moveSpeed: 1.0,
+        shootDistance: 10,
+        stalkDistance: 8,
+        material: MATERIAL.standardShine,
+        missile: Blue3D_Bouncer,
+        missileType: COMMON_ITEM_TYPE.BlueBounceball,
     },
 };
 
@@ -8091,7 +8113,6 @@ const FIRE_TYPES = {
         gate: 1.0,
         texture_name: "FireTexture2",
     },
-
     Bonfire: {
         lightColor: LIGHT_COLORS.fireSubtle,
         scale: 0.75,
@@ -8104,7 +8125,6 @@ const FIRE_TYPES = {
         gate: 0.8,
         texture_name: "FireTexture2",
     },
-
     RedBonfire: {
         lightColor: LIGHT_COLORS.fireSubtleRed,
         scale: 0.80,
@@ -8117,7 +8137,6 @@ const FIRE_TYPES = {
         gate: 0.825,
         texture_name: "RedFireTexture",
     },
-
     Fireplace: {
         lightColor: LIGHT_COLORS.fireSubtle,
         scale: 0.62,
@@ -8155,6 +8174,18 @@ const FIRE_TYPES = {
         warp: 0.045,
         gate: 0.825,
         texture_name: "FireTexture2_Blue",
+    },
+    Torch: {
+        lightColor: LIGHT_COLORS.fireSoftSubtle,
+        scale: 0.125,
+        gravity: new Float32Array([0, 0.6, 0]),
+        velocity: 0.0008,
+        spawnRadius: 0.05,
+        turbulence: 0.007,
+        damping: 0.95,
+        warp: 0.07,
+        gate: 0.99,
+        texture_name: "FireTexture2",
     },
 };
 
