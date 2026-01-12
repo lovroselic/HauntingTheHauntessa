@@ -62,165 +62,16 @@ const DEBUG = {
         HERO.player.pos = Vector3.from_Grid(Grid.toCenter(grid), 0.5);
     },
     checkPoint() {
-        // area-5 - Hauntessa's castle
+        // area-6 - FInal battle
         /*
 
-        Create:
-
-        ---RedNeedingGilr
   
-        Entities:
-            DONE GoldKeyMaker wants KeyMould, GoldIngots gives GoldKey
-            DONE PackaG wants GoldBar, GoldBar, GoldBar gives GoldIngots
-            DONE GoldSitter wants "GoldPump", "GoldPump", "GoldPanties" gives GoldBar
-            DONE BarFly wants "WhiskeyShot", "WhiskeyShot", "WhiskeyShot" gives LeoHat
-            DONE NinDzza wants "Shuriken", "Dagger", "Bow" gives BlackLatexpanties
-            DONE BeeraKruegl wants "GlassOfBeer","GlassOfBeer","GlassOfBeer" gives WhiteLatexBra
-            DONE SkullRider wants BlackLeatherBoots, BlackLatexpanties, BlackLatexBra  gives Skull
-            DONE RedSkullRider  "WhiteBoots", "WhitePanties,"WhiteLatexBra" gives Skull
-            DONE Mysteria wants "Candle", "Candle", "Candle" gives Skull
-            DONE SkullGuardian want Skull, Skull, Skull, Skull, Skull gives KeyMould
-            DONE PardaDeLeo wants "Leotard", "LeoHat", "LeoPumps", "LeoPumps" gives WhiteBoots
-            DONE Tigress wants "TigerHat", "TigerPump", "TigerPump", "TigerTard" gives "WhitePanties"
-            DONE DarkaWithoutParka RedLeatherDress, RedLatexPanties gives BlackLatexBra
-            DONE YoungLea PieceOfCake, CupOfCoffee gives Leotard
-            DONE StingyWasp wants "Wasp", "Wasp", "Wasp" gives "YellowSwimsuit" 
-            DONE Demonatoris wants "RedSword", "RedShield" gives "RedLacePanties"
-            DONE Silverine wants SilverShield, SilverSword gives SilverPanties 
-            DONE GoldArmAda wants GoldShield, GoldSword gives GoldPanties
-            DONE Elfinea "Moon", "Moon", "Moon" gives "Bow"
-            DONE WishingWella "SilverCoin", "SilverCoin" wants gives Pearl
-            DONE NylonFatale "BlackLeatherBoots", "RedThighHighBoots", "OrangeBoots" gives .... BlackLacePanties
-            DONE MerBitch "Pearl", "Pearl", "Pearl" gives GreenSwimsuit
-            DONE AppaCave  "AssaultRifle", "MilitaryHelmet" gives WhiteLacePanties
-            DONE Swapmsstress "Poison", "Poison", "Poison" gives MagentaSwimsuit
-            DONE VamPyressa "Blood","Blood", "Blood" gives "LeoPumps"
-            DONE Voguessa RedShorts, RedBootyShorts  gives BlackLeatherBoots
-            DONE SunsetVenus wants "BlueSwimsuit", "GreenSwimsuit", "MagentaSwimsuit",  "RedSwimsuit" , "YellowSwimsuit"  gives TigerTard
-            DONE SilverIce wants SilverPanties, SilverPump, SilverPump gives WhiskeyShot
-            DONE MerryFairy wants "BlackLacePanties", "RedLacePanties", "WhiteLacePanties" gives "WhiskeyShot"
-            DONE PinkNordica wants PinkPanties, PinkBra, PinkHighBoots gives Pearl
-
-
-        Items:
-            DONE "CupOfCoffee" , --> (109)
-            DONE" PieceOfCake" --> (110)
-            DONE "Leotard", YoungLea --> (120)
-            DONE "LeoHat", BarFly --> (111)
-            DONE "LeoPumps", VamPyressa ---> (121)
-            DONE "LeoPumps" --> (109)
-            DONE Skull, SkullRider --> (105)
-            DONE Skull, Mysteria --> (110)
-            DONE Skull, RedSkullRider --> (110)
-            DONE Skull, --> (108)
-            DONE Skull --> (108)
-            DONE "Candle", --> (109)
-            DONE "Candle", --> (111)
-            DONE "Candle" --> (112)
-            DONE BlackLeatherBoots ---> (110)
-            DONE "BlackLeatherBoots", )yes 2nd!) Voguessa --> (114)
-            DONE "RedThighHighBoots",  ---> (111)
-            DONE "OrangeBoots" -> (113)
-            DONE BlackLatexpanties ---> NinDzza (113)
-            DONE BlackLatexBra DarkaWithoutParka ---> (114)
-            DONE "WhiteBoots", ---> PardaDeLeo (113)
-            DONE "WhitePanties", ---> Tigress (105)
-            DONE "WhiteLatexBra" BeeraKruegl ---> (111)
-            DONE "WhiskeyShot", MerryFairy --> (109)
-            DONE "WhiskeyShot",  --> (112)
-            DONE "WhiskeyShot" --> SilverIce (114)
-            DONE "KeyMould" SkullGuardian --> (112)
-            DONE "GoldIngots" ---> PackaG (109)
-            DONE GoldBar, GoldSitter-->(105)
-            DONE GoldBar,  --> (105)
-            DONE GoldBar --> (111)
-            DONE "GoldPump", (112)
-            DONE "GoldPump" (113)
-            DONE Shuriken", -> (114)
-            DONE "Dagger" -> (118)
-            DONE "Bow" Elfinea --> (119)
-            DONE "GoldPanties" GoldArmAda --> (120)
-            DONE "GlassOfBeer", --> (113)
-            DONE "GlassOfBeer", -> (114)
-            DONE "GlassOfBeer" --> (119)
-            DONE "Wasp" --> (113)
-            DONE "Wasp" --> (118)
-            DONE "Wasp" --> (119)
-            DONE Pearl ---> WishingWella(119)
-            DONE "Pearl", ---> PinkNordica (120)
-            DONE "Pearl", --> (113)
-            DONE "SilverCoin",  --> (111)
-            DONE "SilverCoin" --> (119)
-            DONE "RedSword", -> (118)
-            DONE "RedShield" --> (105)
-            DONE SilverShield,  --> (105)
-            DONE SilverSword --> (120)
-            DONE GoldShield, --> (121)
-            DONE GoldSword --> (110)
-            DONE "Moon", --> (114)
-            DONE "Moon", --> (118)
-            DONE "Moon", --> (120)
-            DONE "BlueSwimsuit", --> (120)
-            DONE "GreenSwimsuit", MerBitch --> (119)
-            DONE "MagentaSwimsuit",  Swapmsstress --> (118)
-            DONE "RedSwimsuit" , --> (105)
-            DONE "YellowSwimsuit" StingyWasp ---> (119)
-            DONE "Blood" --> (105)
-            DONE "Blood" --> (120)
-            DONE "Blood" --> (119)
-            DONE "AssaultRifle", --> (119)
-            DONE "MilitaryHelmet", --> (121)
-            DONE "BlackLacePanties", NylonFatale --> (118)
-            DONE "RedLacePanties", Demonatoris ---> (120)
-            DONE "WhiteLacePanties" AppaCave ---> (120)
-            DONE SilverPanties, Silverine --> (121)
-            DONE SilverPump, (121)
-            DONE SilverPump --> (103)
-            DONE "TigerHat",  --> (120)
-            DONE "TigerPump", ---> (112)
-            DONE "TigerPump", --> (118)
-            DONE TigerTard" --> SunsetVenus (105)
-            DONE PinkPanties, --> (121)
-            DONE PinkBra, --> (119)
-            DONE PinkHighBoots -> (106)
-            DONE RedShorts, --> (112)
-            DONE RedBootyShorts --> (105)
-            DONE RedLatexPanties -> (103)
-        "Poison", 
-        "Poison", 
-        "Poison"
-
-            DONE GoldCoin -> (103)
-            DONE GoldCoin -> (105)
-            DONE GoldCoin -> (106)
-            DONE GoldCoin -> (110)
-            DONE GoldCoin (112)
-
-        Rooms that can have more entities, trainers:
- 
-
-    
-        Trainers:
-            
-
-
-        CoinTrainers (missing 5):
-            DONE NordAxe (health) --> (118)
-            DONE MagicLizzie (magic) --> (109)
-            DONE LavaBlow (mana) --> (105)
-            DONE HonoredKnighess (attack) --> (120)
-            DONE BlackDagger (defense)--> (121)
-
-
-
-        Missing scrolls:
-       
 
         */
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 118;
+        GAME.level = 115;
         GAME.gold = 50035;
         //GAME.gold = 5;
         GAME.lives = 3;
@@ -267,8 +118,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            "GoldCoin",
-            "CupOfCoffee", "PieceOfCake"
+
         ];
 
         for (let itm of invItems) {
@@ -419,7 +269,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.35.7",
+    VERSION: "0.36.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2025",
     SG: "HTH",
