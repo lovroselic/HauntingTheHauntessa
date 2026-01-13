@@ -2121,6 +2121,20 @@ LoadSprites = [
     { srcName: "ObjDecals/Firepit6.webp", name: "Firepit6" },
     { srcName: "ObjDecals/Firepit7.webp", name: "Firepit7" },
 
+    //sconces
+    { srcName: "ObjDecals/Sconce_1.webp", name: "Sconce_1" },
+    { srcName: "ObjDecals/Sconce_2.webp", name: "Sconce_2" },
+    { srcName: "ObjDecals/Sconce_3.webp", name: "Sconce_3" },
+    { srcName: "ObjDecals/Sconce_4.webp", name: "Sconce_4" },
+    { srcName: "ObjDecals/Sconce_5.webp", name: "Sconce_5" },
+    { srcName: "ObjDecals/Sconce_6.webp", name: "Sconce_6" },
+    { srcName: "ObjDecals/Sconce_7.webp", name: "Sconce_7" },
+    { srcName: "ObjDecals/Sconce_8.webp", name: "Sconce_8" },
+    { srcName: "ObjDecals/Sconce_9.webp", name: "Sconce_9" },
+    { srcName: "ObjDecals/Sconce_10.webp", name: "Sconce_10" },
+    { srcName: "ObjDecals/Sconce_11.webp", name: "Sconce_11" },
+    { srcName: "ObjDecals/Sconce_12.webp", name: "Sconce_12" },
+
     //ObjDecals - all
     { srcName: "ObjDecals/SkeleFloors_1186.webp", name: "SkeleFloors_1186" },
     { srcName: "ObjDecals/SkeleFloors_1187.webp", name: "SkeleFloors_1187" },
