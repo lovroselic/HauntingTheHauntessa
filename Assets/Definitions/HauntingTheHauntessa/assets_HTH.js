@@ -993,6 +993,8 @@ LoadTextures = [
     { srcName: "ObjectTextures/GreenBasilisk.webp", name: "GreenBasilisk" },
     { srcName: "ObjectTextures/GhostFaceGreen.jpg", name: "GhostFaceGreen" },
     { srcName: "ObjectTextures/GreenishDinoAir.jpg", name: "GreenishDinoAir" },
+    { srcName: "ObjectTextures/MissGalaxyGold.jpg", name: "MissGalaxyGold" },
+    { srcName: "ObjectTextures/GreenRex.jpg", name: "GreenRex" },
 
     //title
     { srcName: "Title/HTH_title_768.webp", name: "Title" },
@@ -1095,7 +1097,7 @@ LoadModels = [
     "Hunteress.gltf", "Dragon2.gltf", "BigBat.gltf", "WolfSpider.gltf", "Viking.gltf", "MissGhostFace.gltf",
     "Wolf.gltf", "ButterFly.gltf", "Cat.gltf", "Goblin.gltf", "SkeleDwarf.gltf",
     "Astro.gltf", "Basilisk.gltf", "Raptor.gltf", "DinoAir.gltf", "Hulk.gltf", "GhostFace.gltf",
-    "Rex.gltf", "Drax.gltf", "MissWhite.gltf", "Skeleton.gltf",
+    "Rex.gltf", "Drax.gltf", "MissWhite.gltf", "Skeleton.gltf", "Devilla.gltf",
 ];
 
 LoadSprites = [
@@ -1810,6 +1812,10 @@ LoadSprites = [
     { srcName: "Items/WhiteLacePanties.png", name: "WhiteLacePanties" },
     { srcName: "Items/CupOfCoffee.png", name: "CupOfCoffee" },
     { srcName: "Items/PieceOfCake.png", name: "PieceOfCake" },
+    { srcName: "Items/BattleAxe.png", name: "BattleAxe" },
+    { srcName: "Items/BurningBattleAxe.png", name: "BurningBattleAxe" },
+    { srcName: "Items/BurningTorch.png", name: "BurningTorch" },
+    { srcName: "Items/GasolineCan.png", name: "GasolineCan" },
 
     //books
     { srcName: "Items/YoniBook.webp", name: "YoniBook" },
