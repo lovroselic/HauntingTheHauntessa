@@ -1422,6 +1422,7 @@ LoadSprites = [
     { srcName: "EntityPictures/HL_ScrollSeller_2.webp", name: "HalfLifeScrollSeller2" },
     { srcName: "EntityPictures/HauntessasThrone.webp", name: "HauntessasThrone" },
     { srcName: "EntityPictures/HauntessaOnThrone.webp", name: "HauntessaOnThrone" },
+    { srcName: "EntityPictures/IncantatrixIgnis.webp", name: "IncantatrixIgnis" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.webp", name: "BabyGreenSpider" },

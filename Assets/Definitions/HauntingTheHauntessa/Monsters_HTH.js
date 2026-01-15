@@ -4603,6 +4603,20 @@ const INTERACTION_ITEM = {
 };
 
 const INTERACTION_ENTITY = {
+    IncantatrixIgnis: {
+        name: 'IncantatrixIgnis',
+        sprite: 'IncantatrixIgnis',
+        category: 'crest',
+        voice: 'FemaleVeryLow6',
+        wants: ['BattleAxe', 'BurningTorch', 'GasolineCan'],
+        gives: 'BurningBattleAxe',
+        text: {
+            intro: 'I bottle fire and nail it to steel. Bring the right components and I forge a Burning Battle Axe, the most potent blade in the Hauntosphere.',
+            progress: 'It smolders, not sings. You are missing pieces, keep hunting before the circle cools.',
+            conclusion: 'Ritual sealed, steel revealed. Take your Burning Battle Axe and go end that hag, Hauntessa.',
+        },
+    },
+
     YoungLea: {
         name: 'YoungLea',
         sprite: 'YoungLea',

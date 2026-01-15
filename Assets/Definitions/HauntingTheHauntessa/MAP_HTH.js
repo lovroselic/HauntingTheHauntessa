@@ -3390,12 +3390,42 @@ const MAP = {
         start: '[408,1]',
         decals: '[[937,4,"Firepit4","crest"],[992,4,"Firepit4","crest"],[943,4,"Firepit4","crest"],[1002,4,"Firepit4","crest"],[99,4,"Firepit4","crest"],[109,4,"Firepit4","crest"]]',
         lights: '[[1210,3,"Candle57","warmCandle"],[1202,5,"Candle62","warmCandle"],[1377,1,"Candelabra06","softCandle"]]',
-        gates: '[[351,1,"123.1","117.2","Up"]]',
+        gates: '[[351,1,"123.1","117.2","Up"],[190,5,"123.2","124.1","Closed"],[246,3,"123.3","125.1","Closed"]]',
         interactors: '[[370,7,"HauntessaOnThrone"]]',
         fires: '[[937,4,"RedBonfire"],[992,4,"RedBonfire"],[943,4,"RedBonfire"],[1002,4,"RedBonfire"],[99,4,"RedBonfire"],[109,4,"RedBonfire"]]',
     }
     ,
-    124: {}
+    124: {
+        name: "Incantatrix Ignis",
+        sg: 0,
+        maxSpawned: 3,
+        killCountdown: 3,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: 9999,
+        data: '{"width":"11","height":"11","depth":2,"map":"BB2ABABAA2BABAA9BABAA21BB17ABABB5ABB6ABB3ABABB39$BB9ÁABB54ÁÁ4BB26ÁÁ20BB5"}',
+        wall: "DarkFloorSDXL337",
+        floor: "RedMArbleFloor9",
+        ceil: "Relief23",
+        start: '[64,3]',
+        lights: '[[184,3,"Candle64","standardDim"]]',
+        gates: '[[65,3,"124.1","123.2","Closed"]]',
+        entities: '[[55,5,"IncantatrixIgnis"]]',
+    }
     ,
-    125: {}
+    125: {
+        name: "Labyrinthus Ultimus",
+        sg: 0,
+        maxSpawned: 3,
+        killCountdown: 3,
+        killsRequiredToStopSpawning: 99,
+        spawnDelay: 9999,
+        data: '{"width":"15","height":"15","depth":1,"map":"BB4AA3BAA3BABAA4BB3ABABAA3BB2AA8BB2AA6BB2AA3BB6ABABABABAA2BB2ABB4ABB5ABB4AA3BAA3BABB4AA2BB6AA2BB2AA3BABB8AA3BB2AA2BB2ABB2AA6BAA3BB8ABB4ABABB5AA2BAA2BB3ABB5ABB4ABB10ABB10AA3BB12ABB2$"}',
+        wall: "BrownWall50",
+        floor: "Cobblestone_0822",
+        ceil: "LightWallSDXL314",
+        start: '[181,5]',
+        lights: '[[4,7,"Candelabra12","standardYellowFaint"],[10,7,"SkullLantern51","standardYellowFaint"],[220,1,"Candle70","standardYellowFaint"],[216,1,"Lights102","standardYellowFaint"]]',
+        gates: '[[180,5,"125.1","123.3","Closed"]]',
+        containers: '[[35,"WoodenCrate440","INTERACTION_ITEM.BattleAxe",1],[22,"WoodenCrate440","INTERACTION_ITEM.GasolineCan",5],[208,"WoodenCrate440","INTERACTION_ITEM.BurningTorch",3],[80,"WoodenCrate432","GOLD_ITEM_TYPE.GoldSphere",7],[197,"Barrel_485","GOLD_ITEM_TYPE.GoldSphere",1],[39,"Barrel_478","GOLD_ITEM_TYPE.GoldSphere",1],[136,"MetalCrate50","GOLD_ITEM_TYPE.GoldSphere",5]]',
+    }
 };
