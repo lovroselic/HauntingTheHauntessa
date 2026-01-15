@@ -30,6 +30,28 @@ const SCROLL_TYPE = [
 ];
 
 const SHRINE_TYPE = {
+    HalfLifeScrollSeller2: {
+        name: "HalfLifeScrollSeller2",
+        sprite: "HalfLifeScrollSeller2",
+        which: "HalfLife",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 3999,
+        voice: "FemaleLow3",
+        text: "Melt their health? HalfLife scroll, reduced price, just for you - 3999 gold"
+    },
+    HalfLifeScrollSeller1: {
+        name: "HalfLifeScrollSeller1",
+        sprite: "HalfLifeScrollSeller1",
+        which: "HalfLife",
+        category: 'crest',
+        interactionCategory: 'scrollshop',
+        introduce: true,
+        price: 3999,
+        voice: "FemaleLow3",
+        text: "Drain their health away? HalfLife scroll, dirt cheap - 3999 gold"
+    },
     ApparitiaDefense2: {
         name: "ApparitiaDefense2",
         sprite: "ApparitiaDefense2",
@@ -6860,6 +6882,20 @@ const INTERACTION_SHRINE = {
 };
 
 const INTERACTOR = {
+    HauntessaOnThrone: {
+        name: "HauntessaOnThrone",
+        sprite: "HauntessaOnThrone",
+        category: 'crest',
+        voice: "Princess",
+        wants: ["BurningBattleAxe"],
+        spriteChange: "HauntessasThrone",
+        action: "concludeGame",
+        text: {
+            intro: "Final curtain. I need a magic weapon, the kind that ends arguments. I am coming for you, Hauntessa. One swing will be enough.",
+            progress: null,
+            conclusion: "Peace restored, Hauntessa is ashes and dust, Hauntosphere unhaunted. I have cousins to audit for treason. See you in the next game.",
+        },
+    },
 
 };
 

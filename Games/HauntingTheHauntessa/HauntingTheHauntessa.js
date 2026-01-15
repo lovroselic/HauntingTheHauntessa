@@ -71,8 +71,8 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 116;
-        GAME.gold = 2000;
+        GAME.level = 123;
+        GAME.gold = 20000;
         //GAME.gold = 5;
         GAME.lives = 3;
 
@@ -118,7 +118,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-
+            "BurningBattleAxe"
         ];
 
         for (let itm of invItems) {
@@ -126,7 +126,7 @@ const DEBUG = {
             HERO.inventory.item.push(item);
         }
 
-        let keys = [];
+        let keys = ["Pearl"];
         for (let key of keys) {
             const K = new Key(key, `${key}Key`);
             HERO.inventory.key.push(K);
@@ -269,7 +269,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.36.3",
+    VERSION: "0.36.4",
     NAME: "Haunting The Hauntessa",
     YEAR: "2026",
     SG: "HTH",
@@ -1567,8 +1567,8 @@ const GAME = {
                 break;
             case "concludeGame":
                 GAME.completed = true;
-                HERO.player.setPos(Vector3.from_Grid(new FP_Grid(10.5, 18.0), HERO.height));
-                HERO.player.setDir(Vector3.from_2D_dir(DOWN));
+                HERO.player.setPos(Vector3.from_grid3D(new FP_Grid3D(9.5, 2.1, 1.0 + HERO.height)));
+                HERO.player.setDir(Vector3.from_2D_dir(UP));
                 break;
             default:
                 console.error("interaction category error", interaction);
@@ -2442,40 +2442,56 @@ const TITLE = {
     },
     generateEndingCredits() {
         const text = `Congratulations!
+
         You have completed
-        The Castle Haunt II.
+        Haunting the Hauntessa
         in ${GAME.time.timeString()}.
 
-        Apparatias were defeated, but Hauntessa Spookish 
-        still lives to haunt you.
-        And she will ...
+        Apparitias defeated,
+        Hauntessa Spookish
+        turned to ash and dust.
 
-        You are living happily ever after as The Princess.
-        Or at least until the next game.
-        Or until you get bored.
+        A power vacuum yawns
+        in the Hauntosphere.
+        Who will seize it?
+        Not your problem,
+        for now ...
+
+        You live happily ever after
+        as the Princess.
+
+        Are your cousins plotting?
+        Those bitches.
+        You may need to get
+        your heels dirty again!
         
+        Maybe in the next game ...
+
         CREDITS:
-        all libraries and game code: Lovro Selic,
-        written in JavaScript and GLSL,
-        except of course,  JQUERY: John Resig et al,
-        glMatrix library by Brandon Jones and 
-        Colin MacKenzie IV.
+        Code and direction, Lovro Selic
+        Written in JavaScript and GLSL
 
-        Graphics taken from (hopefully) free resources
-        or drawn with PiskelApp or made with Blender.
-        Most textures and images were created by AI: 
-        StableDiffusion, Ideogram, Flux, 
+        jQuery: John Resig et al
+        glMatrix: Brandon Jones and
+        Colin MacKenzie IV
 
-        Supplementary tools written in 
-        JavaScript or Python or C++.
-          
-        Music: 'And The Abyss Gazed Back'
-        written and performed by LaughingSkull, 
-        ${"\u00A9"} 2011 Lovro Selic.
-    
-        thanks for sticking 'till the end.\n`;
+        Graphics from free sources,
+        plus PiskelApp and Blender
+        Textures and images by AI:
+        Stable Diffusion, Ideogram, 
+        Flux.1D, Flux.2D.
+
+        Supplementary tools,
+        JavaScript, Python, C++
+
+        Music, 'Graveyard In The Moonlight'
+        written and performed by LaughingSkull,
+        \u00A9 2006 Lovro Selic
+
+        Thanks for sticking to the end.`;
         return text;
     },
+
     previously() {
         SPEECH.use("Princess");
         if (AUDIO.Title) {

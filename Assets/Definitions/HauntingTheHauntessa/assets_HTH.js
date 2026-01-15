@@ -1418,6 +1418,10 @@ LoadSprites = [
     { srcName: "EntityPictures/BlackDagger.webp", name: "BlackDagger" },
     { srcName: "EntityPictures/HonoredKnightess.webp", name: "HonoredKnightess" },
     { srcName: "EntityPictures/NordAxe.webp", name: "NordAxe" },
+    { srcName: "EntityPictures/HL_ScrollSeller_1.webp", name: "HalfLifeScrollSeller1" },
+    { srcName: "EntityPictures/HL_ScrollSeller_2.webp", name: "HalfLifeScrollSeller2" },
+    { srcName: "EntityPictures/HauntessasThrone.webp", name: "HauntessasThrone" },
+    { srcName: "EntityPictures/HauntessaOnThrone.webp", name: "HauntessaOnThrone" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.webp", name: "BabyGreenSpider" },
