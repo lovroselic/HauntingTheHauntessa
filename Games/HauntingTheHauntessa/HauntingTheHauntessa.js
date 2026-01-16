@@ -62,16 +62,10 @@ const DEBUG = {
         HERO.player.pos = Vector3.from_Grid(Grid.toCenter(grid), 0.5);
     },
     checkPoint() {
-        // area-6 - FInal battle
-        /*
-
-  
-
-        */
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 116;
+        GAME.level = 124;
         GAME.gold = 20000;
         //GAME.gold = 5;
         GAME.lives = 3;
@@ -118,8 +112,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-            //"BurningBattleAxe",
-            //"BattleAxe", "BurningTorch", "GasolineCan",
+           
         ];
 
         for (let itm of invItems) {
@@ -270,7 +263,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.37.2",
+    VERSION: "0.40.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2026",
     SG: "HTH",

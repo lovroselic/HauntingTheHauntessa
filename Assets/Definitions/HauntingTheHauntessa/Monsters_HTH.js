@@ -903,6 +903,46 @@ const SHRINE_TYPE = {
 };
 
 const ORACLE_TYPE = {
+    Dungeons: {
+        name: "Dungeons",
+        sprite: "Dungeons",
+        category: 'crest',
+        voice: "Female5",
+        text: "Did you know there is 125 dungeons overall? This is number 123.",
+        interactionCategory: "oracle",
+    },
+    MusicBy: {
+        name: "MusicBy",
+        sprite: "MusicBy",
+        category: 'crest',
+        voice: "Female3",
+        text: "Title music 'Graveyard In The Moonlight' written and performed by LaughingSkull.",
+        interactionCategory: "oracle",
+    },
+    GraphicsBy: {
+        name: "GraphicsBy",
+        sprite: "GraphicsBy",
+        category: 'crest',
+        voice: "Female2",
+        text: "Entity images, that's us, the beauties,  decals, textures - made by Lovro. Praised be.",
+        interactionCategory: "oracle",
+    },
+    FinishHer: {
+        name: "FinishHer",
+        sprite: "FinishHer",
+        category: 'crest',
+        voice: "FemaleLow3",
+        text: "Hauntessa was wounded in your previous batlle. But still alive. You need to finish her off. But how?",
+        interactionCategory: "oracle",
+    },
+    General: {
+        name: "General",
+        sprite: "General",
+        category: 'crest',
+        voice: "Female6",
+        text: "You have defeated DeVilla, Hauntessa's general. The main battle is over, but Hauntessa still lives.",
+        interactionCategory: "oracle",
+    },
     InternalClosedCastleGate: {
         name: "InternalClosedCastleGate",
         sprite: "InternalClosedCastleGate",
@@ -4543,7 +4583,7 @@ const INTERACTION_ITEM = {
         name: "BattleAxe",
         category: "interaction_item",
         inventorySprite: "BattleAxe",
-        text: "A very serios weapon."
+        text: "A very serious weapon."
     },
     BurningBattleAxe: {
         name: "BurningBattleAxe",

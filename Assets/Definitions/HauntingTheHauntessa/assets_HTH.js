@@ -1423,6 +1423,11 @@ LoadSprites = [
     { srcName: "EntityPictures/HauntessasThrone.webp", name: "HauntessasThrone" },
     { srcName: "EntityPictures/HauntessaOnThrone.webp", name: "HauntessaOnThrone" },
     { srcName: "EntityPictures/IncantatrixIgnis.webp", name: "IncantatrixIgnis" },
+    { srcName: "EntityPictures/General.webp", name: "General" },
+    { srcName: "EntityPictures/FinishHer.webp", name: "FinishHer" },
+    { srcName: "EntityPictures/GraphicsBy.webp", name: "GraphicsBy" },
+    { srcName: "EntityPictures/MusicBy.webp", name: "MusicBy" },
+    { srcName: "EntityPictures/Dungeons.webp", name: "Dungeons" },
 
     //action movables
     { srcName: "ActionMovables/GreenSpider.webp", name: "BabyGreenSpider" },
