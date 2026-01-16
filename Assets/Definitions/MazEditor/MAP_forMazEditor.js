@@ -1512,7 +1512,27 @@ const DECAL_PAINTINGS = [
     "FemDommes_27684", "FemDommes_27685", "FemDommes_27686", "FemDommes_27687", "FemDommes_27688", "FemDommes_27689", "FemDommes_27690", "FemDommes_27691", "FemDommes_27692", "FemDommes_27693", "FemDommes_27694", "FemDommes_27695",
     "FemDommes_27696", "FemDommes_27697", "FemDommes_27698", "FemDommes_27699", "FemDommes_27700", "FemDommes_27701", "FemDommes_27702", "FemDommes_27703", "FemDommes_27704", "FemDommes_27705", "FemDommes_27706", "FemDommes_27707",
     "FemDommes_27708", "FemDommes_27709", "FemDommes_27710", "FemDommes_27711", "FemDommes_27712", "FemDommes_27713", "FemDommes_27714", "FemDommes_27715", "FemDommes_27716", "FemDommes_27717", "FemDommes_27718", "FemDommes_27719",
-    "Retro_Games_9200", "Retro_Games_9201"
+    "Retro_Games_9200", "Retro_Games_9201",
+    "FemDommes_28000", "FemDommes_28001", "FemDommes_28002", "FemDommes_28003", "FemDommes_28004", "FemDommes_28005", "FemDommes_28006", "FemDommes_28007", "FemDommes_28008", "FemDommes_28009", "FemDommes_28010", "FemDommes_28011",
+    "FemDommes_28012", "FemDommes_28013", "FemDommes_28014", "FemDommes_28015", "FemDommes_28016", "FemDommes_28017", "FemDommes_28018", "FemDommes_28019", "FemDommes_28020", "FemDommes_28021", "FemDommes_28022", "FemDommes_28023",
+    "FemDommes_28024", "FemDommes_28025", "FemDommes_28026", "FemDommes_28027", "FemDommes_28028", "FemDommes_28029", "FemDommes_28030", "FemDommes_28031", "FemDommes_28032", "FemDommes_28033", "FemDommes_28034", "FemDommes_28035",
+    "FemDommes_28036", "FemDommes_28037", "FemDommes_28038", "FemDommes_28039", "FemDommes_28040", "FemDommes_28041", "FemDommes_28042", "FemDommes_28043", "FemDommes_28044", "FemDommes_28045", "FemDommes_28046", "FemDommes_28047",
+    "FemDommes_28048", "FemDommes_28049", "FemDommes_28050", "FemDommes_28051", "FemDommes_28052", "FemDommes_28053", "FemDommes_28054", "FemDommes_28055", "FemDommes_28056", "FemDommes_28057", "FemDommes_28058", "FemDommes_28059",
+    "FemDommes_28060", "FemDommes_28061", "FemDommes_28062", "FemDommes_28063", "FemDommes_28064", "FemDommes_28065", "FemDommes_28066", "FemDommes_28067", "FemDommes_28068", "FemDommes_28069", "FemDommes_28070", "FemDommes_28071",
+    "FemDommes_28072", "FemDommes_28073", "FemDommes_28074", "FemDommes_28075", "FemDommes_28076", "FemDommes_28077", "FemDommes_28078", "FemDommes_28079", "FemDommes_28080", "FemDommes_28081", "FemDommes_28082", "FemDommes_28083",
+    "FemDommes_28084", "FemDommes_28085", "FemDommes_28086", "FemDommes_28087", "FemDommes_28088", "FemDommes_28089", "FemDommes_28090", "FemDommes_28091", "FemDommes_28092", "FemDommes_28093", "FemDommes_28094", "FemDommes_28095",
+    "FemDommes_28096", "FemDommes_28097", "FemDommes_28098", "FemDommes_28099", "FemDommes_28100", "FemDommes_28101", "FemDommes_28102", "FemDommes_28103", "FemDommes_28104", "FemDommes_28105", "FemDommes_28106", "FemDommes_28107",
+    "FemDommes_28108", "FemDommes_28109", "FemDommes_28110", "FemDommes_28111", "FemDommes_28112", "FemDommes_28113", "FemDommes_28114", "FemDommes_28115", "FemDommes_28116", "FemDommes_28117", "FemDommes_28118", "FemDommes_28119",
+    "FemDommes_28120", "FemDommes_28121", "FemDommes_28122", "FemDommes_28123", "FemDommes_28124", "FemDommes_28125", "FemDommes_28126", "FemDommes_28127", "FemDommes_28128", "FemDommes_28129", "FemDommes_28130", "FemDommes_28131",
+    "FemDommes_28132", "FemDommes_28133", "FemDommes_28134", "FemDommes_28135", "FemDommes_28136", "FemDommes_28137", "FemDommes_28138", "FemDommes_28139", "FemDommes_28140", "FemDommes_28141", "FemDommes_28142", "FemDommes_28143",
+    "FemDommes_28144", "FemDommes_28145", "FemDommes_28146", "FemDommes_28147", "FemDommes_28148", "FemDommes_28149", "FemDommes_28150", "FemDommes_28151", "FemDommes_28152", "FemDommes_28153", "FemDommes_28154", "FemDommes_28155",
+    "FemDommes_28156", "FemDommes_28157", "FemDommes_28158", "FemDommes_28159", "FemDommes_28160", "FemDommes_28161", "FemDommes_28162", "FemDommes_28163", "FemDommes_28164", "FemDommes_28165", "FemDommes_28166", "FemDommes_28167",
+    "FemDommes_28168", "FemDommes_28169", "FemDommes_28170", "FemDommes_28171", "FemDommes_28172", "FemDommes_28173", "FemDommes_28174", "FemDommes_28175", "FemDommes_28176", "FemDommes_28177", "FemDommes_28178", "FemDommes_28179",
+    "FemDommes_28180", "FemDommes_28181", "FemDommes_28182", "FemDommes_28183", "FemDommes_28184", "FemDommes_28185", "FemDommes_28186", "FemDommes_28187", "FemDommes_28188", "FemDommes_28189", "FemDommes_28190", "FemDommes_28191",
+    "FemDommes_28192", "FemDommes_28193", "FemDommes_28194", "FemDommes_28195", "FemDommes_28196", "FemDommes_28197", "FemDommes_28198", "FemDommes_28199", "FemDommes_28200", "FemDommes_28201", "FemDommes_28202", "FemDommes_28203",
+    "FemDommes_28204", "FemDommes_28205", "FemDommes_28206", "FemDommes_28207", "FemDommes_28208", "FemDommes_28209", "FemDommes_28210", "FemDommes_28211", "FemDommes_28212", "FemDommes_28213", "FemDommes_28214", "FemDommes_28215",
+    "FemDommes_28216", "FemDommes_28217", "FemDommes_28218", "FemDommes_28219", "FemDommes_28220", "FemDommes_28221", "FemDommes_28222", "FemDommes_28223", "FemDommes_28224", "FemDommes_28225", "FemDommes_28226", "Retro_Games_9300",
+    "Retro_Games_9301"
 ].sort();
 
 /** Crests */
@@ -1543,7 +1563,7 @@ const DECAL_CRESTS = [
     "Skull_816", "Skull_817", "Skull_818",
     "SkeleFloors_1186", "SkeleFloors_1187", "SkeleFloors_1188", "SkeleFloors_1189", "SkeleFloors_1190", "SkeleFloors_1191", "SkeleFloors_1192", "SkeleFloors_1193", "SkeleFloors_1194", "SkeleFloors_1195", "SkeleFloors_1196",
     "Firepit1", "Firepit2", "Firepit3", "Firepit4", "Firepit5", "Firepit6", "Firepit7",
-    "Sconce_1", "Sconce_2","Sconce_3","Sconce_4","Sconce_5","Sconce_6","Sconce_7","Sconce_8","Sconce_9","Sconce_10","Sconce_11", "Sconce_12"
+    "Sconce_1", "Sconce_2", "Sconce_3", "Sconce_4", "Sconce_5", "Sconce_6", "Sconce_7", "Sconce_8", "Sconce_9", "Sconce_10", "Sconce_11", "Sconce_12"
 ].sort();
 
 //lights
