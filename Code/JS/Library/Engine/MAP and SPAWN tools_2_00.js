@@ -400,17 +400,16 @@ const SPAWN_TOOLS = {
             const face = DirectionToFace(Vector.fromInt(fire[1]));
             const type = FIRE_TYPES[fire[2]];
             if (face !== "TOP") {
-                if (face === "BOTTOM") return; //this is not supported
+                if (face === "BOTTOM") return;                                  //this is not supported
                 let dir = FaceToDirection(face);
                 dir = FP_Vector3D.toClass(new Vector3D(dir.x, dir.y, 0));
-                grid = grid.add(dir,  WebGL.INI.TORCH_OUT);
+                grid = grid.add(dir, WebGL.INI.TORCH_OUT);
                 grid = grid.add(ABOVE3, WebGL.INI.TORCH_HEIGHT);
             }
             const position = Vector3.from_grid3D(grid);
             const emmiter = new FireEmmiter(position, type);
-            //FIRE3D.add(new FireEmmiter(position, type));
-            FIRE3D.add(emmiter);
-            console.warn("grid", grid, "FireEmmiter", emmiter);
+            FIRE3D.add(new FireEmmiter(position, type));
+            
         }
     }
 };

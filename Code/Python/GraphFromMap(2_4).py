@@ -78,7 +78,7 @@ MAP = re.split(r'\n\s*\,', MAP)
 MAPDICT = dict()
 
 for room in MAP:
-    # print(room)
+    #print(room)
     roomId = re.search(room_id_regex, room).group(0)
     roomName = re.search(room_name_regex, room).group(1)
     print(roomId, roomName)

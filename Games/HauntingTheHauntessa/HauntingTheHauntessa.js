@@ -25,7 +25,7 @@ scrolls:
 
 const DEBUG = {
     SETTING: true,
-    AUTO_TEST: false,
+    AUTO_TEST: true,
     FPS: true,
     VERBOSE: true,
     _2D_display: true,
@@ -65,7 +65,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 124;
+        GAME.level = 52;
         GAME.gold = 20000;
         //GAME.gold = 5;
         GAME.lives = 3;
@@ -176,7 +176,7 @@ const DEBUG = {
     automaticTests() {
         console.time("automaticTests");
         console.info("***** Automatic level testing *****");
-        for (let level = 1; level <= 122; level++) {
+        for (let level = 1; level <= 125; level++) {
             console.log("testing level", level);
             GAME.level = level;
             GAME.levelStart();
@@ -263,7 +263,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.40.0",
+    VERSION: "0.40.1",
     NAME: "Haunting The Hauntessa",
     YEAR: "2026",
     SG: "HTH",
@@ -1176,7 +1176,7 @@ const GAME = {
         GAME.time = new Timer("Main");
 
         /** DEBUG */
-        DEBUG.checkPoint();
+        //DEBUG.checkPoint();
         /** END DEBUG */
 
         //SAVE GAME
