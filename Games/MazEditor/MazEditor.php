@@ -19,20 +19,20 @@
     <?php include_once $GL_root . $GL_path . '/Include/footer.php';?>
 
     <!-- JS -->
-    <script src="/Code/JS/Library/Engine/Prototype_4_05.js" type="text/javascript"></script>
-    <script src="/Code/JS/Library/Engine/LS_Matrix_1_00.js" type="text/javascript"></script>
-    <script src="/Code/JS/Library/Engine/ENGINE_4_12.js" type="text/javascript"></script>
-    <script src="/Code/JS/Library/Engine/GRID_3_15.js" type="text/javascript"></script>
-    <script src="/Code/JS/Library/Engine/MAZE_4_02.js" type="text/javascript"></script>
+    <script src="/Code/JS/Library/Engine/Prototype_5_01.js" type="text/javascript"></script>
+    <script src="/Code/JS/Library/Engine/LS_Matrix_1_03.js" type="text/javascript"></script>
+    <script src="/Code/JS/Library/Engine/ENGINE_5_00.js" type="text/javascript"></script>
+    <script src="/Code/JS/Library/Engine/GRID_4_00.js" type="text/javascript"></script>
+    <script src="/Code/JS/Library/Engine/MAZE_5_00.js" type="text/javascript"></script>
     <script src="/Code/JS/Library/Engine/BWT_1_00.js" type="text/javascript"></script>
-    <script src='/Code/JS/Library/Engine/IndexArrayManagers_3_09.js'></script>
-    <script src="/Code/JS/Library/Engine/WebGL_1_05.js" type="text/javascript"></script>
-    <script src="/Code/JS/Library/Engine/Lights_and_materials_1_02.js" type="text/javascript"></script>
+    <script src='/Code/JS/Library/Engine/IndexArrayManagers_4_00.js'></script>
+    <script src="/Code/JS/Library/Engine/WebGL_2_00.js" type="text/javascript"></script>
+    <script src="/Code/JS/Library/Engine/Lights_and_materials_1_04.js" type="text/javascript"></script>
     <script src="/Assets/Definitions/MazEditor/assets_MazEditor.js" type="text/javascript"></script>
     <script src="/Assets/Definitions/MazEditor/Monsters_MazEditor.js" type="text/javascript"></script>
     <script src="/Assets/Definitions/MazEditor/MAP_forMazEditor.js" type="text/javascript"></script>
     <script src="/Games/MazEditor/MazEditor.js" type="text/javascript"></script>
-    <script src="/Code/JS/Library/Engine/MAP and SPAWN tools_1_01.js" type="text/javascript"></script>
+    <script src="/Code/JS/Library/Engine/MAP and SPAWN tools_2_00.js" type="text/javascript"></script>
 
     <!-- JS END -->
 </body>

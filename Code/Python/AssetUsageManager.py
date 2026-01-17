@@ -3,7 +3,7 @@
 Created on Wed Aug 28 14:35:06 2024
 
 @author: lovro
-v 0.3.0
+v 0.3.1
 """
 
 import os
@@ -15,13 +15,17 @@ from send2trash import send2trash
 
 start_time = time.time()
 
-directory = 'C:/Users/Uporabnik/Documents/JS/CastleHaunt2/Assets/Graphics'
-extensions = ['*.png', '*.jpg']
+GAME = "HauntingTheHauntessa"
+SHORT = "HTH"
+REAL = True
 
+directory = f"C:/Users/Uporabnik/Documents/JS/{GAME}/Assets/Graphics"
+extensions = ['*.png', '*.jpg', '*.webp']
+exclusion = ["SheetSequences"]
 
-asset_file = "C:/Users/Uporabnik/Documents/JS/CastleHaunt2/Assets/Definitions/CastleHaunt2/assets_CastleHaunt2.js"
-map_file = "C:/Users/Uporabnik/Documents/JS/CastleHaunt2/Assets/Definitions/CastleHaunt2/MAP_CastleHaunt2.js"
-monster_file = "C:/Users/Uporabnik/Documents/JS/CastleHaunt2/Assets/Definitions/CastleHaunt2/Monsters_CastleHaunt2.js"
+asset_file = f"C:/Users/Uporabnik/Documents/JS/{GAME}/Assets/Definitions/{GAME}/assets_{SHORT}.js"
+map_file = f"C:/Users/Uporabnik/Documents/JS/{GAME}/Assets/Definitions/{GAME}/MAP_{SHORT}.js"
+monster_file = f"C:/Users/Uporabnik/Documents/JS/{GAME}/Assets/Definitions/{GAME}/Monsters_{SHORT}.js"
 
 with open(asset_file, encoding="utf8") as fh:
     asset_data = fh.read()
@@ -32,10 +36,12 @@ with open(map_file, encoding="utf8") as fh:
 with open(monster_file, encoding="utf8") as fh:
     monster_data = fh.read()
 
-def search_files(directory, extensions):
+def search_files(directory, extensions, exlusion = None):
     files_list = []
 
     for root, dirs, files in os.walk(directory):
+        dirs[:] = [d for d in dirs if d not in exclusion]
+        
         for ext in extensions:
             files_list.extend(glob(os.path.join(root, ext)))
 
@@ -74,7 +80,7 @@ def updateAssets(image):
 # # main
 # =============================================================================
 
-result_files = search_files(directory, extensions)
+result_files = search_files(directory, extensions, exclusion)
 data = []
 for file in result_files:
     path, filename = os.path.split(file)
@@ -117,7 +123,7 @@ for index, row in ASSETS.iterrows():
 # # regex
 # =============================================================================
 
-map_regex = re.compile(r'const\sMAP\s=\s{([\w\W]*)};')
+map_regex = re.compile(r'const\s+MAP\s*=\s*\{([\s\S]*?)\};')
 container_regex = re.compile(r'containers:\s*\'(.*)\'')
 movable_regex = re.compile(r'movables:\s*\'(.*)\'')
 sprite_regex = re.compile(r'inventorySprite:\s*"(\w+)"')
@@ -235,7 +241,7 @@ for index, row in notLoaded.iterrows():
     file_path = os.path.join(row['path'],row['filename'])
     
     if os.path.exists(file_path): 
-        send2trash(file_path) 
+        if REAL: send2trash(file_path) 
         print(f"Deleting: {file_path}")
     else:
         print(f"...Not found: {file_path}")
@@ -244,7 +250,7 @@ for index, row in notLoaded.iterrows():
 # # pruning asset definitions
 # =============================================================================
 
-dirs_to_ignore = ['Doors', "Gates", "Triggers", "Scrolls", "Status", "UI", "Skills", "Keys", "Reserved", "ObjectTextures"]
+dirs_to_ignore = ['Doors', "Gates", "Triggers", "Scrolls", "Status", "UI", "Skills", "Keys", "Reserved", "ObjectTextures","Shading"]
 ASSETS = ASSETS[~ASSETS['dir'].isin(dirs_to_ignore)]
 ASSETS.sort_values(by='Used', ascending=True, inplace=True)
 ASSETS.reset_index(drop=True, inplace=True)
@@ -260,9 +266,10 @@ cleaned_asset_data = "\n".join(filtered_asset_list)
 # # export
 # =============================================================================
 
-asset_export = "C:/Users/Uporabnik/Documents/JS/CastleHaunt2/Assets/Definitions/CastleHaunt2/EXPORT_assets_CastleHaunt2.js"
-with open(asset_export, "w", encoding="utf8") as fh:
-    fh.write(cleaned_asset_data)
+if REAL:
+    asset_export = f"C:/Users/Uporabnik/Documents/JS/{GAME}/Assets/Definitions/{GAME}/EXPORT_assets_{SHORT}.js"
+    with open(asset_export, "w", encoding="utf8") as fh:
+        fh.write(cleaned_asset_data)
 
 # =============================================================================
 # # END

@@ -25,7 +25,7 @@ scrolls:
 
 const DEBUG = {
     SETTING: true,
-    AUTO_TEST: true,
+    AUTO_TEST: false,
     FPS: true,
     VERBOSE: true,
     _2D_display: true,
@@ -65,7 +65,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 52;
+        GAME.level = 125;
         GAME.gold = 20000;
         //GAME.gold = 5;
         GAME.lives = 3;
@@ -80,7 +80,7 @@ const DEBUG = {
 
         HERO.mana = 500;
         HERO.maxMana = 500;
-        HERO.health = 500;
+        HERO.health = 1;
         HERO.maxHealth = 500;
 
         HERO.attackExp = 18;
@@ -100,7 +100,7 @@ const DEBUG = {
         }
 
         let scrollTypes = [
-            "FeatherFall", "Flight", "Radar", "Flight", "Explode"
+            "FeatherFall", "Flight", "Radar", "Flight", "Invisibility"
         ];
 
         for (let scrType of scrollTypes) {
@@ -263,7 +263,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.40.1",
+    VERSION: "0.40.2",
     NAME: "Haunting The Hauntessa",
     YEAR: "2026",
     SG: "HTH",
