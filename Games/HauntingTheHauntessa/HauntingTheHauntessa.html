@@ -21,7 +21,14 @@
             <div id="load"></div>
             <div class="row win">
                 <h1 id="title" class="HTH"></h1>
-                <p>text</p>
+                <p>Previously ...</p>
+                <p>Our beloved heroine, the Princess, badass ruler of Castle Creep, has defeated the army of Hauntessa
+                    Spookish, the great hauntress from the Hauntosphere and seventh cousin, fourth
+                    degree, of GhostFace. But the elusive Hauntessa, though severely wounded, escaped her doom and took
+                    sanctuary in the Hauntosphere, where she recovers to deadly polka music.</p>
+                <p>The Princess must not wait, she needs to get her heels dirty again and follow Hauntessa into
+                    the Hauntosphere to finish the old ghostly hag once and for all.</p>
+                <p>Wake up and get going, brave adventurer, you will lead the Princess in her adventures.</p>
             </div>
         </div>
 
@@ -32,6 +39,7 @@
                     <legend>
                         Engine versions:
                     </legend>
+                    <p>My custom game engine ENGINE is made from following sub-modules:</p>
                     ENGINE: <span id="engine_version"></span><br>
                     GRID: <span id="grid_version"></span><br>
                     MAZE: <span id="maze_version"></span><br>
@@ -76,6 +84,32 @@
                 </legend>
                 <div class="row">
                     <p><strong>Save Game:</strong></p>
+                    <p>Carefully manage your saved games. You can store 5 games from active to more permanent storage.
+                        And vice versa. There is no undo.</p>
+                    <p>Game is saved every time you enter an new room. Unless it's not. The reasons that it would not
+                        are:
+                    </p>
+                    <ul class="smallList mx-4">
+                        <li>
+                            It's part of the game design. You need to do something so it will start saving again.
+                        </li>
+                    </ul>
+                </div>
+                <div class="row px-2 my-2">
+                    <div class="col-1 my-2">
+                        <img src="/Assets/Graphics/Sprites/UI/Floppy64.webp" class="img-fluid" alt="Saved"
+                            title="Saved">
+                    </div>
+                    <div class="col-11 d-flex align-items-center">
+                        <p>Icon indicates that game has been saved at last entry in the new dungeon,</p>
+                    </div>
+                    <div class="col-1 my-2">
+                        <img src="/Assets/Graphics/Sprites/UI/Beware64.webp" class="img-fluid" alt="notSaved"
+                            title="NotSaved">
+                    </div>
+                    <div class="col-11 align-items-center">
+                        <p>Icon indicates that game has NOT been saved at last entry in the new dungeon,</p>
+                    </div>
                 </div>
 
                 <div class="row my-3">
@@ -97,17 +131,15 @@
                     <p><kbd>SHIFT</kbd> ... jump forward</p>
 
                     <p><kbd>F4</kbd> ... pause/resume game</p>
-                    <p><kbd>F9</kbd> ... get guidance, what essentials did you miss in this dungeon, it also pauses game, but costs some gold.</p>
-                    <p><kbd>1</kbd> ... first person view</p>
-                    <p><kbd>3</kbd> ... third person view</p>
-                    <p><kbd>5</kbd> ... almost top down view</p>
-                    <p><kbd>7</kbd> ... top down view, almost</p>
+                    <p><kbd>F9</kbd> ... get guidance, what essentials did you miss in this dungeon, it also pauses
+                        game, but costs some gold.</p>
+
 
                     <p><strong>SCROLLS:</strong></p>
 
                     <div class="row my-2">
                         <div class="col-1">
-                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_Cripple2.png"
+                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_Cripple2.webp"
                                 alt="Cripple" title="Cripple">
                         </div>
                         <div class="col-10 mt-auto">
@@ -117,7 +149,7 @@
 
                     <div class="row my-2">
                         <div class="col-1">
-                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_HalfLife2.png"
+                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_HalfLife2.webp"
                                 alt="HalfLife" title="HalfLife">
                         </div>
                         <div class="col-10 mt-auto">
@@ -127,7 +159,7 @@
 
                     <div class="row my-2">
                         <div class="col-1">
-                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_Explode2.png"
+                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_Explode2.webp"
                                 alt="Bomb" title="Bomb">
                         </div>
                         <div class="col-10 mt-auto">
@@ -138,7 +170,7 @@
 
                     <div class="row my-2">
                         <div class="col-1">
-                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_Death.png"
+                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_Death.webp"
                                 alt="Bomb" title="Death">
                         </div>
                         <div class="col-10 mt-auto">
@@ -148,8 +180,9 @@
 
                     <div class="row my-2">
                         <div class="col-1">
-                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_MagicSupremacy.png"
-                                alt="MagicSupremacy" title="MagicSupremacy">
+                            <image class="d-block mx-auto"
+                                src="/Assets/Graphics/Sprites/Scrolls/SCR_MagicSupremacy.webp" alt="MagicSupremacy"
+                                title="MagicSupremacy">
                         </div>
                         <div class="col-10 mt-auto">
                             <p>Burst of magic that drains your opponent's ability to cast magic missiles. But some are
@@ -159,7 +192,7 @@
 
                     <div class="row my-2">
                         <div class="col-1">
-                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_DrainMana2.png"
+                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_DrainMana2.webp"
                                 alt="DrainMana" title="DrainMana">
                         </div>
                         <div class="col-10 mt-auto">
@@ -169,7 +202,7 @@
 
                     <div class="row my-2">
                         <div class="col-1">
-                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_DestroyOrbs.png"
+                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_DestroyOrbs.webp"
                                 alt="DestroyOrbs" title="DestroyOrbs">
                         </div>
                         <div class="col-10 mt-auto">
@@ -179,7 +212,7 @@
 
                     <div class="row my-2">
                         <div class="col-1">
-                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_Invisibility2.png"
+                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_Invisibility2.webp"
                                 alt="Invisibility" title="Invisibility">
                         </div>
                         <div class="col-10 mt-auto">
@@ -189,7 +222,7 @@
 
                     <div class="row my-2">
                         <div class="col-1">
-                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_Luck3.png"
+                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_Luck3.webp"
                                 alt="Luck" title="Luck">
                         </div>
                         <div class="col-10 mt-auto">
@@ -199,17 +232,17 @@
 
                     <div class="row my-2">
                         <div class="col-1">
-                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_VeryLucky.png"
+                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_VeryLucky.webp"
                                 alt="Luck" title="Luck">
                         </div>
                         <div class="col-10 mt-auto">
-                            <p>Really amazing amounts of luck. Luct stacks.</p>
+                            <p>Really amazing amounts of luck. Luck stacks.</p>
                         </div>
                     </div>
 
                     <div class="row my-2">
                         <div class="col-1">
-                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_Flight.png"
+                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_Flight.webp"
                                 alt="Flight" title="Flight">
                         </div>
                         <div class="col-10 mt-auto">
@@ -219,7 +252,7 @@
 
                     <div class="row my-2">
                         <div class="col-1">
-                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_BoostWeapon2.png"
+                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_BoostWeapon2.webp"
                                 alt="BoostWeapon" title="BoostWeapon">
                         </div>
                         <div class="col-10 mt-auto">
@@ -229,7 +262,7 @@
 
                     <div class="row my-2">
                         <div class="col-1">
-                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_BoostArmor2.png"
+                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_BoostArmor2.webp"
                                 alt="BoostArmor" title="BoostArmor">
                         </div>
                         <div class="col-10 mt-auto">
@@ -239,7 +272,7 @@
 
                     <div class="row my-2">
                         <div class="col-1">
-                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_MagicBoost2.png"
+                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_MagicBoost2.webp"
                                 alt="MagicBoost" title="MagicBoost">
                         </div>
                         <div class="col-10 mt-auto">
@@ -249,8 +282,9 @@
 
                     <div class="row my-2">
                         <div class="col-1">
-                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_DestroyWeapon2.png"
-                                alt="DestroyWeapon" title="DestroyWeapon">
+                            <image class="d-block mx-auto"
+                                src="/Assets/Graphics/Sprites/Scrolls/SCR_DestroyWeapon2.webp" alt="DestroyWeapon"
+                                title="DestroyWeapon">
                         </div>
                         <div class="col-10 mt-auto">
                             <p>Damage enemies' weapons (attack capabilities)</p>
@@ -259,7 +293,7 @@
 
                     <div class="row my-2">
                         <div class="col-1">
-                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_DestroyArmor2.png"
+                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_DestroyArmor2.webp"
                                 alt="DestroyArmor" title="DestroyArmor">
                         </div>
                         <div class="col-10 mt-auto">
@@ -269,7 +303,7 @@
 
                     <div class="row my-2">
                         <div class="col-1">
-                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_FeatherFall.png"
+                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_FeatherFall.webp"
                                 alt="FeatherFall" title="FeatherFall">
                         </div>
                         <div class="col-10 mt-auto">
@@ -279,7 +313,7 @@
 
                     <div class="row my-2">
                         <div class="col-1">
-                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_Radar2.png"
+                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_Radar2.webp"
                                 alt="Radar" title="Radar">
                         </div>
                         <div class="col-10 mt-auto">
@@ -289,7 +323,7 @@
 
                     <div class="row my-2">
                         <div class="col-1">
-                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_Death.png"
+                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_Death.webp"
                                 alt="Death" title="Death">
                         </div>
                         <div class="col-10 mt-auto">
@@ -299,7 +333,7 @@
 
                     <div class="row my-2">
                         <div class="col-1">
-                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_ReduceMana.png"
+                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_ReduceMana.webp"
                                 alt="ReduceMana" title="ReduceMana">
                         </div>
                         <div class="col-10 mt-auto">
@@ -309,8 +343,9 @@
 
                     <div class="row my-2">
                         <div class="col-1">
-                            <image class="d-block mx-auto" src="/Assets/Graphics/Sprites/Scrolls/SCR_ReduceManaMore.png"
-                                alt="ReduceManaMore" title="ReduceManaMore">
+                            <image class="d-block mx-auto"
+                                src="/Assets/Graphics/Sprites/Scrolls/SCR_ReduceManaMore.webp" alt="ReduceManaMore"
+                                title="ReduceManaMore">
                         </div>
                         <div class="col-10 mt-auto">
                             <p>Reduces mana cost for about 50%, for a minute. Effects stack.</p>
@@ -329,14 +364,26 @@
                 </legend>
                 <div class="row">
                     <div class="col-12 col-lg-3 my-2 d-flex align-items-center justify-content-center">
-                        <image src="" alt="" class="img-fluid  border-dark rounded-2" title="">
+                        <image src="/Images/TombRaider.webp" alt="TombRaider" class="img-fluid  border-dark rounded-2" title="TombRaider">
                         </image>
                     </div>
                     <div class="col-12 col-lg-6 my-2">
-                        <p>About</p>
+                        <p>Haunting the Hauntessa is the thrilling sequel to Castle Haunt II (and I, of course), The
+                            Curse of the Castle Creep, and all its legendary predecessors.
+                            It draws inspiration from early 90s 3D games like Doom (1993) and Tomb Raider (1996), and carries on the
+                            saga of the Princess, brat turned badass heroine in high heels.
+                            It caters to retro aficionados who prefer playing on normal screens rather than tickling
+                            their phones.</p>
+
+                        <p>HTH runs on the improved CastleHaunt II engine, lovingly called ENGINE, embracing full 3D
+                            gameplay, not just the look.
+                            ENGINE is heavily optimized for performance, with GLSL shaders that make your GPU nicely
+                            warm and cosy.
+                            It should run at 60 FPS on any modern computer, no, a 286 is not considered modern.</p>
+
                     </div>
                     <div class="col-12 col-lg-3 my-2 d-flex align-items-center justify-content-center">
-                        <image src="" alt="" class="img-fluid  border-dark rounded-2" title="">
+                        <image src="/Images/Doom.webp" alt="Doom" class="img-fluid  border-dark rounded-2" title="Doom">
                         </image>
                     </div>
                 </div>
