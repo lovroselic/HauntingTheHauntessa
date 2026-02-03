@@ -141,13 +141,18 @@ const MAP_TOOLS = {
         this.setOcclusionMap(level);
     },
     applyStorageActions(level) {
-        if (!this.MAP[level].unused_storage) return;
-        if (!this.MAP[level].map.storage.empty()) return;
-        if (MAP_TOOLS.INI.VERBOSE) console.info("Applying actions for level", level);
-        this.MAP[level].unused_storage.apply();
-        this.MAP[level].map.storage.addStorage(this.MAP[level].unused_storage);
-        if (MAP_TOOLS.INI.VERBOSE) console.log("this.MAP[level].map.storage", this.MAP[level].map.storage);
-        MAP_TOOLS.setOcclusionMap(level);
+        if (MAP_TOOLS.INI.VERBOSE) console.info("Try to Apply actions for level", level,
+            "\nthis.MAP[level].map.storage", this.MAP[level].map.storage.action_list.length, ...this.MAP[level].map.storage.action_list,
+            "\nthis.MAP[level].map.storage.empty()", this.MAP[level].map.storage.empty(),
+            "\nthis.MAP[level].unused_storage", this.MAP[level].unused_storage.action_list.length, ...this.MAP[level].unused_storage.action_list);
+        if (this.MAP[level].map.storage.empty() || this.MAP[level].unused_storage) {
+            if (MAP_TOOLS.INI.VERBOSE) console.info("Applying actions for level", level);
+            this.MAP[level].unused_storage.apply();
+            this.MAP[level].map.storage.addStorage(this.MAP[level].unused_storage);
+            this.MAP[level].unused_storage.clear();
+            if (MAP_TOOLS.INI.VERBOSE) console.log("this.MAP[level].map.storage", this.MAP[level].map.storage);
+            MAP_TOOLS.setOcclusionMap(level);
+        }
     }
 };
 
@@ -407,9 +412,8 @@ const SPAWN_TOOLS = {
                 grid = grid.add(ABOVE3, WebGL.INI.TORCH_HEIGHT);
             }
             const position = Vector3.from_grid3D(grid);
-            const emmiter = new FireEmmiter(position, type);
             FIRE3D.add(new FireEmmiter(position, type));
-            
+
         }
     }
 };
@@ -421,13 +425,17 @@ class IAM_Storage {
     empty() {
         return this.action_list.length === 0;
     }
+    clear() {
+        this.action_list = [];
+    }
     apply() {
+        if (MAP_TOOLS.INI.VERBOSE) console.log("applying actions", this.action_list.length);
         for (const action of this.action_list) {
             if (MAP_TOOLS.INI.VERBOSE) console.log(". action", action);
             const IAM = eval(action.IAM);
             const obj = IAM.POOL[action.id - 1];
             if (MAP_TOOLS.INI.VERBOSE) console.log(".... trying", obj, action.action, action.arg);
-            obj[action.action](action.arg);
+            if (obj) obj[action.action](action.arg);
             if (MAP_TOOLS.INI.VERBOSE) console.log("........ OK", obj, action.action, action.arg);
         }
     }

@@ -12,7 +12,7 @@ console.log("%cMAP for HTH loaded.", "color: #888");
 const MAP_TEXT = {
     1: "This is my bedroom, but I don't have time to rest.",
     2: "My throne room. Here I listen to the petitions of my subjects. This time they want me to get rid of Hauntessa Spookish.",
-    3: "Beyound this hall, there is and outside world. Am I ready yet? Will I ever be?",
+    3: "Beyound this hall there is an outside world. Am I ready yet? Will I ever be?",
     4: "Finally outside. Adventure awaits. Hauntessa trembles. Here I come.",
     5: "Better to store everything. You never know when you need it.",
     6: "The only god this shrines channel is gold. I hope you have a lot of it.",

@@ -2059,7 +2059,7 @@ class $3D_player {
         const hit = this.hit();
         if (!hit) return;
         let damage = TURN.damage(WebGL.hero, hit);
-        console.info("************* HIT ****************", hit, damage);
+        if (WebGL.VERBOSE) console.info("************* HIT ****************", hit, damage);
         const luckAddiction = Math.min(1, Math.floor(damage * 0.1));
         damage += WebGL.hero.luck * luckAddiction;
 

@@ -26,13 +26,13 @@ scrolls:
 const DEBUG = {
     SETTING: true,
     AUTO_TEST: false,
-    FPS: true,
-    VERBOSE: true,
-    _2D_display: true,
+    FPS: false,
+    VERBOSE: false,
+    _2D_display: false,
     INVINCIBLE: false,
     FREE_MAGIC: false,
-    keys: true,
-    killAllAllowed: true,
+    keys: false,
+    killAllAllowed: false,
     max17: false,
     displayInv() {
         HERO.inventory.scroll.display();
@@ -65,7 +65,7 @@ const DEBUG = {
 
         console.info("DEBUG::Starting from checkpoint, this may clash with LOAD");
 
-        GAME.level = 125;
+        GAME.level = 17;
         GAME.gold = 20000;
         //GAME.gold = 5;
         GAME.lives = 3;
@@ -112,7 +112,7 @@ const DEBUG = {
         TITLE.scrolls();
 
         let invItems = [
-           
+
         ];
 
         for (let itm of invItems) {
@@ -263,7 +263,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.50.1",
+    VERSION: "0.50.2",
     NAME: "Haunting The Hauntessa",
     YEAR: "2026",
     SG: "HTH",
@@ -333,18 +333,16 @@ const PRG = {
 
         if (DEBUG._2D_display) {
             ENGINE.addBOX("LEVEL", ENGINE.gameWIDTH, ENGINE.gameHEIGHT, ["pacgrid", "grid", "coord", "player"], null);
-            //ENGINE.addBOX("DEBUG", 320, 200, ["debug"], null);
         }
 
         /** dev settings */
         if (DEBUG.VERBOSE) {
-            //WebGL.VERBOSE = true;
-            //AI.VERBOSE = true;
+            WebGL.VERBOSE = true;
+            AI.VERBOSE = true;
             ENGINE.verbose = true;
-            //MAP_TOOLS.INI.VERBOSE = true;
+            MAP_TOOLS.INI.VERBOSE = true;
             //MINIMAP.verbose();
         }
-        //WebGL.PRUNE = false;
     },
     start() {
         console.log("%c**************************************************************************************************************************************", PRG.CSS);
@@ -910,7 +908,7 @@ const HERO = {
         TITLE.skills();
     },
     incExp(value, type) {
-        console.log("incExp", type, value);
+        if (DEBUG.VERBOSE) console.log("incExp", type, value);
         this[`${type}Exp`] += value;
         if (this[`${type}Exp`] >= this[`${type}ExpGoal`]) {
             AUDIO.LevelUp.play();
@@ -932,11 +930,13 @@ const HERO = {
             TITLE.skills();
         }
 
-        console.log("------ EXP ------");
-        for (const type of ["attack", "defense", "magic"]) {
-            console.log(type, ":", this[`${type}Exp`], " /", this[`${type}ExpGoal`]);
+        if (DEBUG.VERBOSE) {
+            console.log("------ EXP ------");
+            for (const type of ["attack", "defense", "magic"]) {
+                console.log(type, ":", this[`${type}Exp`], " /", this[`${type}ExpGoal`]);
+            }
+            console.log("------------");
         }
-        console.log("------------");
     },
     nextLevel(value) {
         return Math.round(value * INI.LEVEL_FACTOR);
@@ -1176,7 +1176,7 @@ const GAME = {
         GAME.time = new Timer("Main");
 
         /** DEBUG */
-        //DEBUG.checkPoint();
+        DEBUG.checkPoint();
         /** END DEBUG */
 
         //SAVE GAME
@@ -1259,7 +1259,6 @@ const GAME = {
         this.buildWorld(level);
         let start_dir, start_grid;
 
-        //this is still 2D, to be corrected
         if (GAME.fromCheckpoint) {
             start_dir = MAP[level].map[GAME.loadWayPoint].vector;
             start_grid = MAP[level].map[GAME.loadWayPoint].grid.add(start_dir); //3d +2d vector -> 3D
@@ -1318,6 +1317,7 @@ const GAME = {
             SAVE_MAP_IAM.load_map(MAP);
             WebGL.CTX.pixelStorei(WebGL.CTX.UNPACK_FLIP_Y_WEBGL, true);
             MAP_TOOLS.applyStorageActions(level);
+            MAP_TOOLS.MAP[GAME.level].unused_storage.clear();
             WebGL.CTX.pixelStorei(WebGL.CTX.UNPACK_FLIP_Y_WEBGL, false);
         }
         MAP[level].world = WORLD.build(MAP[level].map);
@@ -1622,9 +1622,7 @@ const GAME = {
 
             HERO.speak(texts.chooseRandom());
             return;
-
         }
-        console.warn("HELP");
 
         GAME.gold -= INI.HELP_PRICE;
         TITLE.gold();
@@ -1677,8 +1675,6 @@ const GAME = {
             }
         }
 
-
-
         // creating html wedge
         let WEDGE = "";
         if (Object.keys(Entities).length) {
@@ -1706,7 +1702,6 @@ const GAME = {
             WEDGE += `<p>${Movables.join(", ")}.</p>`;
         }
 
-
         const _form = new Form("Guidance", X, Y, W, H, WEDGE);                      //don't be fooled, this IS used!
     },
     respond(lapsedTime) {
@@ -1731,8 +1726,10 @@ const GAME = {
             console.info(" -------------------- Getting help --------------------");
             GAME.help();
             console.info(" --------------------  ***** --------------------");
+            ENGINE.GAME.keymap[ENGINE.KEY.map.F9] = false;
 
             if (!DEBUG.keys) return;
+
             console.log("\nDEBUG:");
             console.log("#######################################################");
             ENTITY3D.display();
@@ -1746,7 +1743,6 @@ const GAME = {
             DEBUG.killStatus();
             DEBUG.displayCompleteness();
             console.log("#######################################################");
-            ENGINE.GAME.keymap[ENGINE.KEY.map.F9] = false;
         }
 
         //controls
@@ -1814,9 +1810,6 @@ const GAME = {
         GAME.setWorld(level, true);
     },
     useStaircase(destination) {
-        console.info("useStaircase", destination);
-        console.time("usingStaircase");
-
         const IAMtoClean = [EXPLOSION3D];                //clean IAM
         for (const iam of IAMtoClean) {
             iam.clean();
@@ -1864,7 +1857,6 @@ const GAME = {
             HERO.speak(MAP_TEXT[GAME.level]);
             MAP_TEXT[GAME.level] = null;
         }
-        console.timeEnd("usingStaircase");
 
         if (DEBUG._2D_display) {
             ENGINE.resizeBOX("LEVEL", MAP[level].pw, MAP[level].ph);

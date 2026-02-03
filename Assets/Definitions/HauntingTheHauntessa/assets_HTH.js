@@ -5,7 +5,10 @@
 //Assets for HTH (MAzEditor dependencies removed)
 "use strict";
 
-/** MazeEditor dependencies */
+/** MazeEditor dependencies 
+ * remove for production
+*/
+
 /*
 LoadSheetSequences = [
     { srcName: "BrownWall64.webp", count: 12, name: "WallTile", trim: false },
