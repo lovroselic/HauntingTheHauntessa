@@ -95,14 +95,6 @@ const MAP_TOOLS = {
             this.MAP[level].name = `Room - ${level}`;
         }
         /** initialize global map proterties */
-        /**
-         * hotfixes:
-        MAP[GAME.level].map.maxSpawned = 3;
-        MAP[GAME.level].map.killCountdown = 3;
-        MAP[GAME.level].map.killsRequiredToStopSpawning = 25;
-        MAP[GAME.level].map.spawnDelay = 9999;
-        MAP[GAME.level].map.stopSpawning = false;
-         */
         const SG = this.MAP[level].sg || null;
         this.MAP[level].map.sg = SG;
         this.MAP[level].map.storage = new IAM_Storage();
@@ -113,9 +105,15 @@ const MAP_TOOLS = {
         this.MAP[level].map.totalKills = this.MAP[level].totalKills || 0;
         this.MAP[level].map.killsRequiredToStopSpawning = this.MAP[level].killsRequiredToStopSpawning || factorial(this.MAP[level].killCountdown) + this.MAP[level].maxSpawned;
         this.MAP[level].map.stopSpawning = this.MAP[level].stopSpawning || false;
-        /**  */
+
         this.MAP[level].unpacked = true;
         if (ENGINE.verbose) console.info("Unpacked MAP level", level, "map", this.MAP[level].map);
+    },
+    resetStorages() {
+        for (const level in this.MAP) {
+            if (this.MAP[level].map) this.MAP[level].map.storage = new IAM_Storage();
+            this.MAP[level].unused_storage = new IAM_Storage();
+        }
     },
 
     /**
@@ -145,6 +143,7 @@ const MAP_TOOLS = {
             "\nthis.MAP[level].map.storage", this.MAP[level].map.storage.action_list.length, ...this.MAP[level].map.storage.action_list,
             "\nthis.MAP[level].map.storage.empty()", this.MAP[level].map.storage.empty(),
             "\nthis.MAP[level].unused_storage", this.MAP[level].unused_storage.action_list.length, ...this.MAP[level].unused_storage.action_list);
+        if (!this.MAP[level].unused_storage) return;
         if (this.MAP[level].map.storage.empty() || this.MAP[level].unused_storage) {
             if (MAP_TOOLS.INI.VERBOSE) console.info("Applying actions for level", level);
             this.MAP[level].unused_storage.apply();

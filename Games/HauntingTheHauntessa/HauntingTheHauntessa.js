@@ -263,7 +263,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.50.2",
+    VERSION: "0.51.0",
     NAME: "Haunting The Hauntessa",
     YEAR: "2026",
     SG: "HTH",
@@ -901,6 +901,9 @@ const HERO = {
         ENGINE.TEXT.centeredText("(ENTER)", ENGINE.gameWIDTH, ENGINE.gameHEIGHT / 2 + ENGINE.TEXT.RD.fs * 1.2);
         ENGINE.GAME.ANIMATION.resetTimer();
         ENGINE.GAME.ANIMATION.next(GAME.gameOverRun);
+
+        GAME.restarted = true;
+        MAP[GAME.level].map.storage.clear();
     },
     raiseStat(which, level = 1) {
         this[`reference_${which}`] += level;
@@ -1140,6 +1143,7 @@ const GAME = {
     loadWayPoint: null,                     // save game pointer, keep!
     canBeSaved: true,
     previously: null,
+    restarted: false,
     start() {
         console.log("GAME started");
         if (AUDIO.Title) {
@@ -1163,8 +1167,8 @@ const GAME = {
 
         GAME.completed = false;
         GAME.lives = 1;
-        GAME.level = 1;                 //1           
-        GAME.gold = 13;               //13
+        GAME.level = 1;
+        GAME.gold = 13;
 
         const storeList = ["DECAL3D", "LIGHTS3D", "GATE3D", "VANISHING3D", "ITEM3D", "MISSILE3D", "INTERACTIVE_DECAL3D", "INTERACTIVE_BUMP3D", "ENTITY3D", "EXPLOSION3D", "DYNAMIC_ITEM3D", "LAIR", "FIRE3D"];
         GAME.STORE = new Store(storeList);
@@ -1176,7 +1180,7 @@ const GAME = {
         GAME.time = new Timer("Main");
 
         /** DEBUG */
-        DEBUG.checkPoint();
+        //DEBUG.checkPoint();
         /** END DEBUG */
 
         //SAVE GAME
@@ -1296,7 +1300,7 @@ const GAME = {
         console.timeEnd("setWorld");
     },
     buildWorld(level) {
-        if (DEBUG.VERBOSE) console.info("building world, room/dungeon/level:", level, "ressurection", HERO.ressurection);
+        if (DEBUG.VERBOSE) console.info(" ******** building world, room/dungeon/level:", level, "ressurection", HERO.ressurection, "restart", GAME.restarted);
         WebGL.init_required_IAM(MAP[level].map, HERO);
 
         if (HERO.ressurection) {
@@ -1304,6 +1308,7 @@ const GAME = {
         } else {
             SPAWN_TOOLS.spawn(level);
         }
+
         HERO.ressurection = false;
 
         /* adding death places*/
@@ -1330,6 +1335,8 @@ const GAME = {
         ENGINE.clearManylayers(clear);
         TITLE.blackBackgrounds();
         ENGINE.TIMERS.clear();
+        GAME.STORE.clearPools();
+
     },
     async setup() {
         console.log("GAME SETUP started");
@@ -1903,6 +1910,7 @@ const GAME = {
         HERO.inventory.item.clear();
         SAVE_GAME.load();
         SAVE_MAP_IAM.load_GA();
+        MAP_TOOLS.resetStorages();
         console.timeEnd("load");
     },
     checkpoint() {

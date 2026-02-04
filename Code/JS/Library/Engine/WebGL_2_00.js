@@ -3013,9 +3013,7 @@ class FloorItem3D extends Drawable_object {
         this.dropped = false;
         this.rotation = rotation;
 
-        for (const prop in type) {
-            this[prop] = type[prop];
-        }
+        ImportTypeToConstructor(this, type);
 
         try {
             this.setElementAndIndices();
@@ -3074,9 +3072,7 @@ class AirItem3D extends Drawable_object {
         this.rotation = null;
         this.speed = 0;
 
-        for (const prop in type) {
-            this[prop] = type[prop];
-        }
+        ImportTypeToConstructor(this, type);
         this.glueToFloor = false;
 
         this.setElementAndIndices();
@@ -3118,9 +3114,7 @@ class Missile extends Drawable_object {
         this.bounce3D = false;
         this.friendly = friendly;
         this.explosionType = explosionType;
-        for (const prop in type) {
-            this[prop] = type[prop];
-        }
+        ImportTypeToConstructor(this, type);
         this.texture = WebGL.createTexture(TEXTURE[this.texture]);
         this.element = ELEMENT[this.element];
         this.initBuffers();
@@ -3282,9 +3276,7 @@ class WallFeature3D {
         this.active = true;
         this.grid = grid;
         this.face = face;
-        for (const prop in type) {
-            this[prop] = type[prop];
-        }
+        ImportTypeToConstructor(this, type);
         this.texture = SPRITE[this.sprite];
         this.width = this.texture.width;
         this.height = this.texture.height;
@@ -4186,9 +4178,7 @@ class $3D_Entity {
         this.type = type;
         this.which = null;
         this.directMagicDamage = false;
-        for (const prop in type) {
-            this[prop] = type[prop];
-        }
+        ImportTypeToConstructor(this, type);
         if (this.texture) this.changeTexture(TEXTURE[this.texture]);                //superseed from model, if forced
 
         this.fullHealth = this.health;
@@ -4629,6 +4619,24 @@ class $Animation {
 }
 
 /** Utility functions */
+
+const ImportTypeToConstructor = function (that, type) {
+    for (const prop in type) {
+        const v = type[prop];
+
+        if (Array.isArray(v)) {
+            that[prop] = v.slice();
+            continue;
+        }
+
+        if (v && typeof v === "object") {
+            that[prop] = structuredClone(v);
+            continue;
+        }
+
+        that[prop] = v;
+    }
+}
 
 const FaceToOffset = function (face, E = 0) {
     const offsets = {

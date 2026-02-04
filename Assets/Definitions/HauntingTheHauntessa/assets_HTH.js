@@ -661,6 +661,9 @@ LoadSprites = [
     //reserved
     { srcName: "Reserved/DeathPlace.webp", name: "DeathPlace" },
 
+    //MazEditor reserved
+
+
     //intro
     { srcName: "Slides/HTH_slide1.webp", name: "HTH_slide1" },
     { srcName: "Slides/HTH_slide2.webp", name: "HTH_slide2" },
@@ -1132,6 +1135,8 @@ LoadSprites = [
     { srcName: "Items/Coins.webp", name: "Coins" },
     { srcName: "Items/GoldBar.webp", name: "GoldBar" },
     { srcName: "Items/SilverBar.webp", name: "SilverBar" },
+    { srcName: "Items/GoldSphere.webp", name: "GoldSphere" },
+    { srcName: "Items/GoldCube.webp", name: "GoldCube" },
 
     //other metals
     { srcName: "Items/IronBar.webp", name: "IronBar" },

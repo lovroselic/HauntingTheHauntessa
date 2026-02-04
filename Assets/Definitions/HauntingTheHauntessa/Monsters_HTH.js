@@ -4669,7 +4669,6 @@ const INTERACTION_ENTITY = {
             conclusion: 'Ritual sealed, steel revealed. Take your Burning Battle Axe and go end that hag, Hauntessa.',
         },
     },
-
     YoungLea: {
         name: 'YoungLea',
         sprite: 'YoungLea',
