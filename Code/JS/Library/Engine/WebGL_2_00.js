@@ -4624,13 +4624,22 @@ const ImportTypeToConstructor = function (that, type) {
     for (const prop in type) {
         const v = type[prop];
 
+        if (typeof v === "function") {
+            that[prop] = v;
+            continue;
+        }
+
         if (Array.isArray(v)) {
             that[prop] = v.slice();
             continue;
         }
 
         if (v && typeof v === "object") {
-            that[prop] = structuredClone(v);
+            try {
+                that[prop] = structuredClone(v);
+            } catch {
+                that[prop] = v;
+            }
             continue;
         }
 
