@@ -1173,6 +1173,7 @@ LoadSprites = [
     { srcName: "Items/GoldPrincessMana.webp", name: "GoldPrincessMana" },
 
     // items
+    { srcName: "Items/Chicken.webp", name: "Chicken" },
     { srcName: "Items/Apple.webp", name: "Apple" },
     { srcName: "Items/GoldCoin2.webp", name: "GoldCoin" },
     { srcName: "Items/BrownLatexBootyShorts.webp", name: "BrownLatexBootyShorts" },
