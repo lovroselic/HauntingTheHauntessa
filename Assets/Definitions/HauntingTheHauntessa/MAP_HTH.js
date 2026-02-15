@@ -112,7 +112,7 @@ const MAP_TEXT = {
     100: "No entry here.",
     101: "I will rob Hauntessa blind.",
     102: "I am in. Now it will get serious. I mean, more serious. Deadly even.",
-    103: "The gates of hell. Or at least as close as i ever been.",
+    103: "The gates of hell. Or at least as close as I ever been.",
     104: "This is probably the last temple I will visit. Expensive or not, I should make the best of it.",
     105: "I don't understand tha Hauntosphere's language. But I do understand violence.",
     106: "A bit of  respite.",
