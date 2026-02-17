@@ -13,12 +13,7 @@ known bugs:
     * i don't do bugs
 
 retests:
-
-item problems:
-    - redundant beer in area 1 ??
-
-scrolls:
-    - add radar scrolls in initial dungeons before round 2
+    * all completed
 
  */
 ////////////////////////////////////////////////////
@@ -263,7 +258,7 @@ const INI = {
 };
 
 const PRG = {
-    VERSION: "0.51.6",
+    VERSION: "1.00",
     NAME: "Haunting The Hauntessa",
     YEAR: "2026",
     SG: "HTH",
@@ -954,7 +949,6 @@ const HERO = {
     incMana(sprite) {
         let incValue = INI.MANA[sprite];
         HERO._incMana(incValue);
-        console.info("incMana", sprite, incValue);
         AUDIO.Swallow.play();
     },
     _incMana(value) {
